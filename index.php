@@ -16,10 +16,10 @@
 		<div class="item_group">
 			<div class="nav_item">
 				<ul class="nav_list">
-					<li><a href="javascript:;" title="戀愛冰品">戀愛冰品</a></li>
-					<li><a href="javascript:;" title="冰棒客製">冰棒客製</a></li>
-					<li><a href="javascript:;" title="愛的留言">愛的留言</a></li>
-					<li><a href="javascript:;" title="冰品商城">冰品商城</a></li>
+					<li><a class="nav_text" href="javascript:;" title="戀愛冰品">戀愛冰品</a></li>
+					<li><a class="nav_text" href="javascript:;" title="冰棒客製">冰棒客製</a></li>
+					<li><a class="nav_text" href="javascript:;" title="愛的留言">愛的留言</a></li>
+					<li><a class="nav_text" href="javascript:;" title="冰品商城">冰品商城</a></li>
 				</ul>
 			</div>
 			<div class="logo_item">
@@ -27,9 +27,9 @@
 			</div>
 			<div class="nav_item">
 				<ul class="nav_list">
-				<li><a href="javascript:;" title="體驗課程">體驗課程</a></li>
-				<li><a href="javascript:;" title="最新消息">最新消息</a></li>
-				<li><a href="javascript:;" title="關於園區">關於園區</a></li>
+				<li><a class="nav_text" href="javascript:;" title="體驗課程">體驗課程</a></li>
+				<li><a class="nav_text" href="javascript:;" title="最新消息">最新消息</a></li>
+				<li><a class="nav_text" href="javascript:;" title="關於園區">關於園區</a></li>
 				<li>
 					<ul>
 						<li><a href="javascript:;" title="會員">會員</a></li>

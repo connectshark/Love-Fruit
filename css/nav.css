@@ -24,3 +24,11 @@
 	width: 100%;
 	max-width: 500px;
 }
+.nav_list{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+.nav_text{
+	text-decoration: none;
+}
