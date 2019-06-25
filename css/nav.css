@@ -1,0 +1,26 @@
+/*header*/
+
+#header{
+	width: 100%;
+	background-image: url('../img/headerbgi.png');
+	background-position: center;
+}
+.item_group{
+	padding: 10px 0;
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+}
+.logo_item{
+	margin: auto;
+}
+.logo_item img{
+	width: 100%;
+}
+.nav_item{
+	width: 100%;
+	max-width: 500px;
+}
