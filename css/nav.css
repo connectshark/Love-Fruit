@@ -1,34 +1,112 @@
-/*header*/
+/* 文字-本地端連結 */
+/*A-OTF日文*/
+@font-face {
+  font-family: "A-OTF-H";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+}
+@font-face {
+  font-family: "A-OTF-M";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+}
+/*思源圓黑體*/
+@font-face {
+  font-family: "GenJyuuGothic-B";
+  src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+}
+@font-face {
+  font-family: "GenJyuuGothic-R";
+  src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+}
+/*Css寫 -> font-family: "什麼字型";*/
 
-#header{
-	width: 100%;
-	background-image: url('../img/headerbgi.png');
-	background-position: center;
+/*header*/
+/*清除*/
+* {
+  /* outline: 1px solid #f00; */
 }
-.item_group{
-	padding: 10px 0;
-	width: 100%;
-	max-width: 1200px;
-	margin: auto;
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: flex-start;
+#header {
+  width: 100%;
+  background-image: url("../img/navBar/headerbgi.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.logo_item{
-	margin: auto;
+.item_group {
+  padding: 20px 0 0 0;
+  width: 100%;
+  height: 125px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  align-items: flex-start;
 }
-.logo_item img{
-	width: 100%;
+.logo_item {
+  margin: auto;
+  width: 700px;
+  position: relative;
+  margin: 0 20px 0 20px;
 }
-.nav_item{
-	width: 100%;
-	max-width: 500px;
+.logo_item img {
+  width: 100%;
 }
-.nav_list{
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-around;
+.nav_item {
+  width: 100%;
+  max-width: 600px;
 }
-.nav_text{
-	text-decoration: none;
+.nav_list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.nav_text span {
+  position: relative;
+}
+.nav_text span::before {
+  content: "";
+  position: absolute;
+  /* opacity: 0; */
+  right: 3px;
+  bottom: -3px;
+  background-color: #ffdee6;
+  height: 2px;
+  width: 100%;
+  transform: scale(0);
+}
+.nav_list li:hover span::before {
+  /* opacity: 1; */
+  transform: scale(1);
+  transition: 0.5s;
+}
+.nav_list li:hover .nav_text img {
+  opacity: 1;
+  transition: 0.5s;
+}
+.nav_list img {
+  width: 15%;
+  margin-right: 5px;
+  opacity: 0;
+  position: relative;
+  top: 1px;
+}
+.nav_item_icom {
+  position: relative;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+.memberIcon {
+  margin-right: 20%;
+}
+.nav_item_icom img {
+  width: 30px;
+  opacity: 1;
+}
+.nav_text {
+  text-decoration: none;
+  font-family: "A-OTF-M";
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: #ffffff;
 }
