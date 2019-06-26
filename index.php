@@ -15,7 +15,7 @@
 	<header id="header">
 		<div class="item_group">
 			<div class="nav_item">
-				<ul class="nav_list">
+				<ul class="nav_list nav_window">
 					<li><a class="nav_text" href="javascript:;" title="戀愛冰品"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>戀愛冰品</span></a></li>
 					<li><a class="nav_text" href="javascript:;" title="冰棒客製"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>冰棒客製</span></a></li>
 					<li><a class="nav_text" href="javascript:;" title="愛的留言"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>愛的留言</span></a></li>
@@ -24,8 +24,14 @@
 			</div>
 			<div class="logo_item">
 				<img src="img/navBar/logo.png" alt="菓籽戀冰所">
-			</div>
+			</div class="nav_item_MP">
 			<div class="nav_item">
+			    <ul class="nav_list_Mp">
+					<li><a class="nav_text" href="javascript:;" title="戀愛冰品"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>戀愛冰品</span></a></li>
+					<li><a class="nav_text" href="javascript:;" title="冰棒客製"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>冰棒客製</span></a></li>
+					<li><a class="nav_text" href="javascript:;" title="愛的留言"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>愛的留言</span></a></li>
+					<li><a class="nav_text" href="javascript:;" title="冰品商城"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>冰品商城</span></a></li>
+				</ul>
 				<ul class="nav_list">
 				<li><a class="nav_text" href="javascript:;" title="體驗課程"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>體驗課程</span></a></li>
 				<li><a class="nav_text" href="javascript:;" title="最新消息"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>最新消息</span></a></li>
@@ -38,11 +44,16 @@
 				</li>
 				</ul>
 			</div>
+			<label class="hb" for="menu-control">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </label>
 		</div>
 	</header>
 
 	<footer>
-
+		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
 </body>
 </html>
