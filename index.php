@@ -24,7 +24,7 @@
 				</ul>
 			</div>
 			<div class="logo_item">
-				<a href="index.php" title="菓籽戀冰所"><img src="img/navBar/logo.png" alt="菓籽戀冰所"></a>
+				<a href="index.php" class="logo" title="菓籽戀冰所"><img src="img/navBar/logo.png" alt="菓籽戀冰所"></a>
 			<label class="hb" for="menu-control">
 	          <span class="bar bar1"></span>
 	          <span class="bar bar2"></span>
