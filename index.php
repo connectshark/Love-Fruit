@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+	<input type="checkbox" id="menu-control">
 	<header id="header">
 		<div class="item_group">
 			<div class="nav_item">
