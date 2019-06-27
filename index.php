@@ -24,10 +24,15 @@
 				</ul>
 			</div>
 			<div class="logo_item">
-				<img src="img/navBar/logo.png" alt="菓籽戀冰所">
-			</div class="nav_item_MP">
+				<a href="index.php" title="菓籽戀冰所"><img src="img/navBar/logo.png" alt="菓籽戀冰所"></a>
+			<label class="hb" for="menu-control">
+	          <span class="bar bar1"></span>
+	          <span class="bar bar2"></span>
+	          <span class="bar bar3"></span>
+        	</label>
+			</div>
 			<div class="nav_item">
-			    <ul class="nav_list_Mp">
+			    <ul class="nav_list nav_list_Mp">
 					<li><a class="nav_text" href="javascript:;" title="戀愛冰品"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>戀愛冰品</span></a></li>
 					<li><a class="nav_text" href="javascript:;" title="冰棒客製"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>冰棒客製</span></a></li>
 					<li><a class="nav_text" href="javascript:;" title="愛的留言"><img src="img/navBar/navIcon.png" alt="iceIcon"><span>愛的留言</span></a></li>
@@ -45,11 +50,7 @@
 				</li>
 				</ul>
 			</div>
-			<label class="hb" for="menu-control">
-          <span class="bar bar1"></span>
-          <span class="bar bar2"></span>
-          <span class="bar bar3"></span>
-        </label>
+
 		</div>
 	</header>
 
