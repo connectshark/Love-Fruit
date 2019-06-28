@@ -1,0 +1,113 @@
+body{
+	background-image: url(../img/background.png);
+	background-repeat: repeat;
+	background-color: #e6b1ba;
+}
+img{
+	vertical-align: middle;
+}
+.custom{
+	height: 1080px;
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	box-sizing: border-box;
+	padding-top: 145px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+/*側邊清單列*/
+.custom-list{
+	width: 30%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+.custom-list-scale{
+	width: 30%;
+	max-width: 66px;
+}
+.custom-list-scale img{
+	width: 100%;
+}
+.custom-list-support{
+	background-color: #dc9c76;
+	width: 90%;
+	height: 20px;
+	border-radius: 3px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+.point{
+	width: 20%;
+	position: relative;
+	display: block;
+}
+.point:before{
+	content: '';
+	width: 5px;
+	height: 5px;
+	background-color: #bf866a;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 50%;
+}
+.point:after{
+	content: '';
+	width: 5px;
+	height: 5px;
+	background-color: #bf866a;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 50%;
+}
+.custom-list-item{
+	position: relative;
+	top: -3px;
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+}
+.custom-list-item-umberlla{
+	display: none;
+}
+@media screen and (min-width: 768px) {
+	.custom-list-item-umberlla{
+		display: block;
+		width: 20%;
+		max-width: 66px;
+	}
+}
+.custom-list-item-umberlla img{
+	width: 100%;
+}
+.custom-list-item-price{
+	width: 100%;
+}
+@media screen and (min-width: 768px) {
+	.custom-list-item-price{
+		width: 80%;
+	}
+}
+.price-lock{
+	width: 20px;
+}
+.price-lock img{
+	width: 100%;
+}
+/*主要客製*/
+.custom-main{
+	width: 40%;
+}
+
+/*側邊選單*/
+.custom-aside{
+	width: 30%;
+}
