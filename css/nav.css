@@ -46,7 +46,7 @@
     z-index: -98;
   }
   .nav_item {
-    padding-top: 200px;
+    padding-top: 150px;
     order: 1;
     position: absolute;
     left: 100%;
@@ -98,7 +98,7 @@
     box-sizing: border-box;
     margin-left: auto;
     position: relative;
-    bottom: 15px;
+    bottom: 23px;
     right: 4%;
   }
   .hb .bar {
@@ -318,4 +318,5 @@ footer span {
     font-size: 8px;
     padding-top: 15px;
     color: #ffffff;
+  }
 }

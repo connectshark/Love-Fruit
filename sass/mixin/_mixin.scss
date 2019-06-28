@@ -1,0 +1,16 @@
+@mixin out-Line-Font($class,$color,$size,$width,$shadow,$text){
+	.#{$class}{
+	color:$color;
+	font-size:$size;
+	position:relative;
+	}
+	.#{$class}:after{
+	z-index:-1;
+	content:'#{$text}';
+	position:absolute;
+	left:0;
+	top:0;
+	-webkit-text-stroke:$width $shadow;
+	text-stroke:$width $shadow;
+	}
+}
