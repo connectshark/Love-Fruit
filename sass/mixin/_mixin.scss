@@ -3,6 +3,7 @@
 	color:$color;
 	font-size:$size;
 	position:relative;
+	text-align: center;
 	}
 	.#{$class}:after{
 	z-index:-1;
@@ -14,3 +15,63 @@
 	text-stroke:$width $shadow;
 	}
 }
+
+
+//普通按鈕
+@mixin btn-out($width , $height){
+    width:$width ;
+    height:$height ;
+    border-radius: 25px;
+    background-color: white;
+	border:2px solid #715124;
+    display: flex;
+	justify-content:center;
+	cursor: pointer;
+}
+ @mixin btn-in($width1 , $height1){
+    width:$width1;
+    height:$height1;
+    border-radius: 20px;
+    background-color:#fc7389;
+    border:2px solid #e4575f;
+	text-align: center;
+	margin: auto;
+	cursor: pointer;
+	&:hover{
+		background-color: #ffabb1;
+	}
+	&:active{
+		background-color: #db4d6d;
+	}
+ }
+
+//帶圖案扭
+ @mixin ice-btn-out($width , $height){
+    width:$width ;
+    height:$height ;
+    border-radius: 25px;
+    background-color: white;
+	border:2px solid #715124;
+    display: flex;
+	justify-content:center;
+	cursor: pointer;
+}
+ @mixin ice-btn-in($width1 , $height1){
+    width:$width1;
+    height:$height1;
+    border-radius: 20px;
+    background-color:#fc7389;
+    border:2px solid #e4575f;
+	text-align: center;
+	margin: auto;
+	cursor: pointer;
+	&:hover{
+		background-color: #fad689;
+	}
+	&:active{
+		background-color: #db4d6d;
+	}
+ }
+
+
+
