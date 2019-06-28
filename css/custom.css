@@ -1,5 +1,8 @@
 body{
-	background-image: url(../img/custom/background.png);
+	background-image: url(../img/background.png);
 	background-repeat: repeat;
 	background-color: #e6b1ba;
+}
+.custom{
+	height: 1080px;
 }
