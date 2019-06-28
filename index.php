@@ -50,9 +50,12 @@
 				</li>
 				</ul>
 			</div>
-
 		</div>
+		<img class="ＭpNavBar-Mp" src="../img/navBar/ＭpNavBar.png" alt="ＭpNavBar">
 	</header>
+	<section>
+		<div class="box"></div>
+	</section>
 
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
