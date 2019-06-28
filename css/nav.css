@@ -21,9 +21,6 @@
 
 /*header*/
 /*清除*/
-* {
-  outline: 1px solid #f00;
-}
 @media screen and (max-width: 768px) {
   #header {
     position: fixed;
