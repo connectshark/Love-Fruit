@@ -1,6 +1,9 @@
 @import "mixin/mixin";
+*{
+    outline: #f00 solid 1px;
+}
 
-.welcom-wrap{
+.welcome-wrap{
     background-color: #ffe8e8;
     width: 100%;
     
@@ -14,26 +17,26 @@
                 max-width: 1200px;
             }
         }
+
         .kanban{
             padding-top: 200px;
             width: 100%;
             margin: auto;
-            position: relative;
                 img{
-                    width: 80%;
+                    width: 70%;
                     margin: auto;
                     display: block;
                 }
                 .group-title,.general-title,.group-subtitle,.general-subtitle{
                     z-index: 1;
                 }
-                span{
-                    position: relative;
+                .item{
+                     position: relative;
+                     top: -50px;
                 }
                 h2{
                     display: inline-block;
                     position: relative;
-                    bottom: 150px;
                 }
         }
     @include out-Line-Font(group-title,#fff,40px,5px,#6a3e26,揪團課程);
