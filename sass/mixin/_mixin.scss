@@ -88,3 +88,29 @@
 		transition-duration:.2s;
 	}
  }
+
+$mb : 768px;
+$md  : 996px;
+$dsk : 997px;
+
+
+
+@mixin rwd($breakpoint) {
+    @if $breakpoint==mobile {
+        @media all and (max-width: $mb) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==medium {
+        @media all and (min-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==desktop {
+        @media all and (min-width: $dsk) {
+            @content;
+        }
+    }
+}
