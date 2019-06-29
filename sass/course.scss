@@ -1,0 +1,71 @@
+@import "mixin/mixin";
+
+
+$mb : 768px;
+$md  : 996px;
+$dsk : 997px;
+
+
+
+@mixin rwd($breakpoint) {
+    @if $breakpoint==mobile {
+        @media all and (max-width: $mb) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==medium {
+        @media all and (min-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==desktop {
+        @media all and (min-width: $dsk) {
+            @content;
+        }
+    }
+}
+
+
+.welcom-wrap{
+    background-color: #ffe8e8;
+    width: 100%;
+    
+        .wrapper{
+
+            @include rwd(desktop){
+                margin: auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                max-width: 1200px;
+            }
+        }
+        .kanban{
+            padding-top: 200px;
+            width: 100%;
+            margin: auto;
+            position: relative;
+                img{
+                    width: 80%;
+                    margin: auto;
+                    display: block;
+                }
+                .group-title,.general-title,.group-subtitle,.general-subtitle{
+                    z-index: 1;
+                }
+                span{
+                    position: relative;
+                }
+                h2{
+                    display: inline-block;
+                    position: relative;
+                    bottom: 150px;
+                }
+        }
+    @include out-Line-Font(group-title,#fff,40px,5px,#6a3e26,揪團課程);
+    @include out-Line-Font(general-title,#fff,40px,5px,#6a3e26,一般課程);
+    @include out-Line-Font(group-subtitle,#6a3e26,16px,5px,#fff8e4,不定時開課);
+    @include out-Line-Font(general-subtitle,#6a3e26,16px,5px,#fff8e4,每日固定開課);
+}
