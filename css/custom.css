@@ -171,9 +171,10 @@ img{
 	vertical-align: middle;
 }
 .progress{
-	
 }
 .category{
+	display: flex;
+	flex-flow: column nowrap;
 }
 
 
