@@ -2,7 +2,7 @@
 .welcom-wrap {
   background-color: #ffe8e8;
   width: 100%; }
-  @media all and (min-width: 997px) {
+  @media all and (min-width: 992px) {
     .welcom-wrap .wrapper {
       margin: auto;
       display: flex;
