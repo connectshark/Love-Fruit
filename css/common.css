@@ -15,7 +15,7 @@
 }
 
 .btn-in {
-  width: 136px;
+  width: 138px;
   height: 34px;
   border-radius: 20px;
   background-color: #fc7389;
@@ -27,15 +27,19 @@
 
 .btn-in:hover {
   background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
 
 .btn-in:active {
   background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
 
 .btn-text {
-  color: brown;
-  font-size: 20px;
+  color: white;
+  font-size: 16px;
   position: relative;
   text-align: center;
 }
@@ -46,12 +50,12 @@
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-text-stroke: 2px black;
-  text-stroke: 2px black;
+  bottom: 0;
+  right: 0;
 }
 
 .ice-btn-out {
-  width: 145px;
+  width: 135px;
   height: 40px;
   border-radius: 25px;
   background-color: white;
@@ -63,11 +67,22 @@
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
   position: relative;
 }
 
+.ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
 .ice-btn-in {
-  width: 136px;
+  width: 128px;
   height: 34px;
   border-radius: 20px;
   background-color: #fc7389;
@@ -79,35 +94,67 @@
 
 .ice-btn-in:hover {
   background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
 
-.ice-btn-in:active {
-  background-color: #db4d6d;
-}
-
-.btn-text {
-  color: brown;
-  font-size: 20px;
+.ice-btn-text {
+  color: white;
+  font-size: 16px;
   position: relative;
   text-align: center;
 }
 
-.btn-text:after {
+.ice-btn-text:after {
   z-index: -1;
   content: "下一題";
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-text-stroke: 2px black;
-  text-stroke: 2px black;
+  bottom: 0;
+  right: 0;
 }
 
 .ice-img {
   display: inline-block;
-  width: 40px;
-  height: 56px;
+  width: 38px;
+  height: 50px;
   position: absolute;
-  left: -10px;
-  top: -5px;
+  left: -5px;
+  top: 0px;
+}
+
+.ice-img img {
+  width: 100%;
+}
+
+@font-face {
+  font-family: "A-OTF-H";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+}
+
+@font-face {
+  font-family: "A-OTF-M";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+}
+
+/*思源圓黑體*/
+@font-face {
+  font-family: "GenJyuuGothic-B";
+  src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+}
+
+@font-face {
+  font-family: "GenJyuuGothic-R";
+  src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+}
+
+.ice-btn-text {
+  font-family: "A-OTF-M";
+}
+
+.btn-text {
+  line-height: 32px;
+  font-family: "A-OTF-M";
 }
 /*# sourceMappingURL=common.css.map */

@@ -4,29 +4,62 @@
     @include btn-out(145px , 40px);
 }
 .btn-in{
-   @include btn-in(136px , 34px);
+   @include btn-in(138px , 34px);
    
 }
-@include out-Line-Font(btn-text,brown,20px,2px,black,加入購物車); 
+@include out-Line-Font(btn-text,white,16px,2px,white,加入購物車); 
 
 
 .ice-btn-out{
-    @include btn-out(145px , 40px);
+    @include ice-btn-out(135px , 40px);
     position: relative;
 }
 .ice-btn-in{
-   @include ice-btn-in(136px , 34px);
+   @include ice-btn-in(128px , 34px);
 }
-@include out-Line-Font(btn-text,brown,20px,2px,black,下一題); 
+@include out-Line-Font(ice-btn-text,white,16px,2px,white,下一題); 
 .ice-img{
     display:inline-block;
-    width: 40px;
-    height: 56px;
+    width: 38px;
+    height: 50px;
     position: absolute;
-    left: -10px;
-    top:-5px;
+    left: -5px;
+    top:0px;
+    img{
+        width: 100%;
+    }
 }
 
+
+
+@font-face {
+	font-family: "A-OTF-H";
+	src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+  }
+  @font-face {
+	font-family: "A-OTF-M";
+	src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+  }
+  /*思源圓黑體*/
+  @font-face {
+	font-family: "GenJyuuGothic-B";
+	src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+  }
+  @font-face {
+	font-family: "GenJyuuGothic-R";
+    src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+}
+    
+.ice-btn-text{
+    font-family: "A-OTF-M";
+}
+
+.btn-text{
+    line-height: 32px;
+  font-family: "A-OTF-M";
+}
+
+ 
 
 
 

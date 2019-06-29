@@ -1,3 +1,4 @@
+
 @mixin out-Line-Font($class,$color,$size,$width,$shadow,$text){
 	.#{$class}{
 	color:$color;
@@ -9,12 +10,19 @@
 	z-index:-1;
 	content:'#{$text}';
 	position:absolute;
+	// vertical-align:middle;
 	left:0;
 	top:0;
-	-webkit-text-stroke:$width $shadow;
-	text-stroke:$width $shadow;
+	bottom: 0;
+	right: 0;
+	// -webkit-text-stroke:$width $shadow;
+	// text-stroke:$width $shadow;
 	}
 }
+
+
+
+
 
 
 //普通按鈕
@@ -39,9 +47,11 @@
 	cursor: pointer;
 	&:hover{
 		background-color: #ffabb1;
+		transition-duration:.2s;
 	}
 	&:active{
 		background-color: #db4d6d;
+		transition-duration:.2s;
 	}
  }
 
@@ -55,7 +65,15 @@
     display: flex;
 	justify-content:center;
 	cursor: pointer;
-}
+	box-shadow: 0px 3px #715124;
+	// transform: translateY(0px);
+	&:active{
+		box-shadow: 0 1px black;
+		transform: translateY(2px);
+		transition-duration:.2s;
+	 }
+	}
+	
  @mixin ice-btn-in($width1 , $height1){
     width:$width1;
     height:$height1;
@@ -67,11 +85,6 @@
 	cursor: pointer;
 	&:hover{
 		background-color: #fad689;
-	}
-	&:active{
-		background-color: #db4d6d;
+		transition-duration:.2s;
 	}
  }
-
-
-
