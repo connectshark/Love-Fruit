@@ -163,20 +163,22 @@ img{
 /*表情*/
 .mood{
 	width: 100%;
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
+}
+.face{
+	float: left;
+}
+.progress{
+	height: 120px;
+	width: 70%;
+	float: left;
+	margin-left: -20%;
+	background-color: #ffdee6;
 }
 #mood{
 	vertical-align: middle;
+	border: 15px solid #6a3e26;
+	border-radius: 50%;
 }
-.progress{
-}
-.category{
-	display: flex;
-	flex-flow: column nowrap;
-}
-
 
 
 
