@@ -1,76 +1,117 @@
-<<<<<<< HEAD
-/* No CSS *//*# sourceMappingURL=course.css.map */
-=======
 @charset "UTF-8";
 .welcom-wrap {
   background-color: #ffe8e8;
-  width: 100%; }
-  @media all and (min-width: 997px) {
-    .welcom-wrap .wrapper {
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 1200px; } }
-  .welcom-wrap .kanban {
-    padding-top: 200px;
-    width: 100%;
+  width: 100%;
+}
+
+@media all and (min-width: 997px) {
+  .welcom-wrap .wrapper {
     margin: auto;
-    position: relative; }
-    .welcom-wrap .kanban img {
-      width: 80%;
-      margin: auto;
-      display: block; }
-    .welcom-wrap .kanban .group-title, .welcom-wrap .kanban .general-title, .welcom-wrap .kanban .group-subtitle, .welcom-wrap .kanban .general-subtitle {
-      z-index: 1; }
-    .welcom-wrap .kanban span {
-      position: relative; }
-    .welcom-wrap .kanban h2 {
-      display: inline-block;
-      position: relative;
-      bottom: 150px; }
-  .welcom-wrap .group-title {
-    color: #fff;
-    font-size: 40px;
-    position: relative; }
-  .welcom-wrap .group-title:after {
-    z-index: -1;
-    content: "揪團課程";
-    position: absolute;
-    left: 0;
-    top: 0;
-    -webkit-text-stroke: 5px #6a3e26; }
-  .welcom-wrap .general-title {
-    color: #fff;
-    font-size: 40px;
-    position: relative; }
-  .welcom-wrap .general-title:after {
-    z-index: -1;
-    content: "一般課程";
-    position: absolute;
-    left: 0;
-    top: 0;
-    -webkit-text-stroke: 5px #6a3e26; }
-  .welcom-wrap .group-subtitle {
-    color: #6a3e26;
-    font-size: 16px;
-    position: relative; }
-  .welcom-wrap .group-subtitle:after {
-    z-index: -1;
-    content: "不定時開課";
-    position: absolute;
-    left: 0;
-    top: 0;
-    -webkit-text-stroke: 5px #fff8e4; }
-  .welcom-wrap .general-subtitle {
-    color: #6a3e26;
-    font-size: 16px;
-    position: relative; }
-  .welcom-wrap .general-subtitle:after {
-    z-index: -1;
-    content: "每日固定開課";
-    position: absolute;
-    left: 0;
-    top: 0;
-    -webkit-text-stroke: 5px #fff8e4; }
->>>>>>> 289e81a1fb2b927ef94d35a130998090e60b96be
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 1200px;
+  }
+}
+
+.welcom-wrap .kanban {
+  padding-top: 200px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.welcom-wrap .kanban img {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+
+.welcom-wrap .kanban .group-title, .welcom-wrap .kanban .general-title, .welcom-wrap .kanban .group-subtitle, .welcom-wrap .kanban .general-subtitle {
+  z-index: 1;
+}
+
+.welcom-wrap .kanban span {
+  position: relative;
+}
+
+.welcom-wrap .kanban h2 {
+  display: inline-block;
+  position: relative;
+  bottom: 150px;
+}
+
+.welcom-wrap .group-title {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.welcom-wrap .group-title:after {
+  z-index: -1;
+  content: "揪團課程";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.welcom-wrap .general-title {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.welcom-wrap .general-title:after {
+  z-index: -1;
+  content: "一般課程";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.welcom-wrap .group-subtitle {
+  color: #6a3e26;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+
+.welcom-wrap .group-subtitle:after {
+  z-index: -1;
+  content: "不定時開課";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.welcom-wrap .general-subtitle {
+  color: #6a3e26;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+
+.welcom-wrap .general-subtitle:after {
+  z-index: -1;
+  content: "每日固定開課";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+/*# sourceMappingURL=course.css.map */
