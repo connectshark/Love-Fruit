@@ -89,12 +89,12 @@
 	}
  }
 
+
+
+
 $mb : 768px;
-$md  : 996px;
-$dsk : 997px;
-
-
-
+$md  : 769px;
+$dsk : 992px;
 @mixin rwd($breakpoint) {
     @if $breakpoint==mobile {
         @media all and (max-width: $mb) {

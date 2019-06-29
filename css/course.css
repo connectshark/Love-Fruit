@@ -2,10 +2,13 @@
 * {
   outline: #f00 solid 1px; }
 
+body {
+  font-family: "GenJyuuGothic-R"; }
+
 .welcome-wrap {
-  background-color: #ffe8e8;
-  width: 100%; }
-  @media all and (min-width: 997px) {
+  background-color: #ffd9d9;
+  font-family: "GenJyuuGothic-B"; }
+  @media all and (min-width: 992px) {
     .welcome-wrap .wrapper {
       margin: auto;
       display: flex;
@@ -16,18 +19,43 @@
     padding-top: 200px;
     width: 100%;
     margin: auto; }
-    .welcome-wrap .kanban img {
+    .welcome-wrap .kanban .spaceship {
       width: 70%;
-      margin: auto;
-      display: block; }
+      margin: auto; }
+    .welcome-wrap .kanban img {
+      width: 100%; }
     .welcome-wrap .kanban .group-title, .welcome-wrap .kanban .general-title, .welcome-wrap .kanban .group-subtitle, .welcome-wrap .kanban .general-subtitle {
       z-index: 1; }
     .welcome-wrap .kanban .item {
+      height: 200px;
+      width: 80%;
       position: relative;
-      top: -50px; }
+      top: -50px;
+      line-height: 200px;
+      text-align: center; }
+      @media all and (min-width: 992px) {
+        .welcome-wrap .kanban .item {
+          height: 300px; } }
+    .welcome-wrap .kanban .general-item {
+      width: 80%;
+      background-image: url("../img/course/kanban-general.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      margin: auto; }
+    .welcome-wrap .kanban .group-item {
+      width: 80%;
+      background-image: url("../img/course/kanban-group.png");
+      background-repeat: no-repeat;
+      position: relative;
+      background-size: 100%;
+      margin: auto; }
     .welcome-wrap .kanban h2 {
       display: inline-block;
-      position: relative; }
+      margin: auto; }
+    .welcome-wrap .kanban span {
+      position: absolute;
+      transform: rotate(-3deg);
+      display: inline-block; }
   .welcome-wrap .group-title {
     color: #fff;
     font-size: 40px;
@@ -69,7 +97,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    -webkit-text-stroke: 5px #fff8e4; }
+    -webkit-text-stroke: 3px #fff8e4; }
   .welcome-wrap .general-subtitle {
     color: #6a3e26;
     font-size: 16px;
@@ -83,4 +111,11 @@
     top: 0;
     bottom: 0;
     right: 0;
-    -webkit-text-stroke: 5px #fff8e4; }
+    -webkit-text-stroke: 3px #fff8e4; }
+
+.general-wrap {
+  background-color: #ffd9d9;
+  height: 1080px; }
+  .general-wrap .info {
+    max-width: 1200px;
+    margin: auto; }
