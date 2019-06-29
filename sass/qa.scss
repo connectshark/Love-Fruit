@@ -23,6 +23,19 @@
     height: 885px;
 }
 
+.stage .wrap{
+    display: flex;
+    align-items: center;
+}
+
+.popsicle{
+    text-align: center;
+}
+
+.stage .content{
+    
+}
+
 .stage.single{
     border-top: 10px solid #754c24;
     background: #f6c555 url(../img/qa/cover.png) top left;
