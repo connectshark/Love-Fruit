@@ -7,21 +7,34 @@ img{
 	vertical-align: middle;
 }
 .custom{
-	height: 1080px;
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
 	box-sizing: border-box;
-	padding-top: 145px;
+	padding: 145px 0;
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
+	align-items: flex-start;
 }
+@media screen and (min-width: 768px) {
+	.custom{
+		flex-flow: row nowrap;
+	}
+}
+
 /*側邊清單列*/
 .custom-list{
-	width: 30%;
+	width: 90%;
+	margin:0 auto;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+}
+@media screen and (min-width: 768px) {
+	.custom-list{
+		width: 30%;
+		align-items: center;
+	}
 }
 .custom-list-scale{
 	width: 30%;
@@ -146,10 +159,35 @@ img{
 	border-top: 2px dashed #603813;
 }
 
+
+/*表情*/
+.mood{
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+#mood{
+	vertical-align: middle;
+}
+.progress{
+	
+}
+.category{
+}
+
+
+
+
 /*主要客製*/
 .custom-main{
-	width: 40%;
+	width: 100%;
 	padding: 80px 0 0;
+}
+@media screen and (min-width: 768px) {
+	.custom-main{
+		width: 40%;
+	}
 }
 /*進度條*/
 .step{
@@ -158,17 +196,14 @@ img{
 	justify-content: space-between;
 	width: 80%;
 	margin: auto;
-	background-color: #f3e6c4;
-	border: 5px solid #603813;
 	box-sizing: border-box;
 	padding: 10px;
-	border-radius: 10px;
 }
 .step li{
 	list-style: none;
 	width: 50px;
 	height: 50px;
-	background-color: #333;
+	background-color: #8aba6d;
 	border-radius: 50%;
 	position: relative;
 	text-align: center;
@@ -176,17 +211,26 @@ img{
 	color: #fff;
 	font-size: 23px;
 }
+.step-text{
+	font-family: "A-OTF-H";
+	color: #333;
+}
 .step li:not(:first-child):before{
 	content: '';
 	position: absolute;
 	z-index: 0;
-	width: 3.4vw;
+	width: 6.5vw;
 	height: 10px;
 	top: 0;
 	bottom: 0;
 	right: 100%;
 	margin: auto;
-	background-color: #fa8;
+	background-color: #8aba6d;
+}
+@media screen and (min-width: 768px) {
+	.step li:not(:first-child):before{
+		width: 3.4vw;
+	}
 }
 .step li.active{
 	background-color: #ea7187;
@@ -197,7 +241,121 @@ img{
 .step li.active ~ li:before{
 	background-color: #ccc;
 }
+.custom-main-show{
+	padding: 10px 0;
+	margin: auto;
+	width: 70%;
+	position: relative;
+	top: 30px;
+	z-index: 2;
+}
+.custom-main-show img{
+	width: 100%;
+}
+
+/*底座*/
+.custom-bottom{
+	border:5px solid #6a3e26;
+	background-color: #d2a47f;
+	width: 90%;
+	margin: auto;
+	height: 50px;
+	border-radius: 50%;
+	position: relative;
+}
+.custom-bottom:before{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	border: 5px solid #6a3e26;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: -5px;
+	background-color: #6a3e26;
+}
+.custom-bottom:after{
+	content: '';
+	z-index: -2;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 5px solid #6a3e26;
+	border-radius: 50%;
+	background-color: #6a3e26;
+	top: 110%;
+	left: -5px;
+}
+/*模板*/
+.back{
+	background-color: #f3e6c4;
+	border: 5px solid #6a3e26;
+	border-radius: 10px;
+}
 /*側邊選單*/
 .custom-aside{
-	width: 30%;
+	margin:0 auto;
+	width: 90%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+	.custom-aside{
+		width: 30%;
+	}
+}
+.aside-title p{
+	font-family: "A-OTF-M";
+	font-size: 36px;
+	text-align: center;
+}
+.select-item{
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+	padding: 20px 10px;
+}
+.select-item figure{
+	border: 4px solid #6a3e26;
+	border-radius: 30px;
+	background-image: url('../img/custom/down.png');
+	background-position: bottom;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding: 10px 5px;
+}
+.select-item figure:hover{
+	cursor: pointer;
+}
+.select-item figure:hover img{
+	background-color: #db4d6d;
+}
+.select-item figure img{
+	width: 80%;
+	margin: auto;
+	background-color: #ffa4b5;
+	box-sizing: border-box;
+	display: block;
+	padding:5px 10px;
+	border-radius: 10px;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+.select-item figcaption{
+	font-family: "A-OTF-M";
+	font-size: 18px;
+	text-align: center;
+	padding: 10px 0 30px;
+	color: #744934;
+}
+.clearfix{
+	clear: both;
+}
+
+/*按鈕*/
+.aside-button-group{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
 }
