@@ -109,9 +109,10 @@ img{
 
 /*清單樣式*/
 .price-table{
+	transform: translateY(-5px);
 	width: 100%;
 	border: 10px solid #603813;
-	border-radius: 2px;
+	border-radius: 5px;
 	background-color: #fff8e4;
 	padding: 20px;
 	box-sizing: border-box;
@@ -139,13 +140,51 @@ img{
 .price-s-table td{
 	width: 60%;
 }
-
+.price-s-table tfoot{
+	width: 90%;
+	margin: auto;
+	border-top: 2px dashed #603813;
+}
 
 /*主要客製*/
 .custom-main{
 	width: 40%;
 }
-
+/*進度條*/
+.step{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	width: 80%;
+	margin: auto;
+	background-color: #f3e6c4;
+	border: 5px solid #603813;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 10px;
+}
+.step li{
+	list-style: none;
+	width: 50px;
+	height: 50px;
+	background-color: #ccc;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+}
+.step li:not(:last-child):before{
+	content: '';
+	position: absolute;
+	width: 120%;
+	height: 10px;
+	top: 0;
+	bottom: 0;
+	left: 90%;
+	margin: auto;
+	background-color: #ccc;
+}
 /*側邊選單*/
 .custom-aside{
 	width: 30%;
