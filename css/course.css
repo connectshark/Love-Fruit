@@ -33,7 +33,11 @@
     font-size: 40px;
     position: relative;
     text-align: center; }
+<<<<<<< HEAD
   .welcome-wrap .group-title:after {
+=======
+  .welcom-wrap .group-title:after {
+>>>>>>> master
     z-index: -1;
     content: "揪團課程";
     position: absolute;
@@ -47,7 +51,11 @@
     font-size: 40px;
     position: relative;
     text-align: center; }
+<<<<<<< HEAD
   .welcome-wrap .general-title:after {
+=======
+  .welcom-wrap .general-title:after {
+>>>>>>> master
     z-index: -1;
     content: "一般課程";
     position: absolute;
@@ -61,7 +69,11 @@
     font-size: 16px;
     position: relative;
     text-align: center; }
+<<<<<<< HEAD
   .welcome-wrap .group-subtitle:after {
+=======
+  .welcom-wrap .group-subtitle:after {
+>>>>>>> master
     z-index: -1;
     content: "不定時開課";
     position: absolute;
@@ -75,7 +87,11 @@
     font-size: 16px;
     position: relative;
     text-align: center; }
+<<<<<<< HEAD
   .welcome-wrap .general-subtitle:after {
+=======
+  .welcom-wrap .general-subtitle:after {
+>>>>>>> master
     z-index: -1;
     content: "每日固定開課";
     position: absolute;
