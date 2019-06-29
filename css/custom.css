@@ -90,6 +90,9 @@ img{
 }
 .custom-list-item-price{
 	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
 }
 @media screen and (min-width: 768px) {
 	.custom-list-item-price{
@@ -102,6 +105,31 @@ img{
 .price-lock img{
 	width: 100%;
 }
+
+
+/*清單樣式*/
+.price-table{
+	width: 100%;
+	border: 10px solid #603813;
+	border-radius: 2px;
+	background-color: #fff8e4;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.price-title{
+	margin: auto;
+	font-family: "A-OTF-M";
+	width: 80%;
+}
+.price-title p{
+	padding: 10px 0;
+	border-bottom: 2px solid #603813;
+	text-align: center;
+}
+
+
+
+
 /*主要客製*/
 .custom-main{
 	width: 40%;
