@@ -465,3 +465,6 @@ body {
       @media all and (max-width: 768px) {
         .course-message .second-title h3 {
           font-size: 20px; } }
+  .course-message .go-between {
+    width: 70%;
+    margin: auto; }
