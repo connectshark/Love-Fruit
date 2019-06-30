@@ -217,9 +217,14 @@ img{
 	justify-content: space-around;
 	padding-right: 10px;
 }
-.category span{
-	font-size: 16px;
+.category-item{
+	font-size: 24px;
 	font-family: "A-OTF-M";
+}
+@media screen and (min-width: 768px) {
+	.category-item{
+		font-size: 16px;
+	}
 }
 .progress-group{
 	display: flex;
@@ -368,12 +373,22 @@ img{
 		width: 30%;
 	}
 }
+.aside-title{
+	padding-bottom: 10px;
+}
 .aside-title h2{
 	font-family: "A-OTF-M";
-	font-size: 36px;
+	font-size: 24px;
 	text-align: center;
 }
-
+@media screen and (min-width: 768px) {
+	.aside-title{
+		padding-bottom: 0px;
+	}
+	.aside-title h2{
+		font-size: 34px;
+	}
+}
 
 
 
@@ -386,7 +401,13 @@ img{
 /*側邊選單第一區*/
 .select-item{
 	box-sizing: border-box;
-	padding: 20px 10px;
+	padding: 5px;
+}
+@media screen and (min-width: 768px) {
+	.select-item{
+		box-sizing: border-box;
+		padding: 20px 10px;
+	}
 }
 .select-item-1{
 	width: 100%;
@@ -394,20 +415,26 @@ img{
 .select-item-4{
 	width: 50%;
 }
-.select-item-6{
-	width: 33.333333%;
+@media screen and (min-width: 768px) {
+	.select-item-6{
+		width: 33.333333%;
+	}
 }
+
 .texture-item{
 	border: 4px solid #6a3e26;
 	border-radius: 30px;
 	box-sizing: border-box;
-	padding: 10px 5px;
-}
-.texture-item-background{
+	padding:5px;
 	background-image: url('../img/custom/down.png');
 	background-position: bottom;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+	.texture-item{
+		padding:10px 5px;
+	}
 }
 .texture-item:hover{
 	cursor: pointer;
@@ -428,19 +455,30 @@ img{
 }
 .texture-item figcaption{
 	font-family: "A-OTF-M";
-	font-size: 18px;
+	font-size: 16px;
 	text-align: center;
-	padding: 10px 0 30px;
+	padding: 10px 0 20px;
 	color: #744934;
 }
-
+@media screen and (min-width: 768px) {
+	.texture-item figcaption{
+		font-size: 18px;
+		padding: 10px 0 30px;
+	}
+}
 /*側邊選單第二區*/
 .fruite-item{
 	text-align: center;
 }
 .fruite-item img{
-	max-height: 47px;
+	max-height: 80px;
 }
+@media screen and (min-width: 768px;) {
+	.fruite-item img{
+		max-height: 47px;
+	}
+}
+
 .range-area{
 	padding: 10px 0;
 }
