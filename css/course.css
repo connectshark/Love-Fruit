@@ -51,7 +51,9 @@
   color: #fff;
   font-size: 40px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 80px;
 }
 
 .welcom-wrap .group-title:after {
@@ -69,7 +71,9 @@
   color: #fff;
   font-size: 40px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 80px;
 }
 
 .welcom-wrap .general-title:after {
@@ -87,7 +91,9 @@
   color: #6a3e26;
   font-size: 16px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 32px;
 }
 
 .welcom-wrap .group-subtitle:after {
@@ -105,7 +111,9 @@
   color: #6a3e26;
   font-size: 16px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 32px;
 }
 
 .welcom-wrap .general-subtitle:after {
