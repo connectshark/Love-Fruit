@@ -37,7 +37,8 @@
         .wrap{
             display: flex;
             flex-flow: row wrap;
-            align-items: center;            
+            align-items: center;
+            justify-content: center;          
         }
 
         .popsicle{
@@ -49,6 +50,7 @@
             padding: 50px;
 
             .mainhead{
+                width: 100%;
                 display: flex;
                 flex-flow: row wrap; 
             }
@@ -59,18 +61,27 @@
                 font-size: 40px;
                 font-family: 'A-OTF-M';
                 color: #434343;
-                padding-right:50px; 
                 border-right: 5px solid #6bdbda;
             }
 
             .stage-value{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+
                 .value-item{
-                    font-size: 16px;                    
+                    width: 100%;
+                    font-size: 18px;
+                    display: flex;
+                    flex-flow: row wrap;
+                    
+                    .item-name{
+                        text-align: center;
+                    }
                 }
 
-                .bar{
-                    width: 100px;
-                    height: 30px;
+                .value-bar{
+                    height: 20px;
                     background-color: #f8c3cd;
                 }
             }
@@ -80,18 +91,62 @@
     .stage.single{
         border-top: 10px solid #754c24;
         background: #f6c555 url(../img/qa/cover.png) top left;
+
+        .sour{
+            width: 100%;
+        }
+        .sweet{
+            width: 20%;
+        }
+
+        .bitter{
+            width: 40%;
+        }
     }
     
     .stage.firstlove{
         background: #6bdbda url(../img/qa/cover.png) top left;
+
+        .sour{
+            width: 30%;
+        }
+        .sweet{
+            width: 60%;
+        }
+
+        .bitter{
+            width: 20%;
+        }
     }
     
     .stage.infatuation{
         background: #f8c3cd url(../img/qa/cover.png) top left;
+
+        .sour{
+            width: 20%;
+        }
+        .sweet{
+            width: 100%;
+        }
+
+        .bitter{
+            width: 10%;
+        }
     }
     
     .stage.break{
-        background: #9dc5f6 url(../img/qa/cover.png) top left;        
+        background: #9dc5f6 url(../img/qa/cover.png) top left;
+        
+        .sour{
+            width: 30%;
+        }
+        .sweet{
+            width: 10%;
+        }
+
+        .bitter{
+            width: 100%;
+        }
     }
 
 

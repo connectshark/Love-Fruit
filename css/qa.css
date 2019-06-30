@@ -63,6 +63,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .page-qa .stage .popsicle {
@@ -75,6 +78,7 @@
 }
 
 .page-qa .stage .content .mainhead {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,17 +95,40 @@
   font-size: 40px;
   font-family: 'A-OTF-M';
   color: #434343;
-  padding-right: 50px;
   border-right: 5px solid #6bdbda;
 }
 
-.page-qa .stage .content .stage-value .value-item {
-  font-size: 16px;
+.page-qa .stage .content .stage-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.page-qa .stage .content .stage-value .bar {
-  width: 100px;
-  height: 30px;
+.page-qa .stage .content .stage-value .value-item {
+  width: 100%;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.page-qa .stage .content .stage-value .value-item .item-name {
+  text-align: center;
+}
+
+.page-qa .stage .content .stage-value .value-bar {
+  height: 20px;
   background-color: #f8c3cd;
 }
 
@@ -110,15 +137,63 @@
   background: #f6c555 url(../img/qa/cover.png) top left;
 }
 
+.page-qa .stage.single .sour {
+  width: 100%;
+}
+
+.page-qa .stage.single .sweet {
+  width: 20%;
+}
+
+.page-qa .stage.single .bitter {
+  width: 40%;
+}
+
 .page-qa .stage.firstlove {
   background: #6bdbda url(../img/qa/cover.png) top left;
+}
+
+.page-qa .stage.firstlove .sour {
+  width: 30%;
+}
+
+.page-qa .stage.firstlove .sweet {
+  width: 60%;
+}
+
+.page-qa .stage.firstlove .bitter {
+  width: 20%;
 }
 
 .page-qa .stage.infatuation {
   background: #f8c3cd url(../img/qa/cover.png) top left;
 }
 
+.page-qa .stage.infatuation .sour {
+  width: 20%;
+}
+
+.page-qa .stage.infatuation .sweet {
+  width: 100%;
+}
+
+.page-qa .stage.infatuation .bitter {
+  width: 10%;
+}
+
 .page-qa .stage.break {
   background: #9dc5f6 url(../img/qa/cover.png) top left;
+}
+
+.page-qa .stage.break .sour {
+  width: 30%;
+}
+
+.page-qa .stage.break .sweet {
+  width: 10%;
+}
+
+.page-qa .stage.break .bitter {
+  width: 100%;
 }
 /*# sourceMappingURL=qa.css.map */
