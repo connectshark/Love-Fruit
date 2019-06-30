@@ -7,17 +7,20 @@ body{
     font-family: "GenJyuuGothic-R";
 }
 //共用區
+$bg-pink:#ffd9d9;
+$bg-yellow:#f6c555;
 @include out-Line-Font(group-title,#fff,28px,5px,#6a3e26,揪團課程);
 @include out-Line-Font(general-title,#fff,28px,5px,#6a3e26,一般課程);
 @include out-Line-Font(group-subtitle,#6a3e26,12px,3px,#fff8e4,不定時開課);
 @include out-Line-Font(general-subtitle,#fff8e4,12px,3px,#6a3e26,每日固定開課);
+@include out-Line-Font(message-title,#fff,34px,5px,#6a3e26,揪團留言板);
 .group-title,.general-title,.group-subtitle,.general-subtitle{
     z-index: 1;
 }
 
 
 .welcome-wrap{
-    background-color: #ffd9d9;
+    background-color:$bg-pink;
     font-family: "GenJyuuGothic-B";
         .wrapper{
             margin: auto;
@@ -92,7 +95,7 @@ body{
 }
 
 .general-wrap{
-    background-color: #ffd9d9;
+    background-color: $bg-pink;
     
     .wrapper{
         max-width: 1200px; 
@@ -268,5 +271,204 @@ body{
 
 
 .group-wrap{
-    
+    background-color: $bg-pink;
+    .wrapper{
+        max-width: 1200px; 
+        padding-top:40%;
+        padding-bottom:10%;
+        margin: auto;
+
+        @include rwd(desktop){
+            padding-top: 20%;
+        }
+        
+        .group-item{
+            width: 70%;
+            position: relative;
+            text-align:center; 
+            margin: auto;
+                @include rwd(desktop){
+                    width: 30%;
+                }
+
+                img{
+                    width: 100%;
+                }
+
+                .title{
+                    position:absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                        @include rwd(desktop){
+                        font-size: 40px
+                        }
+                }
+
+                .subtitle{
+                    position:absolute;
+                    top:15%;
+                    right: 12%;
+                    transform:rotate(27deg);
+                    @include rwd(medium){
+                    top:19%;
+                    right: 13%;
+                    transform:rotate(29deg);
+                    }
+                    @include rwd(desktop){
+                    top:20%;
+                    right: 14%;
+                    transform:rotate(30deg);
+                    font-size: 14px;
+                    }
+                }
+            
+        }
+        .line{
+            width: 40%;
+            margin: auto;
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            margin-top:-5%;
+
+            img{
+                width: 70%;
+                @include rwd(desktop){
+                    width: 40%;
+                }
+            }
+            
+        }
+        .info{
+        background-color: #fff0f4;
+        border: #de5673 solid 5px;
+        border-radius: 20px;
+        width: 90%;
+        margin: auto;
+
+        .group-name{
+            background-color:#de5673 ;
+            border-radius: 20px;
+            width: 80%;
+            margin: auto ;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            transform: translateY(-50%);
+                @include rwd(desktop){
+                    width: 40%;
+                }
+                h2{
+                    font-size: 18px;
+                    color: #fff;
+                    @include rwd(desktop){
+                        font-size: 24px;
+                        
+                    }
+                }
+            }
+            .info-box{
+                @include rwd(desktop){
+                    display: flex;
+                }
+
+                .diy-img{
+                width: 80%;
+                margin: auto;
+                    img{
+                        width: 100%;
+                    }
+                    @include rwd(desktop){
+                    width: 50%;
+                    padding: 5%;
+                    }
+                }
+                        
+                .diy-content{
+                    width: 80%;
+                    margin: auto;
+                    @include rwd(desktop){
+                        width: 50%;
+                        padding: 5%;
+                    }
+                    .info-subtitle{
+                        background-color: #ffd365;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        margin: 10px 0;
+                        h4{
+                            font-size: 18px;
+                        }
+                    }
+                    .info-dec{
+                        li{
+                            font-size: 18px;
+                            font-family: "GenJyuuGothic-B";
+                            padding:10px 0 5px;
+                        }
+                        p{
+                            font-size: 13px;
+                            letter-spacing: 1px;
+                            line-height: 15px;
+                            @include rwd(desktop){
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+            .course-btn{
+                padding: 5% 0;
+                    .course-ice-btn-out{
+                    margin: auto;
+                    @include ice-btn-out(135px,40px);
+                    .course-ice-btn-in{
+                        @include ice-btn-in(128px,34px);
+                        line-height: 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+//course-group
+.course-message{
+        background-color: $bg-yellow;
+        height: 1080px;
+        background-image: url(../img/background.png);
+       .dividing{
+           width: 100%;
+           height: 20px;
+           background-color: #ffb11b;
+       }
+       .second-title{
+            padding: 5% 0;
+            position: relative;
+            text-align:center; 
+            margin: auto;
+            @include rwd(desktop){
+                width: 70%;
+            }
+            img{
+                width: 70%;
+                @include rwd(desktop){
+                    width: 60%;
+                }
+            }
+           h3{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-78%);
+                @include rwd(mobile){
+                    font-size: 20px;
+                }
+            }
+       }
 }
