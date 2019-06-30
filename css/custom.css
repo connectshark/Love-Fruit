@@ -373,29 +373,39 @@ img{
 	font-size: 36px;
 	text-align: center;
 }
+
+
+/*側邊選單第一區*/
 .select-item{
-	width: 50%;
 	float: left;
 	box-sizing: border-box;
 	padding: 20px 10px;
 }
-.select-item figure{
+.select-item-4{
+	width: 50%;
+}
+.select-item-6{
+	width: 33.333333%;
+}
+.texture-item{
 	border: 4px solid #6a3e26;
 	border-radius: 30px;
+	box-sizing: border-box;
+	padding: 10px 5px;
+}
+.texture-item-background{
 	background-image: url('../img/custom/down.png');
 	background-position: bottom;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
-	box-sizing: border-box;
-	padding: 10px 5px;
 }
-.select-item figure:hover{
+.texture-item:hover{
 	cursor: pointer;
 }
-.select-item figure:hover img{
+.texture-item:hover img{
 	background-color: #db4d6d;
 }
-.select-item figure img{
+.texture-item img{
 	width: 80%;
 	margin: auto;
 	background-color: #ffa4b5;
@@ -406,13 +416,25 @@ img{
 	transition-property: background-color;
 	transition-duration: .5s;
 }
-.select-item figcaption{
+.texture-item figcaption{
 	font-family: "A-OTF-M";
 	font-size: 18px;
 	text-align: center;
 	padding: 10px 0 30px;
 	color: #744934;
 }
+
+/*側邊選單第二區*/
+.fruite-item{
+	text-align: center;
+}
+.fruite-item img{
+	max-height: 47px;
+}
+
+
+
+
 .clearfix{
 	clear: both;
 }
