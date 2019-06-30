@@ -74,7 +74,7 @@
 
 .page-qa .stage .content {
   background-color: #fff8e4;
-  padding: 50px;
+  padding: 10px;
 }
 
 .page-qa .stage .content .mainhead {
@@ -86,6 +86,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  margin-bottom: 30px;
 }
 
 .page-qa .stage .content .stage-title {
@@ -130,6 +131,32 @@
 .page-qa .stage .content .stage-value .value-bar {
   height: 20px;
   background-color: #f8c3cd;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.page-qa .stage .content .prod-name {
+  padding: 10px;
+  background-color: #fad689;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #6a3e26;
+}
+
+.page-qa .stage .content .subhead {
+  width: 100px;
+  padding: 10px;
+  background-color: #f596aa;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.page-qa .stage .content .desc {
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .page-qa .stage.single {
@@ -195,5 +222,11 @@
 
 .page-qa .stage.break .bitter {
   width: 100%;
+}
+
+@media all and (min-width: 769px) {
+  .page-qa .stage .content {
+    padding: 50px;
+  }
 }
 /*# sourceMappingURL=qa.css.map */
