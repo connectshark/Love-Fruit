@@ -254,9 +254,17 @@
 .panel-button-bottom {
   width: 38%;
   height: 42%;
-  border-radius: 10%;
+  border-radius: 20%;
   border: 4px solid #6a3e26;
+  background-color: #bd9c64;
+}
+.panel-button-center {
+  width: 100%;
+  height: 92%;
+  border-radius: 20%;
   background-color: #f3e6c4;
+}
+.panel-button-center-triangle {
 }
 .ice-panel h3 {
   font-family: "A-OTF-M";
