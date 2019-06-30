@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* 文字-本地端連結 */
 /*A-OTF日文*/
 @font-face {
@@ -19,6 +18,9 @@
   font-family: "GenJyuuGothic-R";
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
+* {
+  /* outline: 1px solid #f00; */
+}
 /*第一屏幕*/
 .index-hero-bgc {
   background: linear-gradient(
@@ -28,7 +30,8 @@
   );
   position: relative;
   width: 100%;
-  padding-bottom: 66%;
+  padding-bottom: 56%;
+  z-index: 1;
 }
 .mountain {
   width: 100%;
@@ -40,14 +43,14 @@
   width: 100%;
 }
 .cloud {
-  position: absolute;
+  position: relative;
+  left: 0%;
+  top: 0%;
   z-index: 2;
 }
 .cloud img {
-  position: absolute;
-  display: inline-block;
+  width: 20%;
 }
-
 .heroIce {
   margin: auto;
   width: 50%;
@@ -64,9 +67,191 @@
   position: absolute;
   z-index: 3;
 }
-=======
-body {
-  background: white;
+/*第二屏幕*/
+.index-qa-bgc {
+  position: relative;
+  /* background-image: url(../img/indexImg/QaBgc.png);*/
+  width: 100%;
+  z-index: 2;
+  padding-bottom: 54%;
 }
-/*# sourceMappingURL=index.css.map */
->>>>>>> master
+.qabgc-top {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: -34%;
+}
+.love-qa {
+  position: absolute;
+  width: 28%;
+  top: -10%;
+  left: 38%;
+}
+.love-icon1 {
+  padding-top: 1%;
+  display: inline-block;
+  width: 20%;
+}
+.love-icon1 img {
+  width: 100%;
+}
+.index-title1 {
+  padding-top: 1%;
+  margin-left: 1%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+}
+.love-qa h2 {
+  font-family: "A-OTF-M";
+  font-size: 55px;
+  color: #ff8f8f;
+  letter-spacing: 4px;
+  margin-bottom: 3%;
+}
+.love-qa span {
+  color: #777777;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-family: "GenJyuuGothic-R";
+}
+
+.mailer-top {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 7%;
+  z-index: 3;
+}
+.mailer-middle {
+  position: absolute;
+  left: 33%;
+  z-index: 4;
+  top: 5%;
+  width: 33%;
+  height: 40%;
+  border-radius: 3%;
+  text-align: center;
+  border: 4px solid #6a3e26;
+  background-color: #f9f1d2;
+}
+.mailer-qa-box {
+  margin-top: 4%;
+  display: inline-block;
+  width: 70%;
+  height: 50%;
+  line-height: 120%;
+  border-radius: 3%;
+  border: 4px solid #6a3e26;
+  background-color: #ffffff;
+}
+.mailer-qa-box h3 {
+  margin-top: 8%;
+  padding: 7%;
+  font-family: "GenJyuuGothic-B";
+  color: #ea7187;
+  font-size: 20px;
+  text-align: left;
+  letter-spacing: 2px;
+  line-height: 26px;
+  text-align: justify;
+}
+.mailer-bottom {
+  position: absolute;
+  width: 40%;
+  top: 42%;
+  left: 30%;
+  z-index: 5;
+}
+.qabgc-bottom {
+  width: 100%;
+  top: -13%;
+  position: absolute;
+  z-index: -1;
+}
+/*第三屏幕*/
+.index-cp-bgc {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  padding-bottom: 54%;
+}
+.love-cp {
+  position: absolute;
+  width: 28%;
+  top: -1%;
+  left: 37%;
+  z-index: 5;
+}
+.love-icon2 {
+  padding-top: 1%;
+  display: inline-block;
+  width: 20%;
+}
+.love-icon2 img {
+  width: 100%;
+}
+.index-title2 {
+  padding-top: 1%;
+  margin-left: 1%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+}
+.love-cp h2 {
+  font-family: "A-OTF-M";
+  font-size: 55px;
+  color: #ff8f8f;
+  letter-spacing: 4px;
+  margin-bottom: 3%;
+}
+.love-cp span {
+  color: #777777;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-family: "GenJyuuGothic-R";
+}
+.diyIcebgc-top {
+  position: absolute;
+  width: 100%;
+  top: -35%;
+  z-index: 4;
+}
+.c-p-store {
+  position: absolute;
+  width: 45%;
+  left: 27.5%;
+  top: 15%;
+  z-index: 5;
+}
+.diy-ice-bgc {
+  position: absolute;
+  width: 100%;
+  top: 9.5%;
+  z-index: 4;
+}
+.ice-panel {
+  padding-top: 10px;
+  position: absolute;
+  z-index: 7;
+  width: 12%;
+  height: 30%;
+  top: 27%;
+  left: 55.8%;
+  border-radius: 5%;
+  text-align: center;
+  border: 4px solid #6a3e26;
+  background-color: #ffffff;
+}
+.ice-panel h3 {
+  font-family: "A-OTF-M";
+  font-size: 20px;
+  color: #6a3e26;
+}
+.model-general {
+  position: absolute;
+  z-index: 6;
+  top: 24%;
+  width: 13%;
+  left: 37%;
+}
