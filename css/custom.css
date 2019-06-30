@@ -12,7 +12,7 @@ img{
 	max-width: 1200px;
 	margin: auto;
 	box-sizing: border-box;
-	padding: 145px 0;
+	padding: 45px 0 0;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: flex-start;
@@ -20,6 +20,7 @@ img{
 @media screen and (min-width: 768px) {
 	.custom{
 		flex-flow: row nowrap;
+		padding: 145px 0;
 	}
 }
 
@@ -171,9 +172,12 @@ img{
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	order: -1;
+	padding: 10px 0;
 }
 @media screen and (min-width: 768px) {
 	.mood{
+		order: 0;
 		flex-flow: row nowrap;
 	}
 }
