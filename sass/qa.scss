@@ -1,5 +1,9 @@
 @import 'mixin/mixin';
 
+*{
+    box-sizing: border-box;
+}
+
 .page-qa{
     font-family: "GenJyuuGothic-R";
     background-color: #ffe8e8;
@@ -32,7 +36,8 @@
 
         .wrap{
             display: flex;
-            align-items: center;
+            flex-flow: row wrap;
+            align-items: center;            
         }
 
         .popsicle{
@@ -43,13 +48,18 @@
             background-color: #fff8e4;
             padding: 50px;
 
+            .mainhead{
+                display: flex;
+                flex-flow: row wrap; 
+            }
+
             .stage-title{
                 -webkit-writing-mode: vertical-lr;
                 writing-mode: vertical-lr;
                 font-size: 40px;
                 font-family: 'A-OTF-M';
                 color: #434343;
-                padding-right:20px; 
+                padding-right:50px; 
                 border-right: 5px solid #6bdbda;
             }
         }
@@ -69,7 +79,7 @@
     }
     
     .stage.break{
-        background: #9dc5f6 url(../img/qa/cover.png) top left;
+        background: #9dc5f6 url(../img/qa/cover.png) top left;        
     }
 
 
