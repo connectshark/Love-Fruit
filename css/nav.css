@@ -9,6 +9,7 @@
   src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
 }
 /*思源圓黑體*/
+
 @font-face {
   font-family: "GenJyuuGothic-B";
   src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
@@ -18,7 +19,9 @@
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
 /*Css寫 -> font-family: "什麼字型";*/
-
+* {
+  /* outline: 1px solid #f00; */
+}
 /*header*/
 /*清除*/
 @media screen and (max-width: 768px) {
@@ -28,24 +31,21 @@
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
-    z-index: 10;
+    z-index: 99;
   }
-  .nav_window {
+  .nav-item-icom {
     display: none;
   }
-  .nav_item_icom {
-    display: none;
-  }
-  .item_group {
+  .item-group {
     display: flex;
     flex-flow: column nowrap;
   }
-  .ＭpNavBar-Mp {
+  .nav-bar-mp {
     width: 100%;
     position: relative;
     z-index: -98;
   }
-  .nav_item {
+  .nav-item {
     padding-top: 150px;
     order: 1;
     position: absolute;
@@ -60,19 +60,19 @@
     height: calc(100vh - 46px);
     transition: 1s;
   }
-  .shoppingCartIconMp {
+  .shopping-cart-icon-mp {
     position: absolute;
     top: 18px;
     left: 4%;
   }
-  .nav_item_show {
+  .nav-item-show {
     left: 0%;
     transition: 1s;
   }
-  .nav_list li {
+  .nav-list li {
     margin-bottom: 30px;
   }
-  .logo_item {
+  .logo-item {
     top: 20%;
     left: 25%;
     bottom: 0;
@@ -87,7 +87,7 @@
     margin: auto;
     width: 60%;
   }
-  .logo_item img {
+  .logo-item img {
     width: 80%;
   }
   /* 漢堡選單 */
@@ -137,10 +137,10 @@
     bottom: 16px;
     transform: rotate(-220deg);
   }
-  .nav_text span {
+  .nav-text span {
     position: relative;
   }
-  .nav_text span::before {
+  .nav-text span::before {
     content: "";
     position: absolute;
     right: 3px;
@@ -150,15 +150,15 @@
     width: 100%;
     transform: scale(0);
   }
-  .nav_list li:hover span::before {
+  .nav-list li:hover span::before {
     transform: scale(1);
     transition: 0.5s;
   }
-  .nav_list li:hover .nav_text img {
+  .nav-list li:hover .nav-text img {
     opacity: 1;
     transition: 0.5s;
   }
-  .nav_list img {
+  .nav-list img {
     display: none;
     width: 15%;
     margin-right: 5px;
@@ -166,7 +166,7 @@
     position: relative;
     top: 1px;
   }
-  .nav_text {
+  .nav-text {
     text-decoration: none;
     font-family: "A-OTF-M";
     letter-spacing: 2px;
@@ -182,12 +182,12 @@
     background-image: url("../img/navBar/headerbgi.png");
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 0;
+    z-index: 99;
   }
-  .shoppingCartIconMp {
+  .shopping-cart-icon-mp {
     display: none;
   }
-  .ＭpNavBar-Mp {
+  .nav-bar-mp {
     display: none;
   }
   .hb {
@@ -196,10 +196,10 @@
   .nav_window {
     display: inline-block;
   }
-  .nav_item_icom {
+  .nav-item-icom {
     display: inline-block;
   }
-  .item_group {
+  .item-group {
     padding: 20px 0 0 0;
     width: 100%;
     height: 125px;
@@ -210,31 +210,35 @@
     position: relative;
     align-items: flex-start;
   }
-  .logo_item {
+  .logo-item {
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     order: 0;
     margin: auto;
-    width: 700px;
-    position: relative;
-    margin: 0 20px 0 20px;
+    width: 260px;
+    position: absolute;
   }
-  .logo_item img {
+  .logo-item img {
     width: 100%;
   }
-  .nav_item {
+  .nav-item {
+    display: flex;
+    justify-content: space-between;
     order: 0;
     width: 100%;
-    max-width: 600px;
     z-index: 0;
   }
-  .nav_list {
+  .nav-list {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
   }
-  .nav_text span {
+  .nav-text span {
     position: relative;
   }
-  .nav_text span::before {
+  .nav-text span::before {
     content: "";
     position: absolute;
     right: 3px;
@@ -244,18 +248,18 @@
     width: 100%;
     transform: scale(0);
   }
-  .nav_list_Mp {
-    display: none;
+  .nav-list-mp {
+    transform: translateX(-25px);
   }
-  .nav_list li:hover span::before {
+  .nav-list li:hover span::before {
     transform: scale(1);
     transition: 0.5s;
   }
-  .nav_list li:hover .nav_text img {
+  .nav-list li:hover .nav-text img {
     opacity: 1;
     transition: 0.5s;
   }
-  .nav_list img {
+  .nav-list img {
     display: inline-block;
     width: 15%;
     margin-right: 5px;
@@ -263,21 +267,22 @@
     position: relative;
     top: 1px;
   }
-  .nav_item_icom {
+  .nav-item-icom {
+    margin-right: 35px;
     position: relative;
     width: 60%;
     display: flex;
     justify-content: space-between;
     flex-flow: row nowrap;
   }
-  .memberIcon {
+  .member-icon {
     margin-right: 20%;
   }
-  .nav_item_icom img {
+  .nav-item-icom img {
     width: 30px;
     opacity: 1;
   }
-  .nav_text {
+  .nav-text {
     text-decoration: none;
     font-family: "A-OTF-M";
     letter-spacing: 2px;
