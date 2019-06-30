@@ -174,7 +174,7 @@
   position: relative;
   width: 100%;
   z-index: 3;
-  padding-bottom: 54%;
+  padding-bottom: 56%;
 }
 .love-cp {
   position: absolute;
@@ -227,7 +227,7 @@
 .diy-ice-bgc {
   position: absolute;
   width: 100%;
-  top: 9.5%;
+  top: 7.5%;
   z-index: 4;
 }
 .ice-panel {
@@ -241,12 +241,28 @@
   border-radius: 5%;
   text-align: center;
   border: 4px solid #6a3e26;
-  background-color: #ffffff;
+  background-color: #f3e6c4;
+}
+.panel-button-item-group {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+  height: 70%;
+}
+.panel-button-bottom {
+  width: 38%;
+  height: 42%;
+  border-radius: 10%;
+  border: 4px solid #6a3e26;
+  background-color: #f3e6c4;
 }
 .ice-panel h3 {
   font-family: "A-OTF-M";
   font-size: 20px;
   color: #6a3e26;
+  margin-bottom: 3%;
 }
 .model-general {
   position: absolute;
