@@ -75,7 +75,7 @@ body{
                         }
                     }
                 }
-
+            //背景圖看板
                 // .general-item{
                 //     background-image: url("../img/course/kanban-general.png");
                 //     background-repeat:no-repeat;
@@ -93,52 +93,57 @@ body{
 
 .general-wrap{
     background-color: #ffd9d9;
-    height: 1080px; 
+    
     .wrapper{
         max-width: 1200px; 
-        padding-top: 200px;
+        padding-top:40%;
+        padding-bottom:10%;
         margin: auto;
+
         @include rwd(desktop){
-            padding-top: 300px;
+            padding-top: 20%;
         }
-        // margin:auto;
-            .item{
-                width: 70%;
-                position: relative;
-                text-align:center; 
-                margin: auto;
+        
+        .general-item{
+            width: 70%;
+            position: relative;
+            text-align:center; 
+            margin: auto;
                 @include rwd(desktop){
-                    width: 40%;
-            }
-            img{
-                width: 100%;
-            }
-            .title{
-                position:absolute;
-                top:50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                    @include rwd(desktop){
-                    font-size: 40px
-                    }
-            }
-            .subtitle{
-                position:absolute;
-                top:15%;
-                right: 12%;
-                transform:rotate(27deg);
-                @include rwd(medium){
-                top:19%;
-                right: 13%;
-                transform:rotate(29deg);
-               }
-                @include rwd(desktop){
-                top:20%;
-                right: 14%;
-                transform:rotate(30deg);
-                font-size: 14px;
+                    width: 30%;
                 }
-            }
+
+                img{
+                    width: 100%;
+                }
+
+                .title{
+                    position:absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                        @include rwd(desktop){
+                        font-size: 40px
+                        }
+                }
+
+                .subtitle{
+                    position:absolute;
+                    top:15%;
+                    right: 12%;
+                    transform:rotate(27deg);
+                    @include rwd(medium){
+                    top:19%;
+                    right: 13%;
+                    transform:rotate(29deg);
+                    }
+                    @include rwd(desktop){
+                    top:20%;
+                    right: 14%;
+                    transform:rotate(30deg);
+                    font-size: 14px;
+                    }
+                }
             
         }
         .line{
@@ -150,70 +155,118 @@ body{
             margin-top:-5%;
 
             img{
-                width: 80%;
+                width: 70%;
                 @include rwd(desktop){
-                    width: 60%;
+                    width: 40%;
                 }
             }
             
         }
-    
-    }
-    .info{
-       background-color: #fff0f4;
-       border: #de5673 solid 5px;
-       border-radius: 20px;
-       width: 90%;
-       margin: auto;
-       .name-box{
-        background-color:#de5673 ;
+        .info{
+        background-color: #fff0f4;
+        border: #de5673 solid 5px;
         border-radius: 20px;
-        width: 60%;
-        margin: auto ;
-        text-align: center;
-        height: 50px;
-        line-height: 50px;
-        transform: translateY(-50%);
-            h2{
-                color: #fff;
+        width: 90%;
+        margin: auto;
+
+        .general-name{
+            background-color:#de5673 ;
+            border-radius: 20px;
+            width: 60%;
+            margin: auto ;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            transform: translateY(-50%);
+                @include rwd(desktop){
+                    width: 40%;
+                }
+                h2{
+                    
+                    color: #fff;
+                    @include rwd(desktop){
+                        font-size: 24px;
+                        
+                    }
+                }
             }
-       }
-
-       .diy-img{
-           width: 80%;
-           margin: auto;
-           img{
-               width: 100%;
-           }
-       }
-
-       .diy-content{
-           width: 80%;
-           margin: auto;
-           
-           .info-subtitle{
-               background-color: #ffd365;
-               height: 30px;
-               line-height: 30px;
-               text-align: center;
-               margin: 10px 0;
-               h4{
-                   font-size: 18px;
-               }
-           }
-           .info-dec{
-            　　 
-                li{
-                    list-style-image:url('img/btn/ICE.png');
-                    font-size: 16px;
+            .info-box{
+                @include rwd(desktop){
+                    display: flex;
                 }
-                p{
-                    font-size: 13px;
-                    letter-spacing: 1px;
+
+                .diy-img{
+                width: 80%;
+                margin: auto;
+                    img{
+                        width: 100%;
+                    }
+                    @include rwd(desktop){
+                    width: 50%;
+                    padding: 5%;
+                    }
                 }
-           }
-       }
-       
+                        
+                .diy-content{
+                    width: 80%;
+                    margin: auto;
+                    @include rwd(desktop){
+                        width: 50%;
+                        padding: 5%;
+                    }
+                    .info-subtitle{
+                        background-color: #ffd365;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        margin: 10px 0;
+                        h4{
+                            font-size: 18px;
+                        }
+                    }
+                    .info-dec{
+                        li{
+                            font-size: 18px;
+                            font-family: "GenJyuuGothic-B";
+                            padding:10px 0 5px;
+                        }
+                        p{
+                            font-size: 13px;
+                            letter-spacing: 1px;
+                            line-height: 15px;
+                            @include rwd(desktop){
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        
+
+            .course-btn{
+                padding: 5% 0;
+                    .course-ice-btn-out{
+                    margin: auto;
+                    @include ice-btn-out(135px,40px);
+                    .course-ice-btn-in{
+                        @include ice-btn-in(128px,34px);
+                        line-height: 34px;
+                    }
+                }
+            }
+            
+            
+
+        
+        }
     }
+    
+} 
+
+
+.group-wrap{
     
 }
