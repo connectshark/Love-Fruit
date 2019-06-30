@@ -20,7 +20,7 @@
 }
 /*Css寫 -> font-family: "什麼字型";*/
 * {
-  /* outline: 1px solid #f00; */
+  outline: 1px solid #f00;
 }
 /*header*/
 /*清除*/
@@ -98,7 +98,7 @@
     box-sizing: border-box;
     margin-left: auto;
     position: relative;
-    bottom: 23px;
+    bottom: 30%;
     right: 4%;
   }
   .hb .bar {
