@@ -104,10 +104,19 @@
   font-size: 18px;
 }
 
-.shop-btn {
+.shop-btn div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 50%;
+}
+
+.shop-btn div input[type="button"] {
+  background-color: #6A3E26;
+  border-radius: 10px;
+  width: 40px;
+  height: 70px;
+  border: 0px;
 }
 
 .page-shop {

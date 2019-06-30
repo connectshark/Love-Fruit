@@ -109,8 +109,22 @@
     }
 }
 %shop-btn{
-    display: flex;
+    // display: flex;
+    div{
+        display: flex;
+        width: 50%;
+        input[type="button"]{
+            background-color: #6A3E26;
+            border-radius:10px;
+            width: 40px;
+            height: 70px; 
+            border:0px; 
+        }
+    }
 }
+// %btn-numbox{
+    
+// }
 
 
 $mb : 768px;
@@ -217,6 +231,9 @@ $dsk : 997px;
     }
     .shop-btn{
     @extend %shop-btn;
+        // .btn-numbox{
+        //     @extend %btn-numbox;
+        // }
         .shop-btn-out{
             @include btn-out(115px , 30px);
             .shop-btn-in{
