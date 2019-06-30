@@ -69,7 +69,7 @@ img{
 	border-radius: 50%;
 }
 .custom-list-item{
-	position: relative;
+	transform: translateY(-5px);
 	top: -3px;
 	width: 100%;
 	display: flex;
@@ -126,8 +126,19 @@ img{
 	border-bottom: 2px solid #603813;
 	text-align: center;
 }
-
-
+.price-s-table{
+	width: 100%;
+}
+.price-s-table th,td{
+	padding: 10px 6px;
+	text-align: center;
+}
+.price-s-table th{
+	width: 40%;
+}
+.price-s-table td{
+	width: 60%;
+}
 
 
 /*主要客製*/

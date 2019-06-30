@@ -75,3 +75,32 @@
 //$width -> 外框粗細(ex:2px)
 //$shadow -> 外框顏色(ex:#fff)
 //$text -> 外框使用的字(與HTML中的文字相同)
+
+
+
+
+
+//格線系統
+@include rwd(mobile){
+  @for $i from 1 through 12 {
+    .col-#{$i}{
+      width: ($i / 12) * 100%;
+    }
+  }
+}
+
+@include rwd(medium){
+  @for $i from 1 through 12 {
+    .col-md-#{$i}{
+      width: ($i / 12) * 100%;
+    }
+  }
+}
+
+@include rwd(desktop){
+  @for $i from 1 through 12 {
+    .col-lg-#{$i}{
+      width: ($i / 12) * 100%;
+    }
+  }
+}

@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-@media all and (min-width: 997px) {
+@media all and (min-width: 992px) {
   .welcom-wrap .wrapper {
     margin: auto;
     display: -webkit-box;
