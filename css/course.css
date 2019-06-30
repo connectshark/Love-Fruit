@@ -173,9 +173,49 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      transform: translateY(150%); }
+      margin-top: -5%; }
       .general-wrap .wrapper .line img {
         width: 80%; }
         @media all and (min-width: 992px) {
           .general-wrap .wrapper .line img {
             width: 60%; } }
+  .general-wrap .info {
+    background-color: #fff0f4;
+    border: #de5673 solid 5px;
+    border-radius: 20px;
+    width: 90%;
+    margin: auto; }
+    .general-wrap .info .name-box {
+      background-color: #de5673;
+      border-radius: 20px;
+      width: 60%;
+      margin: auto;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      transform: translateY(-50%); }
+      .general-wrap .info .name-box h2 {
+        color: #fff; }
+    .general-wrap .info .diy-img {
+      width: 80%;
+      margin: auto; }
+      .general-wrap .info .diy-img img {
+        width: 100%; }
+    .general-wrap .info .diy-content {
+      width: 80%;
+      margin: auto; }
+      .general-wrap .info .diy-content .info-subtitle {
+        background-color: #ffd365;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin: 10px 0; }
+        .general-wrap .info .diy-content .info-subtitle h4 {
+          font-size: 18px; }
+      .general-wrap .info .diy-content .info-dec 　　
+li {
+        list-style-image: url("img/btn/ICE.png");
+        font-size: 16px; }
+      .general-wrap .info .diy-content .info-dec p {
+        font-size: 13px;
+        letter-spacing: 1px; }

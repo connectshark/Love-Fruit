@@ -147,7 +147,7 @@ body{
             display: flex;
             align-items:center;
             justify-content:center;
-            transform: translateY(150%);
+            margin-top:-5%;
 
             img{
                 width: 80%;
@@ -160,7 +160,60 @@ body{
     
     }
     .info{
+       background-color: #fff0f4;
+       border: #de5673 solid 5px;
+       border-radius: 20px;
+       width: 90%;
+       margin: auto;
+       .name-box{
+        background-color:#de5673 ;
+        border-radius: 20px;
+        width: 60%;
+        margin: auto ;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        transform: translateY(-50%);
+            h2{
+                color: #fff;
+            }
+       }
+
+       .diy-img{
+           width: 80%;
+           margin: auto;
+           img{
+               width: 100%;
+           }
+       }
+
+       .diy-content{
+           width: 80%;
+           margin: auto;
+           
+           .info-subtitle{
+               background-color: #ffd365;
+               height: 30px;
+               line-height: 30px;
+               text-align: center;
+               margin: 10px 0;
+               h4{
+                   font-size: 18px;
+               }
+           }
+           .info-dec{
+            　　 
+                li{
+                    list-style-image:url('img/btn/ICE.png');
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                }
+           }
+       }
        
     }
-
+    
 }
