@@ -104,6 +104,12 @@
   font-size: 18px;
 }
 
+.shop-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .shop-btn div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,12 +117,27 @@
   width: 50%;
 }
 
-.shop-btn div input[type="button"] {
+.shop-btn div .qtyminus {
   background-color: #6A3E26;
-  border-radius: 10px;
-  width: 40px;
-  height: 70px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  width: 25px;
+  height: 30px;
   border: 0px;
+}
+
+.shop-btn div .qtyplus {
+  background-color: #6A3E26;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 25px;
+  height: 30px;
+  border: 0px;
+}
+
+.shop-btn div .qty {
+  width: 65px;
+  height: 30px;
 }
 
 .page-shop {

@@ -51,7 +51,9 @@
   color: #fff;
   font-size: 40px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 80px;
 }
 
 .welcom-wrap .group-title:after {
@@ -62,13 +64,16 @@
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
 }
 
 .welcom-wrap .general-title {
   color: #fff;
   font-size: 40px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 80px;
 }
 
 .welcom-wrap .general-title:after {
@@ -79,13 +84,16 @@
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
 }
 
 .welcom-wrap .group-subtitle {
   color: #6a3e26;
   font-size: 16px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 32px;
 }
 
 .welcom-wrap .group-subtitle:after {
@@ -96,13 +104,16 @@
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-text-stroke: 5px #fff8e4;
 }
 
 .welcom-wrap .general-subtitle {
   color: #6a3e26;
   font-size: 16px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 32px;
 }
 
 .welcom-wrap .general-subtitle:after {
@@ -113,5 +124,6 @@
   top: 0;
   bottom: 0;
   right: 0;
+  -webkit-text-stroke: 5px #fff8e4;
 }
 /*# sourceMappingURL=course.css.map */

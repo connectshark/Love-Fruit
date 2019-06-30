@@ -109,16 +109,29 @@
     }
 }
 %shop-btn{
-    // display: flex;
+    display: flex;
     div{
         display: flex;
         width: 50%;
-        input[type="button"]{
+        .qtyminus{
             background-color: #6A3E26;
-            border-radius:10px;
-            width: 40px;
-            height: 70px; 
+            border-bottom-left-radius:20px;
+            border-top-left-radius:20px;
+            width: 25px;
+            height: 30px; 
             border:0px; 
+        }
+        .qtyplus{
+            background-color: #6A3E26;
+            border-bottom-right-radius:20px;
+            border-top-right-radius:20px;
+            width: 25px;
+            height: 30px; 
+            border:0px; 
+        }
+        .qty{
+            width: 65px;
+            height: 30px;
         }
     }
 }
@@ -231,9 +244,6 @@ $dsk : 997px;
     }
     .shop-btn{
     @extend %shop-btn;
-        // .btn-numbox{
-        //     @extend %btn-numbox;
-        // }
         .shop-btn-out{
             @include btn-out(115px , 30px);
             .shop-btn-in{

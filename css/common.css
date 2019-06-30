@@ -1,131 +1,4 @@
 @charset "UTF-8";
-.btn-out {
-  width: 145px;
-  height: 40px;
-  border-radius: 25px;
-  background-color: white;
-  border: 2px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.btn-in {
-  width: 138px;
-  height: 34px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 2px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.btn-in:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.btn-in:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.btn-text {
-  color: white;
-  font-size: 16px;
-  position: relative;
-  text-align: center;
-}
-
-.btn-text:after {
-  z-index: -1;
-  content: "加入購物車";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.ice-btn-out {
-  width: 135px;
-  height: 40px;
-  border-radius: 25px;
-  background-color: white;
-  border: 2px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-  -webkit-box-shadow: 0px 3px #715124;
-          box-shadow: 0px 3px #715124;
-  position: relative;
-}
-
-.ice-btn-out:active {
-  -webkit-box-shadow: 0 1px black;
-          box-shadow: 0 1px black;
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
-}
-
-.ice-btn-in {
-  width: 128px;
-  height: 34px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 2px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.ice-btn-in:hover {
-  background-color: #fad689;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.ice-btn-text {
-  color: white;
-  font-size: 16px;
-  position: relative;
-  text-align: center;
-}
-
-.ice-btn-text:after {
-  z-index: -1;
-  content: "下一題";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.ice-img {
-  display: inline-block;
-  width: 38px;
-  height: 50px;
-  position: absolute;
-  left: -5px;
-  top: 0px;
-}
-
-.ice-img img {
-  width: 100%;
-}
-
 @font-face {
   font-family: "A-OTF-H";
   src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
@@ -154,6 +27,139 @@
 .btn-text {
   line-height: 32px;
   font-family: "A-OTF-M";
+}
+
+.btn-out {
+  display: block;
+  width: 70px;
+  height: 21px;
+  border-radius: 40px;
+  background-color: white;
+  border: 1.05px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.btn-out > span {
+  display: block;
+  width: 65.1px;
+  height: 16.8px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 1.05px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.btn-out > span:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.btn-out > span:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.btn-out .btn-in {
+  color: white;
+  font-size: 8px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 16px;
+}
+
+.btn-out .btn-in:after {
+  z-index: -1;
+  content: "加入購物車";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 2px black;
+}
+
+.ice-btn-out {
+  display: block;
+  width: 80px;
+  height: 24px;
+  border-radius: 25px;
+  background-color: white;
+  border: 1.2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.ice-btn-out > span {
+  display: block;
+  position: relative;
+  width: 74.4px;
+  height: 19.2px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 1.2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.ice-btn-out > span:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.ice-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 24px;
+  height: 28px;
+}
+
+.ice-btn-out .btn-in {
+  color: white;
+  font-size: 10px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 20px;
+}
+
+.ice-btn-out .btn-in:after {
+  z-index: -1;
+  content: "加入購物車";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px black;
 }
 
 @media all and (max-width: 768px) {
