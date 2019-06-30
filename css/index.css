@@ -1,0 +1,66 @@
+/* 文字-本地端連結 */
+/*A-OTF日文*/
+@font-face {
+  font-family: "A-OTF-H";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+}
+@font-face {
+  font-family: "A-OTF-M";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+}
+/*思源圓黑體*/
+
+@font-face {
+  font-family: "GenJyuuGothic-B";
+  src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+}
+@font-face {
+  font-family: "GenJyuuGothic-R";
+  src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+}
+/*第一屏幕*/
+.index-hero-bgc {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 248, 228, 1) 49%,
+    rgba(247, 161, 193, 1) 100%
+  );
+  position: relative;
+  width: 100%;
+  padding-bottom: 66%;
+}
+.mountain {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.mountain img {
+  padding-top: 20%;
+  width: 100%;
+}
+.cloud {
+  position: absolute;
+  z-index: 2;
+}
+.cloud img {
+  display: inline-block;
+  width: 6%;
+}
+
+.heroIce {
+  margin: auto;
+  top: 30%;
+  left: 30%;
+  position: absolute;
+  z-index: 3;
+}
+.sweetheart {
+  margin: auto;
+  top: 30%;
+  left: 30%;
+  position: absolute;
+  z-index: 3;
+}
+.heroIce {
+  /* width: 60%; */
+}
