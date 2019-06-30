@@ -5,9 +5,14 @@
   border-radius: 25px;
   background-color: white;
   border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  cursor: pointer; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
 
 .btn-in {
   width: 138px;
@@ -17,19 +22,27 @@
   border: 2px solid #e4575f;
   text-align: center;
   margin: auto;
-  cursor: pointer; }
-  .btn-in:hover {
-    background-color: #ffabb1;
-    transition-duration: .2s; }
-  .btn-in:active {
-    background-color: #db4d6d;
-    transition-duration: .2s; }
+  cursor: pointer;
+}
+
+.btn-in:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.btn-in:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
 
 .btn-text {
   color: white;
   font-size: 16px;
   position: relative;
-  text-align: center; }
+  text-align: center;
+}
 
 .btn-text:after {
   z-index: -1;
@@ -39,7 +52,8 @@
   top: 0;
   bottom: 0;
   right: 0;
-  -webkit-text-stroke: 2px white; }
+  -webkit-text-stroke: 2px white;
+}
 
 .ice-btn-out {
   width: 135px;
@@ -47,14 +61,24 @@
   border-radius: 25px;
   background-color: white;
   border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
-  box-shadow: 0px 3px #715124;
-  position: relative; }
-  .ice-btn-out:active {
-    box-shadow: 0 1px black;
-    transform: translateY(2px); }
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+  position: relative;
+}
+
+.ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
 
 .ice-btn-in {
   width: 128px;
@@ -64,16 +88,21 @@
   border: 2px solid #e4575f;
   text-align: center;
   margin: auto;
-  cursor: pointer; }
-  .ice-btn-in:hover {
-    background-color: #fad689;
-    transition-duration: .2s; }
+  cursor: pointer;
+}
+
+.ice-btn-in:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
 
 .ice-btn-text {
   color: white;
   font-size: 16px;
   position: relative;
-  text-align: center; }
+  text-align: center;
+}
 
 .ice-btn-text:after {
   z-index: -1;
@@ -83,7 +112,8 @@
   top: 0;
   bottom: 0;
   right: 0;
-  -webkit-text-stroke: 2px white; }
+  -webkit-text-stroke: 2px white;
+}
 
 .ice-img {
   display: inline-block;
@@ -91,30 +121,166 @@
   height: 50px;
   position: absolute;
   left: -5px;
-  top: 0px; }
-  .ice-img img {
-    width: 100%; }
+  top: 0px;
+}
+
+.ice-img img {
+  width: 100%;
+}
 
 @font-face {
   font-family: "A-OTF-H";
-  src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf); }
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+}
 
 @font-face {
   font-family: "A-OTF-M";
-  src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf); }
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+}
 
 /*思源圓黑體*/
 @font-face {
   font-family: "GenJyuuGothic-B";
-  src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf); }
+  src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+}
 
 @font-face {
   font-family: "GenJyuuGothic-R";
-  src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf); }
+  src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+}
 
 .ice-btn-text {
-  font-family: "A-OTF-M"; }
+  font-family: "A-OTF-M";
+}
 
 .btn-text {
   line-height: 32px;
-  font-family: "A-OTF-M"; }
+  font-family: "A-OTF-M";
+}
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33333%;
+}
+
+.col-5 {
+  width: 41.66667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33333%;
+}
+
+.col-8 {
+  width: 66.66667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+@media all and (min-width: 769px) {
+  .col-md-1 {
+    width: 8.33333%;
+  }
+  .col-md-2 {
+    width: 16.66667%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.33333%;
+  }
+  .col-md-5 {
+    width: 41.66667%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.33333%;
+  }
+  .col-md-8 {
+    width: 66.66667%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.33333%;
+  }
+  .col-md-11 {
+    width: 91.66667%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .col-lg-1 {
+    width: 8.33333%;
+  }
+  .col-lg-2 {
+    width: 16.66667%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33333%;
+  }
+  .col-lg-5 {
+    width: 41.66667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.33333%;
+  }
+  .col-lg-8 {
+    width: 66.66667%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.33333%;
+  }
+  .col-lg-11 {
+    width: 91.66667%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=common.css.map */

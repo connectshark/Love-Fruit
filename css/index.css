@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 文字-本地端連結 */
 /*A-OTF日文*/
 @font-face {
@@ -63,3 +64,9 @@
   position: absolute;
   z-index: 3;
 }
+=======
+body {
+  background: white;
+}
+/*# sourceMappingURL=index.css.map */
+>>>>>>> master

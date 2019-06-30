@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,IAAI,CAAA;EAAC,UAAU,EAAC,KAAK;CAAE",
+    "sources": [
+        "../node_modules/node-sass/test/fixtures/watching/index.scss",
+        "../node_modules/node-sass/test/fixtures/watching/white.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}
