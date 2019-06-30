@@ -6,12 +6,22 @@
 body{
     font-family: "GenJyuuGothic-R";
 }
+//共用區
+@include out-Line-Font(group-title,#fff,28px,5px,#6a3e26,揪團課程);
+@include out-Line-Font(general-title,#fff,28px,5px,#6a3e26,一般課程);
+@include out-Line-Font(group-subtitle,#6a3e26,12px,3px,#fff8e4,不定時開課);
+@include out-Line-Font(general-subtitle,#fff8e4,12px,3px,#6a3e26,每日固定開課);
+.group-title,.general-title,.group-subtitle,.general-subtitle{
+    z-index: 1;
+}
+
+
 .welcome-wrap{
     background-color: #ffd9d9;
     font-family: "GenJyuuGothic-B";
         .wrapper{
-            @include rwd(desktop){
-                margin: auto;
+            margin: auto;
+            @include rwd(medium){
                 display:flex;
                 align-items:center;
                 justify-content:center;
@@ -24,63 +34,133 @@ body{
             width: 100%;
             margin: auto;
                 .spaceship{
-                    width: 70%;
+                    width: 60%;
                     margin: auto;
                 }
                 img{
                     width: 100%;
                 }
-                .group-title,.general-title,.group-subtitle,.general-subtitle{
-                    z-index: 1;
-                }
+               
                 .item{
-                    height:200px;
-                    width: 80%;
+                    width: 70%;
                     position: relative;
-                    top: -50px;  
-                    line-height: 200px;
                     text-align:center; 
-                    @include rwd(desktop){
-                        height: 300px;
+                    transform: translateY(-15%);
+                    margin: auto;
+                    .title{
+                        position:absolute;
+                        top:50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        @include rwd(desktop){
+                          font-size: 40px
+                        }
+                    }
+
+                    .subtitle{
+                        position:absolute;
+                        top:15%;
+                        right: 12%;
+                        transform:rotate(27deg);
+                        @include rwd(medium){
+                        top:19%;
+                        right: 13%;
+                        transform:rotate(29deg);
+                        }
+                        @include rwd(desktop){
+                        top:20%;
+                        right: 14%;
+                        transform:rotate(30deg);
+                        font-size: 14px
+                        }
                     }
                 }
-                .general-item{
-                    width: 80%;
-                    background-image: url("../img/course/kanban-general.png");
-                    background-repeat:no-repeat;
-                    background-size: 100%;
-                    margin: auto;
-                }
-                .group-item{
-                    width: 80%;
-                    background-image: url("../img/course/kanban-group.png");
-                    background-repeat:no-repeat;
-                    position: relative;
-                    background-size: 100%;
-                    margin: auto;
-                }
-                h2{
-                    display: inline-block;
-                    margin: auto; 
-                }
-                span{
-                    position:absolute;
-                    transform:rotate(-3deg);
-                    display: inline-block;
-                }
+
+                // .general-item{
+                //     background-image: url("../img/course/kanban-general.png");
+                //     background-repeat:no-repeat;
+                //     background-position: center;
+                // }
+                // .group-item{
+                //     background-image: url("../img/course/kanban-group.png");
+                //     background-repeat:no-repeat;
+                //     background-position: center;
+                // }
+                
         }
-    @include out-Line-Font(group-title,#fff,40px,5px,#6a3e26,揪團課程);
-    @include out-Line-Font(general-title,#fff,40px,5px,#6a3e26,一般課程);
-    @include out-Line-Font(group-subtitle,#6a3e26,16px,3px,#fff8e4,不定時開課);
-    @include out-Line-Font(general-subtitle,#6a3e26,16px,3px,#fff8e4,每日固定開課);
+    
 }
 
 .general-wrap{
-
     background-color: #ffd9d9;
-    height: 1080px;
-    .info{
-        max-width: 1200px;
+    height: 1080px; 
+    .wrapper{
+        max-width: 1200px; 
+        padding-top: 200px;
         margin: auto;
+        @include rwd(desktop){
+            padding-top: 300px;
+        }
+        // margin:auto;
+            .item{
+                width: 70%;
+                position: relative;
+                text-align:center; 
+                margin: auto;
+                @include rwd(desktop){
+                    width: 40%;
+            }
+            img{
+                width: 100%;
+            }
+            .title{
+                position:absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                    @include rwd(desktop){
+                    font-size: 40px
+                    }
+            }
+            .subtitle{
+                position:absolute;
+                top:15%;
+                right: 12%;
+                transform:rotate(27deg);
+                @include rwd(medium){
+                top:19%;
+                right: 13%;
+                transform:rotate(29deg);
+               }
+                @include rwd(desktop){
+                top:20%;
+                right: 14%;
+                transform:rotate(30deg);
+                font-size: 14px;
+                }
+            }
+            
+        }
+        .line{
+            width: 40%;
+            margin: auto;
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            transform: translateY(150%);
+
+            img{
+                width: 80%;
+                @include rwd(desktop){
+                    width: 60%;
+                }
+            }
+            
+        }
+    
     }
+    .info{
+       
+    }
+
 }
