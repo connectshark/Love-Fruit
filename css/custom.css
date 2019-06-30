@@ -2,26 +2,45 @@ body{
 	background-image: url(../img/background.png);
 	background-repeat: repeat;
 	background-color: #e6b1ba;
+	font-family: "A-OTF-M";
 }
 img{
 	vertical-align: middle;
 }
 .custom{
-	height: 1080px;
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
 	box-sizing: border-box;
-	padding-top: 145px;
+	padding: 45px 0 0;
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
+	align-items: flex-start;
 }
+@media screen and (min-width: 768px) {
+	.custom{
+		flex-flow: row nowrap;
+		padding: 145px 0;
+	}
+}
+
 /*側邊清單列*/
 .custom-list{
-	width: 30%;
+	width: 90%;
+	margin:0 auto;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	order: 2;
+	margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+	.custom-list{
+		margin-top: 0;
+		width: 30%;
+		align-items: center;
+		order: 0;
+	}
 }
 .custom-list-scale{
 	width: 30%;
@@ -109,9 +128,10 @@ img{
 
 /*清單樣式*/
 .price-table{
+	transform: translateY(-5px);
 	width: 100%;
 	border: 10px solid #603813;
-	border-radius: 2px;
+	border-radius: 5px;
 	background-color: #fff8e4;
 	padding: 20px;
 	box-sizing: border-box;
@@ -139,14 +159,267 @@ img{
 .price-s-table td{
 	width: 60%;
 }
-
-
-/*主要客製*/
-.custom-main{
-	width: 40%;
+.price-s-table tfoot{
+	width: 90%;
+	margin: auto;
+	border-top: 2px dashed #603813;
 }
 
+
+/*表情*/
+.mood{
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	order: -1;
+	padding: 10px 0;
+}
+@media screen and (min-width: 768px) {
+	.mood{
+		order: 0;
+		flex-flow: row nowrap;
+	}
+}
+.face{
+	position: relative;
+	z-index: 1;
+}
+.progress{
+	height: 100px;
+	width: 90%;
+	background-color: #ffdee6;
+	border: 5px solid #6a3e26;
+	border-radius: 10px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 10px 10px 10px 10%;
+	margin-top: 5px;
+}
+@media screen and (min-width: 768px) {
+	.progress{
+		padding: 10px 10px 10px 14%;
+		margin-left: -14%;
+		margin-top: 0;
+	}
+}
+#mood{
+	vertical-align: middle;
+	border: 15px solid #6a3e26;
+	border-radius: 50%;
+	background-color: #fff;
+}
+.category{
+	height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	padding-right: 10px;
+}
+.category span{
+	font-size: 16px;
+	font-family: "A-OTF-M";
+}
+.progress-group{
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+	width: 100%;
+	justify-content: space-around;
+}
+.default{
+	background-color: #ccc;
+	height: 16px;
+	width: 100%;
+}
+.progress-bar{
+	height: 100%;
+	width: 80%;
+	background-color: #f596aa;
+}
+/*主要客製*/
+.custom-main{
+	width: 100%;
+	padding: 80px 0 0;
+}
+@media screen and (min-width: 768px) {
+	.custom-main{
+		width: 40%;
+	}
+}
+/*進度條*/
+
+.step-group {
+  width: 80%;
+  margin: auto;
+  padding: 10px 0;
+}
+.step {
+  counter-reset:step;
+  position: relative;
+  z-index: 0;
+}
+.step li {
+  list-style-type: none;
+  float:left;
+  width: 25%;
+  position:relative;
+  text-align:center;
+}
+.step li:before {
+  content:counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height:30px;
+  display:block;
+  text-align:center;
+  color: #fff;
+  margin:0 auto 10px auto;
+  border-radius:50%;
+  background-color: #838a2d;
+  z-index: 0;
+}
+.step li:not(:first-child):after {
+  content:"";
+  position:absolute;
+  width: 100%;
+  height:3px;
+  background-color: #838a2d;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+.step li.active:before {
+  background-color: #db4d6d;
+}
+.step li.active ~ li:after {
+  background-color: #bbbdbb;
+}
+.step li.active ~ li:before {
+  background-color: #bbbdbb;
+}
+
+
+
+
+
+.custom-main-show{
+	padding: 10px 0;
+	margin: auto;
+	width: 70%;
+	position: relative;
+	top: 30px;
+	z-index: 2;
+}
+.custom-main-show img{
+	width: 100%;
+}
+
+/*底座*/
+.custom-bottom{
+	border:5px solid #6a3e26;
+	background-color: #d2a47f;
+	width: 90%;
+	margin: auto;
+	height: 50px;
+	border-radius: 50%;
+	position: relative;
+}
+.custom-bottom:before{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	border: 5px solid #6a3e26;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: -5px;
+	background-color: #6a3e26;
+}
+.custom-bottom:after{
+	content: '';
+	z-index: -2;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 5px solid #6a3e26;
+	border-radius: 50%;
+	background-color: #6a3e26;
+	top: 110%;
+	left: -5px;
+}
+/*模板*/
+.back{
+	background-color: #f3e6c4;
+	border: 5px solid #6a3e26;
+	border-radius: 10px;
+}
 /*側邊選單*/
 .custom-aside{
-	width: 30%;
+	margin:0 auto;
+	width: 90%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+	.custom-aside{
+		width: 30%;
+	}
+}
+.aside-title h2{
+	font-family: "A-OTF-M";
+	font-size: 36px;
+	text-align: center;
+}
+.select-item{
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+	padding: 20px 10px;
+}
+.select-item figure{
+	border: 4px solid #6a3e26;
+	border-radius: 30px;
+	background-image: url('../img/custom/down.png');
+	background-position: bottom;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding: 10px 5px;
+}
+.select-item figure:hover{
+	cursor: pointer;
+}
+.select-item figure:hover img{
+	background-color: #db4d6d;
+}
+.select-item figure img{
+	width: 80%;
+	margin: auto;
+	background-color: #ffa4b5;
+	box-sizing: border-box;
+	display: block;
+	padding:5px 10px;
+	border-radius: 10px;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+.select-item figcaption{
+	font-family: "A-OTF-M";
+	font-size: 18px;
+	text-align: center;
+	padding: 10px 0 30px;
+	color: #744934;
+}
+.clearfix{
+	clear: both;
+}
+
+/*按鈕*/
+.aside-button-group{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
 }
