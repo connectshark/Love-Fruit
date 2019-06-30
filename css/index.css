@@ -43,24 +43,23 @@
   z-index: 2;
 }
 .cloud img {
+  position: absolute;
   display: inline-block;
-  width: 6%;
 }
 
 .heroIce {
   margin: auto;
-  top: 30%;
-  left: 30%;
+  width: 50%;
+  top: 42%;
+  left: 22%;
   position: absolute;
   z-index: 3;
 }
 .sweetheart {
   margin: auto;
-  top: 30%;
-  left: 30%;
+  width: 30%;
+  top: 35%;
+  left: 35%;
   position: absolute;
   z-index: 3;
-}
-.heroIce {
-  /* width: 60%; */
 }
