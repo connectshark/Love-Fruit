@@ -95,6 +95,16 @@
   border-right: 5px solid #6bdbda;
 }
 
+.page-qa .stage .content .stage-value .value-item {
+  font-size: 16px;
+}
+
+.page-qa .stage .content .stage-value .bar {
+  width: 100px;
+  height: 30px;
+  background-color: #f8c3cd;
+}
+
 .page-qa .stage.single {
   border-top: 10px solid #754c24;
   background: #f6c555 url(../img/qa/cover.png) top left;
