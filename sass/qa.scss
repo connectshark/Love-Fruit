@@ -1,41 +1,166 @@
+@import 'mixin/mixin';
+
+*{
+    box-sizing: border-box;
+}
+
 .page-qa{
+    font-family: "GenJyuuGothic-R";
     background-color: #ffe8e8;
+
+    .wrap{
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .qa{
+        padding-top:300px; 
+
+        .title-main{
+            width: 520px;
+            height: 150px;
+            margin: auto;
+            background: url(../img/qa/title.png) center center no-repeat;
+            
+
+            @include out-Line-Font(title,#fff,40px,8px,#6a3e26,戀冰測驗);
+            .title{
+                z-index: 1;
+            }
+        }
+    }
+
+    .stage{
+        width: 100%;
+        height: 885px;
+
+        .wrap{
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;          
+        }
+
+        .popsicle{
+            text-align: center;
+        }
+
+        .content{
+            background-color: #fff8e4;
+            padding: 50px;
+
+            .mainhead{
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap; 
+            }
+
+            .stage-title{
+                -webkit-writing-mode: vertical-lr;
+                writing-mode: vertical-lr;
+                font-size: 40px;
+                font-family: 'A-OTF-M';
+                color: #434343;
+                border-right: 5px solid #6bdbda;
+            }
+
+            .stage-value{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+
+                .value-item{
+                    width: 100%;
+                    font-size: 18px;
+                    display: flex;
+                    flex-flow: row wrap;
+                    
+                    .item-name{
+                        text-align: center;
+                    }
+                }
+
+                .value-bar{
+                    height: 20px;
+                    background-color: #f8c3cd;
+                }
+            }
+        }
+    }    
+    
+    .stage.single{
+        border-top: 10px solid #754c24;
+        background: #f6c555 url(../img/qa/cover.png) top left;
+
+        .sour{
+            width: 100%;
+        }
+        .sweet{
+            width: 20%;
+        }
+
+        .bitter{
+            width: 40%;
+        }
+    }
+    
+    .stage.firstlove{
+        background: #6bdbda url(../img/qa/cover.png) top left;
+
+        .sour{
+            width: 30%;
+        }
+        .sweet{
+            width: 60%;
+        }
+
+        .bitter{
+            width: 20%;
+        }
+    }
+    
+    .stage.infatuation{
+        background: #f8c3cd url(../img/qa/cover.png) top left;
+
+        .sour{
+            width: 20%;
+        }
+        .sweet{
+            width: 100%;
+        }
+
+        .bitter{
+            width: 10%;
+        }
+    }
+    
+    .stage.break{
+        background: #9dc5f6 url(../img/qa/cover.png) top left;
+        
+        .sour{
+            width: 30%;
+        }
+        .sweet{
+            width: 10%;
+        }
+
+        .bitter{
+            width: 100%;
+        }
+    }
+
+
 }
 
-.page-qa .wrap{
-    max-width: 1200px;
-    margin: auto;
-}
 
-.qa{
-    padding-top:300px; 
-}
 
-.qa .title-main{
-    width: 520px;
-    height: 150px;
-    margin: auto;
-    background: url(../img/qa/title.png) center center no-repeat;
-}
 
-.stage{
-    width: 100%;
-    height: 885px;
-}
 
-.stage.single{
-    border-top: 10px solid #754c24;
-    background: #f6c555 url(../img/qa/cover.png) top left;
-}
 
-.stage.firstlove{
-    background: #6bdbda url(../img/qa/cover.png) top left;
-}
 
-.stage.infatuation{
-    background: #f8c3cd url(../img/qa/cover.png) top left;
-}
 
-.stage.break{
-    background: #9dc5f6 url(../img/qa/cover.png) top left;
-}
+
+
+
+
+
