@@ -23,7 +23,6 @@
 .shop-item {
   width: 300px;
   height: 400px;
-  background-color: #6A3E26;
 }
 
 .item-type {
@@ -79,12 +78,36 @@
   display: block;
   width: 20%;
   height: 80%;
-  margin: auto;
   padding-top: 15px;
 }
 
 .ice-pic i {
-  padding-top: 10px;
+  padding-top: 12px;
+}
+
+.ice-text {
+  width: 284px;
+  height: 50%;
+}
+
+.item-content-name {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.item-content-name p {
+  width: 50%;
+  padding: 10px 5px;
+  font-family: "GenJyuuGothic-B";
+  font-size: 18px;
+}
+
+.shop-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .page-shop {
@@ -180,5 +203,65 @@
   height: 400px;
   background-color: white;
   margin: auto;
+}
+
+.shop-btn .shop-btn-out {
+  width: 115px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.shop-btn .shop-btn-out .shop-btn-in {
+  width: 108px;
+  height: 24px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.shop-btn .shop-btn-out .shop-btn-in:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.shop-btn .shop-btn-out .shop-btn-in:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.shop-btn .shop-btn-out .shop-btn-in .shop-btn-text {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.shop-btn-text {
+  color: white;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+
+.shop-btn-text:after {
+  z-index: -1;
+  content: "加入購物車";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
 /*# sourceMappingURL=shop.css.map */

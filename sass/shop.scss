@@ -40,7 +40,7 @@
 %shop-item{
     width: 300px;
     height: 400px;
-    background-color: #6A3E26;  
+    // background-color: #6A3E26;  
 }
 %item-type{
     width: 50%;
@@ -85,14 +85,32 @@
         display: block;
         width: 20%;
         height: 80%;
-        margin:auto;
+        // margin:auto;
         padding-top:15px;
     }
     i{
-        padding-top:10px;
+        padding-top:12px;
+        // margin-left:80px;   
     }
 }
-
+%ice-text{
+    width: 284px;
+    height: 50%;
+    // background-color: red;
+}
+%item-content-name{
+    width: 100%;
+    display: flex;
+    p{
+        width: 50%;
+        padding: 10px 5px;
+        font-family: "GenJyuuGothic-B";
+        font-size: 18px;
+    }
+}
+%shop-btn{
+    display: flex;
+}
 
 
 $mb : 768px;
@@ -191,4 +209,26 @@ $dsk : 997px;
     .ice-pic{
     @extend %ice-pic;
     }
-    
+    .ice-text{
+    @extend %ice-text;
+    }
+    .item-content-name{
+    @extend %item-content-name;
+    }
+    .shop-btn{
+    @extend %shop-btn;
+        .shop-btn-out{
+            @include btn-out(115px , 30px);
+            .shop-btn-in{
+                @include btn-in(108px , 24px);
+                .shop-btn-text{
+                display: inline-block;
+                line-height: 20px;
+                }    
+            }
+            
+        }
+       
+    }
+
+    @include out-Line-Font(shop-btn-text,white,16px,1px,white,加入購物車); 
