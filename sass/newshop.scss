@@ -1,7 +1,7 @@
 @import "mixin/mixin";
 *{
     box-sizing: border-box;
-    outline: 1px solid black;
+    // outline: 1px solid black;
    
 }
 
@@ -12,12 +12,15 @@
         padding-top:150px;
         margin: auto;
         width: 100%; 
-        height: 1000px;
+        // height: 1000px;
         // background-color: aqua;
     }
     .general-store{
         width: 90%;
         margin: auto;
+        @include rwd(desktop){
+            width: 1200px;
+        }
         .roof{
             width: 100%;
             img{
@@ -33,7 +36,7 @@
                 display: flex;
                 justify-content:center;
                 transform: translateY(50px);
-                span{
+                >span{
                     width:90%;
                     height:35px;
                     margin: auto;
@@ -56,74 +59,127 @@
         }
         .commodity{
             width: 100%; 
-            display: flex;
+            display:flex;
+            flex-flow:wrap;
             justify-content: space-around;
-            .shap-ice-type{
-                width: 50%;
-                border-radius: 60% / 120% 120% 0 0;
-                height: 35px;
-                margin: auto;
-                background-color: red;
-                display: flex;
-                img{
-                    width: 45%;
-                    display: block;
+            padding-top:10px;
+            background-color: whitesmoke;
+            .commodity-item{
+                padding-bottom: 15px;
+                @include rwd(desktop){
+                    margin: 0px 5%;
+                    width: 18%;
+                    padding-bottom: 45px;
+                }
+                .shap-ice-type{
+                    width: 55%;
+                    border-radius: 60% / 120% 120% 0 0;
+                    height: 25px;
                     margin: auto;
-                }
-            }
-            .shap-love-stage{
-                width: 100%;
-                height: 40px;
-                background-color: #EFAC40;
-                border-top-left-radius:25px;
-                border-top-right-radius:30px;
-                // font-family: "A-OTF-M";
-                font-size: 28px;
-                text-align: center;
-                line-height: 35px;
-            }
-            .commodity-item-content{
-                border: 5px solid black;
-                border-bottom-right-radius:20px;
-                border-bottom-left-radius:20px;
-                img{
-                    padding-top:10px;
-                    display: block;
-                    margin: auto;
-                    width: 40%;
-                }
-                span{
-                    display: block;
-                    padding: 5px;
-                }
-                .btn-numbox{
-                    padding: 5px;
-                    font-size: 0px;
-                    .qty{
-                        // display: inline-block;
-                        width: 35%;
-                        text-align: center;
+                    background-color: #fad689;
+                    display: flex;
+                    @include rwd(desktop){
+                        height: 30px;
                     }
-                    .qtyminus{
-                        background-color: #6A3E26;
-                        border-bottom-left-radius:20px;
-                        border-top-left-radius:20px;
-                        width: 18%;
-                        height:20px; 
-                        border:0px; 
-                        color:white;
-                    }
-                    .qtyplus{
-                        background-color: #6A3E26;
-                        border-bottom-right-radius:10px;
-                        border-top-right-radius:10px;
-                        width: 18%;
-                        height:20px; 
-                        border:0px; 
-                        color:white;
+                    img{
+                        width: 45%;
+                        display: block;
+                        margin: auto;
                     }
                 }
-               
+                .shap-love-stage{
+                    width: 100%;
+                    height: 25px;
+                    background-color: #fad689;
+                    border-top-left-radius:25px;
+                    border-top-right-radius:30px;
+                    // font-family: "A-OTF-M";
+                    font-size: 24px;
+                    text-align: center;
+                    line-height: 30px;
+                }
+                .commodity-item-content{
+                    border: 8px solid #fad689;
+                    border-bottom-right-radius:20px;
+                    border-bottom-left-radius:20px;
+                    padding-bottom:5px; 
+                    img{
+                        padding-top:10px;
+                        display: block;
+                        margin: auto;
+                        width: 40%;
+                        @include rwd(desktop){
+                            width: 30%;
+                        }
+                    }
+                    .item-text{
+                        > span {
+                        display: block;
+                        padding: 5px;
+                        ~span{
+                            display: block;
+                            padding: 5px;
+                        }
+                    }
+                     
+                    }
+                    .shop-btn{
+                        @include rwd(desktop){
+                            display: flex;
+                            justify-content:space-around;
+                        }
+                        #myform{
+                            width: 60%;
+                        }
+                            .btn-numbox{
+                            padding: 5px;
+                            font-size: 0px;
+                            display: none;
+                            @include rwd(desktop){
+                                display: block;
+                            }
+                            .qty{
+                                // display: inline-block;
+                                width: 50%;
+                                text-align: center;
+                                // padding: 0px;
+                            }
+                            .qtyminus{
+                                background-color: #6A3E26;
+                                border-bottom-left-radius:20px;
+                                border-top-left-radius:20px;
+                                width: 25%;
+                                height:100%; 
+                                border:0px; 
+                                color:white;
+                                padding: 0px;
+                            }
+                            .qtyplus{
+                                background-color: #6A3E26;
+                                border-bottom-right-radius:10px;
+                                border-top-right-radius:10px;
+                                width: 25%;
+                                height:100%; 
+                                border:0px; 
+                                color:white;
+                            }
+                        }
+                    }
+                   
+                   
+                    
+                }
+                &:nth-child(2n){
+                    .shap-ice-type{
+                        background-color: red;
+                    }
+                    .shap-love-stage{
+                        background-color: red;
+                    }
+                    .commodity-item-content{
+                       border:8px solid red;
+                    }
+                }
             }
         }    
     }
@@ -133,8 +189,13 @@
 
 
 }
-.shop-btn-out{
-    @include btn-out(100px,shop-btn-in,white,100px,2px,black,加入購物車);
-}
 
+.shop-btn-out{
+    @include btn-out(80px,shop-btn-in,red,13px,2px,white,加入購物車);
+    margin: auto;
+    span{
+        //  line-height: 10px;
+            }
+    }
+   
 

@@ -2,7 +2,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  outline: 1px solid black;
 }
 
 .page-shop {
@@ -14,12 +13,17 @@
   padding-top: 150px;
   margin: auto;
   width: 100%;
-  height: 1000px;
 }
 
 .page-shop .general-store {
   width: 90%;
   margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .general-store {
+    width: 1200px;
+  }
 }
 
 .page-shop .general-store .roof {
@@ -47,7 +51,7 @@
           transform: translateY(50px);
 }
 
-.page-shop .general-store .roof .title span {
+.page-shop .general-store .roof .title > span {
   width: 90%;
   height: 35px;
   margin: auto;
@@ -73,93 +77,161 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding-top: 10px;
+  background-color: whitesmoke;
 }
 
-.page-shop .general-store .commodity .shap-ice-type {
-  width: 50%;
+.page-shop .general-store .commodity .commodity-item {
+  padding-bottom: 15px;
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .general-store .commodity .commodity-item {
+    margin: 0px 5%;
+    width: 18%;
+    padding-bottom: 45px;
+  }
+}
+
+.page-shop .general-store .commodity .commodity-item .shap-ice-type {
+  width: 55%;
   border-radius: 60% / 120% 120% 0 0;
-  height: 35px;
+  height: 25px;
   margin: auto;
-  background-color: red;
+  background-color: #fad689;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.page-shop .general-store .commodity .shap-ice-type img {
+@media all and (min-width: 992px) {
+  .page-shop .general-store .commodity .commodity-item .shap-ice-type {
+    height: 30px;
+  }
+}
+
+.page-shop .general-store .commodity .commodity-item .shap-ice-type img {
   width: 45%;
   display: block;
   margin: auto;
 }
 
-.page-shop .general-store .commodity .shap-love-stage {
+.page-shop .general-store .commodity .commodity-item .shap-love-stage {
   width: 100%;
-  height: 40px;
-  background-color: #EFAC40;
+  height: 25px;
+  background-color: #fad689;
   border-top-left-radius: 25px;
   border-top-right-radius: 30px;
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
-  line-height: 35px;
+  line-height: 30px;
 }
 
-.page-shop .general-store .commodity .commodity-item-content {
-  border: 5px solid black;
+.page-shop .general-store .commodity .commodity-item .commodity-item-content {
+  border: 8px solid #fad689;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  padding-bottom: 5px;
 }
 
-.page-shop .general-store .commodity .commodity-item-content img {
+.page-shop .general-store .commodity .commodity-item .commodity-item-content img {
   padding-top: 10px;
   display: block;
   margin: auto;
   width: 40%;
 }
 
-.page-shop .general-store .commodity .commodity-item-content span {
+@media all and (min-width: 992px) {
+  .page-shop .general-store .commodity .commodity-item .commodity-item-content img {
+    width: 30%;
+  }
+}
+
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .item-text > span {
   display: block;
   padding: 5px;
 }
 
-.page-shop .general-store .commodity .commodity-item-content .btn-numbox {
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .item-text > span ~ span {
+  display: block;
   padding: 5px;
-  font-size: 0px;
 }
 
-.page-shop .general-store .commodity .commodity-item-content .btn-numbox .qty {
-  width: 35%;
+@media all and (min-width: 992px) {
+  .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn #myform {
+  width: 60%;
+}
+
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox {
+  padding: 5px;
+  font-size: 0px;
+  display: none;
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox {
+    display: block;
+  }
+}
+
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox .qty {
+  width: 50%;
   text-align: center;
 }
 
-.page-shop .general-store .commodity .commodity-item-content .btn-numbox .qtyminus {
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox .qtyminus {
   background-color: #6A3E26;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
-  width: 18%;
-  height: 20px;
+  width: 25%;
+  height: 100%;
+  border: 0px;
+  color: white;
+  padding: 0px;
+}
+
+.page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox .qtyplus {
+  background-color: #6A3E26;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 25%;
+  height: 100%;
   border: 0px;
   color: white;
 }
 
-.page-shop .general-store .commodity .commodity-item-content .btn-numbox .qtyplus {
-  background-color: #6A3E26;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 18%;
-  height: 20px;
-  border: 0px;
-  color: white;
+.page-shop .general-store .commodity .commodity-item:nth-child(2n) .shap-ice-type {
+  background-color: red;
+}
+
+.page-shop .general-store .commodity .commodity-item:nth-child(2n) .shap-love-stage {
+  background-color: red;
+}
+
+.page-shop .general-store .commodity .commodity-item:nth-child(2n) .commodity-item-content {
+  border: 8px solid red;
 }
 
 .shop-btn-out {
   display: block;
-  width: 100px;
-  height: 30px;
+  width: 80px;
+  height: 24px;
   border-radius: 40px;
   background-color: white;
-  border: 1.5px solid #715124;
+  border: 1.2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,15 +239,16 @@
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  margin: auto;
 }
 
 .shop-btn-out > span {
   display: block;
-  width: 93px;
-  height: 24px;
+  width: 74.4px;
+  height: 19.2px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 1.5px solid #e4575f;
+  border: 1.2px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
@@ -194,12 +267,12 @@
 }
 
 .shop-btn-out .shop-btn-in {
-  color: white;
-  font-size: 100px;
+  color: red;
+  font-size: 13px;
   position: relative;
   z-index: 5;
   text-align: center;
-  line-height: 200px;
+  line-height: 26px;
 }
 
 .shop-btn-out .shop-btn-in:after {
@@ -210,6 +283,6 @@
   top: 0;
   bottom: 0;
   right: 0;
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 2px white;
 }
 /*# sourceMappingURL=newshop.css.map */
