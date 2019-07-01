@@ -97,8 +97,40 @@ body {
   -webkit-text-stroke: 5px #6a3e26;
 }
 
-.group-title, .general-title, .group-subtitle, .general-subtitle {
-  z-index: 1;
+.general-form-title {
+  color: #fff;
+  font-size: 34px;
+  position: relative;
+  text-align: center;
+}
+
+.general-form-title:after {
+  z-index: -1;
+  content: "一般課程預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+
+.group-form-title {
+  color: #fff;
+  font-size: 34px;
+  position: relative;
+  text-align: center;
+}
+
+.group-form-title:after {
+  z-index: -1;
+  content: "揪團課程預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
 }
 
 .welcome-wrap {
@@ -741,14 +773,17 @@ body {
 }
 
 .course-message .go-between {
+  max-width: 1200px;
   width: 90%;
   margin: auto;
+  -webkit-box-shadow: 8px 8px 3px #888;
+          box-shadow: 8px 8px 3px #888;
 }
 
 .course-message .go-between .heading {
   font-size: 18px;
   background-color: #f4cabd;
-  padding: 2%;
+  padding: 3%;
 }
 
 @media all and (min-width: 992px) {
@@ -759,25 +794,245 @@ body {
 
 .course-message .go-between .content {
   background-color: #ffdee6;
-}
-
-.course-message .go-between .member-item {
-  padding: 10px;
-  width: 80px;
-  height: 80px;
+  padding: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
 
-.course-message .go-between .member-item img {
+.course-message .go-between .content .member-item {
+  padding: 10px;
+  max-width: 80px;
+  max-height: 80px;
+  text-align: center;
+}
+
+@media all and (min-width: 992px) {
+  .course-message .go-between .content .member-item {
+    width: 20%;
+  }
+}
+
+.course-message .go-between .content .member-item img {
   width: 80%;
   height: 80%;
 }
 
-.course-message .go-between .member-item span {
+.course-message .go-between .content .member-item span {
   font-size: 13px;
 }
 
-.course-message .go-between h5 {
-  padding: 5%;
+.course-message .go-between .content .input-area {
+  text-align: start;
+}
+
+@media all and (min-width: 992px) {
+  .course-message .go-between .content .input-area {
+    width: 80%;
+  }
+}
+
+.course-message .go-between .content .input-area h5 {
+  padding: 15px;
+  font-size: 18px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+.course-message .go-between .content .input-area input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+}
+
+.course-message .go-between .content .input-area textarea {
+  padding: 10px;
+  width: 100%;
+  border-radius: 15px;
+  border: none;
+}
+
+.course-message .go-between .message-btn {
+  padding-top: 5%;
+}
+
+@media all and (min-width: 992px) {
+  .course-message .go-between .message-btn {
+    width: 100%;
+  }
+}
+
+.course-message .go-between .message-btn .message-btn-out {
+  margin: auto;
+  width: 135px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.course-message .go-between .message-btn .message-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.course-message .go-between .message-btn .message-btn-out .message-btn-in {
+  width: 128px;
+  height: 34px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+  line-height: 34px;
+}
+
+.course-message .go-between .message-btn .message-btn-out .message-btn-in:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.course-message .love-line {
+  max-width: 1200px;
+  padding: 5% 0;
+  width: 90%;
+  margin: auto;
+}
+
+.course-message .love-line img {
+  width: 100%;
+}
+
+.general-form-wrap {
+  background-color: #ffd9d9;
+  background-image: url(../img/background.png);
+  height: 1080px;
+}
+
+.general-form-wrap .wrapper {
+  max-width: 1200px;
+  padding-top: 30%;
+  padding-bottom: 10%;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .general-form-wrap .wrapper {
+    padding-top: 20%;
+  }
+}
+
+.general-form-wrap .wrapper .title {
+  padding: 5% 0;
+  position: relative;
+  text-align: center;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .general-form-wrap .wrapper .title {
+    width: 70%;
+  }
+}
+
+.general-form-wrap .wrapper .title img {
+  width: 70%;
+}
+
+@media all and (min-width: 992px) {
+  .general-form-wrap .wrapper .title img {
+    width: 60%;
+  }
+}
+
+.general-form-wrap .wrapper .title h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -78%);
+          transform: translate(-50%, -78%);
+}
+
+@media all and (max-width: 768px) {
+  .general-form-wrap .wrapper .title h3 {
+    font-size: 20px;
+  }
+}
+
+.group-form-wrap {
+  background-color: #f6c555;
+  background-image: url(../img/background.png);
+  height: 1080px;
+}
+
+.group-form-wrap .wrapper {
+  max-width: 1200px;
+  padding-top: 30%;
+  padding-bottom: 10%;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .group-form-wrap .wrapper {
+    padding-top: 20%;
+  }
+}
+
+.group-form-wrap .wrapper .title {
+  padding: 5% 0;
+  position: relative;
+  text-align: center;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .group-form-wrap .wrapper .title {
+    width: 70%;
+  }
+}
+
+.group-form-wrap .wrapper .title img {
+  width: 70%;
+}
+
+@media all and (min-width: 992px) {
+  .group-form-wrap .wrapper .title img {
+    width: 60%;
+  }
+}
+
+.group-form-wrap .wrapper .title h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -78%);
+          transform: translate(-50%, -78%);
+}
+
+@media all and (max-width: 768px) {
+  .group-form-wrap .wrapper .title h3 {
+    font-size: 20px;
+  }
 }
 /*# sourceMappingURL=course.css.map */
