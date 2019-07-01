@@ -88,7 +88,6 @@
   left: 38%;
 }
 .love-icon1 {
-  padding-top: 1%;
   display: inline-block;
   width: 20%;
 }
@@ -96,7 +95,7 @@
   width: 100%;
 }
 .index-title1 {
-  padding-top: 1%;
+  padding-top: 2%;
   margin-left: 1%;
   text-align: center;
   vertical-align: top;
@@ -184,7 +183,6 @@
   z-index: 5;
 }
 .love-icon2 {
-  padding-top: 1%;
   display: inline-block;
   width: 20%;
 }
@@ -192,7 +190,7 @@
   width: 100%;
 }
 .index-title2 {
-  padding-top: 1%;
+  padding-top: 2%;
   margin-left: 1%;
   text-align: center;
   vertical-align: top;
@@ -264,7 +262,19 @@
   border-radius: 20%;
   background-color: #f3e6c4;
 }
+.panel-button-center-triangle-group {
+  font-size: 0;
+}
+.panel-button-bottom-pink {
+  background-color: #ffa4b5;
+}
 .panel-button-center-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.4vw 0.4vw 0.4vw;
+  border-color: transparent transparent #e1b583 transparent;
 }
 .ice-panel h3 {
   font-family: "A-OTF-M";
