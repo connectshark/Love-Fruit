@@ -1,67 +1,71 @@
 
-@mixin out-Line-Font($class,$color,$size,$width,$shadow,$text){
+@mixin out-Line-Font($class,$color,$size,$width2,$shadow,$text){
 	.#{$class}{
 	color:$color;
 	font-size:$size;
 	position:relative;
+	z-index: 5;
 	text-align: center;
+	line-height: $size *2;
 	}
 	.#{$class}:after{
 	z-index:-1;
 	content:'#{$text}';
 	position:absolute;
+	
 	// vertical-align:middle;
 	left:0;
 	top:0;
 	bottom: 0;
 	right: 0;
-	-webkit-text-stroke:$width $shadow;
+	-webkit-text-stroke:$width2 $shadow;
 	// text-stroke:$width $shadow;
 	}
 }
 
 
-
-
-
-
 //普通按鈕
-@mixin btn-out($width , $height){
+@mixin btn-out($width,$class,$color,$size,$width2,$shadow,$text){
+	display: block;
     width:$width ;
-    height:$height ;
-    border-radius: 25px;
+    height:$width * 0.3 ;
+    border-radius: 40px;
     background-color: white;
-	border:2px solid #715124;
+	border:$width*0.015 solid #715124;
     display: flex;
 	justify-content:center;
 	cursor: pointer;
+	>span{
+		display: block;
+		width:$width * 0.93;
+		height:$width * 0.3 * 0.8;
+		border-radius: 20px;
+		background-color:#fc7389;
+		border:$width*0.015 solid #e4575f;
+		text-align: center;
+		margin: auto;
+		cursor: pointer;
+		&:hover{
+			background-color: #ffabb1;
+			transition-duration:.2s;
+		}
+		&:active{
+			background-color: #db4d6d;
+			transition-duration:.2s;
+		}
+	}
+	@include out-Line-Font($class,$color,$size,$width2,$shadow,$text)
 }
- @mixin btn-in($width1 , $height1){
-    width:$width1;
-    height:$height1;
-    border-radius: 20px;
-    background-color:#fc7389;
-    border:2px solid #e4575f;
-	text-align: center;
-	margin: auto;
-	cursor: pointer;
-	&:hover{
-		background-color: #ffabb1;
-		transition-duration:.2s;
-	}
-	&:active{
-		background-color: #db4d6d;
-		transition-duration:.2s;
-	}
- }
+
 
 //帶圖案扭
- @mixin ice-btn-out($width , $height){
+ @mixin ice-btn-out($width,$class,$color,$size,$width2,$shadow,$text){
+	display: block;
     width:$width ;
-    height:$height ;
+    height:$width * 0.3 ;
     border-radius: 25px;
     background-color: white;
-	border:2px solid #715124;
+	border:$width*0.015 solid #715124;
     display: flex;
 	justify-content:center;
 	cursor: pointer;
@@ -72,22 +76,35 @@
 		transform: translateY(2px);
 		// transition-duration:.2s;
 	 }
+	>span{
+		display: block;
+		position: relative;
+		width:$width * 0.93;
+		height:$width * 0.3 * 0.8;
+		border-radius: 20px;
+		background-color:#fc7389;
+		border:$width*0.015 solid #e4575f;
+		text-align: center;
+		margin: auto;
+		cursor: pointer;
+		&:hover{
+			background-color: #fad689;
+			transition-duration:.2s;
+		}
+		img{
+			display: block;
+			position: absolute;
+			top:-3px;
+			left: -13px;
+			width: $width * 0.3;
+			height: $width * 0.35;
+			
+		}
 	}
+	@include out-Line-Font($class,$color,$size,$width2,$shadow,$text) 
+}
 	
- @mixin ice-btn-in($width1 , $height1){
-    width:$width1;
-    height:$height1;
-    border-radius: 20px;
-    background-color:#fc7389;
-    border:2px solid #e4575f;
-	text-align: center;
-	margin: auto;
-	cursor: pointer;
-	&:hover{
-		background-color: #fad689;
-		transition-duration:.2s;
-	}
- }
+
 
 
 

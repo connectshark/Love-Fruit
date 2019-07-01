@@ -1,36 +1,5 @@
 @import "mixin/mixin";
 
-.btn-out{
-    @include btn-out(145px , 40px);
-}
-.btn-in{
-   @include btn-in(138px , 34px);
-   
-}
-@include out-Line-Font(btn-text,white,16px,2px,white,加入購物車); 
-
-
-.ice-btn-out{
-    @include ice-btn-out(135px , 40px);
-    position: relative;
-}
-.ice-btn-in{
-   @include ice-btn-in(128px , 34px);
-}
-@include out-Line-Font(ice-btn-text,white,16px,2px,white,下一題); 
-.ice-img{
-    display:inline-block;
-    width: 38px;
-    height: 50px;
-    position: absolute;
-    left: -5px;
-    top:0px;
-    img{
-        width: 100%;
-    }
-}
-
-
 
 @font-face {
 	font-family: "A-OTF-H";
@@ -61,29 +30,42 @@
 
  
 
+// 按鈕教學
+  // 普通按鈕  btn-out($width,$class,$color,$size,$width2,$shadow,$text)
+  // 有冰棒圖案 ice-btn-out($width,$class,$color,$size,$width2,$shadow,$text)
+
+// 變數解釋
+  //使用之前先在HTML中把自己要使用的字輸入好
+  //建議使用"span"標籤包住並使用一個class名稱
+  //$width ->按鈕寬度
+  //$class -> 包住字體的class名稱(class名稱即可無須前面.)
+  //$color -> 字顏色(ex:#fff)
+  //$size -> 字大小(ex:20px),隨著按鈕的寬度設定,請自行調整字大小,這樣字才會置中
+  //$width2 -> 外框粗細(ex:2px)
+  //$shadow -> 外框顏色(ex:#fff)
+  //$text -> 外框使用的字(與HTML中的文字相同)
 
 
-//out-Line-Font()外框字使用教學
+.btn-out{
+  @include btn-out(70px,btn-in,white,8px,2px,black,加入購物車);
+}
+.ice-btn-out{
+ @include ice-btn-out(80px,btn-in,white,10px,3px,black,加入購物車);
+}
 
-//使用之前先在HTML中把自己要使用的字輸入好
-//建議使用"span"標籤包住並使用一個class名稱
 
-//out-Line-Font($class,$color,$size,$width,$shadow,$text)
-//$class -> 包住字體的class名稱(class名稱即可無須前面.)
-//$color -> 字顏色(ex:#fff)
-//$size -> 字大小(ex:20px)
-//$width -> 外框粗細(ex:2px)
-//$shadow -> 外框顏色(ex:#fff)
-//$text -> 外框使用的字(與HTML中的文字相同)
+
 
 
 
 
 
 //格線系統
-@for $i from 1 through 12 {
-  .col-#{$i}{
-    width: ($i / 12) * 100%;
+@include rwd(mobile){
+  @for $i from 1 through 12 {
+    .col-#{$i}{
+      width: ($i / 12) * 100%;
+    }
   }
 }
 
