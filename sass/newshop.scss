@@ -2,12 +2,12 @@
 *{
     box-sizing: border-box;
     outline: 1px solid black;
-    font-family: "GenJyuuGothic-B";
+   
 }
 
 .page-shop{
     background: #F8C3CD url(../img/shop/backgroundpic.png);
-
+    font-family: "GenJyuuGothic-B";
     .shop-general{
         padding-top:150px;
         margin: auto;
@@ -53,6 +53,78 @@
             background-color: #FFF8E4;
             margin: auto;
             padding: 5px;
+        }
+        .commodity{
+            width: 100%; 
+            display: flex;
+            justify-content: space-around;
+            .shap-ice-type{
+                width: 50%;
+                border-radius: 60% / 120% 120% 0 0;
+                height: 35px;
+                margin: auto;
+                background-color: red;
+                display: flex;
+                img{
+                    width: 45%;
+                    display: block;
+                    margin: auto;
+                }
+            }
+            .shap-love-stage{
+                width: 100%;
+                height: 40px;
+                background-color: #EFAC40;
+                border-top-left-radius:25px;
+                border-top-right-radius:30px;
+                // font-family: "A-OTF-M";
+                font-size: 28px;
+                text-align: center;
+                line-height: 35px;
+            }
+            .commodity-item-content{
+                border: 5px solid black;
+                border-bottom-right-radius:20px;
+                border-bottom-left-radius:20px;
+                img{
+                    padding-top:10px;
+                    display: block;
+                    margin: auto;
+                    width: 40%;
+                }
+                span{
+                    display: block;
+                    padding: 5px;
+                }
+                .btn-numbox{
+                    padding: 5px;
+                    font-size: 0px;
+                    .qty{
+                        // display: inline-block;
+                        width: 35%;
+                        text-align: center;
+                    }
+                    .qtyminus{
+                        background-color: #6A3E26;
+                        border-bottom-left-radius:20px;
+                        border-top-left-radius:20px;
+                        width: 18%;
+                        height:20px; 
+                        border:0px; 
+                        color:white;
+                    }
+                    .qtyplus{
+                        background-color: #6A3E26;
+                        border-bottom-right-radius:10px;
+                        border-top-right-radius:10px;
+                        width: 18%;
+                        height:20px; 
+                        border:0px; 
+                        color:white;
+                    }
+                }
+               
+            }
         }    
     }
 
@@ -61,8 +133,8 @@
 
 
 }
-// .shop-btn-out{
-//     @include ;
-// }
+.shop-btn-out{
+    @include btn-out(100px,shop-btn-in,white,100px,2px,black,加入購物車);
+}
 
 
