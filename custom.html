@@ -179,10 +179,10 @@
 		<div class="custom-main">
 			<div class="back step-group">
                 <ul class="step">
-                    <li class="active">外觀</li>
-                    <li>基底</li>
-                    <li>加料</li>
-                    <li>冰棒小語</li>
+                    <li class="active step-item">外觀</li>
+                    <li class="step-item">基底</li>
+                    <li class="step-item">加料</li>
+                    <li class="step-item">冰棒小語</li>
                 <div class="clearfix"></div>
                 </ul>
             </div>
@@ -193,52 +193,165 @@
 			</div>
 		</div>
 		<div class="custom-aside back">
-			<div class="aside-title">
-				<h2>選擇製冰容器</h2>
-			</div>
-			<div class="aside-select">
-				<div class="select-item">
-					<figure>
-						<img src="img/custom/texture1.png" alt="模具1">
-						<figcaption>稀有冰模型</figcaption>
-					</figure>
-				</div>
-				<div class="select-item">
-					<figure>
-						<img src="img/custom/texture2.png" alt="模具2">
-						<figcaption>稀有冰模型</figcaption>
-					</figure>
-				</div>
-				<div class="select-item">
-					<figure>
-						<img src="img/custom/texture3.png" alt="模具3">
-						<figcaption>稀有冰模型</figcaption>
-					</figure>
-				</div>
-				<div class="select-item">
-					<figure>
-						<img src="img/custom/texture4.png" alt="模具4">
-						<figcaption>稀有冰模型</figcaption>
-					</figure>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="aside-button-group">
-				<div class="aside-button">
-					<div class="btn-out">
-						<div class="btn-in">
-							<span class="btn-text">上一步</span>
-						</div>
-					</div>
-				</div>
-				<div class="aside-button">
-					<div class="btn-out">
-						<div class="btn-in">
-							<span class="btn-text">下一步</span>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="flow">
+    			<div class="aside-title">
+    				<h2>選擇製冰容器</h2>
+    			</div>
+    			<div class="aside-select">
+    				<div class="select-item select-item-4">
+    					<figure class="texture-item texture-item-background">
+    						<img src="img/custom/texture1.png" alt="模具1">
+    						<figcaption>稀有冰模型</figcaption>
+    					</figure>
+    				</div>
+    				<div class="select-item select-item-4">
+    					<figure class="texture-item texture-item-background">
+    						<img src="img/custom/texture2.png" alt="模具2">
+    						<figcaption>稀有冰模型</figcaption>
+    					</figure>
+    				</div>
+    				<div class="select-item select-item-4">
+    					<figure class="texture-item texture-item-background">
+    						<img src="img/custom/texture3.png" alt="模具3">
+    						<figcaption>稀有冰模型</figcaption>
+    					</figure>
+    				</div>
+    				<div class="select-item select-item-4">
+    					<figure class="texture-item texture-item-background">
+    						<img src="img/custom/texture4.png" alt="模具4">
+    						<figcaption>稀有冰模型</figcaption>
+    					</figure>
+    				</div>
+    			</div>
+            </div>
+
+
+            <div class="flow">
+                <div class="aside-title">
+                    <h2>選擇基底水果</h2>
+                </div>
+                <div class="aside-select">
+                    <div class="select-item select-item-6">
+                        <figure class="fruite-item texture-item">
+                            <img src="img/greenapple.png" alt="青蘋果">
+                            <figcaption>青蘋果</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-6">
+                        <figure class="fruite-item texture-item">
+                            <img src="img/banana.png" alt="香蕉">
+                            <figcaption>香蕉</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-6">
+                        <figure class="fruite-item texture-item">
+                            <img src="img/blueberry.png" alt="藍莓">
+                            <figcaption>藍莓</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-6">
+                        <figure class="fruite-item texture-item">
+                            <img src="img/orange.png" alt="橘子">
+                            <figcaption>橘子</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-6">
+                        <figure class="fruite-item texture-item">
+                            <img src="img/grape.png" alt="葡萄">
+                            <figcaption>葡萄</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-6">
+                        <figure class="fruite-item texture-item">
+                            <img src="img/streberry.png" alt="草莓">
+                            <figcaption>草莓</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="range-area">
+                    <label for="range">
+                        <input type="range" min="0" max="100" value="50" id="range">
+                    </label>
+                    <label for="angle">
+                        角度:
+                    <input type="text" minlength="1" maxlength="3" size="3" placeholder="角度" id="angle">°</label>
+                </div>
+            </div>
+
+
+            <div class="flow">
+                <div class="aside-title">
+                    <h2>選擇水果切片</h2>
+                </div>
+                <div class="aside-select">
+                    <div class="select-item select-item-4">
+                        <figure class="texture-item">
+                            <img src="img/chocolate.png" alt="巧克力">
+                            <figcaption>巧克力</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-4">
+                        <figure class="texture-item">
+                            <img src="img/bittergourd.png" alt="苦瓜">
+                            <figcaption>苦瓜</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-4">
+                        <figure class="texture-item">
+                            <img src="img/saltedplum.png" alt="酸梅">
+                            <figcaption>酸梅</figcaption>
+                        </figure>
+                    </div>
+                    <div class="select-item select-item-4">
+                        <figure class="texture-item">
+                            <img src="img/Roselle.png" alt="洛神花">
+                            <figcaption>洛神花</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flow">
+                <div class="aside-title">
+                    <h2>輸入冰棒小語</h2>
+                </div>
+                <div class="aside-select message-pull">
+                    <div class="select-item select-item-1">
+                        <label for="text">
+                        <input type="text" v-model="message" id="text"></label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    		<div class="aside-button-group">
+    				<div class="aside-button" id="last">
+    					<div class="btn-out">
+    						<div class="btn-in">
+    							<span class="btn-text">上一步</span>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="aside-button" id="next">
+    					<div class="btn-out">
+    						<div class="btn-in">
+    							<span class="btn-text">下一步</span>
+    						</div>
+    					</div>
+    				</div>
+    		</div>
 		</div>
 	</section>
 
@@ -275,8 +388,16 @@
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
-
+    <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
+    <script>
+        new Vue({
+            el:'.message-pull',
+            data:{
+                message:'輸入字',
+            }
+        });
+    </script>
 </body>
 
 </html>
