@@ -233,317 +233,315 @@
   }
 }
 
-.filter-btn {
-  display: block;
-  width: 100px;
-  height: 30px;
-  border-radius: 40px;
-  background-color: white;
-  border: 1.5px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.filter-btn > span {
-  display: block;
-  width: 93px;
-  height: 24px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 1.5px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.filter-btn > span:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn > span:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn .btn-all {
-  color: white;
-  font-size: 12px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 24px;
-}
-
-.filter-btn .btn-all:after {
-  z-index: -1;
-  content: "全部";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px black;
-}
-
-.filter-btn {
-  display: block;
-  width: 100px;
-  height: 30px;
-  border-radius: 40px;
-  background-color: white;
-  border: 1.5px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.filter-btn > span {
-  display: block;
-  width: 93px;
-  height: 24px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 1.5px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.filter-btn > span:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn > span:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn .btn-single {
-  color: white;
-  font-size: 12px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 24px;
-}
-
-.filter-btn .btn-single:after {
-  z-index: -1;
-  content: "單身";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px black;
-}
-
-.filter-btn {
-  display: block;
-  width: 100px;
-  height: 30px;
-  border-radius: 40px;
-  background-color: white;
-  border: 1.5px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.filter-btn > span {
-  display: block;
-  width: 93px;
-  height: 24px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 1.5px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.filter-btn > span:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn > span:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn .btn-true-love {
-  color: white;
-  font-size: 12px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 24px;
-}
-
-.filter-btn .btn-true-love:after {
-  z-index: -1;
-  content: "初戀";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px black;
-}
-
-.filter-btn {
-  display: block;
-  width: 100px;
-  height: 30px;
-  border-radius: 40px;
-  background-color: white;
-  border: 1.5px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.filter-btn > span {
-  display: block;
-  width: 93px;
-  height: 24px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 1.5px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.filter-btn > span:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn > span:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn .btn-hot-love {
-  color: white;
-  font-size: 12px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 24px;
-}
-
-.filter-btn .btn-hot-love:after {
-  z-index: -1;
-  content: "熱戀";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px black;
-}
-
-.filter-btn {
-  display: block;
-  width: 100px;
-  height: 30px;
-  border-radius: 40px;
-  background-color: white;
-  border: 1.5px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.filter-btn > span {
-  display: block;
-  width: 93px;
-  height: 24px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 1.5px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.filter-btn > span:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn > span:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.filter-btn .btn-break {
-  color: white;
-  font-size: 12px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 24px;
-}
-
-.filter-btn .btn-break:after {
-  z-index: -1;
-  content: "分手";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px black;
-}
-
 body {
   font-family: "A-OTF-M";
   background-image: url(../img/background.png);
   background-color: #ffdee6;
 }
 
+.banner {
+  background-color: #e87d8b;
+  padding: 50px 0 0;
+}
+
+.banner img {
+  width: 100%;
+}
+
 .filter {
   padding: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media all and (min-width: 769px) {
+  .filter {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+}
+
+.filter #love-list {
+  width: 80%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+@media all and (min-width: 769px) {
+  .filter #love-list {
+    display: none;
+  }
+}
+
+.filter .filter-btn {
+  display: none;
+}
+
+@media all and (min-width: 769px) {
+  .filter .filter-btn {
+    display: block;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-all {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-all:after {
+    z-index: -1;
+    content: "全部";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-hot-love {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-hot-love:after {
+    z-index: -1;
+    content: "熱戀";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-break {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-break:after {
+    z-index: -1;
+    content: "分手";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-true-love {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-true-love:after {
+    z-index: -1;
+    content: "初戀";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-single {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-single:after {
+    z-index: -1;
+    content: "單身";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
 }
 
 .clearfix {

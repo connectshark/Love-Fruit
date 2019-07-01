@@ -25,31 +25,52 @@
         @include btn-out(150px,share-btn-in,white,18px,2px,black,分享);
     }
 }
-.filter-btn{
-    @include btn-out(100px,btn-all,white,12px,2px,black,全部);
-}
-.filter-btn{
-    @include btn-out(100px,btn-single,white,12px,2px,black,單身);
-}
-.filter-btn{
-    @include btn-out(100px,btn-true-love,white,12px,2px,black,初戀);
-}
-.filter-btn{
-    @include btn-out(100px,btn-hot-love,white,12px,2px,black,熱戀);
-}
-.filter-btn{
-    @include btn-out(100px,btn-break,white,12px,2px,black,分手);
-}
+
 body{
     font-family: "A-OTF-M";
     background-image: url(../img/background.png);
     background-color: #ffdee6;
 }
+.banner{
+    background-color: #e87d8b;
+    padding: 50px 0 0;
+    img{
+        width: 100%;
+    }
+}
 .filter{
     padding: 20px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    @include rwd(medium){
+        flex-flow: row nowrap;
+    }
+    #love-list{
+        width: 80%;
+        box-sizing: border-box;
+        border: none;
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 18px;
+        @include rwd(medium){
+            display: none;
+        }
+    }
+    .filter-btn{
+        display: none;
+    @include rwd(medium){
+        display: block;
+        @include btn-out(150px,btn-all,white,18px,2px,black,全部);
+        @include btn-out(150px,btn-hot-love,white,18px,2px,black,熱戀);
+        @include btn-out(150px,btn-break,white,18px,2px,black,分手);
+        @include btn-out(150px,btn-true-love,white,18px,2px,black,初戀);
+        @include btn-out(150px,btn-single,white,18px,2px,black,單身);
+    }
+}
 }
 .clearfix{
 	clear: both;
