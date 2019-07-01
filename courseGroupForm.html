@@ -29,7 +29,7 @@
       <div class="nav-item">
         <ul class="nav-list nav-list-mp">
           <li>
-            <a class="nav-text" href="javascript:;" title="戀愛冰品"><img src="img/navBar/navIcon.png"
+            <a class="nav-text" href="qa.html" title="戀愛冰品"><img src="img/navBar/navIcon.png"
                 alt="iceIcon" /><span>戀愛冰品</span></a>
           </li>
           <li>
@@ -41,7 +41,7 @@
                 alt="iceIcon" /><span>愛的留言</span></a>
           </li>
           <li>
-            <a class="nav-text" href="javascript:;" title="冰品商城"><img src="img/navBar/navIcon.png"
+            <a class="nav-text" href="shop.html" title="冰品商城"><img src="img/navBar/navIcon.png"
                 alt="iceIcon" /><span>冰品商城</span></a>
           </li>
         </ul>
@@ -86,9 +86,9 @@
       </div>
 
       <form action="" method="" class="">
-         <span><img src="img/btn/ICE.png" alt="">你的團名：<input type="text" name="gname" id="" placeholder="ex:揪團戀冰"></span>
+        <span><img src="img/btn/ICE.png" alt="">你的團名：<input type="text" name="gname" id="" placeholder="ex:揪團戀冰"></span>
         <span><img src="img/btn/ICE.png" alt="">選擇日期：
-          <span id="date-picker">
+          <div id="date-picker">
             <table>
               <caption id="mon"></caption>
               <tr>
@@ -155,12 +155,13 @@
                 <td class="nowDate"></td>
               </tr>
             </table>
-          </span>
+          </div>
         </span>
-        <span><img src="img/btn/ICE.png" alt="">填寫時段：<input type="text" name="gname" id="" placeholder="ex:上午10:00"></span>
+        <span><img src="img/btn/ICE.png" alt="">填寫時段：<input type="text" name="gname" id=""
+            placeholder="ex:上午10:00"></span>
         <span><img src="img/btn/ICE.png" alt="">選擇人數：<select name="" id="apply-num"></select></span>
         <div class="form-btn">
-          <a class="form-ice-btn-out">
+          <a class="form-ice-btn-out" href="javascript:;">
             <span class="form-ice-btn-in">
               <img src="img/btn/ICE.png" alt="">
               確認預約
@@ -179,56 +180,8 @@
   </footer>
 
   <script src="js/index.js"></script>
+  <script src="js/course.js"></script>
 
-
-  <!-- <script>
-    $("#date-picker").datepicker();
-  </script> -->
-
-  <script>
-    var select = document.getElementById('apply-num');
-    for (var i = 1; i <= 20; i++) {
-      var opt = document.createElement("option");
-      opt.value = i;
-      opt.innerHTML = i;
-      select.appendChild(opt);
-    }
-  </script>
-
-  <!-- calender -->
-  <script>
-
-    var today = new Date();
-    var month = today.getMonth() + 1;
-    var date;
-    var space;
-    var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
-
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-      date = 31;
-    } else if (month == 2) {
-      date = 28;
-    } else {
-      date = 30;
-    }
-
-    if (firstDay.getDay() == 0) {
-      space = 0;
-    } else {
-      space = firstDay.getDay();
-    }
-
-    var nowDate = document.getElementsByClassName('nowDate');
-    window.addEventListener('load', function () {
-      for (var i = 1; i <= date; i++) {
-        nowDate[space - 1 + i].innerHTML = i;
-      }
-      nowDate[space + today.getDate()].classList.add("now");
-      document.getElementById('mon').innerHTML = today.getFullYear() + "年" + month + "月" + today.getDate() + "日";
-    });
-
-
-  </script>
 
 
 </body>
