@@ -33,7 +33,9 @@
   color: #fff;
   font-size: 18px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 36px;
 }
 
 .page-qa .qa .title-main .title:after {
@@ -335,7 +337,9 @@
     color: #fff;
     font-size: 40px;
     position: relative;
+    z-index: 5;
     text-align: center;
+    line-height: 80px;
   }
   .page-qa .qa .title-main .title:after {
     z-index: -1;

@@ -1,0 +1,121 @@
+@charset "UTF-8";
+.aside-button-out-last {
+  display: block;
+  width: 120px;
+  height: 36px;
+  border-radius: 40px;
+  background-color: white;
+  border: 1.8px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.aside-button-out-last > span {
+  display: block;
+  width: 111.6px;
+  height: 28.8px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 1.8px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.aside-button-out-last > span:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.aside-button-out-last > span:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.aside-button-out-last .aside-button-in-last {
+  color: #fff;
+  font-size: 8px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 16px;
+}
+
+.aside-button-out-last .aside-button-in-last:after {
+  z-index: -1;
+  content: "上一步";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 2px #000;
+}
+
+.aside-button-out-next {
+  display: block;
+  width: 120px;
+  height: 36px;
+  border-radius: 40px;
+  background-color: white;
+  border: 1.8px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.aside-button-out-next > span {
+  display: block;
+  width: 111.6px;
+  height: 28.8px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 1.8px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.aside-button-out-next > span:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.aside-button-out-next > span:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.aside-button-out-next .aside-button-in-next {
+  color: #fff;
+  font-size: 8px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 16px;
+}
+
+.aside-button-out-next .aside-button-in-next:after {
+  z-index: -1;
+  content: "上一步";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 2px #000;
+}
+/*# sourceMappingURL=custombtn.css.map */
