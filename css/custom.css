@@ -4,9 +4,6 @@ body{
 	background-color: #e6b1ba;
 	font-family: "A-OTF-M";
 }
-img{
-	vertical-align: middle;
-}
 .custom{
 	width: 100%;
 	max-width: 1200px;
@@ -47,6 +44,7 @@ img{
 	max-width: 66px;
 }
 .custom-list-scale img{
+	vertical-align: middle;
 	width: 100%;
 }
 .custom-list-support{
@@ -105,6 +103,7 @@ img{
 	}
 }
 .custom-list-item-umberlla img{
+	vertical-align: middle;
 	width: 100%;
 }
 .custom-list-item-price{
@@ -122,6 +121,7 @@ img{
 	width: 20px;
 }
 .price-lock img{
+	vertical-align: middle;
 	width: 100%;
 }
 
@@ -319,6 +319,7 @@ img{
 	z-index: 2;
 }
 .custom-main-show img{
+	vertical-align: middle;
 	width: 100%;
 }
 
@@ -443,6 +444,7 @@ img{
 	background-color: #db4d6d;
 }
 .texture-item img{
+	vertical-align: middle;
 	width: 80%;
 	margin: auto;
 	background-color: #ffa4b5;
@@ -472,6 +474,7 @@ img{
 }
 .fruite-item img{
 	max-height: 80px;
+	vertical-align: middle;
 }
 @media screen and (min-width: 768px) {
 	.fruite-item img{

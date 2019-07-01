@@ -1,4 +1,65 @@
-.message-area{
-	width: 1200px;
+.filter{
+	height:100px;
+}
+
+.message{
+	width: 100%;
+	max-width: 1200px;
 	margin: auto;
+}
+
+/*留言方格內容*/
+
+
+.message-item{
+	width: 100%;
+	background-color: #ccc;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+}
+.member{
+	width: 100%;
+}
+
+/*側邊欄位*/
+.message-aside{
+	width: 30%;
+	box-sizing: border-box;
+	padding: 20px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.member-img{
+	width: 100%;
+	padding-bottom: 100%;
+	background-image: url('../img/cherry.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #fa8;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.member-name{
+	text-align: center;
+	font-family: "A-OTF-M";
+	font-size: 28px;
+}
+.member-ice{
+	transform:translate(-30px,30px) rotate(-45deg);
+}
+.member-ice img{
+	width: 100%;
+}
+/*主要內容*/
+.message-main{
+	width: 70%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+}
+.message-footer{
+	width: 100%;
 }
