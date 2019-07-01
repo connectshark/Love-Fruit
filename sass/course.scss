@@ -461,7 +461,7 @@ $bg-yellow:#f6c555;
                     width: 60%;
                 }
             }
-           h3{
+            h3{
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -472,36 +472,105 @@ $bg-yellow:#f6c555;
             }
         }
         .go-between{
+            max-width: 1200px;
             width: 90%;
             margin: auto; 
+            box-shadow: 8px 8px 3px #888;
             .heading{
                 font-size: 18px;
                 background-color: #f4cabd;
-                padding: 2%;
+                padding: 3%;
                 @include rwd(desktop){
                     font-size: 20px;
                 }
             }
             .content{
                 background-color: #ffdee6;
-            }
-            .member-item{
-                padding: 10px;
-                width: 80px;
-                height: 80px;
+                padding: 3%;
+                
+                // @include rwd(desktop){
+                //     display: flex;
+                //     flex-wrap: wrap;
+                //     justify-content: center;
+                //     text-align: center;
+                // }
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
                 text-align: center;
-                img{
-                    width: 80%;
-                    height: 80%;
+                .member-item{
+                padding: 10px;
+                max-width: 80px;
+                max-height: 80px;
+                text-align: center;
+                @include rwd(desktop){
+                    width: 20%;
+                   }
+                    img{
+                        width: 80%;
+                        height: 80%;
+                    }
+                    span{
+                        font-size: 13px;
+                    }
                 }
-                span{
-                    font-size: 13px;
+                .input-area{ 
+                    text-align: start;
+                    // padding: 5%;
+                    @include rwd(desktop){
+                        width: 80%;
+                       }
+                    h5{
+                    padding: 15px;
+                    font-size: 18px;
+                    display: inline-block;
+                    text-align: center;
+                    vertical-align: top;
+                    }
+                    input{
+                        
+                        padding: 10px;
+                        width: 100%;
+                        border-radius:25px; 
+                        border: none;
+                    }
+                    textarea{
+                    
+                        padding: 10px;
+                        width: 100%;
+                        border-radius:15px; 
+                        border: none;
+                    }
                 }
-            }
-            h5{
-                padding: 5%;
+                
                 
             }
+            .message-btn{
+                padding-top: 5%; 
+                
+                @include rwd(desktop){
+                 width: 100%;
+                }
+
+                .message-btn-out{
+                    margin: auto;
+                    @include ice-btn-out(135px,40px);
+                    .message-btn-in{
+                        @include ice-btn-in(128px,34px);
+                        line-height: 34px;
+                    }
+                }
+            }
+           
+        } 
+        .love-line{
+                max-width: 1200px;
+                padding: 5% 0;
+                width: 90%;
+                margin: auto;
+                img{
+                    width: 100%;
+                }
         }
 
 }
