@@ -19,9 +19,6 @@
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
 /*Css寫 -> font-family: "什麼字型";*/
-* {
-  /* outline: 1px solid #f00; */
-}
 /*header*/
 /*清除*/
 @media screen and (max-width: 768px) {
@@ -98,7 +95,7 @@
     box-sizing: border-box;
     margin-left: auto;
     position: relative;
-    bottom: 23px;
+    bottom: 30%;
     right: 4%;
   }
   .hb .bar {
