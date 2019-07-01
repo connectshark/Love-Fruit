@@ -9,6 +9,7 @@ body{
 //共用區
 $bg-pink:#ffd9d9;
 $bg-yellow:#f6c555;
+$d-gray:#8c8574;
 @include out-Line-Font(group-title,#fff,28px,5px,#6a3e26,揪團課程);
 @include out-Line-Font(general-title,#fff,28px,5px,#6a3e26,一般課程);
 @include out-Line-Font(group-subtitle,#6a3e26,12px,3px,#fff8e4,不定時開課);
@@ -255,11 +256,8 @@ $bg-yellow:#f6c555;
                 padding: 5% 0;
                     .course-ice-btn-out{
                     margin: auto;
-                    @include ice-btn-out(135px,40px);
-                    .course-ice-btn-in{
-                        @include ice-btn-in(128px,34px);
-                        line-height: 34px;
-                    }
+                    @include ice-btn-out(135px,course-ice-btn-in,#fff,18px,3px,#6a3e26,我要預約);
+  
                 }
             }
             
@@ -429,11 +427,8 @@ $bg-yellow:#f6c555;
                 padding: 5% 0;
                     .course-ice-btn-out{
                     margin: auto;
-                    @include ice-btn-out(135px,40px);
-                    .course-ice-btn-in{
-                        @include ice-btn-in(128px,34px);
-                        line-height: 34px;
-                    }
+                    @include ice-btn-out(135px,course-ice-btn-in,#fff,18px,3px,#6a3e26,我要預約);
+  
                 }
             }
         }
@@ -531,7 +526,6 @@ $bg-yellow:#f6c555;
                     vertical-align: top;
                     }
                     input{
-                        
                         padding: 10px;
                         width: 100%;
                         border-radius:25px; 
@@ -555,14 +549,7 @@ $bg-yellow:#f6c555;
                  width: 100%;
                 }
 
-                .message-btn-out{
-                    margin: auto;
-                    @include ice-btn-out(135px,40px);
-                    .message-btn-in{
-                        @include ice-btn-in(128px,34px);
-                        line-height: 34px;
-                    }
-                }
+              
             }
            
         } 
@@ -621,15 +608,13 @@ $bg-yellow:#f6c555;
 //預約表單-揪團
 
 .group-form-wrap{
-    background-color: $bg-yellow;
+    background-color: #fad689;
     background-image: url(../img/background.png);
-    height: 1080px;
+   
     .wrapper{
         max-width: 1200px; 
         padding-top:30%;
-        padding-bottom:10%;
         margin: auto;
-
         @include rwd(desktop){
             padding-top: 20%;
         }
@@ -652,11 +637,74 @@ $bg-yellow:#f6c555;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-78%);
+                
                 @include rwd(mobile){
                     font-size: 20px;
+                    transform: translate(-50%,-60%);
                 }
             }
         }
+        form{
+            width: 70%;
+            margin: auto;
+            > span{
+                display: block;
+                padding: 15px;
+                color: $d-gray;
+                // &::before{
+                //     background-image: url(../img/btn/ICE.png);
+                //     width: 10px;
+                //     height: 10px;
+                // }
+                img{
+                    width: 20px;
+                    margin-right: 5px;
+                }
+            }
+
+            input{
+                padding: 10px;
+                width: 100%;
+                border-radius:10px; 
+                border: none;
+                margin: 10px 0;
+            }
+
+            #date-picker{
+                table {
+                background-color: #fff;
+                width: 80%;
+                height: 200px;
+                margin: auto;
+                text-align: center;
+                }
+                .now{
+                    background-color: $bg-pink;
+                }
+            }
+            
+            select{
+                display: block;
+                margin: 10px 0;
+                width: 50px;
+                height: 30px;
+                border-radius:10px; 
+                border: none;
+                
+            }
+        }
+        .form-btn{
+                padding: 5% 0;
+                    div{
+                        display: inline;
+                    }
+                    .form-ice-btn-out{
+                    margin: auto;
+                    @include ice-btn-out(135px,form-ice-btn-in,#fff,18px,3px,#6a3e26,確認預約);
+                }
+        }
 
     }
+   
+    
 }

@@ -74,21 +74,100 @@
     <img class="nav-bar-mp" src="img/navBar/ＭpNavBar.png" alt="ＭpNavBar" />
     <img class="shopping-cart-icon-mp" src="img/navBar/shoppingCartIcon.png" alt="shoppingCartIcon.png" />
   </header>
+
   <section class="group-form-wrap">
 
 
     <div class="wrapper">
+
       <div class="title">
         <img src="img/qa/title.png" alt="title-img">
         <h3 class="group-form-title">揪團課程預約</h3>
       </div>
-      <form action="" method="">
-        <div>你的團名：<input type="text" name="gname" id="" placeholder="ex:揪團戀冰"></div>
-        <div>選擇日期：</div>
-        <div>填寫時段：<input type="text" name="gname" id="" placeholder="ex:上午10:00"></div>
-        <div>選擇人數：<select name="" id="apply-num"></select></div>
-        <input type="button" value="">
-      
+
+      <form action="" method="" class="">
+         <span><img src="img/btn/ICE.png" alt="">你的團名：<input type="text" name="gname" id="" placeholder="ex:揪團戀冰"></span>
+        <span><img src="img/btn/ICE.png" alt="">選擇日期：
+          <span id="date-picker">
+            <table>
+              <caption id="mon"></caption>
+              <tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+              </tr>
+              <tr>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+              </tr>
+              <tr>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+              </tr>
+              <tr>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+              </tr>
+              <tr>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+              </tr>
+              <tr>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+              </tr>
+              <tr>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+                <td class="nowDate"></td>
+              </tr>
+            </table>
+          </span>
+        </span>
+        <span><img src="img/btn/ICE.png" alt="">填寫時段：<input type="text" name="gname" id="" placeholder="ex:上午10:00"></span>
+        <span><img src="img/btn/ICE.png" alt="">選擇人數：<select name="" id="apply-num"></select></span>
+        <div class="form-btn">
+          <a class="form-ice-btn-out">
+            <span class="form-ice-btn-in">
+              <img src="img/btn/ICE.png" alt="">
+              確認預約
+            </span>
+          </a>
+        </div>
+
       </form>
 
     </div>
@@ -100,17 +179,58 @@
   </footer>
 
   <script src="js/index.js"></script>
+
+
+  <!-- <script>
+    $("#date-picker").datepicker();
+  </script> -->
+
   <script>
-    var select=document.getElementById('apply-num');
-    for(var i=1;i<= 20;i++){
+    var select = document.getElementById('apply-num');
+    for (var i = 1; i <= 20; i++) {
       var opt = document.createElement("option");
-      opt.value=i;
-      opt.innerHTML=i;
+      opt.value = i;
+      opt.innerHTML = i;
       select.appendChild(opt);
-      }
+    }
   </script>
-  
-      
+
+  <!-- calender -->
+  <script>
+
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    var date;
+    var space;
+    var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+      date = 31;
+    } else if (month == 2) {
+      date = 28;
+    } else {
+      date = 30;
+    }
+
+    if (firstDay.getDay() == 0) {
+      space = 0;
+    } else {
+      space = firstDay.getDay();
+    }
+
+    var nowDate = document.getElementsByClassName('nowDate');
+    window.addEventListener('load', function () {
+      for (var i = 1; i <= date; i++) {
+        nowDate[space - 1 + i].innerHTML = i;
+      }
+      nowDate[space + today.getDate()].classList.add("now");
+      document.getElementById('mon').innerHTML = today.getFullYear() + "年" + month + "月" + today.getDate() + "日";
+    });
+
+
+  </script>
+
+
 </body>
 
 </html>
