@@ -57,9 +57,25 @@
                 background-color: #f8c3cd;
                 position: absolute;
                 z-index: 0;
-                bottom: 0;
+                bottom: 150px;
                 left: 0;
                 right: 0;
+                padding: 50px;
+                pointer-events: auto;
+                text-align: center;
+                
+                .title-area{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .topic-fruit{
+                        display: block;
+                        width: 50px;
+                    }
+                }
+
+                
             }
 
             .envelope-front{
@@ -179,6 +195,14 @@
                     width: 100%;
                 }
             }
+            .ice-btn-out{
+                @include ice-btn-out(100px,btn-costum,white,16px,4px,#6a3e26,去客製);
+                .btn-costum{
+                    line-height: 22px;
+                }
+                
+            }
+            
         }
     }    
     
@@ -243,36 +267,7 @@
         }
     }
 
-    .btn-main{
-        display: block;
-        width: 100px;
-        padding: 2px 0;
-        background-color: #fff;
-        border: 2px solid #6a3e26;
-        border-radius: 50px;
-        text-align: center;
-
-        span{
-            display: inline-block;
-            width: 90px;
-            padding: 5px 0;
-            background-color: #f8c3cd;
-            border: 2px solid #f596aa;
-            border-radius: 50px;
-            color: #fff;
-            position: relative;
-        }
-        span::before{
-            content: url(../img/qa/btn.png);
-            display: block;
-            width: 50px;
-            height: 50px;
-            position: absolute;  
-            left: -25px;  
-            top: -6px;
-        }
-    }
-
+    
     
 
 
