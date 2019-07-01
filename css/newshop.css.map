@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,eAAe;CAC3B;;AAED,AAAA,UAAU,CAAA;EACN,UAAU,EAAE,OAAO,CAAC,kCAAkC;CAEzD",
+    "sources": [
+        "../sass/newshop.scss",
+        "../sass/mixin/_mixin.scss"
+    ],
+    "names": [],
+    "file": "newshop.css"
+}
