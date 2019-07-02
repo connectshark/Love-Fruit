@@ -1,8 +1,4 @@
 @charset "UTF-8";
-* {
-  outline: #f00 solid 1px;
-}
-
 body {
   font-family: "GenJyuuGothic-R";
 }
@@ -11,7 +7,9 @@ body {
   color: #fff;
   font-size: 28px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 56px;
 }
 
 .group-title:after {
@@ -29,7 +27,9 @@ body {
   color: #fff;
   font-size: 28px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 56px;
 }
 
 .general-title:after {
@@ -47,7 +47,9 @@ body {
   color: #6a3e26;
   font-size: 12px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 24px;
 }
 
 .group-subtitle:after {
@@ -65,7 +67,9 @@ body {
   color: #fff8e4;
   font-size: 12px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 24px;
 }
 
 .general-subtitle:after {
@@ -83,7 +87,9 @@ body {
   color: #fff;
   font-size: 34px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 68px;
 }
 
 .message-title:after {
@@ -101,7 +107,9 @@ body {
   color: #fff;
   font-size: 34px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 68px;
 }
 
 .general-form-title:after {
@@ -119,7 +127,9 @@ body {
   color: #fff;
   font-size: 34px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 68px;
 }
 
 .group-form-title:after {
@@ -139,6 +149,7 @@ body {
 }
 
 .welcome-wrap .wrapper {
+  height: 100vh;
   margin: auto;
 }
 
@@ -298,22 +309,16 @@ body {
 }
 
 .general-wrap .wrapper .line {
+  visibility: hidden;
   width: 40%;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: -5%;
+  margin: -20px auto;
+  text-align: center;
 }
 
 .general-wrap .wrapper .line img {
   width: 70%;
+  margin: auto;
+  z-index: -2;
 }
 
 @media all and (min-width: 992px) {
@@ -328,6 +333,7 @@ body {
   border-radius: 20px;
   width: 90%;
   margin: auto;
+  z-index: 2;
 }
 
 .general-wrap .wrapper .info .general-name {
@@ -431,11 +437,12 @@ body {
 
 .general-wrap .wrapper .info .course-btn .course-ice-btn-out {
   margin: auto;
+  display: block;
   width: 135px;
-  height: 40px;
+  height: 40.5px;
   border-radius: 25px;
   background-color: white;
-  border: 2px solid #715124;
+  border: 2.025px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -454,22 +461,52 @@ body {
           transform: translateY(2px);
 }
 
-.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
-  width: 128px;
-  height: 34px;
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out > span {
+  display: block;
+  position: relative;
+  width: 125.55px;
+  height: 32.4px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2px solid #e4575f;
+  border: 2.025px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
-  line-height: 34px;
 }
 
-.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:hover {
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out > span:hover {
   background-color: #fad689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
+}
+
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 40.5px;
+  height: 47.25px;
+}
+
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 36px;
+}
+
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:after {
+  z-index: -1;
+  content: "我要預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
 }
 
 .group-wrap {
@@ -682,11 +719,12 @@ body {
 
 .group-wrap .wrapper .info .course-btn .course-ice-btn-out {
   margin: auto;
+  display: block;
   width: 135px;
-  height: 40px;
+  height: 40.5px;
   border-radius: 25px;
   background-color: white;
-  border: 2px solid #715124;
+  border: 2.025px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -705,27 +743,57 @@ body {
           transform: translateY(2px);
 }
 
-.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
-  width: 128px;
-  height: 34px;
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out > span {
+  display: block;
+  position: relative;
+  width: 125.55px;
+  height: 32.4px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2px solid #e4575f;
+  border: 2.025px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
-  line-height: 34px;
 }
 
-.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:hover {
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out > span:hover {
   background-color: #fad689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 40.5px;
+  height: 47.25px;
+}
+
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 36px;
+}
+
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:after {
+  z-index: -1;
+  content: "我要開團";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
+}
+
 .course-message {
+  padding-bottom: 10%;
   background-color: #f6c555;
-  height: 1080px;
   background-image: url(../img/background.png);
 }
 
@@ -762,13 +830,15 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -78%);
-          transform: translate(-50%, -78%);
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
 }
 
 @media all and (max-width: 768px) {
   .course-message .second-title h3 {
     font-size: 20px;
+    -webkit-transform: translate(-50%, -60%);
+            transform: translate(-50%, -60%);
   }
 }
 
@@ -860,23 +930,19 @@ body {
   border: none;
 }
 
-.course-message .go-between .message-btn {
-  padding-top: 5%;
+.course-message .go-between .content .open-btn {
+  margin-top: 10px;
 }
 
-@media all and (min-width: 992px) {
-  .course-message .go-between .message-btn {
-    width: 100%;
-  }
-}
-
-.course-message .go-between .message-btn .message-btn-out {
+.course-message .go-between .content .open-btn .open-btn-out {
+  width: 90%;
   margin: auto;
+  display: block;
   width: 135px;
-  height: 40px;
+  height: 40.5px;
   border-radius: 25px;
   background-color: white;
-  border: 2px solid #715124;
+  border: 2.025px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -888,29 +954,59 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.course-message .go-between .message-btn .message-btn-out:active {
+.course-message .go-between .content .open-btn .open-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.course-message .go-between .message-btn .message-btn-out .message-btn-in {
-  width: 128px;
-  height: 34px;
+.course-message .go-between .content .open-btn .open-btn-out > span {
+  display: block;
+  position: relative;
+  width: 125.55px;
+  height: 32.4px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2px solid #e4575f;
+  border: 2.025px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
-  line-height: 34px;
 }
 
-.course-message .go-between .message-btn .message-btn-out .message-btn-in:hover {
+.course-message .go-between .content .open-btn .open-btn-out > span:hover {
   background-color: #fad689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
+}
+
+.course-message .go-between .content .open-btn .open-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 40.5px;
+  height: 47.25px;
+}
+
+.course-message .go-between .content .open-btn .open-btn-out .open-btn-in {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 36px;
+}
+
+.course-message .go-between .content .open-btn .open-btn-out .open-btn-in:after {
+  z-index: -1;
+  content: "開團發佈";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
 }
 
 .course-message .love-line {
@@ -924,22 +1020,99 @@ body {
   width: 100%;
 }
 
+.course-message .form-btn {
+  margin-top: 10px;
+}
+
+.course-message .form-btn .form-btn-out {
+  width: 90%;
+  margin: auto;
+  display: block;
+  width: 135px;
+  height: 40.5px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2.025px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.course-message .form-btn .form-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.course-message .form-btn .form-btn-out > span {
+  display: block;
+  position: relative;
+  width: 125.55px;
+  height: 32.4px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2.025px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.course-message .form-btn .form-btn-out > span:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.course-message .form-btn .form-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 40.5px;
+  height: 47.25px;
+}
+
+.course-message .form-btn .form-btn-out .form-btn-in {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 36px;
+}
+
+.course-message .form-btn .form-btn-out .form-btn-in:after {
+  z-index: -1;
+  content: "主揪申請";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
+}
+
 .general-form-wrap {
   background-color: #ffd9d9;
   background-image: url(../img/background.png);
-  height: 1080px;
 }
 
 .general-form-wrap .wrapper {
   max-width: 1200px;
-  padding-top: 30%;
-  padding-bottom: 10%;
+  padding-top: 20%;
   margin: auto;
 }
 
 @media all and (min-width: 992px) {
   .general-form-wrap .wrapper {
-    padding-top: 20%;
+    padding-top: 15%;
   }
 }
 
@@ -977,19 +1150,229 @@ body {
 @media all and (max-width: 768px) {
   .general-form-wrap .wrapper .title h3 {
     font-size: 20px;
+    -webkit-transform: translate(-50%, -60%);
+            transform: translate(-50%, -60%);
   }
 }
 
+.general-form-wrap .wrapper form {
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .general-form-wrap .wrapper form {
+    width: 70%;
+  }
+}
+
+.general-form-wrap .wrapper form img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.general-form-wrap .wrapper form p {
+  font-size: 18px;
+  display: inline-block;
+  color: #434343;
+}
+
+@media all and (min-width: 992px) {
+  .general-form-wrap .wrapper form p {
+    font-size: 24px;
+  }
+}
+
+.general-form-wrap .wrapper form .form-info {
+  padding: 0 15px;
+}
+
+.general-form-wrap .wrapper form .check {
+  padding-bottom: 20px;
+}
+
+.general-form-wrap .wrapper form .check #course1, .general-form-wrap .wrapper form .check #course2, .general-form-wrap .wrapper form .check #time1, .general-form-wrap .wrapper form .check #time2, .general-form-wrap .wrapper form .check #time3, .general-form-wrap .wrapper form .check span {
+  visibility: hidden;
+}
+
+.general-form-wrap .wrapper form .check label {
+  font-size: 18px;
+  background-color: #fff;
+  padding: 5px;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.general-form-wrap .wrapper form .check input {
+  padding: 10px;
+  height: 6%;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.general-form-wrap .wrapper form .check input:checked + label {
+  border: #ffb11b solid 2px;
+}
+
+.general-form-wrap .wrapper form .check input:checked > span {
+  visibility: visible;
+}
+
+.general-form-wrap .wrapper form .check span {
+  display: inline-block;
+}
+
+@media all and (max-width: 768px) {
+  .general-form-wrap .wrapper form .check span {
+    display: block;
+  }
+}
+
+.general-form-wrap .wrapper form #date-picker {
+  padding: 10px 0;
+}
+
+.general-form-wrap .wrapper form #date-picker table {
+  vertical-align: middle;
+  background-color: #fff;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+}
+
+.general-form-wrap .wrapper form #date-picker table #mon {
+  padding: 20px 0;
+  background-color: #ea7187;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.general-form-wrap .wrapper form #date-picker table th {
+  padding: 60px 0 20px;
+  color: #ea7187;
+  font-weight: bold;
+}
+
+.general-form-wrap .wrapper form #date-picker table tr {
+  width: 100%;
+  height: 60px;
+}
+
+.general-form-wrap .wrapper form #date-picker table td {
+  width: 14%;
+  height: 60px;
+  vertical-align: middle;
+}
+
+.general-form-wrap .wrapper form #date-picker table .now {
+  background: #ea7187;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.general-form-wrap .wrapper form select {
+  display: block;
+  margin: 20px;
+  width: 40%;
+  height: 6%;
+  border-radius: 15px;
+  border: none;
+}
+
+@media all and (min-width: 992px) {
+  .general-form-wrap .wrapper form select {
+    width: 15%;
+  }
+}
+
+.general-form-wrap .wrapper .form-btn {
+  padding: 5% 0;
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out {
+  margin: auto;
+  display: block;
+  width: 135px;
+  height: 40.5px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2.025px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out > span {
+  display: block;
+  position: relative;
+  width: 125.55px;
+  height: 32.4px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2.025px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out > span:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 40.5px;
+  height: 47.25px;
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 36px;
+}
+
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
+  z-index: -1;
+  content: "確認預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
+}
+
 .group-form-wrap {
-  background-color: #f6c555;
+  background-color: #fad689;
   background-image: url(../img/background.png);
-  height: 1080px;
 }
 
 .group-form-wrap .wrapper {
   max-width: 1200px;
   padding-top: 30%;
-  padding-bottom: 10%;
   margin: auto;
 }
 
@@ -1033,6 +1416,182 @@ body {
 @media all and (max-width: 768px) {
   .group-form-wrap .wrapper .title h3 {
     font-size: 20px;
+    -webkit-transform: translate(-50%, -60%);
+            transform: translate(-50%, -60%);
   }
+}
+
+.group-form-wrap .wrapper form {
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .group-form-wrap .wrapper form {
+    width: 70%;
+  }
+}
+
+.group-form-wrap .wrapper form > span {
+  font-size: 18px;
+  display: block;
+  padding: 15px;
+  color: #434343;
+}
+
+@media all and (min-width: 992px) {
+  .group-form-wrap .wrapper form > span {
+    font-size: 24px;
+  }
+}
+
+.group-form-wrap .wrapper form > span img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.group-form-wrap .wrapper form input {
+  padding: 0 10px;
+  width: 100%;
+  height: 6%;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.group-form-wrap .wrapper form #date-picker {
+  padding: 10px 0;
+}
+
+.group-form-wrap .wrapper form #date-picker table {
+  vertical-align: middle;
+  background-color: #fff;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+}
+
+.group-form-wrap .wrapper form #date-picker table #mon {
+  padding: 20px 0;
+  background-color: #f6c555;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.group-form-wrap .wrapper form #date-picker table th {
+  padding: 60px 0 20px;
+  color: #ffb11b;
+}
+
+.group-form-wrap .wrapper form #date-picker table tr {
+  width: 100%;
+  height: 60px;
+}
+
+.group-form-wrap .wrapper form #date-picker table td {
+  width: 14%;
+  height: 60px;
+  vertical-align: middle;
+}
+
+.group-form-wrap .wrapper form #date-picker table .now {
+  background: #ffb11b;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.group-form-wrap .wrapper form select {
+  display: block;
+  margin: 10px 0;
+  width: 40%;
+  height: 6%;
+  border-radius: 15px;
+  border: none;
+}
+
+@media all and (min-width: 992px) {
+  .group-form-wrap .wrapper form select {
+    width: 15%;
+  }
+}
+
+.group-form-wrap .wrapper .form-btn {
+  padding: 5% 0;
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out {
+  margin: auto;
+  display: block;
+  width: 135px;
+  height: 40.5px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2.025px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out > span {
+  display: block;
+  position: relative;
+  width: 125.55px;
+  height: 32.4px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2.025px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out > span:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 40.5px;
+  height: 47.25px;
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 36px;
+}
+
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
+  z-index: -1;
+  content: "我要預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
 }
 /*# sourceMappingURL=course.css.map */
