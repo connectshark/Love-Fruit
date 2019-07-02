@@ -65,26 +65,13 @@
 }
 
 .page-qa .qa .letter .envelope-bg {
-  background-image: url(../img/qa/envelopebg.png);
-  width: 90%;
-  height: 680px;
-  background-size: cover;
-  margin: auto;
+  display: none;
 }
 
 .page-qa .qa .letter .topic {
-  width: 70%;
-  height: 500px;
+  padding: 5px;
   margin: auto;
   background-color: #f8c3cd;
-  position: absolute;
-  z-index: 0;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  padding: 50px;
-  pointer-events: auto;
-  text-align: center;
 }
 
 .page-qa .qa .letter .topic .title-area {
@@ -105,7 +92,8 @@
 }
 
 .page-qa .qa .letter .topic .title-area .question {
-  font-size: 28px;
+  font-size: 16px;
+  text-align: left;
   color: #cb1b45;
 }
 
@@ -117,6 +105,7 @@
   background-color: #fff;
   border: 3px solid #6a3e26;
   border-radius: 100px;
+  text-align: center;
 }
 
 .page-qa .qa .letter .topic .asw .asw-btn span {
@@ -126,7 +115,7 @@
   border: 2px solid #e4575f;
   border-radius: 100px;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -140,15 +129,7 @@
 }
 
 .page-qa .qa .letter .envelope-front {
-  width: 90%;
-  height: 255px;
-  margin: -300px auto 0;
-  position: relative;
-  pointer-events: none;
-}
-
-.page-qa .qa .letter .envelope-front img {
-  width: 100%;
+  display: none;
 }
 
 .page-qa .stage {
@@ -286,6 +267,7 @@
 }
 
 .page-qa .stage .content .ice-btn-out {
+  margin-bottom: 10px;
   display: block;
   width: 150px;
   height: 45px;
@@ -467,6 +449,43 @@
   .page-qa .qa .title-main span {
     font-size: 18px;
     line-height: 32px;
+  }
+  .page-qa .qa .letter .envelope-bg {
+    display: block;
+    background-image: url(../img/qa/envelopebg.png);
+    width: 90%;
+    height: 680px;
+    background-size: cover;
+    margin: auto;
+  }
+  .page-qa .qa .letter .topic {
+    height: 500px;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    pointer-events: auto;
+    text-align: center;
+  }
+  .page-qa .qa .letter .topic .title-area .question {
+    font-size: 28px;
+    text-align: center;
+  }
+  .page-qa .qa .letter .topic .asw .asw-btn span {
+    font-size: 18px;
+  }
+  .page-qa .qa .letter .envelope-front {
+    display: block;
+    width: 90%;
+    height: 255px;
+    margin: -300px auto 0;
+    position: relative;
+    pointer-events: none;
+  }
+  .page-qa .qa .letter .envelope-front img {
+    width: 100%;
   }
   .page-qa .stage {
     height: 885px;

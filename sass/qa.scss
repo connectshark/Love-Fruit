@@ -41,29 +41,15 @@
 
         .letter{
             overflow: hidden;
-            position: relative;
-
+            position: relative;   
             .envelope-bg{
-                background-image: url(../img/qa/envelopebg.png);
-                width: 90%;
-                height: 680px;
-                background-size: cover;
-                margin: auto;
-            }
+                display: none;
+            }         
 
             .topic{
-                width: 70%;
-                height: 500px;
+                padding: 5px;
                 margin: auto;
                 background-color: #f8c3cd;
-                position: absolute;
-                z-index: 0;
-                bottom: 0px;
-                left: 0;
-                right: 0;
-                padding: 50px;
-                pointer-events: auto;
-                text-align: center;
                 
                 .title-area{
                     display: flex;
@@ -74,9 +60,9 @@
                         display: block;
                         width: 60px;
                     }
-
                     .question{
-                        font-size: 28px;
+                        font-size: 16px;
+                        text-align: left;
                         color: #cb1b45;
                     }
                 }
@@ -90,6 +76,7 @@
                         background-color: #fff;
                         border: 3px solid #6a3e26;
                         border-radius: 100px;
+                        text-align: center;
 
                        span{
                            display: block;
@@ -98,7 +85,7 @@
                            border: 2px solid #e4575f;
                            border-radius: 100px;
                            color: #fff;
-                           font-size: 18px;
+                           font-size: 16px;
                            transition: .2s;
                        }                       
                    }
@@ -110,26 +97,12 @@
                     .asw-btn:active span{
                         background-color: #db4d6d;
                     }
-                }
-
-                
+                }                
             }
-
             .envelope-front{
-                width: 90%;
-                height: 255px;
-                margin: -300px auto 0;
-                position: relative;
-                pointer-events: none;
-
-                img{
-                    width: 100%;
-                }
-            }
+                display: none;
+            }           
         }
-        
-
-
     }
 
     .stage{
@@ -234,6 +207,7 @@
                 }
             }
             .ice-btn-out{
+                margin-bottom: 10px;
                 @include ice-btn-out(150px,btn-costum,white,24px,4px,#6a3e26,去客製);
                 .btn-costum{
                     line-height: 30px;
@@ -344,6 +318,56 @@
                 span{
                     font-size: 18px;
                     line-height: 32px;
+                }
+            }
+
+            .letter{
+                .envelope-bg{
+                    display: block;
+                    background-image: url(../img/qa/envelopebg.png);
+                    width: 90%;
+                    height: 680px;
+                    background-size: cover;
+                    margin: auto;
+                }
+
+                .topic{
+                    height: 500px;
+                    position: absolute;
+                    z-index: 0;
+                    bottom: 0px;
+                    left: 0;
+                    right: 0;
+                    padding: 50px;
+                    pointer-events: auto;
+                    text-align: center;
+
+                    .title-area{
+                        .question{
+                            font-size: 28px;
+                            text-align: center;
+                        }
+                    }
+
+                    .asw{
+                        .asw-btn{
+                            span{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                .envelope-front{
+                    display: block;
+                    width: 90%;
+                    height: 255px;
+                    margin: -300px auto 0;
+                    position: relative;
+                    pointer-events: none;
+    
+                    img{
+                        width: 100%;
+                    }
                 }
             }
         }
