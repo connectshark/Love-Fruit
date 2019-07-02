@@ -31,9 +31,11 @@
 
 .page-qa .qa .title-main .title {
   color: #fff;
-  font-size: 18px;
+  font-size: 24px;
   position: relative;
+  z-index: 5;
   text-align: center;
+  line-height: 48px;
 }
 
 .page-qa .qa .title-main .title:after {
@@ -49,6 +51,7 @@
 
 .page-qa .qa .title-main .title {
   z-index: 1;
+  line-height: 20px;
 }
 
 .page-qa .qa .title-main span {
@@ -62,34 +65,71 @@
 }
 
 .page-qa .qa .letter .envelope-bg {
-  background-image: url(../img/qa/envelopebg.png);
-  width: 90%;
-  height: 680px;
-  background-size: cover;
-  margin: auto;
+  display: none;
 }
 
 .page-qa .qa .letter .topic {
-  width: 70%;
-  height: 300px;
+  padding: 5px;
   margin: auto;
   background-color: #f8c3cd;
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+}
+
+.page-qa .qa .letter .topic .title-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-qa .qa .letter .topic .title-area .topic-fruit {
+  display: block;
+  width: 60px;
+}
+
+.page-qa .qa .letter .topic .title-area .question {
+  font-size: 16px;
+  text-align: left;
+  color: #cb1b45;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn {
+  display: block;
+  width: 200px;
+  padding: 2px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 3px solid #6a3e26;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn span {
+  display: block;
+  padding: 10px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn:hover span {
+  background-color: #ffabb1;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn:active span {
+  background-color: #db4d6d;
 }
 
 .page-qa .qa .letter .envelope-front {
-  width: 90%;
-  height: 255px;
-  margin: -300px auto 0;
-  position: relative;
-}
-
-.page-qa .qa .letter .envelope-front img {
-  width: 100%;
+  display: none;
 }
 
 .page-qa .stage {
@@ -226,6 +266,84 @@
   width: 100%;
 }
 
+.page-qa .stage .content .ice-btn-out {
+  margin-bottom: 10px;
+  display: block;
+  width: 150px;
+  height: 45px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2.25px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.page-qa .stage .content .ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.page-qa .stage .content .ice-btn-out > span {
+  display: block;
+  position: relative;
+  width: 139.5px;
+  height: 36px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2.25px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.page-qa .stage .content .ice-btn-out > span:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.page-qa .stage .content .ice-btn-out > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 45px;
+  height: 52.5px;
+}
+
+.page-qa .stage .content .ice-btn-out .btn-costum {
+  color: white;
+  font-size: 24px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 48px;
+}
+
+.page-qa .stage .content .ice-btn-out .btn-costum:after {
+  z-index: -1;
+  content: "去客製";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 4px #6a3e26;
+}
+
+.page-qa .stage .content .ice-btn-out .btn-costum {
+  line-height: 30px;
+}
+
 .page-qa .stage.single {
   border-top: 10px solid #754c24;
   background: #f6c555 url(../img/qa/cover.png) top left;
@@ -291,35 +409,10 @@
   width: 100%;
 }
 
-.page-qa .btn-main {
-  display: block;
-  width: 100px;
-  padding: 2px 0;
-  background-color: #fff;
-  border: 2px solid #6a3e26;
-  border-radius: 50px;
-  text-align: center;
-}
-
-.page-qa .btn-main span {
-  display: inline-block;
-  width: 90px;
-  padding: 5px 0;
-  background-color: #f8c3cd;
-  border: 2px solid #f596aa;
-  border-radius: 50px;
-  color: #fff;
-  position: relative;
-}
-
-.page-qa .btn-main span::before {
-  content: url(../img/qa/btn.png);
-  display: block;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: -25px;
-  top: -6px;
+@media all and (max-width: 768px) {
+  .page-qa .stage .popsicle img {
+    width: 100%;
+  }
 }
 
 @media all and (min-width: 769px) {
@@ -335,7 +428,9 @@
     color: #fff;
     font-size: 40px;
     position: relative;
+    z-index: 5;
     text-align: center;
+    line-height: 80px;
   }
   .page-qa .qa .title-main .title:after {
     z-index: -1;
@@ -349,10 +444,48 @@
   }
   .page-qa .qa .title-main .title {
     z-index: 1;
+    line-height: 40px;
   }
   .page-qa .qa .title-main span {
     font-size: 18px;
     line-height: 32px;
+  }
+  .page-qa .qa .letter .envelope-bg {
+    display: block;
+    background-image: url(../img/qa/envelopebg.png);
+    width: 90%;
+    height: 680px;
+    background-size: cover;
+    margin: auto;
+  }
+  .page-qa .qa .letter .topic {
+    height: 500px;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    pointer-events: auto;
+    text-align: center;
+  }
+  .page-qa .qa .letter .topic .title-area .question {
+    font-size: 28px;
+    text-align: center;
+  }
+  .page-qa .qa .letter .topic .asw .asw-btn span {
+    font-size: 18px;
+  }
+  .page-qa .qa .letter .envelope-front {
+    display: block;
+    width: 90%;
+    height: 255px;
+    margin: -300px auto 0;
+    position: relative;
+    pointer-events: none;
+  }
+  .page-qa .qa .letter .envelope-front img {
+    width: 100%;
   }
   .page-qa .stage {
     height: 885px;

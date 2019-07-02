@@ -1,0 +1,290 @@
+@import "mixin/mixin";
+// 按鈕教學
+  // 普通按鈕  btn-out($width,$class,$color,$size,$width2,$shadow,$text)
+  // 有冰棒圖案 ice-btn-out($width,$class,$color,$size,$width2,$shadow,$text)
+
+// 變數解釋
+  //使用之前先在HTML中把自己要使用的字輸入好
+  //建議使用"span"標籤包住並使用一個class名稱
+  //$width ->按鈕寬度
+  //$class -> 包住字體的class名稱(class名稱即可無須前面.)
+  //$color -> 字顏色(ex:#fff)
+  //$size -> 字大小(ex:20px),隨著按鈕的寬度設定,請自行調整字大小,這樣字才會置中
+  //$width2 -> 外框粗細(ex:2px)
+  //$shadow -> 外框顏色(ex:#fff)
+  //$text -> 外框使用的字(與HTML中的文字相同)
+.thumb-btn-out{
+    @include btn-out(100px,thumb-btn-in,white,12px,2px,black,讚);
+    @include rwd(medium){
+        @include btn-out(150px,thumb-btn-in,white,18px,2px,black,讚);
+    }
+}
+.share-btn-out{
+    @include btn-out(100px,share-btn-in,white,12px,2px,black,分享);
+    @include rwd(medium){
+        @include btn-out(150px,share-btn-in,white,18px,2px,black,分享);
+    }
+}
+
+body{
+    font-family: "A-OTF-M";
+    background-image: url(../img/background.png);
+    background-color: #ffdee6;
+}
+.banner{
+    background-color: #e87d8b;
+    padding: 50px 0 0;
+    img{
+        width: 100%;
+    }
+}
+.filter{
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    @include rwd(medium){
+        flex-flow: row nowrap;
+    }
+    #love-list{
+        width: 80%;
+        box-sizing: border-box;
+        border: none;
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 18px;
+        @include rwd(medium){
+            display: none;
+        }
+    }
+    .filter-btn{
+        display: none;
+    @include rwd(medium){
+        display: block;
+        @include btn-out(150px,btn-all,white,18px,2px,black,全部);
+        @include btn-out(150px,btn-hot-love,white,18px,2px,black,熱戀);
+        @include btn-out(150px,btn-break,white,18px,2px,black,分手);
+        @include btn-out(150px,btn-true-love,white,18px,2px,black,初戀);
+        @include btn-out(150px,btn-single,white,18px,2px,black,單身);
+    }
+}
+}
+.clearfix{
+	clear: both;
+}
+.message{
+	width: 100%;
+	max-width: 1200px;
+    margin: auto;
+    .member{
+        width: 100%;
+    }
+    .part-single{
+        background-color: #fad689;
+    }
+    .message-item{
+        float: left;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+        margin: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        position: relative;
+        z-index: 0;
+        @include rwd(medium){
+            width: calc(50% - 40px);
+            flex-flow: row wrap;
+        }
+        .message-aside{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px;
+            @include rwd(medium){
+                width: 30%;
+            }
+            .member{
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                @include rwd(medium){
+                    flex-flow: column nowrap;
+                    align-items: unset;
+                }
+            }
+            .member-img{
+                width: 30%;
+                padding-bottom: 30%;
+                background-image: url('../img/cherry.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: #fa8;
+                border-radius: 50%;
+                box-sizing: border-box;
+                position: relative;
+                @include rwd(medium){
+                    width: 100%;
+                    padding-bottom: 100%;
+                }
+                .great{
+                    width: 150%;
+                    position: absolute;
+                    z-index: -1;
+                    height: 100%;
+                    box-sizing: border-box;
+                    left: 60%;
+                    border-radius: 20px;
+                    background-color: rgba(248,195,205,.7);
+                    padding: 20px;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: flex-end;
+                    @include rwd(medium){
+                        width: 130%;
+                        height: 50%;
+                        left: 50%;
+                    }
+                    .heart-icon{
+                        font-size: 24px;
+                        color: #cb1b45;
+                    }
+                    .heart-amount{
+                        font-size: 24px;
+                        color: #333;
+                    }
+                }
+            }
+            .member-name{
+                text-align: center;
+                font-family: "A-OTF-M";
+                font-size: 28px;
+                box-sizing: border-box;
+                margin-left: auto;
+                @include rwd(medium){
+                    margin-left: 0;
+                }
+            }
+            .member-ice{
+                transform:translate(-30px,30px) rotate(-45deg);
+                display: none;
+                @include rwd(medium){
+                    display: block;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .message-main{
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            @include rwd(medium){
+                width: 70%;
+                padding:100px 20px 0;
+            }
+            h3{
+                font-size: 24px;
+                color: #434343;
+                line-height: 3;
+            }
+            p{
+                line-height: 2;
+                font-size: 18px;
+                color: #434343;
+                text-decoration: underline;
+                width: 100%;
+                height: 10em;
+                overflow: hidden;
+                position: relative;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 100px;
+                    height: 2em;
+                    background: linear-gradient(to right, rgba(250, 214, 137, 0), rgba(250, 214, 137, 1) 50%);
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+        .message-footer{
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-around;
+            padding:0 20px 20px;
+            @include rwd(medium){
+                padding: 60px 20px 10px;
+            }
+            .tag{
+                width: 20%;
+                border: 1px solid #fff;
+                color: #fff;
+                padding: 10px 0;
+                background-color: transparent;
+                text-align: center;
+                @include rwd(medium){
+                    width: auto;
+                    padding: 10px;
+                }
+                span{
+                    font-size: 16px;
+                    @include rwd(medium){  
+                        font-size: 24px;
+                    }
+                }
+            }
+            .share{
+                width: 30%;
+            }
+            .thumb{
+                @extend .share;
+            }
+        }
+    }
+}
+.message{
+    .part-true-love{
+        background-color: #6bdbda;
+        .message-main{
+            p{
+                &:before{
+                    background: linear-gradient(to right, rgba(0,0,0,0), #6bdbda 50%);
+                }
+            }
+        }
+    }
+}
+.message{
+    .part-hot-love{
+        background-color: #ea7187;
+        .message-main{
+            p{
+                &:before{
+                    background: linear-gradient(to right, rgba(0,0,0,0), #ea7187 50%);
+                }
+            }
+        }
+    }
+}
+.message{
+    .part-break{
+        background-color: #9dc5f6;
+        .message-main{
+            p{
+                &:before{
+                    background: linear-gradient(to right, rgba(0,0,0,0), #9dc5f6 50%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@import "mixin/mixin";
+.aside-button-out-last{
+    @include btn-out(120px,aside-button-in-last,#fff,8px,2px,#000,上一步);
+}
+.aside-button-out-next{
+    @include btn-out(120px,aside-button-in-next,#fff,8px,2px,#000,上一步);
+}

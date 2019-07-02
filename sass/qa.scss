@@ -27,9 +27,10 @@
             text-align: center;
             
 
-            @include out-Line-Font(title,#fff,18px,5px,#6a3e26,戀冰測驗);
+            @include out-Line-Font(title,#fff,24px,5px,#6a3e26,戀冰測驗);
             .title{
                 z-index: 1;
+                line-height: 20px;
             }
 
             span{
@@ -40,42 +41,68 @@
 
         .letter{
             overflow: hidden;
-            position: relative;
-
+            position: relative;   
             .envelope-bg{
-                background-image: url(../img/qa/envelopebg.png);
-                width: 90%;
-                height: 680px;
-                background-size: cover;
-                margin: auto;
-            }
+                display: none;
+            }         
 
             .topic{
-                width: 70%;
-                height: 300px;
+                padding: 5px;
                 margin: auto;
                 background-color: #f8c3cd;
-                position: absolute;
-                z-index: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
+                
+                .title-area{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-            .envelope-front{
-                width: 90%;
-                height: 255px;
-                margin: -300px auto 0;
-                position: relative;
-
-                img{
-                    width: 100%;
+                    .topic-fruit{
+                        display: block;
+                        width: 60px;
+                    }
+                    .question{
+                        font-size: 16px;
+                        text-align: left;
+                        color: #cb1b45;
+                    }
                 }
+
+                .asw{
+                    .asw-btn{
+                        display: block;
+                        width: 200px;
+                        padding: 2px;                       
+                        margin: 20px auto;
+                        background-color: #fff;
+                        border: 3px solid #6a3e26;
+                        border-radius: 100px;
+                        text-align: center;
+
+                       span{
+                           display: block;
+                           padding: 10px;
+                           background-color: #fc7389;
+                           border: 2px solid #e4575f;
+                           border-radius: 100px;
+                           color: #fff;
+                           font-size: 16px;
+                           transition: .2s;
+                       }                       
+                   }
+
+                   .asw-btn:hover span{
+                        background-color: #ffabb1;
+                    }
+
+                    .asw-btn:active span{
+                        background-color: #db4d6d;
+                    }
+                }                
             }
+            .envelope-front{
+                display: none;
+            }           
         }
-        
-
-
     }
 
     .stage{
@@ -179,6 +206,15 @@
                     width: 100%;
                 }
             }
+            .ice-btn-out{
+                margin-bottom: 10px;
+                @include ice-btn-out(150px,btn-costum,white,24px,4px,#6a3e26,去客製);
+                .btn-costum{
+                    line-height: 30px;
+                }
+                
+            }
+            
         }
     }    
     
@@ -243,39 +279,22 @@
         }
     }
 
-    .btn-main{
-        display: block;
-        width: 100px;
-        padding: 2px 0;
-        background-color: #fff;
-        border: 2px solid #6a3e26;
-        border-radius: 50px;
-        text-align: center;
-
-        span{
-            display: inline-block;
-            width: 90px;
-            padding: 5px 0;
-            background-color: #f8c3cd;
-            border: 2px solid #f596aa;
-            border-radius: 50px;
-            color: #fff;
-            position: relative;
-        }
-        span::before{
-            content: url(../img/qa/btn.png);
-            display: block;
-            width: 50px;
-            height: 50px;
-            position: absolute;  
-            left: -25px;  
-            top: -6px;
-        }
-    }
-
+    
     
 
 
+}
+
+@include rwd(mobile){
+    .page-qa{
+        .stage{
+            .popsicle{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 @include rwd(medium){
@@ -293,11 +312,62 @@
                 @include out-Line-Font(title,#fff,40px,8px,#6a3e26,戀冰測驗);
                 .title{
                     z-index: 1;
+                    line-height: 40px;
                 }
 
                 span{
                     font-size: 18px;
                     line-height: 32px;
+                }
+            }
+
+            .letter{
+                .envelope-bg{
+                    display: block;
+                    background-image: url(../img/qa/envelopebg.png);
+                    width: 90%;
+                    height: 680px;
+                    background-size: cover;
+                    margin: auto;
+                }
+
+                .topic{
+                    height: 500px;
+                    position: absolute;
+                    z-index: 0;
+                    bottom: 0px;
+                    left: 0;
+                    right: 0;
+                    padding: 50px;
+                    pointer-events: auto;
+                    text-align: center;
+
+                    .title-area{
+                        .question{
+                            font-size: 28px;
+                            text-align: center;
+                        }
+                    }
+
+                    .asw{
+                        .asw-btn{
+                            span{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                .envelope-front{
+                    display: block;
+                    width: 90%;
+                    height: 255px;
+                    margin: -300px auto 0;
+                    position: relative;
+                    pointer-events: none;
+    
+                    img{
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -308,7 +378,6 @@
             
             .content{
                 padding: 50px;
-
             }
         }
     }

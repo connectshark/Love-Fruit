@@ -61,11 +61,9 @@
 
 
 //格線系統
-@include rwd(mobile){
-  @for $i from 1 through 12 {
-    .col-#{$i}{
-      width: ($i / 12) * 100%;
-    }
+@for $i from 1 through 12 {
+  .col-#{$i}{
+    width: ($i / 12) * 100%;
   }
 }
 

@@ -1,0 +1,853 @@
+@charset "UTF-8";
+.thumb-btn-out {
+  display: block;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  background-color: white;
+  border: 1.5px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.thumb-btn-out > span {
+  display: block;
+  width: 93px;
+  height: 24px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 1.5px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.thumb-btn-out > span:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.thumb-btn-out > span:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.thumb-btn-out .thumb-btn-in {
+  color: white;
+  font-size: 12px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 24px;
+}
+
+.thumb-btn-out .thumb-btn-in:after {
+  z-index: -1;
+  content: "讚";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 2px black;
+}
+
+@media all and (min-width: 769px) {
+  .thumb-btn-out {
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+  }
+  .thumb-btn-out > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .thumb-btn-out > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .thumb-btn-out > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .thumb-btn-out .thumb-btn-in {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .thumb-btn-out .thumb-btn-in:after {
+    z-index: -1;
+    content: "讚";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+.share-btn-out {
+  display: block;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  background-color: white;
+  border: 1.5px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.share-btn-out > span {
+  display: block;
+  width: 93px;
+  height: 24px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 1.5px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.share-btn-out > span:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.share-btn-out > span:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.share-btn-out .share-btn-in {
+  color: white;
+  font-size: 12px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 24px;
+}
+
+.share-btn-out .share-btn-in:after {
+  z-index: -1;
+  content: "分享";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 2px black;
+}
+
+@media all and (min-width: 769px) {
+  .share-btn-out {
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+  }
+  .share-btn-out > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .share-btn-out > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .share-btn-out > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .share-btn-out .share-btn-in {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .share-btn-out .share-btn-in:after {
+    z-index: -1;
+    content: "分享";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+body {
+  font-family: "A-OTF-M";
+  background-image: url(../img/background.png);
+  background-color: #ffdee6;
+}
+
+.banner {
+  background-color: #e87d8b;
+  padding: 50px 0 0;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.filter {
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media all and (min-width: 769px) {
+  .filter {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+}
+
+.filter #love-list {
+  width: 80%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+@media all and (min-width: 769px) {
+  .filter #love-list {
+    display: none;
+  }
+}
+
+.filter .filter-btn {
+  display: none;
+}
+
+@media all and (min-width: 769px) {
+  .filter .filter-btn {
+    display: block;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    display: block;
+    width: 150px;
+    height: 45px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2.25px solid #715124;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-all {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-all:after {
+    z-index: -1;
+    content: "全部";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-hot-love {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-hot-love:after {
+    z-index: -1;
+    content: "熱戀";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-break {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-break:after {
+    z-index: -1;
+    content: "分手";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-true-love {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-true-love:after {
+    z-index: -1;
+    content: "初戀";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+  .filter .filter-btn > span {
+    display: block;
+    width: 139.5px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2.25px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .filter .filter-btn > span:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn > span:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .filter .filter-btn .btn-single {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    line-height: 36px;
+  }
+  .filter .filter-btn .btn-single:after {
+    z-index: -1;
+    content: "單身";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
+.message {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.message .member {
+  width: 100%;
+}
+
+.message .part-single {
+  background-color: #fad689;
+}
+
+.message .message-item {
+  float: left;
+  width: calc(100% - 40px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  z-index: 0;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item {
+    width: calc(50% - 40px);
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
+.message .message-item .message-aside {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-aside {
+    width: 30%;
+  }
+}
+
+.message .message-item .message-aside .member {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-aside .member {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+}
+
+.message .message-item .message-aside .member-img {
+  width: 30%;
+  padding-bottom: 30%;
+  background-image: url("../img/cherry.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fa8;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-aside .member-img {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
+.message .message-item .message-aside .member-img .great {
+  width: 150%;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 60%;
+  border-radius: 20px;
+  background-color: rgba(248, 195, 205, 0.7);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-aside .member-img .great {
+    width: 130%;
+    height: 50%;
+    left: 50%;
+  }
+}
+
+.message .message-item .message-aside .member-img .great .heart-icon {
+  font-size: 24px;
+  color: #cb1b45;
+}
+
+.message .message-item .message-aside .member-img .great .heart-amount {
+  font-size: 24px;
+  color: #333;
+}
+
+.message .message-item .message-aside .member-name {
+  text-align: center;
+  font-family: "A-OTF-M";
+  font-size: 28px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-left: auto;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-aside .member-name {
+    margin-left: 0;
+  }
+}
+
+.message .message-item .message-aside .member-ice {
+  -webkit-transform: translate(-30px, 30px) rotate(-45deg);
+          transform: translate(-30px, 30px) rotate(-45deg);
+  display: none;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-aside .member-ice {
+    display: block;
+  }
+}
+
+.message .message-item .message-aside .member-ice img {
+  width: 100%;
+}
+
+.message .message-item .message-main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-main {
+    width: 70%;
+    padding: 100px 20px 0;
+  }
+}
+
+.message .message-item .message-main h3 {
+  font-size: 24px;
+  color: #434343;
+  line-height: 3;
+}
+
+.message .message-item .message-main p {
+  line-height: 2;
+  font-size: 18px;
+  color: #434343;
+  text-decoration: underline;
+  width: 100%;
+  height: 10em;
+  overflow: hidden;
+  position: relative;
+}
+
+.message .message-item .message-main p:before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 2em;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(250, 214, 137, 0)), color-stop(50%, #fad689));
+  background: linear-gradient(to right, rgba(250, 214, 137, 0), #fad689 50%);
+  right: 0;
+  bottom: 0;
+}
+
+.message .message-item .message-footer {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 20px 20px;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-footer {
+    padding: 60px 20px 10px;
+  }
+}
+
+.message .message-item .message-footer .tag {
+  width: 20%;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-footer .tag {
+    width: auto;
+    padding: 10px;
+  }
+}
+
+.message .message-item .message-footer .tag span {
+  font-size: 16px;
+}
+
+@media all and (min-width: 769px) {
+  .message .message-item .message-footer .tag span {
+    font-size: 24px;
+  }
+}
+
+.message .message-item .message-footer .share, .message .message-item .message-footer .thumb {
+  width: 30%;
+}
+
+.message .part-true-love {
+  background-color: #6bdbda;
+}
+
+.message .part-true-love .message-main p:before {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(50%, #6bdbda));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #6bdbda 50%);
+}
+
+.message .part-hot-love {
+  background-color: #ea7187;
+}
+
+.message .part-hot-love .message-main p:before {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(50%, #ea7187));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #ea7187 50%);
+}
+
+.message .part-break {
+  background-color: #9dc5f6;
+}
+
+.message .part-break .message-main p:before {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(50%, #9dc5f6));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #9dc5f6 50%);
+}
+/*# sourceMappingURL=message.css.map */
