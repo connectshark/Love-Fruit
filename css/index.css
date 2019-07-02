@@ -103,7 +103,7 @@
 }
 .love-qa h2 {
   font-family: "A-OTF-M";
-  font-size: 55px;
+  font-size: 3.5vw;
   color: #ff8f8f;
   letter-spacing: 4px;
   margin-bottom: 3%;
@@ -111,7 +111,7 @@
 .love-qa span {
   color: #777777;
   letter-spacing: 2px;
-  font-size: 12px;
+  font-size: 0.8vw;
   font-family: "GenJyuuGothic-R";
 }
 
@@ -149,10 +149,9 @@
   padding: 7%;
   font-family: "GenJyuuGothic-B";
   color: #ea7187;
-  font-size: 20px;
-  text-align: left;
-  letter-spacing: 2px;
-  line-height: 26px;
+  font-size: 1.3vw;
+  letter-spacing: 0.1vw;
+  line-height: 1.8vw;
   text-align: justify;
 }
 .mailer-bottom {
@@ -168,6 +167,66 @@
   position: absolute;
   z-index: -1;
 }
+/* 按鈕 */
+.qa-button-style {
+  margin-top: 1%;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 10%;
+}
+.qa-button-style-botton {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #6a3e26;
+  transform: translateY(0%);
+}
+.qa-inner-style {
+  margin-top: 1%;
+  display: inline-block;
+  width: 97%;
+  height: 76%;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  background-color: #e4575f;
+  text-align: center;
+}
+.qa-btn-ice {
+  width: 30%;
+  position: absolute;
+  top: -15%;
+  left: -7%;
+}
+.qa-button-text-style {
+  position: relative;
+  top: 9.2%;
+  z-index: 0;
+  display: inline-block;
+  width: 98%;
+  height: 83%;
+  border-radius: 30px;
+  background-color: #fc7389;
+}
+.qa-button-text {
+  font-size: 0.8vw;
+  line-height: 1.4vw;
+  letter-spacing: 0.2vw;
+  margin-top: 1.2%;
+  color: #ffffff;
+  font-family: "A-OTF-M";
+}
+.qa-button-custom:hover .qa-button-text-style {
+  background-color: #ffabb1;
+}
+.qa-button-custom:active .qa-button-text-style {
+  background-color: #db4d6d;
+}
+/* 按鈕結束 */
 /*第三屏幕*/
 .index-cp-bgc {
   position: relative;
@@ -198,7 +257,7 @@
 }
 .love-cp h2 {
   font-family: "A-OTF-M";
-  font-size: 55px;
+  font-size: 3.5vw;
   color: #ff8f8f;
   letter-spacing: 4px;
   margin-bottom: 3%;
@@ -206,7 +265,7 @@
 .love-cp span {
   color: #777777;
   letter-spacing: 2px;
-  font-size: 12px;
+  font-size: 0.8vw;
   font-family: "GenJyuuGothic-R";
 }
 .diyIcebgc-top {
@@ -233,8 +292,8 @@
   position: absolute;
   z-index: 7;
   width: 12%;
-  height: 30%;
-  top: 27%;
+  height: 32%;
+  top: 26%;
   left: 55.8%;
   border-radius: 5%;
   text-align: center;
@@ -248,25 +307,43 @@
   justify-content: space-around;
   width: 90%;
   height: 70%;
+  margin-bottom: 4%;
 }
 .panel-button-bottom {
   width: 38%;
   height: 42%;
-  border-radius: 20%;
+  border-radius: 15%;
   border: 4px solid #6a3e26;
   background-color: #bd9c64;
 }
 .panel-button-center {
   width: 100%;
-  height: 92%;
-  border-radius: 20%;
+  height: 94%;
+  border-radius: 15%;
   background-color: #f3e6c4;
+  text-align: center;
+}
+.panel-button-center span {
+  margin-top: 35%;
+  font-size: 0.3vw;
+  color: #744934;
+  font-family: "GenJyuuGothic-R";
 }
 .panel-button-center-triangle-group {
   font-size: 0;
 }
 .panel-button-bottom-pink {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: inline-block;
   background-color: #ffa4b5;
+  width: 90%;
+  height: 70%;
+  border-radius: 15%;
+}
+.panel-button-bottom-pink img {
+  padding-top: 10%;
+  width: 70%;
 }
 .panel-button-center-triangle {
   display: inline-block;
@@ -278,7 +355,8 @@
 }
 .ice-panel h3 {
   font-family: "A-OTF-M";
-  font-size: 20px;
+  font-size: 1.2vw;
+  letter-spacing: 0.01vw;
   color: #6a3e26;
   margin-bottom: 3%;
 }
@@ -289,3 +367,308 @@
   width: 13%;
   left: 37%;
 }
+.ice-btn-out {
+  width: 80%;
+}
+/* 按鈕 */
+.c-p-button-style {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  width: 70%;
+  height: 15%;
+  border-radius: 30px;
+  background-color: #6a3e26;
+  transform: translateY(0%);
+}
+.c-p-button-style-botton {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #6a3e26;
+  transform: translateY(0%);
+}
+.inner-style {
+  margin-top: 1.5%;
+  display: inline-block;
+  width: 95%;
+  height: 90%;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  background-color: #e4575f;
+  text-align: center;
+}
+.btn-ice {
+  width: 30%;
+  position: absolute;
+  top: -15%;
+  left: -7%;
+}
+.c-p-button-text-style {
+  position: relative;
+  top: 4%;
+  z-index: 0;
+  display: inline-block;
+  width: 97%;
+  height: 90%;
+  border-radius: 30px;
+  background-color: #ffabb1;
+}
+.c-p-button-text {
+  margin-left: 18%;
+  font-size: 0.9vw;
+  line-height: 2.3vw;
+  letter-spacing: 0.2vw;
+  margin-top: 1.2%;
+  color: #ffffff;
+  font-family: "A-OTF-M";
+}
+.c-p-button-text::after {
+  z-index: -1;
+  margin-left: 18%;
+  content: "立即製作";
+  font-family: "A-OTF-M";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+.c-p-button-custom:hover .c-p-button-text-style {
+  background-color: #fad689;
+}
+.c-p-button-custom:active .c-p-button-style-botton {
+  transform: translateY(2%);
+}
+/* 按鈕結束 */
+
+.c-p-single {
+  text-align: center;
+  position: absolute;
+  width: 10%;
+  z-index: 7;
+  top: 27%;
+  left: 12.5%;
+}
+.c-p-single img {
+  width: 100%;
+}
+.c-p-firstLove {
+  text-align: center;
+  position: absolute;
+  z-index: 6;
+  width: 10%;
+  top: 35%;
+  left: 21%;
+}
+.c-p-firstLove img {
+  width: 100%;
+}
+.c-p-love {
+  text-align: center;
+  position: absolute;
+  z-index: 6;
+  width: 10%;
+  top: 25%;
+  right: 20.8%;
+}
+.c-p-love img {
+  width: 100%;
+}
+.c-p-lostLove {
+  text-align: center;
+  position: absolute;
+  z-index: 7;
+  width: 10%;
+  top: 37%;
+  right: 12%;
+}
+.c-p-lostLove img {
+  width: 100%;
+}
+/* 第四屏 */
+.index-store-bgc {
+  position: relative;
+  background-color: #c9fcfb;
+  width: 100%;
+  z-index: 4;
+  padding-bottom: 56%;
+}
+.store-bgc {
+  width: 100%;
+  position: absolute;
+  top: -35%;
+}
+.love-store {
+  position: absolute;
+  width: 28%;
+  top: -1%;
+  left: 38%;
+  z-index: 5;
+}
+.love-icon {
+  display: inline-block;
+  width: 20%;
+}
+.love-icon2 img {
+  width: 100%;
+}
+.index-store-title {
+  padding-top: 2%;
+  margin-left: 1%;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+}
+.love-store h2 {
+  font-family: "A-OTF-M";
+  font-size: 3.5vw;
+  color: #ff8f8f;
+  letter-spacing: 4px;
+  margin-bottom: 3%;
+}
+.love-store span {
+  color: #777777;
+  letter-spacing: 2px;
+  font-size: 0.8vw;
+  font-family: "GenJyuuGothic-R";
+}
+.store-group {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  left: 30%;
+}
+.store-group img {
+  width: 42%;
+}
+.store-item-first-love {
+  width: 23%;
+  position: absolute;
+  z-index: 5;
+  left: 16%;
+  top: 30%;
+}
+.store-item-fall-in-love {
+  width: 23%;
+  position: absolute;
+  z-index: 5;
+  left: 32%;
+  top: 30%;
+}
+.store-item-single {
+  width: 23%;
+  position: absolute;
+  z-index: 5;
+  right: 30%;
+  top: 30%;
+}
+.store-item-break-up {
+  width: 23%;
+  position: absolute;
+  z-index: 5;
+  right: 14%;
+  top: 30%;
+}
+.store-item-bgc {
+  width: 100%;
+}
+.store-item-img {
+  position: absolute;
+  top: 25%;
+  left: 29%;
+  width: 40%;
+  height: 55%;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 3px solid #744934;
+  text-align: center;
+}
+.store-item-img img {
+  margin-top: 10%;
+  margin-bottom: 7%;
+  width: 50%;
+  display: inline-block;
+}
+.store-item-img span {
+  margin-bottom: 5%;
+  display: block;
+  text-align: center;
+  font-family: "GenJyuuGothic-R";
+  color: #7a4741;
+  font-size: 1vw;
+}
+.store-item-text {
+  position: absolute;
+  font-family: "A-OTF-M";
+  font-size: 1.5vw;
+  color: #ffffff;
+  letter-spacing: 0.3vw;
+  margin-bottom: 3%;
+  top: 12%;
+  left: 33%;
+}
+/* 按鈕 */
+.store-button-style {
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+  bottom: 5%;
+  left: 30%;
+  width: 38%;
+  height: 10%;
+}
+.store-button-style-botton {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #6a3e26;
+  transform: translateY(0%);
+}
+.store-inner-style {
+  margin-top: 1%;
+  display: inline-block;
+  width: 97%;
+  height: 76%;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  background-color: #e4575f;
+  text-align: center;
+}
+.store-btn-ice {
+  width: 30%;
+  position: absolute;
+  top: -15%;
+  left: -7%;
+}
+.store-button-text-style {
+  position: relative;
+  top: 9.2%;
+  z-index: 0;
+  display: inline-block;
+  width: 98%;
+  height: 83%;
+  border-radius: 30px;
+  background-color: #fc7389;
+}
+.store-button-text {
+  font-size: 0.8vw;
+  line-height: 1.4vw;
+  letter-spacing: 0.2vw;
+  margin-top: 1.2%;
+  color: #ffffff;
+  font-family: "A-OTF-M";
+}
+.store-button-custom:hover .store-button-text-style {
+  background-color: #ffabb1;
+}
+.store-button-custom:active .store-button-text-style {
+  background-color: #db4d6d;
+}
+/* 按鈕結束 */
