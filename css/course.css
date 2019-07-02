@@ -149,7 +149,6 @@ body {
 }
 
 .welcome-wrap .wrapper {
-  height: 100vh;
   margin: auto;
 }
 
@@ -165,13 +164,20 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     max-width: 1200px;
+    height: 100vh;
   }
 }
 
 .welcome-wrap .kanban {
-  padding-top: 200px;
+  padding-top: 30%;
   width: 100%;
   margin: auto;
+}
+
+@media all and (min-width: 769px) {
+  .welcome-wrap .kanban {
+    padding-top: 20%;
+  }
 }
 
 .welcome-wrap .kanban .spaceship {
