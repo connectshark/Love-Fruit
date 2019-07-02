@@ -24,6 +24,7 @@ $font-gray:#434343;
     background-color:$bg-pink;
     font-family: "GenJyuuGothic-B";
         .wrapper{
+            height: 100vh;
             margin: auto;
             @include rwd(medium){
                 display:flex;
@@ -150,16 +151,20 @@ $font-gray:#434343;
                 }
             
         }
+        //????????????
         .line{
+            visibility: hidden;
             width: 40%;
-            margin: auto;
-            display: flex;
-            align-items:center;
-            justify-content:center;
-            margin-top:-5%;
-
+            margin: -20px auto;
+            // display: flex;
+            // align-items:center;
+            // justify-content:center;
+                text-align: center;
+                
             img{
                 width: 70%;
+                margin: auto;
+                z-index: -2;
                 @include rwd(desktop){
                     width: 40%;
                 }
@@ -172,7 +177,7 @@ $font-gray:#434343;
         border-radius: 20px;
         width: 90%;
         margin: auto;
-
+        z-index: 2;
         .general-name{
             background-color:#de5673 ;
             border-radius: 20px;
@@ -435,8 +440,8 @@ $font-gray:#434343;
 
 //揪團-留言區
 .course-message{
+        padding-bottom: 10%;
         background-color: $bg-yellow;
-        height: 1080px;
         background-image: url(../img/background.png);
        .dividing{
            width: 100%;
@@ -461,9 +466,10 @@ $font-gray:#434343;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-60%);
+                transform: translate(-50%, -70%);
                 @include rwd(mobile){
                     font-size: 20px;
+                    transform: translate(-50%,-60%);
                 }
             }
         }
@@ -545,18 +551,9 @@ $font-gray:#434343;
                         margin: auto;
                             @include ice-btn-out(135px,open-btn-in,#fff,18px,3px,#6a3e26,開團發佈);
                         }
-                  }
+                   }
                  
                 
-            }
-            .message-btn{
-                padding-top: 5%; 
-                
-                @include rwd(desktop){
-                 width: 100%;
-                }
-
-              
             }
            
         } 
@@ -569,6 +566,15 @@ $font-gray:#434343;
                     width: 100%;
                 }
         }
+        .form-btn{
+            margin-top:10px ;  
+            .form-btn-out{
+            width: 90%;
+            margin: auto;
+                @include ice-btn-out(135px,form-btn-in,#fff,18px,3px,#6a3e26,主揪申請);
+            }
+       }
+
 }
 //預約表單-一般
 .general-form-wrap{
