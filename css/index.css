@@ -19,7 +19,7 @@
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
 * {
-  outline: 1px solid #f00;
+  /* outline: 1px solid #f00; */
 }
 /*第一屏幕*/
 .index-hero-bgc {
