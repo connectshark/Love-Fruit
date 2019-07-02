@@ -31,11 +31,11 @@
 
 .page-qa .qa .title-main .title {
   color: #fff;
-  font-size: 18px;
+  font-size: 24px;
   position: relative;
   z-index: 5;
   text-align: center;
-  line-height: 36px;
+  line-height: 48px;
 }
 
 .page-qa .qa .title-main .title:after {
@@ -51,6 +51,7 @@
 
 .page-qa .qa .title-main .title {
   z-index: 1;
+  line-height: 20px;
 }
 
 .page-qa .qa .title-main span {
@@ -64,26 +65,13 @@
 }
 
 .page-qa .qa .letter .envelope-bg {
-  background-image: url(../img/qa/envelopebg.png);
-  width: 90%;
-  height: 680px;
-  background-size: cover;
-  margin: auto;
+  display: none;
 }
 
 .page-qa .qa .letter .topic {
-  width: 70%;
-  height: 300px;
+  padding: 5px;
   margin: auto;
   background-color: #f8c3cd;
-  position: absolute;
-  z-index: 0;
-  bottom: 150px;
-  left: 0;
-  right: 0;
-  padding: 50px;
-  pointer-events: auto;
-  text-align: center;
 }
 
 .page-qa .qa .letter .topic .title-area {
@@ -100,18 +88,48 @@
 
 .page-qa .qa .letter .topic .title-area .topic-fruit {
   display: block;
-  width: 50px;
+  width: 60px;
+}
+
+.page-qa .qa .letter .topic .title-area .question {
+  font-size: 16px;
+  text-align: left;
+  color: #cb1b45;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn {
+  display: block;
+  width: 200px;
+  padding: 2px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 3px solid #6a3e26;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn span {
+  display: block;
+  padding: 10px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn:hover span {
+  background-color: #ffabb1;
+}
+
+.page-qa .qa .letter .topic .asw .asw-btn:active span {
+  background-color: #db4d6d;
 }
 
 .page-qa .qa .letter .envelope-front {
-  width: 90%;
-  height: 255px;
-  margin: -300px auto 0;
-  position: relative;
-}
-
-.page-qa .qa .letter .envelope-front img {
-  width: 100%;
+  display: none;
 }
 
 .page-qa .stage {
@@ -249,12 +267,13 @@
 }
 
 .page-qa .stage .content .ice-btn-out {
+  margin-bottom: 10px;
   display: block;
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 45px;
   border-radius: 25px;
   background-color: white;
-  border: 1.5px solid #715124;
+  border: 2.25px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,11 +295,11 @@
 .page-qa .stage .content .ice-btn-out > span {
   display: block;
   position: relative;
-  width: 93px;
-  height: 24px;
+  width: 139.5px;
+  height: 36px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 1.5px solid #e4575f;
+  border: 2.25px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
@@ -297,17 +316,17 @@
   position: absolute;
   top: -3px;
   left: -13px;
-  width: 30px;
-  height: 35px;
+  width: 45px;
+  height: 52.5px;
 }
 
 .page-qa .stage .content .ice-btn-out .btn-costum {
   color: white;
-  font-size: 16px;
+  font-size: 24px;
   position: relative;
   z-index: 5;
   text-align: center;
-  line-height: 32px;
+  line-height: 48px;
 }
 
 .page-qa .stage .content .ice-btn-out .btn-costum:after {
@@ -322,7 +341,7 @@
 }
 
 .page-qa .stage .content .ice-btn-out .btn-costum {
-  line-height: 22px;
+  line-height: 30px;
 }
 
 .page-qa .stage.single {
@@ -390,6 +409,12 @@
   width: 100%;
 }
 
+@media all and (max-width: 768px) {
+  .page-qa .stage .popsicle img {
+    width: 100%;
+  }
+}
+
 @media all and (min-width: 769px) {
   .page-qa .qa {
     padding-top: 300px;
@@ -419,10 +444,48 @@
   }
   .page-qa .qa .title-main .title {
     z-index: 1;
+    line-height: 40px;
   }
   .page-qa .qa .title-main span {
     font-size: 18px;
     line-height: 32px;
+  }
+  .page-qa .qa .letter .envelope-bg {
+    display: block;
+    background-image: url(../img/qa/envelopebg.png);
+    width: 90%;
+    height: 680px;
+    background-size: cover;
+    margin: auto;
+  }
+  .page-qa .qa .letter .topic {
+    height: 500px;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    pointer-events: auto;
+    text-align: center;
+  }
+  .page-qa .qa .letter .topic .title-area .question {
+    font-size: 28px;
+    text-align: center;
+  }
+  .page-qa .qa .letter .topic .asw .asw-btn span {
+    font-size: 18px;
+  }
+  .page-qa .qa .letter .envelope-front {
+    display: block;
+    width: 90%;
+    height: 255px;
+    margin: -300px auto 0;
+    position: relative;
+    pointer-events: none;
+  }
+  .page-qa .qa .letter .envelope-front img {
+    width: 100%;
   }
   .page-qa .stage {
     height: 885px;
