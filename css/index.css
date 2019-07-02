@@ -22,6 +22,111 @@
   /* outline: 1px solid #f00; */
 }
 /*第一屏幕*/
+
+/* 雲 */
+.style-cloud-a {
+  width: 10%;
+  position: absolute;
+  top: 20%;
+  animation: styleclouda 40s ease 0s infinite alternate;
+}
+@keyframes styleclouda {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(500%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(1000%);
+    opacity: 1;
+  }
+}
+.style-cloud-b {
+  width: 8%;
+  position: absolute;
+  top: 30%;
+  animation: stylecloudb 60s ease 0s infinite alternate;
+}
+@keyframes stylecloudb {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(500%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(1000%);
+    opacity: 1;
+  }
+}
+.style-cloud-c {
+  width: 5%;
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  animation: stylecloudc 60s ease 0s infinite alternate;
+}
+@keyframes stylecloudc {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-500%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-1000%);
+    opacity: 1;
+  }
+}
+.style-cloud-d {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  animation: stylecloudd 60s ease 0s infinite alternate;
+}
+@keyframes stylecloudd {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-500%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-1000%);
+    opacity: 1;
+  }
+}
+.style-cloud-e {
+  width: 7%;
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  animation: stylecloude 60s ease 0s infinite alternate;
+}
+@keyframes stylecloude {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-500%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(-1000%);
+    opacity: 1;
+  }
+}
+/* 雲 */
 .index-hero-bgc {
   background: linear-gradient(
     0deg,
@@ -539,13 +644,13 @@
   font-family: "GenJyuuGothic-R";
 }
 .store-group {
-  width: 100%;
+  width: 50%;
   position: absolute;
-  top: 15%;
-  left: 30%;
+  top: 12%;
+  left: 23%;
 }
 .store-group img {
-  width: 42%;
+  width: 100%;
 }
 .store-item-first-love {
   width: 23%;
