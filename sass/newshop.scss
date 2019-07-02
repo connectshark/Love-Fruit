@@ -36,6 +36,11 @@
                 display: flex;
                 justify-content:center;
                 transform: translateY(50px);
+                @include rwd(desktop){
+                    width: 20%;
+                    height: 100px;
+                    transform: translateY(180px);
+                }
                 >span{
                     width:90%;
                     height:35px;
@@ -47,6 +52,14 @@
                     text-align: center;
                     font-size: 24px;
                     line-height: 30px;
+                    @include rwd(desktop){
+                        width: 93%;
+                        height: 85px;
+                        border:5px solid#efac40;
+                        font-size: 36px;
+                        line-height: 70px;
+
+                    }
                 }
             }
         }
@@ -56,6 +69,57 @@
             background-color: #FFF8E4;
             margin: auto;
             padding: 5px;
+            @include rwd(desktop){
+                height: 60px;
+                // select{
+                //     display: inline-block;
+                // }
+            }
+            @include rwd(mobile){
+                >div{
+                    >input{
+                        display: none;
+                        ~input{
+                            display: none;
+                        }
+                    }
+                }
+               
+            }
+            @include rwd(desktop){
+                >div{
+                    padding-top:10px;
+                    &:nth-child(4){
+                        width: 100px;
+                        background-color:red;
+                        &:before{
+                           display: inline-block; 
+                           content: "";
+                           width: 2px;
+                           height: 10px;
+                           background-color: gray;
+                            }
+                        }    
+                }
+                >select{
+                    display: none;
+                     ~select{
+                           display: none;
+                    }
+               }
+               input{
+                   font-size: 16px;
+                   margin: 0px 5px;
+                   width: 70px;
+                   border: 0px;
+                   border-radius: 5px;
+                   color: whitesmoke;
+                   background-color: #6A3E26;
+                   cursor: pointer;
+               }
+               
+            }
+           
         }
         .commodity{
             width: 100%; 
@@ -69,6 +133,7 @@
                 @include rwd(desktop){
                     margin: 0px 5%;
                     width: 18%;
+                    height: 385px;
                     padding-bottom: 45px;
                 }
                 .shap-ice-type{
@@ -110,6 +175,7 @@
                         width: 40%;
                         @include rwd(desktop){
                             width: 30%;
+                            height: 50%;
                         }
                     }
                     .item-text{
@@ -127,10 +193,13 @@
                         @include rwd(desktop){
                             display: flex;
                             justify-content:space-around;
+                        .btn-numbox{
+                            width: 50%;
                         }
-                        #myform{
-                            width: 60%;
                         }
+                        // #myform{
+                        //     width: 100%;
+                        // }
                             .btn-numbox{
                             padding: 5px;
                             font-size: 0px;
@@ -142,26 +211,29 @@
                                 // display: inline-block;
                                 width: 50%;
                                 text-align: center;
-                                // padding: 0px;
+                                padding: 0px;
                             }
                             .qtyminus{
                                 background-color: #6A3E26;
                                 border-bottom-left-radius:20px;
                                 border-top-left-radius:20px;
                                 width: 25%;
-                                height:100%; 
+                                height:20px; 
                                 border:0px; 
                                 color:white;
                                 padding: 0px;
+                                cursor: pointer;
                             }
                             .qtyplus{
+                                padding: 0px;
                                 background-color: #6A3E26;
                                 border-bottom-right-radius:10px;
                                 border-top-right-radius:10px;
                                 width: 25%;
-                                height:100%; 
+                                height:20px; 
                                 border:0px; 
                                 color:white;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -169,16 +241,50 @@
                    
                     
                 }
-                &:nth-child(2n){
-                    .shap-ice-type{
-                        background-color: red;
-                    }
-                    .shap-love-stage{
-                        background-color: red;
-                    }
-                    .commodity-item-content{
-                       border:8px solid red;
-                    }
+               
+                // &:nth-child(2n){
+                //     .shap-ice-type{
+                //         background-color: red;
+                //     }
+                //     .shap-love-stage{
+                //         background-color: red;
+                //     }
+                //     .commodity-item-content{
+                //        border:8px solid red;
+                //     }
+                // }
+            }
+            .red{
+                .shap-ice-type{
+                background-color:#EA7187;
+                }
+                .shap-love-stage{
+                    background-color:#EA7187;
+                }
+                .commodity-item-content{
+                    border:8px solid#EA7187;
+                }
+            }
+            .blue{
+                .shap-ice-type{
+                background-color:#9DC5F6;
+                }
+                .shap-love-stage{
+                    background-color:#9DC5F6;
+                }
+                .commodity-item-content{
+                    border:8px solid#9DC5F6;
+                }
+            }
+            .green{
+                .shap-ice-type{
+                background-color:#6BDBDA;
+                }
+                .shap-love-stage{
+                    background-color:#6BDBDA;
+                }
+                .commodity-item-content{
+                    border:8px solid#6BDBDA;
                 }
             }
         }    
@@ -191,10 +297,10 @@
 }
 
 .shop-btn-out{
-    @include btn-out(80px,shop-btn-in,red,13px,2px,white,加入購物車);
+    @include btn-out(80px,shop-btn-in,red,10px,2px,white,加入購物車);
     margin: auto;
     span{
-        //  line-height: 10px;
+         line-height: 13px;
             }
     }
    

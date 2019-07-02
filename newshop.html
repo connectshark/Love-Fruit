@@ -118,25 +118,34 @@
                 <img src="img/shop/roof.png" alt="">
             </div>
             <div class="select-bar">
-                <select name="love-stage">
+              <div> 
+                <input type="button" value="單身">
+                <input type="button" value="初戀">
+                <input type="button" value="熱戀">
+                <input type="button" value="分手">
+                <input type="button" value="冰棒">
+                <input type="button" value="冰淇淋">
+                <input type="button" value="霜淇淋">
+              </div>
+              <select name="love-stage">
               　  <option value="Japan">單身</option>
               　  <option value="Korea">初戀</option>
               　  <option value="Europe ">熱戀</option>
               　  <option value="China ">分手</option>
-                </select>
-                <select name="ice-type">
+              </select>
+              <select name="ice-type">
                 　<option value="Japan">冰棒</option>
                 　<option value="Korea">冰淇淋</option>
                 　<option value="Europe ">霜淇淋</option>
-                </select>
+              </select>
             </div>
 
 
             
             <div class="commodity">
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
+              <div class="commodity-item  col-5 col-lg-4 yellow">
+                <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt=""></div>
+                <div class="shap-love-stage">Single</div>
                 <div class="commodity-item-content">
                   <div><img src="img/shop/popsicle-single.png" alt=""></div>
                   <p class="item-text">
@@ -159,9 +168,34 @@
                 </div>
               </div>
 
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
+              <div class="commodity-item  col-5 col-lg-4 red">
+                <div class="shap-ice-type"><img src="img/shop/icetype-ball.png" alt=""></div>
+                <div class="shap-love-stage">Fall In Love</div>
+                <div class="commodity-item-content">
+                  <div><img src="img/shop/inlove/inlove-ball01.png" alt=""></div>
+                  <p class="item-text">
+                    <span>芋頭牛奶</span>
+                    <span>評價</span>
+                    <span>250$</span>
+                  </p>
+                  <div class="shop-btn">
+                      <div class="btn-numbox">
+                          <form id='myform' method='POST' action='#'>
+                              <input type='button' value='-' class='qtyminus' field='quantity'/>
+                              <input type='text' name='quantity' value='0' class='qty'/>
+                              <input type='button' value='+' class='qtyplus' field='quantity'/>
+                          </form>
+                      </div>
+                      <div class="shop-btn-out">
+                          <span class="shop-btn-in">加入購物車</span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="commodity-item  col-5 col-lg-4 green">
+                <div class="shap-ice-type"><img src="img/shop/icetype-mount.png" alt=""></div>
+                <div class="shap-love-stage">First Love</div>
                 <div class="commodity-item-content">
                   <div><img src="img/shop/popsicle-single.png" alt=""></div>
                   <p class="item-text">
@@ -184,11 +218,11 @@
                 </div>
               </div>
 
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
+              <div class="commodity-item  col-5 col-lg-4 blue">
+                <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt=""></div>
+                <div class="shap-love-stage">Break Up</div>
                 <div class="commodity-item-content">
-                  <div><img src="img/shop/popsicle-single.png" alt=""></div>
+                  <div><img src="img/shop/breakup-popsicle01.png" alt=""></div>
                   <p class="item-text">
                     <span>芋頭牛奶</span>
                     <span>評價</span>
@@ -208,130 +242,8 @@
                   </div>
                 </div>
               </div>
-
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
-                <div class="commodity-item-content">
-                  <div><img src="img/shop/popsicle-single.png" alt=""></div>
-                  <p class="item-text">
-                    <span>芋頭牛奶</span>
-                    <span>評價</span>
-                    <span>250$</span>
-                  </p>
-                  <div class="shop-btn">
-                      <div class="btn-numbox">
-                          <form id='myform' method='POST' action='#'>
-                              <input type='button' value='-' class='qtyminus' field='quantity'/>
-                              <input type='text' name='quantity' value='0' class='qty'/>
-                              <input type='button' value='+' class='qtyplus' field='quantity'/>
-                          </form>
-                      </div>
-                      <div class="shop-btn-out">
-                          <span class="shop-btn-in">加入購物車</span>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
-                <div class="commodity-item-content">
-                  <div><img src="img/shop/popsicle-single.png" alt=""></div>
-                  <p class="item-text">
-                    <span>芋頭牛奶</span>
-                    <span>評價</span>
-                    <span>250$</span>
-                  </p>
-                  <div class="shop-btn">
-                      <div class="btn-numbox">
-                          <form id='myform' method='POST' action='#'>
-                              <input type='button' value='-' class='qtyminus' field='quantity'/>
-                              <input type='text' name='quantity' value='0' class='qty'/>
-                              <input type='button' value='+' class='qtyplus' field='quantity'/>
-                          </form>
-                      </div>
-                      <div class="shop-btn-out">
-                          <span class="shop-btn-in">加入購物車</span>
-                      </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
-                <div class="commodity-item-content">
-                  <div><img src="img/shop/popsicle-single.png" alt=""></div>
-                  <p class="item-text">
-                    <span>芋頭牛奶</span>
-                    <span>評價</span>
-                    <span>250$</span>
-                  </p>
-                  <div class="shop-btn">
-                      <div class="btn-numbox">
-                          <form id='myform' method='POST' action='#'>
-                              <input type='button' value='-' class='qtyminus' field='quantity'/>
-                              <input type='text' name='quantity' value='0' class='qty'/>
-                              <input type='button' value='+' class='qtyplus' field='quantity'/>
-                          </form>
-                      </div>
-                      <div class="shop-btn-out">
-                          <span class="shop-btn-in">加入購物車</span>
-                      </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
-                <div class="commodity-item-content">
-                  <div><img src="img/shop/popsicle-single.png" alt=""></div>
-                  <p class="item-text">
-                    <span>芋頭牛奶</span>
-                    <span>評價</span>
-                    <span>250$</span>
-                  </p>
-                  <div class="shop-btn">
-                      <div class="btn-numbox">
-                          <form id='myform' method='POST' action='#'>
-                              <input type='button' value='-' class='qtyminus' field='quantity'/>
-                              <input type='text' name='quantity' value='0' class='qty'/>
-                              <input type='button' value='+' class='qtyplus' field='quantity'/>
-                          </form>
-                      </div>
-                      <div class="shop-btn-out">
-                          <span class="shop-btn-in">加入購物車</span>
-                      </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="commodity-item  col-5 col-lg-4">
-                <div class="shap-ice-type"><img src="img/shop/popsicle.png" alt=""></div>
-                <div class="shap-love-stage">single</div>
-                <div class="commodity-item-content">
-                  <div><img src="img/shop/popsicle-single.png" alt=""></div>
-                  <p class="item-text">
-                    <span>芋頭牛奶</span>
-                    <span>評價</span>
-                    <span>250$</span>
-                  </p>
-                  <div class="shop-btn">
-                      <div class="btn-numbox">
-                          <form id='myform' method='POST' action='#'>
-                              <input type='button' value='-' class='qtyminus' field='quantity'/>
-                              <input type='text' name='quantity' value='0' class='qty'/>
-                              <input type='button' value='+' class='qtyplus' field='quantity'/>
-                          </form>
-                      </div>
-                      <div class="shop-btn-out">
-                          <span class="shop-btn-in">加入購物車</span>
-                      </div>
-                  </div>
-                </div>
-              </div>
+              
+              
             </div>
         </div>
     </section>

@@ -51,6 +51,15 @@
           transform: translateY(50px);
 }
 
+@media all and (min-width: 992px) {
+  .page-shop .general-store .roof .title {
+    width: 20%;
+    height: 100px;
+    -webkit-transform: translateY(180px);
+            transform: translateY(180px);
+  }
+}
+
 .page-shop .general-store .roof .title > span {
   width: 90%;
   height: 35px;
@@ -64,12 +73,70 @@
   line-height: 30px;
 }
 
+@media all and (min-width: 992px) {
+  .page-shop .general-store .roof .title > span {
+    width: 93%;
+    height: 85px;
+    border: 5px solid #efac40;
+    font-size: 36px;
+    line-height: 70px;
+  }
+}
+
 .page-shop .general-store .select-bar {
   width: 100%;
   height: 30px;
   background-color: #FFF8E4;
   margin: auto;
   padding: 5px;
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .general-store .select-bar {
+    height: 60px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .page-shop .general-store .select-bar > div > input {
+    display: none;
+  }
+  .page-shop .general-store .select-bar > div > input ~ input {
+    display: none;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .general-store .select-bar > div {
+    padding-top: 10px;
+  }
+  .page-shop .general-store .select-bar > div:nth-child(4) {
+    width: 100px;
+    background-color: red;
+  }
+  .page-shop .general-store .select-bar > div:nth-child(4):before {
+    display: inline-block;
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: gray;
+  }
+  .page-shop .general-store .select-bar > select {
+    display: none;
+  }
+  .page-shop .general-store .select-bar > select ~ select {
+    display: none;
+  }
+  .page-shop .general-store .select-bar input {
+    font-size: 16px;
+    margin: 0px 5px;
+    width: 70px;
+    border: 0px;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: #6A3E26;
+    cursor: pointer;
+  }
 }
 
 .page-shop .general-store .commodity {
@@ -93,6 +160,7 @@
   .page-shop .general-store .commodity .commodity-item {
     margin: 0px 5%;
     width: 18%;
+    height: 385px;
     padding-bottom: 45px;
   }
 }
@@ -148,6 +216,7 @@
 @media all and (min-width: 992px) {
   .page-shop .general-store .commodity .commodity-item .commodity-item-content img {
     width: 30%;
+    height: 50%;
   }
 }
 
@@ -169,10 +238,9 @@
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-}
-
-.page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn #myform {
-  width: 60%;
+  .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox {
+    width: 50%;
+  }
 }
 
 .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox {
@@ -190,6 +258,7 @@
 .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox .qty {
   width: 50%;
   text-align: center;
+  padding: 0px;
 }
 
 .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox .qtyminus {
@@ -197,32 +266,59 @@
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
   width: 25%;
-  height: 100%;
+  height: 20px;
   border: 0px;
   color: white;
   padding: 0px;
+  cursor: pointer;
 }
 
 .page-shop .general-store .commodity .commodity-item .commodity-item-content .shop-btn .btn-numbox .qtyplus {
+  padding: 0px;
   background-color: #6A3E26;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   width: 25%;
-  height: 100%;
+  height: 20px;
   border: 0px;
   color: white;
+  cursor: pointer;
 }
 
-.page-shop .general-store .commodity .commodity-item:nth-child(2n) .shap-ice-type {
-  background-color: red;
+.page-shop .general-store .commodity .red .shap-ice-type {
+  background-color: #EA7187;
 }
 
-.page-shop .general-store .commodity .commodity-item:nth-child(2n) .shap-love-stage {
-  background-color: red;
+.page-shop .general-store .commodity .red .shap-love-stage {
+  background-color: #EA7187;
 }
 
-.page-shop .general-store .commodity .commodity-item:nth-child(2n) .commodity-item-content {
-  border: 8px solid red;
+.page-shop .general-store .commodity .red .commodity-item-content {
+  border: 8px solid #EA7187;
+}
+
+.page-shop .general-store .commodity .blue .shap-ice-type {
+  background-color: #9DC5F6;
+}
+
+.page-shop .general-store .commodity .blue .shap-love-stage {
+  background-color: #9DC5F6;
+}
+
+.page-shop .general-store .commodity .blue .commodity-item-content {
+  border: 8px solid #9DC5F6;
+}
+
+.page-shop .general-store .commodity .green .shap-ice-type {
+  background-color: #6BDBDA;
+}
+
+.page-shop .general-store .commodity .green .shap-love-stage {
+  background-color: #6BDBDA;
+}
+
+.page-shop .general-store .commodity .green .commodity-item-content {
+  border: 8px solid #6BDBDA;
 }
 
 .shop-btn-out {
@@ -268,11 +364,11 @@
 
 .shop-btn-out .shop-btn-in {
   color: red;
-  font-size: 13px;
+  font-size: 10px;
   position: relative;
   z-index: 5;
   text-align: center;
-  line-height: 26px;
+  line-height: 20px;
 }
 
 .shop-btn-out .shop-btn-in:after {
@@ -284,5 +380,9 @@
   bottom: 0;
   right: 0;
   -webkit-text-stroke: 2px white;
+}
+
+.shop-btn-out span {
+  line-height: 13px;
 }
 /*# sourceMappingURL=newshop.css.map */
