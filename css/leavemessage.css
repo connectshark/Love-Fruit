@@ -1,11 +1,20 @@
+@charset "UTF-8";
 .banner {
   background-color: #fad689;
   background-image: url(../img/background.png);
   background-position: center;
   background-repeat: repeat;
-  height: 500px;
   background-size: 100%;
   width: 100%;
+  padding-top: 50px;
+}
+
+.banner .banner-pinkcloud {
+  background-image: url(../img/message/cloud-pink.png);
+}
+
+.banner .banner-yellowcloud {
+  background-image: url(../img/message/cloud-yellow.png);
 }
 
 .banner .banner-img {
@@ -16,11 +25,284 @@
   height: 100%;
 }
 
-.banner .banner-pinkcloud {
-  background-image: url(../img/message/cloud-pink.png);
+.banner .banner-img .banner-heart-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.banner .banner-yellowcloud {
-  background-image: url(../img/message/cloud-yellow.png);
+.banner .banner-img .banner-heart-group .heart-b-item {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.banner .banner-img .banner-heart-group .heart-b-item .line {
+  display: block;
+  position: relative;
+  width: 6px;
+  background-color: #fc7389;
+}
+
+.banner .banner-img .banner-heart-group .heart-b-item .line img {
+  position: absolute;
+  top: 85%;
+  left: -730%;
+  margin: auto;
+}
+
+.banner .banner-img .banner-heart-group .heart-b-item .line-left {
+  height: 100px;
+}
+
+.banner .banner-img .banner-heart-group .heart-b-item .line-right {
+  height: 200px;
+}
+
+.banner .banner-img .banner-heart-group .heart-s-item .line {
+  display: block;
+  position: relative;
+  width: 6px;
+  background-color: #fc7389;
+  height: 150px;
+}
+
+.banner .banner-img .banner-heart-group .heart-s-item .line img {
+  position: absolute;
+  top: 85%;
+  left: -730%;
+  margin: auto;
+}
+
+.banner .banner-img .title {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 5% 0;
+  margin: auto;
+}
+
+.banner .banner-img .title h1 {
+  font-family: "A-OTF-M";
+}
+
+.banner .banner-img .title h1 .high {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 80px;
+}
+
+.banner .banner-img .title h1 .high:after {
+  z-index: -1;
+  content: "告白留言牆";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 8px #6a3e26;
+}
+
+.banner .banner-img .title h1 .high {
+  line-height: 55px;
+}
+
+.banner .banner-img .banner-item-group {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.banner .banner-img .banner-item-group .icecream-group {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner .banner-img .banner-item-group .icecream-group img {
+  width: 100%;
+}
+
+.banner .banner-img .banner-item-group .fly-item img {
+  width: 100%;
+}
+
+.btn {
+  background-color: #fff8e4;
+}
+
+.btn .btn-group {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn .btn-group .btn-filter-group {
+  width: 60%;
+  padding: 10px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fad689;
+  border-radius: 20px;
+  font-family: "A-OTF-M";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn .btn-group .btn-filter-group h3 {
+  font: 24px "A-OTF-M";
+}
+
+.btn .btn-group .btn-filter-group .filter-item button {
+  background-color: #a3a3a3;
+  border: none;
+  padding: 0 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 3px 0px #555;
+          box-shadow: 0px 3px 0px #555;
+  color: #fff;
+  font: 18px "A-OTF-M";
+}
+
+.btn .btn-group .btn-filter-group .filter-item:hover button {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0px 1px 0px #555;
+          box-shadow: 0px 1px 0px #555;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.btn .btn-group .btn-filter-group .filter-active button {
+  background-color: #fc7389;
+}
+
+.btn .btn-group .leave-message {
+  width: 20%;
+  margin-left: auto;
+  margin-right: 20px;
+  font-family: "A-OTF-M";
+  display: block;
+  width: 200px;
+  height: 60px;
+  border-radius: 25px;
+  background-color: white;
+  border: 3px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.btn .btn-group .leave-message:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.btn .btn-group .leave-message > span {
+  display: block;
+  position: relative;
+  width: 186px;
+  height: 48px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 3px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.btn .btn-group .leave-message > span:hover {
+  background-color: #fad689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.btn .btn-group .leave-message > span img {
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -13px;
+  width: 60px;
+  height: 70px;
+}
+
+.btn .btn-group .leave-message .leave-message-btn {
+  color: white;
+  font-size: 24px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  line-height: 48px;
+}
+
+.btn .btn-group .leave-message .leave-message-btn:after {
+  z-index: -1;
+  content: "我要留言";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
 }
 /*# sourceMappingURL=leavemessage.css.map */
