@@ -42,13 +42,22 @@ function nextChange() {
 	flowChange(nowFlow);
 	stepChange(nowFlow);
 }
+
+function imgChange(e){
+	var src = document.querySelector(`${e.target} > img`).src;
+	console.log(src);
+}
 function doFirst(){
 	last = document.getElementById('last');
 	next = document.getElementById('next');
-	step = document.getElementsByClassName('step-item')
+	step = document.getElementsByClassName('step-item');
+	texture = document.getElementsByClassName('texture-item')
 	last.addEventListener('click',lastChange);
 	next.addEventListener('click',nextChange);
 	flow = document.getElementsByClassName('flow');
+	for (var i = 0; i < texture.length; i++) {
+		texture[i].addEventListener('click',imgChange);
+	}
 	flowChange(nowFlow);
 	stepChange(nowFlow);
 }
