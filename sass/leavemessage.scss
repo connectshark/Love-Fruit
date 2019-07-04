@@ -1,40 +1,31 @@
 @import "mixin/mixin";
+$break:#9dc5f6;
+$true:#6bdbda;
+$hot:#ea7187;
+$single:#fad689;
+$cofe:#6a3e26;
 .banner{
 	background-color: #fad689;
-	background-image: url(../img/background.png);
-	background-position: center;
-	background-repeat: repeat;
-    background-size: 100%;
+	background-image: url(../img/message/cloud-yellow.png),url(../img/message/cloud-pink.png),url(../img/background.png);
+	background-position:bottom,bottom,center;
+	background-repeat: no-repeat,no-repeat,repeat;
+    background-size: 100%,100%,auto;
 	width: 100%;
 	padding-top: 50px;
-	.banner-pinkcloud{
-		background-image: url(../img/message/cloud-pink.png);
-	}
-	.banner-yellowcloud{
-		background-image: url(../img/message/cloud-yellow.png);
-	}
-	.banner-img{
-		background-position: bottom center;
-		background-repeat: no-repeat;
-		background-size: 100%;
-		width: 100%;
-		height: 100%;
-		.banner-heart-group{
+	.banner-heart-group{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		.heart-b-item{
+			width: 20%;
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: space-around;
-			.heart-b-item{
-				width: 20%;
-				display: flex;
-				flex-flow: row nowrap;
-				justify-content: space-around;
 				.line-left{
 					height: 100px;
-					animation: upDown 3s 2s infinite linear alternate;
 				}
 				.line-right{
 					height: 200px;
-					animation: upDown 3s 1s infinite linear alternate;
 				}
 				.line{
 					display: block;
@@ -55,7 +46,6 @@
 					position: relative;
 					width: 6px;
 					background-color: #fc7389;
-					animation: upDown 3s 2s infinite linear alternate;
 					height: 150px;
 					img{
 						position: absolute;
@@ -74,7 +64,7 @@
             margin: auto;
             h1{
                 font-family: "A-OTF-M";
-                @include out-Line-Font(high,#fff,40px,8px,#6a3e26,告白留言牆);
+                @include out-Line-Font(high,#fff,40px,8px,$cofe,告白留言牆);
                 .high{
                     line-height: 55px;
                 }
@@ -111,7 +101,6 @@
         		}
         	}
         }
-	}
 }
 .btn{
     background-color: #fff8e4;
@@ -168,7 +157,7 @@
 			margin-left: auto;
 			margin-right: 20px;
 			font-family: "A-OTF-M";
-			@include ice-btn-out(200px,leave-message-btn,white,24px,3px,#6a3e26,我要留言);
+			@include ice-btn-out(200px,leave-message-btn,white,24px,3px,$cofe,我要留言);
 		}
     }
 }
@@ -178,5 +167,138 @@
 	}
 	100%{
 		height: 200px;
+	}
+}
+.message-bgi{
+	background-color: #fff8e4;
+	padding-top: 50px;
+	.message{
+		width: 100%;
+		max-width: 1200px;
+		margin: auto;
+		display: flex;
+		flex-flow: row wrap;
+		.break-up{
+			border: 12px solid $break;
+			.fa-cloud{
+				color: #79a6cc;
+			}
+		}
+		.true-love{
+			border: 12px solid $true;
+			.fa-cloud{
+				color: #0abbb5;
+			}
+		}
+		.hot-love{
+			border: 12px solid $hot;
+			.fa-cloud{
+				color: #db4d6d;
+			}
+		}
+		.single{
+			border: 12px solid $single;
+			.fa-cloud{
+				color: #f6c555;
+			}
+			
+		}
+		.message-item{
+			width:calc(33.333333% - 24px);
+			box-sizing: border-box;
+			padding: 6px 20px;
+			margin: 12px;
+			border-radius: 10px;
+			background-color: #fff;
+			position: relative;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: flex-end;
+			margin-bottom: 20px;
+			.cloud{
+				position: absolute;
+				top: -7%;
+				right: -7%;
+				.fa-cloud{
+					font-size: 70px;
+				}
+				span{
+					text-align: center;
+					font-family: "A-OTF-M";
+					color: #fff;
+					font-size: 16px;
+					line-height: 60px;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+				}
+			}
+			.message-header{
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				width: 100%;
+				padding: 20px 0;
+				.fa-user-circle{
+					font-size: 48px;
+					color: #f94982;
+				}
+				p{
+					font-size: 24px;
+					font-family: "GenJyuuGothic-R";
+				}
+			}
+			.message-body{
+				width: 100%;
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: flex-end;
+				figure{
+					img{
+						width: 100%;
+					}
+				}
+				h3{
+					width: 70%;
+					font-size: 24px;
+					line-height: 48px;
+					font-family: "A-OTF-M";
+				}
+				p{
+					width: 70%;
+					font-family: "A-OTF-M";
+					font-size: 16px;
+					line-height: 32px;
+				}
+			}
+			.message-footer{
+				width: 70%;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: space-between;
+				button{
+					cursor: pointer;
+					font-family: "A-OTF-M";
+					width: 45%;
+					background-color: #fc7389;
+					border: 3px solid $cofe;
+					border-radius: 10px;
+					color: #fff;
+					box-sizing: border-box;
+					font-size: 18px;
+				}
+			}
+		}
+		.custom-ice{
+			position: absolute;
+			width: 40%;
+			left: -10%;
+			bottom: -5%;
+			img{
+				width: 100%;
+			}
+		}
 	}
 }
