@@ -124,7 +124,10 @@ $cofe:#6a3e26;
 		flex-flow: row nowrap;
 		align-items: center;
         padding: 20px;
-        box-sizing: border-box;
+		box-sizing: border-box;
+		@include rwd(mobile){
+			flex-flow: column nowrap;
+		}
         .btn-filter-group{
             width: 60%;
             padding: 10px 30px;
@@ -133,10 +136,18 @@ $cofe:#6a3e26;
             border-radius: 20px;
             font-family: "A-OTF-M";
 			display: flex;
+			flex-flow: row nowrap;
 			align-items: center;
 			justify-content: space-between;
+			@include rwd(mobile){
+				flex-flow: row wrap;
+				order: 2;
+			}
 			h2{
 				font: 24px "A-OTF-M";
+				@include rwd(mobile){
+					width: 100%;
+				}
 			}
 			.filter-item{
 				cursor: pointer;
@@ -170,6 +181,9 @@ $cofe:#6a3e26;
 			margin-right: 20px;
 			font-family: "A-OTF-M";
 			@include ice-btn-out(200px,leave-message-btn,white,24px,3px,$cofe,我要留言);
+			@include rwd(mobile){
+				margin-right: auto;
+			}
 		}
     }
 }

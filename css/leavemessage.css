@@ -205,6 +205,15 @@
           box-sizing: border-box;
 }
 
+@media all and (max-width: 768px) {
+  .btn .btn-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
 .btn .btn-group .btn-filter-group {
   width: 60%;
   padding: 10px 30px;
@@ -216,6 +225,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -224,8 +237,26 @@
           justify-content: space-between;
 }
 
+@media all and (max-width: 768px) {
+  .btn .btn-group .btn-filter-group {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
 .btn .btn-group .btn-filter-group h2 {
   font: 24px "A-OTF-M";
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .btn-filter-group h2 {
+    width: 100%;
+  }
 }
 
 .btn .btn-group .btn-filter-group .filter-item {
@@ -332,6 +363,12 @@
   bottom: 0;
   right: 0;
   -webkit-text-stroke: 3px #6a3e26;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .leave-message {
+    margin-right: auto;
+  }
 }
 
 @-webkit-keyframes upDown {
