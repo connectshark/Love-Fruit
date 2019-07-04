@@ -21,6 +21,12 @@
       justify-content: space-around;
 }
 
+@media all and (max-width: 768px) {
+  .banner .banner-heart-group {
+    display: none;
+  }
+}
+
 .banner .banner-heart-group .heart-b-item {
   width: 20%;
   display: -webkit-box;
@@ -79,6 +85,12 @@
   margin: auto;
 }
 
+@media all and (max-width: 768px) {
+  .banner .title {
+    padding: 20% 0 0;
+  }
+}
+
 .banner .title h1 {
   font-family: "A-OTF-M";
 }
@@ -109,7 +121,6 @@
 
 .banner .banner-item-group {
   width: 100%;
-  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,6 +149,12 @@
           justify-content: flex-start;
 }
 
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .icecream-group {
+    display: none;
+  }
+}
+
 .banner .banner-item-group .icecream-group .icecream-item-blue {
   width: 30%;
 }
@@ -152,6 +169,13 @@
 
 .banner .banner-item-group .icecream-group .icecream-item-yellow img {
   width: 100%;
+}
+
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .fly-item {
+    padding: 3% 0;
+    width: 40%;
+  }
 }
 
 .banner .banner-item-group .fly-item img {
