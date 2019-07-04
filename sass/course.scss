@@ -651,9 +651,10 @@ $font-gray:#434343;
                 label{
                     font-size: 18px;
                     background-color: #fff;
-                    padding: 5px;
+                    padding: 10px 20px;
                     vertical-align: middle;
                     border-radius: 10px;
+                    box-shadow: 2px 2px 2px #888888;
                 }
                 input{
                     padding:10px;
@@ -664,7 +665,7 @@ $font-gray:#434343;
                     &:checked + label {
                     border: #ffb11b solid 2px;
                     }
-                    &:checked > span{
+                    &:checked + label + span{
                         visibility: visible;
                     }
                 }
@@ -678,7 +679,9 @@ $font-gray:#434343;
            
 
             #date-picker{
-                padding: 10px 0;
+                padding: 10px;
+                margin: 15px;
+                
                 table {
                     vertical-align: middle;
                     background-color: #fff;
@@ -686,12 +689,14 @@ $font-gray:#434343;
                     margin: auto;
                     text-align: center;
                     border-radius:  0 0 10px 10px;
+                    box-shadow: 2px 2px 2px #888888;
                     #mon{
                         padding: 20px 0;
                         background-color:#ea7187;
                         border-radius: 10px 10px 0 0;
                         color: #fff;
                         font-weight: bold;
+                        box-shadow: 2px 2px 2px #888888;
                     }
                     th{
                         padding:60px 0 20px;

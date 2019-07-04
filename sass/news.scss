@@ -1,0 +1,28 @@
+@import 'mixin/mixin';
+$light-purple:#cdb3e5;
+$deep-purple:#b28fce;
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "GenJyuuGothic-R";
+}
+.bn{
+    height: 1000px;
+    background: #cdb3e5 url(../img/qa/cover.png)center center no-repeat ;
+    .purple{
+        background: url(../img/course/cloud-purple.png) top  left no-repeat ;
+    }
+}
+.wrapper{
+    width: 100vh;
+    background-color: #fff8e4;
+    max-width: 1200px;
+    margin: auto;
+    .article{
+        .news{
+            color:#ffdee6
+            width: 300px;
+            height: 360px;
+        }
+    }
+}  
