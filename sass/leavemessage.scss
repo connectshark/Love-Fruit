@@ -28,6 +28,14 @@
 				display: flex;
 				flex-flow: row nowrap;
 				justify-content: space-around;
+				.line-left{
+					height: 100px;
+					animation: upDown 3s 2s infinite linear alternate;
+				}
+				.line-right{
+					height: 200px;
+					animation: upDown 3s 1s infinite linear alternate;
+				}
 				.line{
 					display: block;
 					position: relative;
@@ -39,12 +47,6 @@
 						left: -730%;
 						margin: auto;
 					}
-				}
-				.line-left{
-					height: 100px;
-				}
-				.line-right{
-					height: 200px;
 				}
 			}
 			.heart-s-item{
@@ -87,10 +89,20 @@
         		width: 40%;
         		display: flex;
         		flex-flow: row nowrap;
-                align-items: center;
-                img{
-                    width: 100%;
-                }
+				align-items: center;
+				justify-content: flex-start;
+				.icecream-item-blue{
+					width: 30%;
+					img{
+						width: 100%;
+					}
+				}
+				.icecream-item-yellow{
+					width: 20%;
+					img{
+						width: 100%;
+					}
+				}
         	}
         	.fly-item{
         		img{
@@ -125,7 +137,9 @@
 				font: 24px "A-OTF-M";
 			}
 			.filter-item{
+				cursor: pointer;
 				button{
+					cursor: pointer;
 					background-color: #a3a3a3;
 					border: none;
 					padding: 0 25px;
@@ -156,4 +170,12 @@
 			@include ice-btn-out(200px,leave-message-btn,white,24px,3px,#6a3e26,我要留言);
 		}
     }
+}
+@keyframes upDown{
+	0%{
+		height: 100px;
+	}
+	100%{
+		height: 200px;
+	}
 }

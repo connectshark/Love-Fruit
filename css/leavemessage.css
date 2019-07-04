@@ -50,6 +50,18 @@
       justify-content: space-around;
 }
 
+.banner .banner-img .banner-heart-group .heart-b-item .line-left {
+  height: 100px;
+  -webkit-animation: upDown 3s 2s infinite linear alternate;
+          animation: upDown 3s 2s infinite linear alternate;
+}
+
+.banner .banner-img .banner-heart-group .heart-b-item .line-right {
+  height: 200px;
+  -webkit-animation: upDown 3s 1s infinite linear alternate;
+          animation: upDown 3s 1s infinite linear alternate;
+}
+
 .banner .banner-img .banner-heart-group .heart-b-item .line {
   display: block;
   position: relative;
@@ -62,14 +74,6 @@
   top: 85%;
   left: -730%;
   margin: auto;
-}
-
-.banner .banner-img .banner-heart-group .heart-b-item .line-left {
-  height: 100px;
-}
-
-.banner .banner-img .banner-heart-group .heart-b-item .line-right {
-  height: 200px;
 }
 
 .banner .banner-img .banner-heart-group .heart-s-item .line {
@@ -149,9 +153,24 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.banner .banner-img .banner-item-group .icecream-group img {
+.banner .banner-img .banner-item-group .icecream-group .icecream-item-blue {
+  width: 30%;
+}
+
+.banner .banner-img .banner-item-group .icecream-group .icecream-item-blue img {
+  width: 100%;
+}
+
+.banner .banner-img .banner-item-group .icecream-group .icecream-item-yellow {
+  width: 20%;
+}
+
+.banner .banner-img .banner-item-group .icecream-group .icecream-item-yellow img {
   width: 100%;
 }
 
@@ -205,7 +224,12 @@
   font: 24px "A-OTF-M";
 }
 
+.btn .btn-group .btn-filter-group .filter-item {
+  cursor: pointer;
+}
+
 .btn .btn-group .btn-filter-group .filter-item button {
+  cursor: pointer;
   background-color: #a3a3a3;
   border: none;
   padding: 0 25px;
@@ -304,5 +328,23 @@
   bottom: 0;
   right: 0;
   -webkit-text-stroke: 3px #6a3e26;
+}
+
+@-webkit-keyframes upDown {
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 200px;
+  }
 }
 /*# sourceMappingURL=leavemessage.css.map */
