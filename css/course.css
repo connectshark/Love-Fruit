@@ -1203,9 +1203,11 @@ body {
 .general-form-wrap .wrapper form .check label {
   font-size: 18px;
   background-color: #fff;
-  padding: 5px;
+  padding: 10px 20px;
   vertical-align: middle;
   border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+          box-shadow: 2px 2px 2px #888888;
 }
 
 .general-form-wrap .wrapper form .check input {
@@ -1220,7 +1222,7 @@ body {
   border: #ffb11b solid 2px;
 }
 
-.general-form-wrap .wrapper form .check input:checked > span {
+.general-form-wrap .wrapper form .check input:checked + label + span {
   visibility: visible;
 }
 
@@ -1235,7 +1237,8 @@ body {
 }
 
 .general-form-wrap .wrapper form #date-picker {
-  padding: 10px 0;
+  padding: 10px;
+  margin: 15px;
 }
 
 .general-form-wrap .wrapper form #date-picker table {
@@ -1245,6 +1248,8 @@ body {
   margin: auto;
   text-align: center;
   border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+          box-shadow: 2px 2px 2px #888888;
 }
 
 .general-form-wrap .wrapper form #date-picker table #mon {
@@ -1253,6 +1258,8 @@ body {
   border-radius: 10px 10px 0 0;
   color: #fff;
   font-weight: bold;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+          box-shadow: 2px 2px 2px #888888;
 }
 
 .general-form-wrap .wrapper form #date-picker table th {
