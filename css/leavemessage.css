@@ -81,6 +81,8 @@
   position: relative;
   width: 6px;
   background-color: #fc7389;
+  -webkit-animation: upDown 3s 2s infinite linear alternate;
+          animation: upDown 3s 2s infinite linear alternate;
   height: 150px;
 }
 
