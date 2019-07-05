@@ -8,7 +8,16 @@
 .page-shop{
     background: #F8C3CD url(../img/shop/backgroundpic.png);
     font-family: "GenJyuuGothic-B";
-    
+    .fa-star{
+        display: inline-block;
+        color: orange ;
+        font-size: 13px;
+        @include rwd(desktop){
+            font-size: 14px;
+            // margin-left:1% 
+        }
+    }
+   
     .outerframe{
         padding-top:86px;
         margin: auto;
@@ -32,7 +41,7 @@
     }
     .title-outerframe{
         width: 90%;
-        height: 200px;
+        height: 170px;
         margin: auto;
         @include rwd(desktop){
         height: 350px;
@@ -104,8 +113,9 @@
     }
     
     .newpic{
-        width: 40%;
+        width: 30%;
         margin: auto;
+        padding-top:20px; 
         
         img{
             width: 100%;
@@ -121,11 +131,11 @@
     }
     .new-name{
         text-align: center;
-        padding: 6% 0px 0px 0px;
+        padding: 10% 0px 0px 0px;
         }
     .new-pic{
         text-align: center;
-        padding: 4% 0px;
+        padding: 8% 0px;
         }
     
     .store{
@@ -260,53 +270,87 @@
             .commodity-item{
                 padding-top:25px;
                 padding-bottom: 15px;
+                width: 45%;
                 @include rwd(desktop){
                     // margin: 0px 5%;
-                    width: 18%;
+                    width: 20%;
                     padding-bottom: 45px;
                 }
                 .shap-ice-type{
-                    width: 55%;
-                    border-radius: 60% / 120% 120% 0 0;
-                    height: 25px;
+                    width: 100%;
+                    border-radius: 50% / 100% 100% 0 0;
+                    height: 45px;
                     margin: auto;
                     background-color: #fad689;
                     display: flex;
+                    position: relative;
+                    text-align: center;
+                    p{
+                        position: absolute;
+                        right: 0px;
+                        left: 0px;
+                        bottom:4px;
+                        font-size: 16px;
+                        color:whitesmoke;
+                        @include rwd(desktop){
+                             bottom:6px;
+                             font-size: 22px;
+                             color:whitesmoke;
+                        }
+                        
+                    }
                     @include rwd(desktop){
-                        width: 60%;
-                        height: 35px;
+                        width: 100%;
+                        height: 40px;
+                        height: 70px;
                     }
                     img{
-                        width: 45%;
+                        position: absolute;
+                        width: 24%;
                         display: block;
                         margin: auto;
+                        top:4px;
+                        left: 0px;
+                        right: 0px;
+                        @include rwd(desktop){
+                        top:8px;
+                        left: 0px;
+                        right: 0px;
+                        }
                     }
                 }
-                .shap-love-stage{
-                    width: 100%;
-                    height: 25px;
-                    background-color: #fad689;
-                    border-top-left-radius:25px;
-                    border-top-right-radius:30px;
-                    color: whitesmoke;
-                    // font-family: "A-OTF-M";
-                    font-size: 24px;
-                    text-align: center;
-                    line-height: 30px;
-                    @include rwd(desktop){
-                        height: 30px;
-                        line-height: 35px;
-                    }
-                }
+                // .shap-love-stage{
+                //     width: 100%;
+                //     height: 25px;
+                //     background-color: #fad689;
+                //     // border-top-left-radius:25px;
+                    // border-top-right-radius:30px;
+                //     color: whitesmoke;
+                //     // font-family: "A-OTF-M";
+                //     font-size: 24px;
+                //     text-align: center;
+                //     line-height: 30px;
+                //     @include rwd(desktop){
+                //         height: 30px;
+                //         line-height: 35px;
+                //         height: 34px;
+                //     }
+                // }
                 .commodity-item-content{
-                    border: 8px solid #fad689;
+                    border-right:4px solid #fad689;
+                    border-left:4px solid #fad689;
+                    border-bottom:4px solid #fad689;
                     border-bottom-right-radius:20px;
                     border-bottom-left-radius:20px;
                     padding-bottom:5px;
-                    height: 260px;
-                     position: relative;
+                    height: 270px;
+                    position: relative;
+                   
                     @include rwd(desktop){
-                        height: 320px;
+                        height: 340px;
+                        border-right:8px solid #fad689;
+                        border-left:8px solid #fad689;
+                        border-bottom:8px solid #fad689;
                     }
                     .collection-love{
                         display: block;
@@ -317,17 +361,17 @@
                         top:0px;
                     }
                     .item-img{
-                       
-                        width: 35%;
+                        width: 31%;
                         margin: auto;
                         padding-bottom:10%;
                         @include rwd(desktop){
-                            width:25%;
-                            height:60%;
+                            // height:50%;
                             margin: auto;
-                            width: 28%;
+                            width: 30%;
                             display: flex;
                             align-items: center;
+                            padding-bottom:0%;
+                            padding-top:15px; 
                         }
                     }
                     img{
@@ -335,9 +379,10 @@
                         display: block;
                         margin: auto;
                         width: 100%;
-                        height: 120px;
+                        // height: 120px;
                         @include rwd(desktop){
                             width:100%;
+                            height: 150px;
                             // height:0px;
                             // height: 50%;
                         }
@@ -345,6 +390,9 @@
                     figure{
                         display: flex;
                         justify-content: space-around;
+                        @include rwd(desktop){
+                            padding: 20px 0px 10px 0px;
+                        }
                         .fruit-pic{
                             border-radius: 50%;
                             background-color: #fff;
@@ -352,8 +400,8 @@
                             width: 35px;
                             height: 35px;
                             @include rwd(desktop){
-                                width: 45px;
-                                height: 45px;
+                                width: 55px;
+                                height: 55px;
                             }
                             > img {
                                 padding-top: 0px;
@@ -366,16 +414,61 @@
                     }
                   
                     .item-text{
-                        > span {
-                        display: block;
-                        padding:0px 0px 10px 5px;
-                        ~span{
-                            display: block;
-                            padding:0px 0px 10px 5px;
-                            }
-                        }
                         @include rwd(desktop){
-                                display: flex;
+                            width: 95%;
+                            margin: auto;
+                            padding-top: 25px;
+                            padding-bottom:15px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .review{
+                                @include rwd(desktop){
+                                     width: 70%;
+                                     margin-left: 4px;
+                                }
+                            }
+                            // justify-content: center;
+                            
+                        }
+                        // .review-number{
+                        //     display: block;
+                        //     width: 8%;
+                        //     font-size: 12px;
+                        // } 
+                        
+                        .item-name{
+                        width: 50%;
+                        display: block;
+                        // padding:0px 0px 5% 4%;
+                        padding: 6px 0px;
+                        font-size: 18px;
+                        margin-left:8px;
+                        @include rwd(desktop){
+                            font-size: 20px;
+                            padding:0px;
+                            margin-left:0px;
+                            // padding:0px 0px 8% 4%;
+                        }
+                        // ~span{
+                        //     display: block;
+                        //     // padding:0px 0px 5% 4%;
+                        //     font-size: 18px;
+                        //     @include rwd(desktop){
+                        //         // padding:0px 0px 8% 4%;
+                        //     }
+                        //     }
+                        }
+                        // div{
+                        //     width: 50%;
+                        //     // padding:0px 0px 5% 4%;
+                        //     @include rwd(desktop){
+                        //         font-size: 12px;
+                        //         // padding:0px 0px 6% 4%;
+                        //     }
+                        // }
+                        @include rwd(desktop){
+                                // display: flex;
                                 // >span{
                                 //     padding:10px;
                                 // ~span{
@@ -386,19 +479,98 @@
 
                  
                     }
-                    .custom-pri{
-                      padding: 10px 0px;
-                      text-align: center;
-                    //   background-color: #6A3E26;   
+                    .review{
+                       margin-left:8px; 
+                       font-size: 12px;
                     }
+                    // .custom-pri{
+                    //   padding: 10px 0px;
+                    //   text-align: center;
+                    // //   background-color: #6A3E26;   
+                    // }
+                   
                     .general-pri{
-                        &:nth-child(3){
-                            padding: 0px 0px 10px 5px;
-                        //  @include rwd(desktop){
-                        //     padding: 10px  10px  20px  10px;
-                        //     }
                         
+                        width: 95%;
+                        // padding:0px 0px 12% 4%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        // align-items: center;
+                        font-size: 18px;
+                        padding-top:8px;
+                        padding-bottom:20px;
+                        margin-left: 8px;
+                        @include rwd(desktop){
+                            padding-bottom:35px; 
+                            font-size: 20px;
+                            padding-top:0px;
+                            margin: auto;
+                            // padding-bottom:0px;
+                            // padding:0px 0px 14% 4%;
+                        }
+                        span{
+                            // margin-right: 10px;
+                        }
+                        .btn-numbox{
+                            width: 40%;
+                            // padding: 5px;
+                            font-size: 0px;
+                            display: none;
+                            @include rwd(desktop){
+                                display: block;
+                                padding: 0px;
+                                width: 43%;
+                                // margin-left: 38%;
+                                // width: 50%;
+                            }
+                            .qty{
+                                // display: inline-block;
+                                width: 40%;
+                                text-align: center;
+                                height: 28px;
+                                padding: 0px;
+                                border: 0px;
+                            }
+                            .qtyminus{
+                                background-color: #6A3E26;
+                                border-bottom-left-radius:20px;
+                                border-top-left-radius:20px;
+                                width: 25%;
+                                height:28px; 
+                                border:0px; 
+                                color:white;
+                                padding: 0px;
+                                cursor: pointer;
+                            }
+                            .qtyplus{
+                                padding: 0px;
+                                background-color: #6A3E26;
+                                border-bottom-right-radius:20px;
+                                border-top-right-radius:20px;
+                                width: 25%;
+                                height:28px; 
+                                border:0px; 
+                                color:white;
+                                cursor: pointer;
+                            }
                         }  
+                    }
+                    .custom-pri{
+                        // padding:10% 0px 12% 6%;
+                        text-align: center;
+                        span{
+                            // margin: 0px;
+                        }
+                        // .btn-numbox{
+                        //     width: 70%;
+                        //     padding: 5px;
+                        //     font-size: 0px;
+                        //     display: none;
+                        //     @include rwd(desktop){
+                        //         display: block;
+                        //         padding: 0px;
+                        //     }
                     }
                   
                     // @include rwd(desktop){
@@ -427,44 +599,32 @@
                     // }
                     // }
                     .shop-btn{
+                        display: flex;
+                        justify-content: center;
                         .shop-buy-btn{
-                            margin: auto;
+                            // margin: auto;
                             // padding-bottom: 110px;
                             @include rwd(desktop){
-                                margin: auto;
+                                // margin: auto;
                             }
                         }
-                        @include btn(shop-buy-btn,140px,shop-btn-text,16px, 加入購物車);
-                        @include rwd(mobile){
-                            @include btn(shop-buy-btn,100px,shop-btn-text,16px, 加入購物車);
-                        }
-                        @include rwd(desktop){
-                            // display: flex;
-                            // justify-content:space-between;
-                            // align-items: center;
-                            height: 50px;
-                            padding: 10px;
                         .btn-numbox{
                             width: 40%;
-                        }
-                        }
-                        #myform{
-                            height: 24px;
-                        }
-                            .btn-numbox{
-                            // width: 100%;
-                            padding: 5px;
+                            // padding: 5px;
                             font-size: 0px;
                             display: none;
                             @include rwd(desktop){
                                 display: block;
                                 padding: 0px;
+                                width: 43%;
+                                // margin-left: 38%;
+                                // width: 50%;
                             }
                             .qty{
                                 // display: inline-block;
-                                width: 50%;
+                                width: 40%;
                                 text-align: center;
-                                height: 24px;
+                                height: 28px;
                                 padding: 0px;
                                 border: 0px;
                             }
@@ -473,7 +633,7 @@
                                 border-bottom-left-radius:20px;
                                 border-top-left-radius:20px;
                                 width: 25%;
-                                height:24px; 
+                                height:28px; 
                                 border:0px; 
                                 color:white;
                                 padding: 0px;
@@ -482,19 +642,30 @@
                             .qtyplus{
                                 padding: 0px;
                                 background-color: #6A3E26;
-                                border-bottom-right-radius:10px;
-                                border-top-right-radius:10px;
+                                border-bottom-right-radius:20px;
+                                border-top-right-radius:20px;
                                 width: 25%;
-                                height:24px; 
+                                height:28px; 
                                 border:0px; 
                                 color:white;
                                 cursor: pointer;
                             }
+                        } 
+                        @include btn(shop-buy-btn,100px,shop-btn-text,16px, 加入購物車);
+                        @include rwd(mobile){
+                            @include btn(shop-buy-btn,100px,shop-btn-text,16px, 加入購物車);
                         }
                     }
-                   
-                   
-                    
+                    @include btn(general-shop-buy-btn,120px,general-shop-btn-text,20px, 加入購物車);
+                    @include rwd(desktop){
+                        @include btn(general-shop-buy-btn,150px,general-shop-btn-text,24px, 加入購物車);
+                    }
+                    #myform{
+                        display: inline-block;
+                        width: 100px;
+                        height: 24px;
+                        // margin: auto;
+                    }
                 }
                
             }
@@ -531,12 +702,18 @@
                     border:8px solid#6BDBDA;
                 }
             }
+            .custom-pri{
+                padding: 18px 0px;
+                @include rwd(desktop){
+                    padding: 14px 0px;
+                }
+            }
         }    
     }
 
 
 
-
+    
  @include ice-btn(btn-outt,100px,btn-inn,12px,14px,好吃好吃);
 }
 
