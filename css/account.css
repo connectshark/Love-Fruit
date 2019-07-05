@@ -2,6 +2,11 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
 }
 
@@ -32,9 +37,8 @@
   color: #fff;
   font-size: 40px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 80px;
 }
 
 .page-account .banner .title:after {

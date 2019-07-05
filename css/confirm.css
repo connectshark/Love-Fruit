@@ -1,0 +1,141 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.page-confirm {
+  background: #F8C3CD url(../img/shop/backgroundpic.png);
+  font-family: "GenJyuuGothic-B";
+}
+
+.page-confirm .bor-20 {
+  border-radius: 20px;
+}
+
+.page-confirm .btn-numbox {
+  font-size: 0px;
+}
+
+.page-confirm .btn-numbox .qty {
+  width: 40%;
+  text-align: center;
+  height: 28px;
+  padding: 0px;
+  border: 0px;
+}
+
+.page-confirm .btn-numbox .qtyminus {
+  background-color: #6A3E26;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  width: 25%;
+  height: 28px;
+  border: 0px;
+  color: white;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.page-confirm .btn-numbox .qtyplus {
+  padding: 0px;
+  background-color: #6A3E26;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 25%;
+  height: 28px;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+}
+
+.page-confirm .rela {
+  position: relative;
+}
+
+.page-confirm .button {
+  background-color: transparent;
+  border: 0px;
+}
+
+.page-confirm .text-center {
+  text-align: center;
+}
+
+.page-confirm .text-20 {
+  font-size: 20px;
+}
+
+.page-confirm h2 {
+  font-size: 28px;
+}
+
+.page-confirm h3 {
+  font-size: 22px;
+}
+
+.page-confirm .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .page-confirm .des-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.page-confirm .ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-confirm .ju-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-confirm .m-a {
+  margin: auto;
+}
+
+.page-confirm .p-10 {
+  padding: 10px;
+}
+
+.page-confirm .p-20 {
+  padding: 20px;
+}
+
+.page-confirm .bagc-w {
+  background-color: white;
+}
+
+.page-confirm .confirm-list {
+  padding-top: 220px;
+}
+
+.page-confirm .confirm-title {
+  padding: 20px 0px;
+}
+
+.page-confirm .list-wrap {
+  background-color: #FFF8E4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 60px;
+}
+
+.page-confirm .list-wrap > div + div {
+  border-left: 1px solid black;
+}
+/*# sourceMappingURL=confirm.css.map */

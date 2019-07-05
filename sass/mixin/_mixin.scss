@@ -1,18 +1,124 @@
 
+// @mixin out-Line-Font($class,$color,$size,$width2,$shadow,$text){
+// 	.#{$class}{
+// 	color:$color;
+// 	font-size:$size;
+// 	position:relative;
+// 	z-index: 5;
+// 	text-align: center;
+// 	line-height: $size *2;
+// 	}
+// 	.#{$class}:after{
+// 	z-index:-1;
+// 	content:'#{$text}';
+// 	position:absolute;
+	
+// 	// vertical-align:middle;
+// 	left:0;
+// 	top:0;
+// 	bottom: 0;
+// 	right: 0;
+// 	-webkit-text-stroke:$width2 $shadow;
+// 	// text-stroke:$width $shadow;
+// 	}
+// }
+
+
+// //普通按鈕
+// @mixin btn-out($width,$class,$color,$size,$width2,$shadow,$text){
+// 	display: block;
+//     width:$width ;
+//     height:$width * 0.3 ;
+//     border-radius: 40px;
+//     background-color: white;
+// 	border:$width*0.015 solid #715124;
+//     display: flex;
+// 	justify-content:center;
+// 	cursor: pointer;
+// 	>span{
+// 		display: block;
+// 		width:$width * 0.93;
+// 		height:$width * 0.3 * 0.8;
+// 		border-radius: 20px;
+// 		background-color:#fc7389;
+// 		border:$width*0.015 solid #e4575f;
+// 		text-align: center;
+// 		margin: auto;
+// 		cursor: pointer;
+// 		&:hover{
+// 			background-color: #ffabb1;
+// 			transition-duration:.2s;
+// 		}
+// 		&:active{
+// 			background-color: #db4d6d;
+// 			transition-duration:.2s;
+// 		}
+// 	}
+// 	@include out-Line-Font($class,$color,$size,$width2,$shadow,$text)
+// }
+
+
+// //帶圖案扭
+//  @mixin ice-btn-out($width,$class,$color,$size,$width2,$shadow,$text){
+// 	display: block;
+//     width:$width ;
+//     height:$width * 0.3 ;
+//     border-radius: 25px;
+//     background-color: white;
+// 	border:$width*0.015 solid #715124;
+//     display: flex;
+// 	justify-content:center;
+// 	cursor: pointer;
+// 	box-shadow: 0px 3px #715124;
+// 	// transform: translateY(0px);
+// 	&:active{
+// 		box-shadow: 0 1px black;
+// 		transform: translateY(2px);
+// 		// transition-duration:.2s;
+// 	 }
+// 	>span{
+// 		display: block;
+// 		position: relative;
+// 		width:$width * 0.93;
+// 		height:$width * 0.3 * 0.8;
+// 		border-radius: 20px;
+// 		background-color:#fc7389;
+// 		border:$width*0.015 solid #e4575f;
+// 		text-align: center;
+// 		margin: auto;
+// 		cursor: pointer;
+// 		&:hover{
+// 			background-color: #fad689;
+// 			transition-duration:.2s;
+// 		}
+// 		img{
+// 			display: block;
+// 			position: absolute;
+// 			top:-3px;
+// 			left: -13px;
+// 			width: $width * 0.3;
+// 			height: $width * 0.35;
+			
+// 		}
+// 	}
+// 	@include out-Line-Font($class,$color,$size,$width2,$shadow,$text) 
+// }
+*{
+	box-sizing: border-box;
+}
+	
 @mixin out-Line-Font($class,$color,$size,$width2,$shadow,$text){
 	.#{$class}{
 	color:$color;
 	font-size:$size;
 	position:relative;
-	z-index: 5;
+	z-index: 0;
 	text-align: center;
-	line-height: $size *2;
 	}
 	.#{$class}:after{
 	z-index:-1;
 	content:'#{$text}';
 	position:absolute;
-	
 	// vertical-align:middle;
 	left:0;
 	top:0;
@@ -25,85 +131,131 @@
 
 
 //普通按鈕
-@mixin btn-out($width,$class,$color,$size,$width2,$shadow,$text){
+@mixin btn($div-class,$btn-width,$span-class,$font-size,$span-text){
+	.#{$div-class}{
 	display: block;
-    width:$width ;
-    height:$width * 0.3 ;
+	width:$btn-width ;
+	padding: 2px;
+	// padding: 10px;
+    // height:$width * 0.3 ;
     border-radius: 40px;
     background-color: white;
-	border:$width*0.015 solid #715124;
+	// border:$width*0.015 solid #715124;
+	border:2px solid #715124;
     display: flex;
 	justify-content:center;
 	cursor: pointer;
-	>span{
+	
+	.#{$span-class}{
 		display: block;
-		width:$width * 0.93;
-		height:$width * 0.3 * 0.8;
+		color: whitesmoke;
+		font-size:$font-size;
+		position:relative;
+		padding: 1px;
+		z-index: 1;
+		text-align: center;
+		display: block;
+		width:$btn-width;
+		// height:$width * 0.3 * 0.8;
 		border-radius: 20px;
 		background-color:#fc7389;
-		border:$width*0.015 solid #e4575f;
+		border:2px solid #e4575f;
 		text-align: center;
 		margin: auto;
 		cursor: pointer;
 		&:hover{
 			background-color: #ffabb1;
 			transition-duration:.2s;
-		}
+			}
 		&:active{
 			background-color: #db4d6d;
 			transition-duration:.2s;
+			}
 		}
+	.#{$span-class}:after{
+		z-index:-1;
+		content:'#{$span-text}';
+		position:absolute;
+		// vertical-align:middle;
+		left:0px;
+		// top:0px;
+		// bottom: 0px;
+		right: 0px;
+		-webkit-text-stroke:2px black;
+		// text-stroke:$width $shadow;
+		}	
 	}
-	@include out-Line-Font($class,$color,$size,$width2,$shadow,$text)
+	
 }
+
+
 
 
 //帶圖案扭
- @mixin ice-btn-out($width,$class,$color,$size,$width2,$shadow,$text){
-	display: block;
-    width:$width ;
-    height:$width * 0.3 ;
-    border-radius: 25px;
-    background-color: white;
-	border:$width*0.015 solid #715124;
-    display: flex;
-	justify-content:center;
-	cursor: pointer;
-	box-shadow: 0px 3px #715124;
-	// transform: translateY(0px);
+ @mixin ice-btn($div-class,$btn-width,$span-class,$font-size,$line-height,$span-text){
+	.#{$div-class}{
+		display: block;
+		width:$btn-width ;
+		padding: 2px;
+		height:$btn-width * 0.3 ;
+		border-radius: 40px;
+		background-color: white;
+		border:2px solid #715124;
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		cursor: pointer;
+		box-shadow: 0px 3px #715124;
 	&:active{
 		box-shadow: 0 1px black;
 		transform: translateY(2px);
-		// transition-duration:.2s;
 	 }
-	>span{
+	 .#{$span-class}{
 		display: block;
-		position: relative;
-		width:$width * 0.93;
-		height:$width * 0.3 * 0.8;
+		color: whitesmoke;
+		font-size:$font-size;
+		line-height:$line-height;
+		position:relative;
+		padding: 3px;
+		z-index: 1;
+		text-align: center;
+		display: block;
+		width:$btn-width*0.92 ;
+		height:$btn-width *0.23;
 		border-radius: 20px;
 		background-color:#fc7389;
-		border:$width*0.015 solid #e4575f;
+		border:2px solid #e4575f;
 		text-align: center;
-		margin: auto;
+		// margin: auto;
 		cursor: pointer;
 		&:hover{
-			background-color: #fad689;
+			background-color: #FAD689;
 			transition-duration:.2s;
-		}
-		img{
+			}
+		>img{
 			display: block;
 			position: absolute;
-			top:-3px;
+			top:-7px;
 			left: -13px;
-			width: $width * 0.3;
-			height: $width * 0.35;
+			width:$btn-width * 0.3 *0.9;
+			height:$btn-width *0.37 *0.9;
 			
+			}
 		}
+	.#{$span-class}:after{
+		z-index:-1;
+		content:'#{$span-text}';
+		position:absolute;
+		left:0px;
+		// top:0px;
+		// bottom: 0px;
+		right: 0px;
+		-webkit-text-stroke:2px black;
+		}	
 	}
-	@include out-Line-Font($class,$color,$size,$width2,$shadow,$text) 
 }
 	
+
 
 
 

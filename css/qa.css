@@ -2,6 +2,11 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
 }
 
@@ -34,9 +39,8 @@
   color: #fff;
   font-size: 24px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 48px;
 }
 
 .page-qa .qa .title-main .title:after {
@@ -325,9 +329,8 @@
   color: white;
   font-size: 24px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 48px;
 }
 
 .page-qa .stage .content .ice-btn-out .btn-costum:after {
@@ -429,9 +432,8 @@
     color: #fff;
     font-size: 40px;
     position: relative;
-    z-index: 5;
+    z-index: 0;
     text-align: center;
-    line-height: 80px;
   }
   .page-qa .qa .title-main .title:after {
     z-index: -1;

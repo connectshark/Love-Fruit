@@ -7,7 +7,7 @@ function flowChange(now) {
 		now = flow.length;
 		nowFlow = flow.length;
 	}
-	for (let i = 0; i < flow.length; i++) {
+	for (var i = 0; i < flow.length; i++) {
 		flow[i].style.display = 'none';
 	}
 	flow[now-1].style.display = 'block';
@@ -42,14 +42,12 @@ function nextChange() {
 	flowChange(nowFlow);
 	stepChange(nowFlow);
 }
-function doFirst(){
-	last = document.getElementById('last');
-	next = document.getElementById('next');
-	step = document.getElementsByClassName('step-item')
-	last.addEventListener('click',lastChange);
-	next.addEventListener('click',nextChange);
-	flow = document.getElementsByClassName('flow');
+
+$(document).ready(function() {
+	$('#last').click(lastChange);
+	$('#next').click(nextChange);
+	flow = $('.flow');
+	step = $('.step-item');
 	flowChange(nowFlow);
 	stepChange(nowFlow);
-}
-window.addEventListener('load',doFirst);
+});

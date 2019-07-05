@@ -46,7 +46,7 @@
               >
             </li>
             <li>
-              <a class="nav-text" href="message.html" title="愛的留言"
+              <a class="nav-text" href="leavemessage.html" title="愛的留言"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >愛的留言</span
                 ></a
@@ -164,13 +164,13 @@
 					</div>
 					<div class="progress-group">
 						<div class="default">
-							<div class="progress-bar"></div>
+							<div class="progress-bar" id="acid"></div>
 						</div>
 						<div class="default">
-							<div class="progress-bar"></div>
+							<div class="progress-bar" id="sweet"></div>
 						</div>
 						<div class="default">
-							<div class="progress-bar"></div>
+							<div class="progress-bar" id="bitter"></div>
 						</div>
 					</div>
 				</div>
@@ -199,25 +199,25 @@
     			</div>
     			<div class="aside-select">
     				<div class="select-item select-item-4">
-    					<figure class="texture-item">
+    					<figure class="texture-item" id="texture-ice">
     						<img src="img/custom/texture1.png" alt="冰棒模型">
     						<figcaption>冰棒模型</figcaption>
     					</figure>
     				</div>
     				<div class="select-item select-item-4">
-    					<figure class="texture-item">
+    					<figure class="texture-item" id="texture-bear">
     						<img src="img/custom/texture2.png" alt="熊掌模型">
     						<figcaption>熊掌模型</figcaption>
     					</figure>
     				</div>
     				<div class="select-item select-item-4">
-    					<figure class="texture-item">
+    					<figure class="texture-item" id="texture-rabbit">
     						<img src="img/custom/texture3.png" alt="兔兔模型">
     						<figcaption>兔兔模型</figcaption>
     					</figure>
     				</div>
     				<div class="select-item select-item-4">
-    					<figure class="texture-item">
+    					<figure class="texture-item" id="texture-rocket">
     						<img src="img/custom/texture4.png" alt="火箭模型">
     						<figcaption>火箭模型</figcaption>
     					</figure>
@@ -355,6 +355,7 @@
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/index.js"></script>
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>

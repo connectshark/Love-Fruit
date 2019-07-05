@@ -1,0 +1,262 @@
+@import "mixin/mixin";
+*{
+    box-sizing: border-box;
+    // outline: 1px solid black;
+    span{
+        font-size: 16px;
+        button{
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid transparent;
+            outline:none;
+            background-color: none;
+        }
+    }
+}
+.page-cartlist{
+    background: #F8C3CD url(../img/shop/backgroundpic.png);
+    font-family: "GenJyuuGothic-B";
+    // img{
+    //     width: 100%;
+    //     margin: auto;
+    //     // display: block;
+    // }
+    .bor-20{
+        border-radius: 20px;
+    }
+    .btn-numbox{
+        // width: 100%;
+        font-size: 0px;
+        // @include rwd(desktop){
+        //     display: block;
+        //     padding: 0px;
+        //     width: 43%;
+        //     // margin-left: 38%;
+        //     // width: 50%;
+        // }
+        .qty{
+            // display: inline-block;
+            width: 40%;
+            text-align: center;
+            height: 28px;
+            padding: 0px;
+            border: 0px;
+        }
+        .qtyminus{
+            background-color: #6A3E26;
+            border-bottom-left-radius:20px;
+            border-top-left-radius:20px;
+            width: 25%;
+            height:28px; 
+            border:0px; 
+            color:white;
+            padding: 0px;
+            cursor: pointer;
+        }
+        .qtyplus{
+            padding: 0px;
+            background-color: #6A3E26;
+            border-bottom-right-radius:20px;
+            border-top-right-radius:20px;
+            width: 25%;
+            height:28px; 
+            border:0px; 
+            color:white;
+            cursor: pointer;
+        }
+    }
+    .rela{
+        position: relative;
+    }
+    .button{
+        background-color: transparent;
+        border:0px;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .text-20{
+        font-size: 20px;
+    }    
+    h2{
+        font-size:28px; 
+    }
+    h3{
+        font-size: 22px;
+    }
+    .container{
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+    }
+    .des-flex{
+        @include rwd(desktop){
+            display: flex;    
+        }
+         
+    }
+    .ai-c{
+        align-items: center;
+    }
+    .ju-c{
+        justify-content: center;
+    }
+    .m-a{
+        margin: auto;
+    }
+    .p-10{
+        padding: 10px;
+    }
+    .p-20{
+        padding: 20px;
+    }
+    .bagc-w{
+        background-color: white;
+    }
+
+    // 以上共用
+    .cart-head{
+        padding-top:200px;
+        max-width: 1200px;
+        width: 100%;
+        text-align: center;
+    }
+    @include rwd(desktop){
+        .cart-column{
+            background-color:#FFF8E4;
+            border-top-left-radius:10px;
+            border-top-right-radius:10px;
+            height: 60px;
+        }
+        .cart-column > div + div {
+            border-left: 1px solid black;
+        }
+        .cart-row > div + div {
+            border-left: 1px solid black;
+           
+        }
+        .cart-row{
+             background-color: white;
+             border-bottom:1px solid rgb(200,200,200);
+             img{
+                 width: 100%;
+             }
+        }
+        .fa-trash{
+            font-size: 32px;
+        }
+        .cart-title{
+            // background-color: #6A3E26;
+            height: 80px;
+            line-height: 80px;
+        }
+        .total-pri{
+            background-color: white;
+            text-align: right;
+            span{
+                font-size: 20px;
+            }
+           
+        }
+        .cart-btn{
+            background-color: white; 
+             padding: 10px 0px 30px 0px;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+        @include btn(continue-shop,100px,continue-shop-in,16px, 繼續購物);
+        .continue-shop-in{
+            background-color: white;
+        }
+        // @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
+       .pay-transport-title{
+        padding: 5px 0px;
+        border-top:1px solid rgb(200,200,200);
+        padding:10px 0px 20px 0px;
+       }
+       .pay-transport-btn{
+           font-size: 0px;
+           border-bottom: 1px solid #FFB11B;
+          
+       }
+       .pay,.transport{
+        background-color: #FAD689;
+        border: 2px solid #FAD689;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: #282828;
+        height: 40px;
+        &:hover{
+            background-color: #FFB11B;
+        }
+       }
+       .transport-check,.onlion-check{
+           height: 20px;
+        //    line-height: 30px;
+        &:before{
+            display: inline-block;
+            content: "";
+            width: 18px;
+            height: 18px;
+            border:2px solid black;
+
+        }
+       }
+       @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
+        .maybe-like{
+            padding:40px 0px; 
+        }
+        .maybe-title{
+            text-align: center;
+            padding: 30px 0px;
+        }
+       .left-arrow{
+        position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 30px;
+        top:40%;
+        left:30px;
+
+       }
+       .right-arrow{
+        position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 30px;
+        top:40%;
+        right:30px;
+       }
+       .news-item{
+        width: 15%;
+        height: 230px;
+        border:4px solid #FFCE5B;
+        border-radius: 20px;
+        padding-top: 10px;
+        background-color: #FFF4DE;
+       }
+       .newpic{
+        width: 30%;
+        margin: auto;
+        padding-top:30px; 
+        
+        img{
+            width: 100%;
+        }
+        .new-collection-love{
+        display: block;
+        width: 15%;
+        height: 9%;
+        position: absolute;
+        right: 8px;
+        top:30px;
+            }  
+        }
+        .new-name,.new-pic{
+        text-align: center;
+        padding: 5px 0px;
+        }
+    }
+}

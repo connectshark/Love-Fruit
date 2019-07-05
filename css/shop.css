@@ -1,4 +1,9 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 @font-face {
   font-family: "A-OTF-H";
   src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
@@ -235,44 +240,6 @@
   margin: auto;
 }
 
-.shop-btn .shop-btn-out {
-  width: 115px;
-  height: 30px;
-  border-radius: 25px;
-  background-color: white;
-  border: 2px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.shop-btn .shop-btn-out .shop-btn-in {
-  width: 108px;
-  height: 24px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 2px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.shop-btn .shop-btn-out .shop-btn-in:hover {
-  background-color: #ffabb1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.shop-btn .shop-btn-out .shop-btn-in:active {
-  background-color: #db4d6d;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
 .shop-btn .shop-btn-out .shop-btn-in .shop-btn-text {
   display: inline-block;
   line-height: 20px;
@@ -282,6 +249,7 @@
   color: white;
   font-size: 16px;
   position: relative;
+  z-index: 0;
   text-align: center;
 }
 

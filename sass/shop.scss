@@ -245,9 +245,9 @@ $dsk : 997px;
     .shop-btn{
     @extend %shop-btn;
         .shop-btn-out{
-            @include btn-out(115px , 30px);
+            // @include btn-out(115px , 30px);
             .shop-btn-in{
-                @include btn-in(108px , 24px);
+                // @include btn-in(108px , 24px);
                 .shop-btn-text{
                 display: inline-block;
                 line-height: 20px;
