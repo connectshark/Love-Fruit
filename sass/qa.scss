@@ -10,6 +10,7 @@
     background-color: #ffe8e8;
 
     .wrap{
+        width: 100%;
         max-width: 1200px;
         margin: auto;
     }
@@ -279,110 +280,109 @@
         }
     }
 
-    
-    
 
-
-}
-
-@include rwd(mobile){
-    .page-qa{
-        .stage{
-            .popsicle{
-                img{
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-@include rwd(medium){
-
-    .page-qa{
-
-        .qa{
-            padding-top:300px; 
-    
-            .title-main{
-                width: 520px;
-                height: 150px;
-                padding: 30px 0;
-
-                @include out-Line-Font(title,#fff,40px,8px,#6a3e26,戀冰測驗);
-                .title{
-                    z-index: 1;
-                    line-height: 40px;
-                }
-
-                span{
-                    font-size: 18px;
-                    line-height: 32px;
-                }
-            }
-
-            .letter{
-                .envelope-bg{
-                    display: block;
-                    background-image: url(../img/qa/envelopebg.png);
-                    width: 90%;
-                    height: 680px;
-                    background-size: cover;
-                    margin: auto;
-                }
-
-                .topic{
-                    height: 500px;
-                    position: absolute;
-                    z-index: 0;
-                    bottom: 0px;
-                    left: 0;
-                    right: 0;
-                    padding: 50px;
-                    pointer-events: auto;
-                    text-align: center;
-
-                    .title-area{
-                        .question{
-                            font-size: 28px;
-                            text-align: center;
-                        }
-                    }
-
-                    .asw{
-                        .asw-btn{
-                            span{
-                                font-size: 18px;
-                            }
-                        }
-                    }
-                }
-                .envelope-front{
-                    display: block;
-                    width: 90%;
-                    height: 255px;
-                    margin: -300px auto 0;
-                    position: relative;
-                    pointer-events: none;
-    
+    @include rwd(mobile){        
+            .stage{
+                .popsicle{
                     img{
                         width: 100%;
                     }
                 }
-            }
-        }
-
-        .stage{
-            height: 885px;
-
-            
-            .content{
-                padding: 50px;
-            }
-        }
+            }        
     }
     
+    @include rwd(medium){
+    
+            .qa{
+                padding-top:300px; 
+        
+                .title-main{
+                    width: 520px;
+                    height: 150px;
+                    padding: 30px 0;
+    
+                    @include out-Line-Font(title,#fff,40px,8px,#6a3e26,戀冰測驗);
+                    .title{
+                        z-index: 1;
+                        line-height: 40px;
+                    }
+    
+                    span{
+                        font-size: 18px;
+                        line-height: 32px;
+                    }
+                }
+    
+                .letter{
+                    .envelope-bg{
+                        display: block;
+                        background-image: url(../img/qa/envelopebg.png);
+                        width: 90%;
+                        height: 680px;
+                        background-size: cover;
+                        margin: auto;
+                    }
+    
+                    .topic{
+                        height: 500px;
+                        position: absolute;
+                        z-index: 0;
+                        bottom: 0px;
+                        left: 0;
+                        right: 0;
+                        padding: 50px;
+                        pointer-events: auto;
+                        text-align: center;
+    
+                        .title-area{
+                            .question{
+                                font-size: 28px;
+                                text-align: center;
+                            }
+                        }
+    
+                        .asw{
+                            .asw-btn{
+                                span{
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                    .envelope-front{
+                        display: block;
+                        width: 90%;
+                        height: 255px;
+                        margin: -300px auto 0;
+                        position: relative;
+                        pointer-events: none;
+        
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+    
+            .stage{
+                height: 885px;
+    
+                
+                .content{
+                    padding: 50px;
+                }
+            }
+        
+        
+    }
+
+    
+    
+
+
 }
+
+
 
 
 

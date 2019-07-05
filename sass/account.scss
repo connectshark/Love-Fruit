@@ -1,0 +1,40 @@
+@import 'mixin/mixin';
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.page-account{
+    font-family: "GenJyuuGothic-R";
+
+    .wrap{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .banner{
+        width: 100%;
+        height: 0;
+        padding-top:50%;
+        background: #ffdfe0 url(../img/account/banner.png) bottom left no-repeat;
+        background-size: contain;
+        position: relative;
+
+        @include out-Line-Font(title,#fff,40px,5px,#6a3e26,會員中心);
+        .title{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 40%;
+        }
+        
+    }
+
+    @include rwd(mobile){        
+        .banner{
+            padding-top:80%;
+            background-size: cover;
+        }
+    }
+}
