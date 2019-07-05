@@ -1,15 +1,6 @@
-window.addEventListener("load", function() {
-  var menuControl = document.getElementById("menu-control");
-  var navItem = document.getElementsByClassName("nav-item")[0];
-  menuControl.addEventListener("click", function() {
-    navItem.classList.toggle("nav-item-show");
-  });
-});
-
 function $id(id) {
   return document.getElementById(id);
 }
-
 function modelchange1() {
   $id("model-general").style.visibility = "visible";
   $id("model-bear").style.visibility = "hidden";
@@ -24,8 +15,8 @@ function modelchange2() {
 }
 function modelchange3() {
   $id("model-general").style.visibility = "hidden";
-  $id("model-bear").style.visibility = "visible";
-  $id("model-rabbit").style.display = "inline-block";
+  $id("model-bear").style.visibility = "hidden";
+  $id("model-rabbit").style.visibility = "visible";
   $id("model-rocket").style.visibility = "hidden";
 }
 function modelchange4() {
@@ -42,3 +33,22 @@ function init() {
   $id("model-rocket-button").addEventListener("click", modelchange4, false);
 }
 window.addEventListener("load", init, false);
+
+window.addEventListener("scroll", function() {
+  let scrolltop =
+    document.documentElement.scrollTop ||
+    window.pageYOffset ||
+    document.body.scrolltop;
+
+  if (scrolltop > 400) {
+    document
+      .querySelector(".mailer-middle")
+      .classList.add("mailer-middle-show");
+    // document.querySelector("").classList.add("");
+  } else {
+    document
+      .querySelector(".mailer-middle")
+      .classList.remove("mailer-middle-show");
+    // document.querySelector("").classList.remove("");
+  }
+});
