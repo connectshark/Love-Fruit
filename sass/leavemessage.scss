@@ -140,8 +140,7 @@ $cofe:#6a3e26;
 			align-items: center;
 			justify-content: space-between;
 			@include rwd(mobile){
-				flex-flow: row wrap;
-				order: 2;
+				display: none;
 			}
 			h2{
 				font: 24px "A-OTF-M";
@@ -179,10 +178,23 @@ $cofe:#6a3e26;
 			width: 20%;
 			margin-left: auto;
 			margin-right: 20px;
+			text-decoration: none;
 			font-family: "A-OTF-M";
 			@include ice-btn-out(200px,leave-message-btn,white,24px,3px,$cofe,我要留言);
 			@include rwd(mobile){
 				margin-right: auto;
+			}
+		}
+		#filter-pull{
+			display: none;
+			@include rwd(mobile){
+				display: block;
+				width: 80%;
+				padding: 30px 20px;
+				box-sizing: border-box;
+				border: 3px solid $cofe;
+				border-radius: 20px;
+				font: 16px 
 			}
 		}
     }

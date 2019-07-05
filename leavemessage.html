@@ -125,6 +125,13 @@
 			<a class="leave-message" href="writemessage.html">
 				<span class="leave-message-btn" id="leaveMessage">我要留言</span>
 			</a>
+			<select v-model="status" id="filter-pull">
+				<option selected>全部</option>
+				<option>單身</option>
+				<option>初戀</option>
+				<option>熱戀</option>
+				<option>分手</option>
+			</select>
 		</div>
 	</section>
 	<section class="message-bgi">
@@ -146,7 +153,7 @@
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -175,7 +182,7 @@
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -204,7 +211,7 @@
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -603,8 +610,19 @@
 	</footer>
 
 	<script src="js/index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/message.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				status:"全部",
+			},
+			methods:{
+			},
+		});
+	</script>
 </body>
 
 </html>

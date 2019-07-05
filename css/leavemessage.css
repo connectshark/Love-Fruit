@@ -239,13 +239,7 @@
 
 @media all and (max-width: 768px) {
   .btn .btn-group .btn-filter-group {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    display: none;
   }
 }
 
@@ -292,6 +286,7 @@
   width: 20%;
   margin-left: auto;
   margin-right: 20px;
+  text-decoration: none;
   font-family: "A-OTF-M";
   display: block;
   width: 200px;
@@ -368,6 +363,23 @@
 @media all and (max-width: 768px) {
   .btn .btn-group .leave-message {
     margin-right: auto;
+  }
+}
+
+.btn .btn-group #filter-pull {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group #filter-pull {
+    display: block;
+    width: 80%;
+    padding: 30px 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 3px solid #6a3e26;
+    border-radius: 20px;
+    font: 16px;
   }
 }
 
