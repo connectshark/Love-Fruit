@@ -4,7 +4,6 @@
           box-sizing: border-box;
   text-decoration: none;
   font-family: "GenJyuuGothic-R";
-  outline: 1px solid #f00;
 }
 
 .news-wrap .banner {
@@ -362,18 +361,25 @@
 
 .news-inner-wrap .inner-wrapper .article-image {
   text-align: center;
-  width: 90%;
   margin: auto;
+  width: 90%;
 }
 
 .news-inner-wrap .inner-wrapper .article-image img {
+  width: 100%;
   padding: 20px 0;
-  width: 80%;
+}
+
+@media all and (min-width: 769px) {
+  .news-inner-wrap .inner-wrapper .article-image img {
+    width: 90%;
+  }
 }
 
 .news-inner-wrap .inner-wrapper .article-text {
   width: 60%;
   margin: auto;
+  line-height: 40px;
 }
 
 .news-inner-wrap .inner-wrapper .change-page {
