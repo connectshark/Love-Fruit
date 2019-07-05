@@ -6,8 +6,13 @@
 }
 
 .page-account{
-    font-family: "GenJyuuGothic-R";
+    .profile{
+        background-color: #fff8e4;
+    }
+}
 
+.page-account{
+    font-family: "GenJyuuGothic-R";
     .wrap{
         width: 100%;
         max-width: 1200px;

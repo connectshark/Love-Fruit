@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.page-account .profile {
+  background-color: #fff8e4;
+}
+
 .page-account {
   font-family: "GenJyuuGothic-R";
 }
