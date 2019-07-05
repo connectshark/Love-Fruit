@@ -140,7 +140,9 @@ $cofe:#6a3e26;
 			align-items: center;
 			justify-content: space-between;
 			@include rwd(mobile){
-				display: none;
+				flex-flow: column nowrap;
+				width: 90%;
+				order: 2;
 			}
 			h2{
 				font: 24px "A-OTF-M";
@@ -150,6 +152,9 @@ $cofe:#6a3e26;
 			}
 			.filter-item{
 				cursor: pointer;
+				@include rwd(mobile){
+					display: none;
+				}
 				button{
 					cursor: pointer;
 					background-color: #a3a3a3;
@@ -188,12 +193,12 @@ $cofe:#6a3e26;
 			display: none;
 			@include rwd(mobile){
 				display: block;
-				width: 80%;
-				padding: 30px 20px;
+				width: 100%;
+				padding: 10px 20px;
 				box-sizing: border-box;
 				border: 3px solid $cofe;
 				border-radius: 20px;
-				font: 16px 
+				font: 16px "A-OTF-M";
 			}
 		}
     }
@@ -252,6 +257,9 @@ $cofe:#6a3e26;
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: flex-end;
+			@include rwd(mobile){
+				width: calc(100% - 50px);
+			}
 			.cloud{
 				position: absolute;
 				top: -7%;

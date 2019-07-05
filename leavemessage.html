@@ -197,17 +197,17 @@
 				<div class="filter-item">
 					<button type="button" class="filter" id="breakUp">分手</button>
 				</div>
+				<select v-model="status" id="filter-pull">
+					<option selected>全部</option>
+					<option>單身</option>
+					<option>初戀</option>
+					<option>熱戀</option>
+					<option>分手</option>
+				</select>
 			</div>
 			<a class="leave-message" href="writemessage.html">
 				<span class="leave-message-btn" id="leaveMessage">我要留言</span>
 			</a>
-			<select v-model="status" id="filter-pull">
-				<option selected>全部</option>
-				<option>單身</option>
-				<option>初戀</option>
-				<option>熱戀</option>
-				<option>分手</option>
-			</select>
 		</div>
 	</section>
 	<section class="message-bgi">
