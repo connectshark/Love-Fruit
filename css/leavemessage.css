@@ -446,11 +446,19 @@
   color: #79a6cc;
 }
 
+.message-bgi .message .break-up .s-text {
+  color: #79a6cc;
+}
+
 .message-bgi .message .true-love {
   border: 12px solid #6bdbda;
 }
 
 .message-bgi .message .true-love .fa-cloud {
+  color: #0abbb5;
+}
+
+.message-bgi .message .true-love .s-text {
   color: #0abbb5;
 }
 
@@ -462,11 +470,19 @@
   color: #db4d6d;
 }
 
+.message-bgi .message .hot-love .s-text {
+  color: #db4d6d;
+}
+
 .message-bgi .message .single {
   border: 12px solid #fad689;
 }
 
 .message-bgi .message .single .fa-cloud {
+  color: #f6c555;
+}
+
+.message-bgi .message .single .s-text {
   color: #f6c555;
 }
 
@@ -526,8 +542,8 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -536,13 +552,14 @@
 }
 
 .message-bgi .message .message-item .message-header .fa-user-circle {
-  font-size: 48px;
+  width: 10%;
+  font-size: 30px;
   color: #f94982;
 }
 
 .message-bgi .message .message-item .message-header p {
   margin-left: auto;
-  width: 80%;
+  width: 85%;
   font-size: 20px;
   font-family: "GenJyuuGothic-R";
 }
@@ -559,10 +576,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 10px;
 }
 
 .message-bgi .message .message-item .message-body figure {
-  width: 90%;
+  width: 100%;
 }
 
 .message-bgi .message .message-item .message-body figure img {
@@ -575,6 +595,7 @@
   line-height: 40px;
   font-family: "A-OTF-M";
   margin-left: auto;
+  text-align: justify;
 }
 
 .message-bgi .message .message-item .message-body h3 span {
@@ -587,9 +608,16 @@
   font-size: 16px;
   line-height: 32px;
   margin-left: auto;
+  padding: 0 0 10px;
+  text-align: justify;
+}
+
+.message-bgi .message .message-item .message-body .s-text {
+  text-align: right;
 }
 
 .message-bgi .message .message-item .message-footer {
+  margin-top: auto;
   width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -612,7 +640,7 @@
   width: 45%;
   background-color: #fc7389;
   border: 3px solid #6a3e26;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

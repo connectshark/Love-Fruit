@@ -226,10 +226,16 @@ $cofe:#6a3e26;
 			.fa-cloud{
 				color: #79a6cc;
 			}
+			.s-text{
+				color: #79a6cc;
+			}
 		}
 		.true-love{
 			border: 12px solid $true;
 			.fa-cloud{
+				color: #0abbb5;
+			}
+			.s-text{
 				color: #0abbb5;
 			}
 		}
@@ -238,13 +244,18 @@ $cofe:#6a3e26;
 			.fa-cloud{
 				color: #db4d6d;
 			}
+			.s-text{
+				color: #db4d6d;
+			}
 		}
 		.single{
 			border: 12px solid $single;
 			.fa-cloud{
 				color: #f6c555;
 			}
-			
+			.s-text{
+				color: #f6c555;
+			}
 		}
 		.message-item{
 			width:calc(33.333333% - 50px);
@@ -281,17 +292,18 @@ $cofe:#6a3e26;
 			}
 			.message-header{
 				display: flex;
-				flex-flow: row wrap;
+				flex-flow: row nowrap;
 				align-items: center;
 				width: 100%;
 				padding: 10px 0;
 				.fa-user-circle{
-					font-size: 48px;
+					width: 10%;
+					font-size: 30px;
 					color: #f94982;
 				}
 				p{
 					margin-left: auto;
-					width: 80%;
+					width: 85%;
 					font-size: 20px;
 					font-family: "GenJyuuGothic-R";
 				}
@@ -301,8 +313,10 @@ $cofe:#6a3e26;
 				display: flex;
 				flex-flow: column nowrap;
 				align-items: center;
+				box-sizing: border-box;
+				padding: 0 10px;
 				figure{
-					width: 90%;
+					width: 100%;
 					img{
 						width: 100%;
 					}
@@ -313,6 +327,7 @@ $cofe:#6a3e26;
 					line-height: 40px;
 					font-family: "A-OTF-M";
 					margin-left: auto;
+					text-align: justify;
 					span{
 						padding: 0 10px 0 0;
 					}
@@ -323,9 +338,15 @@ $cofe:#6a3e26;
 					font-size: 16px;
 					line-height: 32px;
 					margin-left: auto;
+					padding:0 0 10px;
+					text-align: justify;
+				}
+				.s-text{
+					text-align: right;
 				}
 			}
 			.message-footer{
+				margin-top: auto;
 				width: 70%;
 				display: flex;
 				flex-flow: row nowrap;
@@ -337,7 +358,7 @@ $cofe:#6a3e26;
 					width: 45%;
 					background-color: #fc7389;
 					border: 3px solid $cofe;
-					border-radius: 10px;
+					border-radius: 30px;
 					color: #fff;
 					box-sizing: border-box;
 					font-size: 18px;
