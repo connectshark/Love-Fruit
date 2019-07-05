@@ -180,7 +180,6 @@ $cofe:#6a3e26;
 			margin-right: 20px;
 			text-decoration: none;
 			font-family: "A-OTF-M";
-			@include ice-btn-out(200px,leave-message-btn,white,24px,3px,$cofe,我要留言);
 			@include rwd(mobile){
 				margin-right: auto;
 			}
@@ -199,6 +198,7 @@ $cofe:#6a3e26;
 		}
     }
 }
+@include ice-btn(leave-message,100%,leave-message-btn,24px,24px,我要留言);
 @keyframes upDown{
 	0%{
 		height: 100px;
@@ -242,17 +242,16 @@ $cofe:#6a3e26;
 			
 		}
 		.message-item{
-			width:calc(33.333333% - 24px);
+			width:calc(33.333333% - 50px);
 			box-sizing: border-box;
 			padding: 6px 20px;
-			margin: 12px;
+			margin: 25px;
 			border-radius: 10px;
 			background-color: #fff;
 			position: relative;
 			display: flex;
 			flex-flow: column nowrap;
 			align-items: flex-end;
-			margin-bottom: 20px;
 			.cloud{
 				position: absolute;
 				top: -7%;
@@ -274,16 +273,18 @@ $cofe:#6a3e26;
 			}
 			.message-header{
 				display: flex;
-				flex-flow: row nowrap;
+				flex-flow: row wrap;
 				align-items: center;
 				width: 100%;
-				padding: 20px 0;
+				padding: 10px 0;
 				.fa-user-circle{
 					font-size: 48px;
 					color: #f94982;
 				}
 				p{
-					font-size: 24px;
+					margin-left: auto;
+					width: 80%;
+					font-size: 20px;
 					font-family: "GenJyuuGothic-R";
 				}
 			}
@@ -291,23 +292,29 @@ $cofe:#6a3e26;
 				width: 100%;
 				display: flex;
 				flex-flow: column nowrap;
-				align-items: flex-end;
+				align-items: center;
 				figure{
+					width: 90%;
 					img{
 						width: 100%;
 					}
 				}
 				h3{
 					width: 70%;
-					font-size: 24px;
-					line-height: 48px;
+					font-size: 20px;
+					line-height: 40px;
 					font-family: "A-OTF-M";
+					margin-left: auto;
+					span{
+						padding: 0 10px 0 0;
+					}
 				}
 				p{
 					width: 70%;
 					font-family: "A-OTF-M";
 					font-size: 16px;
 					line-height: 32px;
+					margin-left: auto;
 				}
 			}
 			.message-footer{
