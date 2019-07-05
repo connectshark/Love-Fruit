@@ -1,4 +1,9 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: "GenJyuuGothic-R";
 }
@@ -7,9 +12,8 @@ body {
   color: #fff;
   font-size: 28px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 56px;
 }
 
 .group-title:after {
@@ -27,9 +31,8 @@ body {
   color: #fff;
   font-size: 28px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 56px;
 }
 
 .general-title:after {
@@ -47,9 +50,8 @@ body {
   color: #6a3e26;
   font-size: 12px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 24px;
 }
 
 .group-subtitle:after {
@@ -67,9 +69,8 @@ body {
   color: #fff8e4;
   font-size: 12px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 24px;
 }
 
 .general-subtitle:after {
@@ -87,9 +88,8 @@ body {
   color: #fff;
   font-size: 34px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 68px;
 }
 
 .message-title:after {
@@ -107,9 +107,8 @@ body {
   color: #fff;
   font-size: 34px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 68px;
 }
 
 .general-form-title:after {
@@ -127,9 +126,8 @@ body {
   color: #fff;
   font-size: 34px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 68px;
 }
 
 .group-form-title:after {
@@ -499,9 +497,8 @@ body {
   color: #fff;
   font-size: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 36px;
 }
 
 .general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:after {
@@ -781,9 +778,8 @@ body {
   color: #fff;
   font-size: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 36px;
 }
 
 .group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:after {
@@ -999,9 +995,8 @@ body {
   color: #fff;
   font-size: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 36px;
 }
 
 .course-message .go-between .content .open-btn .open-btn-out .open-btn-in:after {
@@ -1089,9 +1084,8 @@ body {
   color: #fff;
   font-size: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 36px;
 }
 
 .course-message .form-btn .form-btn-out .form-btn-in:after {
@@ -1362,9 +1356,8 @@ body {
   color: #fff;
   font-size: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 36px;
 }
 
 .general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
@@ -1592,9 +1585,8 @@ body {
   color: #fff;
   font-size: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 36px;
 }
 
 .group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
