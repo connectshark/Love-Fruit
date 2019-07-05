@@ -22,13 +22,12 @@
   /* outline: 1px solid #f00; */
 }
 /*第一屏幕*/
-
 /* 雲 */
 .style-cloud-a {
   width: 10%;
   position: absolute;
   top: 20%;
-  animation: styleclouda 40s ease 0s infinite alternate;
+  animation: styleclouda 60s ease 0s infinite alternate;
 }
 @keyframes styleclouda {
   0% {
@@ -40,7 +39,7 @@
     opacity: 0.5;
   }
   100% {
-    transform: translateX(1000%);
+    transform: translateX(900%);
     opacity: 1;
   }
 }
@@ -141,6 +140,7 @@
 .mountain {
   width: 100%;
   position: absolute;
+  top: -12%;
   z-index: 1;
 }
 .mountain img {
@@ -158,24 +158,23 @@
 }
 .heroIce {
   margin: auto;
-  width: 50%;
-  top: 42%;
-  left: 22%;
+  width: 46%;
+  top: 47%;
+  left: 25%;
   position: absolute;
   z-index: 3;
 }
 .sweetheart {
   margin: auto;
   width: 30%;
-  top: 35%;
-  left: 35%;
+  top: 38%;
+  left: 35.5%;
   position: absolute;
   z-index: 3;
 }
 /*第二屏幕*/
 .index-qa-bgc {
   position: relative;
-  /* background-image: url(../img/indexImg/QaBgc.png);*/
   width: 100%;
   z-index: 2;
   padding-bottom: 54%;
@@ -184,7 +183,7 @@
   position: absolute;
   width: 100%;
   z-index: 0;
-  top: -34%;
+  top: -29%;
 }
 .love-qa {
   position: absolute;
@@ -224,33 +223,37 @@
   position: absolute;
   width: 40%;
   left: 30%;
-  top: 7%;
+  top: 5%;
   z-index: 3;
 }
 .mailer-middle {
   position: absolute;
   left: 33%;
   z-index: 4;
-  top: 5%;
+  top: 30%;
   width: 33%;
-  height: 40%;
+  height: 55%;
   border-radius: 3%;
   text-align: center;
   border: 4px solid #6a3e26;
   background-color: #f9f1d2;
+  transition: 1s;
+}
+.mailer-middle-show {
+  top: 5%;
 }
 .mailer-qa-box {
   margin-top: 4%;
+  margin-bottom: 3%;
   display: inline-block;
   width: 70%;
-  height: 50%;
-  line-height: 120%;
-  border-radius: 3%;
+  height: 30%;
+  border-radius: 10px;
   border: 4px solid #6a3e26;
   background-color: #ffffff;
 }
 .mailer-qa-box h3 {
-  margin-top: 8%;
+  margin-top: 2%;
   padding: 7%;
   font-family: "GenJyuuGothic-B";
   color: #ea7187;
@@ -262,7 +265,7 @@
 .mailer-bottom {
   position: absolute;
   width: 40%;
-  top: 42%;
+  top: 45%;
   left: 30%;
   z-index: 5;
 }
@@ -319,7 +322,7 @@
 }
 .qa-button-text {
   font-size: 0.8vw;
-  line-height: 1.4vw;
+  line-height: 1.8vw;
   letter-spacing: 0.2vw;
   margin-top: 1.2%;
   color: #ffffff;
@@ -379,6 +382,28 @@
   top: -35%;
   z-index: 4;
 }
+.iceShadow {
+  position: absolute;
+  width: 10%;
+  left: 38%;
+  top: 51%;
+  z-index: 6;
+  animation: iceShadow 5s ease 0s infinite alternate;
+}
+@keyframes iceShadow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .c-p-store {
   position: absolute;
   width: 45%;
@@ -415,11 +440,18 @@
   margin-bottom: 4%;
 }
 .panel-button-bottom {
+  cursor: pointer;
   width: 38%;
   height: 42%;
   border-radius: 15%;
   border: 4px solid #6a3e26;
   background-color: #bd9c64;
+}
+.panel-button-bottom:active {
+  transform: translateY(2%);
+}
+.panel-button-bottom:active .panel-button-bottom-pink {
+  background-color: #ffc8c7;
 }
 .panel-button-center {
   width: 100%;
@@ -466,11 +498,89 @@
   margin-bottom: 3%;
 }
 .model-general {
+  visibility: visible;
   position: absolute;
   z-index: 6;
   top: 24%;
   width: 13%;
   left: 37%;
+  animation: modelgeneral 5s ease 0s infinite alternate;
+}
+@keyframes modelgeneral {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.model-bear {
+  visibility: hidden;
+  position: absolute;
+  z-index: 6;
+  top: 24%;
+  width: 13%;
+  left: 37%;
+  animation: modelbear 5s ease 0s infinite alternate;
+}
+@keyframes modelbear {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+.model-rabbit {
+  visibility: hidden;
+  position: absolute;
+  z-index: 6;
+  top: 24%;
+  width: 13%;
+  left: 37%;
+  animation: modelrabbit 5s ease 0s infinite alternate;
+}
+@keyframes modelrabbit {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+.model-rocket {
+  visibility: hidden;
+  position: absolute;
+  z-index: 6;
+  top: 24%;
+  width: 13%;
+  left: 37%;
+  animation: modelrocket 5s ease 0s infinite alternate;
+}
+@keyframes modelrocket {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
 .ice-btn-out {
   width: 80%;
@@ -506,6 +616,7 @@
   border: 2px solid #ffffff;
   background-color: #e4575f;
   text-align: center;
+  display: inline-block;
 }
 .btn-ice {
   width: 30%;
