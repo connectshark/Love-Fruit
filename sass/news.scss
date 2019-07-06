@@ -25,10 +25,10 @@ $font-gray:#434343;
             width: 100%;
             max-width: 1200px;
             text-align: center;
-            padding: 20% 0 30%;
+            padding: 23% 0 ;
             margin: auto;
             @include rwd(medium){
-                padding: 150px 0 400px;
+                padding: 150px 0 ;
                 
             }
             .img-bg{
@@ -59,8 +59,18 @@ $font-gray:#434343;
     }
 }
 .news-wrap{
+    .air-ball{
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 10%;
+        img:fist-child{
+           
+        }
+    }
     .select{
-        margin-top: -2px;
+      
         background-color:$light-yellow;
         margin: auto;
         width: 100%;

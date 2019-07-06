@@ -24,13 +24,13 @@
   width: 100%;
   max-width: 1200px;
   text-align: center;
-  padding: 20% 0 30%;
+  padding: 23% 0;
   margin: auto;
 }
 
 @media all and (min-width: 769px) {
   .news-wrap .banner .title, .news-inner-wrap .banner .title {
-    padding: 150px 0 400px;
+    padding: 150px 0;
   }
 }
 
@@ -69,8 +69,19 @@
   }
 }
 
+.news-wrap .air-ball {
+  max-width: 1200px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10%;
+}
+
 .news-wrap .select {
-  margin-top: -2px;
   background-color: #fff8e4;
   margin: auto;
   width: 100%;
