@@ -75,30 +75,135 @@
   padding: 0 10px;
 }
 
+.letter .letter-content .letter-body label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.letter .letter-content .letter-body label:hover {
+  opacity: .8;
+}
+
+.letter .letter-content .letter-body .plus-img {
+  width: 100%;
+  padding: 40% 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.letter .letter-content .letter-body .plus-img i {
+  font-size: 60px;
+}
+
 .letter .letter-content .letter-body figure {
   width: 100%;
+  text-align: center;
 }
 
 .letter .letter-content .letter-body figure img {
-  width: 100%;
+  max-width: 588px;
+  max-height: 530px;
 }
 
-.letter .letter-content .letter-body label {
-  cursor: pointer;
-  display: block;
-  margin: auto;
-  width: 80%;
-}
-
-.letter .letter-content .letter-body label p {
-  padding: 40% 0;
-  background-color: #ccc;
-  text-align: center;
+.letter .letter-content .letter-body input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .letter .letter-content .letter-footer {
   margin: 30px 0;
   padding: 20px 0;
   width: 80%;
+  font-family: "GenJyuuGothic-R";
+}
+
+.letter .letter-content .letter-footer p {
+  font-size: 24px;
+  line-height: 2;
+}
+
+.letter .letter-content .letter-footer .write-title input {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 3px solid #6a3e26;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.letter .letter-content .letter-footer .write-content input {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 3px solid #6a3e26;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.letter .letter-content .letter-footer .write-phrase input {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 3px solid #6a3e26;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.letter .letter-content .letter-footer .write-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.letter .letter-content .letter-footer .write-buttons label {
+  display: block;
+  cursor: pointer;
+}
+
+.letter .letter-content .letter-footer .write-buttons label input {
+  cursor: pointer;
+  font: 24px "GenJyuuGothic-R";
+  border-radius: 10px;
+  padding: 0 25px;
+  border: none;
+  -webkit-box-shadow: 0 3px 0 #949494;
+          box-shadow: 0 3px 0 #949494;
+  background-color: #a3a3a3;
+  color: #fff;
+}
+
+.letter .letter-content .letter-footer .write-buttons label:hover input {
+  background-color: #b7b7b7;
+}
+
+.letter .letter-content .letter-footer .write-buttons label:active input {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0 1px 0 #949494;
+          box-shadow: 0 1px 0 #949494;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 /*# sourceMappingURL=writemessage.css.map */

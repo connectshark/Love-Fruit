@@ -102,31 +102,33 @@
 					</div>
 				</div>
 				<div class="letter-body">
+					<label>
 					<figure v-if="img">
 						<img :src="img" :alt="imgName">
 					</figure>
-					<label for="photo" v-else>
-                        <p>載入圖片</p>
+		            <div class="plus-img" v-else>
+		                <i class="fas fa-plus"></i>
+		            </div>
+                    <input type="file" name="message-img" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
 					</label>
-                <div class="write-img">
-                    <input type="file" name="message-img" id="photo" @change="fileLoad">
-                </div>
 				</div>
 				<div class="letter-footer">
-            <form>
-                <div class="write-title">
-                    <p>寫給誰</p>
-                    <label for=""><input type="text" maxlength="5" minlength="1" v-model="forWho"></label>
-                </div>
-                <div class="write-content">
-                    <p>內容</p>
-                    <label for=""><input type="text" minlength="1" maxlength="20" v-model="text"></label>
-                </div>
-                <div class="write-buttons">
-                    <label><input type="reset" value="清除" @click="clear"></label>
-                    <label><input type="submit" value="送出" id="submit"></label>
-                </div>
-            </form>
+	                <div class="write-title">
+	                    <p>寫給誰</p>
+	                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle"></label>
+	                </div>
+	                <div class="write-content">
+	                    <p>留言內容</p>
+	                    <label><input type="text" minlength="1" maxlength="20" v-model="text" id="userContent"></label>
+	                </div>
+	                <div class="write-phrase">
+	                    <p>冰棒小語</p>
+	                    <label><input type="text" minlength="1" maxlength="5" v-model="text" id="userPhrase"></label>
+	                </div>
+	                <div class="write-buttons">
+	                    <label><input type="reset" value="清除" @click="clear"></label>
+	                    <label><input type="submit" value="送出" id="submit"></label>
+	                </div>
                     <!-- <p>寫給什麼人呢?</p>
 					<h3>{{forWho}}</h3>
                     <p>要寫的內容??</p>
