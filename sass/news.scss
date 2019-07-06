@@ -14,7 +14,7 @@ $font-gray:#434343;
 .news-wrap,.news-inner-wrap{
     .banner{
         background-color: $light-purple;
-        background-image:url(../img/course/cloud-news.png),url(../img/qa/cover.png);
+        background-image:url(../img/news/cloudNews.png),url(../img/qa/cover.png);
         background-repeat: no-repeat,repeat;
         background-position:  bottom center, bottom center;
         background-size: 100%,auto;
@@ -60,6 +60,7 @@ $font-gray:#434343;
 }
 .news-wrap{
     .select{
+        margin-top: -2px;
         background-color:$light-yellow;
         margin: auto;
         width: 100%;
@@ -68,7 +69,7 @@ $font-gray:#434343;
             max-width: 1200px;
             margin: auto;
             .select-filter-group{
-                    width: 60%;
+                    width: 90%;
                     margin: auto;
                     padding:15px 30px;
                     background-color: #cdb3e5;
@@ -78,6 +79,9 @@ $font-gray:#434343;
                     justify-content: space-around;
                     align-items: center;
                     text-align: center;
+                    @include rwd(desktop){
+                        width: 60%;
+                     }
             
                 h3{
                     font: 24px;
@@ -89,7 +93,7 @@ $font-gray:#434343;
                 }
                 cursor: pointer;
                     button{
-                        width: 70%;
+                        width: 100%;
                         cursor: pointer;
                         background-color: #a3a3a3;
                         border: none;
@@ -105,7 +109,6 @@ $font-gray:#434343;
                             transition: .3s;
                         }
                         @include rwd(desktop){
-                            width: 100%;
                             font:18px;
                         }
                         @include rwd(mobile){
@@ -127,6 +130,10 @@ $font-gray:#434343;
                         width: 150px;
                         height: 50px;
                         padding: 3px;
+                        border-radius: 10px;
+                        background-color: $light-yellow;
+                        color: $font-gray;
+                        font-size: 16px;
                     }
                     @include rwd(medium){
                         display:none;
@@ -148,10 +155,10 @@ $font-gray:#434343;
             padding: 10% 0;
             display: flex;
             flex-flow: row wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             .item{
                 position: relative;
-                margin: 20px;
+                margin: 40px 20px;
                 padding: 20px 20px 10px;
                 border-radius: 10px;
                 background-color:#e2deff;
@@ -160,7 +167,7 @@ $font-gray:#434343;
                 box-shadow: #555 2px 2px 2px;
                 .sort{
                     text-align: center;
-                    line-height: 20px;
+                    line-height: 40px;
                     color: #ffc;
                     position:absolute;
                     width: 100px;
@@ -186,7 +193,7 @@ $font-gray:#434343;
                     color: #434343;
                 }
                 .time{
-                    padding: 5px;
+                    padding: 10px 5px 0;
                     font-size: 13px;
                     display: block;
                 }
@@ -196,6 +203,7 @@ $font-gray:#434343;
                     font-size: 18px;
                     width: 60%;
                     display: inline-block;
+                    font-weight: bold;
                 }
                 .content{
                     display: flex;
@@ -250,7 +258,7 @@ $font-gray:#434343;
     font-family: "GenJyuuGothic-R";
 
     .inner-wrapper{
-      
+        margin-top: -2px;
         background-color:$light-yellow ;
         width: 100%;
         .title-box{
