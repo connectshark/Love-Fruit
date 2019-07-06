@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,0BAA0B;EAC5C,gBAAgB,EAAE,IAAI;EACtB,mBAAmB,EAAE,MAAM;EAC3B,iBAAiB,EAAE,MAAM;EACzB,OAAO,EAAE,SAAS;CAUrB;;AAfD,AAMI,OANG,CAMH,eAAe,CAAA;EACX,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,MAAM;EACjB,gBAAgB,EAAE,IAAI;EACtB,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,iBAAiB;EAC7B,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "../sass/writemessage.scss"
+    ],
+    "names": [],
+    "file": "writemessage.css"
+}

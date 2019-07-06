@@ -1,0 +1,16 @@
+.letter{
+    background-image: url(../img/background.png);
+    background-color: #fff;
+    background-position: center;
+    background-repeat: repeat;
+    padding: 100px 0 0;
+    .letter-content{
+        width: 100%;
+        max-width: 1000px;
+        background-color: #fff;
+        box-sizing: border-box;
+        padding: 20px;
+        box-shadow: 3px 3px 10px #aaa;
+        margin: auto;
+    }
+}
