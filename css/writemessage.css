@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .letter {
   background-image: url(../img/background.png);
   background-color: #fff;
@@ -26,6 +31,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media all and (max-width: 768px) {
+  .letter .letter-content {
+    width: 90%;
+  }
 }
 
 .letter .letter-content .letter-header {
@@ -72,9 +83,22 @@
   width: 100%;
 }
 
-.letter .letter-content .letter-body .block {
-  width: 100%;
-  padding-bottom: 100%;
+.letter .letter-content .letter-body label {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+.letter .letter-content .letter-body label p {
+  padding: 40% 0;
   background-color: #ccc;
+  text-align: center;
+}
+
+.letter .letter-content .letter-footer {
+  margin: 30px 0;
+  padding: 20px 0;
+  width: 80%;
 }
 /*# sourceMappingURL=writemessage.css.map */

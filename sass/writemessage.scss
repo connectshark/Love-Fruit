@@ -1,3 +1,4 @@
+@import "mixin/mixin";
 .letter{
     background-image: url(../img/background.png);
     background-color: #fff;
@@ -15,6 +16,9 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
+        @include rwd(mobile){
+            width: 90%;
+        }
         .letter-header{
             width: 80%;
             display: flex;
@@ -45,11 +49,22 @@
                     width: 100%;
                 }
             }
-            .block{
-                width: 100%;
-                padding-bottom: 100%;
-                background-color: #ccc;
+            label{
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                width: 80%;
+                p{
+                    padding: 40% 0;
+                    background-color: #ccc;
+                    text-align: center;
+                }
             }
+        }
+        .letter-footer{
+            margin: 30px 0;
+            padding: 20px 0;
+            width: 80%;
         }
     }
 }

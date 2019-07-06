@@ -106,34 +106,35 @@
 						<img :src="img" :alt="imgName">
 					</figure>
 					<label for="photo" v-else>
-						<div class="block"></div>
+                        <p>載入圖片</p>
 					</label>
+                <div class="write-img">
+                    <input type="file" name="message-img" id="photo" @change="fileLoad">
+                </div>
 				</div>
 				<div class="letter-footer">
+            <form>
+                <div class="write-title">
+                    <p>寫給誰</p>
+                    <label for=""><input type="text" maxlength="5" minlength="1" v-model="forWho"></label>
+                </div>
+                <div class="write-content">
+                    <p>內容</p>
+                    <label for=""><input type="text" minlength="1" maxlength="20" v-model="text"></label>
+                </div>
+                <div class="write-buttons">
+                    <label><input type="reset" value="清除" @click="clear"></label>
+                    <label><input type="submit" value="送出" id="submit"></label>
+                </div>
+            </form>
+                    <!-- <p>寫給什麼人呢?</p>
 					<h3>{{forWho}}</h3>
-					<p>{{text}}</p>
+                    <p>要寫的內容??</p>
+					<p>{{text}}</p> -->
 				</div>
 			</div>
 		</section>
 		<section class="write-letter">
-			<form>
-				<div class="write-img">
-					<p>載入圖片</p>
-					<input type="file" name="message-img" id="photo" @change="fileLoad">
-				</div>
-				<div class="write-title">
-					<p>寫給誰</p>
-					<label for=""><input type="text" maxlength="5" minlength="1" v-model="forWho"></label>
-				</div>
-				<div class="write-content">
-					<p>內容</p>
-					<label for=""><input type="text" minlength="1" maxlength="20" v-model="text"></label>
-				</div>
-				<div class="write-buttons">
-					<label><input type="reset" value="清除" @click="clear"></label>
-					<label><input type="submit" value="送出" id="submit"></label>
-				</div>
-			</form>
 		</section>
 	</div>
 	<footer>
