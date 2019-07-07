@@ -4,6 +4,11 @@
           box-sizing: border-box;
 }
 
+* {
+  outline: #f00 solid 1px;
+  text-decoration: none;
+}
+
 body {
   font-family: "GenJyuuGothic-R";
 }
@@ -437,22 +442,26 @@ body {
 
 .general-wrap .wrapper .info .course-btn {
   padding: 5% 0;
+  margin: auto;
 }
 
 .general-wrap .wrapper .info .course-btn .course-ice-btn-out {
-  margin: auto;
   display: block;
   width: 135px;
+  padding: 2px;
   height: 40.5px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: white;
-  border: 2.025px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px #715124;
           box-shadow: 0px 3px #715124;
@@ -465,51 +474,47 @@ body {
           transform: translateY(2px);
 }
 
-.general-wrap .wrapper .info .course-btn .course-ice-btn-out > span {
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
   display: block;
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 18px;
   position: relative;
-  width: 125.55px;
-  height: 32.4px;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2.025px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
-  margin: auto;
   cursor: pointer;
 }
 
-.general-wrap .wrapper .info .course-btn .course-ice-btn-out > span:hover {
-  background-color: #fad689;
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:hover {
+  background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-wrap .wrapper .info .course-btn .course-ice-btn-out > span img {
+.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in > img {
   display: block;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -13px;
-  width: 40.5px;
-  height: 47.25px;
-}
-
-.general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
+  width: 36.45px;
+  height: 44.955px;
 }
 
 .general-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:after {
   z-index: -1;
   content: "我要預約";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 .group-wrap {
@@ -718,22 +723,26 @@ body {
 
 .group-wrap .wrapper .info .course-btn {
   padding: 5% 0;
+  margin: auto;
 }
 
 .group-wrap .wrapper .info .course-btn .course-ice-btn-out {
-  margin: auto;
   display: block;
   width: 135px;
+  padding: 2px;
   height: 40.5px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: white;
-  border: 2.025px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px #715124;
           box-shadow: 0px 3px #715124;
@@ -746,51 +755,47 @@ body {
           transform: translateY(2px);
 }
 
-.group-wrap .wrapper .info .course-btn .course-ice-btn-out > span {
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
   display: block;
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 18px;
   position: relative;
-  width: 125.55px;
-  height: 32.4px;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2.025px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
-  margin: auto;
   cursor: pointer;
 }
 
-.group-wrap .wrapper .info .course-btn .course-ice-btn-out > span:hover {
-  background-color: #fad689;
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:hover {
+  background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-wrap .wrapper .info .course-btn .course-ice-btn-out > span img {
+.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in > img {
   display: block;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -13px;
-  width: 40.5px;
-  height: 47.25px;
-}
-
-.group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in {
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
+  width: 36.45px;
+  height: 44.955px;
 }
 
 .group-wrap .wrapper .info .course-btn .course-ice-btn-out .course-ice-btn-in:after {
   z-index: -1;
-  content: "我要開團";
+  content: "我要預約";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 .course-message {
@@ -934,23 +939,26 @@ body {
 
 .course-message .go-between .content .open-btn {
   margin-top: 10px;
+  margin: auto;
 }
 
 .course-message .go-between .content .open-btn .open-btn-out {
-  width: 90%;
-  margin: auto;
   display: block;
   width: 135px;
+  padding: 2px;
   height: 40.5px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: white;
-  border: 2.025px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px #715124;
           box-shadow: 0px 3px #715124;
@@ -963,51 +971,47 @@ body {
           transform: translateY(2px);
 }
 
-.course-message .go-between .content .open-btn .open-btn-out > span {
+.course-message .go-between .content .open-btn .open-btn-out .open-btn-in {
   display: block;
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 18px;
   position: relative;
-  width: 125.55px;
-  height: 32.4px;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2.025px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
-  margin: auto;
   cursor: pointer;
 }
 
-.course-message .go-between .content .open-btn .open-btn-out > span:hover {
-  background-color: #fad689;
+.course-message .go-between .content .open-btn .open-btn-out .open-btn-in:hover {
+  background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.course-message .go-between .content .open-btn .open-btn-out > span img {
+.course-message .go-between .content .open-btn .open-btn-out .open-btn-in > img {
   display: block;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -13px;
-  width: 40.5px;
-  height: 47.25px;
-}
-
-.course-message .go-between .content .open-btn .open-btn-out .open-btn-in {
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
+  width: 36.45px;
+  height: 44.955px;
 }
 
 .course-message .go-between .content .open-btn .open-btn-out .open-btn-in:after {
   z-index: -1;
   content: "開團發佈";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 .course-message .love-line {
@@ -1023,23 +1027,26 @@ body {
 
 .course-message .form-btn {
   margin-top: 10px;
+  margin: auto;
 }
 
 .course-message .form-btn .form-btn-out {
-  width: 90%;
-  margin: auto;
   display: block;
   width: 135px;
+  padding: 2px;
   height: 40.5px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: white;
-  border: 2.025px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px #715124;
           box-shadow: 0px 3px #715124;
@@ -1052,51 +1059,47 @@ body {
           transform: translateY(2px);
 }
 
-.course-message .form-btn .form-btn-out > span {
+.course-message .form-btn .form-btn-out .form-btn-in {
   display: block;
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 18px;
   position: relative;
-  width: 125.55px;
-  height: 32.4px;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2.025px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
-  margin: auto;
   cursor: pointer;
 }
 
-.course-message .form-btn .form-btn-out > span:hover {
-  background-color: #fad689;
+.course-message .form-btn .form-btn-out .form-btn-in:hover {
+  background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.course-message .form-btn .form-btn-out > span img {
+.course-message .form-btn .form-btn-out .form-btn-in > img {
   display: block;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -13px;
-  width: 40.5px;
-  height: 47.25px;
-}
-
-.course-message .form-btn .form-btn-out .form-btn-in {
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
+  width: 36.45px;
+  height: 44.955px;
 }
 
 .course-message .form-btn .form-btn-out .form-btn-in:after {
   z-index: -1;
   content: "主揪申請";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 .general-form-wrap {
@@ -1296,22 +1299,26 @@ body {
 
 .general-form-wrap .wrapper .form-btn {
   padding: 5% 0;
+  margin: auto;
 }
 
 .general-form-wrap .wrapper .form-btn .form-ice-btn-out {
-  margin: auto;
   display: block;
   width: 135px;
+  padding: 2px;
   height: 40.5px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: white;
-  border: 2.025px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px #715124;
           box-shadow: 0px 3px #715124;
@@ -1324,51 +1331,47 @@ body {
           transform: translateY(2px);
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out > span {
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
   display: block;
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 18px;
   position: relative;
-  width: 125.55px;
-  height: 32.4px;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2.025px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
-  margin: auto;
   cursor: pointer;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out > span:hover {
-  background-color: #fad689;
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:hover {
+  background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out > span img {
+.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in > img {
   display: block;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -13px;
-  width: 40.5px;
-  height: 47.25px;
-}
-
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
+  width: 36.45px;
+  height: 44.955px;
 }
 
 .general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
   z-index: -1;
   content: "確認預約";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 .group-form-wrap {
@@ -1525,22 +1528,27 @@ body {
 
 .group-form-wrap .wrapper .form-btn {
   padding: 5% 0;
+  width: 90%;
+  margin: auto;
 }
 
 .group-form-wrap .wrapper .form-btn .form-ice-btn-out {
-  margin: auto;
   display: block;
   width: 135px;
+  padding: 2px;
   height: 40.5px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: white;
-  border: 2.025px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-box-shadow: 0px 3px #715124;
           box-shadow: 0px 3px #715124;
@@ -1553,50 +1561,46 @@ body {
           transform: translateY(2px);
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out > span {
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
   display: block;
+  color: whitesmoke;
+  font-size: 18px;
+  line-height: 18px;
   position: relative;
-  width: 125.55px;
-  height: 32.4px;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 2.025px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
-  margin: auto;
   cursor: pointer;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out > span:hover {
-  background-color: #fad689;
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:hover {
+  background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out > span img {
+.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in > img {
   display: block;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: -13px;
-  width: 40.5px;
-  height: 47.25px;
-}
-
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
-  color: #fff;
-  font-size: 18px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
+  width: 36.45px;
+  height: 44.955px;
 }
 
 .group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
   z-index: -1;
   content: "我要預約";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 /*# sourceMappingURL=course.css.map */

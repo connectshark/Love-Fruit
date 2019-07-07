@@ -11,41 +11,89 @@ $font-gray:#434343;
     font-family: "GenJyuuGothic-R";
     // outline: 1px solid #f00;
 }
-
-.news-wrap{
+.news-wrap,.news-inner-wrap{
     .banner{
-        height: 100vh;
+        background-color: $light-purple;
+        background-image:url(../img/news/cloudNews.png),url(../img/qa/cover.png);
+        background-repeat: no-repeat,repeat;
+        background-position:  bottom center, bottom center;
+        background-size: 100%,auto;
         width: 100%;
-        background-size: 100%;
-        background: $light-purple url(../img/qa/cover.png)center center repeat ;
-        .banner-cloud{
-            width: 100%;
-            height: 100%;
-            background-size: 100%;
-            background-image:url(../img/course/cloud-yellow.png), url(../img/course/cloud-purple.png);
-            background-repeat: no-repeat,no-repeat;
-            background-position:  bottom center, bottom center;
-        }
+        padding-top: 50px;
+    
         .title{
             width: 100%;
             max-width: 1200px;
             text-align: center;
-            padding: 30%;
+            padding: 23% 0 ;
             margin: auto;
-            h1{
-                font-family: "A-OTF-M";
-                @include out-Line-Font(high,#fff,28px,8px,#6a3e26,最新消息);
+            @include rwd(medium){
+                padding: 150px 0 ;
+                
+            }
+            .img-bg{
+                position: relative;  
+                img{
+                width: 80%;
                 @include rwd(medium){
-                    @include out-Line-Font(high,#fff,40px,8px,#6a3e26,最新消息);
+                    width: 50%;
+                    }
                 }
-                .high{
-                    line-height: 28px;
+                span{
+                    position:absolute;
+                    top:50%;
+                    left: 50%;
+                    font-size: 28px;
+                    transform: translate(-50%,-80%);
                     @include rwd(medium){
-                    line-height: 40px;}
+                    font-size: 34px;
+                    }
+                    @include rwd(desktop){
+                        font-size: 40px;
+                    }
+
                 }
             }
+        
         }
     }
+    .air-ball{
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 10%;
+     
+        img{
+            animation: air-ball-active 2s infinite alternate;
+           &:first-child{
+                @include rwd (medium){
+                transform: scale(1.5); 
+               }
+           }
+           &:last-child{
+            transform: scale(.5) rotate(25deg); 
+                @include rwd (medium){
+                    transform: scale(1)rotate(25deg); 
+                }
+           }
+        }
+    }
+    @keyframes air-ball-active {
+        0%{
+            top:50px;
+          }
+          50%{
+            top:80px; 
+          }
+         
+          100%{
+            top:50px;
+          }
+    }
+}
+
+.news-wrap{
     .select{
         background-color:$light-yellow;
         margin: auto;
@@ -53,50 +101,79 @@ $font-gray:#434343;
         .select-group{
             width: 100%;
             max-width: 1200px;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            padding: 20px;
             margin: auto;
             .select-filter-group{
-                width: 60%;
-                margin: auto;
-                padding: 10px 30px;
-                box-sizing: border-box;
-                background-color: #cdb3e5;
-                border-radius: 20px;
-                font-family: "A-OTF-M";
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                    width: 90%;
+                    margin: auto;
+                    padding:15px 30px;
+                    background-color: #cdb3e5;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-wrap: row nowrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    text-align: center;
+                    @include rwd(desktop){
+                        width: 60%;
+                     }
+            
                 h3{
                     font: 24px;
+                    text-align: center;
                 }
-                .filter-item{
-                    cursor: pointer;
+               .filter-item{
+                @include rwd(mobile){
+                            display:none;
+                }
+                cursor: pointer;
                     button{
+                        width: 100%;
                         cursor: pointer;
                         background-color: #a3a3a3;
                         border: none;
-                        padding: 0 25px;
+                        padding: 5px 25px;
                         border-radius: 10px;
                         box-shadow: 0px 3px 0px #555;
                         color: #fff;
-                        font:18px;
-                    }
-                    &:hover{
-                        button{
+                        font:16px;
+                        font-family: "GenJyuuGothic-R";
+                        &:hover{
                             transform: translateY(2px);
                             box-shadow: 0px 1px 0px #555;
                             transition: .3s;
                         }
+                        @include rwd(desktop){
+                            font:18px;
+                        }
+                        @include rwd(mobile){
+                            display:none;
+                        }
+
                     }
-                }
+                
+            }
                 .filter-active{
                     button{
                         background-color: #fc7389;
                     }
                 }
+                
+                .mobile{
+                    select{
+                        border: #6a3e26 solid 5px;
+                        width: 150px;
+                        height: 50px;
+                        padding: 3px;
+                        border-radius: 10px;
+                        background-color: $light-yellow;
+                        color: $font-gray;
+                        font-size: 16px;
+                    }
+                    @include rwd(medium){
+                        display:none;
+                    }
+                }
+                
             }
         }
     }
@@ -112,10 +189,10 @@ $font-gray:#434343;
             padding: 10% 0;
             display: flex;
             flex-flow: row wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             .item{
                 position: relative;
-                margin: 20px;
+                margin: 40px 20px;
                 padding: 20px 20px 10px;
                 border-radius: 10px;
                 background-color:#e2deff;
@@ -124,7 +201,7 @@ $font-gray:#434343;
                 box-shadow: #555 2px 2px 2px;
                 .sort{
                     text-align: center;
-                    line-height: 20px;
+                    line-height: 40px;
                     color: #ffc;
                     position:absolute;
                     width: 100px;
@@ -150,7 +227,7 @@ $font-gray:#434343;
                     color: #434343;
                 }
                 .time{
-                    padding: 5px;
+                    padding: 10px 5px 0;
                     font-size: 13px;
                     display: block;
                 }
@@ -160,6 +237,7 @@ $font-gray:#434343;
                     font-size: 18px;
                     width: 60%;
                     display: inline-block;
+                    font-weight: bold;
                 }
                 .content{
                     display: flex;
@@ -212,65 +290,98 @@ $font-gray:#434343;
 }
 .news-inner-wrap{
     font-family: "GenJyuuGothic-R";
-    .banner{
-        width: 100%;
-        height: 100vh;
-        background-size: 100%;
-        background-color: $light-purple;
-        background-image: url(../img/course/cloud-yellow.png), url(../img/course/cloud-purple.png),url(../img/qa/cover.png);
-        background-repeat: no-repeat,no-repeat,repeat;
-        background-position:  bottom center, bottom center, bottom center;
-    }
+
     .inner-wrapper{
+        margin-top: -2px;
         background-color:$light-yellow ;
         width: 100%;
-    
-            .title-box{
-             
+        .title-box{
+            max-width: 1200px;
             background-color: $light-purple;
-            width: 80%;
-            height: 80px;
+            width: 90%;
+            height: 100px;
             border-radius: 10px;
-            margin: auto;
             display: flex;
-            justify-content: space-around;
-            vertical-align: middle;
-                .img{
-                    width: 10%;
-                    img{
-                        width: 30px;
-                    }
-                }
-                .text{
-                    width: 80%;
-                    span{
-                        color:$font-gray;
-                        font-size: 16px;
-                    }
-                    h3{
-                        font-family: "GenJyuuGothic-B";
-                    }
-                    
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+    
+            @include rwd(medium){
+                width: 70%;
+            }
+
+            &::before{
+                content: '';
+                flex-grow: .5;
+              }
+            .before{
+                padding: 10px;
+                width: 80%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .clear{
+                clear:both;
+            }
+
+            .img{
+                height: 50px;
+                float: left;
+                padding: 0 10px;
+                img{
+                    height: 100%;
                 }
             }
+        
+            span{
+                color:$font-gray;
+                font-size: 16px;
+                padding: 5px;
+                @include rwd(mobile){
+    
+                    font-size: 13px;
+                 
+                }
+            }
+            h3{
+               padding: 5px;
+                font-family: "GenJyuuGothic-B";
+                @include rwd(mobile){
+    
+                    font-size: 16px;
+                 
+                }
+            }
+        }
+
         .article-image{
             text-align: center;
+            vertical-align: middle;
             margin: auto;
-          
-                 width: 90%;
-            
+            max-width: 1200px;
+            width: 90%;
+            @include rwd(medium){
+                width: 80%;
+           }
             img{
                 width: 100%;
                 padding: 20px 0;
                 @include rwd(medium){
-                    width: 90%;
+                    width: 80%;
                }
             }
         }
         .article-text{
+       
             width: 60%;
             margin: auto;
             line-height: 40px;
+            @include rwd(mobile){
+                width: 80%;
+                font-size: 16px;
+                line-height: 32px;
+
+            }
         }
         .change-page{
             padding: 50px 0;
@@ -278,6 +389,11 @@ $font-gray:#434343;
             margin: auto; 
             display: flex;
             text-align: center;
+            @include rwd(mobile){
+                width: 80%;
+                font-size: 16px;
+                padding: 20px 0;
+            }
             .page-btn{
                 cursor: pointer;
                 padding: 5px 0;
@@ -294,8 +410,12 @@ $font-gray:#434343;
                }
                 
             }
+            .pre{
+                border-radius:10px 0 0 10px; 
+            }
+            .post{
+                border-radius:0 10px 10px 0; 
+            }
         }
     }
-    
 }
-

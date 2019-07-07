@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
   </head>
   <body>
     <input type="checkbox" id="menu-control" />
@@ -149,12 +150,49 @@
         src="img/navBar/shoppingCartIcon.png"
         alt="shoppingCartIcon.png"
       />
+      <div id="robot-container" class="robot-container">
+        <div id="robot-title-block" class="robot-title-block">
+          <span class="robot-title-icon"
+            ><img
+              id="robot-title-icon-img"
+              src="img/navBar/robot/robot-icon.png"
+              alt="robot-icon"
+            />
+          </span>
+          <h3>冰棒小達人</h3>
+          <div class="robot-pic">
+            <img src="img/navBar/robot/robot.png" alt="robot-pic" />
+          </div>
+        </div>
+        <div id="robot-conversation-block" class="robot-conversation-block">
+          <div id="robot-conversation-list">
+            <div class="robot-conversation">
+              <p class="robot_text"><span>小達人:</span>請問有需要幫忙嗎？</p>
+            </div>
+          </div>
+        </div>
+        <ul class="chatBot-keyword">
+          <li class="fruit">草莓</li>
+          <li class="fruit">香蕉</li>
+          <li class="fruit">青蘋果</li>
+          <li class="fruit">葡萄</li>
+          <li class="fruit">橘子</li>
+          <li class="fruit">藍莓</li>
+        </ul>
+        <form>
+          <div class="robot-input-block">
+            <textarea name="message" id="message"></textarea>
+            <button type="button" id="robot-submit">送出</button>
+          </div>
+        </form>
+      </div>
     </header>
 
     <section class="index-hero-bgc">
       <div class="mountain">
         <img src="img/indexImg/heroImg.png" alt="background" />
       </div>
+      <img class="flyship" src="img/indexImg/flyship.gif" alt="fiyship-text" />
       <img
         class="style-cloud-a"
         src="img/indexImg/styleCloud.png"
@@ -180,6 +218,7 @@
         src="img/indexImg/styleCloud.png"
         alt="styleCloud"
       />
+      <div class="hero-green"></div>
       <div class="heroIce">
         <img class="heroIce" src="img/indexImg/heroIce.png" alt="Ice" />
       </div>
@@ -267,7 +306,7 @@
         id="iceShadow"
         class="iceShadow"
         src="img/indexImg/iceShadow.png"
-        alt=""
+        alt="iceShadow"
       />
       <img
         class="c-p-store"
@@ -280,7 +319,7 @@
           <div id="model-general-button" class="panel-button-bottom">
             <div class="panel-button-center">
               <div class="panel-button-bottom-pink">
-                <img src="img/indexImg/model-general.png" alt="" />
+                <img src="img/indexImg/model-general.png" alt="model-general" />
               </div>
               <span>一般模型</span>
               <div class="panel-button-center-triangle-group">
@@ -294,7 +333,10 @@
           <div id="model-bear-paw-button" class="panel-button-bottom">
             <div class="panel-button-center">
               <div class="panel-button-bottom-pink">
-                <img src="img/indexImg/model-bear-paw.png" alt="" />
+                <img
+                  src="img/indexImg/model-bear-paw.png"
+                  alt="model-bear-paw"
+                />
               </div>
               <span>一般模型</span>
               <div class="panel-button-center-triangle-group">
@@ -308,7 +350,7 @@
           <div id="model-rabbit-button" class="panel-button-bottom">
             <div class="panel-button-center">
               <div class="panel-button-bottom-pink">
-                <img src="img/indexImg/model-rabbit.png" alt="" />
+                <img src="img/indexImg/model-rabbit.png" alt="model-rabbit" />
               </div>
               <span>一般模型</span>
               <div class="panel-button-center-triangle-group">
@@ -322,7 +364,7 @@
           <div id="model-rocket-button" class="panel-button-bottom">
             <div class="panel-button-center">
               <div class="panel-button-bottom-pink">
-                <img src="img/indexImg/model-rocket.png" alt="" />
+                <img src="img/indexImg/model-rocket.png" alt="model-rocket" />
               </div>
               <span>一般模型</span>
               <div class="panel-button-center-triangle-group">
@@ -340,7 +382,7 @@
               <div class="inner-style">
                 <div class="c-p-button-text-style">
                   <span class="c-p-button-text">
-                    <img class="btn-ice" src="img/btn/ICE.png" alt="" />
+                    <img class="btn-ice" src="img/btn/ICE.png" alt="ICE" />
                     立即製作
                   </span>
                 </div>
@@ -416,122 +458,262 @@
       <div class="store-group">
         <img src="img/indexImg/store.png" alt="store" />
       </div>
-      <div class="store-item-single">
-        <span class="store-item-text">SINGLE</span>
-        <div class="store-item-img">
-          <img
-            src="img/indexImg/index-ice-first-love-single.png"
-            alt="index-ice-first-love-single"
-          />
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
-        </div>
-        <a class="store-button-custom" href="newshop.html">
-          <div class="store-button-style">
-            <div class="store-button-style-botton">
-              <div class="store-inner-style">
-                <div class="store-button-text-style">
-                  <span class="store-button-text">
-                    立即選購
-                  </span>
+      <div class="store-group-item-group">
+        <div class="store-item-single">
+          <span class="store-item-text">SINGLE</span>
+          <div class="store-item-img">
+            <img
+              src="img/indexImg/index-ice-first-love-single.png"
+              alt="index-ice-first-love-single"
+            />
+            <span>芋頭牛奶</span>
+            <span>NT250</span>
+          </div>
+          <a class="store-button-custom" href="newshop.html">
+            <div class="store-button-style">
+              <div class="store-button-style-botton">
+                <div class="store-inner-style">
+                  <div class="store-button-text-style">
+                    <span class="store-button-text">
+                      立即選購
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-        <img
-          class="store-item-bgc"
-          src="img/indexImg/store-love.png"
-          alt="store-single"
-        />
-      </div>
-      <div class="store-item-first-love">
-        <span class="store-item-text">SINGLE</span>
-        <div class="store-item-img">
+          </a>
           <img
-            src="img/indexImg/index-ice-first-love-single.png"
-            alt="index-ice-first-love-single"
+            class="store-item-bgc"
+            src="img/indexImg/store-love.png"
+            alt="store-single"
           />
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
-          <div class="store-button-style">
-            <div class="store-button-style-botton">
-              <div class="store-inner-style">
-                <div class="store-button-text-style">
-                  <span class="store-button-text">
-                    立即選購
-                  </span>
+        <div class="store-item-first-love">
+          <span class="store-item-text">SINGLE</span>
+          <div class="store-item-img">
+            <img
+              src="img/indexImg/index-ice-first-love-single.png"
+              alt="index-ice-first-love-single"
+            />
+            <span>芋頭牛奶</span>
+            <span>NT250</span>
+          </div>
+          <a class="store-button-custom" href="newshop.html">
+            <div class="store-button-style">
+              <div class="store-button-style-botton">
+                <div class="store-inner-style">
+                  <div class="store-button-text-style">
+                    <span class="store-button-text">
+                      立即選購
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-        <img
-          class="store-item-bgc"
-          src="img/indexImg/store-single.png"
-          alt="store-single"
-        />
-      </div>
-      <div class="store-item-fall-in-love">
-        <span class="store-item-text">SINGLE</span>
-        <div class="store-item-img">
+          </a>
           <img
-            src="img/indexImg/index-ice-first-love-single.png"
-            alt="index-ice-first-love-single"
+            class="store-item-bgc"
+            src="img/indexImg/store-single.png"
+            alt="store-single"
           />
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
-          <div class="store-button-style">
-            <div class="store-button-style-botton">
-              <div class="store-inner-style">
-                <div class="store-button-text-style">
-                  <span class="store-button-text">
-                    立即選購
-                  </span>
+        <div class="store-item-fall-in-love">
+          <span class="store-item-text">SINGLE</span>
+          <div class="store-item-img">
+            <img
+              src="img/indexImg/index-ice-first-love-single.png"
+              alt="index-ice-first-love-single"
+            />
+            <span>芋頭牛奶</span>
+            <span>NT250</span>
+          </div>
+          <a class="store-button-custom" href="newshop.html">
+            <div class="store-button-style">
+              <div class="store-button-style-botton">
+                <div class="store-inner-style">
+                  <div class="store-button-text-style">
+                    <span class="store-button-text">
+                      立即選購
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-        <img
-          class="store-item-bgc"
-          src="img/indexImg/store-first-lovepng.png"
-          alt="store-single"
-        />
-      </div>
-      <div class="store-item-break-up">
-        <span class="store-item-text">SINGLE</span>
-        <div class="store-item-img">
+          </a>
           <img
-            src="img/indexImg/index-ice-first-love-single.png"
-            alt="index-ice-first-love-single"
+            class="store-item-bgc"
+            src="img/indexImg/store-first-lovepng.png"
+            alt="store-single"
           />
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
-          <div class="store-button-style">
-            <div class="store-button-style-botton">
-              <div class="store-inner-style">
-                <div class="store-button-text-style">
-                  <span class="store-button-text">
-                    立即選購
-                  </span>
+        <div class="store-item-break-up">
+          <span class="store-item-text">SINGLE</span>
+          <div class="store-item-img">
+            <img
+              src="img/indexImg/index-ice-first-love-single.png"
+              alt="index-ice-first-love-single"
+            />
+            <span>芋頭牛奶</span>
+            <span>NT250</span>
+          </div>
+          <a class="store-button-custom" href="newshop.html">
+            <div class="store-button-style">
+              <div class="store-button-style-botton">
+                <div class="store-inner-style">
+                  <div class="store-button-text-style">
+                    <span class="store-button-text">
+                      立即選購
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-        <img
-          class="store-item-bgc"
-          src="img/indexImg/store-lost-love.png"
-          alt="store-single"
-        />
+          </a>
+          <img
+            class="store-item-bgc"
+            src="img/indexImg/store-lost-love.png"
+            alt="store-single"
+          />
+        </div>
       </div>
+      <img
+        class="store-bgc-mountain"
+        src="img/indexImg/store-bgc-mountain.png"
+        alt="mountain"
+      />
+      <div class="store-bgc-way"></div>
+    </section>
+
+    <section class="index-leavemessage-bgc">
+      <div class="love-leavemessage">
+        <div class="love-icon2">
+          <img src="img/indexImg/store/love-icon4.png" alt="icon" />
+        </div>
+        <div class="index-title1">
+          <h2>愛的留言</h2>
+          <span>大聲說出你心裡的話語吧</span>
+        </div>
+      </div>
+      <div class="leavemessage-item-group">
+        <div class="leavemessage-item">
+          <div class="leavemessage-user-name">
+            <div class="leavemessage-cloud">
+              <img src="img/indexImg/store/store-single-item-icon.png" alt="" />
+            </div>
+            <div class="leavemessage-user-name-img">
+              <img src="img/indexImg/store/user-icon.png" alt="user-icon" />
+              <span>Sara</span>
+            </div>
+            <div class="leavemessage-user-img">
+              <img src="img/indexImg/store/user-img.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="leavemessage-item"></div>
+        <div class="leavemessage-item"></div>
+        <div class="leavemessage-item"></div>
+      </div>
+
+      <!-- 背景 -->
+      <img
+        class="leavemessage-bgc"
+        src="img/indexImg/store/leavemessage-bgc.png"
+        alt="leavemessage-bgc"
+      />
+      <img
+        class="leavemessage-Material"
+        src="img/indexImg/store/leavemessage-Material-bgc.png"
+        alt="leavemessage-Material"
+      />
+    </section>
+
+    <section class="index-course-bgc">
+      <img
+        class="course-cloud-bgc"
+        src="img/indexImg/course/course-cloud-bgc.png"
+        alt="course-cloud"
+      />
+      <div class="love-store">
+        <div class="love-icon2">
+          <img src="img/indexImg/course/love-icon5.png" alt="icon" />
+        </div>
+        <div class="index-store-title">
+          <h2>體驗課程</h2>
+          <span>各式各樣的冰品都在戀冰商店唷</span>
+        </div>
+      </div>
+      <div class="course-blue-ship">
+        <div class="course-blue-ship-content">
+          <div class="course-title">
+            <div class="course-ice-icon">
+              <img
+                src="img/indexImg/course/course-ice-icon.png"
+                alt="course-ice-icon"
+              />
+            </div>
+
+            <h3>揪團課程</h3>
+          </div>
+          <div class="course-title-content">
+            <h4>你儂我儂甜心冰淇淋蛋糕</h4>
+            <p>
+              <span>報名方式：</span>
+              1.線上揪團：由揪團主發起課程，並於三天前報名課程
+              2.入館後至1F客服中心請揪團主使用QR Code報到
+            </p>
+          </div>
+          <a class="course-button-custom" href="courseGroup.html">
+            <div class="course-button-style">
+              <div class="course-button-style-botton">
+                <div class="course-inner-style">
+                  <div class="course-button-text-style">
+                    <span class="course-button-text">
+                      立即揪團
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="course-blue-ship-img">
+          <img src="img/indexImg/course/course-blue-ship.png" alt="blue-ship" />
+        </div>
+      </div>
+    </section>
+
+    <section class="index-news-bgc">
+      <div class="love-news">
+        <div class="love-icon2">
+          <img src="img/indexImg/news/love-icon6.png" alt="icon" />
+        </div>
+        <div class="index-store-title">
+          <h2>最新消息</h2>
+          <span>菓籽戀冰所的最新消息都在這哦</span>
+        </div>
+      </div>
+      <div class="index-news-content">
+        <div class="index-news-content-item-group">
+          <div class="index-news-content-img">
+            <img src="img/indexImg/news/news-img.jpg" alt="" />
+          </div>
+          <ul class="index-news-content-item">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <img
+        class="news-cloud"
+        src="img/indexImg/news/news-cloud.png"
+        alt="news-cloud"
+      />
+      <img
+        class="news-bgi"
+        src="img/indexImg/news/news-bgi.png"
+        alt="news-bgi"
+      />
     </section>
 
     <footer>

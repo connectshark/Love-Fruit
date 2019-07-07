@@ -14,65 +14,141 @@
 </head>
 
 <body>
-	<input type="checkbox" id="menu-control" />
-	<header id="header">
-		<div class="item-group">
-			<div class="logo-item">
-				<a href="index.html" class="logo" title="菓籽戀冰所"><img src="img/navBar/logo.png" alt="菓籽戀冰所" /></a>
-				<label class="hb" for="menu-control">
-					<span class="bar bar1"></span>
-					<span class="bar bar2"></span>
-					<span class="bar bar3"></span>
-				</label>
-			</div>
-			<div class="nav-item">
-				<ul class="nav-list nav-list-mp">
-					<li>
-						<a class="nav-text" href="qa.html" title="戀愛冰品"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>戀愛冰品</span></a>
-					</li>
-					<li>
-						<a class="nav-text" href="custom.html" title="冰棒客製"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>冰棒客製</span></a>
-					</li>
-					<li>
-						<a class="nav-text" href="leavemessage.html" title="愛的留言"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>愛的留言</span></a>
-					</li>
-					<li>
-						<a class="nav-text" href="newshop.html" title="冰品商城"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>冰品商城</span></a>
-					</li>
-				</ul>
-				<ul class="nav-list">
-					<li>
-						<a class="nav-text" href="course.html" title="體驗課程"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>體驗課程</span></a>
-					</li>
-					<li>
-						<a class="nav-text" href="javascript:;" title="最新消息"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>最新消息</span></a>
-					</li>
-					<li>
-						<a class="nav-text" href="javascript:;" title="關於園區"><img src="img/navBar/navIcon.png"
-								alt="iceIcon" /><span>關於園區</span></a>
-					</li>
-					<li>
-						<ul class="nav-item-icom">
-							<li class="member-icon">
-								<a href="javascript:;"><img src="img/navBar/memberIcon.png" alt="會員" /></a>
-							</li>
-							<li class="shopping-cart-icon">
-								<a href="javascript:;"><img src="img/navBar/shoppingCartIcon.png" alt="購物車" /></a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<img class="nav-bar-mp" src="img/navBar/ＭpNavBar.png" alt="ＭpNavBar" />
-		<img class="shopping-cart-icon-mp" src="img/navBar/shoppingCartIcon.png" alt="shoppingCartIcon.png" />
-	</header>
+    <input type="checkbox" id="menu-control" />
+    <header id="header">
+      <div class="item-group">
+        <div class="logo-item">
+          <a href="index.html" class="logo" title="菓籽戀冰所"
+            ><img src="img/navBar/logo.png" alt="菓籽戀冰所"
+          /></a>
+          <label class="hb" for="menu-control">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+          </label>
+        </div>
+        <div class="nav-item">
+          <ul class="nav-list nav-list-mp">
+            <li>
+              <a
+                id="qa-item-show"
+                class="nav-text"
+                href="qa.html"
+                title="戀愛冰品"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >戀愛冰品</span
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                id="custom-item-show"
+                class="nav-text"
+                href="custom.html"
+                title="冰棒客製"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >冰棒客製</span
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                id="message-item-show"
+                class="nav-text"
+                href="leavemessage.html"
+                title="愛的留言"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >愛的留言</span
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                id="newshop-item-show"
+                class="nav-text"
+                href="newshop.html"
+                title="冰品商城"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >冰品商城</span
+                ></a
+              >
+            </li>
+          </ul>
+          <ul class="nav-list nav-list-login">
+            <li id="nav-drop-down-menu-hover" class="nav-drop-down-menu-hover">
+              <a
+                id="course-item-show"
+                class="nav-text"
+                href="course.html"
+                title="體驗課程"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >體驗課程</span
+                ></a
+              >
+              <ul id="nav-drop-down-menu" class="nav-drop-down-menu">
+                <li><a href="courseGroup.html">揪團課程</a></li>
+                <li><a href="courseGeneral.html">一般課程</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                id="new-item-show"
+                class="nav-text"
+                href="news.html"
+                title="最新消息"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >最新消息</span
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                id="about-item-show"
+                class="nav-text"
+                href="javascript:;"
+                title="關於園區"
+                ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
+                  >關於園區</span
+                ></a
+              >
+            </li>
+            <li class="nav-item-icom-group">
+              <ul class="nav-item-icom">
+                <li class="shopping-cart-icon">
+                  <a href="javascript:;"
+                    ><img src="img/navBar/shoppingCartIcon.png" alt="購物車"
+                  /></a>
+                </li>
+                <li class="member-icon">
+                  <a class="nav-icon-login" href="javascript:;"
+                    ><img src="img/navBar/memberIcon.png" alt="會員" />
+                    <span>登入</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <img class="nav-bar-mp" src="img/navBar/ＭpNavBar.png" alt="ＭpNavBar" />
+
+      <div class="icon-mp">
+        <div class="icon-login-box-mp">
+          <a class="nav-icon-login" href="javascript:;"
+            ><img src="img/navBar/memberIcon.png" alt="會員" />
+            <span>登入</span></a
+          >
+        </div>
+        <a href="javascript:;"
+          ><img src="img/navBar/shoppingCartIcon.png" alt="購物車"
+        /></a>
+      </div>
+      <img
+        class="shopping-cart-icon-mp"
+        src="img/navBar/shoppingCartIcon.png"
+        alt="shoppingCartIcon.png"
+      />
+    </header>
 	<section class="banner">
 		<div class="banner-heart-group">
 			<div class="heart-b-item">
@@ -121,17 +197,17 @@
 				<div class="filter-item">
 					<button type="button" class="filter" id="breakUp">分手</button>
 				</div>
+				<select v-model="status" id="filter-pull">
+					<option selected>全部</option>
+					<option>單身</option>
+					<option>初戀</option>
+					<option>熱戀</option>
+					<option>分手</option>
+				</select>
 			</div>
 			<a class="leave-message" href="writemessage.html">
 				<span class="leave-message-btn" id="leaveMessage">我要留言</span>
 			</a>
-			<select v-model="status" id="filter-pull">
-				<option selected>全部</option>
-				<option>單身</option>
-				<option>初戀</option>
-				<option>熱戀</option>
-				<option>分手</option>
-			</select>
 		</div>
 	</section>
 	<section class="message-bgi">
@@ -144,12 +220,14 @@
 					<i class="fas fa-user-circle"></i>
 					<p>會員名稱</p>
 				</div>
+
 				<div class="message-body">
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
@@ -177,8 +255,9 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+					<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
@@ -206,8 +285,9 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+					<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
@@ -235,12 +315,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -264,12 +346,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -293,12 +377,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -322,12 +408,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -351,12 +439,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -380,12 +470,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -409,12 +501,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -438,12 +532,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -467,12 +563,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -496,12 +594,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -525,12 +625,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -554,12 +656,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -583,12 +687,14 @@
 					<figure>
 						<img src="img/course/diyimg3.png" alt="上傳照片">
 					</figure>
-						<h3>王先生</h3>
+						
+						<h3><span>To:</span>王先生</h3>
 					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
+					<p class="s-text">#語重心長</p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
-						<i class="far fa-thumbs-up"></i>
+						<i class="fas fa-thumbs-up"></i>
 						<span>10</span>
 					</button>
 					<button type="button">
@@ -609,7 +715,7 @@
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
 
-	<script src="js/index.js"></script>
+	<script src="js/nav.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/message.js"></script>

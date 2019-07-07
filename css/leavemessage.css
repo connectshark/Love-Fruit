@@ -1,7 +1,12 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .banner {
   background-color: #fad689;
-  background-image: url(../img/message/cloud-yellow.png), url(../img/message/cloud-pink.png), url(../img/background.png);
+  background-image: url(../img/indexImg/diyIcebgc-top.png), url(../img/message/cloud-pink.png), url(../img/background.png);
   background-position: bottom,bottom,center;
   background-repeat: no-repeat,no-repeat,repeat;
   background-size: 100%,100%,auto;
@@ -99,9 +104,8 @@
   color: #fff;
   font-size: 40px;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   text-align: center;
-  line-height: 80px;
 }
 
 .banner .title h1 .high:after {
@@ -239,7 +243,14 @@
 
 @media all and (max-width: 768px) {
   .btn .btn-group .btn-filter-group {
-    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    width: 90%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 
@@ -255,6 +266,12 @@
 
 .btn .btn-group .btn-filter-group .filter-item {
   cursor: pointer;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .btn-filter-group .filter-item {
+    display: none;
+  }
 }
 
 .btn .btn-group .btn-filter-group .filter-item button {
@@ -288,76 +305,6 @@
   margin-right: 20px;
   text-decoration: none;
   font-family: "A-OTF-M";
-  display: block;
-  width: 200px;
-  height: 60px;
-  border-radius: 25px;
-  background-color: white;
-  border: 3px solid #715124;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-  -webkit-box-shadow: 0px 3px #715124;
-          box-shadow: 0px 3px #715124;
-}
-
-.btn .btn-group .leave-message:active {
-  -webkit-box-shadow: 0 1px black;
-          box-shadow: 0 1px black;
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
-}
-
-.btn .btn-group .leave-message > span {
-  display: block;
-  position: relative;
-  width: 186px;
-  height: 48px;
-  border-radius: 20px;
-  background-color: #fc7389;
-  border: 3px solid #e4575f;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
-}
-
-.btn .btn-group .leave-message > span:hover {
-  background-color: #fad689;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-}
-
-.btn .btn-group .leave-message > span img {
-  display: block;
-  position: absolute;
-  top: -3px;
-  left: -13px;
-  width: 60px;
-  height: 70px;
-}
-
-.btn .btn-group .leave-message .leave-message-btn {
-  color: white;
-  font-size: 24px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 48px;
-}
-
-.btn .btn-group .leave-message .leave-message-btn:after {
-  z-index: -1;
-  content: "我要留言";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 3px #6a3e26;
 }
 
 @media all and (max-width: 768px) {
@@ -373,14 +320,86 @@
 @media all and (max-width: 768px) {
   .btn .btn-group #filter-pull {
     display: block;
-    width: 80%;
-    padding: 30px 20px;
+    width: 100%;
+    padding: 10px 20px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     border: 3px solid #6a3e26;
     border-radius: 20px;
-    font: 16px;
+    font: 16px "A-OTF-M";
   }
+}
+
+.leave-message {
+  display: block;
+  width: 100%;
+  padding: 2px;
+  height: 30%;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.leave-message:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.leave-message .leave-message-btn {
+  display: block;
+  color: whitesmoke;
+  font-size: 24px;
+  line-height: 24px;
+  position: relative;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 92%;
+  height: 23%;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  cursor: pointer;
+}
+
+.leave-message .leave-message-btn:hover {
+  background-color: #FAD689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.leave-message .leave-message-btn > img {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 27%;
+  height: 33.3%;
+}
+
+.leave-message .leave-message-btn:after {
+  z-index: -1;
+  content: "我要留言";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 @-webkit-keyframes upDown {
@@ -427,11 +446,19 @@
   color: #79a6cc;
 }
 
+.message-bgi .message .break-up .s-text {
+  color: #79a6cc;
+}
+
 .message-bgi .message .true-love {
   border: 12px solid #6bdbda;
 }
 
 .message-bgi .message .true-love .fa-cloud {
+  color: #0abbb5;
+}
+
+.message-bgi .message .true-love .s-text {
   color: #0abbb5;
 }
 
@@ -443,6 +470,10 @@
   color: #db4d6d;
 }
 
+.message-bgi .message .hot-love .s-text {
+  color: #db4d6d;
+}
+
 .message-bgi .message .single {
   border: 12px solid #fad689;
 }
@@ -451,12 +482,16 @@
   color: #f6c555;
 }
 
+.message-bgi .message .single .s-text {
+  color: #f6c555;
+}
+
 .message-bgi .message .message-item {
-  width: calc(33.333333% - 24px);
+  width: calc(33.333333% - 50px);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 6px 20px;
-  margin: 12px;
+  margin: 25px;
   border-radius: 10px;
   background-color: #fff;
   position: relative;
@@ -470,7 +505,12 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-bottom: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .message-bgi .message .message-item {
+    width: calc(100% - 50px);
+  }
 }
 
 .message-bgi .message .message-item .cloud {
@@ -508,16 +548,19 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .message-bgi .message .message-item .message-header .fa-user-circle {
-  font-size: 48px;
+  width: 10%;
+  font-size: 30px;
   color: #f94982;
 }
 
 .message-bgi .message .message-item .message-header p {
-  font-size: 24px;
+  margin-left: auto;
+  width: 85%;
+  font-size: 20px;
   font-family: "GenJyuuGothic-R";
 }
 
@@ -530,9 +573,16 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.message-bgi .message .message-item .message-body figure {
+  width: 100%;
 }
 
 .message-bgi .message .message-item .message-body figure img {
@@ -541,9 +591,15 @@
 
 .message-bgi .message .message-item .message-body h3 {
   width: 70%;
-  font-size: 24px;
-  line-height: 48px;
+  font-size: 20px;
+  line-height: 40px;
   font-family: "A-OTF-M";
+  margin-left: auto;
+  text-align: justify;
+}
+
+.message-bgi .message .message-item .message-body h3 span {
+  padding: 0 10px 0 0;
 }
 
 .message-bgi .message .message-item .message-body p {
@@ -551,9 +607,17 @@
   font-family: "A-OTF-M";
   font-size: 16px;
   line-height: 32px;
+  margin-left: auto;
+  padding: 0 0 10px;
+  text-align: justify;
+}
+
+.message-bgi .message .message-item .message-body .s-text {
+  text-align: right;
 }
 
 .message-bgi .message .message-item .message-footer {
+  margin-top: auto;
   width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -576,7 +640,7 @@
   width: 45%;
   background-color: #fc7389;
   border: 3px solid #6a3e26;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
