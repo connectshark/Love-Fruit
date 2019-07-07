@@ -96,12 +96,27 @@
   }
 }
 
-.banner .title h1 {
-  line-height: 55px;
-  font: 40px "A-OTF-M";
+.banner .title .title-img {
+  position: relative;
 }
 
-.banner .title h1 .high {
+.banner .title .title-img img {
+  width: 100%;
+  max-width: 538px;
+}
+
+.banner .title .title-img h1 {
+  line-height: 80px;
+  color: #fff;
+  font: 40px "A-OTF-M";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.banner .title .title-img h1 .high {
   color: #fff;
   font-size: 40px;
   position: relative;
@@ -109,7 +124,7 @@
   text-align: center;
 }
 
-.banner .title h1 .high:after {
+.banner .title .title-img h1 .high:after {
   z-index: -1;
   content: "愛的留言";
   position: absolute;

@@ -68,11 +68,23 @@ $cofe:#6a3e26;
 			@include rwd(mobile){
 				padding:20% 0 0;
 			}
-            h1{
-                @include out-Line-Font(high,#fff,40px,8px,$cofe,愛的留言);
-				line-height: 55px;
-				font: 40px "A-OTF-M";
-            }
+			.title-img{
+				position: relative;
+				img{
+					width: 100%;
+					max-width: 538px;
+				}
+				h1{
+					@include out-Line-Font(high,#fff,40px,8px,$cofe,愛的留言);
+					line-height: 80px;
+					color: #fff;
+					font: 40px "A-OTF-M";
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%,-50%);
+				}
+			}
         }
         .banner-item-group{
         	width: 100%;
