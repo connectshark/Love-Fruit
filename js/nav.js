@@ -36,3 +36,75 @@ function init() {
   );
 }
 window.addEventListener("load", init, false);
+
+// 機器人
+window.addEventListener("load", function() {
+  var robotcontainer = document.getElementById("robot-container");
+  var robottitleiconimg = document.getElementById("robot-title-icon-img");
+  var robotTitleBlock = document.getElementById("robot-title-block");
+
+  robotTitleBlock.addEventListener("click", function() {
+    // if (robotcontainer.style.bottom == "-47%") {
+    //   robotcontainer.style.bottom = "0%";
+    // } else {
+    //   robotcontainer.style.bottom = "-47%";
+    // }
+    // js抓值得時候不會看css，而是看ＨＴＭＬ
+    // 當他沒有收尋到值的時候會在html新增值上去
+
+    // 0=沒有值 底下是當他沒有值的時候 就是true
+    if (robotcontainer.style.bottom != "0%") {
+      robotcontainer.style.bottom = "0%";
+      robottitleiconimg.style.transform = "rotate(180deg)";
+    } else {
+      robotcontainer.style.bottom = "-445px";
+      robottitleiconimg.style.transform = "rotate(-0deg)";
+    }
+  });
+});
+// 使用者回話
+$(document).ready(function() {
+  $("#robot-submit").click(function() {
+    $message = $("#message").val();
+    $("#robot-conversation-list").append(`<div class="robot-conversation">
+    <p class="robot_text">${$message}</p></div>`).append(`<div class="robot-conversation">
+    <p class="robot_text"><span>小達人:</span>${$message}</p>
+  </div>`);
+    $("#message").val("");
+
+    $scrollHeight = $("#robot-conversation-list").height(); //scroll的高度
+    $("#robot-conversation-block").animate({ scrollTop: $scrollHeight }, 200); //控制scroll bar的位置 並加一點動畫效果
+  });
+});
+
+$(document).ready(function() {
+  $("#message").keydown(function(e) {
+    if (e.keyCode != 13) {
+      return;
+    }
+    // 清除enter的預設行為 自動換行
+    e.preventDefault();
+    $message = $("#message").val();
+    $("#robot-conversation-list").append(`<div class="robot-conversation">
+    <p class="robot_text">${$message}</p></div>`).append(`<div class="robot-conversation">
+    <p class="robot_text"><span>小達人:</span>${$message}</p>
+  </div>`);
+    $("#message").val("");
+
+    $scrollHeight = $("#robot-conversation-list").height(); //scroll的高度
+    $("#robot-conversation-block").animate({ scrollTop: $scrollHeight }, 200); //控制scroll bar的位置 並加一點動畫效果
+  });
+});
+// 使用者回話
+// 固定回話
+$(document).ready(function() {
+  $(".fruit").click(function() {
+    $fruit = $(this).text();
+    $("#robot-conversation-list").append(`<div class="robot-conversation">
+    <p class="robot_text">${$fruit}</p></div>`).append(`<div class="robot-conversation">
+    <p class="robot_text"><span>小達人:</span>${$fruit}</p>
+  </div>`);
+    $scrollHeight = $("#robot-conversation-list").height(); //scroll的高度
+    $("#robot-conversation-block").animate({ scrollTop: $scrollHeight }, 200); //控制scroll bar的位置 並加一點動畫效果
+  });
+});

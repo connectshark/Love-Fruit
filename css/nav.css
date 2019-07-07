@@ -24,7 +24,7 @@
 }
 /*header*/
 /*清除*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* 麵包屑 */
   /* 戀愛問答#qa-item-show
     冰棒客製#custom-item-show
@@ -250,6 +250,10 @@
     font-size: 25px;
     color: #6a3e26;
   }
+  /* 機器人 */
+  #robot-container {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -361,7 +365,6 @@
     position: relative;
     left: -6%;
     margin-left: 6%;
-    height: 70%;
     width: 99%;
     display: inline-block;
     text-decoration: none;
@@ -418,8 +421,6 @@
   .member-icon {
     position: relative;
   }
-  .nav-item-icom-group {
-  }
   .shopping-cart-icon {
     margin-right: 0.3vw;
   }
@@ -447,13 +448,167 @@
     color: #ffffff;
   }
 }
+/* 機器人 */
+.robot-container {
+  display: inline-block;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: -445px;
+  right: 0;
+  width: 350px;
+  height: 500px;
+  transition: 1s;
+  background-color: #ffb6b6;
+}
+.robot-title-block {
+  cursor: pointer;
+  padding-bottom: 10px;
+  border-radius: 10px 20px 0 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffb6b6;
+}
+.robot-title-block h3 {
+  padding-top: 12px;
+  font-family: "GenJyuuGothic-B";
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: rgb(255, 255, 255);
+}
+.robot-title-icon {
+  padding: 13px 8px 0 13px;
+  width: 10%;
+}
+.robot-title-icon img {
+  transition: 1s;
+  width: 100%;
+}
+.robot-pic {
+  position: absolute;
+  right: 10px;
+  top: -120px;
+  width: 35%;
+}
+.robot-pic img {
+  width: 100%;
+}
+/* 機器人文字區塊 */
+.robot-conversation-block {
+  width: 330px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.robot-conversation {
+  width: 100%;
+}
+.robot_text {
+  float: left;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: 75%;
+  line-height: 16px;
+  color: rgb(80, 80, 80);
+  margin: 4% 2%;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: "GenJyuuGothic-R";
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #ffd0d0;
+}
+.robot_text span {
+  display: block;
+  white-space: nowrap;
+}
+.robot-conversation:nth-child(even) p {
+  float: right;
+}
+.robot-conversation::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.robot-text-time {
+  color: #ddd;
+  position: relative;
+  bottom: -7px;
+}
+/* 一般問答 */
+.chatBot-keyword ::-webkit-scrollbar {
+  background-color: #ffebec;
+}
+.chatBot-keyword::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 2px solid #ffebec;
+  background-color: #ffabb1;
+}
+.chatBot-keyword {
+  padding: 0px 0 10px 0;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 10px;
+}
+.chatBot-keyword li {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 10px 5px 10px;
+  line-height: 30px;
+  color: rgb(255, 255, 255);
+  background-color: #ea7187;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* 回答內容 */
+.robot-input-block {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+.robot-input-block textarea {
+  width: 69%;
+  height: 88%;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  color: #6f6f6f;
+  letter-spacing: 1px;
+  font-family: "GenJyuuGothic-R";
+  margin-left: 10px;
+  resize: none;
+}
+.robot-input-block button {
+  width: 18%;
+  border: 1px solid #ea7187;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  outline: none;
+  font-family: "GenJyuuGothic-R";
+  letter-spacing: 2px;
+  background-color: #ea7187;
+  margin-right: 10px;
+}
+.robot-input-block button:active {
+  background-color: #cb1b45;
+}
 /*rwd內容*/
 #menu-control {
   display: none;
 }
 /* footer */
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 40px;
   background-color: #ea7187;
@@ -462,8 +617,7 @@ footer span {
   display: block;
   font-family: "GenJyuuGothic-M";
   letter-spacing: 1px;
-  font-size: 12px;
-  padding-top: 15px;
+  font-size: 16px;
   color: #ffffff;
 }
 .box {
@@ -472,12 +626,16 @@ footer span {
   height: 700px;
 }
 @media screen and (max-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   footer span {
     display: block;
     font-family: "GenJyuuGothic-M";
     letter-spacing: 1px;
-    font-size: 1vw;
-    padding-top: 15px;
+    font-size: 12px;
     color: #ffffff;
   }
 }

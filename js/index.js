@@ -52,3 +52,16 @@ window.addEventListener("scroll", function() {
     // document.querySelector("").classList.remove("");
   }
 });
+
+window.addEventListener("scroll", function() {
+  let scrolltop =
+    document.documentElement.scrollTop ||
+    window.pageYOffset ||
+    document.body.scrolltop;
+
+  if (scrolltop > 4800) {
+    document
+      .querySelector(".course-blue-ship")
+      .classList.add("course-blue-ship-show");
+  }
+});
