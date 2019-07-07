@@ -13,18 +13,36 @@ $cofe:#6a3e26;
     border: 3px solid #6a3e26;
     transition: padding .5s;
 }
-.letter-title{
-    padding: 100px 0 0;
-    text-align: center;
-    h1{
-        font-size: 40px "GenJyuuGothic-R";
-    }
-}
-.letter{
+body{
     background-image: url(../img/background.png);
     background-color: #fff;
     background-position: center;
     background-repeat: repeat;
+}
+.letter-title{
+    padding: 150px 0 0;
+    text-align: center;
+    .title-img{
+        text-align: center;
+        position: relative;
+        img{
+            width: 100%;
+            max-width: 583px;
+        }
+        h1{
+            font: 30px "GenJyuuGothic-R";
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-85%);
+            @include rwd(mobile){
+                font: 18px "GenJyuuGothic-R";
+            }
+        }
+    }
+}
+.letter{
     padding:0 0 100px;
     .letter-area{
         width: 100%;
@@ -32,7 +50,7 @@ $cofe:#6a3e26;
         margin: auto;
         display: flex;
         flex-flow: row nowrap;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-around;
     }
     .letter-content{
@@ -123,11 +141,11 @@ $cofe:#6a3e26;
             }
         }
         .letter-footer{
-            margin: 30px 0;
             padding: 20px 0;
             width: 80%;
             font-family: "GenJyuuGothic-R";
             transition: margin .5s;
+            margin: 30px 0;
             p{
                 font-size: 24px;
                 line-height: 2;

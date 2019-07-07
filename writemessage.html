@@ -186,7 +186,10 @@
       </div>
     </header>
 	<div class="letter-title">
-		<h1>寫下妳/你的專屬留言</h1>
+		<div class="title-img">
+			<img src="img/ribbon.png" alt="標題背景">
+			<h1>寫下妳/你的專屬留言</h1>
+		</div>
 	</div>
 	<div id="app">
 		<section class="letter">
@@ -301,11 +304,11 @@
 					this.img = e.target.result;
 				},
 				clear() {
-					this.forWho = "";
+					this.forWho = "寫給誰";
 					this.img = "";
 					this.imgName = "";
-					this.text = "";
-					this.phrase = "";
+					this.text = "留言內容";
+					this.phrase = "冰棒小語";
 				}
 			},
 		});
