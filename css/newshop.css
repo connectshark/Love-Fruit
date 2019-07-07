@@ -390,6 +390,26 @@
   }
 }
 
+.page-shop .store .commodity .commodity-item .commodity-item-cus-content {
+  border-right: 4px solid #fad689;
+  border-left: 4px solid #fad689;
+  border-bottom: 4px solid #fad689;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-bottom: 5px;
+  height: 270px;
+  position: relative;
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-cus-content {
+    height: 340px;
+    border-right: 8px solid #fad689;
+    border-left: 8px solid #fad689;
+    border-bottom: 8px solid #fad689;
+  }
+}
+
 .page-shop .store .commodity .commodity-item .commodity-item-content {
   border-right: 4px solid #fad689;
   border-left: 4px solid #fad689;
@@ -563,6 +583,13 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-content .general-pri span {
+    margin: auto;
+    padding-top: 15px;
+  }
+}
+
 .page-shop .store .commodity .commodity-item .commodity-item-content .general-pri .btn-numbox {
   width: 40%;
   font-size: 0px;
@@ -611,6 +638,84 @@
 
 .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri {
   text-align: center;
+}
+
+.page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri span {
+  font-size: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri span {
+    margin: auto;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri {
+    padding: 10px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri .custom-btn-numbox {
+  display: none;
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri .custom-btn-numbox {
+    width: 40%;
+    font-size: 0px;
+    display: none;
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 992px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri .custom-btn-numbox {
+    display: block;
+    padding: 0px;
+    width: 91px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri .custom-btn-numbox .qty {
+    width: 40%;
+    text-align: center;
+    height: 28px;
+    padding: 0px;
+    border: 0px;
+  }
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri .custom-btn-numbox .qtyminus {
+    background-color: #6A3E26;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 25%;
+    height: 28px;
+    border: 0px;
+    color: white;
+    padding: 0px;
+    cursor: pointer;
+  }
+  .page-shop .store .commodity .commodity-item .commodity-item-content .custom-pri .custom-btn-numbox .qtyplus {
+    padding: 0px;
+    background-color: #6A3E26;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 25%;
+    height: 28px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+  }
 }
 
 .page-shop .store .commodity .commodity-item .commodity-item-content .shop-btn {
@@ -670,7 +775,7 @@
 
 .page-shop .store .commodity .commodity-item .commodity-item-content .shop-btn .shop-buy-btn {
   display: block;
-  width: 100px;
+  width: 150px;
   padding: 2px;
   border-radius: 40px;
   background-color: white;
@@ -687,13 +792,13 @@
 .page-shop .store .commodity .commodity-item .commodity-item-content .shop-btn .shop-buy-btn .shop-btn-text {
   display: block;
   color: whitesmoke;
-  font-size: 16px;
+  font-size: 20px;
   position: relative;
   padding: 1px;
   z-index: 1;
   text-align: center;
   display: block;
-  width: 100px;
+  width: 150px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;
@@ -726,7 +831,7 @@
 @media all and (max-width: 768px) {
   .page-shop .store .commodity .commodity-item .commodity-item-content .shop-btn .shop-buy-btn {
     display: block;
-    width: 100px;
+    width: 120px;
     padding: 2px;
     border-radius: 40px;
     background-color: white;
@@ -742,13 +847,13 @@
   .page-shop .store .commodity .commodity-item .commodity-item-content .shop-btn .shop-buy-btn .shop-btn-text {
     display: block;
     color: whitesmoke;
-    font-size: 16px;
+    font-size: 20px;
     position: relative;
     padding: 1px;
     z-index: 1;
     text-align: center;
     display: block;
-    width: 100px;
+    width: 120px;
     border-radius: 20px;
     background-color: #fc7389;
     border: 2px solid #e4575f;
@@ -927,6 +1032,9 @@
 }
 
 .page-shop .store .commodity .custom-pri {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 18px 0px;
 }
 

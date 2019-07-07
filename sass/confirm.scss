@@ -1,10 +1,39 @@
 @import "mixin/mixin";
 *{
     box-sizing: border-box;
+    a{
+        text-decoration: none;
+    }
 }
 .page-confirm{
     background: #F8C3CD url(../img/shop/backgroundpic.png);
     font-family: "GenJyuuGothic-B";
+    button{
+        margin: 0px;
+        padding: 0px;
+        border: 0px solid transparent;
+        outline:none;
+        background-color: transparent;
+    }
+    .dis-mobile-n{
+        @include rwd(mobile){
+        display: none;
+        }
+    }
+    .float{
+        float:left;
+    }
+    .clear{
+        float:both;
+    }
+    .dis-lg-n{
+        @include rwd(desktop){
+            display: none;
+        }
+    }
+    .fw-w{
+        flex-wrap: wrap;
+    }
     .bor-20{
         border-radius: 20px;
     }
@@ -20,33 +49,42 @@
         // }
         .qty{
             // display: inline-block;
-            width: 40%;
+            width: 30%;
             text-align: center;
             height: 28px;
             padding: 0px;
             border: 0px;
+            @include rwd(mobile){
+                width: 27%;
+            }
         }
         .qtyminus{
             background-color: #6A3E26;
             border-bottom-left-radius:20px;
             border-top-left-radius:20px;
-            width: 25%;
+            width: 20%;
             height:28px; 
             border:0px; 
             color:white;
             padding: 0px;
             cursor: pointer;
+            @include rwd(mobile){
+                width: 15%;
+            }
         }
         .qtyplus{
             padding: 0px;
             background-color: #6A3E26;
             border-bottom-right-radius:20px;
             border-top-right-radius:20px;
-            width: 25%;
+            width: 20%;
             height:28px; 
             border:0px; 
             color:white;
             cursor: pointer;
+            @include rwd(mobile){
+                width: 15%;
+            }
         }
     }
     .rela{
@@ -79,6 +117,14 @@
         }
          
     }
+    .flex{
+        display: flex;  
+    }
+    .mol-flex{
+        @include rwd(mobile){
+            display: flex;  
+        }
+    }
     .ai-c{
         align-items: center;
     }
@@ -99,8 +145,8 @@
     }
 
     // 以上共用
-    .confirm-list{
-        padding-top:220px; 
+    .confirm-column{
+        padding-top:120px; 
         
     }
     .confirm-title{
@@ -112,11 +158,158 @@
         border-top-right-radius:10px;
         height: 60px;
     }
-    .list-wrap > div + div {
-        border-left: 1px solid black;
-    }
+   
     // .cart-row > div + div {
     //     border-left: 1px solid black;
        
     // }
+    .confirm-row{
+         background-color: white; 
+         border-radius:20px; 
+         font-size: 16px;
+    }
+    .row-pic{
+        border-bottom: 2px solid black;
+        padding:10px;
+        height: 104px;
+        img{
+            width: 100%;
+        }
+    }
+    .row-pic-box{
+        width: 20%;
+    }
+    .row-name{
+        height: 104px;
+        padding:20px 10px 0px 10px;
+        border-bottom: 2px solid black; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .confirm-btn{
+        padding-top:10px;
+    }
+    .small-total{
+        padding-top:10px; 
+    }
+    .confirm-total{
+      text-align: right;
+      padding-right:20px;   
+      font-size: 20px;
+    }
+    .package-information-title{
+        border-bottom:2px solid #FAD689;
+        span{
+            text-align: center;
+            display: inline-block;
+            width:100px;
+            height: 30px;
+            line-height: 30px;
+            border-top-left-radius:10px;
+            border-top-right-radius:10px; 
+            background-color: #FAD689;
+        }
+      
+    }
+    .package-information{
+        >form{
+            background-color: white;
+            >div{
+                border-bottom: 1px solid gray opacity($color:gray);
+                padding: 8px 0px 8px 10px;
+            }
+        }
+    }
+    .confirm-btn{
+        text-align: center;
+    }
+    button{
+        margin: 0px 10px;
+    }
+    @include ice-btn(confirm-shop,100px,confirm-shop-in,16px,16px,確認結帳);
+    // @include btn(confirm-shop,100px,confirm-shop-in,16px, 確認結帳);
+    @include btn(Previous,100px,Previous-in,12px, 上一步);
+
+
+
+
+
+
+
+
+    // 網頁版
+    @include rwd(desktop){
+        .confirm-title{
+            padding: 150px 0px 20px 0px;
+        }
+        .list-wrap{
+            font-size: 20px;
+        }
+        .list-wrap > div + div {
+            border-left: 1px solid black;
+        }
+        .confirm-row > div + div {
+            border-left: 1px solid black;
+        }
+       .confirm-row{
+            background-color: white; 
+            border-radius:0px; 
+            font-size: 16px;
+            flex-wrap:nowrap;
+        }
+       .row-pic{
+           border-bottom: 0px solid black;
+           padding:0px;
+           height: 104px;
+           img{
+               width: 100%;
+           }
+       }
+       .row-pic-box{
+           width: 17%;
+       }
+       .row-name{
+           height: 104px;
+           padding:0px;
+           border-bottom: 0px solid black; 
+           display: flex;
+           flex-direction: column;
+           justify-content: space-around;
+       }
+       .confirm-unit-price{
+           height: 104px;
+           line-height: 105px;
+       }
+       .confirm-btn{
+           text-align: center;
+           padding-top:0px;
+           height: 104px;
+           line-height: 105px;
+       }
+       .small-total{
+           padding-top:0px; 
+           height: 104px;
+           line-height: 105px;
+       }
+       .confirm-total{
+         text-align: right;
+         padding-right:20px;   
+         font-size: 20px;
+       }
+       .package-information-title{
+           border-bottom:2px solid #FAD689;
+           span{
+               text-align: center;
+               display: inline-block;
+               width:100px;
+               height: 30px;
+               line-height: 30px;
+               border-top-left-radius:10px;
+               border-top-right-radius:10px; 
+               background-color: #FAD689;
+           }
+         
+       }
+    }
 }
