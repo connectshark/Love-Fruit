@@ -70,7 +70,7 @@ $cofe:#6a3e26;
 			}
             h1{
                 font-family: "A-OTF-M";
-                @include out-Line-Font(high,#fff,40px,8px,$cofe,告白留言牆);
+                @include out-Line-Font(high,#fff,40px,8px,$cofe,愛的留言);
                 .high{
                     line-height: 55px;
                 }
