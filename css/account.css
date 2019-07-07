@@ -10,18 +10,27 @@
   text-decoration: none;
 }
 
-.page-account .profile {
+.page-account .account {
   background-color: #fff8e4;
 }
 
 .page-account {
   font-family: "GenJyuuGothic-R";
+  font-size: 18px;
 }
 
 .page-account .wrap {
   width: 100%;
   max-width: 1200px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 10px;
 }
 
 .page-account .banner {
@@ -59,10 +68,327 @@
   top: 40%;
 }
 
+.page-account .menu {
+  background-color: #ea7187;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.page-account .menu .profile-picture {
+  color: #fff;
+  font-size: 20px;
+  padding: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .menu .profile-picture i {
+  font-size: 50px;
+  display: block;
+  padding-right: 20px;
+}
+
+.page-account .menu .profile-picture a {
+  display: block;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.page-account .menu .account-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.page-account .menu .account-list li {
+  text-align: center;
+}
+
+.page-account .menu .account-list li a {
+  display: block;
+  color: #fff;
+  padding: 10px;
+}
+
+.page-account .menu .account-list li a:hover {
+  background-color: #db4d6d;
+}
+
+.page-account .menu .account-list li a i {
+  font-size: 30px;
+  display: block;
+  padding: 10px;
+}
+
+.page-account .menu .account-list li .active {
+  background-color: #db4d6d;
+}
+
+.page-account .content {
+  background-color: #fff;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.page-account .content h2 {
+  font-size: 24px;
+  color: #3e556a;
+  padding-top: 10px;
+}
+
 @media all and (max-width: 768px) {
   .page-account .banner {
     padding-top: 80%;
     background-size: cover;
   }
+}
+
+@media all and (min-width: 769px) {
+  .page-account .menu {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+  .page-account .menu .profile-picture {
+    padding: 30px 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .page-account .menu .account-list {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .page-account .menu .account-list li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .page-account .menu .account-list li a i {
+    display: inline;
+  }
+  .page-account .content {
+    padding: 20px 40px;
+  }
+  .page-account .content h2 {
+    padding: 20px 0;
+  }
+}
+
+.page-account-profile .content .profile-item {
+  background-color: #ffdee6;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account-profile .content .profile-item .passwaord, .page-account-profile .content .profile-item .address {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.page-account-profile .content .profile-item label {
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.page-account-profile .content .profile-item input {
+  border-radius: 5px;
+  font-size: 18px;
+  display: block;
+  padding: 5px;
+}
+
+.page-account-profile .content input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #db4d6d;
+  color: #fff;
+  font-family: "GenJyuuGothic-R";
+  font-size: 18px;
+}
+
+.page-account-profile .content input[type=submit]:hover {
+  background-color: #cb1b45;
+}
+
+.page-account-order .content .order-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account-order .content .order-item .order-desc p {
+  padding: 10px;
+}
+
+@media all and (min-width: 769px) {
+  .page-account-order .order-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .page-account-order .order-desc .total {
+    text-align: right;
+  }
+}
+
+.page-account-collection .content .collection-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account-collection .content .collection-item .collection-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page-account-collection .content .collection-item .collection-desc .heart {
+  text-align: right;
+  cursor: pointer;
+}
+
+.page-account-collection .content .collection-item .collection-desc p {
+  padding: 10px;
+}
+
+.page-account-custom .content .custom-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account-custom .content .custom-item .custom-desc p {
+  padding: 10px;
+}
+
+@media all and (min-width: 769px) {
+  .page-account-custom .custom-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .page-account-custom .custom-desc .time {
+    text-align: right;
+  }
+}
+
+.page-account-class .content .class-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account-class .content .class-item .class-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account-class .content .class-item .class-desc .cancel {
+  text-align: right;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.page-account-class .content .class-item .class-desc .cancel a {
+  color: #db4d6d;
+}
+
+.page-account-class .content .class-item .class-desc p {
+  padding: 10px;
 }
 /*# sourceMappingURL=account.css.map */
