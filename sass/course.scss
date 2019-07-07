@@ -1,7 +1,8 @@
 @import "mixin/mixin";
-// *{
-//     outline: #f00 solid 1px;  
-// }
+*{
+    outline: #f00 solid 1px;
+    text-decoration: none;  
+}
 body{
     font-family: "GenJyuuGothic-R";
 }
@@ -261,16 +262,11 @@ $font-gray:#434343;
 
             .course-btn{
                 padding: 5% 0;
-                    .course-ice-btn-out{
-                    margin: auto;
-                    @include ice-btn-out(135px,course-ice-btn-in,#fff,18px,3px,#6a3e26,我要預約);
-  
-                }
+                    
+                margin: auto;
+                @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,18px,18px,我要預約);
+                
             }
-            
-            
-
-        
         }
     }
     
@@ -431,12 +427,10 @@ $font-gray:#434343;
             }
 
             .course-btn{
-                padding: 5% 0;
-                    .course-ice-btn-out{
-                    margin: auto;
-                    @include ice-btn-out(135px,course-ice-btn-in,#fff,18px,3px,#6a3e26,我要開團);
-  
-                }
+                padding: 5% 0;   
+                margin: auto;
+                @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,18px,18px,我要預約);
+                
             }
         }
     }
@@ -549,15 +543,9 @@ $font-gray:#434343;
                   }
                   .open-btn{
                         margin-top:10px ;
-                        
-                        .open-btn-out{
-                        width: 90%;
                         margin: auto;
-                            @include ice-btn-out(135px,open-btn-in,#fff,18px,3px,#6a3e26,開團發佈);
-                        }
+                            @include ice-btn(open-btn-out,135px,open-btn-in,18px,18px,開團發佈);
                    }
-                 
-                
             }
            
         } 
@@ -572,13 +560,9 @@ $font-gray:#434343;
         }
         .form-btn{
             margin-top:10px ;  
-            .form-btn-out{
-            width: 90%;
             margin: auto;
-                @include ice-btn-out(135px,form-btn-in,#fff,18px,3px,#6a3e26,主揪申請);
-            }
+            @include ice-btn(form-btn-out,135px,form-btn-in,18px,18px,主揪申請);
        }
-
 }
 //預約表單-一般
 .general-form-wrap{
@@ -737,10 +721,12 @@ $font-gray:#434343;
         }
         .form-btn{
             padding: 5% 0;
-                .form-ice-btn-out{
+     
                 margin: auto;
-                @include ice-btn-out(135px,form-ice-btn-in,#fff,18px,3px,#6a3e26,確認預約);
-            }
+
+                @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,確認預約);
+          
+            
         }
 
     }
@@ -874,13 +860,9 @@ $font-gray:#434343;
         }
         .form-btn{
             padding: 5% 0;
-                .form-ice-btn-out{
-                margin: auto;
-                @include ice-btn-out(135px,form-ice-btn-in,#fff,18px,3px,#6a3e26,我要預約);
-            }
+            width: 90%;
+            margin: auto;
+            @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,我要預約);
         }
-
-    }
-   
-    
+    }   
 }
