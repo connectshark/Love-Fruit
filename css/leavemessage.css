@@ -86,7 +86,7 @@
   width: 100%;
   max-width: 1200px;
   text-align: center;
-  padding: 5% 0;
+  padding: 5% 0 0;
   margin: auto;
 }
 
@@ -97,7 +97,8 @@
 }
 
 .banner .title h1 {
-  font-family: "A-OTF-M";
+  line-height: 55px;
+  font: 40px "A-OTF-M";
 }
 
 .banner .title h1 .high {
@@ -117,10 +118,6 @@
   bottom: 0;
   right: 0;
   -webkit-text-stroke: 8px #6a3e26;
-}
-
-.banner .title h1 .high {
-  line-height: 55px;
 }
 
 .banner .banner-item-group {

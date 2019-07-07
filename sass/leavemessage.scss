@@ -63,17 +63,15 @@ $cofe:#6a3e26;
             width: 100%;
             max-width: 1200px;
             text-align: center;
-            padding: 5% 0;
+            padding: 5% 0 0;
 			margin: auto;
 			@include rwd(mobile){
 				padding:20% 0 0;
 			}
             h1{
-                font-family: "A-OTF-M";
                 @include out-Line-Font(high,#fff,40px,8px,$cofe,愛的留言);
-                .high{
-                    line-height: 55px;
-                }
+				line-height: 55px;
+				font: 40px "A-OTF-M";
             }
         }
         .banner-item-group{

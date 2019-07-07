@@ -190,74 +190,81 @@
 	</div>
 	<div id="app">
 		<section class="letter">
-			<div class="message-item break-up">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>分手</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-
-				<div class="message-body">
-					<figure>
-						<img :src="img" :alt="imgName">
-					</figure>
-						<h3><span>To:</span>{{forWho}}</h3>
-					<p>{{text}}</p>
-					<p class="s-text">#{{phrase}}</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="letter-content">
-				<div class="letter-header">
-					<div class="user-img">
+			<div class="letter-area">
+				<div class="message-item break-up">
+					<div class="cloud">
+						<i class="fas fa-cloud"></i><span>分手</span>
+					</div>
+					<div class="message-header">
 						<i class="fas fa-user-circle"></i>
+						<p>會員名稱</p>
 					</div>
-					<div class="user-name">
-						<p>使用者名稱</p>
+
+					<div class="message-body">
+						<div class="holder">
+							<img :src="img" :alt="imgName">
+						</div>
+						<h3><span>To:</span>{{forWho}}</h3>
+						<p>{{text}}</p>
+						<p class="s-text">#{{phrase}}</p>
+					</div>
+					<div class="message-footer">
+						<button type="button">
+							<i class="fas fa-thumbs-up"></i>
+							<span>0</span>
+						</button>
+						<button type="button">
+							<i class="fas fa-share-alt"></i>
+							<span>分享</span>
+						</button>
+					</div>
+					<div class="custom-ice">
+						<img src="img/message/ice-blue.png" alt="客製冰棒">
 					</div>
 				</div>
-				<div class="letter-body">
-					<label>
-					<figure v-if="img">
-						<img :src="img" :alt="imgName">
-					</figure>
-		            <div class="plus-img" v-else>
-		                <i class="fas fa-plus"></i>
-		            </div>
-                    <input type="file" name="message-img" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
-					</label>
-				</div>
-				<div class="letter-footer">
-	                <div class="write-title">
-	                    <p>寫給誰</p>
-	                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle"></label>
-	                </div>
-	                <div class="write-content">
-	                    <p>留言內容</p>
-	                    <label><input type="text" minlength="1" maxlength="20" v-model="text" id="userContent"></label>
-	                </div>
-	                <div class="write-phrase">
-	                    <p>冰棒小語</p>
-	                    <label><input type="text" minlength="1" maxlength="5" v-model="phrase" id="userPhrase"></label>
-	                </div>
-	                <div class="write-buttons">
-	                    <label><input type="reset" value="清除" @click="clear"></label>
-	                    <label><input type="submit" value="送出" id="submit"></label>
-	                </div>
+				<div class="letter-content">
+					<div class="letter-header">
+						<div class="user-img">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="user-name">
+							<p>使用者名稱</p>
+						</div>
+					</div>
+					<div class="letter-body">
+						<label>
+							<div class="letter-load">
+								<p>上傳圖片</p>
+							</div>
+							<div class="letter-phone">
+								<figure v-if="img">
+									<img :src="img" :alt="imgName">
+								</figure>
+								<div class="plus-img" v-else>
+									<i class="fas fa-plus"></i>
+								</div>
+							</div>
+	                    <input type="file" name="message-img" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
+						</label>
+					</div>
+					<div class="letter-footer">
+		                <div class="write-title">
+		                    <p>寫給誰</p>
+		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle"></label>
+		                </div>
+		                <div class="write-content">
+		                    <p>留言內容</p>
+		                    <label><input type="text" minlength="1" maxlength="20" v-model="text" id="userContent"></label>
+		                </div>
+		                <div class="write-phrase">
+		                    <p>冰棒小語</p>
+		                    <label><input type="text" minlength="1" maxlength="5" v-model="phrase" id="userPhrase"></label>
+		                </div>
+		                <div class="write-buttons">
+		                    <label><input type="reset" value="清除" @click="clear"></label>
+		                    <label><input type="submit" value="送出" id="submit"></label>
+		                </div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -276,11 +283,11 @@
 		new Vue({
 			el: "#app",
 			data: {
-				forWho: "",
+				forWho: "寫給誰",
 				img: "",
 				imgName: "",
-				text: "",
-				phrase:""
+				text: "留言內容",
+				phrase:"冰棒小語",
 			},
 			methods: {
 				fileLoad(e) {

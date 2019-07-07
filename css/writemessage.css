@@ -3,12 +3,27 @@
           box-sizing: border-box;
 }
 
+.letter-title {
+  padding: 100px 0 0;
+  text-align: center;
+}
+
+.letter-title h1 {
+  font-size: 40px "GenJyuuGothic-R";
+}
+
 .letter {
   background-image: url(../img/background.png);
   background-color: #fff;
   background-position: center;
   background-repeat: repeat;
-  padding: 100px 0 0;
+  padding: 0 0 100px;
+}
+
+.letter .letter-area {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,6 +112,41 @@
   opacity: .8;
 }
 
+.letter .letter-content .letter-body label .letter-load {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.letter .letter-content .letter-body label .letter-load p {
+  font: 24px "GenJyuuGothic-R";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px 20px;
+  color: #fff;
+  border-radius: 20px;
+  background-color: #fc7389;
+}
+
+.letter .letter-content .letter-body label .letter-phone {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .letter .letter-content .letter-body label .letter-phone {
+    display: block;
+  }
+}
+
+.letter .letter-content .letter-body label .letter-phone figure {
+  text-align: center;
+}
+
+.letter .letter-content .letter-body label .letter-phone figure img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .letter .letter-content .letter-body .plus-img {
   width: 100%;
   padding: 40% 0;
@@ -106,16 +156,6 @@
 
 .letter .letter-content .letter-body .plus-img i {
   font-size: 60px;
-}
-
-.letter .letter-content .letter-body figure {
-  width: 100%;
-  text-align: center;
-}
-
-.letter .letter-content .letter-body figure img {
-  max-width: 588px;
-  max-height: 530px;
 }
 
 .letter .letter-content .letter-body input {
@@ -269,7 +309,7 @@
 }
 
 .message-item {
-  width: calc(33.333333% - 50px);
+  width: 40%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 6px 20px;
@@ -363,12 +403,22 @@
   padding: 0 10px;
 }
 
-.message-item .message-body figure {
+.message-item .message-body .holder {
   width: 100%;
+  padding-bottom: 100%;
+  border: 1px solid #ccc;
+  position: relative;
 }
 
-.message-item .message-body figure img {
-  width: 100%;
+.message-item .message-body .holder img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .message-item .message-body h3 {

@@ -13,16 +13,28 @@ $cofe:#6a3e26;
     border: 3px solid #6a3e26;
     transition: padding .5s;
 }
+.letter-title{
+    padding: 100px 0 0;
+    text-align: center;
+    h1{
+        font-size: 40px "GenJyuuGothic-R";
+    }
+}
 .letter{
     background-image: url(../img/background.png);
     background-color: #fff;
     background-position: center;
     background-repeat: repeat;
-    padding: 100px 0 0;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
-    justify-content: space-around;
+    padding:0 0 100px;
+    .letter-area{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
     .letter-content{
         width: 45%;
         background-color: #fff;
@@ -68,6 +80,32 @@ $cofe:#6a3e26;
                 &:hover{
                     opacity: .8;
                 }
+                .letter-load{
+                    text-align: center;
+                    margin:0 0 20px;
+                    p{
+                        font: 24px "GenJyuuGothic-R";
+                        box-sizing: border-box;
+                        padding: 30px 20px;
+                        color: #fff;
+                        border-radius: 20px;
+                        background-color: #fc7389;
+                    }
+                }
+                .letter-phone{
+                    display: none;
+                    @include rwd(mobile){
+                        display: block;
+                    }
+                    figure{
+                        text-align: center;
+                        img{
+                            width: 100%;
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+                }
             }
             .plus-img{
                 width: 100%;
@@ -76,14 +114,6 @@ $cofe:#6a3e26;
                 text-align: center;
                 i{
                     font-size: 60px;
-                }
-            }
-            figure{
-                width: 100%;
-                text-align: center;
-                img{
-                    max-width: 588px;
-                    max-height: 530px;
                 }
             }
             input{
@@ -190,7 +220,7 @@ $cofe:#6a3e26;
     }
 }
 .message-item{
-    width:calc(33.333333% - 50px);
+    width:40%;
     box-sizing: border-box;
     padding: 6px 20px;
     margin: 25px;
@@ -247,10 +277,20 @@ $cofe:#6a3e26;
         align-items: center;
         box-sizing: border-box;
         padding: 0 10px;
-        figure{
+        .holder{
             width: 100%;
+            padding-bottom: 100%;
+            border:1px solid #ccc;
+            position: relative;
             img{
-                width: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                max-width: 100%;
+                max-height: 100%;
             }
         }
         h3{
