@@ -6,7 +6,9 @@ $(document).ready(function(){
 });
 function open() {
 	$(this).css('padding', '30px 20px');
+	$('.letter-footer').css('margin','0');
 }
 function close(){
 	$(this).css('padding', '5px 20px');
+	$('.letter-footer').css('margin','30px 0');
 }

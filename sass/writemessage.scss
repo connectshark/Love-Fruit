@@ -1,4 +1,9 @@
 @import "mixin/mixin";
+$break:#9dc5f6;
+$true:#6bdbda;
+$hot:#ea7187;
+$single:#fad689;
+$cofe:#6a3e26;
 @mixin inputsize {
     width: 100%;
     padding: 5px;
@@ -14,19 +19,22 @@
     background-position: center;
     background-repeat: repeat;
     padding: 100px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
     .letter-content{
-        width: 100%;
-        max-width: 800px;
+        width: 45%;
         background-color: #fff;
         box-sizing: border-box;
         padding: 20px;
         box-shadow: 3px 3px 10px #aaa;
-        margin: auto;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         @include rwd(mobile){
             width: 90%;
+            margin: auto;
         }
         .letter-header{
             width: 80%;
@@ -89,6 +97,7 @@
             padding: 20px 0;
             width: 80%;
             font-family: "GenJyuuGothic-R";
+            transition: margin .5s;
             p{
                 font-size: 24px;
                 line-height: 2;
@@ -142,5 +151,158 @@
                 }
             }
         }
+    }
+}
+.break-up{
+    border: 12px solid $break;
+    .fa-cloud{
+        color: #79a6cc;
+    }
+    .s-text{
+        color: #79a6cc;
+    }
+}
+.true-love{
+    border: 12px solid $true;
+    .fa-cloud{
+        color: #0abbb5;
+    }
+    .s-text{
+        color: #0abbb5;
+    }
+}
+.hot-love{
+    border: 12px solid $hot;
+    .fa-cloud{
+        color: #db4d6d;
+    }
+    .s-text{
+        color: #db4d6d;
+    }
+}
+.single{
+    border: 12px solid $single;
+    .fa-cloud{
+        color: #f6c555;
+    }
+    .s-text{
+        color: #f6c555;
+    }
+}
+.message-item{
+    width:calc(33.333333% - 50px);
+    box-sizing: border-box;
+    padding: 6px 20px;
+    margin: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    @include rwd(mobile){
+        display: none;
+    }
+    .cloud{
+        position: absolute;
+        top: -7%;
+        right: -7%;
+        .fa-cloud{
+            font-size: 70px;
+        }
+        span{
+            text-align: center;
+            font-family: "A-OTF-M";
+            color: #fff;
+            font-size: 16px;
+            line-height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .message-header{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+        .fa-user-circle{
+            width: 10%;
+            font-size: 30px;
+            color: #f94982;
+        }
+        p{
+            margin-left: auto;
+            width: 85%;
+            font-size: 20px;
+            font-family: "GenJyuuGothic-R";
+        }
+    }
+    .message-body{
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 10px;
+        figure{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        h3{
+            width: 70%;
+            font-size: 20px;
+            line-height: 40px;
+            font-family: "A-OTF-M";
+            margin-left: auto;
+            text-align: justify;
+            span{
+                padding: 0 10px 0 0;
+            }
+        }
+        p{
+            width: 70%;
+            font-family: "A-OTF-M";
+            font-size: 16px;
+            line-height: 32px;
+            margin-left: auto;
+            padding:0 0 10px;
+            text-align: justify;
+        }
+        .s-text{
+            text-align: right;
+        }
+    }
+    .message-footer{
+        margin-top: auto;
+        width: 70%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        button{
+            cursor: pointer;
+            font-family: "A-OTF-M";
+            width: 45%;
+            background-color: #fc7389;
+            border: 3px solid $cofe;
+            border-radius: 30px;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+    }
+}
+.custom-ice{
+    position: absolute;
+    width: 40%;
+    left: -10%;
+    bottom: -5%;
+    img{
+        width: 100%;
     }
 }
