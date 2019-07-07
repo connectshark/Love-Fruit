@@ -1,0 +1,335 @@
+@import "mixin/mixin";
+*{
+    box-sizing: border-box;
+    a{
+        text-decoration: none;
+    }
+}
+
+.page-shop-inside{
+    background: #F8C3CD url(../img/shop/backgroundpic.png);
+    font-family: "GenJyuuGothic-B";
+    .item-detailed{
+        padding-top:120px;
+        padding-bottom:50px; 
+        // padding: 100px 10px 10px 10px;
+    }
+    .detailed-pic{
+        border:5px solid#F6C555;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+        margin: auto;
+        // background-color: ;
+        
+        } 
+    .detailed-ice{
+        display: block;
+        margin: auto;
+        width:90%;
+        padding: 10px;
+    }
+    .collection{
+        width: 100%;
+        display: block;
+        position: absolute;
+        top:10px;
+        right:20px;
+        width: 40px;
+        height: 40px;
+    }
+    .detailed-content{
+        
+        padding: 0px 1%;
+    }
+    .detailed-content-box{
+       background-color:#F6C555;
+       width: 85%;
+       padding: 10px;
+       margin: auto;
+       border-bottom-left-radius: 20px;
+       border-bottom-right-radius: 20px;
+    //    border: 5px solid #F6C555;
+    }
+    .detailed-star,.detailed-text,.detailed-pri,.detailed-button{
+        padding:10px 0px 0px 10px; 
+     
+    }
+    // .detailed-name{
+    //     font-size: 
+    // }
+    .detailed-text{
+        line-height: 25px;
+    }
+    .detailed-pri{
+        font-size: 20px;
+        // text-align:right;
+    }
+    @include btn(detaild-shop-buy,250px,detaild-shop-btn,20px, 加入購物車);
+    .detaild-shop-buy{
+        margin: auto;
+    }
+    .btn-numbox{
+        // margin: auto;
+        width:100px;
+        font-size: 0px;
+        .qty{
+            width: 30%;
+            text-align: center;
+            height: 28px;
+            padding: 0px;
+            border: 0px;
+            @include rwd(mobile){
+                width: 50%;
+            }
+        }
+        .qtyminus{
+            background-color: #6A3E26;
+            border-bottom-left-radius:20px;
+            border-top-left-radius:20px;
+            width: 20%;
+            height:28px; 
+            border:0px; 
+            color:white;
+            padding: 0px;
+            cursor: pointer;
+            @include rwd(mobile){
+                width: 25%;
+            }
+        }
+        .qtyplus{
+            padding: 0px;
+            background-color: #6A3E26;
+            border-bottom-right-radius:20px;
+            border-top-right-radius:20px;
+            width: 20%;
+            height:28px; 
+            border:0px; 
+            color:white;
+            cursor: pointer;
+            @include rwd(mobile){
+                width: 25%;
+            }
+        }
+    }
+    .message-input-box{
+        background-color: #3E556A;
+        border-radius: 20px;
+    }
+    .message-title{
+        text-align: center;
+        padding-bottom: 10px;
+        color:white;
+    }
+    
+    .message-input{
+        height: 160px;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .form-control{
+        width: 100%;
+        // margin: 0 auto 20px auto;
+        border-radius: 10px;
+        resize: none;
+        display: block;
+    }
+    // input[type=text]{
+    //     height:200px;
+    // }
+    .sentout-btn{
+        margin-left:auto; 
+        border-radius: 10px;
+      
+    }
+    .sentout-btn-box{
+          padding-top:10px; 
+    }
+    @include btn(sentout-btn,100px,sentout-btn-in,12px, 送出);
+    .total-review-number{
+        
+        padding:5px 0px 2px 0px; 
+    }
+    .total-review-people{
+        padding-top:10px;
+        border-bottom:1px solid gray;
+        padding-bottom: 10px;
+    }
+
+    .number-name{
+        font-size: 18px;
+        padding: 5px 0px 8px 10px;
+    }
+    .number-pic{
+        img{
+            width: 100%;
+        }
+    }
+    .number-star{
+        font-size: 12px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+    }
+    @include btn(report-sentout-btn,60px,report-sentout-btn-in,12px, 檢舉);
+    .report-sentout-btn{
+        margin-left:auto; 
+    }
+    .report-btn{
+        border-bottom:1px solid gray;
+        padding-bottom: 10px;
+    }
+    .date{
+        font-size: 12px;
+        margin-left:auto; 
+    }
+    .review-text{
+        padding-top:0px; 
+    }
+   
+
+
+
+    // 網頁版
+    @include rwd(desktop){
+        .item-detailed{
+            padding-top:200px;
+            padding-bottom:50px; 
+            // background-color:#FFF4DE;
+            border-radius:20px; 
+            // flex-wrap: wrap;
+            // padding: 100px 10px 10px 10px;
+        }
+        .detaild-img-box{
+            width: 280px;
+            background-color: whitesmoke;
+            border-radius: 20px;
+            margin: auto; 
+
+        }
+        .detailed-pic{
+            border:0px solid#F6C555;
+            background-color: #F6C555;
+            border-top-left-radius:20px;
+            border-top-right-radius:0px;
+            border-bottom-left-radius:20px;
+            margin:0px;
+            padding: 30px; 
+        }
+        // .detailed-content-box{
+        //     height: 100%;
+        //     width:100%;
+        // }
+        .detailed-content{
+            padding: 0px;
+            background-color: #6A3E26;
+            border-top-right-radius:20px;
+            border-bottom-right-radius:20px;
+        }
+        .detailed-ice{
+            display: block;
+            margin: auto;
+            width:100%;
+            padding: 10px;
+        }
+        .collection{
+            width: 100%;
+            display: block;
+            position: absolute;
+            top:10px;
+            right:20px;
+            width: 40px;
+            height: 40px;
+        }
+        .detailed-content{
+
+            padding: 0px;
+        }
+        .detailed-content-box{
+           background-color:#F6C555;
+           width: 100%;
+           padding: 30px;
+           height: 100%;
+           margin-right:auto;
+           border-top-right-radius: 20px;
+           border-bottom-left-radius: 0px;
+           border-bottom-right-radius: 20px;
+        //    border: 5px solid #F6C555;
+        }
+        .detailed-star,.detailed-text,.detailed-pri,.detailed-button{
+            // padding:10px 0px 0px 10px; 
+        }
+        @include btn(detaild-shop-buy,335px,detaild-shop-btn,24px, 加入購物車);
+        .detailed-name{
+            font-size:28px;
+            padding-bottom: 12px; 
+        }
+        .detailed-text{
+            line-height: 25px;
+        }
+        .detailed-pri{
+            font-size: 20px;
+            // text-align:right;
+        }
+        .collection{
+        width: 100%;
+        display: block;
+        position: absolute;
+        top:40px;
+        right:40px;
+        width: 30px;
+        height: 30px;
+        }
+        .btn-numbox{
+            // margin: auto;
+            width:120px;
+            font-size: 0px;
+            padding-bottom:20px; 
+            .qty{
+                width: 30%;
+                text-align: center;
+                height: 28px;
+                padding: 0px;
+                border: 0px;
+                @include rwd(mobile){
+                    width: 50%;
+                }
+            }
+            .qtyminus{
+                background-color: #6A3E26;
+                border-bottom-left-radius:20px;
+                border-top-left-radius:20px;
+                width: 20%;
+                height:28px; 
+                border:0px; 
+                color:white;
+                padding: 0px;
+                cursor: pointer;
+                @include rwd(mobile){
+                    width: 25%;
+                }
+            }
+            .qtyplus{
+                padding: 0px;
+                background-color: #6A3E26;
+                border-bottom-right-radius:20px;
+                border-top-right-radius:20px;
+                width: 20%;
+                height:28px; 
+                border:0px; 
+                color:white;
+                cursor: pointer;
+                @include rwd(mobile){
+                    width: 25%;
+                }
+            }
+        }
+        .number-pic{
+            width:  6.66667%;
+        }
+        .number-name{
+            padding-bottom: 12px; 
+        }
+        .date{
+            text-align: right;
+        }
+    }
+}  

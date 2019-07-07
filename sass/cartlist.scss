@@ -21,6 +21,25 @@
     //     margin: auto;
     //     // display: block;
     // }
+    .dis-mobile-n{
+        @include rwd(mobile){
+        display: none;
+        }
+    }
+    .float{
+        float:left;
+    }
+    .clear{
+        float:both;
+    }
+    .dis-lg-n{
+        @include rwd(desktop){
+            display: none;
+        }
+    }
+    .fw-w{
+        flex-wrap: wrap;
+    }
     .bor-20{
         border-radius: 20px;
     }
@@ -36,33 +55,42 @@
         // }
         .qty{
             // display: inline-block;
-            width: 40%;
+            width: 30%;
             text-align: center;
             height: 28px;
             padding: 0px;
             border: 0px;
+            @include rwd(mobile){
+                width: 27%;
+            }
         }
         .qtyminus{
             background-color: #6A3E26;
             border-bottom-left-radius:20px;
             border-top-left-radius:20px;
-            width: 25%;
+            width: 20%;
             height:28px; 
             border:0px; 
             color:white;
             padding: 0px;
             cursor: pointer;
+            @include rwd(mobile){
+                width: 15%;
+            }
         }
         .qtyplus{
             padding: 0px;
             background-color: #6A3E26;
             border-bottom-right-radius:20px;
             border-top-right-radius:20px;
-            width: 25%;
+            width: 20%;
             height:28px; 
             border:0px; 
             color:white;
             cursor: pointer;
+            @include rwd(mobile){
+                width: 15%;
+            }
         }
     }
     .rela{
@@ -95,6 +123,14 @@
         }
          
     }
+    .flex{
+        display: flex;  
+    }
+    .mol-flex{
+        @include rwd(mobile){
+            display: flex;  
+        }
+    }
     .ai-c{
         align-items: center;
     }
@@ -116,24 +152,193 @@
 
     // 以上共用
     .cart-head{
-        padding-top:200px;
+        padding-top:100px;
+        // height: 50px;;
         max-width: 1200px;
         width: 100%;
         text-align: center;
+        h2{
+            padding-bottom: 20px;
+        }
     }
+    .item-pic{
+        border-bottom: 2px solid black;
+        padding:10px;
+        height: 104px;
+       
+        img{
+            width: 100%;
+        }
+    }
+    .mobile-price{
+        padding:10px;
+        border-bottom: 2px solid black;
+        height: 104px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .cartlist-btn{
+        padding-top:10px; 
+    }
+    .cart-btn{
+        padding-top:20px;
+    }
+    .cart-list-item{
+        background-color: white;
+        border-radius: 20px;
+
+    }
+    .fa-trash{
+        position: absolute;
+        position: absolute;
+        right:20px;
+        top:5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .small-total{
+        padding-top:18px;
+        height: 38px; 
+    }
+    .total-pri{
+        text-align: right;
+    }
+    .continue-shop{
+        margin: auto;
+    }
+    a{
+        text-decoration: none;
+    }
+    .maybe-title{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .news-item{
+        background-color: #FFF4DE;
+        border-radius: 20px;
+        width: 50%;
+    }
+    .newpic{
+        width: 30%;
+        margin: auto;
+        padding-top:30px; 
+        
+        img{
+            width: 100%;
+        }
+        .new-collection-love{
+        display: block;
+        width: 11%;
+        height: 9%;
+        position: absolute;
+        right: 8px;
+        top:30px;
+            }  
+        }
+        .new-name,.new-pic{
+        text-align: center;
+        padding: 5px 0px;
+        }
+        .cart-btn{
+            text-align: center;
+            padding-bottom: 80px;
+        }
+        .left-arrow{
+            position: absolute;
+            display: inline-block;
+            width: 20px;
+            height: 30px;
+            top:15%;
+            left:30px;
+    
+           }
+           .right-arrow{
+            position: absolute;
+            display: inline-block;
+            width: 20px;
+            height: 30px;
+            top:15%;
+            right:30px;
+           }
+    .pay-transport-title{
+        padding-bottom: 20px;
+    }
+    .pay-transport{
+        background-color: white;
+        border-radius: 20px;
+    }
+    .pay-transport-btn{
+        font-size: 0px;
+        border-bottom: 1px solid #FAD689;
+    }
+    .pay,.transport{
+    background-color: #FAD689;
+    border: 2px solid #FAD689;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #282828;
+    height: 30px;
+    &:hover{
+        background-color: #FFB11B;
+    }
+    }
+    .transport-check,.onlion-check{
+        font-size: 16px;
+    }
+    @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
+    @include btn(continue-shop,100px,continue-shop-in,16px, 繼續購物);
+    input[type="checkbox"] {
+        display:none;
+    }
+    input[type="checkbox"] + label span {
+        display:inline-block;
+        width:16px;
+        height:16px;
+        cursor:pointer;
+        background: url(../img/shop/circle-regular.svg)       
+    }
+    input[type="checkbox"]:checked + label span {
+        background:url(../img/shop/check-circle-solid.svg)no-repeat;
+    }
+    
+    // 網頁版
     @include rwd(desktop){
+        .cart-head{
+            padding-top:150px;
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
         .cart-column{
             background-color:#FFF8E4;
             border-top-left-radius:10px;
             border-top-right-radius:10px;
             height: 60px;
+            line-height: 50px;
+        }
+        .small-total{
+            padding-top:0px;
+            line-height: 50px;
+        }
+        .unit-price{
+            line-height: 50px;
         }
         .cart-column > div + div {
+            height: 50px;
             border-left: 1px solid black;
         }
         .cart-row > div + div {
             border-left: 1px solid black;
-           
+            height: 50px;
+        }
+        .mobile-price{
+            border-bottom: 0px ;
+            padding:0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
         }
         .cart-row{
              background-color: white;
@@ -142,13 +347,34 @@
                  width: 100%;
              }
         }
+        .cart-list-item{
+            border-radius:0px;
+        }
+        .cartlist-btn{
+            padding-top:0px;
+            line-height: 50px;
+        }
         .fa-trash{
             font-size: 32px;
+            cursor: pointer;
+            position: static;
+            line-height: 50px;
+            // position: absolute;
+            // position: absolute;
+            // right:20px;
+            // top:5px;
+            // font-size: 16px;
+        }
+        .item-pic{
+            border-bottom: 0px ;
         }
         .cart-title{
             // background-color: #6A3E26;
             height: 80px;
             line-height: 80px;
+        }
+        .pay-transport{
+            border-radius:0px;
         }
         .total-pri{
             background-color: white;
@@ -161,10 +387,18 @@
         .cart-btn{
             background-color: white; 
              padding: 10px 0px 30px 0px;
+             a{
+                  margin: auto;
+             }
+            
+            
         }
         
         a{
             text-decoration: none;
+        }
+        .button{
+            margin: auto;
         }
         @include btn(continue-shop,100px,continue-shop-in,16px, 繼續購物);
         .continue-shop-in{
@@ -192,18 +426,21 @@
             background-color: #FFB11B;
         }
        }
-       .transport-check,.onlion-check{
-           height: 20px;
-        //    line-height: 30px;
-        &:before{
-            display: inline-block;
-            content: "";
-            width: 18px;
-            height: 18px;
-            border:2px solid black;
-
-        }
+       .transport-check{
+          line-height: 10px;
        }
+    //    .transport-check,.onlion-check{
+    //        height: 20px;
+    //     //    line-height: 30px;
+    //     &:before{
+    //         display: inline-block;
+    //         content: "";
+    //         width: 18px;
+    //         height: 18px;
+    //         border:2px solid black;
+
+    //     }
+    //    }
        @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
         .maybe-like{
             padding:40px 0px; 
