@@ -134,18 +134,18 @@ body{
                     margin: auto;
                     padding:15px 30px;
                     background-color: #cdb3e5;
-                    border-radius: 10px;
+                    border-radius: 20px;
                     display: flex;
                     flex-wrap: row nowrap;
                     justify-content: space-around;
                     align-items: center;
                     text-align: center;
                     @include rwd(desktop){
-                        width: 60%;
+                        width: 80%;
                      }
             
                 h3{
-                    font: 24px;
+                    font: 24px "A-OTF-M";
                     text-align: center;
                 }
                .filter-item{
@@ -170,7 +170,7 @@ body{
                             transition: .3s;
                         }
                         @include rwd(desktop){
-                            font:18px;
+                            font:18px "A-OTF-M";
                         }
                         @include rwd(mobile){
                             display:none;
@@ -319,13 +319,7 @@ body{
     font-family: "GenJyuuGothic-R";
 
     .inner-wrapper{
-        .bubble{
-        background-color: $deep-purple;
-        opacity: .5;
-        z-index:-1;
-        position: absolute;
-        border-radius: 100%;
-        }
+        
         margin-top: -2px;
         background-color:$light-yellow ;
         width: 100%;
@@ -451,5 +445,15 @@ body{
                 border-radius:0 10px 10px 0; 
             }
         }
+
+        
+            .bubble{
+            background-color: $deep-purple;
+            opacity: .5;
+            position: absolute;
+            border-radius: 100%;
+            }
+        
+        
     }
 }

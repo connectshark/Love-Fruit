@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/common.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
@@ -105,8 +106,7 @@
     </section>
 
     <section class="inner-wrapper">
-
-    
+  
       <div class="title-box">
         <div class="before">
           <div class="img"><img src="img/btn/ICE.png" alt=""></div>
@@ -150,6 +150,7 @@
           <p>暑假檔期</p>
         </div>
       </div>
+
     </section>
 
   </section>
@@ -158,39 +159,7 @@
     <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
   </footer>
   <script src="js/nav.js"></script>
-  <script >
-//泡泡飛
-var screenWidth = window.screen.width;
-if (screenWidth >=768){ //手機不執行
-	for (var i = 0; i < 15; i++){ //泡泡數量
-			var bubDiv = document.createElement('div');
-			bubDiv.className = 'bubble'; //泡泡的class名稱 
-			var bubSize = Math.random() * 50 + 20 + 'px';
-			bubDiv.style.width = bubSize;
-			bubDiv.style.height = bubSize;
-			bubDiv.style.bottom = "100px";
-			bubDiv.style.left = Math.random() * document.body.offsetWidth + 'px';
-			// console.log(d.style.bottom);
-			// console.log(bubDiv.style.left);
-			$(bubDiv).appendTo(".inner-wrapper"); //把泡泡加到哪個div內
-			Animate(bubDiv);
-		}
-		function Animate(bubSize) {
-		  $(bubSize).animate({
-		  //結束位置
-		  bottom:'100%',
-          left: '+=' + ((Math.random() * 100) - 50) + 'px'},
-          Math.random() * 2000 + 3500,
-          'linear', 
-		  function() {
-		  //start
-		   bubSize.style.bottom = '0%';
-		   Animate(bubSize)});
-        }
-}     
-
-
-  </script>
+  <script src="js/news.js" ></script>
 </body>
 
 </html>
