@@ -223,7 +223,10 @@ $deep-pink:#db4d6d;
 }
 //一般課程-留言板
 .message-cloud{
-    height: 500px;
+    height: 200px;
+        @include rwd(medium){
+             height: 400px;
+        }
     background:$bg-pink url(../img/course/cloud-message.png) bottom center no-repeat;
     background-size: contain;
    
@@ -246,48 +249,48 @@ $deep-pink:#db4d6d;
         }
     }
     .leave-message{
-        background-color: $deep-pink;
-        border-radius: 10px;
+        margin: 30px;
+        padding: 20px 30px;
         width: 70%;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        background-color: $deep-pink;
         margin: 20px auto;
-        padding: 20px 0;
-        .message-meb{ 
-            float: left;
-            text-align: center;
-            padding-right: 20px;
-            i{
-                color: #fff;
-                font-size: 50px;
+            .message-meb{ 
+                text-align: center;
+                line-height: 1.5;
+                i{
+                    color: #fff;
+                    font-size: 50px;
+                }
+                p{
+                    font-size: 18px;
+                    color: #fff;
+                }
             }
-            p{
-                font-size: 18px;
-                color:$font-gray;
+            .balloons{
+                textarea{
+                    width: 90%;
+                    font-size: 16px;
+                    border-radius: 20px;
+                    border: 3px solid #6a3e26;
+                    padding: 10px;
+                    height: 200px;
+                    line-height: 1.5;
+                    resize: none;
+                }
             }
-            span{
-                font-size: 16px;
-                color:$font-gray;
-            }
-        }
-        .balloons{
-            width: 100%;
-            margin: auto;
-            textarea{
-                border-radius: 10px;
-                border: none;
-                font-size: 16px;
-                padding: 10px;
-            }
-
-        }
-        .message-btn{
-            padding-top: 20px;
-            
-            .message-btn-out{
-                width: 100%;
-                margin: auto;
-            }
+            .message-btn{
+                padding-top: 20px;
+                .message-btn-out{
+                    width: 100%;
+                    margin: auto;
+                }
             @include btn(message-btn-out,135px,message-btn-in,20px, 我要留言);
-        }
+            }
     }
 }
 
@@ -743,7 +746,8 @@ $deep-pink:#db4d6d;
 
 }
 //揪團留言板
-.group-message-wrap{
+.group-message-wrap{ 
+    background-color: $bg-light-yellow;
     .group-message-cloud{
         height: 200px;
         @include rwd(medium){
@@ -751,22 +755,77 @@ $deep-pink:#db4d6d;
         }
         background:#9dc5f6 url(../img/course/course-Wcloud.png) bottom center no-repeat;
         background-size: contain;
-    }
-   
-        background-color: $bg-light-yellow;
-        .title-box{
-            text-align: center;
-            @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
-            h3{
-                font-family: A-OTF-M ;
-            }
-            span{
-                text-align: center;
-                font-size: 18px;
-                color: $font-gray;
-                font-family: A-OTF-M ;
-                line-height: 32px;
-            }
+     }
+
+    .title-box{
+        text-align: center;
+        @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
+        h3{
+            font-family: A-OTF-M ;
         }
+        span{
+            text-align: center;
+            font-size: 18px;
+            color: $font-gray;
+            font-family: A-OTF-M ;
+            line-height: 32px;
+        }
+    }
     
+    .group-message{
+        max-width: 1200px;
+        margin: auto;
+        .open-group{
+            margin: 30px;
+            padding: 20px 30px;
+            background-color: $bg-medium-yellow;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            p{
+                font-size: 20px;
+                color:$font-gray;
+            }
+            .message-meb{
+                text-align: center;
+                line-height: 30px;
+                i{
+                    color: #fff;
+                    font-size: 50px;
+                }
+            }
+            .write-area{
+                line-height: 2;
+                input{
+                    width: 90%;
+                    font-size: 16px;
+                    border-radius: 20px;
+                    border: 3px solid #6a3e26;
+                    padding: 10px;
+                }
+                textarea{
+                    width: 90%;
+                    font-size: 16px;
+                    border-radius: 20px;
+                    border: 3px solid #6a3e26;
+                    padding: 10px;
+                    height: 200px;
+                    line-height: 1.5;
+                    resize: none;
+                }
+            }
+            .message-btn{
+                padding-top: 20px;
+                
+                .message-btn-out{
+                    width: 100%;
+                    margin: auto;
+                }
+                @include btn(message-btn-out,135px,message-btn-in,20px, 我要留言);
+            }
+  
+        }
+    }  
 }
