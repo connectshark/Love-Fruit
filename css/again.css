@@ -672,7 +672,7 @@ body {
   margin: auto;
 }
 
-.custom .item-img #latest-collection-love {
+.custom .item-img .latest-collection-love {
   width: 16%;
   height: 8%;
   display: block;
