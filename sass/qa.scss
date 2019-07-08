@@ -17,13 +17,20 @@
 
     .qa{
         padding-top:150px; 
+        position: relative;
+
+        .cloud{
+            display: none;
+        }
+
+
 
         .title-main{
             width: 90%;
             height: 150px;
             margin: auto;
             padding: 50px 0;
-            background: url(../img/qa/title.png) center center no-repeat;
+            background: url(../img/qa/title02.png) center center no-repeat;
             background-size: contain;
             text-align: center;
             
@@ -124,7 +131,8 @@
 
         .content{
             background-color: #fff8e4;
-            padding: 10px;
+            padding: 20px;
+            border-radius: 10px;
 
             .mainhead{
                 width: 100%;
@@ -188,32 +196,78 @@
             .desc{
                 text-align: justify;
                 margin-bottom: 20px;
-                font-size: 16px;
-                line-height: 20px;
+                font-size: 18px;
+                line-height: 24px;
             }
             .element-group{
-                margin-bottom: 20px;
-            }
+                margin-bottom: 30px;
 
-            .element{
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #fff;
-                border-radius: 50%;
-                border: 2px solid #6a3e26;
+                .element{
+                    display: inline-block;
+                    width: 75px;
+                    height: 75px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    border: 2px solid #6a3e26;
+                    font-size: 0;
+                    margin-right: 20px;
+                    position: relative;
 
-                img{
-                    width: 100%;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    
+                    &:hover .fruit-desc{
+                        display: block;
+                    }
+    
+                    .img-fruit{
+                        margin-bottom: 20px;
+
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .fruit-desc{
+                        display: none;
+                        padding: 10px;
+                        background-color: #0abbb5;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 18px;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+        
+                        &::before{
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            border: 10px solid #0abbb5;
+                            border-left-color: transparent;
+                            border-right-color: transparent;
+                            border-top-color: transparent;
+                            position: absolute;
+                            top: -20px;
+                            left: calc(50% - 10px) ;
+                        }
+                    }              
+    
                 }
             }
+            
+            
+            
+
+            @include ice-btn(ice-btn-out,150px,btn-costum,24px,30px,去客製);
             .ice-btn-out{
-                margin-bottom: 10px;
-                @include ice-btn-out(150px,btn-costum,white,24px,4px,#6a3e26,去客製);
+                margin: auto;
+
                 .btn-costum{
-                    line-height: 30px;
+                    line-height: 24px;
                 }
-                
             }
             
         }
@@ -294,7 +348,70 @@
     @include rwd(medium){
     
             .qa{
-                padding-top:300px; 
+                padding-top:200px; 
+
+                .cloud{
+                    display: block;
+                    position: absolute;
+                }
+                .cloud:nth-child(0n + 1){
+                    width: 10%;
+                    top: 40%;
+                    animation: clouda 50s linear 0s infinite alternate;
+                }
+                .cloud:nth-child(0n + 2){
+                    width: 8%;
+                    top: 70%;
+                    left: 20%;
+                    animation: clouda 60s linear 0s infinite alternate;
+                }
+                .cloud:nth-child(0n + 3){
+                    width: 5%;
+                    right: 10%;
+                    top: 20%;
+                    animation: cloudb 60s linear 0s infinite alternate;
+                }
+                .cloud:nth-child(0n + 4){
+                    right: 10%;
+                    top: 50%;
+                    animation: cloudb 60s linear 0s infinite alternate;
+                }
+                .cloud:nth-child(0n + 5){
+                    width: 7%;
+                    right: 20%;
+                    top: 80%;
+                    animation: cloudb 60s linear 0s infinite alternate;
+                }
+        
+                @keyframes clouda {
+                    0% {
+                      transform: translateX(0);
+                      opacity: 1;
+                    }
+                    50% {
+                      transform: translateX(500%);
+                      opacity: 0.5;
+                    }
+                    100% {
+                      transform: translateX(1000%);
+                      opacity: 1;
+                    }
+                }
+                
+                @keyframes cloudb {
+                    0% {
+                      transform: translateX(100%);
+                      opacity: 1;
+                    }
+                    50% {
+                      transform: translateX(-500%);
+                      opacity: 0.5;
+                    }
+                    100% {
+                      transform: translateX(-1000%);
+                      opacity: 1;
+                    }
+                }
         
                 .title-main{
                     width: 520px;
@@ -367,9 +484,21 @@
             .stage{
                 height: 885px;
     
-                
                 .content{
                     padding: 50px;
+
+                    .ice-btn-out{
+                        margin: 0;
+                        margin-left: auto;
+                    }
+
+                    .element-group{
+        
+                        .element{
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
                 }
             }
         

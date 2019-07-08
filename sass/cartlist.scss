@@ -288,17 +288,20 @@
     }
     @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
     @include btn(continue-shop,100px,continue-shop-in,16px, 繼續購物);
-    input[type="checkbox"] {
+    input[type="radio"] {
         display:none;
     }
-    input[type="checkbox"] + label span {
+    input[type="radio"] + label span {
         display:inline-block;
         width:16px;
         height:16px;
         cursor:pointer;
-        background: url(../img/shop/circle-regular.svg)       
+        background: url(../img/shop/circle-regular.svg);         
     }
-    input[type="checkbox"]:checked + label span {
+    .transport-check{
+        vertical-align:middle; 
+    }
+    input[type="radio"]:checked + label span {
         background:url(../img/shop/check-circle-solid.svg)no-repeat;
     }
     

@@ -86,7 +86,7 @@
   width: 100%;
   max-width: 1200px;
   text-align: center;
-  padding: 5% 0;
+  padding: 5% 0 0;
   margin: auto;
 }
 
@@ -96,11 +96,27 @@
   }
 }
 
-.banner .title h1 {
-  font-family: "A-OTF-M";
+.banner .title .title-img {
+  position: relative;
 }
 
-.banner .title h1 .high {
+.banner .title .title-img img {
+  width: 100%;
+  max-width: 538px;
+}
+
+.banner .title .title-img h1 {
+  line-height: 80px;
+  color: #fff;
+  font: 40px "A-OTF-M";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+}
+
+.banner .title .title-img h1 .high {
   color: #fff;
   font-size: 40px;
   position: relative;
@@ -108,9 +124,9 @@
   text-align: center;
 }
 
-.banner .title h1 .high:after {
+.banner .title .title-img h1 .high:after {
   z-index: -1;
-  content: "告白留言牆";
+  content: "愛的留言";
   position: absolute;
   left: 0;
   top: 0;
@@ -119,8 +135,10 @@
   -webkit-text-stroke: 8px #6a3e26;
 }
 
-.banner .title h1 .high {
-  line-height: 55px;
+@media all and (max-width: 768px) {
+  .banner .title .title-img h1 {
+    font: 24px "A-OTF-M";
+  }
 }
 
 .banner .banner-item-group {
@@ -165,6 +183,8 @@
 
 .banner .banner-item-group .icecream-group .icecream-item-blue img {
   width: 100%;
+  -webkit-animation: rotate 3s alternate infinite;
+          animation: rotate 3s alternate infinite;
 }
 
 .banner .banner-item-group .icecream-group .icecream-item-yellow {
@@ -173,6 +193,12 @@
 
 .banner .banner-item-group .icecream-group .icecream-item-yellow img {
   width: 100%;
+  -webkit-animation: rotate 2.5s alternate infinite -.5s;
+          animation: rotate 2.5s alternate infinite -.5s;
+}
+
+.banner .banner-item-group .fly-item {
+  width: 15%;
 }
 
 @media all and (max-width: 768px) {
@@ -184,6 +210,17 @@
 
 .banner .banner-item-group .fly-item img {
   width: 100%;
+  vertical-align: middle;
+  position: relative;
+  -webkit-animation: UptoDown 2s infinite alternate linear;
+          animation: UptoDown 2s infinite alternate linear;
+}
+
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .fly-item img {
+    -webkit-animation: LtoR 15s infinite linear -5s;
+            animation: LtoR 15s infinite linear -5s;
+  }
 }
 
 .btn {
@@ -300,7 +337,7 @@
 }
 
 .btn .btn-group .leave-message {
-  width: 20%;
+  width: 200px;
   margin-left: auto;
   margin-right: 20px;
   text-decoration: none;
@@ -310,6 +347,7 @@
 @media all and (max-width: 768px) {
   .btn .btn-group .leave-message {
     margin-right: auto;
+    margin-bottom: 15px;
   }
 }
 
@@ -332,9 +370,9 @@
 
 .leave-message {
   display: block;
-  width: 100%;
+  width: 200px;
   padding: 2px;
-  height: 30%;
+  height: 60px;
   border-radius: 40px;
   background-color: white;
   border: 2px solid #715124;
@@ -363,14 +401,14 @@
   display: block;
   color: whitesmoke;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 1.5;
   position: relative;
   padding: 3px;
   z-index: 1;
   text-align: center;
   display: block;
-  width: 92%;
-  height: 23%;
+  width: 184px;
+  height: 46px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;
@@ -389,8 +427,8 @@
   position: absolute;
   top: -7px;
   left: -13px;
-  width: 27%;
-  height: 33.3%;
+  width: 54px;
+  height: 66.6px;
 }
 
 .leave-message .leave-message-btn:after {
@@ -402,21 +440,77 @@
   -webkit-text-stroke: 2px black;
 }
 
-@-webkit-keyframes upDown {
+@-webkit-keyframes rotate {
   0% {
-    height: 100px;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   100% {
-    height: 200px;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
 }
 
-@keyframes upDown {
+@keyframes rotate {
   0% {
-    height: 100px;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   100% {
-    height: 200px;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@-webkit-keyframes UptoDown {
+  0% {
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  100% {
+    -webkit-transform: translate(0, -10%);
+            transform: translate(0, -10%);
+  }
+}
+
+@keyframes UptoDown {
+  0% {
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  100% {
+    -webkit-transform: translate(0, -10%);
+            transform: translate(0, -10%);
+  }
+}
+
+@-webkit-keyframes LtoR {
+  0% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 20%);
+            transform: translate(-100%, 20%);
+  }
+  100% {
+    -webkit-transform: translate(200%, 0);
+            transform: translate(200%, 0);
+  }
+}
+
+@keyframes LtoR {
+  0% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 20%);
+            transform: translate(-100%, 20%);
+  }
+  100% {
+    -webkit-transform: translate(200%, 0);
+            transform: translate(200%, 0);
   }
 }
 
@@ -583,10 +677,19 @@
 
 .message-bgi .message .message-item .message-body figure {
   width: 100%;
+  padding-bottom: 100%;
+  position: relative;
 }
 
 .message-bgi .message .message-item .message-body figure img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
 }
 
 .message-bgi .message .message-item .message-body h3 {

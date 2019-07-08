@@ -1,11 +1,16 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .aside-button-out-last {
   display: block;
-  width: 120px;
-  height: 36px;
+  width: 100px;
+  padding: 2px;
   border-radius: 40px;
   background-color: white;
-  border: 1.8px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,57 +20,52 @@
   cursor: pointer;
 }
 
-.aside-button-out-last > span {
+.aside-button-out-last .aside-button-in {
   display: block;
-  width: 111.6px;
-  height: 28.8px;
+  color: whitesmoke;
+  font-size: 16px;
+  position: relative;
+  padding: 1px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 100px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 1.8px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
 }
 
-.aside-button-out-last > span:hover {
+.aside-button-out-last .aside-button-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.aside-button-out-last > span:active {
+.aside-button-out-last .aside-button-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.aside-button-out-last .aside-button-in-last {
-  color: #fff;
-  font-size: 8px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 16px;
-}
-
-.aside-button-out-last .aside-button-in-last:after {
+.aside-button-out-last .aside-button-in:after {
   z-index: -1;
   content: "上一步";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px #000;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 
 .aside-button-out-next {
   display: block;
-  width: 120px;
-  height: 36px;
+  width: 100px;
+  padding: 2px;
   border-radius: 40px;
   background-color: white;
-  border: 1.8px solid #715124;
+  border: 2px solid #715124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,47 +75,42 @@
   cursor: pointer;
 }
 
-.aside-button-out-next > span {
+.aside-button-out-next .aside-button-in {
   display: block;
-  width: 111.6px;
-  height: 28.8px;
+  color: whitesmoke;
+  font-size: 16px;
+  position: relative;
+  padding: 1px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 100px;
   border-radius: 20px;
   background-color: #fc7389;
-  border: 1.8px solid #e4575f;
+  border: 2px solid #e4575f;
   text-align: center;
   margin: auto;
   cursor: pointer;
 }
 
-.aside-button-out-next > span:hover {
+.aside-button-out-next .aside-button-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.aside-button-out-next > span:active {
+.aside-button-out-next .aside-button-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.aside-button-out-next .aside-button-in-next {
-  color: #fff;
-  font-size: 8px;
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  line-height: 16px;
-}
-
-.aside-button-out-next .aside-button-in-next:after {
+.aside-button-out-next .aside-button-in:after {
   z-index: -1;
-  content: "上一步";
+  content: "下一步";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 2px #000;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
 }
 /*# sourceMappingURL=custombtn.css.map */
