@@ -7,14 +7,16 @@ $font-gray:#434343;
 
 *{
     box-sizing: border-box;
-    text-decoration: none;
-    font-family: "GenJyuuGothic-R";
+    text-decoration: none;  
     // outline: 1px solid #f00;
+}
+body{
+    font-family: "GenJyuuGothic-R";
 }
 .news-wrap,.news-inner-wrap{
     .banner{
         background-color: $light-purple;
-        background-image:url(../img/news/cloudNews.png),url(../img/qa/cover.png);
+        background-image:url(../img/news/news-bn-cloud.png),url(../img/background.png);
         background-repeat: no-repeat,repeat;
         background-position:  bottom center, bottom center;
         background-size: 100%,auto;
@@ -22,14 +24,14 @@ $font-gray:#434343;
         padding-top: 50px;
     
         .title{
+            @include out-Line-Font(news,#fff,34,5px,#6a3e26,最新消息);
             width: 100%;
             max-width: 1200px;
             text-align: center;
-            padding: 23% 0 ;
+            padding-top: 23% ;
             margin: auto;
             @include rwd(medium){
-                padding: 150px 0 ;
-                
+                padding: 130px 0 ;  
             }
             .img-bg{
                 position: relative;  
@@ -59,36 +61,61 @@ $font-gray:#434343;
     }
     .air-ball{
         max-width: 1200px;
+        height: 270px;
         margin: auto;
         display: flex;
         justify-content: space-between;
-        padding: 10%;
-     
+        padding:0 3% 5%;
+        @include rwd (medium){
+            padding-bottom: 5%;
+           }
+        
         img{
-            animation: air-ball-active 2s infinite alternate;
+         height:80%;
+            position: relative;
+            animation: air-ball-active 2.5s infinite alternate;
            &:first-child{
+            transform: scale(.8); 
                 @include rwd (medium){
                 transform: scale(1.5); 
                }
            }
            &:last-child{
-            transform: scale(.5) rotate(25deg); 
+            transform: scale(.4) rotate(25deg); 
                 @include rwd (medium){
                     transform: scale(1)rotate(25deg); 
                 }
            }
         }
+        .apple-ball{
+            height:80%;
+            position: relative;
+            animation: air-ball-active 2.5s infinite alternate;
+           &:first-child{
+            transform: scale(.8) rotate(-25deg); 
+                @include rwd (medium){
+                transform: scale(1.5)rotate(-25deg); 
+               }
+           }
+           &:last-child{
+            transform: scale(.5) rotate(13deg); 
+                @include rwd (medium){
+                    transform: scale(1)rotate(13deg); 
+                }
+            }
+
+        }
     }
     @keyframes air-ball-active {
         0%{
-            top:50px;
+            top:0px;
           }
           50%{
-            top:80px; 
+            top:20px; 
           }
          
           100%{
-            top:50px;
+            top:0px;
           }
     }
 }
@@ -107,18 +134,18 @@ $font-gray:#434343;
                     margin: auto;
                     padding:15px 30px;
                     background-color: #cdb3e5;
-                    border-radius: 10px;
+                    border-radius: 20px;
                     display: flex;
                     flex-wrap: row nowrap;
                     justify-content: space-around;
                     align-items: center;
                     text-align: center;
                     @include rwd(desktop){
-                        width: 60%;
+                        width: 80%;
                      }
             
                 h3{
-                    font: 24px;
+                    font: 24px "A-OTF-M";
                     text-align: center;
                 }
                .filter-item{
@@ -143,7 +170,7 @@ $font-gray:#434343;
                             transition: .3s;
                         }
                         @include rwd(desktop){
-                            font:18px;
+                            font:18px "A-OTF-M";
                         }
                         @include rwd(mobile){
                             display:none;
@@ -160,7 +187,7 @@ $font-gray:#434343;
                 
                 .mobile{
                     select{
-                        border: #6a3e26 solid 5px;
+                        border: #6a3e26 solid 3px;
                         width: 150px;
                         height: 50px;
                         padding: 3px;
@@ -292,6 +319,7 @@ $font-gray:#434343;
     font-family: "GenJyuuGothic-R";
 
     .inner-wrapper{
+        
         margin-top: -2px;
         background-color:$light-yellow ;
         width: 100%;
@@ -417,5 +445,15 @@ $font-gray:#434343;
                 border-radius:0 10px 10px 0; 
             }
         }
+
+        
+            .bubble{
+            background-color: $deep-purple;
+            opacity: .5;
+            position: absolute;
+            border-radius: 100%;
+            }
+        
+        
     }
 }
