@@ -1,5 +1,7 @@
 var nowFlow = 1;
-fruite = []
+fruiteName = ['greenapple','banana','blueberry','orange','grape','streberry'];
+fruiteColor = ['green','yellow','blue','orange','purple','red'];
+gradint=[];
 function flowChange(now) {
 	if (now < 1) {
 		now = 1;
@@ -62,6 +64,9 @@ function imgChange(){
 function fruiteChange() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
+	var number = $(this).index('.fruite-item');
+	gradint.push(fruiteColor[number]);
+	console.log(gradint);
 	$('.fruite-item').children('figure').css('backgroundColor','#f596aa');
 	$(this).children('figure').css('backgroundColor','#db4d6d');
 	// 選兩個內容
@@ -72,7 +77,6 @@ function fruiteChange() {
 	} else {
 		$("input[name='fruite[]']").attr('disabled', false);
 	}
-	num = $("input[name='fruite[]']").index();
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
