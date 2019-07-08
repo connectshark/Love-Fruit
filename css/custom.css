@@ -588,3 +588,8 @@ body{
 		margin-top: auto;
 	}
 }
+.custom-box{
+	position: absolute;
+	z-index: 2;
+	opacity: 1;
+}

@@ -1,4 +1,5 @@
 var nowFlow = 1;
+fruite = []
 function flowChange(now) {
 	if (now < 1) {
 		now = 1;
@@ -61,7 +62,17 @@ function imgChange(){
 function fruiteChange() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
-
+	$('.fruite-item').children('figure').css('backgroundColor','#f596aa');
+	$(this).children('figure').css('backgroundColor','#db4d6d');
+	// 選兩個內容
+	$("input[name='fruite[]']").attr('disabled', true);
+	var checked = $("input[name='fruite[]']:checked").length;
+	if (checked >= 2) {
+		$("input[name='fruite[]']:checked").attr('disabled', false);
+	} else {
+		$("input[name='fruite[]']").attr('disabled', false);
+	}
+	num = $("input[name='fruite[]']").index();
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
