@@ -10,6 +10,7 @@ body{
 //共用區
 $bg-pink:#ffd9d9;
 $bg-yellow:#f6c555;
+$bg-medium-yellow:#fad689;
 $bg-light-yellow:#fff8e4;
 $bg-blue:#c9fcfb;
 $font-gray:#434343;
@@ -101,16 +102,13 @@ $deep-pink:#db4d6d;
 //一般課程
 .general-wrap{
     background-color: $bg-pink;
-
-    
     .wrapper{
-        padding-top: 100px;
+        padding-top: 130px;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
                 padding-top: 200px;
         }
-
     }
     .general-ribbon{
          margin: auto;
@@ -615,4 +613,160 @@ $deep-pink:#db4d6d;
             @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,  確認預約);
         }
     }   
+}
+
+//揪團課程
+.group-wrap{
+    background-color: #9dc5f6 ;
+
+    .wrapper{
+        padding-top: 100px;
+        max-width: 1200px;
+        margin: auto;
+        @include rwd(desktop){
+                padding-top: 200px;
+        }
+        .group-ribbon{
+            margin: auto;
+            background: url(../img/ribbon.png)center center no-repeat;
+            background-size: contain;
+            text-align: center;
+            height: 150px;
+            width: 100%;    
+            padding: 45px 0;
+            @include rwd(medium){  
+               width: 500px;
+               height: 150px;
+               padding: 30px 0;
+            }  
+               .subtitle{
+               font-size: 13px;
+               color: $font-gray;
+               line-height: 26px;
+                    @include rwd(medium){  
+                    font-size: 18px;
+                    color: $font-gray;
+                    line-height: 32px;
+                    }
+           }
+               @include out-Line-Font(title,#fff,24px,3px,#6a3e26,揪團課程);
+               @include rwd(medium){ 
+                   @include out-Line-Font(title,#fff,40px,5px,#6a3e26,揪團課程);
+               }
+       }
+        .kanban{
+            width: 90%;
+            margin: auto;
+            @include rwd(medium){
+                  width: 70%;
+                  padding: 30px;
+                  margin: auto;
+            }
+            .gift{
+                top:2px;
+                img{
+                    width: 100%;
+                }
+                text-align:center; 
+                position: relative;
+                span{
+                    width: 100%;
+                    font-size:18px;
+                    display: inline-block;
+                    color: #fff;
+                    position:absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,70%);
+                    @include rwd(medium){
+                        font-size: 32px;  
+                        transform: translate(-50%,110%);
+                    }
+                }
+            }
+        }   
+ 
+        .content-box{
+            padding-top: 30px;
+            border: $bg-medium-yellow solid 5px;
+            border-radius: 10px;
+            background-color: #fff;
+            @include rwd(medium){
+                display: flex;
+                flex-flow: row wrap; 
+            }
+            .diy-img{
+                img{
+                    @include rwd(mobile){
+                    width: 80%;
+                    margin: auto;
+                    } 
+                }
+                text-align: center;
+            }
+            .info-title{
+                width: 80%;
+                margin: auto;
+                text-align: center;
+                border-bottom: $bg-medium-yellow solid 2px;
+                h4{
+                font:20px "A-OTF-M";
+               }
+            }
+            .info-dec{
+                width: 75%;
+                margin: auto;
+                li{
+                    font-size: 18px;
+                    font-family: "GenJyuuGothic-B";
+                    padding:10px 0 5px;
+                }
+                p{
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    line-height: 15px;
+                    @include rwd(desktop){
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }  
+            }
+            .course-btn{
+                padding: 20px;
+                .course-ice-btn-out{
+                    margin: auto;
+                }
+            }
+            @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,20px,20px, 我要預約);
+        }
+    }
+
+}
+//揪團留言板
+.group-message-wrap{
+    .group-message-cloud{
+        height: 200px;
+        @include rwd(medium){
+             height: 400px;
+        }
+        background:#9dc5f6 url(../img/course/course-Wcloud.png) bottom center no-repeat;
+        background-size: contain;
+    }
+   
+        background-color: $bg-light-yellow;
+        .title-box{
+            text-align: center;
+            @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
+            h3{
+                font-family: A-OTF-M ;
+            }
+            span{
+                text-align: center;
+                font-size: 18px;
+                color: $font-gray;
+                font-family: A-OTF-M ;
+                line-height: 32px;
+            }
+        }
+    
 }

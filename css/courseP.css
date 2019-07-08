@@ -157,7 +157,7 @@ body {
 }
 
 .general-wrap .wrapper {
-  padding-top: 100px;
+  padding-top: 130px;
   max-width: 1200px;
   margin: auto;
 }
@@ -1077,5 +1077,331 @@ body {
   left: 0px;
   right: 0px;
   -webkit-text-stroke: 2px black;
+}
+
+.group-wrap {
+  background-color: #9dc5f6;
+}
+
+.group-wrap .wrapper {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .group-wrap .wrapper {
+    padding-top: 200px;
+  }
+}
+
+.group-wrap .wrapper .group-ribbon {
+  margin: auto;
+  background: url(../img/ribbon.png) center center no-repeat;
+  background-size: contain;
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  padding: 45px 0;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .group-ribbon {
+    width: 500px;
+    height: 150px;
+    padding: 30px 0;
+  }
+}
+
+.group-wrap .wrapper .group-ribbon .subtitle {
+  font-size: 13px;
+  color: #434343;
+  line-height: 26px;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .group-ribbon .subtitle {
+    font-size: 18px;
+    color: #434343;
+    line-height: 32px;
+  }
+}
+
+.group-wrap .wrapper .group-ribbon .title {
+  color: #fff;
+  font-size: 24px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.group-wrap .wrapper .group-ribbon .title:after {
+  z-index: -1;
+  content: "揪團課程";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .group-ribbon .title {
+    color: #fff;
+    font-size: 40px;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+  }
+  .group-wrap .wrapper .group-ribbon .title:after {
+    z-index: -1;
+    content: "揪團課程";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+}
+
+.group-wrap .wrapper .kanban {
+  width: 90%;
+  margin: auto;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .kanban {
+    width: 70%;
+    padding: 30px;
+    margin: auto;
+  }
+}
+
+.group-wrap .wrapper .kanban .gift {
+  top: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.group-wrap .wrapper .kanban .gift img {
+  width: 100%;
+}
+
+.group-wrap .wrapper .kanban .gift span {
+  width: 100%;
+  font-size: 18px;
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 70%);
+          transform: translate(-50%, 70%);
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .kanban .gift span {
+    font-size: 32px;
+    -webkit-transform: translate(-50%, 110%);
+            transform: translate(-50%, 110%);
+  }
+}
+
+.group-wrap .wrapper .content-box {
+  padding-top: 30px;
+  border: #fad689 solid 5px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .content-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
+.group-wrap .wrapper .content-box .diy-img {
+  text-align: center;
+}
+
+@media all and (max-width: 768px) {
+  .group-wrap .wrapper .content-box .diy-img img {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.group-wrap .wrapper .content-box .info-title {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  border-bottom: #fad689 solid 2px;
+}
+
+.group-wrap .wrapper .content-box .info-title h4 {
+  font: 20px "A-OTF-M";
+}
+
+.group-wrap .wrapper .content-box .info-dec {
+  width: 75%;
+  margin: auto;
+}
+
+.group-wrap .wrapper .content-box .info-dec li {
+  font-size: 18px;
+  font-family: "GenJyuuGothic-B";
+  padding: 10px 0 5px;
+}
+
+.group-wrap .wrapper .content-box .info-dec p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 15px;
+}
+
+@media all and (min-width: 992px) {
+  .group-wrap .wrapper .content-box .info-dec p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.group-wrap .wrapper .content-box .course-btn {
+  padding: 20px;
+}
+
+.group-wrap .wrapper .content-box .course-btn .course-ice-btn-out {
+  margin: auto;
+}
+
+.group-wrap .wrapper .content-box .course-ice-btn-out {
+  display: block;
+  width: 135px;
+  padding: 2px;
+  height: 40.5px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.group-wrap .wrapper .content-box .course-ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  line-height: 20px;
+  position: relative;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  cursor: pointer;
+}
+
+.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in:hover {
+  background-color: #FAD689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in > img {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 36.45px;
+  height: 44.955px;
+}
+
+.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in:after {
+  z-index: -1;
+  content: "我要預約";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.group-message-wrap {
+  background-color: #fff8e4;
+}
+
+.group-message-wrap .group-message-cloud {
+  height: 200px;
+  background: #9dc5f6 url(../img/course/course-Wcloud.png) bottom center no-repeat;
+  background-size: contain;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .group-message-cloud {
+    height: 400px;
+  }
+}
+
+.group-message-wrap .title-box {
+  text-align: center;
+}
+
+.group-message-wrap .title-box .message-title {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.group-message-wrap .title-box .message-title:after {
+  z-index: -1;
+  content: "開團留言板";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 8px #db4d6d;
+}
+
+.group-message-wrap .title-box h3 {
+  font-family: A-OTF-M;
+}
+
+.group-message-wrap .title-box span {
+  text-align: center;
+  font-size: 18px;
+  color: #434343;
+  font-family: A-OTF-M;
+  line-height: 32px;
 }
 /*# sourceMappingURL=courseP.css.map */
