@@ -2,6 +2,7 @@
 *{
     // outline: #f00 solid 1px;
     text-decoration: none;  
+    box-sizing: border-box;
 }
 body{
     font-family: "GenJyuuGothic-R";
@@ -13,13 +14,7 @@ $bg-light-yellow:#fff8e4;
 $bg-blue:#c9fcfb;
 $font-gray:#434343;
 $deep-pink:#db4d6d;
-.welcome-wrap,.general-wrap{
-        .wrapper{
-        padding: 150px 0;
-        max-width: 1200px;
-        margin: auto;
-    }
-}
+
 
 
 //歡迎頁
@@ -109,7 +104,7 @@ $deep-pink:#db4d6d;
 
     
     .wrapper{
-        padding: 100px 0;
+        padding-top: 100px;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
@@ -227,4 +222,397 @@ $deep-pink:#db4d6d;
             @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,20px,20px, 我要預約);
         }
     }
+}
+//一般課程-留言板
+.message-cloud{
+    height: 500px;
+    background:$bg-pink url(../img/course/cloud-message.png) bottom center no-repeat;
+    background-size: contain;
+   
+}
+.message-wrap{
+   
+    background-color: $bg-light-yellow;
+    .title-box{
+        text-align: center;
+        @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,課程留言板);
+        h3{
+            font-family: A-OTF-M ;
+        }
+        span{
+            text-align: center;
+            font-size: 18px;
+            color: $font-gray;
+            font-family: A-OTF-M ;
+            line-height: 32px;
+        }
+    }
+    .leave-message{
+        background-color: $deep-pink;
+        border-radius: 10px;
+        width: 70%;
+        margin: 20px auto;
+        padding: 20px 0;
+        .message-meb{ 
+            float: left;
+            text-align: center;
+            padding-right: 20px;
+            i{
+                color: #fff;
+                font-size: 50px;
+            }
+            p{
+                font-size: 18px;
+                color:$font-gray;
+            }
+            span{
+                font-size: 16px;
+                color:$font-gray;
+            }
+        }
+        .balloons{
+            width: 100%;
+            margin: auto;
+            textarea{
+                border-radius: 10px;
+                border: none;
+                font-size: 16px;
+                padding: 10px;
+            }
+
+        }
+        .message-btn{
+            padding-top: 20px;
+            
+            .message-btn-out{
+                width: 100%;
+                margin: auto;
+            }
+            @include btn(message-btn-out,135px,message-btn-in,20px, 我要留言);
+        }
+    }
+}
+
+//一般課程預約表單
+.general-form-wrap{
+    background-color: $bg-pink;
+    background-image: url(../img/background.png);
+    padding-bottom:10%; 
+    .wrapper{
+       
+        padding-bottom:10%; 
+        max-width: 1200px; 
+        padding-top:130px;
+        margin: auto;
+        @include rwd(desktop){
+            padding-top: 150px;
+        }
+        .title{
+           
+            position: relative;
+            text-align:center; 
+            margin: auto;
+            @include rwd(desktop){
+                width: 70%;
+            }
+            img{
+                width: 70%;
+                @include rwd(desktop){
+                    width: 60%;
+                }
+            }
+            h3{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-75%);
+                @include rwd(mobile){
+                    font-size: 20px;
+                  
+                }
+            }
+        }
+        form{
+            padding: 5%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #aaa;
+            margin:  auto ;
+            @include rwd(desktop){
+                width: 70%;
+            }
+            img{
+                width: 20px;
+                margin-right: 5px;
+            }
+            p{
+                font-size: 18px;
+                display: inline-block;
+                color: $font-gray;
+                @include rwd(desktop){
+                    font-size: 24px;
+                }
+                // &::before{
+                //     background-image: url(../img/btn/ICE.png);
+                //     width: 10px;
+                //     height: 10px;
+                // }
+                
+            }
+            .form-info{
+                padding: 0 15px;
+            }
+            .check{
+                padding-bottom: 20px;
+                #course1, #course2,#time1,#time2,#time3,span{
+                    visibility: hidden;
+                }
+                label{
+                    font-size: 18px;
+                    background-color: #fff;
+                    padding: 10px 20px;
+                    vertical-align: middle;
+                    border-radius: 10px;
+                    box-shadow: 2px 2px 2px #888888;
+                }
+                input{
+                    padding:10px;
+                    height: 6%;
+                    border-radius:10px; 
+                    border: none;
+                    font-size: 16px;
+                    &:checked + label {
+                    border: #ffb11b solid 2px;
+                    }
+                    &:checked + label + span{
+                        visibility: visible;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    @include rwd(mobile){
+                        display: block;
+                    }
+                }
+            }
+           
+
+            #date-picker{
+                padding: 10px;
+                margin: 15px;
+                
+                table {
+                    vertical-align: middle;
+                    background-color: #fff;
+                    width: 100%;
+                    margin: auto;
+                    text-align: center;
+                    border-radius:  0 0 10px 10px;
+                    box-shadow: 2px 2px 2px #888888;
+                    #mon{
+                        padding: 20px 0;
+                        background-color:#ea7187;
+                        border-radius: 10px 10px 0 0;
+                        color: #fff;
+                        font-weight: bold;
+                        box-shadow: 2px 2px 2px #888888;
+                    }
+                    th{
+                        padding:60px 0 20px;
+                        color: #ea7187;
+                        font-weight: bold;
+                    }
+                    tr{
+                        width: 100%;
+                        height: 60px;
+                    }
+                    td{
+                        width:14%;
+                        height: 60px;
+                        vertical-align:middle;
+                       
+                    }
+                    .now{
+                        background: #ea7187;
+                        border-radius: 30px;
+                        color: #fff;
+                    }
+                   
+                }
+                    
+            }
+            
+            select{
+                display: block;
+                margin: 20px;
+                width: 40%;
+                height: 6%;
+                border-radius:15px; 
+                border: none;
+                @include rwd(desktop){
+                    width: 15%;
+                }
+            }
+        }
+        .form-btn{
+            padding: 5% 0;
+     .form-ice-btn-out{
+         width: 100%;
+         margin: auto;
+     }
+                @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,確認預約);
+
+        }
+
+    }
+}
+//揪團課程
+
+
+//揪團課程-預約表單
+
+.group-form-wrap{
+    background-color: #fad689;
+    background-image: url(../img/background.png);
+   
+    .wrapper{
+        max-width: 1200px; 
+        padding-top:130px;
+        padding-bottom:10%; 
+        margin: auto;
+        @include rwd(desktop){
+            padding-top: 1ㄓ0px;
+        }
+        .title{
+            padding: 5% 0;
+            position: relative;
+            text-align:center; 
+            margin: auto;
+            @include rwd(desktop){
+                width: 70%;
+            }
+            img{
+                width: 70%;
+                @include rwd(desktop){
+                    width: 60%;
+                }
+            }
+            h3{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-78%);
+                
+                @include rwd(mobile){
+                    font-size: 20px;
+                    transform: translate(-50%,-60%);
+                }
+            }
+        }
+        form{
+            padding: 5%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #aaa;
+            margin: auto;
+            @include rwd(desktop){
+                width: 70%;
+            }
+            > span{
+                font-size: 18px;
+                display: block;
+                padding: 15px;
+                color: $font-gray;
+                @include rwd(desktop){
+                    font-size: 24px;
+                }
+                // &::before{
+                //     background-image: url(../img/btn/ICE.png);
+                //     width: 10px;
+                //     height: 10px;
+                // }
+                img{
+                    width: 20px;
+                    margin-right: 5px;
+                }
+            }
+
+            input{
+               
+                padding: 20px;
+              
+                width: 100%;
+                height: 6%;
+              
+                font-size: 18px;
+                border-radius: 20px;
+                border: 3px solid #6a3e26;
+                margin: 10px 0;
+           
+            }
+
+            #date-picker{
+           
+                margin: 10px 0;
+                border-radius: 20px;
+                border: 5px solid $bg-yellow;
+                table {
+                    vertical-align: middle;
+                    background-color: #fff;
+                    width: 100%;
+                    // height: 200px;
+                    margin: auto;
+                    text-align: center;
+                    border-radius:  0 0 10px 10px;
+                    #mon{
+                        padding: 20px 0;
+                        background-color:$bg-yellow;
+                        border-radius: 10px 10px 0 0;
+                        color: #fff;
+                        font-weight: bold;
+                    }
+                    th{
+                        padding:60px 0 20px;
+                        color: #ffb11b;
+                    }
+                    tr{
+                        width: 100%;
+                        height: 60px;
+                    }
+                    td{
+                        width:14%;
+                        height: 60px;
+                        vertical-align:middle;
+                       
+                    }
+                    .now{
+                        background: #ffb11b;
+                        border-radius: 30px;
+                        color: #fff;
+                    }
+                   
+                }
+                    
+            }
+            
+            select{
+                border: 3px solid #6a3e26;
+                display: block;
+                margin: 10px 0;
+                height: 40px;
+                @include rwd(desktop){
+                    width: 15%;
+                }
+            }
+        }
+        .form-btn{
+            padding: 5% 0;
+            .form-ice-btn-out{
+                 width: 90%;
+            margin: auto;
+            }
+           
+            @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,  確認預約);
+        }
+    }   
 }

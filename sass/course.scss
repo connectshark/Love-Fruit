@@ -2,6 +2,7 @@
 *{
     // outline: #f00 solid 1px;
     text-decoration: none;  
+    box-sizing: border-box;
 }
 body{
     font-family: "GenJyuuGothic-R";
@@ -564,19 +565,22 @@ $font-gray:#434343;
             @include ice-btn(form-btn-out,135px,form-btn-in,18px,18px,主揪申請);
        }
 }
-//預約表單-一般
+//一般課程預約表單
 .general-form-wrap{
     background-color: $bg-pink;
     background-image: url(../img/background.png);
+    padding-bottom:10%; 
     .wrapper{
+       
+        padding-bottom:10%; 
         max-width: 1200px; 
-        padding-top:20%;
+        padding-top:130px;
         margin: auto;
         @include rwd(desktop){
-            padding-top: 15%;
+            padding-top: 150px;
         }
         .title{
-            padding: 5% 0;
+           
             position: relative;
             text-align:center; 
             margin: auto;
@@ -593,16 +597,19 @@ $font-gray:#434343;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-78%);
-                
+                transform: translate(-50%,-75%);
                 @include rwd(mobile){
                     font-size: 20px;
-                    transform: translate(-50%,-60%);
+                  
                 }
             }
         }
         form{
-            margin: auto;
+            padding: 5%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #aaa;
+            margin:  auto ;
             @include rwd(desktop){
                 width: 70%;
             }
@@ -740,10 +747,11 @@ $font-gray:#434343;
    
     .wrapper{
         max-width: 1200px; 
-        padding-top:30%;
+        padding-top:130px;
+        padding-bottom:10%; 
         margin: auto;
         @include rwd(desktop){
-            padding-top: 20%;
+            padding-top: 1ㄓ0px;
         }
         .title{
             padding: 5% 0;
@@ -772,6 +780,10 @@ $font-gray:#434343;
             }
         }
         form{
+            padding: 5%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px #aaa;
             margin: auto;
             @include rwd(desktop){
                 width: 70%;
@@ -796,17 +808,24 @@ $font-gray:#434343;
             }
 
             input{
-                padding: 0 10px;
+               
+                padding: 20px;
+              
                 width: 100%;
                 height: 6%;
-                border-radius:10px; 
-                border: none;
+              
+                font-size: 18px;
+                border-radius: 20px;
+                border: 3px solid #6a3e26;
                 margin: 10px 0;
-                font-size: 16px;
+           
             }
 
             #date-picker{
-                padding: 10px 0;
+           
+                margin: 10px 0;
+                border-radius: 20px;
+                border: 5px solid $bg-yellow;
                 table {
                     vertical-align: middle;
                     background-color: #fff;
@@ -847,12 +866,10 @@ $font-gray:#434343;
             }
             
             select{
+                border: 3px solid #6a3e26;
                 display: block;
                 margin: 10px 0;
-                width: 40%;
-                height: 6%;
-                border-radius:15px; 
-                border: none;
+                height: 40px;
                 @include rwd(desktop){
                     width: 15%;
                 }
@@ -860,9 +877,12 @@ $font-gray:#434343;
         }
         .form-btn{
             padding: 5% 0;
-            width: 90%;
+            .form-ice-btn-out{
+                 width: 90%;
             margin: auto;
-            @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,我要預約);
+            }
+           
+            @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,  確認預約);
         }
     }   
 }
