@@ -216,6 +216,13 @@
           animation: UptoDown 2s infinite alternate linear;
 }
 
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .fly-item img {
+    -webkit-animation: LtoR 15s infinite linear -5s;
+            animation: LtoR 15s infinite linear -5s;
+  }
+}
+
 .btn {
   background-color: #fff8e4;
 }
@@ -474,6 +481,36 @@
   100% {
     -webkit-transform: translate(0, -10%);
             transform: translate(0, -10%);
+  }
+}
+
+@-webkit-keyframes LtoR {
+  0% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 20%);
+            transform: translate(-100%, 20%);
+  }
+  100% {
+    -webkit-transform: translate(200%, 0);
+            transform: translate(200%, 0);
+  }
+}
+
+@keyframes LtoR {
+  0% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 20%);
+            transform: translate(-100%, 20%);
+  }
+  100% {
+    -webkit-transform: translate(200%, 0);
+            transform: translate(200%, 0);
   }
 }
 

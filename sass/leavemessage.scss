@@ -129,6 +129,9 @@ $cofe:#6a3e26;
 				vertical-align: middle;
 				position: relative;
 				animation: UptoDown 2s infinite alternate linear;
+				@include rwd(mobile){
+					animation: LtoR 15s infinite linear -5s;
+				}
 			}
 		}
 	}
@@ -238,6 +241,17 @@ $cofe:#6a3e26;
 	}
 	100%{
 		transform: translate(0,-10%);
+	}
+}
+@keyframes LtoR{
+	0%{
+		transform: translate(-200%,0);
+	}
+	25%{
+		transform: translate(-100%,20%);
+	}
+	100%{
+		transform: translate(200%,0);
 	}
 }
 .message-bgi{
