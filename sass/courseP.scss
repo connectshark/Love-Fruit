@@ -1,0 +1,101 @@
+@import "mixin/mixin";
+*{
+    // outline: #f00 solid 1px;
+    text-decoration: none;  
+}
+body{
+    font-family: "GenJyuuGothic-R";
+}
+//共用區
+$bg-pink:#ffd9d9;
+$bg-yellow:#f6c555;
+$bg-light-yellow:#fff8e4;
+$bg-blue:#c9fcfb;
+$font-gray:#434343;
+
+//歡迎頁
+.welcome-wrap{
+    @include rwd(medium){
+    background: $bg-blue url(../img/indexImg/diyIcebgc-top.png) no-repeat bottom center ;
+    }
+    height: 1000px;
+    background-color: $bg-blue;
+    
+    .wrapper{
+        padding: 150px 0;
+        max-width: 1200px;
+        margin: auto;
+        @include rwd(desktop){
+                padding-top: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+
+    }
+    .kanban{
+        @include rwd(mobile){
+           padding: 50px 0; 
+            
+        }
+    }
+    .gift{
+        margin: auto;
+        height: 80px;
+        width: 400px; 
+        background-repeat: no-repeat;
+        background-size: 100%;
+        text-align: center;
+        @include rwd(mobile){
+            height: 60px;
+            width: 300px; 
+            
+        }
+        
+        span{
+            display: inline-block;
+            line-height: 20px;
+        }
+    }
+
+    @include out-Line-Font(group-subtitle,#fff,20px,5px,#6a3e26,不定時開課);
+    @include out-Line-Font(general-subtitle,#fff,20px,5px,#6a3e26,每日固定開課);
+    .gift-y{ 
+        background-image: url(../img/course/gift-yellow.png);
+    }
+    .gift-p{ 
+        background-image: url(../img/course/gift-pink.png);
+    }
+    .title-box{
+        @include rwd(mobile){
+            height: 250px;
+            width: 300px;
+            line-height: 210px;
+        }
+        background-color: #fff;
+        height: 300px;
+        width: 400px;
+        border-radius: 20px;
+        margin: auto;
+        vertical-align: middle;
+        text-align: center; 
+        padding: 5%;
+        line-height: 240px;
+        .group-title{
+            background-color: $bg-yellow;
+        } 
+        .general-title{
+            background-color: $bg-pink;
+        }
+        h2{
+            font-family: "GenJyuuGothic-B";
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            
+        }
+        @include out-Line-Font(group-title,#fff,40px,5px,#6a3e26,揪團課程);
+        @include out-Line-Font(general-title,#fff,40px,5px,#6a3e26,一般課程);
+    }
+}

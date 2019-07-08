@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/courseP.css">
     <link rel="stylesheet" href="css/common.css">
-  </head>
+  </head>   
   <body>
     <input type="checkbox" id="menu-control" />
     <header id="header">
@@ -150,36 +150,65 @@
           src="img/navBar/shoppingCartIcon.png"
           alt="shoppingCartIcon.png"
         />
-      </header>
+    </header>
+    <div id="robot-container" class="robot-container">
+      <div id="robot-title-block" class="robot-title-block">
+        <span class="robot-title-icon"
+          ><img
+            id="robot-title-icon-img"
+            src="img/navBar/robot/robot-icon.png"
+            alt="robot-icon"
+          />
+        </span>
+        <h3>冰棒小達人</h3>
+        <div class="robot-pic">
+          <img src="img/navBar/robot/robot.png" alt="robot-pic" />
+        </div>
+      </div>
+      <div id="robot-conversation-block" class="robot-conversation-block">
+        <div id="robot-conversation-list">
+          <div class="robot-conversation">
+            <p class="robot_text"><span>小達人:</span>請問有需要幫忙嗎？</p>
+          </div>
+        </div>
+      </div>
+      <ul class="chatBot-keyword">
+        <li class="fruit">草莓</li>
+        <li class="fruit">香蕉</li>
+        <li class="fruit">青蘋果</li>
+        <li class="fruit">葡萄</li>
+        <li class="fruit">橘子</li>
+        <li class="fruit">藍莓</li>
+      </ul>
+      <form>
+        <div class="robot-input-block">
+          <textarea name="message" id="message"></textarea>
+          <button type="button" id="robot-submit">送出</button>
+        </div>
+      </form>
+    </div>
+
     <section class="welcome-wrap">
-        
             <div class="wrapper">
-                <div class="kanban">
-                    <div class="spaceship">
-                        <img src="img/course/spaceship.png" alt="spaceship">
-                    </div>
+             
+                <div class="kanban col-md-6 ">
                     <a href="courseGroup.html">
                         <div class="group-item item">
-                            <img src="img/course/kanban-group.png" alt="group-img">
-                            <span class="group-subtitle subtitle">不定時開課</span>
-                            <h2 class="group-title title">揪團課程</h2>
+                            <div class="gift gift-y"> <span class="group-subtitle subtitle">不定時開課</span></div>
+                            <div class="title-box"><h2 class="group-title title">揪團課程</h2></div>
                         </div>
                    </a>
                 </div>
-                <div class="kanban">
-                    <div class="spaceship">
-                        <img src="img/course/spaceship.png" alt="spaceship">
-                    </div>
+                <div class="kanban col-md-6 ">
                     <a href="courseGeneral.html">
                         <div class="general-item item">
-                            <img src="img/course/kanban-general.png" alt="general-img">
-                            <span class="general-subtitle subtitle">每日固定開課</span>
-                            <h2  class="general-title title"> 一般課程</h2>
+                            <div class="gift gift-p"><span class="general-subtitle subtitle">每日固定開課</span></div>
+                            <div class="title-box"> <h2  class="general-title title"> 一般課程</h2></div>
+                           
                         </div>
                    </a>
                 </div>
             </div>
-
     </section>
 
     <footer>
