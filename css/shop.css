@@ -83,7 +83,7 @@ body {
 }
 
 .latest-collection-love {
-  width: 17%;
+  width: 17% !important;
   height: 10%;
   display: block;
   position: absolute;

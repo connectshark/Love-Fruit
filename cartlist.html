@@ -9,7 +9,6 @@
         <link rel="icon" href="img/navBar/logo.png" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/nav.css" />
-        <!-- <link rel="stylesheet" href="css/index.css" /> -->
         <link rel="stylesheet" href="css/cartlist.css">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
@@ -152,14 +151,14 @@
             alt="shoppingCartIcon.png"
           />
         </header>
-<section class="cart-step">
+<!-- <section class="cart-step">
         <ul class="step">
             <li class="active step-item">外觀</li>
             <li class="step-item">基底</li>
             <li class="step-item">加料</li>
             <div class="clearfix"></div>
         </ul>
-</section>
+</section> -->
 
 
 <div class="cart-head m-a">
@@ -203,13 +202,20 @@
    
 <section class="pay-transport container p-20 bagc-w">
      <h3 class="pay-transport-title">付款方式及貨運方式</h3>
+
+
     <div class="pay-transport-btn">
-      
-        <button class="pay col-lg-2">付款方式</button>
-        <button class="transport col-lg-2">貨運方式</button>
+        <button class="pay col-lg-2 " >付款方式</button>
+        <button class="transport col-lg-2" >貨運方式</button>
     </div>
-    <div class="p-10">
-        <div class="p-10 rela">
+    <ul class="tabtitle">
+      <li> <a href="#pay-way"></a> </li>
+      <li> <a href="#transport-way"></a> </li>
+    </ul>
+
+    <div class="p-10 tab-inner" id="pay-way">
+      <p>測試內容不知道會不會成功</p>
+        <div class="p-10 rela " >
             <input type="radio" name="pay-method" id="tick">
             <label for="tick"><span></span></label>
             <span class="transport-check">貨到付款</span>
@@ -219,9 +225,13 @@
             <label for="tick1"><span></span></label>
             <span class="onlion-check">線上刷卡</span>
         </div>
-        
+    </div>
+    <div class="p-10 tab-inner" id="transport-way">
+        <p>我式貨運方式請讓我出現或消失</p>
     </div>
 </section>
+
+
 <div class="cart-btn container des-flex ju-c;">
   <a href="confirm.html">
       <button type="submit" class="button"><div class="go-buy"><span class="go-buy-in">進行結帳</span></button>
@@ -268,5 +278,8 @@
         <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
   </footer>
       <script src="js/nav.js"></script>
+      <script src="js/cartlist.js"></script>
+      <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>

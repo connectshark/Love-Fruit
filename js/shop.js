@@ -95,7 +95,28 @@ for(i=1 ;i< love.length; i++){
             }
     })
 }
-
+// 點擊愛心 js
+// window.addEventListener("load",function(){
+	
+// 	var love = document.getElementsByClassName("latest-collection-love");
+// 	for(i=0;i<love.length;i++){
+// 		love[i].addEventListener("click",chang);
+// 		console.log(love[i]);
+// 	}
+// })
+// function chang(){
+// 	var gray = true;
+// 	if(gray) {
+// 		$(this).attr("src","img/shop/collection-red.png");
+// 		gray = false;
+// 		console.log(gray);
+// 		}
+// 		else{
+// 			$(this).attr("src","img/shop/collection-gray.png");
+// 			gray = true;
+// 			console.log(gray);
+// 		}
+// }
 
 // $(function() {
 //     var status = true;
