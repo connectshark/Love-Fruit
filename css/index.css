@@ -22,177 +22,377 @@
   /* outline: 1px solid #f00; */
 }
 /*第一屏幕*/
-/* 飛船 */
-.flyship {
-  width: 40%;
-  position: absolute;
-  z-index: 3;
-  top: 30%;
-  left: -40%;
-  animation: flyship1 30s linear 0s infinite;
-}
-@keyframes flyship1 {
-  0% {
-    transform: translateX(0%) translateY(0%);
+@media screen and (max-width: 767px) {
+  /* 飛船 */
+  .flyship {
+    width: 80%;
+    position: absolute;
+    z-index: 3;
+    top: 30%;
+    right: -40%;
+    animation: flyship1 20s linear 0s infinite;
   }
-  50% {
-    transform: translateX(180%) translateY(-100%);
+  @keyframes flyship1 {
+    0% {
+      transform: translateX(40%) translateY(0%);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    100% {
+      transform: translateX(-180%) translateY(0%);
+    }
   }
-  100% {
-    transform: translateX(370%) translateY(0%);
+  /* 雲 */
+  .style-cloud-a {
+    width: 30%;
+    position: absolute;
+    top: 20%;
+    animation: styleclouda 25s linear 0s infinite alternate;
+  }
+  @keyframes styleclouda {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(50%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-b {
+    width: 13%;
+    position: absolute;
+    top: 30%;
+    animation: stylecloudb 25s linear 0s infinite alternate;
+  }
+  @keyframes stylecloudb {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(50%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-c {
+    width: 10%;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    animation: stylecloudc 25s linear 0s infinite alternate;
+  }
+  @keyframes stylecloudc {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-d {
+    width: 40%;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    animation: stylecloudd 60s linear 0s infinite alternate;
+  }
+  @keyframes stylecloudd {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-e {
+    width: 20%;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    animation: stylecloude 25s linear 0s infinite alternate;
+  }
+  @keyframes stylecloude {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+  }
+  /* 雲 */
+  .index-hero-bgc {
+    overflow: hidden;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 248, 228, 1) 49%,
+      rgba(247, 161, 193, 1) 100%
+    );
+    position: relative;
+    width: 100%;
+    padding-bottom: 140%;
+    z-index: 1;
+  }
+  .mountain {
+    width: 200%;
+    position: absolute;
+    bottom: 0%;
+    right: -50%;
+    z-index: 1;
+  }
+  .mountain img {
+    padding-top: 20%;
+    width: 100%;
+  }
+  .cloud {
+    position: relative;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+  }
+  .cloud img {
+    width: 20%;
+  }
+  .heroIce {
+    margin: auto;
+    width: 75%;
+    top: 55%;
+    left: 10%;
+    position: absolute;
+    z-index: 3;
+  }
+  .sweetheart {
+    margin: auto;
+    width: 50%;
+    top: 47%;
+    left: 28%;
+    position: absolute;
+    z-index: 3;
+  }
+  .hero-green {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    border-radius: 50%;
+    z-index: 4;
+    width: 20%;
+    height: 8%;
+    background-color: #e5e54c;
   }
 }
-/* 雲 */
-.style-cloud-a {
-  width: 10%;
-  position: absolute;
-  top: 20%;
-  animation: styleclouda 60s linear 0s infinite alternate;
-}
-@keyframes styleclouda {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
+/* 第一屏桌機版 */
+@media screen and (min-width: 768px) {
+  /* 飛船 */
+  .flyship {
+    width: 40%;
+    position: absolute;
+    z-index: 3;
+    top: 30%;
+    right: -40%;
+    animation: flyship1 30s linear 0s infinite;
   }
-  50% {
-    transform: translateX(500%);
-    opacity: 0.5;
+  @keyframes flyship1 {
+    0% {
+      transform: translateX(0%) translateY(0%);
+    }
+    50% {
+      transform: translateX(-180%) translateY(-100%);
+    }
+    100% {
+      transform: translateX(-370%) translateY(0%);
+    }
   }
-  100% {
-    transform: translateX(900%);
-    opacity: 1;
+  /* 雲 */
+  .style-cloud-a {
+    width: 10%;
+    position: absolute;
+    top: 20%;
+    animation: styleclouda 60s linear 0s infinite alternate;
+  }
+  @keyframes styleclouda {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(500%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(900%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-b {
+    width: 8%;
+    position: absolute;
+    top: 30%;
+    animation: stylecloudb 60s linear 0s infinite alternate;
+  }
+  @keyframes stylecloudb {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(500%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(1000%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-c {
+    width: 5%;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    animation: stylecloudc 60s linear 0s infinite alternate;
+  }
+  @keyframes stylecloudc {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-500%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-d {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    animation: stylecloudd 60s linear 0s infinite alternate;
+  }
+  @keyframes stylecloudd {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-500%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+  .style-cloud-e {
+    width: 7%;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    animation: stylecloude 60s linear 0s infinite alternate;
+  }
+  @keyframes stylecloude {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-500%);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+  /* 草地 */
+  .hero-green {
+    position: absolute;
+    left: 32%;
+    bottom: 15%;
+    border-radius: 50%;
+    z-index: 4;
+    width: 10%;
+    height: 10%;
+    background-color: #e5e54c;
+  }
+  /* 雲 */
+  .index-hero-bgc {
+    overflow: hidden;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 248, 228, 1) 49%,
+      rgba(247, 161, 193, 1) 100%
+    );
+    position: relative;
+    width: 100%;
+    padding-bottom: 56%;
+    z-index: 1;
+  }
+  .mountain {
+    width: 100%;
+    position: absolute;
+    top: -12%;
+    z-index: 1;
+  }
+  .mountain img {
+    padding-top: 20%;
+    width: 100%;
+  }
+  .cloud {
+    position: relative;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+  }
+  .cloud img {
+    width: 20%;
+  }
+  .heroIce {
+    margin: auto;
+    width: 46%;
+    top: 47%;
+    left: 25%;
+    position: absolute;
+    z-index: 3;
+  }
+  .sweetheart {
+    margin: auto;
+    width: 30%;
+    top: 38%;
+    left: 35.5%;
+    position: absolute;
+    z-index: 3;
   }
 }
-.style-cloud-b {
-  width: 8%;
-  position: absolute;
-  top: 30%;
-  animation: stylecloudb 60s linear 0s infinite alternate;
-}
-@keyframes stylecloudb {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(500%);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(1000%);
-    opacity: 1;
-  }
-}
-.style-cloud-c {
-  width: 5%;
-  position: absolute;
-  right: 10%;
-  top: 30%;
-  animation: stylecloudc 60s linear 0s infinite alternate;
-}
-@keyframes stylecloudc {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-500%);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(-1000%);
-    opacity: 1;
-  }
-}
-.style-cloud-d {
-  position: absolute;
-  right: 10%;
-  top: 10%;
-  animation: stylecloudd 60s linear 0s infinite alternate;
-}
-@keyframes stylecloudd {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-500%);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(-1000%);
-    opacity: 1;
-  }
-}
-.style-cloud-e {
-  width: 7%;
-  position: absolute;
-  right: 10%;
-  top: 40%;
-  animation: stylecloude 60s linear 0s infinite alternate;
-}
-@keyframes stylecloude {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-500%);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateX(-1000%);
-    opacity: 1;
-  }
-}
-/* 雲 */
-.index-hero-bgc {
-  overflow: hidden;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 248, 228, 1) 49%,
-    rgba(247, 161, 193, 1) 100%
-  );
-  position: relative;
-  width: 100%;
-  padding-bottom: 56%;
-  z-index: 1;
-}
-.mountain {
-  width: 100%;
-  position: absolute;
-  top: -12%;
-  z-index: 1;
-}
-.mountain img {
-  padding-top: 20%;
-  width: 100%;
-}
-.cloud {
-  position: relative;
-  left: 0%;
-  top: 0%;
-  z-index: 2;
-}
-.cloud img {
-  width: 20%;
-}
-.heroIce {
-  margin: auto;
-  width: 46%;
-  top: 47%;
-  left: 25%;
-  position: absolute;
-  z-index: 3;
-}
-.sweetheart {
-  margin: auto;
-  width: 30%;
-  top: 38%;
-  left: 35.5%;
-  position: absolute;
-  z-index: 3;
-}
+
 /*第二屏幕*/
 .index-qa-bgc {
   position: relative;
@@ -206,34 +406,37 @@
   z-index: 0;
   top: -29%;
 }
-.love-qa {
+
+.index-title-group {
   position: absolute;
   width: 28%;
   top: -10%;
-  left: 38%;
+  margin: auto;
+  left: 0%;
+  right: 0%;
 }
-.love-icon1 {
+.index-title-icon {
   display: inline-block;
   width: 20%;
 }
-.love-icon1 img {
+.index-title-icon img {
   width: 100%;
 }
-.index-title1 {
+.index-title-content {
   padding-top: 2%;
   margin-left: 1%;
   text-align: center;
   vertical-align: top;
   display: inline-block;
 }
-.love-qa h2 {
+.index-title-content h2 {
   font-family: "A-OTF-M";
   font-size: 3.5vw;
   color: #ff8f8f;
   letter-spacing: 4px;
   margin-bottom: 3%;
 }
-.love-qa span {
+.index-title-content span {
   color: #777777;
   letter-spacing: 2px;
   font-size: 0.8vw;
@@ -426,16 +629,7 @@
   }
 }
 /* 雲結束 */
-.hero-green {
-  position: absolute;
-  left: 30%;
-  bottom: 16%;
-  border-radius: 50%;
-  z-index: 4;
-  width: 10%;
-  height: 10%;
-  background-color: #e5e54c;
-}
+
 .c-p-store {
   position: absolute;
   width: 45%;
@@ -533,7 +727,7 @@
   visibility: visible;
   position: absolute;
   z-index: 6;
-  top: 24%;
+  top: 26%;
   width: 13%;
   left: 37%;
   animation: modelgeneral 5s ease 0s infinite alternate;
@@ -1043,7 +1237,7 @@
 }
 .course-blue-ship-show {
   opacity: 1;
-  transform: translateX(150%);
+  transform: translateX(156.5%);
 }
 .course-blue-ship {
   position: absolute;
@@ -1120,6 +1314,7 @@
 }
 /* 按鈕 */
 .course-button-custom {
+  padding-bottom: 3%;
   margin-left: 26%;
   display: block;
 }
