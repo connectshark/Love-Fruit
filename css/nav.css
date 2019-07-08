@@ -83,8 +83,6 @@
     top: 18px;
     left: 4%;
   }
-  .icon-login-box {
-  }
   .icon-mp img {
     width: 32%;
   }
@@ -133,16 +131,15 @@
   }
   .nav-drop-down-menu li {
     margin: 0 auto;
-    margin-left: 5%;
     text-decoration: none;
   }
   .nav-drop-down-menu li a {
     display: inline-block;
     padding: 10px 0px 10px 0px;
     text-decoration: none;
-    font-size: 6vw;
+    font-size: 5vw;
     letter-spacing: 0.3vw;
-    color: #a57761;
+    color: #a48779;
     font-family: "GenJyuuGothic-R";
   }
   .nav-drop-down-menu li:hover {
@@ -254,11 +251,16 @@
   #robot-container {
     display: none;
   }
+  /* 導覽列 */
+  .nav-box {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
   /* scrollbar顏色 */
   ::-webkit-scrollbar {
+    border-radius: 10px;
     background-color: #ffebec;
   }
   ::-webkit-scrollbar-thumb {
@@ -344,6 +346,9 @@
     order: 0;
     width: 100%;
     z-index: 0;
+  }
+  .nav-box {
+    width: 25%;
   }
   .nav-list {
     display: flex;

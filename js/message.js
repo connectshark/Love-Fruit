@@ -49,25 +49,25 @@ $(document).ready(function() {
 				$('.message-item').css('display','none');
 				$('.single').css('display','flex');
 				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(1).css('backgroundColor', '#fc7389');
+				$('.filter').eq(1).css('backgroundColor', '#f6c555');
 				break;
 			case '初戀':
 				$('.message-item').css('display','none');
 				$('.true-love').css('display','flex');
 				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(2).css('backgroundColor', '#fc7389');
+				$('.filter').eq(2).css('backgroundColor', '#0abbb5');
 				break;
 			case '熱戀':
 				$('.message-item').css('display','none');
 				$('.hot-love').css('display','flex');
 				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(3).css('backgroundColor', '#fc7389');
+				$('.filter').eq(3).css('backgroundColor', '#db4d6d');
 				break;
 			case '分手':
 				$('.message-item').css('display','none');
 				$('.break-up').css('display','flex');
 				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(4).css('backgroundColor', '#fc7389');
+				$('.filter').eq(4).css('backgroundColor', '#79a6cc');
 				break;
 		}
 	});

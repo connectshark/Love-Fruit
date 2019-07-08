@@ -1,0 +1,347 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  text-decoration: none;
+}
+
+body {
+  font-family: "GenJyuuGothic-R";
+}
+
+.welcome-wrap .wrapper, .general-wrap .wrapper {
+  padding: 150px 0;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.welcome-wrap {
+  height: 1000px;
+  background-color: #c9fcfb;
+}
+
+@media all and (min-width: 769px) {
+  .welcome-wrap {
+    background: #c9fcfb url(../img/indexImg/diyIcebgc-top.png) no-repeat bottom center;
+  }
+}
+
+.welcome-wrap .wrapper {
+  padding: 150px 0;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .welcome-wrap .wrapper {
+    padding-top: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .welcome-wrap .kanban {
+    padding: 50px 0;
+  }
+}
+
+.welcome-wrap .gift {
+  margin: auto;
+  height: 80px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+}
+
+@media all and (max-width: 768px) {
+  .welcome-wrap .gift {
+    height: 60px;
+    width: 300px;
+  }
+}
+
+.welcome-wrap .gift span {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.welcome-wrap .group-subtitle {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.welcome-wrap .group-subtitle:after {
+  z-index: -1;
+  content: "不定時開課";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+
+.welcome-wrap .general-subtitle {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.welcome-wrap .general-subtitle:after {
+  z-index: -1;
+  content: "每日固定開課";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+
+.welcome-wrap .gift-y {
+  background-image: url(../img/course/gift-yellow.png);
+}
+
+.welcome-wrap .gift-p {
+  background-image: url(../img/course/gift-pink.png);
+}
+
+.welcome-wrap .title-box {
+  background-color: #fff;
+  height: 300px;
+  width: 400px;
+  border-radius: 20px;
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+  padding: 5%;
+  line-height: 240px;
+}
+
+@media all and (max-width: 768px) {
+  .welcome-wrap .title-box {
+    height: 250px;
+    width: 300px;
+    line-height: 210px;
+  }
+}
+
+.welcome-wrap .title-box .group-title {
+  background-color: #f6c555;
+}
+
+.welcome-wrap .title-box .general-title {
+  background-color: #ffd9d9;
+}
+
+.welcome-wrap .title-box h2 {
+  font-family: "GenJyuuGothic-B";
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.welcome-wrap .title-box .group-title {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.welcome-wrap .title-box .group-title:after {
+  z-index: -1;
+  content: "揪團課程";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+
+.welcome-wrap .title-box .general-title {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.welcome-wrap .title-box .general-title:after {
+  z-index: -1;
+  content: "一般課程";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+
+.general-wrap {
+  background-color: #ffd9d9;
+  height: 1000px;
+}
+
+.general-wrap .wrapper {
+  padding: 100px 0;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media all and (min-width: 992px) {
+  .general-wrap .wrapper {
+    padding-top: 200px;
+  }
+}
+
+.general-wrap .general-ribbon {
+  margin: auto;
+  background: url(../img/ribbon.png) center center no-repeat;
+  background-size: contain;
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  padding: 45px 0;
+}
+
+@media all and (min-width: 769px) {
+  .general-wrap .general-ribbon {
+    width: 500px;
+    height: 150px;
+    padding: 30px 0;
+  }
+}
+
+.general-wrap .general-ribbon .subtitle {
+  font-size: 13px;
+  color: #434343;
+  line-height: 26px;
+}
+
+@media all and (min-width: 769px) {
+  .general-wrap .general-ribbon .subtitle {
+    font-size: 18px;
+    color: #434343;
+    line-height: 32px;
+  }
+}
+
+.general-wrap .general-ribbon .title {
+  color: #fff;
+  font-size: 24px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.general-wrap .general-ribbon .title:after {
+  z-index: -1;
+  content: "一般課程";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 3px #6a3e26;
+}
+
+@media all and (min-width: 769px) {
+  .general-wrap .general-ribbon .title {
+    color: #fff;
+    font-size: 40px;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+  }
+  .general-wrap .general-ribbon .title:after {
+    z-index: -1;
+    content: "一般課程";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .general-wrap .kanban-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.general-wrap .gift {
+  text-align: center;
+  position: relative;
+}
+
+.general-wrap .gift span {
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 40%);
+          transform: translate(-50%, 40%);
+}
+
+@media all and (min-width: 992px) {
+  .general-wrap .gift span {
+    font-size: 24px;
+  }
+}
+
+.general-wrap .info-subtitle {
+  border-bottom: #db4d6d solid 5px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.general-wrap .info-subtitle h4 {
+  font-size: 18px;
+}
+
+.general-wrap .info-dec li {
+  font-size: 18px;
+  font-family: "GenJyuuGothic-B";
+  padding: 10px 0 5px;
+}
+
+.general-wrap .info-dec p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 15px;
+}
+
+@media all and (min-width: 992px) {
+  .general-wrap .info-dec p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+/*# sourceMappingURL=courseP.css.map */

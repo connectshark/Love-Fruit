@@ -59,7 +59,7 @@ window.addEventListener("scroll", function() {
     window.pageYOffset ||
     document.body.scrolltop;
 
-  if (scrolltop > 4800) {
+  if (scrolltop > 4500) {
     document
       .querySelector(".course-blue-ship")
       .classList.add("course-blue-ship-show");
