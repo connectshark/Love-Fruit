@@ -82,17 +82,19 @@ $(document).ready(function() {
    
 // });
 //點擊愛心
+var love = document.getElementsByClassName("latest-collection-love");
 var gray = true;
-$("#latest-collection-love").click(function(){
-    if(gray) {
-        $(this).attr("src","img/shop/collection-red.png");
-        gray = false;}
-        else{
-            $(this).attr("src","img/shop/collection-gray.png");
-            gray = true;
-        }
-})
-
+for(i=1 ;i< love.length; i++){
+    $(".latest-collection-love").click(function(){
+        if(gray) {
+            $(this).attr("src","img/shop/collection-red.png");
+            gray = false;}
+            else{
+                $(this).attr("src","img/shop/collection-gray.png");
+                gray = true;
+            }
+    })
+}
 
 
 // $(function() {
