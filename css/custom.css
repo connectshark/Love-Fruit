@@ -154,17 +154,17 @@ body{
 	text-align: center;
 }
 .price-s-table th{
-	width: 40%;
+	width: 30%;
 }
 .price-s-table td{
-	width: 60%;
+	width: 35%;
 }
-#fruite-a,#fruite-b{
+#fruite-a,#fruite-b,#texture-min{
 	width: 100%;
 	padding-bottom: 100%;
 	position: relative;
 }
-#fruite-a img,#fruite-b img{
+#fruite-a img,#fruite-b img,#texture-min img{
 	position: absolute;
 	max-height: 100%;
 	max-width: 100%;
@@ -261,6 +261,7 @@ body{
 /*主要客製*/
 .custom-main{
 	width: 100%;
+	padding-top: 100px;
 }
 @media screen and (min-width: 768px) {
 	.custom-main{
@@ -383,6 +384,7 @@ body{
 	width: 90%;
 	padding: 20px;
 	box-sizing: border-box;
+	min-height: 600px;
 }
 @media screen and (min-width: 768px) {
 	.custom-aside{
@@ -452,11 +454,14 @@ body{
 .texture-item:hover{
 	cursor: pointer;
 }
+.texture-item:active{
+	transform: translateY(2px);
+}
 .texture-item figure{
 	width: 100%;
 	padding-bottom: 100%;
 	position: relative;
-	background-color: rgb(245, 150, 170);
+	background-color: #f596aa;
 	border-radius: 17px 17px 0 0;
 }
 .texture-item:hover figure{
@@ -500,7 +505,31 @@ body{
 }
 
 .range-area{
+	width: 100%;
 	padding: 10px 0;
+	display: flex;
+	flex-flow: column nowrap;
+}
+.gradual-group{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.gradual-item{
+	width: 15%;
+	padding-bottom: 15%;
+	position: relative;
+}
+.gradual-item img{
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
 }
 #range{
 	-webkit-appearance: none;
@@ -553,4 +582,9 @@ body{
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-around;
+}
+@media screen and (min-width: 768px) {
+	.aside-button-group{
+		margin-top: auto;
+	}
 }

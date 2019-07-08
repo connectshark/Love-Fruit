@@ -211,15 +211,21 @@
 						<div class="price-list">
 							<table class="price-s-table">
 								<tr>
-									<th>模型</th>
+									<th>
+                                        <div id="texture-min">
+                                            <img id="texture-min-img">
+                                        </div>
+                                    </th>
+                                    <td class="list-description">模型</td>
 									<td>150</td>
 								</tr>
 								<tr>
 									<th>
                                         <div id="fruite-a">
-                                            <img src="" alt="fruite-a">
+                                            <img src="" alt="fruite-b">
                                         </div>
                                     </th>
+                                    <td class="list-description">模型</td>
 									<td>200</td>
 								</tr>
 								<tr>
@@ -228,11 +234,12 @@
                                             <img src="" alt="fruite-b">
                                         </div>
                                     </th>
+                                    <td class="list-description">模型</td>
 									<td>150</td>
 								</tr>
 								<tfoot>
 									<th>總價:</th>
-									<td>450</td>
+									<td colspan="2">450</td>
 								</tfoot>
 							</table>
 						</div>
@@ -276,7 +283,7 @@
                 </ul>
             </div>
 			<div class="custom-main-show">
-				<img src="img/custom/texture1.png" alt="模具1">
+				<img id="texture-main" src="img/custom/texture1.png" alt="模具1">
 			</div>
 			<div class="custom-bottom">
 			</div>
@@ -288,7 +295,7 @@
     			</div>
     			<div class="aside-select">
     				<div class="select-item select-item-4">
-    					<div class="texture-item" id="texture-ice">
+    					<div class="texture-item texture-select">
     						<figure>
                                 <img src="img/custom/texture1.png" alt="冰棒模型">
                             </figure>
@@ -296,19 +303,19 @@
     					</div>
     				</div>
     				<div class="select-item select-item-4">
-    					<div class="texture-item" id="texture-bear">
+    					<div class="texture-item texture-select">
     						<figure><img src="img/custom/texture2.png" alt="熊掌模型"></figure>
     						<p>熊掌模型</p>
     					</div>
     				</div>
     				<div class="select-item select-item-4">
-    					<div class="texture-item" id="texture-rabbit">
+    					<div class="texture-item texture-select">
     						<figure><img src="img/custom/texture3.png" alt="兔兔模型"></figure>
     						<p>兔兔模型</p>
     					</div>
     				</div>
     				<div class="select-item select-item-4">
-    					<div class="texture-item" id="texture-rocket">
+    					<div class="texture-item texture-select">
     						<figure><img src="img/custom/texture4.png" alt="火箭模型"></figure>
     						<p>火箭模型</p>
     					</div>
@@ -360,12 +367,22 @@
                     </div>
                 </div>
                 <div class="range-area">
-                    <label for="range">
-                        <input type="range" min="0" max="100" value="50" id="range">
-                    </label>
-                    <label for="angle">
-                        角度:
-                    <input type="text" minlength="1" maxlength="3" size="3" placeholder="角度" id="angle">°</label>
+                    <div class="gradual">
+                        <div class="gradual-group">
+                            <div class="gradual-item"><img></div>
+                            <div class="gradual-item"><img></div>
+                        </div>
+                        <div class="gradual-range">
+                            <label for="range">
+                                <input type="range" min="0" max="100" value="50" id="range">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="range-angle">
+                        <label for="angle">
+                            角度:
+                        <input type="text" minlength="1" maxlength="3" size="3" placeholder="角度" id="angle">°</label>
+                    </div>
                 </div>
             </div>
 
