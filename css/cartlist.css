@@ -464,11 +464,11 @@
   -webkit-text-stroke: 2px black;
 }
 
-.page-cartlist input[type="checkbox"] {
+.page-cartlist input[type="radio"] {
   display: none;
 }
 
-.page-cartlist input[type="checkbox"] + label span {
+.page-cartlist input[type="radio"] + label span {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -476,7 +476,11 @@
   background: url(../img/shop/circle-regular.svg);
 }
 
-.page-cartlist input[type="checkbox"]:checked + label span {
+.page-cartlist .transport-check {
+  vertical-align: middle;
+}
+
+.page-cartlist input[type="radio"]:checked + label span {
   background: url(../img/shop/check-circle-solid.svg) no-repeat;
 }
 
