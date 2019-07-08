@@ -5,11 +5,6 @@
     text-decoration: none;
 }
 
-.page-account{
-    .account{
-        background-color: #fff8e4;
-    }
-}
 
 .page-account{
     font-family: "GenJyuuGothic-R";
@@ -19,26 +14,36 @@
         width: 100%;
         max-width: 1200px;
         margin: auto;
-        display: flex;
-        flex-flow: row wrap;
         padding: 10px;
     }
+    
     .banner{
         width: 100%;
         height: 0;
-        padding-top:50%;
-        background: #ffdfe0 url(../img/account/banner.png) bottom left no-repeat;
+        padding-top:40%;
+        background: #ffdfe0 url(../img/account/member02.png) bottom left no-repeat;
         background-size: contain;
+        margin: auto;
         position: relative;
 
         @include out-Line-Font(title,#fff,40px,5px,#6a3e26,會員中心);
-        .title{
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 40%;
-        }
+            .title{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: calc(40%);
+            }
+    }
+
+    .account{
+        background-color: #fff8e4;
+        padding-bottom: 100px;
         
+        .wrap{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
     }
 
     .menu{
@@ -75,7 +80,7 @@
             li{
                 text-align: center;                
                 
-                a{
+                .list-item{
                     display: block;
                     color: #fff;
                     padding: 10px;
@@ -98,6 +103,7 @@
         }
     }
     .content{
+        min-height: 700px;
         background-color: #fff;
         padding: 10px;
         border-bottom-left-radius: 10px;
@@ -108,60 +114,14 @@
             color: #3e556a;
             padding-top: 10px;
         }
-
         
-    }
-
-    @include rwd(mobile){        
-        .banner{
-            padding-top:80%;
-            background-size: cover;
+        .show-content{
+            display: block;
         }
     }
 
-
-    @include rwd(medium){
-        .menu{
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 10px;
-
-            .profile-picture{
-                padding: 30px 20px;
-                flex-flow: row nowrap;
-
-                
-            }    
-            .account-list{
-                justify-content: flex-end;
-                li{
-                    a{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
-
-                        i{
-                           display: inline; 
-                        }
-                    }  
-                }
-                
-            }
-        }
-
-        .content{
-            padding: 20px 40px;
-
-            h2{
-                padding: 20px 0;
-            }
-        }
-    }
-}
-
-.page-account-profile{
-    .content{
+    .content-profile{
+        display: none;
         .profile-item{
             background-color: #ffdee6;
             border-radius: 10px;
@@ -206,10 +166,9 @@
             }
         }
     }
-}
 
-.page-account-order{
-    .content{
+    .content-order{
+        display: none;
         .order-item{
             padding: 20px;
             margin: 20px 0;
@@ -224,22 +183,20 @@
                 }
             }
         }
-    }
-    @include rwd(medium){
-        .order-desc{
-            display: flex;
 
-            .total{
-                text-align: right;
+        @include rwd(medium){
+            .order-desc{
+                display: flex;
+    
+                .total{
+                    text-align: right;
+                }
             }
         }
     }
 
-}
-
-
-.page-account-collection{
-    .content{
+    .content-collection{
+        display: none;
         .collection-item{
             padding: 20px;
             margin: 20px 0;
@@ -261,14 +218,9 @@
             }
         }
     }
-    @include rwd(medium){
-        
-    }
 
-}
-
-.page-account-custom{
-    .content{
+    .content-custom{
+        display: none;
         .custom-item{
             padding: 20px;
             margin: 20px 0;
@@ -283,21 +235,20 @@
                 }
             }
         }
-    }
-    @include rwd(medium){
-        .custom-desc{
-            display: flex;
 
-            .time{
-                text-align: right;
+        @include rwd(medium){
+            .custom-desc{
+                display: flex;
+    
+                .time{
+                    text-align: right;
+                }
             }
         }
     }
 
-}
-
-.page-account-class{
-    .content{
+    .content-course{
+        display: none;
         .class-item{
             padding: 20px;
             margin: 20px 0;
@@ -328,8 +279,76 @@
             }
         }
     }
-    @include rwd(medium){
-        
+
+
+
+    @include rwd(mobile){        
+        .banner{
+            padding-top:90%;
+            background-size: cover;
+            .title{
+                top: 50%;
+            }
+        }
     }
 
+
+    @include rwd(medium){
+        .menu{
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 10px;
+
+            .profile-picture{
+                padding: 30px 20px;
+                flex-flow: row nowrap;
+
+                
+            }    
+            .account-list{
+                justify-content: flex-end;
+                li{
+                    .list-item{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+
+                        i{
+                           display: inline; 
+                        }
+                    }  
+                }
+                
+            }
+        }
+
+        .content{
+            padding: 20px 40px;
+
+            h2{
+                padding: 20px 0;
+            }
+        }
+    }
 }
+
+
+    
+
+    
+
+
+
+    
+
+
+
+
+    
+   
+
+
+
+
+    

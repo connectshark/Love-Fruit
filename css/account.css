@@ -10,10 +10,6 @@
   text-decoration: none;
 }
 
-.page-account .account {
-  background-color: #fff8e4;
-}
-
 .page-account {
   font-family: "GenJyuuGothic-R";
   font-size: 18px;
@@ -23,22 +19,16 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
   padding: 10px;
 }
 
 .page-account .banner {
   width: 100%;
   height: 0;
-  padding-top: 50%;
-  background: #ffdfe0 url(../img/account/banner.png) bottom left no-repeat;
+  padding-top: 40%;
+  background: #ffdfe0 url(../img/account/member02.png) bottom left no-repeat;
   background-size: contain;
+  margin: auto;
   position: relative;
 }
 
@@ -65,7 +55,25 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 40%;
+  top: calc(40%);
+}
+
+.page-account .account {
+  background-color: #fff8e4;
+  padding-bottom: 100px;
+}
+
+.page-account .account .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .page-account .menu {
@@ -117,17 +125,17 @@
   text-align: center;
 }
 
-.page-account .menu .account-list li a {
+.page-account .menu .account-list li .list-item {
   display: block;
   color: #fff;
   padding: 10px;
 }
 
-.page-account .menu .account-list li a:hover {
+.page-account .menu .account-list li .list-item:hover {
   background-color: #db4d6d;
 }
 
-.page-account .menu .account-list li a i {
+.page-account .menu .account-list li .list-item i {
   font-size: 30px;
   display: block;
   padding: 10px;
@@ -138,6 +146,7 @@
 }
 
 .page-account .content {
+  min-height: 700px;
   background-color: #fff;
   padding: 10px;
   border-bottom-left-radius: 10px;
@@ -150,10 +159,231 @@
   padding-top: 10px;
 }
 
+.page-account .content .show-content {
+  display: block;
+}
+
+.page-account .content-profile {
+  display: none;
+}
+
+.page-account .content-profile .profile-item {
+  background-color: #ffdee6;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-profile .profile-item .passwaord, .page-account .content-profile .profile-item .address {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.page-account .content-profile .profile-item label {
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.page-account .content-profile .profile-item input {
+  border-radius: 5px;
+  font-size: 18px;
+  display: block;
+  padding: 5px;
+}
+
+.page-account .content-profile input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #db4d6d;
+  color: #fff;
+  font-family: "GenJyuuGothic-R";
+  font-size: 18px;
+}
+
+.page-account .content-profile input[type=submit]:hover {
+  background-color: #cb1b45;
+}
+
+.page-account .content-order {
+  display: none;
+}
+
+.page-account .content-order .order-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-order .order-item .order-desc p {
+  padding: 10px;
+}
+
+@media all and (min-width: 769px) {
+  .page-account .content-order .order-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .page-account .content-order .order-desc .total {
+    text-align: right;
+  }
+}
+
+.page-account .content-collection {
+  display: none;
+}
+
+.page-account .content-collection .collection-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-collection .collection-item .collection-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page-account .content-collection .collection-item .collection-desc .heart {
+  text-align: right;
+  cursor: pointer;
+}
+
+.page-account .content-collection .collection-item .collection-desc p {
+  padding: 10px;
+}
+
+.page-account .content-custom {
+  display: none;
+}
+
+.page-account .content-custom .custom-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-custom .custom-item .custom-desc p {
+  padding: 10px;
+}
+
+@media all and (min-width: 769px) {
+  .page-account .content-custom .custom-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .page-account .content-custom .custom-desc .time {
+    text-align: right;
+  }
+}
+
+.page-account .content-course {
+  display: none;
+}
+
+.page-account .content-course .class-item {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffdee6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-course .class-item .class-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-course .class-item .class-desc .cancel {
+  text-align: right;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.page-account .content-course .class-item .class-desc .cancel a {
+  color: #db4d6d;
+}
+
+.page-account .content-course .class-item .class-desc p {
+  padding: 10px;
+}
+
 @media all and (max-width: 768px) {
   .page-account .banner {
-    padding-top: 80%;
+    padding-top: 90%;
     background-size: cover;
+  }
+  .page-account .banner .title {
+    top: 50%;
   }
 }
 
@@ -174,7 +404,7 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .page-account .menu .account-list li a {
+  .page-account .menu .account-list li .list-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -187,7 +417,7 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
-  .page-account .menu .account-list li a i {
+  .page-account .menu .account-list li .list-item i {
     display: inline;
   }
   .page-account .content {
@@ -196,199 +426,5 @@
   .page-account .content h2 {
     padding: 20px 0;
   }
-}
-
-.page-account-profile .content .profile-item {
-  background-color: #ffdee6;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page-account-profile .content .profile-item .passwaord, .page-account-profile .content .profile-item .address {
-  display: inline-block;
-  padding-right: 10px;
-}
-
-.page-account-profile .content .profile-item label {
-  display: block;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.page-account-profile .content .profile-item input {
-  border-radius: 5px;
-  font-size: 18px;
-  display: block;
-  padding: 5px;
-}
-
-.page-account-profile .content input[type=submit] {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #db4d6d;
-  color: #fff;
-  font-family: "GenJyuuGothic-R";
-  font-size: 18px;
-}
-
-.page-account-profile .content input[type=submit]:hover {
-  background-color: #cb1b45;
-}
-
-.page-account-order .content .order-item {
-  padding: 20px;
-  margin: 20px 0;
-  background-color: #ffdee6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page-account-order .content .order-item .order-desc p {
-  padding: 10px;
-}
-
-@media all and (min-width: 769px) {
-  .page-account-order .order-desc {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .page-account-order .order-desc .total {
-    text-align: right;
-  }
-}
-
-.page-account-collection .content .collection-item {
-  padding: 20px;
-  margin: 20px 0;
-  background-color: #ffdee6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page-account-collection .content .collection-item .collection-desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.page-account-collection .content .collection-item .collection-desc .heart {
-  text-align: right;
-  cursor: pointer;
-}
-
-.page-account-collection .content .collection-item .collection-desc p {
-  padding: 10px;
-}
-
-.page-account-custom .content .custom-item {
-  padding: 20px;
-  margin: 20px 0;
-  background-color: #ffdee6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page-account-custom .content .custom-item .custom-desc p {
-  padding: 10px;
-}
-
-@media all and (min-width: 769px) {
-  .page-account-custom .custom-desc {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .page-account-custom .custom-desc .time {
-    text-align: right;
-  }
-}
-
-.page-account-class .content .class-item {
-  padding: 20px;
-  margin: 20px 0;
-  background-color: #ffdee6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page-account-class .content .class-item .class-desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.page-account-class .content .class-item .class-desc .cancel {
-  text-align: right;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.page-account-class .content .class-item .class-desc .cancel a {
-  color: #db4d6d;
-}
-
-.page-account-class .content .class-item .class-desc p {
-  padding: 10px;
 }
 /*# sourceMappingURL=account.css.map */
