@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/shop.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 </head>
 
 <body class="page-shop">
@@ -101,8 +102,74 @@
     <div class="title-outerframe">
       <div class="newstitle"><span>最新商品</span></div>
     </div>
+    <div class="owl-carousel owl-theme news-store store">
+      <div class="item news-item col-5 col-lg-4">
+        <div class="newpic">
+          <img src="img/shop/inlove/inlove-ball01.png" alt="">
+          <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+        </div>
+        <p class="new-name">芋頭芒果</p>
+        <p class="new-pic">NT280$</p>
+      </div>
+      <div class="item news-item col-5 col-lg-4">
+        <div class="newpic">
+          <img src="img/shop/inlove/inlove-ball01.png" alt="">
+          <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+        </div>
+        <p class="new-name">芋頭芒果</p>
+        <p class="new-pic">NT280$</p>
+      </div>
+      <div class="item news-item col-5 col-lg-4">
+        <div class="newpic">
+          <img src="img/shop/inlove/inlove-ball01.png" alt="">
+          <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+        </div>
+        <p class="new-name">芋頭芒果</p>
+        <p class="new-pic">NT280$</p>
+      </div>
+      <div class="item news-item col-5 col-lg-4">
+          <div class="newpic">
+            <img src="img/shop/inlove/inlove-ball01.png" alt="">
+            <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+          </div>
+          <p class="new-name">芋頭芒果</p>
+          <p class="new-pic">NT280$</p>
+        </div>
+        <div class="item news-item col-5 col-lg-4">
+            <div class="newpic">
+              <img src="img/shop/inlove/inlove-ball01.png" alt="">
+              <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+            </div>
+            <p class="new-name">芋頭芒果</p>
+            <p class="new-pic">NT280$</p>
+          </div>
+          <div class="item news-item col-5 col-lg-4">
+            <div class="newpic">
+              <img src="img/shop/inlove/inlove-ball01.png" alt="">
+              <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+            </div>
+            <p class="new-name">芋頭芒果</p>
+            <p class="new-pic">NT280$</p>
+          </div>
+          <div class="item news-item col-5 col-lg-4">
+            <div class="newpic">
+              <img src="img/shop/inlove/inlove-ball01.png" alt="">
+              <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+            </div>
+            <p class="new-name">芋頭芒果</p>
+            <p class="new-pic">NT280$</p>
+          </div>
+          <div class="item news-item col-5 col-lg-4">
+              <div class="newpic">
+                <img src="img/shop/inlove/inlove-ball01.png" alt="">
+                <img src="img/shop/collection-red.png" alt="" class="new-collection-love">
+              </div>
+              <p class="new-name">芋頭芒果</p>
+              <p class="new-pic">NT280$</p>
+            </div>
 
-    <div class="news-store store">
+    </div>
+    <!-- <div class="news-store store">
       <img src="img/shop/left-arrow.png" alt="" class="left-arrow">
       <img src="img/shop/right-arrow.png" alt="" class="right-arrow">
 
@@ -130,7 +197,7 @@
         <p class="new-name">芋頭芒果</p>
         <p class="new-pic">NT280$</p>
       </div>
-    </div>
+    </div> -->
 
   </section>
 
@@ -142,34 +209,35 @@
       </div>
       <div class="select-bar">
         <div class="select-bar-botton">
-          <div><input type="button" value="單身"></div>
-          <div><input type="button" value="初戀"></div>
-          <div><input type="button" value="熱戀"></div>
-          <div><input type="button" value="分手"></div>
-          <div><img src="img/shop/icetype-popsicle.png" alt=""></div>
-          <div><img src="img/shop/icetype-ball.png" alt=""></div>
-          <div><img src="img/shop/icetype-mount.png" alt=""></div>
-
+          <div><button type="button" value="單身" class="fiilter" id="single">單身</div>
+          <div><button type="button" value="初戀" class="fiilter" id="first-love">初戀</div>
+          <div><button type="button" value="熱戀" class="fiilter" id="fall-in-love">熱戀</div>
+          <div><button type="button" value="分手" class="fiilter" id="break-up">分手</div>
+          <!-- <div> <button type="button" value="冰棒" class="fiilter" id="popsicle">冰棒</button></div>
+          <div> <button type="button" value="冰淇淋" class="fiilter" id="ice-cream-ball">冰淇淋</button></div>
+          <div> <button type="button" value="霜淇淋" class="fiilter" id="ice-cream">霜淇淋</button></div> -->
         </div>
 
 
-        <select name="love-stage">
-          　 <option value="Japan">單身</option>
-          　 <option value="Korea">初戀</option>
-          　 <option value="Europe ">熱戀</option>
-          　 <option value="China ">分手</option>
+        <select name="love-stage" id="fiilter-pull">
+             <option value="all">全部</option>
+          　 <option value="single">單身</option>
+          　 <option value="first-love">初戀</option>
+          　 <option value="fall-in-love">熱戀</option>
+          　 <option value="break-up">分手</option>
         </select>
-        <select name="ice-type">
-          　<option value="Japan">冰棒</option>
-          　<option value="Korea">冰淇淋</option>
-          　<option value="Europe ">霜淇淋</option>
-        </select>
+        <!-- <select name="ice-type" id="fiilter-pull">
+          　<option value="popsicle">冰棒</option>
+          　<option value="ice-cream-ball">冰淇淋</option>
+          　<option value="ice-cream">霜淇淋</option>
+        </select> -->
 
 
       </div>
       <div class="commodity">
-        <div class="commodity-item  col-5 col-lg-3 yellow">
-          <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
+        <div class="commodity-item  col-5 col-lg-3 all single">
+          <div class="shap-ice-type">
+            <img src="img/shop/icetype-popsicle.png" alt="">
             <p>single</p>
           </div>
           <!-- <div class="shap-love-stage">Single</div> -->
@@ -213,9 +281,9 @@
           </div>
         </div>
 
-        <div class="commodity-item  col-5 col-lg-3 yellow">
+        <div class="commodity-item  col-5 col-lg-3 all first-love">
           <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
-            <p>single</p>
+            <p>first-love</p>
           </div>
           <!-- <div class="shap-love-stage">Single</div> -->
           <div class="commodity-item-content">
@@ -257,9 +325,9 @@
           </div>
         </div>
 
-        <div class="commodity-item  col-5 col-lg-3 yellow">
+        <div class="commodity-item  col-5 col-lg-3 all fall-in-love">
           <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
-            <p>single</p>
+            <p>fall-in-love</p>
           </div>
           <!-- <div class="shap-love-stage">Single</div> -->
           <div class="commodity-item-content">
@@ -302,9 +370,9 @@
         </div>
 
 
-        <div class="commodity-item  col-5 col-lg-3 yellow">
+        <div class="commodity-item  col-5 col-lg-3 all break-up">
           <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
-            <p>single</p>
+            <p>break-up</p>
           </div>
           <!-- <div class="shap-love-stage">Single</div> -->
           <div class="commodity-item-content">
@@ -398,80 +466,80 @@
         </div>
 
         <div class="commodity-item  col-5 col-lg-3 yellow">
-            <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
-              <p>戀愛小語</p>
+          <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
+            <p>戀愛小語</p>
+          </div>
+          <!-- <div class="shap-love-stage">Single</div> -->
+          <div class="commodity-item-content">
+            <div class="item-img">
+              <img src="img/shop/popsicle-single.png" alt="">
+              <img src="img/shop/collection-red.png" alt="" class="collection-love">
             </div>
-            <!-- <div class="shap-love-stage">Single</div> -->
-            <div class="commodity-item-content">
-              <div class="item-img">
-                <img src="img/shop/popsicle-single.png" alt="">
-                <img src="img/shop/collection-red.png" alt="" class="collection-love">
+            <figure>
+              <div class="fruit-pic"><img src="img/qa/grape.png" alt=""></div>
+              <div class="fruit-pic"><img src="img/qa/greenapple.png" alt=""></div>
+              <div class="fruit-pic"><img src="img/qa/chocolate.png" alt=""></div>
+            </figure>
+            <div class="custom-pri">
+              <span>
+                NT250$
+              </span>
+              <div class="custom-btn-numbox">
+                <form id='myform' method='POST' action='#'>
+                  <input type='button' value='-' class='qtyminus' field='quantity' />
+                  <input type='text' name='quantity' value='0' class='qty' />
+                  <input type='button' value='+' class='qtyplus' field='quantity' />
+                </form>
               </div>
-              <figure>
-                <div class="fruit-pic"><img src="img/qa/grape.png" alt=""></div>
-                <div class="fruit-pic"><img src="img/qa/greenapple.png" alt=""></div>
-                <div class="fruit-pic"><img src="img/qa/chocolate.png" alt=""></div>
-              </figure>
-              <div class="custom-pri">
-                <span>
-                  NT250$
+            </div>
+            <div class="shop-btn">
+
+              <div class="shop-buy-btn">
+                <span class="shop-btn-text">
+                  加入購物車
                 </span>
-                <div class="custom-btn-numbox">
-                  <form id='myform' method='POST' action='#'>
-                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                  </form>
-                </div>
-              </div>
-              <div class="shop-btn">
-  
-                <div class="shop-buy-btn">
-                  <span class="shop-btn-text">
-                    加入購物車
-                  </span>
-                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="commodity-item  col-5 col-lg-3 yellow">
-              <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
-                <p>戀愛小語</p>
-              </div>
-              <!-- <div class="shap-love-stage">Single</div> -->
-              <div class="commodity-item-content">
-                <div class="item-img">
-                  <img src="img/shop/popsicle-single.png" alt="">
-                  <img src="img/shop/collection-red.png" alt="" class="collection-love">
-                </div>
-                <figure>
-                  <div class="fruit-pic"><img src="img/qa/grape.png" alt=""></div>
-                  <div class="fruit-pic"><img src="img/qa/greenapple.png" alt=""></div>
-                  <div class="fruit-pic"><img src="img/qa/chocolate.png" alt=""></div>
-                </figure>
-                <div class="custom-pri">
-                  <span>
-                    NT250$
-                  </span>
-                  <div class="custom-btn-numbox">
-                    <form id='myform' method='POST' action='#'>
-                      <input type='button' value='-' class='qtyminus' field='quantity' />
-                      <input type='text' name='quantity' value='0' class='qty' />
-                      <input type='button' value='+' class='qtyplus' field='quantity' />
-                    </form>
-                  </div>
-                </div>
-                <div class="shop-btn">
-    
-                  <div class="shop-buy-btn">
-                    <span class="shop-btn-text">
-                      加入購物車
-                    </span>
-                  </div>
-                </div>
+        <div class="commodity-item  col-5 col-lg-3 yellow">
+          <div class="shap-ice-type"><img src="img/shop/icetype-popsicle.png" alt="">
+            <p>戀愛小語</p>
+          </div>
+          <!-- <div class="shap-love-stage">Single</div> -->
+          <div class="commodity-item-content">
+            <div class="item-img">
+              <img src="img/shop/popsicle-single.png" alt="">
+              <img src="img/shop/collection-red.png" alt="" class="collection-love">
+            </div>
+            <figure>
+              <div class="fruit-pic"><img src="img/qa/grape.png" alt=""></div>
+              <div class="fruit-pic"><img src="img/qa/greenapple.png" alt=""></div>
+              <div class="fruit-pic"><img src="img/qa/chocolate.png" alt=""></div>
+            </figure>
+            <div class="custom-pri">
+              <span>
+                NT250$
+              </span>
+              <div class="custom-btn-numbox">
+                <form id='myform' method='POST' action='#'>
+                  <input type='button' value='-' class='qtyminus' field='quantity' />
+                  <input type='text' name='quantity' value='0' class='qty' />
+                  <input type='button' value='+' class='qtyplus' field='quantity' />
+                </form>
               </div>
             </div>
+            <div class="shop-btn">
+
+              <div class="shop-buy-btn">
+                <span class="shop-btn-text">
+                  加入購物車
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -481,60 +549,35 @@
 
 
 
-  <div class="ice-btn-out">
-    <span class="ice-btn-in">
-      <img src="img/btn/ICE.png" alt="" class="testclass">
-      好吃好吃
-    </span>
-  </div>
-<script>
-$(function() {
-  // This button will increment the value
-  $('.qtyplus').click(function(e) {
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    fieldName = $(this).attr('field');
-    // Get its current value
-    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-    // If is not undefined
-    if (!isNaN(currentVal)) {
-      // Increment
-      $('input[name=' + fieldName + ']').val(currentVal + 1);
-    } else {
-      // Otherwise put a 0 there
-      $('input[name=' + fieldName + ']').val(0);
-    }
-  });
-  // This button will decrement the value till 0
-  $(".qtyminus").click(function(e) {
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    fieldName = $(this).attr('field');
-    // Get its current value
-    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-    // If it isn't undefined or its greater than 0
-    if (!isNaN(currentVal) && currentVal > 0) {
-      // Decrement one
-      $('input[name=' + fieldName + ']').val(currentVal - 1);
-    } else {
-      // Otherwise put a 0 there
-      $('input[name=' + fieldName + ']').val(0);
-    }
-  });
-});
-
-</script>
-
-
-
-
+  
   <footer>
     <span>LoveFruit.Ice Copyright © 2019 All right re served, Ltd.</span>
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+
+  </script>
+
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+
+
+
+
 $(document).ready(function() {
 	$('#all').click(function(){
 		$('.message-item').css('display','flex');

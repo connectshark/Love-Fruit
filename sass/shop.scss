@@ -218,7 +218,7 @@
                 //    align-content: center;
                 div{
                     margin: 10px;
-                    input{
+                    button{
                         font-size: 16px;
                         margin: 0px 5px;
                         width: 70px;
@@ -227,19 +227,19 @@
                         color: whitesmoke;
                     }
                     &:nth-child(1){
-                        input{
+                        button{
                               background-color: #FAD689;
                         }
                   
                     }
                     &:nth-child(2){
-                        input{
+                        button{
                               background-color: #6BDBDA;
                         }
                   
                     }
                     &:nth-child(3){
-                        input{
+                        button{
                               background-color: #EA7187;
                         }
                   
@@ -247,7 +247,7 @@
                     &:nth-child(4){
                         border-right:2px solid gray ;
                         padding-right:15px; 
-                        input{
+                        button{
                               background-color: #9DC5F6;
                         }
                   
@@ -739,37 +739,28 @@
                 }
                
             }
-            .red{
+            .first-love{
+                .shap-ice-type{
+                background-color:#6BDBDA;
+                }
+                .commodity-item-content{
+                    border:8px solid#6BDBDA;
+                }
+            }
+            .fall-in-love{
                 .shap-ice-type{
                 background-color:#EA7187;
-                }
-                .shap-love-stage{
-                    background-color:#EA7187;
                 }
                 .commodity-item-content{
                     border:8px solid#EA7187;
                 }
             }
-            .blue{
+            .break-up{
                 .shap-ice-type{
                 background-color:#9DC5F6;
                 }
-                .shap-love-stage{
-                    background-color:#9DC5F6;
-                }
                 .commodity-item-content{
                     border:8px solid#9DC5F6;
-                }
-            }
-            .green{
-                .shap-ice-type{
-                background-color:#6BDBDA;
-                }
-                .shap-love-stage{
-                    background-color:#6BDBDA;
-                }
-                .commodity-item-content{
-                    border:8px solid#6BDBDA;
                 }
             }
             .custom-pri{

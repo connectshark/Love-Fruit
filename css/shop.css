@@ -282,7 +282,7 @@
   .page-shop .store .select-bar .select-bar-botton div {
     margin: 10px;
   }
-  .page-shop .store .select-bar .select-bar-botton div input {
+  .page-shop .store .select-bar .select-bar-botton div button {
     font-size: 16px;
     margin: 0px 5px;
     width: 70px;
@@ -290,20 +290,20 @@
     border-radius: 5px;
     color: whitesmoke;
   }
-  .page-shop .store .select-bar .select-bar-botton div:nth-child(1) input {
+  .page-shop .store .select-bar .select-bar-botton div:nth-child(1) button {
     background-color: #FAD689;
   }
-  .page-shop .store .select-bar .select-bar-botton div:nth-child(2) input {
+  .page-shop .store .select-bar .select-bar-botton div:nth-child(2) button {
     background-color: #6BDBDA;
   }
-  .page-shop .store .select-bar .select-bar-botton div:nth-child(3) input {
+  .page-shop .store .select-bar .select-bar-botton div:nth-child(3) button {
     background-color: #EA7187;
   }
   .page-shop .store .select-bar .select-bar-botton div:nth-child(4) {
     border-right: 2px solid gray;
     padding-right: 15px;
   }
-  .page-shop .store .select-bar .select-bar-botton div:nth-child(4) input {
+  .page-shop .store .select-bar .select-bar-botton div:nth-child(4) button {
     background-color: #9DC5F6;
   }
 }
@@ -995,40 +995,28 @@
   height: 24px;
 }
 
-.page-shop .store .commodity .red .shap-ice-type {
+.page-shop .store .commodity .first-love .shap-ice-type {
+  background-color: #6BDBDA;
+}
+
+.page-shop .store .commodity .first-love .commodity-item-content {
+  border: 8px solid #6BDBDA;
+}
+
+.page-shop .store .commodity .fall-in-love .shap-ice-type {
   background-color: #EA7187;
 }
 
-.page-shop .store .commodity .red .shap-love-stage {
-  background-color: #EA7187;
-}
-
-.page-shop .store .commodity .red .commodity-item-content {
+.page-shop .store .commodity .fall-in-love .commodity-item-content {
   border: 8px solid #EA7187;
 }
 
-.page-shop .store .commodity .blue .shap-ice-type {
+.page-shop .store .commodity .break-up .shap-ice-type {
   background-color: #9DC5F6;
 }
 
-.page-shop .store .commodity .blue .shap-love-stage {
-  background-color: #9DC5F6;
-}
-
-.page-shop .store .commodity .blue .commodity-item-content {
+.page-shop .store .commodity .break-up .commodity-item-content {
   border: 8px solid #9DC5F6;
-}
-
-.page-shop .store .commodity .green .shap-ice-type {
-  background-color: #6BDBDA;
-}
-
-.page-shop .store .commodity .green .shap-love-stage {
-  background-color: #6BDBDA;
-}
-
-.page-shop .store .commodity .green .commodity-item-content {
-  border: 8px solid #6BDBDA;
 }
 
 .page-shop .store .commodity .custom-pri {
