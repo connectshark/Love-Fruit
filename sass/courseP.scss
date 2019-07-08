@@ -12,6 +12,15 @@ $bg-yellow:#f6c555;
 $bg-light-yellow:#fff8e4;
 $bg-blue:#c9fcfb;
 $font-gray:#434343;
+$deep-pink:#db4d6d;
+.welcome-wrap,.general-wrap{
+        .wrapper{
+        padding: 150px 0;
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
 
 //歡迎頁
 .welcome-wrap{
@@ -98,4 +107,100 @@ $font-gray:#434343;
         @include out-Line-Font(group-title,#fff,40px,5px,#6a3e26,揪團課程);
         @include out-Line-Font(general-title,#fff,40px,5px,#6a3e26,一般課程);
     }
+}
+
+//一般課程
+.general-wrap{
+    background-color: $bg-pink;
+    height: 1000px;
+    
+    .wrapper{
+        padding: 100px 0;
+        max-width: 1200px;
+        margin: auto;
+        @include rwd(desktop){
+                padding-top: 200px;
+        }
+
+    }
+    .general-ribbon{
+         margin: auto;
+         background: url(../img/ribbon.png)center center no-repeat;
+         background-size: contain;
+         text-align: center;
+         height: 150px;
+         width: 100%;    
+         padding: 45px 0;
+         @include rwd(medium){  
+            width: 500px;
+            height: 150px;
+            padding: 30px 0;
+        }  
+            .subtitle{
+            font-size: 13px;
+            color: $font-gray;
+            line-height: 26px;
+            @include rwd(medium){  
+            font-size: 18px;
+            color: $font-gray;
+            line-height: 32px;
+            }
+        }
+            @include out-Line-Font(title,#fff,24px,3px,#6a3e26,一般課程);
+            @include rwd(medium){ 
+                @include out-Line-Font(title,#fff,40px,5px,#6a3e26,一般課程);
+            }
+    }
+    .kanban-group{
+       
+        @include rwd(desktop){
+           display: flex;
+        }
+    }
+    .gift{   
+        text-align:center; 
+        position: relative;
+        span{
+            display: inline-block;
+            color: #fff;
+            position:absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,40%);
+            @include rwd(desktop){
+                font-size: 24px
+            }
+
+        }
+          
+    }
+    .info-subtitle{
+        border-bottom: $deep-pink solid 5px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin: 10px 0;
+        h4{
+            font-size: 18px;
+        }
+    }
+    .info-dec{
+        li{
+            font-size: 18px;
+            font-family: "GenJyuuGothic-B";
+            padding:10px 0 5px;
+        }
+        p{
+            font-size: 13px;
+            letter-spacing: 1px;
+            line-height: 15px;
+            @include rwd(desktop){
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+
+   
+
 }
