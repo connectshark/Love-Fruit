@@ -208,7 +208,8 @@
 							<img :src="img" :alt="imgName">
 						</div>
 						<h3><span>To:</span>{{forWho}}</h3>
-						<p>{{text}}</p>
+						<p v-if="text">{{text}}</p>
+						<p class="m-text" v-else></p>
 						<p class="s-text">#{{phrase}}</p>
 					</div>
 					<div class="message-footer">
@@ -253,15 +254,15 @@
 					<div class="letter-footer">
 		                <div class="write-title">
 		                    <p>寫給誰</p>
-		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle"></label>
+		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle" placeholder="寫給誰"></label>
 		                </div>
 		                <div class="write-content">
 		                    <p>留言內容</p>
-		                    <label><input type="text" minlength="1" maxlength="20" v-model="text" id="userContent"></label>
+		                    <label><input type="text" minlength="1" maxlength="20" v-model="text" id="userContent" placeholder="留言內容"></label>
 		                </div>
 		                <div class="write-phrase">
 		                    <p>冰棒小語</p>
-		                    <label><input type="text" minlength="1" maxlength="5" v-model="phrase" id="userPhrase"></label>
+		                    <label><input type="text" minlength="1" maxlength="5" v-model="phrase" id="userPhrase" placeholder="冰棒小語"></label>
 		                </div>
 		                <div class="write-buttons">
 		                    <label><input type="reset" value="清除" @click="clear"></label>
@@ -286,11 +287,11 @@
 		new Vue({
 			el: "#app",
 			data: {
-				forWho: "寫給誰",
+				forWho: "",
 				img: "",
 				imgName: "",
-				text: "留言內容",
-				phrase:"冰棒小語",
+				text: "",
+				phrase:"",
 			},
 			methods: {
 				fileLoad(e) {
@@ -304,11 +305,11 @@
 					this.img = e.target.result;
 				},
 				clear() {
-					this.forWho = "寫給誰";
+					this.forWho = "";
 					this.img = "";
 					this.imgName = "";
-					this.text = "留言內容";
-					this.phrase = "冰棒小語";
+					this.text = "";
+					this.phrase = "";
 				}
 			},
 		});

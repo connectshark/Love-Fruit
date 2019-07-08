@@ -205,7 +205,7 @@ body {
 
 .letter .letter-content .letter-footer .write-title input {
   width: 100%;
-  padding: 5px;
+  padding: 5px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 18px;
@@ -217,7 +217,7 @@ body {
 
 .letter .letter-content .letter-footer .write-content input {
   width: 100%;
-  padding: 5px;
+  padding: 5px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 18px;
@@ -229,7 +229,7 @@ body {
 
 .letter .letter-content .letter-footer .write-phrase input {
   width: 100%;
-  padding: 5px;
+  padding: 5px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 18px;
@@ -467,6 +467,10 @@ body {
   margin-left: auto;
   padding: 0 0 10px;
   text-align: justify;
+}
+
+.message-item .message-body .m-text {
+  height: 42px;
 }
 
 .message-item .message-body .s-text {
