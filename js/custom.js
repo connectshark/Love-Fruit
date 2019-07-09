@@ -1,6 +1,4 @@
 var nowFlow = 1;
-fruiteName = ['greenapple','banana','blueberry','orange','grape','streberry'];
-fruiteColor = ['green','yellow','blue','orange','purple','red'];
 gradint=[];
 function flowChange(now) {
 	if (now < 1) {
@@ -61,22 +59,116 @@ function imgChange(){
 	$(this).children('figure').css('backgroundColor','#db4d6d');
 }
 // 第二步換水果
+fruitePrice = [200,180,360,270,195,954];
+fruiteQuality = new Array();
+fruiteQuality[0] = [5,6,8];//青蘋果
+fruiteQuality[1] = [2,7,7];//香蕉
+fruiteQuality[2] = [9,0,4];//藍莓
+fruiteQuality[3] = [7,2,5];//橘子
+fruiteQuality[4] = [8,8,1];//葡萄
+fruiteQuality[5] = [1,3,8];//草莓
+console.log(fruiteQuality);
+fruiteName = ['greenapple','banana','blueberry','orange','grape','streberry'];
+fruiteColor = ['green','yellow','blue','orange','purple','red'];
+fruiteItem = new Array();
 function fruiteChange() {
-	var src = $(this).children().children().attr('src');
-	var alt = $(this).children().children().attr('alt');
-	var number = $(this).index('.fruite-item');
-	gradint.push(fruiteColor[number]);
-	console.log(gradint);
-	$('.fruite-item').children('figure').css('backgroundColor','#f596aa');
-	$(this).children('figure').css('backgroundColor','#db4d6d');
-	// 選兩個內容
-	$("input[name='fruite[]']").attr('disabled', true);
-	var checked = $("input[name='fruite[]']:checked").length;
-	if (checked >= 2) {
-		$("input[name='fruite[]']:checked").attr('disabled', false);
-	} else {
-		$("input[name='fruite[]']").attr('disabled', false);
+	var itemNumber = $(this).index('.fruite-item');
+	var arrIndex = fruiteItem.indexOf(itemNumber);
+	// 檢查裡面元素是否重複
+	if (arrIndex != -1) {
+		fruiteItem.splice(arrIndex,1);
+	}else {
+		//不重複檢查是否有位置可放
+		if (fruiteItem.length < 2) {
+			fruiteItem.push(itemNumber);
+		}
 	}
+	bgcGradient();
+	listItemChange();
+	persentChange();
+}
+function persentChange() {
+	$.each(fruiteQuality[fruiteItem[0]],function(index, el) {
+		console.log(index);
+		console.log(el);
+	});
+}
+function listItemChange() {
+	if (fruiteItem.length == 1) {
+		$('#fruite-b').children().attr({
+			'src': "",
+			'alt': "",
+		});
+		$('#list-description-b').text("");
+		$('#list-price-b').text("");
+		var Aimg = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('src');
+		var Aalt = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('alt');
+		$('#fruite-a').children().attr({
+			'src': Aimg,
+			'alt': Aalt,
+		});
+		$('#list-price-a').text(fruitePrice[fruiteItem[0]]);
+		$('#list-description-a').text(Aalt);
+	}else if(fruiteItem.length == 2){
+		var Aimg = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('src');
+		var Aalt = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('alt');
+		var Bimg = $('.fruite-item').eq(fruiteItem[1]).children().children().attr('src');
+		var Balt = $('.fruite-item').eq(fruiteItem[1]).children().children().attr('alt');
+		$('#fruite-a').children().attr({
+			'src': Aimg,
+			'alt': Aalt,
+		});
+		$('#fruite-b').children().attr({
+			'src': Bimg,
+			'alt': Balt,
+		});
+		$('#list-price-b').text(fruitePrice[fruiteItem[1]]);
+		$('#list-description-b').text(Balt);
+	}else {
+		$('#list-description-a').text("");
+		$('#list-description-b').text("");
+		$('#fruite-a').children().attr({
+			'src': "",
+			'alt': "",
+		});
+		$('#fruite-b').children().attr({
+			'src': "",
+			'alt': "",
+		});
+		$('#list-price-a').text("");
+		$('#list-price-b').text("");
+	}
+}
+function bgcGradient() {
+	if (fruiteItem.length == 1) {
+		$('.gradual-item').children().attr('src', '');
+		var Aimg = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('src');
+		$('.gradual-item').eq(0).children().attr('src', Aimg);
+		Afruite = fruiteColor[fruiteItem[0]];
+		$('#range').css({
+			'backgroundColor' : Afruite,
+			'backgroundImage' : 'none',
+		});
+	}else if (fruiteItem.length == 2) {
+		var Afruite = fruiteColor[fruiteItem[0]];
+		var Bfruite = fruiteColor[fruiteItem[1]];
+		var Aimg = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('src');
+		var Bimg = $('.fruite-item').eq(fruiteItem[1]).children().children().attr('src');
+		$('.gradual-item').eq(0).children().attr('src', Aimg);
+		$('.gradual-item').eq(1).children().attr('src', Bimg);
+		$('#range').css({
+			'backgroundColor' : 'transparent',
+			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+Bfruite+')',
+		});
+	}else {
+		$('.gradual-item').children().attr('src', '');
+		$('#range').css({
+			'backgroundColor' : '#fff',
+			'backgroundImage' : 'none',
+		});
+		
+	}
+
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
