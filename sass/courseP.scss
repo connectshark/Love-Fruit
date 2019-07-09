@@ -232,8 +232,8 @@ $deep-pink:#db4d6d;
         @include rwd(medium){
              height: 400px;
         }
-    background:$bg-pink url(../img/course/cloud-message.png) bottom center repeat;
-    background-size: contain;
+    background:$bg-pink url(../img/course/cloud-message.png) bottom center no-repeat ;
+    background-size: 100%;
    
 }
 .message-wrap{
@@ -626,15 +626,88 @@ $deep-pink:#db4d6d;
 //揪團課程
 .group-wrap{
     background-color: #9dc5f6 ;
-
+    
     .wrapper{
+        .cloud{
+            display: none;
+        }
+        @include rwd(medium){
+
+       
+        .cloud{
+            display: block;
+            position: absolute;
+        }
+        .cloud:nth-child(0n + 1){
+            left: 0;
+            width: 10%;
+            top:30%;
+            animation: clouda 20s linear 0s infinite alternate;
+        }
+        .cloud:nth-child(0n + 2){
+            width: 8%;
+            top: 70%;
+            left: 20%;
+            animation: clouda 30s linear 0s infinite alternate;
+        }
+        .cloud:nth-child(0n + 3){
+            width: 18%;
+            right: 10%;
+            top: 20%;
+            animation: cloudb 40s linear 0s infinite alternate;
+        }
+        .cloud:nth-child(0n + 4){
+            right: 30%;
+            top: 50%;
+            right: 0%;
+            animation: cloudb 50s linear 0s infinite alternate;
+        }
+        .cloud:nth-child(0n + 5){
+            width: 15%;
+            right: 80%;
+            top: 100%;
+            animation: cloudb 60s linear 0s infinite alternate;
+        }
+
+        @keyframes clouda {
+            0% {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            50% {
+              transform: translateX(500%);
+              opacity: 0.5;
+            }
+            100% {
+              transform: translateX(1000%);
+              opacity: 1;
+            }
+        }
+        
+        @keyframes cloudb {
+            0% {
+              transform: translateX(100%);
+              opacity: 1;
+            }
+            50% {
+              transform: translateX(-500%);
+              opacity: 0.5;
+            }
+            100% {
+              transform: translateX(-1000%);
+              opacity: 1;
+            }
+        }
+    }
         padding-top: 30%;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
                 padding-top: 200px;
         }
+
         .group-ribbon{
+            z-index: 1;
             margin: auto;
             background: url(../img/ribbon.png)center center no-repeat;
             background-size: contain;
@@ -647,15 +720,15 @@ $deep-pink:#db4d6d;
                height: 150px;
                padding: 30px 0;
             }  
-               .subtitle{
-               font-size: 13px;
-               color: $font-gray;
-               line-height: 26px;
-                    @include rwd(medium){  
-                    font-size: 18px;
-                    color: $font-gray;
-                    line-height: 32px;
-                    }
+            .subtitle{
+            font-size: 13px;
+            color: $font-gray;
+            line-height: 26px;
+                @include rwd(medium){  
+                font-size: 18px;
+                color: $font-gray;
+                line-height: 32px;
+                }
            }
                @include out-Line-Font(title,#fff,24px,3px,#6a3e26,揪團課程);
                @include rwd(medium){ 
@@ -663,6 +736,7 @@ $deep-pink:#db4d6d;
                }
        }
         .kanban{
+            z-index: 3;
             width: 90%;
             margin: auto;
             @include rwd(medium){
@@ -691,62 +765,63 @@ $deep-pink:#db4d6d;
                         transform: translate(-50%,110%);
                     }
                 }
+            } 
+                .content-box{
+                padding-top: 30px;
+                border: $bg-medium-yellow solid 5px;
+                border-radius: 10px;
+                background-color: #fff;
+                @include rwd(desktop){
+                    display: flex;
+                    flex-flow: row wrap; 
+                }
+                .diy-img{
+                    img{
+                        @include rwd(mobile){
+                        width: 80%;
+                        margin: auto;
+                        } 
+                    }
+                    text-align: center;
+                }
+                .info-title{
+                    width: 80%;
+                    margin: auto;
+                    text-align: center;
+                    border-bottom: $bg-medium-yellow solid 2px;
+                    h4{
+                    font:20px "A-OTF-M";
+                }
+                }
+                .info-dec{
+                    width: 75%;
+                    margin: auto;
+                    li{
+                        font-size: 18px;
+                        font-family: "GenJyuuGothic-B";
+                        padding:10px 0 5px;
+                    }
+                    p{
+                        font-size: 13px;
+                        letter-spacing: 1px;
+                        line-height: 15px;
+                        @include rwd(desktop){
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }  
+                }
+                .course-btn{
+                    padding: 20px;
+                    .course-ice-btn-out{
+                        margin: auto;
+                    }
+                }
+                @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,20px,20px, 我要開團);
             }
         }   
  
-        .content-box{
-            padding-top: 30px;
-            border: $bg-medium-yellow solid 5px;
-            border-radius: 10px;
-            background-color: #fff;
-            @include rwd(medium){
-                display: flex;
-                flex-flow: row wrap; 
-            }
-            .diy-img{
-                img{
-                    @include rwd(mobile){
-                    width: 80%;
-                    margin: auto;
-                    } 
-                }
-                text-align: center;
-            }
-            .info-title{
-                width: 80%;
-                margin: auto;
-                text-align: center;
-                border-bottom: $bg-medium-yellow solid 2px;
-                h4{
-                font:20px "A-OTF-M";
-               }
-            }
-            .info-dec{
-                width: 75%;
-                margin: auto;
-                li{
-                    font-size: 18px;
-                    font-family: "GenJyuuGothic-B";
-                    padding:10px 0 5px;
-                }
-                p{
-                    font-size: 13px;
-                    letter-spacing: 1px;
-                    line-height: 15px;
-                    @include rwd(desktop){
-                        font-size: 16px;
-                        line-height: 20px;
-                    }
-                }  
-            }
-            .course-btn{
-                padding: 20px;
-                .course-ice-btn-out{
-                    margin: auto;
-                }
-            }
-            @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,20px,20px, 我要預約);
-        }
+    
     }
 
 }
@@ -758,10 +833,10 @@ $deep-pink:#db4d6d;
         @include rwd(medium){
              height: 400px;
         }
-        background:#9dc5f6 url(../img/course/course-Wcloud.png) bottom center repeat;
-        background-size: contain;
-     }
-
+        background:#9dc5f6 url(../img/course/course-Wcloud.png)center bottom  no-repeat;
+        background-size: 100%;
+  
+    }
     .title-box{
         text-align: center;
         @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
@@ -783,7 +858,7 @@ $deep-pink:#db4d6d;
         .open-group{
             margin: 30px;
             padding: 20px 30px;
-            background-color: $bg-medium-yellow;
+            background-color: $bg-yellow;
             border-radius: 10px;
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
             display: flex;
@@ -792,6 +867,9 @@ $deep-pink:#db4d6d;
             p{
                 font-size: 20px;
                 color:$font-gray;
+            }
+            .time{
+                font-size: 16px;
             }
             .message-meb{
                 text-align: center;
@@ -832,5 +910,120 @@ $deep-pink:#db4d6d;
             }
   
         }
+        .love-line{
+           width: 100%;
+           padding:50px 0;
+           @include rwd(mobile){
+            width: 90%;
+            padding:20px 0;
+            margin: auto;
+            img{
+                width: 100%;
+            }
+          }
+        }
+        .array-btn{
+            padding: 50px;
+            .array-ice-btn-out{
+                margin: auto;
+            }
+        }
+        @include ice-btn(array-ice-btn-out,135px,array-ice-btn-in,20px,20px, 主揪報團);
+        .team-name{ 
+            background-color: $bg-yellow;
+            margin: 100px 0;
+            text-align: center;
+            font: 18px 'A-OTF-M';
+            color:$font-gray;
+            width: 70%;
+            margin: auto;
+            height: 40px;
+            border-radius:40px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            transform: translateY(50%);
+            @include rwd(medium){
+                font: 24px 'A-OTF-M';
+                width: 40%;
+                height: 50px;
+                border-radius:50px;
+            }
+        }
+        .main-group-message{
+            padding-top:50px; 
+            margin-bottom: 50px;
+            background-color:$bg-medium-yellow;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            @include rwd(mobile){
+               width: 95%;
+               margin: auto
+            }
+            p{
+                font-size: 16px;
+                color:$font-gray;
+                @include rwd(medium){
+                
+                    font-size: 18px;
+                }
+            }
+            .time{
+                font-size: 16px;
+            }
+            .message-meb{
+                text-align: center;
+                line-height: 30px;
+                i{
+                    color: #aaa;
+                    font-size: 50px;
+                }
+                @include rwd(mobile){
+                   margin: 0  20px 0 0;
+                 }
+            }
+            .message-con{
+                font-size: 16px;
+                background-color: #fff;
+                border-radius:10px;
+                line-height: 1.5;
+                width: 70%;
+                height: 180px;
+                padding:10px;
+                position: relative;;
+                &::before{
+                    content: "";
+                    border-style: solid solid solid solid; 
+                    border-color:transparent   #fff transparent transparent;
+                    border-width: 15px  25px 15px 15px;
+                    height: 0px; 
+                    width: 0px; 
+                    position:absolute;
+                    left: -40px;
+                    top: 20px;
+                    @include rwd(mobile){
+                        border-width: 10px  15px 10px 10px;
+                        left: -25px;
+                        top: 20px;
+                     }
+                }
+                @include rwd(medium){
+                   height: 180px;
+                   font-size: 18px;
+                   padding:10px  20px;
+                }
+            }
+            
+            .message-btn{
+                padding: 20px 0;
+                .message-btn-out{
+                    width: 100%;
+                    margin: auto;
+                }
+                @include btn(message-btn-out,135px,message-btn-in,20px, 我要參加);
+            }
+        }
+
     }  
 }

@@ -420,8 +420,8 @@ body {
 
 .message-cloud {
   height: 200px;
-  background: #ffd9d9 url(../img/course/cloud-message.png) bottom center repeat;
-  background-size: contain;
+  background: #ffd9d9 url(../img/course/cloud-message.png) bottom center no-repeat;
+  background-size: 100%;
 }
 
 @media all and (min-width: 769px) {
@@ -1109,6 +1109,120 @@ body {
   margin: auto;
 }
 
+.group-wrap .wrapper .cloud {
+  display: none;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .wrapper .cloud {
+    display: block;
+    position: absolute;
+  }
+  .group-wrap .wrapper .cloud:nth-child(0n + 1) {
+    left: 0;
+    width: 10%;
+    top: 30%;
+    -webkit-animation: clouda 20s linear 0s infinite alternate;
+            animation: clouda 20s linear 0s infinite alternate;
+  }
+  .group-wrap .wrapper .cloud:nth-child(0n + 2) {
+    width: 8%;
+    top: 70%;
+    left: 20%;
+    -webkit-animation: clouda 30s linear 0s infinite alternate;
+            animation: clouda 30s linear 0s infinite alternate;
+  }
+  .group-wrap .wrapper .cloud:nth-child(0n + 3) {
+    width: 18%;
+    right: 10%;
+    top: 20%;
+    -webkit-animation: cloudb 40s linear 0s infinite alternate;
+            animation: cloudb 40s linear 0s infinite alternate;
+  }
+  .group-wrap .wrapper .cloud:nth-child(0n + 4) {
+    right: 30%;
+    top: 50%;
+    right: 0%;
+    -webkit-animation: cloudb 50s linear 0s infinite alternate;
+            animation: cloudb 50s linear 0s infinite alternate;
+  }
+  .group-wrap .wrapper .cloud:nth-child(0n + 5) {
+    width: 15%;
+    right: 80%;
+    top: 100%;
+    -webkit-animation: cloudb 60s linear 0s infinite alternate;
+            animation: cloudb 60s linear 0s infinite alternate;
+  }
+  @-webkit-keyframes clouda {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(500%);
+              transform: translateX(500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(1000%);
+              transform: translateX(1000%);
+      opacity: 1;
+    }
+  }
+  @keyframes clouda {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(500%);
+              transform: translateX(500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(1000%);
+              transform: translateX(1000%);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes cloudb {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(-500%);
+              transform: translateX(-500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(-1000%);
+              transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+  @keyframes cloudb {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(-500%);
+              transform: translateX(-500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(-1000%);
+              transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+}
+
 @media all and (min-width: 992px) {
   .group-wrap .wrapper {
     padding-top: 200px;
@@ -1116,6 +1230,7 @@ body {
 }
 
 .group-wrap .wrapper .group-ribbon {
+  z-index: 1;
   margin: auto;
   background: url(../img/ribbon.png) center center no-repeat;
   background-size: contain;
@@ -1187,6 +1302,7 @@ body {
 }
 
 .group-wrap .wrapper .kanban {
+  z-index: 3;
   width: 90%;
   margin: auto;
 }
@@ -1229,15 +1345,15 @@ body {
   }
 }
 
-.group-wrap .wrapper .content-box {
+.group-wrap .wrapper .kanban .content-box {
   padding-top: 30px;
   border: #fad689 solid 5px;
   border-radius: 10px;
   background-color: #fff;
 }
 
-@media all and (min-width: 769px) {
-  .group-wrap .wrapper .content-box {
+@media all and (min-width: 992px) {
+  .group-wrap .wrapper .kanban .content-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1248,61 +1364,61 @@ body {
   }
 }
 
-.group-wrap .wrapper .content-box .diy-img {
+.group-wrap .wrapper .kanban .content-box .diy-img {
   text-align: center;
 }
 
 @media all and (max-width: 768px) {
-  .group-wrap .wrapper .content-box .diy-img img {
+  .group-wrap .wrapper .kanban .content-box .diy-img img {
     width: 80%;
     margin: auto;
   }
 }
 
-.group-wrap .wrapper .content-box .info-title {
+.group-wrap .wrapper .kanban .content-box .info-title {
   width: 80%;
   margin: auto;
   text-align: center;
   border-bottom: #fad689 solid 2px;
 }
 
-.group-wrap .wrapper .content-box .info-title h4 {
+.group-wrap .wrapper .kanban .content-box .info-title h4 {
   font: 20px "A-OTF-M";
 }
 
-.group-wrap .wrapper .content-box .info-dec {
+.group-wrap .wrapper .kanban .content-box .info-dec {
   width: 75%;
   margin: auto;
 }
 
-.group-wrap .wrapper .content-box .info-dec li {
+.group-wrap .wrapper .kanban .content-box .info-dec li {
   font-size: 18px;
   font-family: "GenJyuuGothic-B";
   padding: 10px 0 5px;
 }
 
-.group-wrap .wrapper .content-box .info-dec p {
+.group-wrap .wrapper .kanban .content-box .info-dec p {
   font-size: 13px;
   letter-spacing: 1px;
   line-height: 15px;
 }
 
 @media all and (min-width: 992px) {
-  .group-wrap .wrapper .content-box .info-dec p {
+  .group-wrap .wrapper .kanban .content-box .info-dec p {
     font-size: 16px;
     line-height: 20px;
   }
 }
 
-.group-wrap .wrapper .content-box .course-btn {
+.group-wrap .wrapper .kanban .content-box .course-btn {
   padding: 20px;
 }
 
-.group-wrap .wrapper .content-box .course-btn .course-ice-btn-out {
+.group-wrap .wrapper .kanban .content-box .course-btn .course-ice-btn-out {
   margin: auto;
 }
 
-.group-wrap .wrapper .content-box .course-ice-btn-out {
+.group-wrap .wrapper .kanban .content-box .course-ice-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -1324,14 +1440,14 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.group-wrap .wrapper .content-box .course-ice-btn-out:active {
+.group-wrap .wrapper .kanban .content-box .course-ice-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in {
+.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -1350,13 +1466,13 @@ body {
   cursor: pointer;
 }
 
-.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in:hover {
+.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in:hover {
   background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in > img {
+.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in > img {
   display: block;
   position: absolute;
   top: -7px;
@@ -1365,9 +1481,9 @@ body {
   height: 44.955px;
 }
 
-.group-wrap .wrapper .content-box .course-ice-btn-out .course-ice-btn-in:after {
+.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in:after {
   z-index: -1;
-  content: "我要預約";
+  content: "我要開團";
   position: absolute;
   left: 0px;
   right: 0px;
@@ -1380,8 +1496,8 @@ body {
 
 .group-message-wrap .group-message-cloud {
   height: 200px;
-  background: #9dc5f6 url(../img/course/course-Wcloud.png) bottom center repeat;
-  background-size: contain;
+  background: #9dc5f6 url(../img/course/course-Wcloud.png) center bottom no-repeat;
+  background-size: 100%;
 }
 
 @media all and (min-width: 769px) {
@@ -1433,7 +1549,7 @@ body {
 .group-message-wrap .group-message .open-group {
   margin: 30px;
   padding: 20px 30px;
-  background-color: #fad689;
+  background-color: #f6c555;
   border-radius: 10px;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -1452,6 +1568,10 @@ body {
 .group-message-wrap .group-message .open-group p {
   font-size: 20px;
   color: #434343;
+}
+
+.group-message-wrap .group-message .open-group .time {
+  font-size: 16px;
 }
 
 .group-message-wrap .group-message .open-group .message-meb {
@@ -1545,6 +1665,287 @@ body {
 .group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:after {
   z-index: -1;
   content: "我要留言";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.group-message-wrap .group-message .love-line {
+  width: 100%;
+  padding: 50px 0;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .group-message .love-line {
+    width: 90%;
+    padding: 20px 0;
+    margin: auto;
+  }
+  .group-message-wrap .group-message .love-line img {
+    width: 100%;
+  }
+}
+
+.group-message-wrap .group-message .array-btn {
+  padding: 50px;
+}
+
+.group-message-wrap .group-message .array-btn .array-ice-btn-out {
+  margin: auto;
+}
+
+.group-message-wrap .group-message .array-ice-btn-out {
+  display: block;
+  width: 135px;
+  padding: 2px;
+  height: 40.5px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.group-message-wrap .group-message .array-ice-btn-out:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  line-height: 20px;
+  position: relative;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 124.2px;
+  height: 31.05px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  cursor: pointer;
+}
+
+.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in:hover {
+  background-color: #FAD689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in > img {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 36.45px;
+  height: 44.955px;
+}
+
+.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in:after {
+  z-index: -1;
+  content: "主揪報團";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.group-message-wrap .group-message .team-name {
+  background-color: #f6c555;
+  margin: 100px 0;
+  text-align: center;
+  font: 18px 'A-OTF-M';
+  color: #434343;
+  width: 70%;
+  margin: auto;
+  height: 40px;
+  border-radius: 40px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .group-message .team-name {
+    font: 24px 'A-OTF-M';
+    width: 40%;
+    height: 50px;
+    border-radius: 50px;
+  }
+}
+
+.group-message-wrap .group-message .main-group-message {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  background-color: #fad689;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .group-message .main-group-message {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+.group-message-wrap .group-message .main-group-message p {
+  font-size: 16px;
+  color: #434343;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .group-message .main-group-message p {
+    font-size: 18px;
+  }
+}
+
+.group-message-wrap .group-message .main-group-message .time {
+  font-size: 16px;
+}
+
+.group-message-wrap .group-message .main-group-message .message-meb {
+  text-align: center;
+  line-height: 30px;
+}
+
+.group-message-wrap .group-message .main-group-message .message-meb i {
+  color: #aaa;
+  font-size: 50px;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .group-message .main-group-message .message-meb {
+    margin: 0  20px 0 0;
+  }
+}
+
+.group-message-wrap .group-message .main-group-message .message-con {
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 10px;
+  line-height: 1.5;
+  width: 70%;
+  height: 180px;
+  padding: 10px;
+  position: relative;
+}
+
+.group-message-wrap .group-message .main-group-message .message-con::before {
+  content: "";
+  border-style: solid solid solid solid;
+  border-color: transparent   #fff transparent transparent;
+  border-width: 15px  25px 15px 15px;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  left: -40px;
+  top: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .group-message .main-group-message .message-con::before {
+    border-width: 10px  15px 10px 10px;
+    left: -25px;
+    top: 20px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .group-message .main-group-message .message-con {
+    height: 180px;
+    font-size: 18px;
+    padding: 10px  20px;
+  }
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn {
+  padding: 20px 0;
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out {
+  width: 100%;
+  margin: auto;
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out {
+  display: block;
+  width: 135px;
+  padding: 2px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  position: relative;
+  padding: 1px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 135px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:after {
+  z-index: -1;
+  content: "我要參加";
   position: absolute;
   left: 0px;
   right: 0px;
