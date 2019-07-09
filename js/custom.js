@@ -169,7 +169,7 @@ function bgcGradient() {
 		$('.gradual-item').eq(1).children().attr('src', Bimg);
 		$('#range').css({
 			'backgroundColor' : 'transparent',
-			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+Bfruite+')',
+			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+$('#range').val()+'%,'+Bfruite+')',
 		});
 	}else {
 		$('.gradual-item').children().attr('src', '');
@@ -185,6 +185,12 @@ function gradintChange() {
 		$(this).css('backgroundImage','linear-gradient(to right, '+Afruite+','+fiftyPersent+'%,'+Bfruite+')');
 	}
 }
+function angleChange() {
+	if ($(this).val() > 360 || $(this).val() < 0 ) {
+		$(this).css('borderColor','#FF4500');
+		return;
+	}
+}
 $(document).ready(function() {
 	$('#last').click(lastChange);
 	$('#next').click(nextChange);
@@ -197,4 +203,9 @@ $(document).ready(function() {
 	// 第二步
 	$('.fruite-item').click(fruiteChange);
 	$('#range').change(gradintChange);
+	$('#angle').keyup(angleChange).focus(function() {
+		$(this).css('borderColor','#333');
+	}).blur(function() {
+		$(this).css('borderColor','#ccc');
+	});
 });
