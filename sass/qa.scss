@@ -5,9 +5,91 @@
     text-decoration: none;
 }
 
+
+
 .page-qa{
     font-family: "GenJyuuGothic-R";
     background-color: #ffe8e8;
+
+    .asw-btn{
+        display: block;
+        width: 200px;
+        padding: 2px;                       
+        margin: 20px auto;
+        background-color: #fff;
+        border: 3px solid #6a3e26;
+        border-radius: 100px;
+        text-align: center;
+
+       span{
+           display: block;
+           padding: 10px;
+           background-color: #fc7389;
+           border: 2px solid #e4575f;
+           border-radius: 100px;
+           color: #fff;
+           font-size: 16px;
+           transition: .2s;
+       }                       
+   }
+
+   .asw-btn:hover span{
+        background-color: #ffabb1;
+    }
+
+    .asw-btn:active span{
+        background-color: #db4d6d;
+    }
+
+    .pop-box{
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        display: none;
+        justify-content: center;
+
+        .result{
+            background-image: url(../img/pop.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 70%;
+            margin: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .pop-close{
+                position: absolute;
+                top:-2%;
+                right: 0;
+            }
+
+            .result-content{
+                padding-top: 100px;
+                text-align: center;
+                color: #6a3e26;
+                .result-stage{
+                    font-size: 30px;
+                    color: #6a3e26;
+                }
+            }
+        }
+
+        .result-a, .result-b, .result-c, .result-d{
+            display: none;
+        }
+
+        .result-show{
+            display: flex;
+        }
+ 
+    }
 
     .wrap{
         width: 100%;
@@ -18,6 +100,7 @@
     .qa{
         padding-top:150px; 
         position: relative;
+        overflow: hidden;
 
         .cloud{
             display: none;
@@ -58,6 +141,14 @@
                 padding: 5px;
                 margin: auto;
                 background-color: #f8c3cd;
+
+                .q1, .q2, .q3, .q4, .q5, .q6, .q7, .q8, .q9, .q10{
+                    display: none;
+                }
+
+                .show{
+                    display: block;
+                }
                 
                 .title-area{
                     display: flex;
@@ -73,39 +164,7 @@
                         text-align: left;
                         color: #cb1b45;
                     }
-                }
-
-                .asw{
-                    .asw-btn{
-                        display: block;
-                        width: 200px;
-                        padding: 2px;                       
-                        margin: 20px auto;
-                        background-color: #fff;
-                        border: 3px solid #6a3e26;
-                        border-radius: 100px;
-                        text-align: center;
-
-                       span{
-                           display: block;
-                           padding: 10px;
-                           background-color: #fc7389;
-                           border: 2px solid #e4575f;
-                           border-radius: 100px;
-                           color: #fff;
-                           font-size: 16px;
-                           transition: .2s;
-                       }                       
-                   }
-
-                   .asw-btn:hover span{
-                        background-color: #ffabb1;
-                    }
-
-                    .asw-btn:active span{
-                        background-color: #db4d6d;
-                    }
-                }                
+                }        
             }
             .envelope-front{
                 display: none;
@@ -346,162 +405,177 @@
     }
     
     @include rwd(medium){
-    
-            .qa{
-                padding-top:200px; 
 
-                .cloud{
-                    display: block;
+        .asw-btn{
+            span{
+                font-size: 18px;
+            }
+        }
+
+        .pop-box{
+            .result{
+                height: 50%;
+                .pop-close{
                     position: absolute;
-                }
-                .cloud:nth-child(0n + 1){
-                    width: 10%;
-                    top: 40%;
-                    animation: clouda 50s linear 0s infinite alternate;
-                }
-                .cloud:nth-child(0n + 2){
-                    width: 8%;
-                    top: 70%;
-                    left: 20%;
-                    animation: clouda 60s linear 0s infinite alternate;
-                }
-                .cloud:nth-child(0n + 3){
-                    width: 5%;
+                    top: -10%;
                     right: 10%;
-                    top: 20%;
-                    animation: cloudb 60s linear 0s infinite alternate;
                 }
-                .cloud:nth-child(0n + 4){
-                    right: 10%;
-                    top: 50%;
-                    animation: cloudb 60s linear 0s infinite alternate;
+            }
+        }
+    
+        .qa{
+            padding-top:200px;
+            
+
+            .cloud{
+                display: block;
+                position: absolute;
+            }
+            .cloud:nth-child(0n + 1){
+                width: 10%;
+                top: 40%;
+                animation: clouda 50s linear 0s infinite alternate;
+            }
+            .cloud:nth-child(0n + 2){
+                width: 8%;
+                top: 70%;
+                left: 20%;
+                animation: clouda 60s linear 0s infinite alternate;
+            }
+            .cloud:nth-child(0n + 3){
+                width: 5%;
+                right: 10%;
+                top: 20%;
+                animation: cloudb 60s linear 0s infinite alternate;
+            }
+            .cloud:nth-child(0n + 4){
+                right: 10%;
+                top: 50%;
+                animation: cloudb 60s linear 0s infinite alternate;
+            }
+            .cloud:nth-child(0n + 5){
+                width: 7%;
+                right: 20%;
+                top: 80%;
+                animation: cloudb 60s linear 0s infinite alternate;
+            }
+    
+            @keyframes clouda {
+                0% {
+                    transform: translateX(0);
+                    opacity: 1;
                 }
-                .cloud:nth-child(0n + 5){
-                    width: 7%;
-                    right: 20%;
-                    top: 80%;
-                    animation: cloudb 60s linear 0s infinite alternate;
+                50% {
+                    transform: translateX(500%);
+                    opacity: 0.5;
                 }
-        
-                @keyframes clouda {
-                    0% {
-                      transform: translateX(0);
-                      opacity: 1;
-                    }
-                    50% {
-                      transform: translateX(500%);
-                      opacity: 0.5;
-                    }
-                    100% {
-                      transform: translateX(1000%);
-                      opacity: 1;
-                    }
+                100% {
+                    transform: translateX(1000%);
+                    opacity: 1;
                 }
-                
-                @keyframes cloudb {
-                    0% {
-                      transform: translateX(100%);
-                      opacity: 1;
-                    }
-                    50% {
-                      transform: translateX(-500%);
-                      opacity: 0.5;
-                    }
-                    100% {
-                      transform: translateX(-1000%);
-                      opacity: 1;
-                    }
+            }
+            
+            @keyframes cloudb {
+                0% {
+                    transform: translateX(100%);
+                    opacity: 1;
                 }
-        
-                .title-main{
-                    width: 520px;
-                    height: 150px;
-                    padding: 30px 0;
-    
-                    @include out-Line-Font(title,#fff,40px,8px,#6a3e26,戀冰測驗);
-                    .title{
-                        z-index: 1;
-                        line-height: 40px;
-                    }
-    
-                    span{
-                        font-size: 18px;
-                        line-height: 32px;
-                    }
+                50% {
+                    transform: translateX(-500%);
+                    opacity: 0.5;
                 }
-    
-                .letter{
-                    .envelope-bg{
-                        display: block;
-                        background-image: url(../img/qa/envelopebg.png);
-                        width: 90%;
-                        height: 680px;
-                        background-size: cover;
-                        margin: auto;
-                    }
-    
-                    .topic{
-                        height: 500px;
-                        position: absolute;
-                        z-index: 0;
-                        bottom: 0px;
-                        left: 0;
-                        right: 0;
-                        padding: 50px;
-                        pointer-events: auto;
-                        text-align: center;
-    
-                        .title-area{
-                            .question{
-                                font-size: 28px;
-                                text-align: center;
-                            }
-                        }
-    
-                        .asw{
-                            .asw-btn{
-                                span{
-                                    font-size: 18px;
-                                }
-                            }
-                        }
-                    }
-                    .envelope-front{
-                        display: block;
-                        width: 90%;
-                        height: 255px;
-                        margin: -300px auto 0;
-                        position: relative;
-                        pointer-events: none;
-        
-                        img{
-                            width: 100%;
-                        }
-                    }
+                100% {
+                    transform: translateX(-1000%);
+                    opacity: 1;
                 }
             }
     
-            .stage{
-                height: 885px;
-    
-                .content{
+            .title-main{
+                width: 520px;
+                height: 150px;
+                padding: 30px 0;
+
+                @include out-Line-Font(title,#fff,40px,8px,#6a3e26,戀冰測驗);
+                .title{
+                    z-index: 1;
+                    line-height: 40px;
+                }
+
+                span{
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+            }
+
+            .letter{
+                .envelope-bg{
+                    display: block;
+                    background-image: url(../img/qa/envelopebg.png);
+                    width: 90%;
+                    height: 680px;
+                    background-size: cover;
+                    margin: auto;
+                }
+
+                .topic{
+                    height: 500px;
+                    position: absolute;
+                    z-index: 0;
+                    bottom: 0px;
+                    left: 0;
+                    right: 0;
                     padding: 50px;
+                    pointer-events: auto;
+                    text-align: center;
 
-                    .ice-btn-out{
-                        margin: 0;
-                        margin-left: auto;
+                    .title-area{
+                        .question{
+                            font-size: 28px;
+                            text-align: center;
+                        }
                     }
 
-                    .element-group{
-        
-                        .element{
-                            width: 80px;
-                            height: 80px;
-                        }
+                }
+                .envelope-front{
+                    display: block;
+                    width: 90%;
+                    height: 255px;
+                    margin: -300px auto 0;
+                    position: relative;
+                    pointer-events: none;
+    
+                    img{
+                        width: 100%;
                     }
                 }
             }
+        }
+    
+        .stage{
+            height: 885px;
+
+            .content{
+                padding: 50px;
+
+                .ice-btn-out{
+                    margin: 0;
+                    margin-left: auto;
+                }
+
+                .element-group{
+    
+                    .element{
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+        }
         
+        
+    }
+
+    @include rwd(desktop){
         
     }
 

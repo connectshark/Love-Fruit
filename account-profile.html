@@ -133,19 +133,19 @@
 					<div>member<a href="javascript:;">編輯頭貼</a></div>
 				</div>
 				<ul class="account-list">
-					<li class="col-4 col-md-10"><a class="list-item active" href="#profile"><i
+					<li class="col-4 col-md-10"><a class="link-item active" href="#profile"><i
 								class="fas fa-user-circle"></i>個人檔案</a></li>
-					<li class="col-4 col-md-10"><a class="list-item" href="#order"><i class="fas fa-file-alt"></i>我的訂單</a>
+					<li class="col-4 col-md-10"><a class="link-item" href="#order"><i class="fas fa-file-alt"></i>我的訂單</a>
 					</li>
-					<li class="col-4 col-md-10"><a class="list-item" href="#collection"><i class="fas fa-heart"></i>我的收藏</a>
+					<li class="col-4 col-md-10"><a class="link-item" href="#collection"><i class="fas fa-heart"></i>我的收藏</a>
 					</li>
-					<li class="col-4 col-md-10"><a class="list-item" href="#custom"><i class="fas fa-lemon"></i>客製紀錄</a></li>
-					<li class="col-4 col-md-10"><a class="list-item" href="#course"><i class="fas fa-calendar-alt"></i>課程預約</a>
+					<li class="col-4 col-md-10"><a class="link-item" href="#custom"><i class="fas fa-lemon"></i>客製紀錄</a></li>
+					<li class="col-4 col-md-10"><a class="link-item" href="#course"><i class="fas fa-calendar-alt"></i>課程預約</a>
 					</li>
 				</ul>
 			</div>
-			<div class="content col-12 col-md-9">
-				<div id="profile" class="content-profile show-content">
+			<div class="content-area col-12 col-md-9">
+				<div id="profile" class="content content-profile show-content">
 					<form action="">
 						<h2>我的檔案</h2>
 						<div class="profile-item col-12">
@@ -180,7 +180,7 @@
 					</form>
 				</div>
 
-				<div id="order" class="content-order">
+				<div id="order" class="content content-order">
 					<form action="">
 						<h2>歷史訂單</h2>
 						<div class="order-item col-12">
@@ -219,7 +219,7 @@
 					</form>
 				</div>
 
-				<div id="collection" class="content-collection">
+				<div id="collection" class="content content-collection">
 					<form action="">
 						<h2>收藏清單</h2>
 						<div class="collection-item col-12">
@@ -259,7 +259,7 @@
 				</div>
 
 
-				<div id="#custom" class="content-custom">
+				<div id="custom" class="content content-custom">
 					<form action="">
 						<h2>歷史客製</h2>
 						<div class="custom-item col-12">
@@ -298,7 +298,7 @@
 					</form>
 				</div>
 
-				<div id="course" class="content-course">
+				<div id="course" class="content content-course">
 					<form action="">
 							<h2>預約紀錄</h2>
 							<div class="class-item col-12">
@@ -353,13 +353,32 @@
 
 	<script src="js/nav.js"></script>
 	<script>
+		function $id(id){
+			return document.getElementById(id);
+		}
+		function $class(className){
+			return document.getElementsByClassName(className);
+		}
+
 		window.addEventListener("load",function(){
-			var accountLists = document.getElementsByClassName("list-item");
-			for (var i =0; i<accountLists.length; i++){
-				accountLists[i].addEventListener("click",function(){
-					
+			var linkItems = $class("link-item");
+			for(var i=0; i<linkItems.length;i++){
+				linkItems[i].addEventListener("click",function(){
+					for(var j=0; j<linkItems.length;j++){
+						linkItems[j].classList.remove("active");
+					}					
+					this.classList.add("active");
+					var linkString = this.href;
+					var idStr = linkString.split("#");
+					var contents = $class("content");
+
+					for(k=0; k<contents.length; k++){
+						contents[k].classList.remove("show-content");
+					}
+					$id(`${idStr[1]}`).classList.add("show-content");
+
 				},false);
-			}
+			}			
 		},false);
 	</script>
 </body>
