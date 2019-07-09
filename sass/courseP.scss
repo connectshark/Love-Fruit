@@ -103,10 +103,10 @@ $deep-pink:#db4d6d;
 .general-wrap{
     background-color: $bg-pink;
     .wrapper{
-        padding-top: 130px;
+        padding-top: 30%;
         max-width: 1200px;
         margin: auto;
-        @include rwd(desktop){
+        @include rwd(medium){
                 padding-top: 200px;
         }
     }
@@ -139,13 +139,16 @@ $deep-pink:#db4d6d;
             }
     }
     .kanban-group{
-        @include rwd(desktop){
+        @include rwd(medium){
            display: flex;
         } 
         .kanban{
             width: 80%;
-            padding: 30px;
+
             margin: auto;
+            @include rwd(medium){
+                padding: 30px;
+             } 
         }   
         
         .gift{
@@ -156,6 +159,7 @@ $deep-pink:#db4d6d;
             text-align:center; 
             position: relative;
             span{
+                width: 100%;
                 display: inline-block;
                 color: #fff;
                 position:absolute;
@@ -163,7 +167,8 @@ $deep-pink:#db4d6d;
                 left: 50%;
                 transform: translate(-50%,40%);
                 @include rwd(desktop){
-                    font-size: 24px
+                    font-size: 24px;
+                    transform: translate(-50%,70%);
                 }
 
             }
@@ -227,7 +232,7 @@ $deep-pink:#db4d6d;
         @include rwd(medium){
              height: 400px;
         }
-    background:$bg-pink url(../img/course/cloud-message.png) bottom center no-repeat;
+    background:$bg-pink url(../img/course/cloud-message.png) bottom center repeat;
     background-size: contain;
    
 }
@@ -249,7 +254,7 @@ $deep-pink:#db4d6d;
         }
     }
     .leave-message{
-        margin: 30px;
+        margin: 30px auto;
         padding: 20px 30px;
         width: 70%;
         border-radius: 10px;
@@ -273,7 +278,7 @@ $deep-pink:#db4d6d;
             }
             .balloons{
                 textarea{
-                    width: 90%;
+                    width: 100%;
                     font-size: 16px;
                     border-radius: 20px;
                     border: 3px solid #6a3e26;
@@ -303,7 +308,7 @@ $deep-pink:#db4d6d;
        
         padding-bottom:10%; 
         max-width: 1200px; 
-        padding-top:130px;
+        padding-top:30%;
         margin: auto;
         @include rwd(desktop){
             padding-top: 150px;
@@ -478,11 +483,11 @@ $deep-pink:#db4d6d;
    
     .wrapper{
         max-width: 1200px; 
-        padding-top:130px;
+        padding-top:30%;
         padding-bottom:10%; 
         margin: auto;
         @include rwd(desktop){
-            padding-top: 1ㄓ0px;
+            padding-top: 150px;
         }
         .title{
             padding: 5% 0;
@@ -623,7 +628,7 @@ $deep-pink:#db4d6d;
     background-color: #9dc5f6 ;
 
     .wrapper{
-        padding-top: 100px;
+        padding-top: 30%;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
@@ -753,7 +758,7 @@ $deep-pink:#db4d6d;
         @include rwd(medium){
              height: 400px;
         }
-        background:#9dc5f6 url(../img/course/course-Wcloud.png) bottom center no-repeat;
+        background:#9dc5f6 url(../img/course/course-Wcloud.png) bottom center repeat;
         background-size: contain;
      }
 

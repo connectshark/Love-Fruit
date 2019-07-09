@@ -157,12 +157,12 @@ body {
 }
 
 .general-wrap .wrapper {
-  padding-top: 130px;
+  padding-top: 30%;
   max-width: 1200px;
   margin: auto;
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) {
   .general-wrap .wrapper {
     padding-top: 200px;
   }
@@ -239,7 +239,7 @@ body {
   }
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) {
   .general-wrap .kanban-group {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -249,8 +249,13 @@ body {
 
 .general-wrap .kanban-group .kanban {
   width: 80%;
-  padding: 30px;
   margin: auto;
+}
+
+@media all and (min-width: 769px) {
+  .general-wrap .kanban-group .kanban {
+    padding: 30px;
+  }
 }
 
 .general-wrap .kanban-group .gift {
@@ -264,6 +269,7 @@ body {
 }
 
 .general-wrap .kanban-group .gift span {
+  width: 100%;
   display: inline-block;
   color: #fff;
   position: absolute;
@@ -276,6 +282,8 @@ body {
 @media all and (min-width: 992px) {
   .general-wrap .kanban-group .gift span {
     font-size: 24px;
+    -webkit-transform: translate(-50%, 70%);
+            transform: translate(-50%, 70%);
   }
 }
 
@@ -412,7 +420,7 @@ body {
 
 .message-cloud {
   height: 200px;
-  background: #ffd9d9 url(../img/course/cloud-message.png) bottom center no-repeat;
+  background: #ffd9d9 url(../img/course/cloud-message.png) bottom center repeat;
   background-size: contain;
 }
 
@@ -462,7 +470,7 @@ body {
 }
 
 .message-wrap .leave-message {
-  margin: 30px;
+  margin: 30px auto;
   padding: 20px 30px;
   width: 70%;
   border-radius: 10px;
@@ -498,7 +506,7 @@ body {
 }
 
 .message-wrap .leave-message .balloons textarea {
-  width: 90%;
+  width: 100%;
   font-size: 16px;
   border-radius: 20px;
   border: 3px solid #6a3e26;
@@ -581,7 +589,7 @@ body {
 .general-form-wrap .wrapper {
   padding-bottom: 10%;
   max-width: 1200px;
-  padding-top: 130px;
+  padding-top: 30%;
   margin: auto;
 }
 
@@ -859,14 +867,14 @@ body {
 
 .group-form-wrap .wrapper {
   max-width: 1200px;
-  padding-top: 130px;
+  padding-top: 30%;
   padding-bottom: 10%;
   margin: auto;
 }
 
 @media all and (min-width: 992px) {
   .group-form-wrap .wrapper {
-    padding-top: 1ㄓ0px;
+    padding-top: 150px;
   }
 }
 
@@ -1096,7 +1104,7 @@ body {
 }
 
 .group-wrap .wrapper {
-  padding-top: 100px;
+  padding-top: 30%;
   max-width: 1200px;
   margin: auto;
 }
@@ -1372,7 +1380,7 @@ body {
 
 .group-message-wrap .group-message-cloud {
   height: 200px;
-  background: #9dc5f6 url(../img/course/course-Wcloud.png) bottom center no-repeat;
+  background: #9dc5f6 url(../img/course/course-Wcloud.png) bottom center repeat;
   background-size: contain;
 }
 
