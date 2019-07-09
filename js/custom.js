@@ -67,8 +67,7 @@ fruiteQuality[2] = [9,0,4];//藍莓
 fruiteQuality[3] = [7,2,5];//橘子
 fruiteQuality[4] = [8,8,1];//葡萄
 fruiteQuality[5] = [1,3,8];//草莓
-console.log(fruiteQuality);
-fruiteName = ['greenapple','banana','blueberry','orange','grape','streberry'];
+// fruiteName = ['greenapple','banana','blueberry','orange','grape','streberry'];
 fruiteColor = ['green','yellow','blue','orange','purple','red'];
 fruiteItem = new Array();
 function fruiteChange() {
@@ -77,21 +76,33 @@ function fruiteChange() {
 	// 檢查裡面元素是否重複
 	if (arrIndex != -1) {
 		fruiteItem.splice(arrIndex,1);
+		$('.fruite-item').eq(itemNumber).children('figure').css('backgroundColor', '#f596aa');
 	}else {
 		//不重複檢查是否有位置可放
 		if (fruiteItem.length < 2) {
 			fruiteItem.push(itemNumber);
 		}
 	}
+	for (var i = 0; i < fruiteItem.length; i++) {
+		$('.fruite-item').eq(fruiteItem[i]).children('figure').css('backgroundColor', '#db4d6d');
+	}
 	bgcGradient();
 	listItemChange();
 	persentChange();
 }
 function persentChange() {
-	$.each(fruiteQuality[fruiteItem[0]],function(index, el) {
-		console.log(index);
-		console.log(el);
-	});
+	if (fruiteItem.length == 1) {
+		$('.progress-bar').css('width',0);
+		$.each(fruiteQuality[fruiteItem[0]],function(index, el) {
+			$('.progress-bar').eq(index).css('width', el * 5 +"%");
+		});
+	}else if(fruiteItem.length == 2){
+		for (var i = 0; i <3; i++) {
+			$('.progress-bar').eq(i).css('width', ( fruiteQuality[fruiteItem[0]][i]+fruiteQuality[fruiteItem[1]][i] ) * 5 +"%");
+		}
+	}else{
+		$('.progress-bar').css('width',0);
+	}
 }
 function listItemChange() {
 	if (fruiteItem.length == 1) {
@@ -150,8 +161,8 @@ function bgcGradient() {
 			'backgroundImage' : 'none',
 		});
 	}else if (fruiteItem.length == 2) {
-		var Afruite = fruiteColor[fruiteItem[0]];
-		var Bfruite = fruiteColor[fruiteItem[1]];
+		Afruite = fruiteColor[fruiteItem[0]];
+		Bfruite = fruiteColor[fruiteItem[1]];
 		var Aimg = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('src');
 		var Bimg = $('.fruite-item').eq(fruiteItem[1]).children().children().attr('src');
 		$('.gradual-item').eq(0).children().attr('src', Aimg);
@@ -166,9 +177,13 @@ function bgcGradient() {
 			'backgroundColor' : '#fff',
 			'backgroundImage' : 'none',
 		});
-		
 	}
-
+}
+function gradintChange() {
+	if (fruiteItem.length == 2) {
+		fiftyPersent = $(this).val();
+		$(this).css('backgroundImage','linear-gradient(to right, '+Afruite+','+fiftyPersent+'%,'+Bfruite+')');
+	}
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
@@ -179,5 +194,7 @@ $(document).ready(function() {
 	stepChange(nowFlow);
 	// 第一步
 	$('.texture-select').click(imgChange);
+	// 第二步
 	$('.fruite-item').click(fruiteChange);
+	$('#range').change(gradintChange);
 });
