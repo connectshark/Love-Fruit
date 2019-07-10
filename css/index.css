@@ -21,6 +21,9 @@
 * {
   /* outline: 1px solid #f00; */
 }
+body {
+  overflow-x: hidden;
+}
 /*第一屏幕*/
 @media screen and (max-width: 767px) {
   /* 飛船 */
@@ -157,7 +160,7 @@
     );
     position: relative;
     width: 100%;
-    padding-bottom: 140%;
+    padding-bottom: 170%;
     z-index: 1;
   }
   .mountain {
@@ -392,989 +395,1968 @@
     z-index: 3;
   }
 }
-
-/*第二屏幕*/
-.index-qa-bgc {
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  padding-bottom: 54%;
-}
-.qabgc-top {
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  top: -29%;
-}
-
-.index-title-group {
-  position: absolute;
-  width: 28%;
-  top: -10%;
-  margin: auto;
-  left: 0%;
-  right: 0%;
-}
-.index-title-icon {
-  display: inline-block;
-  width: 20%;
-}
-.index-title-icon img {
-  width: 100%;
-}
-.index-title-content {
-  padding-top: 2%;
-  margin-left: 1%;
-  text-align: center;
-  vertical-align: top;
-  display: inline-block;
-}
-.index-title-content h2 {
-  font-family: "A-OTF-M";
-  font-size: 3.5vw;
-  color: #ff8f8f;
-  letter-spacing: 4px;
-  margin-bottom: 3%;
-}
-.index-title-content span {
-  color: #777777;
-  letter-spacing: 2px;
-  font-size: 0.8vw;
-  font-family: "GenJyuuGothic-R";
-}
-
-.mailer-top {
-  position: absolute;
-  width: 40%;
-  left: 30%;
-  top: 5%;
-  z-index: 3;
-}
-.mailer-middle {
-  position: absolute;
-  left: 33%;
-  z-index: 4;
-  top: 30%;
-  width: 33%;
-  height: 55%;
-  border-radius: 3%;
-  text-align: center;
-  border: 4px solid #6a3e26;
-  background-color: #f9f1d2;
-  transition: 1s;
-}
-.mailer-middle-show {
-  top: 5%;
-}
-.mailer-qa-box {
-  margin-top: 4%;
-  margin-bottom: 3%;
-  display: inline-block;
-  width: 70%;
-  height: 30%;
-  border-radius: 10px;
-  border: 4px solid #6a3e26;
-  background-color: #ffffff;
-}
-.mailer-qa-box h3 {
-  margin-top: 2%;
-  padding: 7%;
-  font-family: "GenJyuuGothic-B";
-  color: #ea7187;
-  font-size: 1.3vw;
-  letter-spacing: 0.1vw;
-  line-height: 1.8vw;
-  text-align: justify;
-}
-.mailer-bottom {
-  position: absolute;
-  width: 40%;
-  top: 45%;
-  left: 30%;
-  z-index: 5;
-}
-.qabgc-bottom {
-  width: 100%;
-  top: -13%;
-  position: absolute;
-  z-index: -1;
-}
-/* 按鈕 */
-.qa-button-style {
-  margin-top: 1%;
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 10%;
-}
-.qa-button-style-botton {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  background-color: #6a3e26;
-  transform: translateY(0%);
-}
-.qa-inner-style {
-  margin-top: 1%;
-  display: inline-block;
-  width: 97%;
-  height: 76%;
-  border-radius: 30px;
-  border: 2px solid #ffffff;
-  background-color: #e4575f;
-  text-align: center;
-}
-.qa-btn-ice {
-  width: 30%;
-  position: absolute;
-  top: -15%;
-  left: -7%;
-}
-.qa-button-text-style {
-  position: relative;
-  top: 9.2%;
-  z-index: 0;
-  display: inline-block;
-  width: 98%;
-  height: 83%;
-  border-radius: 30px;
-  background-color: #fc7389;
-}
-.qa-button-text {
-  font-size: 0.8vw;
-  line-height: 1.8vw;
-  letter-spacing: 0.2vw;
-  margin-top: 1.2%;
-  color: #ffffff;
-  font-family: "A-OTF-M";
-}
-.qa-button-custom:hover .qa-button-text-style {
-  background-color: #ffabb1;
-}
-.qa-button-custom:active .qa-button-text-style {
-  background-color: #db4d6d;
-}
-/* 按鈕結束 */
-/*第三屏幕*/
-.index-cp-bgc {
-  position: relative;
-  width: 100%;
-  z-index: 3;
-  padding-bottom: 56%;
-}
-.love-cp {
-  position: absolute;
-  width: 28%;
-  top: -1%;
-  left: 37%;
-  z-index: 5;
-}
-.love-icon2 {
-  display: inline-block;
-  width: 20%;
-}
-.love-icon2 img {
-  width: 100%;
-}
-.index-title2 {
-  padding-top: 2%;
-  margin-left: 1%;
-  text-align: center;
-  vertical-align: top;
-  display: inline-block;
-}
-.love-cp h2 {
-  font-family: "A-OTF-M";
-  font-size: 3.5vw;
-  color: #ff8f8f;
-  letter-spacing: 4px;
-  margin-bottom: 3%;
-}
-.love-cp span {
-  color: #777777;
-  letter-spacing: 2px;
-  font-size: 0.8vw;
-  font-family: "GenJyuuGothic-R";
-}
-.diyIcebgc-top {
-  position: absolute;
-  width: 100%;
-  top: -35%;
-  z-index: 4;
-}
-.iceShadow {
-  position: absolute;
-  width: 10%;
-  left: 38%;
-  top: 51%;
-  z-index: 6;
-  animation: iceShadow 5s ease 0s infinite alternate;
-}
-@keyframes iceShadow {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+@media screen and (max-width: 768px) {
+  .index-qa-bgc {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    padding-bottom: 150%;
+    background-color: #ffd9d9;
   }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.4;
+  .qabgc-top {
+    position: absolute;
+    width: 160%;
+    z-index: 0;
+    right: -40%;
+    top: -20%;
   }
-  100% {
-    transform: scale(1);
-    opacity: 1;
+  .index-title-group {
+    position: absolute;
+    z-index: 5;
+    top: -6%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
-}
-/* 雲結束 */
+  .index-title-icon {
+    display: inline-block;
+    width: 16%;
+  }
+  .index-title-icon img {
+    width: 100%;
+  }
+  .index-title-content {
+    margin-left: 1%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+  }
+  .index-title-content h2 {
+    font-family: "A-OTF-M";
+    font-size: 8vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .index-title-content span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-family: "GenJyuuGothic-R";
+  }
 
-.c-p-store {
-  position: absolute;
-  width: 45%;
-  left: 27.5%;
-  top: 15%;
-  z-index: 5;
-}
-.diy-ice-bgc {
-  position: absolute;
-  width: 100%;
-  top: 7.5%;
-  z-index: 4;
-}
-.ice-panel {
-  padding-top: 10px;
-  position: absolute;
-  z-index: 7;
-  width: 12%;
-  height: 32%;
-  top: 26%;
-  left: 55.8%;
-  border-radius: 5%;
-  text-align: center;
-  border: 4px solid #6a3e26;
-  background-color: #f3e6c4;
-}
-.panel-button-item-group {
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 90%;
-  height: 70%;
-  margin-bottom: 4%;
-}
-.panel-button-bottom {
-  cursor: pointer;
-  width: 38%;
-  height: 42%;
-  border-radius: 15%;
-  border: 4px solid #6a3e26;
-  background-color: #bd9c64;
-}
-.panel-button-bottom:active {
-  transform: translateY(2%);
-}
-.panel-button-bottom:active .panel-button-bottom-pink {
-  background-color: #ffc8c7;
-}
-.panel-button-center {
-  width: 100%;
-  height: 94%;
-  border-radius: 15%;
-  background-color: #f3e6c4;
-  text-align: center;
-}
-.panel-button-center span {
-  margin-top: 35%;
-  font-size: 0.3vw;
-  color: #744934;
-  font-family: "GenJyuuGothic-R";
-}
-.panel-button-center-triangle-group {
-  font-size: 0;
-}
-.panel-button-bottom-pink {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  display: inline-block;
-  background-color: #ffa4b5;
-  width: 90%;
-  height: 70%;
-  border-radius: 15%;
-}
-.panel-button-bottom-pink img {
-  padding-top: 10%;
-  width: 70%;
-}
-.panel-button-center-triangle {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0.4vw 0.4vw 0.4vw;
-  border-color: transparent transparent #e1b583 transparent;
-}
-.ice-panel h3 {
-  font-family: "A-OTF-M";
-  font-size: 1.2vw;
-  letter-spacing: 0.01vw;
-  color: #6a3e26;
-  margin-bottom: 3%;
-}
-.model-general {
-  visibility: visible;
-  position: absolute;
-  z-index: 6;
-  top: 26%;
-  width: 13%;
-  left: 37%;
-  animation: modelgeneral 5s ease 0s infinite alternate;
-}
-@keyframes modelgeneral {
-  0% {
+  .mailer-top {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    top: 10%;
+    z-index: 3;
+  }
+  .mailer-middle {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    top: 20%;
+    width: 90%;
+    height: 55%;
+    border-radius: 3%;
+    text-align: center;
+    border: 4px solid #6a3e26;
+    background-color: #f9f1d2;
+    transition: 1s;
+  }
+  .mailer-middle-show {
+    top: 5%;
+  }
+  .mailer-bottom {
+    position: absolute;
+    width: 100%;
+    top: 47%;
+    z-index: 5;
+  }
+  .mailer-qa-box {
+    margin-top: 4%;
+    margin-bottom: 3%;
+    display: inline-block;
+    width: 70%;
+    height: 30%;
+    border-radius: 10px;
+    border: 4px solid #6a3e26;
+    background-color: #ffffff;
+  }
+  .mailer-qa-box h3 {
+    margin-top: 2%;
+    padding: 7%;
+    font-family: "GenJyuuGothic-B";
+    color: #ea7187;
+    font-size: 4vw;
+    letter-spacing: 0.1vw;
+    line-height: 5vw;
+    text-align: justify;
+  }
+  .qabgc-bottom {
+    width: 180%;
+    bottom: 0%;
+    position: absolute;
+    z-index: -1;
+  }
+  /* 按鈕 */
+  .qa-button-custom {
+    display: block;
+    padding: 3px 0 3px 0;
+  }
+  .qa-button-style {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 30%;
+    height: 10%;
+  }
+  .qa-button-style-botton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
-  50% {
-    transform: translateY(-10%);
+  .qa-inner-style {
+    margin-top: 1%;
+    display: inline-block;
+    width: 97%;
+    height: 76%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+  }
+  .qa-btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .qa-button-text-style {
+    position: relative;
+    top: 9.2%;
+    z-index: 0;
+    display: inline-block;
+    width: 98%;
+    height: 83%;
+    border-radius: 30px;
+    background-color: #fc7389;
+  }
+  .qa-button-text {
+    font-size: 12px;
+    line-height: 5vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .qa-button-custom:hover .qa-button-text-style {
+    background-color: #ffabb1;
+  }
+  .qa-button-custom:active .qa-button-text-style {
+    background-color: #db4d6d;
+  }
+  /* 按鈕結束 */
+}
+@media screen and (min-width: 768px) {
+  /*第二屏幕-桌機*/
+  .index-qa-bgc {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    padding-bottom: 54%;
+  }
+  .qabgc-top {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: -29%;
+  }
+  .index-title-group {
+    position: absolute;
+    z-index: 5;
+    top: -10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .index-title-icon {
+    display: inline-block;
+    width: 6%;
+  }
+  .index-title-icon img {
+    width: 100%;
+  }
+  .index-title-content {
+    margin-left: 1%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+  }
+  .index-title-content h2 {
+    font-family: "A-OTF-M";
+    font-size: 3.5vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .index-title-content span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 0.8vw;
+    font-family: "GenJyuuGothic-R";
   }
 
-  100% {
+  .mailer-top {
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    top: 5%;
+    z-index: 3;
+  }
+  .mailer-middle {
+    position: absolute;
+    left: 33%;
+    z-index: 4;
+    top: 30%;
+    width: 33%;
+    height: 55%;
+    border-radius: 3%;
+    text-align: center;
+    border: 4px solid #6a3e26;
+    background-color: #f9f1d2;
+    transition: 1s;
+  }
+  .mailer-middle-show {
+    top: 5%;
+  }
+  .mailer-qa-box {
+    margin-top: 4%;
+    margin-bottom: 3%;
+    display: inline-block;
+    width: 70%;
+    height: 30%;
+    border-radius: 10px;
+    border: 4px solid #6a3e26;
+    background-color: #ffffff;
+  }
+  .mailer-qa-box h3 {
+    margin-top: 2%;
+    padding: 7%;
+    font-family: "GenJyuuGothic-B";
+    color: #ea7187;
+    font-size: 1.3vw;
+    letter-spacing: 0.1vw;
+    line-height: 1.8vw;
+    text-align: justify;
+  }
+  .mailer-bottom {
+    position: absolute;
+    width: 40%;
+    top: 45%;
+    left: 30%;
+    z-index: 5;
+  }
+  .qabgc-bottom {
+    width: 100%;
+    top: -13%;
+    position: absolute;
+    z-index: -1;
+  }
+  /* 按鈕 */
+  .qa-button-style {
+    margin-top: 1%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 10%;
+  }
+  .qa-button-style-botton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
+  .qa-inner-style {
+    margin-top: 1%;
+    display: inline-block;
+    width: 97%;
+    height: 76%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+  }
+  .qa-btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .qa-button-text-style {
+    position: relative;
+    top: 9.2%;
+    z-index: 0;
+    display: inline-block;
+    width: 98%;
+    height: 83%;
+    border-radius: 30px;
+    background-color: #fc7389;
+  }
+  .qa-button-text {
+    font-size: 0.8vw;
+    line-height: 1.8vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .qa-button-custom:hover .qa-button-text-style {
+    background-color: #ffabb1;
+  }
+  .qa-button-custom:active .qa-button-text-style {
+    background-color: #db4d6d;
+  }
+  /* 按鈕結束 */
 }
+/*第三屏幕-手機*/
+@media screen and (max-width: 768px) {
+  .index-cp-bgc {
+    background-color: #fff8e4;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    padding-bottom: 170%;
+  }
 
-.model-bear {
-  visibility: hidden;
-  position: absolute;
-  z-index: 6;
-  top: 24%;
-  width: 13%;
-  left: 37%;
-  animation: modelbear 5s ease 0s infinite alternate;
-}
-@keyframes modelbear {
-  0% {
-    transform: translateY(0%);
+  .diyIcebgc-top {
+    position: absolute;
+    width: 180%;
+    top: -24%;
+    z-index: 4;
   }
-  50% {
-    transform: translateY(-10%);
+  .iceShadow {
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    top: 44%;
+    z-index: 6;
+    animation: iceShadow 5s ease 0s infinite alternate;
+  }
+  @keyframes iceShadow {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .c-p-store {
+    position: absolute;
+    width: 100%;
+    top: 13%;
+    z-index: 1;
+  }
+  .diy-ice-bgc {
+    position: absolute;
+    width: 240%;
+    bottom: 20%;
+    z-index: 4;
+  }
+  .ice-panel {
+    padding-top: 10px;
+    position: absolute;
+    z-index: 7;
+    width: 90%;
+    height: 30%;
+    top: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    text-align: center;
+    border: 4px solid #6a3e26;
+    background-color: #f3e6c4;
+  }
+  .panel-button-item-group {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    width: 96%;
+    height: 28%;
+    margin-bottom: 16%;
+  }
+  .panel-button-bottom {
+    cursor: pointer;
+    width: 20%;
+    height: 160%;
+    border-radius: 15%;
+    border: 4px solid #6a3e26;
+    background-color: #bd9c64;
+  }
+  .panel-button-bottom:active {
+    transform: translateY(2%);
+  }
+  .panel-button-bottom:active .panel-button-bottom-pink {
+    background-color: #ffc8c7;
+  }
+  .panel-button-center {
+    width: 100%;
+    height: 94%;
+    border-radius: 15%;
+    background-color: #f3e6c4;
+    text-align: center;
+  }
+  .panel-button-center span {
+    margin-top: 35%;
+    font-size: 12px;
+    color: #744934;
+    font-family: "GenJyuuGothic-R";
+  }
+  .panel-button-bottom-pink {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: inline-block;
+    background-color: #ffa4b5;
+    width: 90%;
+    height: 70%;
+    border-radius: 15%;
+  }
+  .panel-button-bottom-pink img {
+    padding-top: 10%;
+    width: 70%;
+  }
+  .ice-panel h3 {
+    font-family: "A-OTF-M";
+    font-size: 6vw;
+    letter-spacing: 0.01vw;
+    color: #6a3e26;
+    margin-bottom: 3%;
+  }
+  .model-general {
+    visibility: visible;
+    position: absolute;
+    z-index: 6;
+    top: 10%;
+    width: 50%;
+    left: 25%;
+    animation: modelgeneral 5s ease 0s infinite alternate;
+  }
+  @keyframes modelgeneral {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
   }
 
-  100% {
+  .model-bear {
+    visibility: hidden;
+    position: absolute;
+    z-index: 6;
+    top: 10%;
+    width: 50%;
+    left: 25%;
+    animation: modelbear 5s ease 0s infinite alternate;
+  }
+  @keyframes modelbear {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .model-rabbit {
+    visibility: hidden;
+    position: absolute;
+    z-index: 6;
+    top: 10%;
+    width: 50%;
+    left: 25%;
+    animation: modelrabbit 5s ease 0s infinite alternate;
+  }
+  @keyframes modelrabbit {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .model-rocket {
+    visibility: hidden;
+    position: absolute;
+    z-index: 6;
+    top: 10%;
+    width: 50%;
+    left: 25%;
+    animation: modelrocket 5s ease 0s infinite alternate;
+  }
+  @keyframes modelrocket {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .ice-btn-out {
+    width: 80%;
+  }
+  /* 按鈕 */
+  .c-p-button-style {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 40%;
+    height: 15%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
-}
-.model-rabbit {
-  visibility: hidden;
-  position: absolute;
-  z-index: 6;
-  top: 24%;
-  width: 13%;
-  left: 37%;
-  animation: modelrabbit 5s ease 0s infinite alternate;
-}
-@keyframes modelrabbit {
-  0% {
+  .c-p-button-style-botton {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
-  50% {
-    transform: translateY(-10%);
+  .inner-style {
+    margin-top: 1.5%;
+    display: inline-block;
+    width: 95%;
+    height: 90%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+    display: inline-block;
+  }
+  .btn-ice {
+    width: 28%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .c-p-button-text-style {
+    position: relative;
+    top: 4%;
+    z-index: 0;
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #ffabb1;
+  }
+  .c-p-button-text {
+    margin-left: 18%;
+    font-size: 4vw;
+    line-height: 8vw;
+    letter-spacing: 1vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .c-p-button-text::after {
+    z-index: -1;
+    margin-left: 18%;
+    content: "立即製作";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .c-p-button-custom:hover .c-p-button-text-style {
+    background-color: #fad689;
+  }
+  .c-p-button-custom:active .c-p-button-style-botton {
+    transform: translateY(2%);
+  }
+  /* 按鈕結束 */
+
+  .c-p-single {
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 10%;
+    z-index: 7;
+    top: 27%;
+    left: 12.5%;
+  }
+  .c-p-single img {
+    width: 100%;
+  }
+  .c-p-firstLove {
+    display: none;
+    text-align: center;
+    position: absolute;
+    z-index: 6;
+    width: 10%;
+    top: 35%;
+    left: 21%;
+  }
+  .c-p-firstLove img {
+    width: 100%;
+  }
+  .c-p-love {
+    display: none;
+    text-align: center;
+    position: absolute;
+    z-index: 6;
+    width: 10%;
+    top: 25%;
+    right: 20.8%;
+  }
+  .c-p-love img {
+    width: 100%;
+  }
+  .c-p-lostLove {
+    display: none;
+    text-align: center;
+    position: absolute;
+    z-index: 7;
+    width: 10%;
+    top: 37%;
+    right: 12%;
+  }
+  .c-p-lostLove img {
+    width: 100%;
+  }
+}
+/*第三屏幕-桌機*/
+@media screen and (min-width: 768px) {
+  .index-cp-bgc {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    padding-bottom: 56%;
+  }
+  .love-cp {
+    position: absolute;
+    width: 28%;
+    top: -1%;
+    left: 37%;
+    z-index: 5;
+  }
+  .love-icon2 {
+    display: inline-block;
+    width: 20%;
+  }
+  .love-icon2 img {
+    width: 100%;
+  }
+  .index-title2 {
+    padding-top: 2%;
+    margin-left: 1%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+  }
+  .love-cp h2 {
+    font-family: "A-OTF-M";
+    font-size: 3.5vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .love-cp span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 0.8vw;
+    font-family: "GenJyuuGothic-R";
+  }
+  .diyIcebgc-top {
+    position: absolute;
+    width: 100%;
+    top: -35%;
+    z-index: 4;
+  }
+  .iceShadow {
+    position: absolute;
+    width: 10%;
+    left: 38%;
+    top: 51%;
+    z-index: 6;
+    animation: iceShadow 5s ease 0s infinite alternate;
+  }
+  @keyframes iceShadow {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .c-p-store {
+    position: absolute;
+    width: 45%;
+    left: 27.5%;
+    top: 15%;
+    z-index: 5;
+  }
+  .diy-ice-bgc {
+    position: absolute;
+    width: 100%;
+    top: 7.5%;
+    z-index: 4;
+  }
+  .ice-panel {
+    padding-top: 10px;
+    position: absolute;
+    z-index: 7;
+    width: 12%;
+    height: 32%;
+    top: 26%;
+    left: 55.8%;
+    border-radius: 5%;
+    text-align: center;
+    border: 4px solid #6a3e26;
+    background-color: #f3e6c4;
+  }
+  .panel-button-item-group {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    height: 70%;
+    margin-bottom: 4%;
+  }
+  .panel-button-bottom {
+    cursor: pointer;
+    width: 38%;
+    height: 42%;
+    border-radius: 15%;
+    border: 4px solid #6a3e26;
+    background-color: #bd9c64;
+  }
+  .panel-button-bottom:active {
+    transform: translateY(2%);
+  }
+  .panel-button-bottom:active .panel-button-bottom-pink {
+    background-color: #ffc8c7;
+  }
+  .panel-button-center {
+    width: 100%;
+    height: 94%;
+    border-radius: 15%;
+    background-color: #f3e6c4;
+    text-align: center;
+  }
+  .panel-button-center span {
+    margin-top: 35%;
+    font-size: 0.3vw;
+    color: #744934;
+    font-family: "GenJyuuGothic-R";
+  }
+  .panel-button-bottom-pink {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: inline-block;
+    background-color: #ffa4b5;
+    width: 90%;
+    height: 70%;
+    border-radius: 15%;
+  }
+  .panel-button-bottom-pink img {
+    padding-top: 10%;
+    width: 70%;
+  }
+  .ice-panel h3 {
+    font-family: "A-OTF-M";
+    font-size: 1.2vw;
+    letter-spacing: 0.01vw;
+    color: #6a3e26;
+    margin-bottom: 3%;
+  }
+  .model-general {
+    visibility: visible;
+    position: absolute;
+    z-index: 6;
+    top: 26%;
+    width: 13%;
+    left: 37%;
+    animation: modelgeneral 5s ease 0s infinite alternate;
+  }
+  @keyframes modelgeneral {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
   }
 
-  100% {
+  .model-bear {
+    visibility: hidden;
+    position: absolute;
+    z-index: 6;
+    top: 24%;
+    width: 13%;
+    left: 37%;
+    animation: modelbear 5s ease 0s infinite alternate;
+  }
+  @keyframes modelbear {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .model-rabbit {
+    visibility: hidden;
+    position: absolute;
+    z-index: 6;
+    top: 24%;
+    width: 13%;
+    left: 37%;
+    animation: modelrabbit 5s ease 0s infinite alternate;
+  }
+  @keyframes modelrabbit {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .model-rocket {
+    visibility: hidden;
+    position: absolute;
+    z-index: 6;
+    top: 24%;
+    width: 13%;
+    left: 37%;
+    animation: modelrocket 5s ease 0s infinite alternate;
+  }
+  @keyframes modelrocket {
+    0% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .ice-btn-out {
+    width: 80%;
+  }
+  /* 按鈕 */
+  .c-p-button-style {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 70%;
+    height: 15%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
-}
-.model-rocket {
-  visibility: hidden;
-  position: absolute;
-  z-index: 6;
-  top: 24%;
-  width: 13%;
-  left: 37%;
-  animation: modelrocket 5s ease 0s infinite alternate;
-}
-@keyframes modelrocket {
-  0% {
+  .c-p-button-style-botton {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
-  50% {
-    transform: translateY(-10%);
+  .inner-style {
+    margin-top: 1.5%;
+    display: inline-block;
+    width: 95%;
+    height: 90%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+    display: inline-block;
+  }
+  .btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .c-p-button-text-style {
+    position: relative;
+    top: 4%;
+    z-index: 0;
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #ffabb1;
+  }
+  .c-p-button-text {
+    margin-left: 18%;
+    font-size: 0.9vw;
+    line-height: 2.3vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .c-p-button-text::after {
+    z-index: -1;
+    margin-left: 18%;
+    content: "立即製作";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .c-p-button-custom:hover .c-p-button-text-style {
+    background-color: #fad689;
+  }
+  .c-p-button-custom:active .c-p-button-style-botton {
+    transform: translateY(2%);
+  }
+  /* 按鈕結束 */
+
+  .c-p-single {
+    text-align: center;
+    position: absolute;
+    width: 10%;
+    z-index: 7;
+    top: 27%;
+    left: 12.5%;
+  }
+  .c-p-single img {
+    width: 100%;
+  }
+  .c-p-firstLove {
+    text-align: center;
+    position: absolute;
+    z-index: 6;
+    width: 10%;
+    top: 35%;
+    left: 21%;
+  }
+  .c-p-firstLove img {
+    width: 100%;
+  }
+  .c-p-love {
+    text-align: center;
+    position: absolute;
+    z-index: 6;
+    width: 10%;
+    top: 25%;
+    right: 20.8%;
+  }
+  .c-p-love img {
+    width: 100%;
+  }
+  .c-p-lostLove {
+    text-align: center;
+    position: absolute;
+    z-index: 7;
+    width: 10%;
+    top: 37%;
+    right: 12%;
+  }
+  .c-p-lostLove img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .index-store-bgc {
+    position: relative;
+    background-color: #c9fcfb;
+    width: 100%;
+    z-index: 4;
+    padding-bottom: 160%;
+  }
+  .store-bgc-mountain {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: 20%;
+  }
+  .store-bgc-way {
+    position: absolute;
+    z-index: -1;
+    top: 31%;
+    background-color: #7fdbd7;
+    width: 100%;
+    height: 55%;
+  }
+  .store-bgc {
+    width: 200%;
+    position: absolute;
+    top: -25%;
   }
 
-  100% {
+  .love-store {
+    position: absolute;
+    width: 28%;
+    top: -1%;
+    left: 38%;
+    z-index: 5;
+  }
+  .store-group {
+    width: 80%;
+    position: absolute;
+    margin: auto;
+    top: 5%;
+    left: 0;
+    right: 0;
+  }
+  .store-group img {
+    width: 100%;
+  }
+  .store-group-item-group {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .store-item-first-love {
+    width: 60%;
+
+    z-index: 5;
+  }
+  .store-item-fall-in-love {
+    width: 60%;
+    z-index: 5;
+  }
+  .store-item-single {
+    width: 60%;
+    z-index: 5;
+  }
+  .store-item-break-up {
+    width: 60%;
+    z-index: 5;
+  }
+  .store-item-bgc {
+    width: 100%;
+  }
+  .store-item-img {
+    /* position: absolute; */
+    top: 25%;
+    left: 29%;
+    width: 40%;
+    height: 55%;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 3px solid #744934;
+    text-align: center;
+  }
+  .store-item-img img {
+    margin-top: 10%;
+    margin-bottom: 7%;
+    width: 50%;
+    display: inline-block;
+  }
+  .store-item-img span {
+    margin-bottom: 5%;
+    display: block;
+    text-align: center;
+    font-family: "GenJyuuGothic-R";
+    color: #7a4741;
+    font-size: 1vw;
+  }
+  .store-item-text {
+    /* position: absolute; */
+    font-family: "A-OTF-M";
+    font-size: 1.5vw;
+    color: #ffffff;
+    letter-spacing: 0.3vw;
+    margin-bottom: 3%;
+    top: 12%;
+    left: 33%;
+  }
+  /* 按鈕 */
+  .store-button-style {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    bottom: 5%;
+    left: 30%;
+    width: 38%;
+    height: 10%;
+  }
+  .store-button-style-botton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
     transform: translateY(0%);
   }
-}
-.ice-btn-out {
-  width: 80%;
-}
-/* 按鈕 */
-.c-p-button-style {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  width: 70%;
-  height: 15%;
-  border-radius: 30px;
-  background-color: #6a3e26;
-  transform: translateY(0%);
-}
-.c-p-button-style-botton {
-  position: absolute;
-  top: -10%;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  background-color: #6a3e26;
-  transform: translateY(0%);
-}
-.inner-style {
-  margin-top: 1.5%;
-  display: inline-block;
-  width: 95%;
-  height: 90%;
-  border-radius: 30px;
-  border: 2px solid #ffffff;
-  background-color: #e4575f;
-  text-align: center;
-  display: inline-block;
-}
-.btn-ice {
-  width: 30%;
-  position: absolute;
-  top: -15%;
-  left: -7%;
-}
-.c-p-button-text-style {
-  position: relative;
-  top: 4%;
-  z-index: 0;
-  display: inline-block;
-  width: 97%;
-  height: 90%;
-  border-radius: 30px;
-  background-color: #ffabb1;
-}
-.c-p-button-text {
-  margin-left: 18%;
-  font-size: 0.9vw;
-  line-height: 2.3vw;
-  letter-spacing: 0.2vw;
-  margin-top: 1.2%;
-  color: #ffffff;
-  font-family: "A-OTF-M";
-}
-.c-p-button-text::after {
-  z-index: -1;
-  margin-left: 18%;
-  content: "立即製作";
-  font-family: "A-OTF-M";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 5px #6a3e26;
-}
-.c-p-button-custom:hover .c-p-button-text-style {
-  background-color: #fad689;
-}
-.c-p-button-custom:active .c-p-button-style-botton {
-  transform: translateY(2%);
-}
-/* 按鈕結束 */
-
-.c-p-single {
-  text-align: center;
-  position: absolute;
-  width: 10%;
-  z-index: 7;
-  top: 27%;
-  left: 12.5%;
-}
-.c-p-single img {
-  width: 100%;
-}
-.c-p-firstLove {
-  text-align: center;
-  position: absolute;
-  z-index: 6;
-  width: 10%;
-  top: 35%;
-  left: 21%;
-}
-.c-p-firstLove img {
-  width: 100%;
-}
-.c-p-love {
-  text-align: center;
-  position: absolute;
-  z-index: 6;
-  width: 10%;
-  top: 25%;
-  right: 20.8%;
-}
-.c-p-love img {
-  width: 100%;
-}
-.c-p-lostLove {
-  text-align: center;
-  position: absolute;
-  z-index: 7;
-  width: 10%;
-  top: 37%;
-  right: 12%;
-}
-.c-p-lostLove img {
-  width: 100%;
+  .store-inner-style {
+    margin-top: 1%;
+    display: inline-block;
+    width: 97%;
+    height: 76%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+  }
+  .store-btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .store-button-text-style {
+    position: relative;
+    top: 9.2%;
+    z-index: 0;
+    display: inline-block;
+    width: 98%;
+    height: 83%;
+    border-radius: 30px;
+    background-color: #fc7389;
+  }
+  .store-button-text {
+    font-size: 0.8vw;
+    line-height: 1.4vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .store-button-custom:hover .store-button-text-style {
+    background-color: #ffabb1;
+  }
+  .store-button-custom:active .store-button-text-style {
+    background-color: #db4d6d;
+  }
+  /* 按鈕結束 */
 }
 /* 第四屏-商店 */
-.index-store-bgc {
-  position: relative;
-  background-color: #c9fcfb;
-  width: 100%;
-  z-index: 4;
-  padding-bottom: 56%;
-}
-.store-bgc-mountain {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  top: 20%;
-}
-.store-bgc-way {
-  position: absolute;
-  z-index: -1;
-  top: 55%;
-  background-color: #7fdbd7;
-  width: 100%;
-  height: 45%;
-}
+@media screen and (min-width: 768px) {
+  .index-store-bgc {
+    position: relative;
+    background-color: #c9fcfb;
+    width: 100%;
+    z-index: 4;
+    padding-bottom: 56%;
+  }
+  .store-bgc-mountain {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: 20%;
+  }
+  .store-bgc-way {
+    position: absolute;
+    z-index: -1;
+    top: 55%;
+    background-color: #7fdbd7;
+    width: 100%;
+    height: 45%;
+  }
 
-.store-bgc {
-  width: 100%;
-  position: absolute;
-  top: -35%;
-}
+  .store-bgc {
+    width: 100%;
+    position: absolute;
+    top: -35%;
+  }
 
-.love-store {
-  position: absolute;
-  width: 28%;
-  top: -1%;
-  left: 38%;
-  z-index: 5;
-}
-.love-icon {
-  display: inline-block;
-  width: 20%;
-}
-.love-icon2 img {
-  width: 100%;
-}
-.index-store-title {
-  padding-top: 2%;
-  margin-left: 1%;
-  text-align: center;
-  vertical-align: top;
-  display: inline-block;
-}
-.love-store h2 {
-  font-family: "A-OTF-M";
-  font-size: 3.5vw;
-  color: #ff8f8f;
-  letter-spacing: 4px;
-  margin-bottom: 3%;
-}
-.love-store span {
-  color: #777777;
-  letter-spacing: 2px;
-  font-size: 0.8vw;
-  font-family: "GenJyuuGothic-R";
-}
-.store-group {
-  width: 50%;
-  position: absolute;
-  top: 12%;
-  left: 23%;
-}
-.store-group img {
-  width: 100%;
-}
-.store-group-item-group {
-  /* position: absolute;
+  .love-store {
+    position: absolute;
+    width: 28%;
+    top: -1%;
+    left: 38%;
+    z-index: 5;
+  }
+  .love-icon {
+    display: inline-block;
+    width: 20%;
+  }
+  .love-icon2 img {
+    width: 100%;
+  }
+  .index-store-title {
+    padding-top: 2%;
+    margin-left: 1%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+  }
+  .love-store h2 {
+    font-family: "A-OTF-M";
+    font-size: 3.5vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .love-store span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 0.8vw;
+    font-family: "GenJyuuGothic-R";
+  }
+  .store-group {
+    width: 50%;
+    position: absolute;
+    top: 12%;
+    left: 23%;
+  }
+  .store-group img {
+    width: 100%;
+  }
+  .store-group-item-group {
+    /* position: absolute;
   display: flex;
   width: 100%;
   z-index: 5; */
+  }
+  .store-item-first-love {
+    width: 23%;
+    position: absolute;
+    z-index: 5;
+    left: 16%;
+    top: 30%;
+  }
+  .store-item-fall-in-love {
+    width: 23%;
+    position: absolute;
+    z-index: 5;
+    left: 32%;
+    top: 30%;
+  }
+  .store-item-single {
+    width: 23%;
+    position: absolute;
+    z-index: 5;
+    right: 30%;
+    top: 30%;
+  }
+  .store-item-break-up {
+    width: 23%;
+    position: absolute;
+    z-index: 5;
+    right: 14%;
+    top: 30%;
+  }
+  .store-item-bgc {
+    width: 100%;
+  }
+  .store-item-img {
+    position: absolute;
+    top: 25%;
+    left: 29%;
+    width: 40%;
+    height: 55%;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 3px solid #744934;
+    text-align: center;
+  }
+  .store-item-img img {
+    margin-top: 10%;
+    margin-bottom: 7%;
+    width: 50%;
+    display: inline-block;
+  }
+  .store-item-img span {
+    margin-bottom: 5%;
+    display: block;
+    text-align: center;
+    font-family: "GenJyuuGothic-R";
+    color: #7a4741;
+    font-size: 1vw;
+  }
+  .store-item-text {
+    position: absolute;
+    font-family: "A-OTF-M";
+    font-size: 1.5vw;
+    color: #ffffff;
+    letter-spacing: 0.3vw;
+    margin-bottom: 3%;
+    top: 12%;
+    left: 33%;
+  }
+  /* 按鈕 */
+  .store-button-style {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    bottom: 5%;
+    left: 30%;
+    width: 38%;
+    height: 10%;
+  }
+  .store-button-style-botton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .store-inner-style {
+    margin-top: 1%;
+    display: inline-block;
+    width: 97%;
+    height: 76%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+  }
+  .store-btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .store-button-text-style {
+    position: relative;
+    top: 9.2%;
+    z-index: 0;
+    display: inline-block;
+    width: 98%;
+    height: 83%;
+    border-radius: 30px;
+    background-color: #fc7389;
+  }
+  .store-button-text {
+    font-size: 0.8vw;
+    line-height: 1.4vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .store-button-custom:hover .store-button-text-style {
+    background-color: #ffabb1;
+  }
+  .store-button-custom:active .store-button-text-style {
+    background-color: #db4d6d;
+  }
+  /* 按鈕結束 */
 }
-.store-item-first-love {
-  width: 23%;
-  position: absolute;
-  z-index: 5;
-  left: 16%;
-  top: 30%;
+/* 第五屏-愛情留言牆 */
+/* 第五屏-愛情留言牆 */
+@media screen and (max-width: 768px) {
+  .love-leavemessage {
+    position: absolute;
+    top: 0%;
+    left: 40%;
+  }
+  .love-icon5 {
+    width: 30%;
+  }
+  .love-icon5 img {
+    width: 100%;
+  }
+  .love-leavemessage h2 {
+    font-family: "A-OTF-M";
+    font-size: 3.5vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .love-leavemessage span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 0.8vw;
+    font-family: "GenJyuuGothic-R";
+  }
+  .index-leavemessage-bgc {
+    position: relative;
+    background-color: #ffd9d9;
+    width: 100%;
+    z-index: 5;
+    padding-bottom: 180%;
+  }
+  .leavemessage-bgc {
+    position: absolute;
+    z-index: -1;
+    width: 180%;
+    top: -20%;
+  }
+  .leavemessage-Material {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    bottom: 2%;
+  }
+  .leavemessage-item-group {
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    height: 50%;
+    z-index: 9;
+    margin: auto;
+    top: -27%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .leavemessage-item {
+    position: relative;
+    width: 20%;
+    height: 80%;
+    padding: 1%;
+    background-color: #fff;
+    border: 8px solid #fad689;
+    border-radius: 10px;
+  }
+  .leavemessage-cloud {
+    position: absolute;
+    top: -12%;
+    right: -5%;
+  }
+  .leavemessage-user-img {
+    padding-top: 3%;
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+  }
+  .leavemessage-user-img img {
+    width: 100%;
+  }
 }
-.store-item-fall-in-love {
-  width: 23%;
-  position: absolute;
-  z-index: 5;
-  left: 32%;
-  top: 30%;
+@media screen and (min-width: 768px) {
+  .love-leavemessage {
+    position: absolute;
+    top: 0%;
+    left: 40%;
+  }
+  .love-icon5 {
+    width: 30%;
+  }
+  .love-icon5 img {
+    width: 100%;
+  }
+  .love-leavemessage h2 {
+    font-family: "A-OTF-M";
+    font-size: 3.5vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .love-leavemessage span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 0.8vw;
+    font-family: "GenJyuuGothic-R";
+  }
+  .index-leavemessage-bgc {
+    position: relative;
+    background-color: #ffd9d9;
+    width: 100%;
+    z-index: 5;
+    padding-bottom: 56%;
+  }
+  .leavemessage-bgc {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: -30%;
+  }
+  .leavemessage-Material {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    bottom: 2%;
+  }
+  .leavemessage-item-group {
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    height: 50%;
+    z-index: 9;
+    margin: auto;
+    top: -27%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .leavemessage-item {
+    position: relative;
+    width: 20%;
+    height: 80%;
+    padding: 1%;
+    background-color: #fff;
+    border: 8px solid #fad689;
+    border-radius: 10px;
+  }
+  .leavemessage-cloud {
+    position: absolute;
+    top: -12%;
+    right: -5%;
+  }
+  .leavemessage-user-img {
+    padding-top: 3%;
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+  }
+  .leavemessage-user-img img {
+    width: 100%;
+  }
 }
-.store-item-single {
-  width: 23%;
-  position: absolute;
-  z-index: 5;
-  right: 30%;
-  top: 30%;
-}
-.store-item-break-up {
-  width: 23%;
-  position: absolute;
-  z-index: 5;
-  right: 14%;
-  top: 30%;
-}
-.store-item-bgc {
-  width: 100%;
-}
-.store-item-img {
-  position: absolute;
-  top: 25%;
-  left: 29%;
-  width: 40%;
-  height: 55%;
-  border-radius: 10px;
-  background-color: #fff;
-  border: 3px solid #744934;
-  text-align: center;
-}
-.store-item-img img {
-  margin-top: 10%;
-  margin-bottom: 7%;
-  width: 50%;
-  display: inline-block;
-}
-.store-item-img span {
-  margin-bottom: 5%;
-  display: block;
-  text-align: center;
-  font-family: "GenJyuuGothic-R";
-  color: #7a4741;
-  font-size: 1vw;
-}
-.store-item-text {
-  position: absolute;
-  font-family: "A-OTF-M";
-  font-size: 1.5vw;
-  color: #ffffff;
-  letter-spacing: 0.3vw;
-  margin-bottom: 3%;
-  top: 12%;
-  left: 33%;
-}
-/* 按鈕 */
-.store-button-style {
-  position: absolute;
-  text-align: center;
-  display: inline-block;
-  bottom: 5%;
-  left: 30%;
-  width: 38%;
-  height: 10%;
-}
-.store-button-style-botton {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  background-color: #6a3e26;
-  transform: translateY(0%);
-}
-.store-inner-style {
-  margin-top: 1%;
-  display: inline-block;
-  width: 97%;
-  height: 76%;
-  border-radius: 30px;
-  border: 2px solid #ffffff;
-  background-color: #e4575f;
-  text-align: center;
-}
-.store-btn-ice {
-  width: 30%;
-  position: absolute;
-  top: -15%;
-  left: -7%;
-}
-.store-button-text-style {
-  position: relative;
-  top: 9.2%;
-  z-index: 0;
-  display: inline-block;
-  width: 98%;
-  height: 83%;
-  border-radius: 30px;
-  background-color: #fc7389;
-}
-.store-button-text {
-  font-size: 0.8vw;
-  line-height: 1.4vw;
-  letter-spacing: 0.2vw;
-  margin-top: 1.2%;
-  color: #ffffff;
-  font-family: "A-OTF-M";
-}
-.store-button-custom:hover .store-button-text-style {
-  background-color: #ffabb1;
-}
-.store-button-custom:active .store-button-text-style {
-  background-color: #db4d6d;
+
+/* 第六屏-揪團課程 */
+/* 第六屏-揪團課程 */
+@media screen and (max-width: 768px) {
+  .index-course-bgc {
+    position: relative;
+    background-color: #fff8e4;
+    width: 100%;
+    z-index: 6;
+    padding-bottom: 160%;
+  }
+  .course-cloud-bgc {
+    position: absolute;
+    z-index: -1;
+    width: 180%;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: -20%;
+  }
+  .course-blue-ship-show {
+    opacity: 1;
+    /* transform: translateX(102%); */
+  }
+  .course-blue-ship {
+    position: absolute;
+    margin: auto;
+    top: 25%;
+    left: 0%;
+    right: 0;
+    width: 80%;
+    height: 50%;
+    transition: 5s;
+  }
+  .course-blue-ship-img {
+    position: absolute;
+    width: 50%;
+    top: -30%;
+    margin: auto;
+    left: 0%;
+    right: 0;
+  }
+  .course-blue-ship-img img {
+    width: 100%;
+  }
+  .course-blue-ship-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #6192d8;
+    border: 8px solid #6a3e26;
+  }
+  .course-title {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .course-ice-icon {
+    width: 12%;
+    display: inline-block;
+  }
+  .course-blue-ship-content img {
+    width: 100%;
+    /* vertical-align: middle; */
+  }
+  .course-blue-ship-content h3 {
+    display: inline-block;
+    font-family: "GenJyuuGothic-B";
+    color: #ffffff;
+    letter-spacing: 0.5vw;
+    font-size: 30px;
+  }
+  .course-title-content {
+    padding: 0 50px 0 50px;
+    width: 60%;
+    text-align: justify;
+  }
+  .course-title-content h4 {
+    font-family: "GenJyuuGothic-B";
+    color: #fad689;
+    letter-spacing: 0.2vw;
+    font-size: 15px;
+    padding-bottom: 4%;
+  }
+  .course-title-content p {
+    font-family: "GenJyuuGothic-R";
+    line-height: 160%;
+    color: #ffffff;
+    font-size: 0.9vw;
+  }
+  .course-title-content p span {
+    display: block;
+    font-size: 1vw;
+    padding-bottom: 1%;
+  }
+  /* 按鈕 */
+  .course-button-custom {
+    position: relative;
+    width: 150px;
+    margin: 0 auto;
+  }
+  .course-button-style {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+  }
+  .course-button-style-botton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .course-inner-style {
+    margin-top: 1%;
+    display: inline-block;
+    width: 97%;
+    height: 76%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+  }
+  .course-btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .course-button-text-style {
+    position: relative;
+    top: 9.2%;
+    z-index: 0;
+    display: inline-block;
+    width: 98%;
+    height: 83%;
+    border-radius: 30px;
+    background-color: #fc7389;
+  }
+  .course-button-text {
+    font-size: 0.8vw;
+    line-height: 1.5vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .course-button-custom:hover .qa-button-text-style {
+    background-color: #ffabb1;
+  }
+  .course-button-custom:active .qa-button-text-style {
+    background-color: #db4d6d;
+  }
 }
 /* 按鈕結束 */
-
-/* 第五屏-愛情留言牆 */
-/* 第五屏-愛情留言牆 */
-.love-leavemessage {
-  position: absolute;
-  top: 0%;
-  left: 40%;
-}
-.love-icon5 {
-  width: 30%;
-}
-.love-icon5 img {
-  width: 100%;
-}
-.love-leavemessage h2 {
-  font-family: "A-OTF-M";
-  font-size: 3.5vw;
-  color: #ff8f8f;
-  letter-spacing: 4px;
-  margin-bottom: 3%;
-}
-.love-leavemessage span {
-  color: #777777;
-  letter-spacing: 2px;
-  font-size: 0.8vw;
-  font-family: "GenJyuuGothic-R";
-}
-.index-leavemessage-bgc {
-  position: relative;
-  background-color: #ffd9d9;
-  width: 100%;
-  z-index: 5;
-  padding-bottom: 56%;
-}
-.leavemessage-bgc {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  top: -30%;
-}
-.leavemessage-Material {
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  bottom: 2%;
-}
-.leavemessage-item-group {
-  position: absolute;
-  width: 100%;
-  max-width: 1200px;
-  height: 50%;
-  z-index: 9;
-  margin: auto;
-  top: -27%;
-  left: 0%;
-  right: 0%;
-  bottom: 0%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.leavemessage-item {
-  position: relative;
-  width: 20%;
-  height: 80%;
-  padding: 1%;
-  background-color: #fff;
-  border: 8px solid #fad689;
-  border-radius: 10px;
-}
-.leavemessage-cloud {
-  position: absolute;
-  top: -12%;
-  right: -5%;
-}
-.leavemessage-user-img {
-  padding-top: 3%;
-  width: 100%;
-  height: 55%;
-  overflow: hidden;
-}
-.leavemessage-user-img img {
-  width: 100%;
-}
-/* 第六屏-揪團課程 */
-/* 第六屏-揪團課程 */
-.index-course-bgc {
-  position: relative;
-  background-color: #fff8e4;
-  width: 100%;
-  z-index: 6;
-  padding-bottom: 45%;
-}
-.course-cloud-bgc {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  top: -37%;
-}
-.course-blue-ship-show {
-  opacity: 1;
-  transform: translateX(156.5%);
-}
-.course-blue-ship {
-  position: absolute;
-  margin: auto;
-  top: -20%;
-  bottom: 0;
-  left: -50%;
-  width: 50%;
-  height: 50%;
-  transition: 5s;
-}
-.course-blue-ship-img {
-  position: absolute;
-  width: 50%;
-  top: 10%;
-  right: 5%;
-}
-.course-blue-ship-img img {
-  width: 100%;
-}
-.course-blue-ship-content {
-  position: absolute;
-  width: 60%;
-  height: 90%;
-  border-radius: 10px;
-  background-color: #6192d8;
-  border: 8px solid #6a3e26;
-}
-.course-title {
-  display: flex;
-  padding-top: 10%;
-  margin-left: 10%;
-}
-.course-ice-icon {
-  width: 10%;
-  height: 10%;
-  margin-right: 3%;
-}
-.course-blue-ship-content img {
-  width: 100%;
-  vertical-align: middle;
-}
-.course-blue-ship-content h3 {
-  display: inline-block;
-  font-family: "GenJyuuGothic-B";
-  color: #ffffff;
-  letter-spacing: 0.5vw;
-  font-size: 3vw;
-  padding-bottom: 5%;
-}
-.course-title-content {
-  margin-left: 10%;
-  padding-bottom: 5%;
-  width: 60%;
-  text-align: justify;
-}
-.course-title-content h4 {
-  font-family: "GenJyuuGothic-B";
-  color: #fad689;
-  letter-spacing: 0.2vw;
-  font-size: 1.4vw;
-  padding-bottom: 4%;
-}
-.course-title-content p {
-  font-family: "GenJyuuGothic-R";
-  line-height: 160%;
-  color: #ffffff;
-  font-size: 0.9vw;
-}
-.course-title-content p span {
-  display: block;
-  font-size: 1vw;
-  padding-bottom: 1%;
-}
-/* 按鈕 */
-.course-button-custom {
-  padding-bottom: 3%;
-  margin-left: 26%;
-  display: block;
-}
-.course-button-style {
-  margin-top: 1%;
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 10%;
-}
-.course-button-style-botton {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  background-color: #6a3e26;
-  transform: translateY(0%);
-}
-.course-inner-style {
-  margin-top: 1%;
-  display: inline-block;
-  width: 97%;
-  height: 76%;
-  border-radius: 30px;
-  border: 2px solid #ffffff;
-  background-color: #e4575f;
-  text-align: center;
-}
-.course-btn-ice {
-  width: 30%;
-  position: absolute;
-  top: -15%;
-  left: -7%;
-}
-.course-button-text-style {
-  position: relative;
-  top: 9.2%;
-  z-index: 0;
-  display: inline-block;
-  width: 98%;
-  height: 83%;
-  border-radius: 30px;
-  background-color: #fc7389;
-}
-.course-button-text {
-  font-size: 0.8vw;
-  line-height: 1.5vw;
-  letter-spacing: 0.2vw;
-  margin-top: 1.2%;
-  color: #ffffff;
-  font-family: "A-OTF-M";
-}
-.course-button-custom:hover .qa-button-text-style {
-  background-color: #ffabb1;
-}
-.course-button-custom:active .qa-button-text-style {
-  background-color: #db4d6d;
+@media screen and (min-width: 768px) {
+  .index-course-bgc {
+    position: relative;
+    background-color: #fff8e4;
+    width: 100%;
+    z-index: 6;
+    padding-bottom: 45%;
+  }
+  .course-cloud-bgc {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: -37%;
+  }
+  .course-blue-ship-show {
+    opacity: 1;
+    transform: translateX(160.5%);
+  }
+  .course-blue-ship-show-out {
+    opacity: 1;
+    animation: flyshipcourse 2s linear 0s;
+  }
+  @keyframes flyshipcourse {
+    0% {
+      opacity: 1;
+      transform: translateX(160.5%) translateY(0%);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(320%) translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(0%) translateY(-10%);
+    }
+  }
+  #blue-ship-button {
+    display: inline-block;
+    position: absolute;
+    bottom: 34%;
+    right: 22.3%;
+  }
+  #pink-ship-button {
+    display: none;
+    position: absolute;
+    bottom: 34%;
+    right: 22.3%;
+  }
+  .course-blue-ship {
+    position: absolute;
+    margin: auto;
+    top: -30%;
+    bottom: 0;
+    left: -50%;
+    width: 50%;
+    height: 50%;
+    transition: 5s;
+  }
+  .course-blue-ship-img {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: 5%;
+  }
+  .course-blue-ship-img img {
+    width: 100%;
+  }
+  .course-blue-ship-content {
+    position: absolute;
+    width: 60%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #6192d8;
+    border: 8px solid #6a3e26;
+  }
+  .course-pink-ship {
+    position: absolute;
+    margin: auto;
+    top: -30%;
+    bottom: 0;
+    left: -50%;
+    width: 50%;
+    height: 50%;
+    transition: 5s;
+  }
+  .course-pink-ship-img {
+    position: absolute;
+    width: 50%;
+    top: 10%;
+    right: 5%;
+  }
+  .course-pink-ship-img img {
+    width: 100%;
+  }
+  .course-pink-ship-content {
+    position: absolute;
+    width: 60%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #ff8b90;
+    border: 8px solid #6a3e26;
+  }
+  .course-pink-ship-content img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  .course-pink-ship-content h3 {
+    display: inline-block;
+    font-family: "GenJyuuGothic-B";
+    color: #ffffff;
+    letter-spacing: 0.5vw;
+    font-size: 3vw;
+    padding-bottom: 5%;
+  }
+  .course-title {
+    display: flex;
+    padding-top: 10%;
+    margin-left: 10%;
+  }
+  .course-ice-icon {
+    width: 10%;
+    height: 10%;
+    margin-right: 3%;
+  }
+  .course-blue-ship-content img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  .course-blue-ship-content h3 {
+    display: inline-block;
+    font-family: "GenJyuuGothic-B";
+    color: #ffffff;
+    letter-spacing: 0.5vw;
+    font-size: 3vw;
+    padding-bottom: 5%;
+  }
+  .course-title-content {
+    margin-left: 10%;
+    padding-bottom: 5%;
+    width: 60%;
+    text-align: justify;
+  }
+  .course-title-content h4 {
+    font-family: "GenJyuuGothic-B";
+    color: #fad689;
+    letter-spacing: 0.2vw;
+    font-size: 1.4vw;
+    padding-bottom: 4%;
+  }
+  .course-title-content p {
+    font-family: "GenJyuuGothic-R";
+    line-height: 160%;
+    color: #ffffff;
+    font-size: 0.9vw;
+  }
+  .course-title-content p span {
+    display: block;
+    font-size: 1vw;
+    padding-bottom: 1%;
+  }
+  /* 按鈕 */
+  .course-button-custom {
+    padding-bottom: 3%;
+    margin-left: 26%;
+    display: block;
+  }
+  .course-button-style {
+    margin-top: 1%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 10%;
+  }
+  .course-button-style-botton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .course-inner-style {
+    margin-top: 1%;
+    display: inline-block;
+    width: 97%;
+    height: 76%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+  }
+  .course-btn-ice {
+    width: 30%;
+    position: absolute;
+    top: -15%;
+    left: -7%;
+  }
+  .course-button-text-style {
+    position: relative;
+    top: 9.2%;
+    z-index: 0;
+    display: inline-block;
+    width: 98%;
+    height: 83%;
+    border-radius: 30px;
+    background-color: #fc7389;
+  }
+  .course-button-text {
+    font-size: 0.8vw;
+    line-height: 1.5vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .course-button-custom:hover .qa-button-text-style {
+    background-color: #ffabb1;
+  }
+  .course-button-custom:active .qa-button-text-style {
+    background-color: #db4d6d;
+  }
 }
 /* 按鈕結束 */
 
@@ -1412,7 +2394,7 @@
   position: absolute;
   z-index: -1;
   width: 100%;
-  top: -21%;
+  top: -30%;
 }
 .news-bgi {
   position: absolute;
