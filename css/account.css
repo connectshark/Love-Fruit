@@ -125,17 +125,17 @@
   text-align: center;
 }
 
-.page-account .menu .account-list li .list-item {
+.page-account .menu .account-list li .link-item {
   display: block;
   color: #fff;
   padding: 10px;
 }
 
-.page-account .menu .account-list li .list-item:hover {
+.page-account .menu .account-list li .link-item:hover {
   background-color: #db4d6d;
 }
 
-.page-account .menu .account-list li .list-item i {
+.page-account .menu .account-list li .link-item i {
   font-size: 30px;
   display: block;
   padding: 10px;
@@ -145,7 +145,7 @@
   background-color: #db4d6d;
 }
 
-.page-account .content {
+.page-account .content-area {
   min-height: 700px;
   background-color: #fff;
   padding: 10px;
@@ -153,13 +153,13 @@
   border-bottom-right-radius: 10px;
 }
 
-.page-account .content h2 {
+.page-account .content-area h2 {
   font-size: 24px;
   color: #3e556a;
   padding-top: 10px;
 }
 
-.page-account .content .show-content {
+.page-account .content-area .show-content {
   display: block;
 }
 
@@ -404,7 +404,7 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .page-account .menu .account-list li .list-item {
+  .page-account .menu .account-list li .link-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -417,13 +417,13 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
-  .page-account .menu .account-list li .list-item i {
+  .page-account .menu .account-list li .link-item i {
     display: inline;
   }
-  .page-account .content {
+  .page-account .content-area {
     padding: 20px 40px;
   }
-  .page-account .content h2 {
+  .page-account .content-area h2 {
     padding: 20px 0;
   }
 }

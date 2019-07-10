@@ -80,7 +80,7 @@
             li{
                 text-align: center;                
                 
-                .list-item{
+                .link-item{
                     display: block;
                     color: #fff;
                     padding: 10px;
@@ -102,7 +102,7 @@
             
         }
     }
-    .content{
+    .content-area{
         min-height: 700px;
         background-color: #fff;
         padding: 10px;
@@ -307,7 +307,7 @@
             .account-list{
                 justify-content: flex-end;
                 li{
-                    .list-item{
+                    .link-item{
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -323,7 +323,7 @@
             }
         }
 
-        .content{
+        .content-area{
             padding: 20px 40px;
 
             h2{
