@@ -78,18 +78,37 @@ body {
 }
 
 .product-img {
+  width: 50%;
   margin: auto;
   display: block;
 }
 
+@media all and (min-width: 992px) {
+  .product-img {
+    width: 40%;
+  }
+}
+
 .latest-collection-love {
-  width: 17% !important;
-  height: 10%;
+  width: 26px !important;
+  height: 23px;
   display: block;
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 10px;
   cursor: pointer;
+}
+
+@media all and (min-width: 992px) {
+  .latest-collection-love {
+    width: 17% !important;
+    height: 10%;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+  }
 }
 
 .latest-news {

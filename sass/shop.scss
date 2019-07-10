@@ -60,10 +60,23 @@ body{
     font-family: "GenJyuuGothic-B";
 }
 .product-img{
+    width: 50%;
     margin: auto;
     display: block;
+    @include rwd(desktop){
+        width: 40%;
+    }
 }
 .latest-collection-love{
+    width:26px !important;
+    height:23px;
+    display: block;
+    position:absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+    
+    @include rwd(desktop){
     width:17% !important;
     height:10%;
     display: block;
@@ -71,6 +84,7 @@ body{
     top:10px;
     right:15px;
     cursor: pointer;
+    }
 }
 .latest-news{
     width: 100%;
