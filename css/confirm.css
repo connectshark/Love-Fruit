@@ -226,8 +226,9 @@
 }
 
 .page-confirm .row-name {
+  text-align: left;
   height: 104px;
-  padding: 20px 10px 0px 10px;
+  padding: 10px 10px 10px 20px;
   border-bottom: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,6 +239,10 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.page-confirm .row-name p {
+  display: none;
 }
 
 .page-confirm .confirm-btn {
@@ -279,6 +284,7 @@
 }
 
 .page-confirm .confirm-btn {
+  display: none;
   text-align: center;
 }
 
@@ -413,6 +419,10 @@
   -webkit-text-stroke: 2px black;
 }
 
+.page-confirm .confirm-list {
+  padding: 10px;
+}
+
 @media all and (min-width: 992px) {
   .page-confirm .confirm-title {
     padding: 150px 0px 20px 0px;
@@ -458,11 +468,18 @@
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .page-confirm .row-name > div {
+    display: none;
+  }
+  .page-confirm .row-name > div ~ div {
+    display: none;
+  }
   .page-confirm .confirm-unit-price {
     height: 104px;
     line-height: 105px;
   }
   .page-confirm .confirm-btn {
+    display: block;
     text-align: center;
     padding-top: 0px;
     height: 104px;
@@ -490,6 +507,9 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: #FAD689;
+  }
+  .page-confirm .confirm-list {
+    padding: 0px;
   }
 }
 /*# sourceMappingURL=confirm.css.map */

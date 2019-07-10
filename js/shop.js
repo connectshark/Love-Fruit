@@ -82,18 +82,63 @@ $(document).ready(function() {
    
 // });
 //點擊愛心
+var love = document.getElementsByClassName("latest-collection-love");
+for(var i=0 ;i< love.length; i++){
+   love[i].addEventListener("click",change)
+}
+
 var gray = true;
-$("#latest-collection-love").click(function(){
-    if(gray) {
-        $(this).attr("src","img/shop/collection-red.png");
-        gray = false;}
-        else{
-            $(this).attr("src","img/shop/collection-gray.png");
-            gray = true;
-        }
-})
+function change(){
+	if(gray) {
+		$(this).attr("src","img/shop/collection-red.png");
+		gray = false;
+		console.log(gray);
+		}else{
+		$(this).attr("src","img/shop/collection-gray.png");
+		gray = true;
+	}
+	
+}
+ // love[i].onclick=function(){
+    //     if(gray) {
+    //         $(this).attr("src","img/shop/collection-red.png");
+    //         gray = false;}
+    //         else{
+    //             $(this).attr("src","img/shop/collection-gray.png");
+    //             gray = true;
+    //         }
+    // })
 
 
+
+
+
+
+
+
+
+// 點擊愛心 js
+// window.addEventListener("load",function(){
+	
+// 	var love = document.getElementsByClassName("latest-collection-love");
+// 	for(i=0;i<love.length;i++){
+// 		love[i].addEventListener("click",chang);
+// 		console.log(love[i]);
+// 	}
+// })
+// function chang(){
+// 	var gray = true;
+// 	if(gray) {
+// 		$(this).attr("src","img/shop/collection-red.png");
+// 		gray = false;
+// 		console.log(gray);
+// 		}
+// 		else{
+// 			$(this).attr("src","img/shop/collection-gray.png");
+// 			gray = true;
+// 			console.log(gray);
+// 		}
+// }
 
 // $(function() {
 //     var status = true;
@@ -153,9 +198,7 @@ window.addEventListener("load",function(){
             //     qty[i].value ++;;
             // })
             plus[i].addEventListener("click",plusnum);
-           
         }
-
         for(i=0;i<plus.length;i++){
              min[i].addEventListener("click",minnum);
         }
