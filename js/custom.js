@@ -191,6 +191,37 @@ function angleChange() {
 		return;
 	}
 }
+function smile() {
+	var canvas = document.getElementById('mood');
+	var context = canvas.getContext('2d');
+	for (var i = 0; i <= 20; i++) {
+		var line = i * 50;
+		context.moveTo(0,line);
+		context.lineTo(canvas.width,line);
+		context.fillText(line,0,line);
+		context.moveTo(line,0);
+		context.lineTo(line,canvas.height);
+		context.fillText(line,line,8);
+	}
+	context.strokeStyle='rgba(0,0,0,.3)';
+	context.stroke();
+
+
+	context.beginPath();
+	context.lineWidth=3;
+	context.strokeStyle= 'LightSkyBlue';
+	context.moveTo(40,60);
+	context.arcTo(60,60,80,60,0);
+	context.stroke();
+
+
+	context.beginPath();
+	context.lineWidth=3;
+	context.strokeStyle= 'LightSkyBlue';
+	context.moveTo(110,60);
+	context.arcTo(90,60,70,60,0);
+	context.stroke();
+}
 $(document).ready(function() {
 	$('#last').click(lastChange);
 	$('#next').click(nextChange);
@@ -208,4 +239,5 @@ $(document).ready(function() {
 	}).blur(function() {
 		$(this).css('borderColor','#ccc');
 	});
+	smile();
 });
