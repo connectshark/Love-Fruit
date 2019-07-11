@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/custom.css" />
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/custombtn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
 <body>
@@ -288,7 +289,10 @@
             </div>
 			<div class="custom-main-show">
                 <div class="custom-show-area img-p-0" id="texture-p">
-                    <img id="texture-main" src="img/custom/texture1.png" alt="">
+                    <img id="texture-main" src="img/custom/texture1.png">
+                    <div id="slice-main">
+                        <img>
+                    </div>
                 </div>
 			</div>
 			<div class="custom-bottom">
@@ -409,36 +413,37 @@
                     <h2>選擇水果切片</h2>
                 </div>
                 <div class="aside-select">
-                    <div class="select-item select-item-4">
+                    <div class="select-item select-item-4 select-item-6">
                         <label for="fruite-slice1">
-                        <div class="texture-item">
+                        <div class="texture-item slice-item">
                             <figure><img src="img/chocolate.png" alt="巧克力"></figure>
                             <p>巧克力</p>
                         </div></label>
                     </div>
-                    <div class="select-item select-item-4">
+                    <div class="select-item select-item-4 select-item-6">
                         <label for="fruite-slice2">
-                        <div class="texture-item">
+                        <div class="texture-item slice-item">
                             <figure><img src="img/bittergourd.png" alt="苦瓜"></figure>
                             <p>苦瓜</p>
                         </div></label>
                     </div>
-                    <div class="select-item select-item-4">
+                    <div class="select-item select-item-4 select-item-6">
                         <label for="fruite-slice3">
-                        <div class="texture-item">
+                        <div class="texture-item slice-item">
                             <figure><img src="img/saltedplum.png" alt="酸梅"></figure>
                             <p>酸梅</p>
                         </div></label>
                     </div>
-                    <div class="select-item select-item-4">
+                    <div class="select-item select-item-4 select-item-6">
                         <label for="fruite-slice4">
-                        <div class="texture-item">
+                        <div class="texture-item slice-item">
                             <figure><img src="img/Roselle.png" alt="洛神花"></figure>
                             <p>洛神花</p>
                         </div></label>
                     </div>
                     <div class="location-btn-group">
-                        <div class="location-btn-item"><button type="button">+</button></div>
+                        <div class="location-btn-item"><button type="button" class="operate" id="slice-bigger"><i class="fas fa-search-plus"></i></button></div>
+                        <div class="location-btn-item"><button type="button" class="operate" id="slice-smaller"><i class="fas fa-search-minus"></i></button></div>
                     </div>
                 </div>
             </div>
@@ -491,6 +496,7 @@
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="js/nav.js"></script>
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>

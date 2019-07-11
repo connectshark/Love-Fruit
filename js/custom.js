@@ -229,6 +229,42 @@ function smile() {
 	context.arcTo(90,60,70,60,0);
 	context.stroke();
 }
+// 第三步
+var sliceSize = 50;
+function imgPut() {
+	var src = $(this).children().children().attr('src');
+	var alt = $(this).children().children().attr('alt');
+	console.log(src);
+	$('#slice-main').children('img').attr({
+		src: src,
+		alt: alt,
+	});
+	dragSliceImg();
+}
+function imgBigger() {
+	sliceSize += 10;
+	if (sliceSize > 150) {
+		sliceSize = 150;
+	}else if(sliceSize < 50){
+		sliceSize = 50;
+	}
+	sliceSizeChange(sliceSize);
+}
+function imgSmaller() {
+	sliceSize -= 10;
+	if (sliceSize > 150) {
+		sliceSize = 150;
+	}else if(sliceSize < 50){
+		sliceSize = 50;
+	}
+	sliceSizeChange(sliceSize);
+}
+function sliceSizeChange(size) {
+	$('#slice-main').css('width',size+'px');
+}
+function dragSliceImg() {
+	$('#slice-main').draggable();
+}
 $(document).ready(function() {
 	$('#last').click(lastChange);
 	$('#next').click(nextChange);
@@ -247,4 +283,8 @@ $(document).ready(function() {
 		$(this).css('borderColor','#ccc');
 	});
 	smile();
+	$('.slice-item').click(imgPut);
+	$('#slice-bigger').click(imgBigger);
+	$('#slice-smaller').click(imgSmaller);
+	sliceSizeChange(sliceSize);
 });

@@ -364,7 +364,7 @@ body{
 	-webkit-mask-position: center;
 	-webkit-mask-size: contain;
 }
-.custom-show-area img{
+#texture-main{
 	position: absolute;
 	max-width: 100%;
 	max-height: 100%;
@@ -373,8 +373,18 @@ body{
 	right: 0;
 	bottom: 0;
 	margin: auto;
+	z-index: 1;
 }
-
+#slice-main{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 2;
+	cursor: move;
+}
+#slice-main img{
+	width: 100%;
+}
 /*底座*/
 .custom-bottom{
 	border:5px solid #6a3e26;
@@ -482,10 +492,6 @@ body{
 	background-position: bottom;
 	background-size: 100%;
 	background-repeat: no-repeat;
-}
-@media screen and (min-width: 768px) {
-	.texture-item{
-	}
 }
 .texture-item:hover{
 	cursor: pointer;
@@ -632,4 +638,21 @@ body{
 	position: absolute;
 	z-index: -2;
 	opacity: 0;
+}
+.location-btn-group{
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.location-btn-item{
+	width: 25%;
+	text-align: center;
+	padding: 10px 0;
+}
+.operate{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 3px 10px;
 }
