@@ -211,13 +211,12 @@ function smile() {
 	context.lineWidth=3;
 	context.strokeStyle= 'LightSkyBlue';
 	context.moveTo(40,60);
-	context.arcTo(60,60,80,60,0);
+	context.arcTo(60,40,80,60,20);
 	context.stroke();
 
 
 	context.beginPath();
 	context.lineWidth=3;
-	context.strokeStyle= 'LightSkyBlue';
 	context.moveTo(110,60);
 	context.arcTo(90,60,70,60,0);
 	context.stroke();
