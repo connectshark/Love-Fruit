@@ -337,10 +337,32 @@ body{
 }
 .custom-show-area{
 	width: 100%;
-	padding-bottom: 115%;
+	padding-bottom: 100%;
 	position: relative;
-	-webkit-mask: url('../img/custom/texture2-p.png') no-repeat center;
-	background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.img-p-0{
+	-webkit-mask-image: url('../img/custom/texture1-p.png');
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: contain;
+}
+.img-p-1{
+	-webkit-mask-image: url('../img/custom/texture2-p.png');
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: contain;
+}
+.img-p-2{
+	-webkit-mask-image: url('../img/custom/texture3-p.png');
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: contain;
+}
+.img-p-3{
+	-webkit-mask-image: url('../img/custom/texture4-p.png');
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: contain;
 }
 .custom-show-area img{
 	position: absolute;
@@ -608,6 +630,6 @@ body{
 }
 .custom-box{
 	position: absolute;
-	z-index: 2;
-	opacity: 1;
+	z-index: -2;
+	opacity: 0;
 }

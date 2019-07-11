@@ -287,8 +287,8 @@
                 </ul>
             </div>
 			<div class="custom-main-show">
-                <div class="custom-show-area">
-                    <img src="img/custom/texture2.png" alt="">
+                <div class="custom-show-area img-p-0" id="texture-p">
+                    <img id="texture-main" src="img/custom/texture1.png" alt="">
                 </div>
 			</div>
 			<div class="custom-bottom">
@@ -398,7 +398,7 @@
                     <div class="range-angle">
                         <label for="angle">
                             角度:
-                        <input type="text" minlength="1" maxlength="3" size="3" value="90" id="angle">°</label>
+                        <input type="number" min="0" max="360" value="90" id="angle">°</label>
                     </div>
                 </div>
             </div>
@@ -438,6 +438,7 @@
                         </div></label>
                     </div>
                     <div class="location-btn-group">
+                        <div class="location-btn-item"><button type="button">+</button></div>
                     </div>
                 </div>
             </div>

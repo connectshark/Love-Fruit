@@ -47,11 +47,14 @@ function nextChange() {
 function imgChange(){
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
-	console.log(src);
 	$('#texture-main').attr({
 		src:src,
 		alt:alt,
 	});
+	for (var i = 0; i < 4; i++) {
+		$('#texture-p').removeClass('img-p-'+i);
+	}
+	$('#texture-p').addClass("img-p-"+$(this).index('.texture-select'));
 	$('.list-description').eq(0).text(alt);
 	$('#texture-min-img').attr('src',src);
 	$('#texture-min').css('backgroundColor','#f596aa');
@@ -160,6 +163,7 @@ function bgcGradient() {
 			'backgroundColor' : Afruite,
 			'backgroundImage' : 'none',
 		});
+		gradintChangeClear();
 	}else if (fruiteItem.length == 2) {
 		Afruite = fruiteColor[fruiteItem[0]];
 		Bfruite = fruiteColor[fruiteItem[1]];
@@ -171,25 +175,29 @@ function bgcGradient() {
 			'backgroundColor' : 'transparent',
 			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+$('#range').val()+'%,'+Bfruite+')',
 		});
+		gradintChangeClear();
+		gradintChange(Afruite,Bfruite,$('#range').val());
 	}else {
 		$('.gradual-item').children().attr('src', '');
 		$('#range').css({
 			'backgroundColor' : '#fff',
 			'backgroundImage' : 'none',
 		});
+		gradintChangeClear();
 	}
 }
-function gradintChange() {
-	if (fruiteItem.length == 2) {
-		fiftyPersent = $(this).val();
-		$(this).css('backgroundImage','linear-gradient(to right, '+Afruite+','+fiftyPersent+'%,'+Bfruite+')');
-	}
+function gradintChangeClear() {
+	$('#texture-p').css('backgroundImage', 'none');
+}
+function gradintChange(Aimg,Bimg,persent) {
+	$('#texture-p').css('backgroundImage', 'linear-gradient('+$('#angle').val()+'deg, '+Aimg+','+persent+'%,'+Bimg+')');
 }
 function angleChange() {
-	if ($(this).val() > 360 || $(this).val() < 0 ) {
+	if ($(this).val() > 360 || $(this).val() < 0 || $(this).val() == "") {
 		$(this).css('borderColor','#FF4500');
 		return;
 	}
+	bgcGradient();
 }
 function smile() {
 	var canvas = document.getElementById('mood');
@@ -232,8 +240,8 @@ $(document).ready(function() {
 	$('.texture-select').click(imgChange);
 	// 第二步
 	$('.fruite-item').click(fruiteChange);
-	$('#range').change(gradintChange);
-	$('#angle').keyup(angleChange).focus(function() {
+	$('#range').change(bgcGradient);
+	$('#angle').keyup(angleChange).change(angleChange).focus(function() {
 		$(this).css('borderColor','#333');
 	}).blur(function() {
 		$(this).css('borderColor','#ccc');
