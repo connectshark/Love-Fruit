@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="菓籽戀冰所" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>菓籽戀冰所</title>
     <link rel="icon" href="img/navBar/logo.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/confirm.css">
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/temporary-cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  
+    
 </head>
-<body class="page-confirm">
+<body>
         <input type="checkbox" id="menu-control" />
         <header id="header">
           <div class="item-group">
@@ -70,7 +69,7 @@
                   <a
                     id="newshop-item-show"
                     class="nav-text"
-                    href="newshop.html"
+                    href="shop.html"
                     title="冰品商城"
                     ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                       >冰品商城</span
@@ -78,20 +77,21 @@
                   >
                 </li>
               </ul>
+              <div class="nav-box"></div>
               <ul class="nav-list nav-list-login">
                 <li id="nav-drop-down-menu-hover" class="nav-drop-down-menu-hover">
                   <a
                     id="course-item-show"
                     class="nav-text"
-                    href="course.html"
+                    href="courseP.html"
                     title="體驗課程"
                     ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                       >體驗課程</span
                     ></a
                   >
                   <ul id="nav-drop-down-menu" class="nav-drop-down-menu">
-                    <li><a href="courseGroup.html">揪團課程</a></li>
-                    <li><a href="courseGeneral.html">一般課程</a></li>
+                    <li><a href="courseP-group.html">揪團課程</a></li>
+                    <li><a href="courseP-general.html">一般課程</a></li>
                   </ul>
                 </li>
                 <li>
@@ -152,90 +152,62 @@
             src="img/navBar/shoppingCartIcon.png"
             alt="shoppingCartIcon.png"
           />
+          <div id="robot-container" class="robot-container">
+            <div id="robot-title-block" class="robot-title-block">
+              <span class="robot-title-icon"
+                ><img
+                  id="robot-title-icon-img"
+                  src="img/navBar/robot/robot-icon.png"
+                  alt="robot-icon"
+                />
+              </span>
+              <h3>冰棒小達人</h3>
+              <div class="robot-pic">
+                <img src="img/navBar/robot/robot.png" alt="robot-pic" />
+              </div>
+            </div>
+            <div id="robot-conversation-block" class="robot-conversation-block">
+              <div id="robot-conversation-list">
+                <div class="robot-conversation">
+                  <p class="robot_text"><span>小達人:</span>請問有需要幫忙嗎？</p>
+                </div>
+              </div>
+            </div>
+            <ul class="chatBot-keyword">
+              <li class="fruit">粿籽戀冰所</li>
+              <li class="fruit">戀冰測驗</li>
+              <li class="fruit">客製冰棒</li>
+              <li class="fruit">戀菓商店</li>
+              <li class="fruit">愛的留言</li>
+              <li class="fruit">體驗課程</li>
+              <li class="fruit">營業時間</li>
+              <li class="fruit">店家地址</li>
+              <li class="fruit">店家電話</li>
+            </ul>
+            <form>
+              <div class="robot-input-block">
+                <textarea name="message" id="message"></textarea>
+                <button type="button" id="robot-submit">送出</button>
+              </div>
+            </form>
+          </div>
+          <section class="mini-cart">
+                <div class="head">
+                    <div class="cart-icon">
+                        <img src="img/navBar/shoppingCartIcon.png" alt="">
+                        <h3>我的購物車</h3> 
+                    </div>
+                    <div class="cart-close"><i class="fas fa-times "></i></div>
+                </div>
+                <form action="add-cart.php">
+
+                </form>
+    
+            </section>
         </header>
 
-        <section class="confirm-column container ">
-            <h2 class="confirm-title text-center">購物明細</h2>
-            <div class="list-wrap des-flex ju-c ai-c dis-mobile-n p-10">
-                <div class="col-lg-3 text-center"><span>商品</span></div>
-                <div class="col-lg-3 text-center"><span>品名</span></div>
-                <div class="col-lg-3 text-center"><span>單價</span></div>
-                <div class="col-lg-3 text-center"><span>數量</span></div>
-                <div class="col-lg-3 text-center"><span>小計</span></div>
-            </div>
-        </section>
-        <form action="get" class="confirm-list" >
-            <div class="confirm-row fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
-                <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="img/shop/inlove/inlove-ball01.png" alt=""></div></div>
-                <div class="row-name col-lg-3 col-6  ">
-                  <p>芋頭牛奶</p>
-                  <div>商品:
-                     <span>芋頭牛奶</span>
-                  </div>  
-                  <div>數量:
-                      <span>2</span>
-                   </div>  
-                   <div>價格
-                      <span>450</span>
-                   </div>  
-                    <!-- <p class="mob-unit-price dis-lg-n">:</p> -->
-                </div>
-                <div class="confirm-unit-price col-lg-3 col-6 dis-mobile-n ">450$</div>
-                <div class=" confirm-btn col-lg-3 col-6">
-                  <span>2</span>
-                  <!-- <span class="btn-numbox col-4">
-                      <input type='button' value='-' class='qtyminus' field='quantity' />
-                      <input type='text' name='quantity' value='0' class='qty' />
-                      <input type='button' value='+' class='qtyplus' field='quantity' />
-                  </span> -->
-              </div>
-               <div class="col-lg-3 col-6 small-total"><span>900$</span></div>
-            </div>
-        </form>
-        <div class="confirm-total container p-10 ">
-            <p><span>總計:450元</span></p>
-        </div>
-
-        <section class=" package-information container p-10">
-          <p class="package-information-title"><span>收件人資訊</span> </p>
-          <form action="">
-            <div><span class="recipient">收件人:</span></div>
-            <div><span class="phone">電話:</span></div>
-            <div><span class="email">信箱:</span></div>
-            <div><span classs="adress">地址:</span></div>
-            <div><span class="pay-method">付款方式:</span></div>
-          </form>
-        </section>
-
-        <div class="confirm-btn container ju-c;">
-            <a href="cartlist.html"> 
-              <button type="submit" class="col-lg-3n"><div class="Previous">
-                <span class="Previous-in">上一步</span></button>
-            </a>
-            <button type="submit" class="button"><div class="confirm-shop">
-              <span class="confirm-shop-in">
-              確認結帳
-              <img src="img/btn/ICE.png" alt="" class="testclass">
-              </span>
-            </button>
-           
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <footer>
-                <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
-          </footer>
-              <script src="js/nav.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/temporary.js"></script>
+       
 </body>
 </html>

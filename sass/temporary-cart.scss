@@ -1,0 +1,58 @@
+@import 'mixin/mixin';
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "GenJyuuGothic-R";
+}
+body{
+   
+    // overflow: hidden;
+}
+.mini-cart{
+    width: 35vw;
+    height: 80vh;
+    background-color:whitesmoke;
+    position: fixed;
+    z-index:99;
+    right:0;
+    top:0;
+    // transform:translateX(100%)  ;
+    // transition: transform 0.5s ease-in;
+    .head{
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid black;
+    }
+    .cart-icon{
+        width: 85%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+       
+        h3{
+            padding-left: 10px;
+        }
+    }
+    .cart-close{
+        border-left: 2px solid black;
+        width: 15%;
+        padding: 10px 10px 10px 10px;
+        text-align: center;
+        &:hover{
+            color:#DB4D6D;
+        }
+        .fa-times{
+            font-size: 25px;
+        }
+    }
+    // .active-mini-cart{
+    //     transform: translate(0%)
+    // }
+
+
+
+
+
+
+}

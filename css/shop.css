@@ -121,7 +121,7 @@ body {
   height: 150px;
   margin: auto;
   padding: 50px 0;
-  background: url(../img/qa/title.png) center center no-repeat;
+  background: url(../img/qa/title02.png) center center no-repeat;
   background-size: contain;
   text-align: center;
 }
@@ -136,7 +136,7 @@ body {
 
 .latest-news .title-main .title:after {
   z-index: -1;
-  content: "最新消息";
+  content: "最新商品";
   position: absolute;
   left: 0;
   top: 0;
@@ -161,7 +161,7 @@ body {
 
 .latest-news .latest-pic {
   margin: auto;
-  width: 80px;
+  width: 60px;
 }
 
 .latest-news .latest-name, .latest-news .latest-pri {
@@ -187,10 +187,17 @@ body {
 }
 
 @media all and (min-width: 992px) {
+  .latest-news .latest-item {
+    width: 80%;
+  }
   .latest-news .owl-carousel .owl-stage-outer {
     width: 950px;
     margin: auto;
     padding-top: 20px;
+  }
+  .latest-news .latest-pic {
+    margin: auto;
+    width: 60px;
   }
 }
 
@@ -263,6 +270,10 @@ body {
 }
 
 .general .general-store {
+  margin: auto;
+  background-color: whitesmoke;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   display: -webkit-box;
@@ -634,7 +645,20 @@ body {
 }
 
 .custom .custom-store {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 10px;
+  background-color: whitesmoke;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.custom .custom-item {
+  padding: 20px 0px;
 }
 
 .custom .ice-type {
@@ -805,6 +829,84 @@ body {
     margin: auto;
     border: 10px solid #FAD689;
     position: relative;
+  }
+  .custom .custom-item {
+    width: 23%;
+  }
+  .custom figure {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .custom figure div {
+    width: 25%;
+    height: 25%;
+  }
+  .custom .ice-type {
+    height: 50px;
+    font-size: 18px;
+  }
+  .custom .ice-type .fas {
+    top: 6px;
+    left: 11px;
+    right: 0px;
+  }
+  .custom .ice-type p {
+    font-size: 18px;
+    line-height: 80px;
+  }
+  .custom .custom-item-pri {
+    padding: 10px 22px;
+    font-size: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .custom .btn-numbox {
+    display: block;
+    font-size: 0px;
+    display: block;
+    display: block;
+    padding: 0px;
+    width: 50%;
+  }
+  .custom .btn-numbox form {
+    text-align: right;
+  }
+  .custom .btn-numbox .qty {
+    width: 40%;
+    text-align: center;
+    height: 28px;
+    padding: 0px;
+    border: 0px;
+  }
+  .custom .btn-numbox .qtyminus {
+    background-color: #6A3E26;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 25%;
+    height: 28px;
+    border: 0px;
+    color: white;
+    padding: 0px;
+    cursor: pointer;
+  }
+  .custom .btn-numbox .qtyplus {
+    padding: 0px;
+    background-color: #6A3E26;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 25%;
+    height: 28px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
   }
 }
 /*# sourceMappingURL=shop.css.map */

@@ -189,6 +189,9 @@
         border-radius: 20px;
 
     }
+    form{
+        padding: 10px;
+    }
     .fa-trash{
         position: absolute;
         position: absolute;
@@ -306,6 +309,7 @@
         background:url(../img/shop/check-circle-solid.svg)no-repeat;
     }
     
+    
     // 網頁版
     @include rwd(desktop){
         .cart-head{
@@ -343,6 +347,9 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
+        }
+        form{
+            padding: 0px;
         }
         .cart-row{
              background-color: white;

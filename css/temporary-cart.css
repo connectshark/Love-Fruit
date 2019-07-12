@@ -1,0 +1,62 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: "GenJyuuGothic-R";
+}
+
+.mini-cart {
+  width: 35vw;
+  height: 80vh;
+  background-color: whitesmoke;
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  top: 0;
+}
+
+.mini-cart .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.mini-cart .cart-icon {
+  width: 85%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mini-cart .cart-icon h3 {
+  padding-left: 10px;
+}
+
+.mini-cart .cart-close {
+  border-left: 2px solid black;
+  width: 15%;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+.mini-cart .cart-close:hover {
+  color: #DB4D6D;
+}
+
+.mini-cart .cart-close .fa-times {
+  font-size: 25px;
+}
+/*# sourceMappingURL=temporary-cart.css.map */

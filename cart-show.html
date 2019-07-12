@@ -10,7 +10,7 @@
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/cartlist.css">
+  <link rel="stylesheet" href="css/cart-show.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
@@ -100,7 +100,7 @@
 
 
   <div class="cart-head m-a">
-    <h2 class="cart-title">購物車</h2>
+    <h2 class="cart-title">購物清單</h2>
     <div class="cart-column des-flex ai-c ju-c  p-10 dis-mobile-n ">
       <div class="col-lg-2"><span class="text-20">商品</span></div>
       <div class="col-lg-2"><span class="text-20">品名</span></div>
@@ -119,7 +119,7 @@
         <p>芋頭牛奶</p>
         <p class="dis-lg-n">價格:450</p>
       </div>
-      <div class="col-lg-2 col-6 dis-mobile-n unit-price">單價450s</div>
+      <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT450</div>
       <div class="col-lg-2 col-6 cartlist-btn">
         <span class="btn-numbox col-4">
           <input type='button' value='-' class='qtyminus' field='quantity' />
@@ -135,13 +135,13 @@
     <p><span>總計:450元</span></p>
   </div>
   <div class="cart-btn container des-flex ju-c">
-    <a href="newshop.html">
+    <a href="shop.html">
       <div class="continue-shop"><span class="continue-shop-in">繼續購物</span></div>
     </a>
 
   </div>
 
-
+<!-- 
   <section class="pay-transport container p-20 bagc-w">
     <h3 class="pay-transport-title">付款方式及貨運方式</h3>
 
@@ -152,10 +152,6 @@
         <li class="transport col-lg-2"><a href="#transport-way">貨運方式</a> </li>
       </ul>
     </div>
-    <!-- <ul class="tabtitle">
-      <li> <a href="#pay-way">1231</a> </li>
-      <li> <a href="#transport-way">11131441</a> </li>
-    </ul> -->
 
     <div class="p-10 tab-inner" id="pay-way">
       <p>測試內容不知道會不會成功</p>
@@ -173,11 +169,11 @@
     <div class="p-10 tab-inner" id="transport-way">
       <p>我式貨運方式請讓我出現或消失</p>
     </div>
-  </section>
+  </section> -->
 
 
   <div class="cart-btn container des-flex ju-c;">
-    <a href="confirm.html">
+    <a href="cart-order.html">
       <button type="submit" class="button">
         <div class="go-buy"><span class="go-buy-in">進行結帳</span>
       </button>
@@ -227,7 +223,7 @@
   <!-- <script src="js/cartlist.js"></script> -->
   <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
+  <!-- <script>
     $(function () {
       var $li = $('ul.tabtitle li');
       $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
@@ -241,7 +237,7 @@
 
 
 
-  </script>
+  </script> -->
 </body>
 
 </html>
