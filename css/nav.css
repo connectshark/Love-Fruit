@@ -20,7 +20,7 @@
 }
 /*Css寫 -> font-family: "什麼字型";*/
 * {
-  outline: 1px solid #f00;
+  /* outline: 1px solid #f00; */
 }
 
 /*header*/
