@@ -1,6 +1,6 @@
 @import "mixin/mixin";
 *{
-    // outline: #f00 solid 1px;
+    outline: #f00 solid 1px;
     text-decoration: none;  
     box-sizing: border-box;
 }
@@ -828,6 +828,7 @@ $deep-pink:#db4d6d;
 //揪團留言板
 .group-message-wrap{ 
     background-color: $bg-light-yellow;
+    position: relative;
     .group-message-cloud{
         height: 200px;
         @include rwd(medium){
@@ -1024,6 +1025,148 @@ $deep-pink:#db4d6d;
                 @include btn(message-btn-out,135px,message-btn-in,20px, 我要參加);
             }
         }
-
     }  
+    .pop-box{
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+		height: 100%;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .pop-up{
+            margin: auto;
+            @include rwd(medium){
+                width:80%;
+                height:70%;
+            }
+                .pop-close{
+                    position: absolute;
+                    top:15%;
+                    right: 10%;
+                   img{
+                    width: 50px;
+                    height: 50px;
+                   }
+                }
+                .pop-team-name{
+                    @include rwd(medium){
+                        width: 30%;
+                        top: 20%;
+                        left: 35%;
+                    }
+                    box-shadow: #FFF8E4 2px 2px 3px;
+                    background-color: #434343 ;
+                    border-radius: 45px;
+                    text-align: center;
+                    width:80%;
+                    height: 45px;
+                    position: absolute;
+                    top: 20%;
+                    left: 10%;
+                    p{
+                        color: #fff;
+                        font-size: 20px ;
+                        line-height: 45px;
+                    }
+            }
+            .pop-content{
+                background: url(../img/course/pop-up.png) center center  no-repeat;
+                background-size: contain;
+                height:100%;
+                width:100%;
+                display: flex;
+                justify-content: center;
+                flex-flow: row wrap;
+                padding-top: 15%;
+                p{
+                    font-size: 16px;
+                    color: #434343;
+                    line-height: 1.5;
+                }
+                .time{
+                    font-size: 13px;
+                }
+                
+                .pop-main-message{
+                    box-shadow: #FFF8E4 1px 1px 3px;
+                    padding:10px 20px;
+                    background-color: #C9D34A;
+                    border-radius: 20px;
+                    height: 33%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    .message-con{
+                        padding: 0 15px;
+                    }
+                }
+                .message-meb{
+                    text-align: center;
+                    line-height: 30px;
+                    i{
+                        color: #434343;
+                        font-size: 50px;
+                    }
+                    @include rwd(mobile){
+                       margin: 0  20px 0 0;
+                     }
+                }
+
+                .all-message{
+                    padding:10px 20px;
+                    background-color: #BEC23F;
+                    border-radius: 10px;
+                    height: 33%;
+                    .meb-add-message {
+                        background-color: #FFF0F4;
+                        border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        padding: 5px;
+                        .meb{
+                            text-align: center;
+                            i{
+                            color: #434343;
+                            font-size: 30px;
+                            }
+                            .name{
+                            font-size:13px;
+                            }
+                        }
+                      
+                    }
+                }
+                .pop-leave-message{
+                    height: 12%;
+                    display: flex;
+                    vertical-align: middle;
+                    #leave-message-box {
+                    font-size: 16px;
+                    padding:0 20px;
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 50px;
+                        border: #6a3e26  solid 3px;
+                        margin: auto ;
+                    }
+                    .message-btn{
+                        margin: auto;
+                        .message-btn-out{
+                            width: 100%;
+                            margin: auto;
+                        }
+                        @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
+                    }
+                }
+            }
+
+        }
+
+       
+       
+        
+    }
 }

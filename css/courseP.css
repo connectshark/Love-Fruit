@@ -5,6 +5,7 @@
 }
 
 * {
+  outline: #f00 solid 1px;
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1492,6 +1493,7 @@ body {
 
 .group-message-wrap {
   background-color: #fff8e4;
+  position: relative;
 }
 
 .group-message-wrap .group-message-cloud {
@@ -1946,6 +1948,252 @@ body {
 .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:after {
   z-index: -1;
   content: "我要參加";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.group-message-wrap .pop-box {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.group-message-wrap .pop-box .pop-up {
+  margin: auto;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up {
+    width: 80%;
+    height: 70%;
+  }
+}
+
+.group-message-wrap .pop-box .pop-up .pop-close {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-close img {
+  width: 50px;
+  height: 50px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-team-name {
+  -webkit-box-shadow: #FFF8E4 2px 2px 3px;
+          box-shadow: #FFF8E4 2px 2px 3px;
+  background-color: #434343;
+  border-radius: 45px;
+  text-align: center;
+  width: 80%;
+  height: 45px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up .pop-team-name {
+    width: 30%;
+    top: 20%;
+    left: 35%;
+  }
+}
+
+.group-message-wrap .pop-box .pop-up .pop-team-name p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content {
+  background: url(../img/course/pop-up.png) center center no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding-top: 15%;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content p {
+  font-size: 16px;
+  color: #434343;
+  line-height: 1.5;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .time {
+  font-size: 13px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
+  -webkit-box-shadow: #FFF8E4 1px 1px 3px;
+          box-shadow: #FFF8E4 1px 1px 3px;
+  padding: 10px 20px;
+  background-color: #C9D34A;
+  border-radius: 20px;
+  height: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-main-message .message-con {
+  padding: 0 15px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .message-meb {
+  text-align: center;
+  line-height: 30px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .message-meb i {
+  color: #434343;
+  font-size: 50px;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .message-meb {
+    margin: 0  20px 0 0;
+  }
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .all-message {
+  padding: 10px 20px;
+  background-color: #BEC23F;
+  border-radius: 10px;
+  height: 33%;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .all-message .meb-add-message {
+  background-color: #FFF0F4;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .all-message .meb-add-message .meb {
+  text-align: center;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .all-message .meb-add-message .meb i {
+  color: #434343;
+  font-size: 30px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .all-message .meb-add-message .meb .name {
+  font-size: 13px;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message {
+  height: 12%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
+  font-size: 16px;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  border: #6a3e26  solid 3px;
+  margin: auto;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn {
+  margin: auto;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
+  width: 100%;
+  margin: auto;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
+  display: block;
+  width: 135px;
+  padding: 2px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  position: relative;
+  padding: 1px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 135px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:after {
+  z-index: -1;
+  content: "留言參加";
   position: absolute;
   left: 0px;
   right: 0px;
