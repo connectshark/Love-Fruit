@@ -2014,6 +2014,9 @@ body {
     top: 20%;
     left: 35%;
   }
+  .group-message-wrap .pop-box .pop-up .pop-team-name p {
+    font-size: 16px;
+  }
 }
 
 .group-message-wrap .pop-box .pop-up .pop-team-name p {
@@ -2056,7 +2059,6 @@ body {
   padding: 10px 20px;
   background-color: #C9D34A;
   border-radius: 20px;
-  height: 33%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2064,6 +2066,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
+    margin-top: 35%;
+    height: 45%;
+  }
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message p {
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
+    height: 33%;
+  }
 }
 
 .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message .message-con {
@@ -2080,17 +2098,18 @@ body {
   font-size: 50px;
 }
 
-@media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-up .pop-content .message-meb {
-    margin: 0  20px 0 0;
-  }
-}
-
 .group-message-wrap .pop-box .pop-up .pop-content .all-message {
+  display: none;
   padding: 10px 20px;
-  background-color: #BEC23F;
+  background-color: #bec23f;
   border-radius: 10px;
   height: 33%;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .all-message {
+    display: block;
+  }
 }
 
 .group-message-wrap .pop-box .pop-up .pop-content .all-message .meb-add-message {
