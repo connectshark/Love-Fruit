@@ -1907,6 +1907,215 @@ body {
 /* 第五屏-愛情留言牆 */
 /* 第五屏-愛情留言牆 */
 @media screen and (max-width: 768px) {
+  .index-leavemessage-bgc {
+    position: relative;
+    background-color: #ffd9d9;
+    width: 100%;
+    z-index: 5;
+    padding-bottom: 200%;
+  }
+  .love-leavemessage {
+    position: absolute;
+    top: 0%;
+    left: 40%;
+  }
+  .love-icon5 {
+    width: 30%;
+  }
+  .love-icon5 img {
+    width: 100%;
+  }
+  .love-leavemessage h2 {
+    font-family: "A-OTF-M";
+    font-size: 3.5vw;
+    color: #ff8f8f;
+    letter-spacing: 4px;
+    margin-bottom: 3%;
+  }
+  .love-leavemessage span {
+    color: #777777;
+    letter-spacing: 2px;
+    font-size: 0.8vw;
+    font-family: "GenJyuuGothic-R";
+  }
+  .leavemessage-bgc {
+    position: absolute;
+    z-index: -1;
+    width: 180%;
+    top: -15%;
+  }
+  .leavemessage-Material {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    bottom: 2%;
+  }
+  .leavemessage-item-group {
+    position: absolute;
+    width: 90%;
+    height: 40%;
+    z-index: 9;
+    margin: auto;
+    top: -55%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .single {
+    width: 43%;
+    height: 90%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #fad689;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 5%;
+  }
+  .first-love {
+    width: 43%;
+    height: 90%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #6bdbda;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 5%;
+  }
+  .fall-in-love {
+    width: 43%;
+    height: 90%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #ea7187;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+  .break-up {
+    width: 43%;
+    height: 90%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #9dc5f6;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+  .leavemessage-cloud {
+    position: absolute;
+    width: 50%;
+    right: -15%;
+    top: -10%;
+  }
+  .leavemessage-cloud img {
+    width: 100%;
+  }
+  .message-header {
+    margin: 3% auto;
+    text-align: left;
+    width: 90%;
+  }
+  .message-header p {
+    display: inline-block;
+  }
+  .message-header-icon {
+    font-family: "GenJyuuGothic-B";
+    color: #292929;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .message-body {
+    display: inline-block;
+    width: 90%;
+  }
+  .message-body figure {
+    display: inline-block;
+    width: 83%;
+    height: 41%;
+  }
+  .message-body figure img {
+    width: 100%;
+  }
+  .message-text h3 span {
+    font-family: "GenJyuuGothic-B";
+    font-size: 13px;
+  }
+  .message-text h3 {
+    padding: 3% 0 3% 0;
+    font-size: 12px;
+    font-family: "GenJyuuGothic-B";
+    text-align-last: left;
+    color: #292929;
+  }
+  .message-text p {
+    width: 100%;
+    height: 18%;
+    font-family: "GenJyuuGothic-R";
+    line-height: 18px;
+    font-size: 12px;
+    color: #545454;
+    text-align: justify;
+  }
+  .s-text {
+    float: right;
+    font-size: 12px;
+    color: #fad689;
+  }
+  .s-text::before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .message-text {
+    width: 75%;
+    margin-left: 10%;
+    display: inline-block;
+  }
+  .message-footer {
+    display: inline-block;
+    width: 90%;
+    margin-top: 1.5%;
+    text-align: right;
+  }
+  .message-footer span {
+    color: #ffffff;
+    font-size: 12px;
+    display: none;
+  }
+  .custom-ice {
+    position: absolute;
+    left: -10%;
+    bottom: -2%;
+    width: 34%;
+  }
+  .message-footer button {
+    display: inline-block;
+    font-family: "GenJyuuGothic-R";
+    background-color: #fc7389;
+    border: 2px solid #715124;
+    border-radius: 10px;
+    margin-top: 3%;
+    width: 30%;
+    height: 10%;
+  }
+  .message-button-icon {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .message-button-icon-share {
+    margin-top: 4%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .message-button-icon-share img {
+    display: inline-block;
+    width: 110%;
+  }
+  .custom-ice img {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 768px) {
   .love-leavemessage {
@@ -1963,22 +2172,53 @@ body {
     right: 0%;
     bottom: 0%;
     display: flex;
-    /* justify-content: space-around; */
-    /* align-items: center; */
+    justify-content: space-around;
+    align-items: center;
   }
   .single {
     width: 22%;
-    height: 90%;
+    height: 96%;
     position: relative;
     text-align: center;
     border: 10px solid #fad689;
     background-color: #ffffff;
     border-radius: 20px;
   }
+  .first-love {
+    width: 22%;
+    height: 96%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #6bdbda;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+  .fall-in-love {
+    width: 22%;
+    height: 96%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #ea7187;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+  .break-up {
+    width: 22%;
+    height: 96%;
+    position: relative;
+    text-align: center;
+    border: 10px solid #9dc5f6;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
   .leavemessage-cloud {
     position: absolute;
+    width: 40%;
     right: -10%;
     top: -10%;
+  }
+  .leavemessage-cloud img {
+    width: 100%;
   }
   .message-header {
     margin: 3% auto;
@@ -2000,7 +2240,7 @@ body {
   }
   .message-body figure {
     display: inline-block;
-    width: 90%;
+    width: 83%;
     height: 51%;
   }
   .message-body figure img {
@@ -2027,6 +2267,7 @@ body {
   }
   .s-text {
     float: right;
+    font-size: 18px;
     color: #fad689;
   }
   .s-text::before {
@@ -2049,6 +2290,11 @@ body {
     margin-top: 1.5%;
     text-align: right;
   }
+  .message-footer span {
+    color: #ffffff;
+    font-size: 18px;
+    display: inline-block;
+  }
   .custom-ice {
     position: absolute;
     left: -10%;
@@ -2057,16 +2303,26 @@ body {
   }
   .message-footer button {
     display: inline-block;
+    font-family: "GenJyuuGothic-R";
     background-color: #fc7389;
     border: 2px solid #715124;
-    color: #ffffff;
     border-radius: 10px;
+    margin-top: 3%;
     width: 30%;
     height: 6%;
   }
   .message-button-icon {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
+  }
+  .message-button-icon-share {
+    margin-top: 4%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .message-button-icon-share img {
+    display: inline-block;
+    width: 110%;
   }
   .custom-ice img {
     width: 100%;
