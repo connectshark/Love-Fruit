@@ -13,13 +13,13 @@ function $id(id) {
 function navDropDownMenu() {
   if (window.innerWidth > 767) {
     $id("nav-drop-down-menu").style.opacity = "1";
-    $id("nav-drop-down-menu").style.top = "7%";
+    $id("nav-drop-down-menu").style.transform = "translateY(10%)";
   }
 }
 function navDropDownMenuout() {
   if (window.innerWidth > 767) {
     $id("nav-drop-down-menu").style.opacity = "0";
-    $id("nav-drop-down-menu").style.top = "-60%";
+    $id("nav-drop-down-menu").style.transform = "translateY(-90%)";
   }
 }
 
