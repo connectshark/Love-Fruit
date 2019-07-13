@@ -1,3 +1,9 @@
+//scroll滑動到指定區塊
+$("#scroll-message").click(function(){
+    $("html,body").animate({
+        scrollTop:$("#comment").offset().top}, 1000);
+}); //代表一個完整的執行區塊
+
 
 //checkbox-num
 var select = document.getElementById('apply-num');
@@ -7,6 +13,8 @@ for (var i = 1; i <= 20; i++) {
   opt.innerHTML = i;
   select.appendChild(opt);
 }
+
+
 
 //calender
 var today = new Date();

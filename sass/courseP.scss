@@ -1,6 +1,6 @@
 @import "mixin/mixin";
 *{
-    outline: #f00 solid 1px;
+    // outline: #f00 solid 1px;
     text-decoration: none;  
     box-sizing: border-box;
 }
@@ -1024,9 +1024,16 @@ $deep-pink:#db4d6d;
                 }
                 @include btn(message-btn-out,135px,message-btn-in,20px, 我要參加);
             }
+            .join-pop-btn{
+                &:target + .pop-box{
+                    visibility: visible;
+                }
+            }
         }
     }  
+
     .pop-box{
+        visibility: hidden;
         background-color: rgba(0, 0, 0, 0.9);
         position: fixed;
         top: 0;
@@ -1197,4 +1204,5 @@ $deep-pink:#db4d6d;
         }
    
     }
+ 
 }
