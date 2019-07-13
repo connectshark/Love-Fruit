@@ -192,8 +192,8 @@
         </form>
       </div>
     </header>
-	<section class="custom">
-		<div class="custom-list">
+	<div class="custom" id="app">
+		<section class="custom-list">
 			<div class="custom-list-scale">
 				<img src="img/custom/scale.png" alt="磅秤">
 			</div>
@@ -211,7 +211,7 @@
 					</div>
 					<div class="price-table">
 						<div class="price-title">
-							<p>購買清單</p>
+							<h2>購買清單</h2>
 						</div>
 						<div class="price-list">
 							<table class="price-s-table">
@@ -276,9 +276,10 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="custom-main">
+		</section>
+		<section class="custom-main" id="show">
 			<div class="back step-group">
+                <h2>流程</h2>
                 <ul class="step">
                     <li class="active step-item">外觀</li>
                     <li class="step-item">基底</li>
@@ -294,11 +295,12 @@
                         <img>
                     </div>
                 </div>
+                    <div class="ice-stick"><p><span>#</span>{{message}}</p></div>
 			</div>
 			<div class="custom-bottom">
 			</div>
-		</div>
-		<div class="custom-aside back">
+		</section>
+		<section class="custom-aside back">
             <div class="flow">
     			<div class="aside-title">
     				<h2>選擇製冰容器</h2>
@@ -456,7 +458,7 @@
                 <div class="aside-select message-pull">
                     <div class="select-item select-item-1">
                         <label for="text">
-                        <input type="text" v-model="message" id="text"></label>
+                        <input type="text" maxlength="5" v-model="message" id="text"></label>
                     </div>
                 </div>
             </div>
@@ -489,26 +491,40 @@
 							<span class="aside-button-in">下一步</span>
 						 </a>
     				</div>
+                    <button type="button" id="screen">screen</button>
+                    <img id="box">
     		</div>
-		</div>
-	</section>
+		</section>
+	</div>
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 	<script src="js/nav.js"></script>
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
     <script>
         new Vue({
-            el:'.message-pull',
+            el:'#app',
             data:{
                 message:'輸入字',
             },
         });
     </script>
+    <script>
+        $('#screen').click(function () {
+html2canvas(document.getElementById('show'), {
+  onrendered: function(canvas) {
+    var image = canvas.toDataURL("image/png")
+    $('#box').attr({
+        src:image,
+    });
+  }
+});
+        });
+    </script>
 </body>
-
 </html>
