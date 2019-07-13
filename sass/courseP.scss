@@ -1033,7 +1033,7 @@ $deep-pink:#db4d6d;
         left: 0;
         width: 100%;
 		height: 100%;
-        z-index: 5;
+        z-index: 100;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1096,8 +1096,8 @@ $deep-pink:#db4d6d;
                 
                 .pop-main-message{
                     @include rwd(mobile){
-                        margin-top: 35%;
-                        height: 45%;
+                        margin-top: 60%;
+                        height: 20%;
                         p{
                           font-size:13px;  
                         }
@@ -1112,11 +1112,11 @@ $deep-pink:#db4d6d;
                     border-radius: 20px;
                     display: flex;
                     flex-flow: row wrap;
-                  
                     .message-con{
                         padding: 0 15px;
                     }
                 }
+
                 .message-meb{
                     text-align: center;
                     line-height: 30px;
@@ -1128,6 +1128,7 @@ $deep-pink:#db4d6d;
                 }
 
                 .all-message{
+                   
                     @include rwd(medium){
                         display: block;
                     }
@@ -1156,17 +1157,28 @@ $deep-pink:#db4d6d;
                     }
                 }
                 .pop-leave-message{
+                   
+                    @include rwd(mobile){
+                        height:5%;
+                        margin-top: -30%;
+                    }
                     height: 12%;
                     display: flex;
                     vertical-align: middle;
                     #leave-message-box {
                     font-size: 16px;
                     padding:0 20px;
-                        width: 100%;
-                        height: 50px;
-                        border-radius: 50px;
-                        border: #6a3e26  solid 3px;
-                        margin: auto ;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 50px;
+                    border: #6a3e26  solid 3px;
+                    margin: auto ;
+                        @include rwd(mobile){
+                            font-size: 13px;
+                            padding:0 10px;
+                            height: 30px;
+                            border-radius: 30px;
+                        }
                     }
                     .message-btn{
                         margin: auto;
@@ -1174,7 +1186,10 @@ $deep-pink:#db4d6d;
                             width: 100%;
                             margin: auto;
                         }
-                        @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
+                        @include rwd(medium){
+                           @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
+                        }
+                        @include btn(message-btn-out,80px,message-btn-in,13px, 留言參加);
                     }
                 }
             }

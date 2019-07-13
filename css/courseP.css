@@ -1961,7 +1961,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2070,8 +2070,8 @@ body {
 
 @media all and (max-width: 768px) {
   .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
-    margin-top: 35%;
-    height: 45%;
+    margin-top: 60%;
+    height: 20%;
   }
   .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message p {
     font-size: 13px;
@@ -2145,6 +2145,13 @@ body {
   vertical-align: middle;
 }
 
+@media all and (max-width: 768px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message {
+    height: 5%;
+    margin-top: -30%;
+  }
+}
+
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
   font-size: 16px;
   padding: 0 20px;
@@ -2153,6 +2160,15 @@ body {
   border-radius: 50px;
   border: #6a3e26  solid 3px;
   margin: auto;
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
+    font-size: 13px;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 30px;
+  }
 }
 
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn {
@@ -2164,9 +2180,62 @@ body {
   margin: auto;
 }
 
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
+    display: block;
+    width: 135px;
+    padding: 2px;
+    border-radius: 40px;
+    background-color: white;
+    border: 2px solid #715124;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+  }
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in {
+    display: block;
+    color: whitesmoke;
+    font-size: 20px;
+    position: relative;
+    padding: 1px;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    width: 135px;
+    border-radius: 20px;
+    background-color: #fc7389;
+    border: 2px solid #e4575f;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+  }
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:hover {
+    background-color: #ffabb1;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:active {
+    background-color: #db4d6d;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+  }
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:after {
+    z-index: -1;
+    content: "留言參加";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
   display: block;
-  width: 135px;
+  width: 80px;
   padding: 2px;
   border-radius: 40px;
   background-color: white;
@@ -2183,13 +2252,13 @@ body {
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in {
   display: block;
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 13px;
   position: relative;
   padding: 1px;
   z-index: 1;
   text-align: center;
   display: block;
-  width: 135px;
+  width: 80px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;
