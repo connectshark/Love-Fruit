@@ -50,7 +50,7 @@ body{
         margin: auto;
         display: flex;
         flex-flow: row nowrap;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-around;
     }
     .letter-content{
