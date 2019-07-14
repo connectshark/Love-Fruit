@@ -25,6 +25,18 @@ function modelchange4() {
   $id("model-rabbit").style.visibility = "hidden";
   $id("model-rocket").style.visibility = "visible";
 }
+function getStyle(oDiv, name) {
+  if (oDiv.style.styleFloat) {
+    return oDiv.style.styleFloat; //ie下float处理
+  } else if (oDiv.style.cssFloat) {
+    return oDiv.style.cssFloat; //火狐等float处理
+  }
+  if (oDiv.currentStyle) {
+    return oDiv.currentStyle[name];
+  } else {
+    return getComputedStyle(oDiv, false)[name];
+  }
+}
 // 飛船
 function blueShipButton() {
   // if ($id("course-pink-ship").style.transform == "translateX(0)") {
@@ -32,10 +44,19 @@ function blueShipButton() {
   $id("course-blue-ship").classList.add("course-blue-ship-show-out");
   $id("course-pink-ship").classList.remove("course-blue-ship-show-out");
   $id("course-pink-ship").classList.add("course-blue-ship-show");
+  // 按鈕
   $id("blue-ship-button").style.display = "none";
   $id("pink-ship-button").style.display = "inline-block";
+  // $id("blue-ship-button").disabled = "true";
+  // $id("blue-ship-button").style.pointerEvents = "none";
+
+  // if (
+  //   getStyle($id("blue-ship-button"), "transfrom") ==
+  //   "translateX(0%) translateY(-10%)"
+  // ) {
+  //   $id("blue-ship-button").style.pointerEvents = "auto";
+  // }
 }
-// }
 function pinkShipButton() {
   // console.log($id("course-pink-ship").style.transform);
   // if ($id("course-pink-ship").style.transform == "translateX(0)") {
@@ -43,9 +64,23 @@ function pinkShipButton() {
   $id("course-pink-ship").classList.add("course-blue-ship-show-out");
   $id("course-blue-ship").classList.remove("course-blue-ship-show-out");
   $id("course-blue-ship").classList.add("course-blue-ship-show");
-
-  $id("blue-ship-button").style.display = "inline-block";
+  // 按鈕
   $id("pink-ship-button").style.display = "none";
+  $id("blue-ship-button").style.display = "inline-block";
+  // $id("pink-ship-button").disabled = "true";
+  // $id("pink-ship-button").style.pointerEvents = "none";
+  // if (
+  //   getStyle($id("pink-ship-button"), "transfrom") ==
+  //   "translateX(0%) translateY(-10%)"
+  // ) {
+  //   $id("pink-ship-button").style.pointerEvents = "auto";
+  // }
+
+  // if (
+  //   !$id("course-pink-ship").classList.contains("course-blue-ship-show-out")
+  // ) {
+  //   $id("pink-ship-button").style.pointerEvents = "auto";
+  // }
 }
 //
 function init() {
@@ -123,3 +158,7 @@ function ibox() {
     }
   });
 }
+// 判斷秒數何時啟動
+// setTimeout(function() {
+//   $id("blue-ship-button").style.pointerEvents = "auto";
+// }, 5000);

@@ -47,11 +47,14 @@ function nextChange() {
 function imgChange(){
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
-	console.log(src);
 	$('#texture-main').attr({
 		src:src,
 		alt:alt,
 	});
+	for (var i = 0; i < 4; i++) {
+		$('#texture-p').removeClass('img-p-'+i);
+	}
+	$('#texture-p').addClass("img-p-"+$(this).index('.texture-select'));
 	$('.list-description').eq(0).text(alt);
 	$('#texture-min-img').attr('src',src);
 	$('#texture-min').css('backgroundColor','#f596aa');
@@ -160,6 +163,7 @@ function bgcGradient() {
 			'backgroundColor' : Afruite,
 			'backgroundImage' : 'none',
 		});
+		gradintChangeClear();
 	}else if (fruiteItem.length == 2) {
 		Afruite = fruiteColor[fruiteItem[0]];
 		Bfruite = fruiteColor[fruiteItem[1]];
@@ -171,25 +175,98 @@ function bgcGradient() {
 			'backgroundColor' : 'transparent',
 			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+$('#range').val()+'%,'+Bfruite+')',
 		});
+		gradintChangeClear();
+		gradintChange(Afruite,Bfruite,$('#range').val());
 	}else {
 		$('.gradual-item').children().attr('src', '');
 		$('#range').css({
 			'backgroundColor' : '#fff',
 			'backgroundImage' : 'none',
 		});
+		gradintChangeClear();
 	}
 }
-function gradintChange() {
-	if (fruiteItem.length == 2) {
-		fiftyPersent = $(this).val();
-		$(this).css('backgroundImage','linear-gradient(to right, '+Afruite+','+fiftyPersent+'%,'+Bfruite+')');
-	}
+function gradintChangeClear() {
+	$('#texture-p').css('backgroundImage', 'none');
+}
+function gradintChange(Aimg,Bimg,persent) {
+	$('#texture-p').css('backgroundImage', 'linear-gradient('+$('#angle').val()+'deg, '+Aimg+','+persent+'%,'+Bimg+')');
 }
 function angleChange() {
-	if ($(this).val() > 360 || $(this).val() < 0 ) {
+	if ($(this).val() > 360 || $(this).val() < 0 || $(this).val() == "") {
 		$(this).css('borderColor','#FF4500');
 		return;
 	}
+	bgcGradient();
+}
+function smile() {
+	var canvas = document.getElementById('mood');
+	var context = canvas.getContext('2d');
+	for (var i = 0; i <= 20; i++) {
+		var line = i * 50;
+		context.moveTo(0,line);
+		context.lineTo(canvas.width,line);
+		context.fillText(line,0,line);
+		context.moveTo(line,0);
+		context.lineTo(line,canvas.height);
+		context.fillText(line,line,8);
+	}
+	context.strokeStyle='rgba(0,0,0,.3)';
+	context.stroke();
+
+
+	context.beginPath();
+	context.lineWidth=3;
+	context.strokeStyle= 'LightSkyBlue';
+	context.moveTo(40,60);
+	context.arcTo(60,40,80,60,20);
+	context.stroke();
+
+
+	context.beginPath();
+	context.lineWidth=3;
+	context.moveTo(110,60);
+	context.arcTo(90,60,70,60,0);
+	context.stroke();
+}
+// 第三步
+var sliceSize = 50;
+function imgPut() {
+	var src = $(this).children().children().attr('src');
+	var alt = $(this).children().children().attr('alt');
+	console.log(src);
+	$('#slice-main').children('img').attr({
+		src: src,
+		alt: alt,
+	});
+	dragSliceImg();
+}
+function imgBigger() {
+	sliceSize += 10;
+	if (sliceSize > 150) {
+		sliceSize = 150;
+	}else if(sliceSize < 50){
+		sliceSize = 50;
+	}
+	sliceSizeChange(sliceSize);
+}
+function imgSmaller() {
+	sliceSize -= 10;
+	if (sliceSize > 150) {
+		sliceSize = 150;
+	}else if(sliceSize < 50){
+		sliceSize = 50;
+	}
+	sliceSizeChange(sliceSize);
+}
+function sliceSizeChange(size) {
+	$('#slice-main').css('width',size+'px');
+}
+function dragSliceImg() {
+	$('#slice-main').draggable({ 
+		containment: '#texture-main',
+		scroll: false,
+	});
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
@@ -202,10 +279,15 @@ $(document).ready(function() {
 	$('.texture-select').click(imgChange);
 	// 第二步
 	$('.fruite-item').click(fruiteChange);
-	$('#range').change(gradintChange);
-	$('#angle').keyup(angleChange).focus(function() {
+	$('#range').change(bgcGradient);
+	$('#angle').keyup(angleChange).change(angleChange).focus(function() {
 		$(this).css('borderColor','#333');
 	}).blur(function() {
 		$(this).css('borderColor','#ccc');
 	});
+	smile();
+	$('.slice-item').click(imgPut);
+	$('#slice-bigger').click(imgBigger);
+	$('#slice-smaller').click(imgSmaller);
+	sliceSizeChange(sliceSize);
 });
