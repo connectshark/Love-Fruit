@@ -141,7 +141,7 @@ body{
 	font-family: "A-OTF-M";
 	width: 80%;
 }
-.price-title p{
+.price-title h2{
 	padding: 10px 0;
 	border-bottom: 2px solid #603813;
 	text-align: center;
@@ -152,6 +152,7 @@ body{
 .price-s-table th,td{
 	padding: 10px 6px;
 	text-align: center;
+	vertical-align: middle;
 }
 .price-s-table th{
 	width: 30%;
@@ -277,6 +278,9 @@ body{
   margin: auto;
   padding: 10px 0;
 }
+.step-group h2{
+	display: none;
+}
 .step {
   counter-reset:step;
   position: relative;
@@ -330,11 +334,53 @@ body{
 .custom-main-show{
 	padding: 10px 0;
 	margin: auto;
-	width: 60%;
+	width: 70%;
 	position: relative;
 	top: 30px;
 	z-index: 2;
 }
+/*冰棒棍*/
+.ice-stick{
+	width: 60%;
+	margin: auto;
+	background-color: #FFD5B3;
+	padding: 6px 10px;
+	border-radius: 10px;
+	border: 2px solid #603813;
+	text-align: right;
+	/*transform: rotate(90deg);*/
+	animation: put-in 5s forwards;
+}
+.ice-stick p{
+	line-height: 2;
+	text-orientation:upright;
+}
+@keyframes put-in{
+	0%{
+		transform: rotate(0deg) translate(0,0);
+		width: 55%;
+	border: 2px solid #603813;
+	}
+	50%{
+		transform: rotate(90deg) translate(35px,0);
+		width: 55%;
+		border: 2px solid #603813;
+	}
+	50.5%{
+		transform: rotate(90deg) translate(35px,0);
+		width: 55%;
+		border: 2px solid #603813;
+		border-left:none; 
+	}
+	100%{
+		transform: rotate(90deg) translate(0,0);
+		width: 34%;
+		border-radius: 0 10px 10px 0;
+		border-left:none; 
+	}
+}
+
+
 .custom-show-area{
 	width: 100%;
 	padding-bottom: 100%;
@@ -344,25 +390,25 @@ body{
 	-webkit-mask-image: url('../img/custom/texture1-p.png');
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
-	-webkit-mask-size: contain;
+	-webkit-mask-size: 75%;
 }
 .img-p-1{
 	-webkit-mask-image: url('../img/custom/texture2-p.png');
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
-	-webkit-mask-size: contain;
+	-webkit-mask-size: 73%;
 }
 .img-p-2{
 	-webkit-mask-image: url('../img/custom/texture3-p.png');
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
-	-webkit-mask-size: contain;
+	-webkit-mask-size: 74%;
 }
 .img-p-3{
 	-webkit-mask-image: url('../img/custom/texture4-p.png');
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
-	-webkit-mask-size: contain;
+	-webkit-mask-size: 72%;
 }
 #texture-main{
 	position: absolute;

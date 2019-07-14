@@ -20,8 +20,9 @@
 }
 /*Css寫 -> font-family: "什麼字型";*/
 * {
-  /*outline: 1px solid #f00;*/
+  outline: 1px solid #f00;
 }
+
 /*header*/
 /*清除*/
 @media screen and (max-width: 767px) {
@@ -232,6 +233,10 @@
     opacity: 1;
     transition: 0.5s;
   }
+  .nav-list li.active span::before {
+    transform: scale(1);
+    transition: 0.5s;
+  }
   .nav-list img {
     display: inline-block;
     width: 15%;
@@ -352,6 +357,7 @@
   }
   .nav-list {
     display: flex;
+    align-items: flex-start;
     flex-flow: row nowrap;
     justify-content: space-around;
   }
@@ -359,7 +365,7 @@
     opacity: 0;
     transition: 1s;
     position: relative;
-    top: -60%;
+    transform: translateY(-80%);
     left: 12%;
     text-align: center;
     width: 70%;
