@@ -203,7 +203,7 @@ body {
   line-height: 2;
 }
 
-.letter .letter-content .letter-footer .write-title input {
+.letter .letter-content .letter-footer .write-title input, .letter .letter-content .letter-footer .write-content input {
   width: 100%;
   padding: 5px 20px;
   -webkit-box-sizing: border-box;
@@ -215,28 +215,9 @@ body {
   transition: padding .5s;
 }
 
-.letter .letter-content .letter-footer .write-content input {
-  width: 100%;
-  padding: 5px 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 18px;
-  border-radius: 20px;
-  border: 3px solid #6a3e26;
-  -webkit-transition: padding .5s;
-  transition: padding .5s;
-}
-
-.letter .letter-content .letter-footer .write-phrase input {
-  width: 100%;
-  padding: 5px 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 18px;
-  border-radius: 20px;
-  border: 3px solid #6a3e26;
-  -webkit-transition: padding .5s;
-  transition: padding .5s;
+.letter .letter-content .letter-footer .write-title p span, .letter .letter-content .letter-footer .write-content p span {
+  font-size: 16px;
+  color: #949494;
 }
 
 .letter .letter-content .letter-footer .write-buttons {
@@ -467,6 +448,7 @@ body {
   margin-left: auto;
   padding: 0 0 10px;
   text-align: justify;
+  word-wrap: break-word;
 }
 
 .message-item .message-body .m-text {

@@ -154,16 +154,15 @@ body{
                 input{
                     @include inputsize;
                 }
+                p{
+                    span{
+                        font-size: 16px;
+                        color: #949494;
+                    }
+                }
             }
             .write-content{
-                input{
-                    @include inputsize;
-                }
-            }
-            .write-phrase{
-                input{
-                    @include inputsize;
-                }
+                @extend .write-title;
             }
             .write-buttons{
                 display: flex;
@@ -330,6 +329,7 @@ body{
             margin-left: auto;
             padding:0 0 10px;
             text-align: justify;
+            word-wrap:break-word;
         }
         .m-text{
             height: 42px;
