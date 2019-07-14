@@ -263,7 +263,10 @@ function sliceSizeChange(size) {
 	$('#slice-main').css('width',size+'px');
 }
 function dragSliceImg() {
-	$('#slice-main').draggable();
+	$('#slice-main').draggable({ 
+		containment: '#texture-main',
+		scroll: false,
+	});
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
