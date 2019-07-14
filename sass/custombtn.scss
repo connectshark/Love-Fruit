@@ -1,3 +1,4 @@
 @import "mixin/mixin";
 @include btn(aside-button-out-last,100px,aside-button-in,16px,上一步);
 @include btn(aside-button-out-next,100px,aside-button-in,16px,下一步);
+@include btn(aside-button-out-complete,100px,aside-button-in,16px,完成);
