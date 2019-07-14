@@ -148,9 +148,24 @@ try {
             </form>
         </div>
         <section id="mini-cart">
-            <div class="cart-close"><i class="fas fa-times "></i></div>
-            <div id="aaaa">
-
+            <div class="head">
+                <div class="cart-icon">
+                    <img src="img/navBar/shoppingCartIcon.png" alt="">
+                    <h3>
+                        我的購物車
+                    </h3>
+                </div>
+                <div class="cart-close">
+                    <i class="fas fa-times ">  
+                    </i>
+                </div>
+            </div>    
+            <div id="mini-item">
+                <!-- <div class="mini-img col-lg-3"><img src="img/shop/popsicle-single.png" alt=""></div>
+                <span class="mini-name col-lg-3">冰心透涼</span>
+                <span class="mini-qty col-lg-1">2x</span>
+                <span class="mini-pri col-lg-2">NT250</span>
+                <div class="mini-trash col-lg-4"><i class="fas fa-trash"></i></div> -->
             </div>
         </section>
     </header>
@@ -798,7 +813,7 @@ try {
     <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- <script src="js/shop.js"></script> -->
+    <script src="js/shop.js"></script>
     <!-- <script src="js/temporary.js"></script> -->
     <script>
         $('.owl-carousel').owlCarousel({

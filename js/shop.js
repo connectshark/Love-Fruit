@@ -4,39 +4,30 @@ let cart = {};
 function showCart(){
 	let html = "";
 	if( isCartEmpty()){
-		html = "<div>尚無購物資料</div>";
+		html = `<div class="no-item">尚無購物資料</div>`;
 	}
 
 	// html += "<input type='button' value='close' id='btnCloseCart'>";
 	for(let prod_no in cart){
 		console.log(cart);  //cart[prod_no]
 		html += `
-            <div class="head">
-                <div id="cart-icon">
-                    <img src="img/navBar/shoppingCartIcon.png" alt="">
-                    <h3>
-                        我的購物車
-                    </h3>
-                </div>
-            </div>
-        
-            <div class="mini-content">
-				<form>
-				<input type="number" name="qty" value="${cart[prod_no].prod_name}" style="width:50px" min="0">
-				</form>	
-            </div>  `;
-
+			<div class="mini-item-wrap">
+				<div class="mini-img col-lg-3"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
+				<span class="mini-name col-lg-3">
+					<a href="shop-inside.php?psn=${prod_no}">
+					${cart[prod_no].prod_name}
+					</a>	
+				</span>
+				<span class="mini-qty col-lg-1">${cart[prod_no].qty}x</span>
+				<span class="mini-pri col-lg-2">NT${cart[prod_no].prod_price}</span>
+				<div class="mini-trash col-lg-4"><i class="fas fa-trash"></i></div>
+			</div>`;	
 	}
 	if( !isCartEmpty()){
 		html += `<div class="gogo">結帳去</div>`;
 	}
 	
-	document.getElementById("aaaa").innerHTML = html;
-	// document.getElementById("mini-cart").style.display = "";
-	//----------------將購物車隱藏起來
-	// document.getElementsByClassName("cart-close").onclick = function(){
-	// 	document.getElementsByClassName("mini-cart").style.display = "none";
-	// };
+	document.getElementById("mini-item").innerHTML = html;
 	//----------------註冊數量改變時的事件處理器
 	// let qtys = document.getElementsByName("qty");
 	// for(let i=0; i<qtys.length; i++){
@@ -150,7 +141,6 @@ $(".shopping-cart-icon").click(function(){
     $("#mini-cart").show();
 })
 $(".cart-close").click(function(){
-	alert("123");
 	$("#mini-cart").css("display","none");
 })
 
