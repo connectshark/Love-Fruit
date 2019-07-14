@@ -5,6 +5,18 @@ $("#scroll-message").click(function(){
 }); //代表一個完整的執行區塊
 
 
+//pop-up
+$('#dialog').hide();
+$('#showBtn').click(function(){
+    $('#dialog').show();
+});
+
+$('#closeBtn').click(function(){
+    $('#dialog').hide();
+});
+
+
+
 //checkbox-num
 var select = document.getElementById('apply-num');
 for (var i = 1; i <= 20; i++) {

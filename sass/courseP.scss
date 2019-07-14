@@ -16,7 +16,80 @@ $bg-blue:#c9fcfb;
 $font-gray:#434343;
 $deep-pink:#db4d6d;
 
+.group-wrap,.general-wrap{
+    .cloud{
+        display: none;
+        z-index: 0;
+    }
+    @include rwd(medium){
 
+
+    .cloud{
+        display: block;
+        position: absolute;
+    }
+    .cloud:nth-child(0n + 1){
+        left: 0;
+        width: 10%;
+        top:30%;
+        animation: clouda 20s linear 0s infinite alternate;
+    }
+    .cloud:nth-child(0n + 2){
+        width: 8%;
+        top: 70%;
+        left: 20%;
+        animation: clouda 30s linear 0s infinite alternate;
+    }
+    .cloud:nth-child(0n + 3){
+        width: 18%;
+        right: 10%;
+        top: 20%;
+        animation: cloudb 40s linear 0s infinite alternate;
+    }
+    .cloud:nth-child(0n + 4){
+        right: 30%;
+        top: 50%;
+        right: 0%;
+        animation: cloudb 50s linear 0s infinite alternate;
+    }
+    .cloud:nth-child(0n + 5){
+        width: 15%;
+        right: 80%;
+        top: 100%;
+        animation: cloudb 60s linear 0s infinite alternate;
+    }
+
+    @keyframes clouda {
+        0% {
+        transform: translateX(0);
+        opacity: 1;
+        }
+        50% {
+        transform: translateX(500%);
+        opacity: 0.5;
+        }
+        100% {
+        transform: translateX(1000%);
+        opacity: 1;
+        }
+    }
+
+        @keyframes cloudb {
+            0% {
+            transform: translateX(100%);
+            opacity: 1;
+            }
+            50% {
+            transform: translateX(-500%);
+            opacity: 0.5;
+            }
+            100% {
+            transform: translateX(-1000%);
+            opacity: 1;
+            }
+        }
+    }
+}
 
 //歡迎頁
 .welcome-wrap{
@@ -628,77 +701,7 @@ $deep-pink:#db4d6d;
     background-color: #9dc5f6 ;
     
     .wrapper{
-        .cloud{
-            display: none;
-        }
-        @include rwd(medium){
-
        
-        .cloud{
-            display: block;
-            position: absolute;
-        }
-        .cloud:nth-child(0n + 1){
-            left: 0;
-            width: 10%;
-            top:30%;
-            animation: clouda 20s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 2){
-            width: 8%;
-            top: 70%;
-            left: 20%;
-            animation: clouda 30s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 3){
-            width: 18%;
-            right: 10%;
-            top: 20%;
-            animation: cloudb 40s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 4){
-            right: 30%;
-            top: 50%;
-            right: 0%;
-            animation: cloudb 50s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 5){
-            width: 15%;
-            right: 80%;
-            top: 100%;
-            animation: cloudb 60s linear 0s infinite alternate;
-        }
-
-        @keyframes clouda {
-            0% {
-              transform: translateX(0);
-              opacity: 1;
-            }
-            50% {
-              transform: translateX(500%);
-              opacity: 0.5;
-            }
-            100% {
-              transform: translateX(1000%);
-              opacity: 1;
-            }
-        }
-        
-        @keyframes cloudb {
-            0% {
-              transform: translateX(100%);
-              opacity: 1;
-            }
-            50% {
-              transform: translateX(-500%);
-              opacity: 0.5;
-            }
-            100% {
-              transform: translateX(-1000%);
-              opacity: 1;
-            }
-        }
-    }
         padding-top: 30%;
         max-width: 1200px;
         margin: auto;
@@ -1033,7 +1036,7 @@ $deep-pink:#db4d6d;
     }  
 
     .pop-box{
-        visibility: hidden;
+       
         background-color: rgba(0, 0, 0, 0.9);
         position: fixed;
         top: 0;
@@ -1050,10 +1053,11 @@ $deep-pink:#db4d6d;
                 width:80%;
                 height:70%;
             }
-                .pop-close{
+               #closeBtn{
                     position: absolute;
                     top:15%;
                     right: 10%;
+                    cursor: pointer;
                    img{
                     width: 50px;
                     height: 50px;

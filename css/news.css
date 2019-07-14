@@ -14,6 +14,13 @@ body {
   font-family: "GenJyuuGothic-R";
 }
 
+.news-wrap .bubble, .news-inner-wrap .bubble {
+  background-color: #b28fce;
+  opacity: .5;
+  position: absolute;
+  border-radius: 100%;
+}
+
 .news-wrap .banner, .news-inner-wrap .banner {
   background-color: #cdb3e5;
   background-image: url(../img/news/news-bn-cloud.png), url(../img/background.png);
@@ -616,12 +623,5 @@ body {
 
 .news-inner-wrap .inner-wrapper .change-page .post {
   border-radius: 0 10px 10px 0;
-}
-
-.news-inner-wrap .inner-wrapper .bubble {
-  background-color: #b28fce;
-  opacity: .5;
-  position: absolute;
-  border-radius: 100%;
 }
 /*# sourceMappingURL=news.css.map */

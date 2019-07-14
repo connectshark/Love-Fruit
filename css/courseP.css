@@ -14,6 +14,121 @@ body {
   font-family: "GenJyuuGothic-R";
 }
 
+.group-wrap .cloud, .general-wrap .cloud {
+  display: none;
+  z-index: 0;
+}
+
+@media all and (min-width: 769px) {
+  .group-wrap .cloud, .general-wrap .cloud {
+    display: block;
+    position: absolute;
+  }
+  .group-wrap .cloud:nth-child(0n + 1), .general-wrap .cloud:nth-child(0n + 1) {
+    left: 0;
+    width: 10%;
+    top: 30%;
+    -webkit-animation: clouda 20s linear 0s infinite alternate;
+            animation: clouda 20s linear 0s infinite alternate;
+  }
+  .group-wrap .cloud:nth-child(0n + 2), .general-wrap .cloud:nth-child(0n + 2) {
+    width: 8%;
+    top: 70%;
+    left: 20%;
+    -webkit-animation: clouda 30s linear 0s infinite alternate;
+            animation: clouda 30s linear 0s infinite alternate;
+  }
+  .group-wrap .cloud:nth-child(0n + 3), .general-wrap .cloud:nth-child(0n + 3) {
+    width: 18%;
+    right: 10%;
+    top: 20%;
+    -webkit-animation: cloudb 40s linear 0s infinite alternate;
+            animation: cloudb 40s linear 0s infinite alternate;
+  }
+  .group-wrap .cloud:nth-child(0n + 4), .general-wrap .cloud:nth-child(0n + 4) {
+    right: 30%;
+    top: 50%;
+    right: 0%;
+    -webkit-animation: cloudb 50s linear 0s infinite alternate;
+            animation: cloudb 50s linear 0s infinite alternate;
+  }
+  .group-wrap .cloud:nth-child(0n + 5), .general-wrap .cloud:nth-child(0n + 5) {
+    width: 15%;
+    right: 80%;
+    top: 100%;
+    -webkit-animation: cloudb 60s linear 0s infinite alternate;
+            animation: cloudb 60s linear 0s infinite alternate;
+  }
+  @-webkit-keyframes clouda {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(500%);
+              transform: translateX(500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(1000%);
+              transform: translateX(1000%);
+      opacity: 1;
+    }
+  }
+  @keyframes clouda {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(500%);
+              transform: translateX(500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(1000%);
+              transform: translateX(1000%);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes cloudb {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(-500%);
+              transform: translateX(-500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(-1000%);
+              transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+  @keyframes cloudb {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateX(-500%);
+              transform: translateX(-500%);
+      opacity: 0.5;
+    }
+    100% {
+      -webkit-transform: translateX(-1000%);
+              transform: translateX(-1000%);
+      opacity: 1;
+    }
+  }
+}
+
 .welcome-wrap {
   background-color: #c9fcfb;
 }
@@ -1109,120 +1224,6 @@ body {
   margin: auto;
 }
 
-.group-wrap .wrapper .cloud {
-  display: none;
-}
-
-@media all and (min-width: 769px) {
-  .group-wrap .wrapper .cloud {
-    display: block;
-    position: absolute;
-  }
-  .group-wrap .wrapper .cloud:nth-child(0n + 1) {
-    left: 0;
-    width: 10%;
-    top: 30%;
-    -webkit-animation: clouda 20s linear 0s infinite alternate;
-            animation: clouda 20s linear 0s infinite alternate;
-  }
-  .group-wrap .wrapper .cloud:nth-child(0n + 2) {
-    width: 8%;
-    top: 70%;
-    left: 20%;
-    -webkit-animation: clouda 30s linear 0s infinite alternate;
-            animation: clouda 30s linear 0s infinite alternate;
-  }
-  .group-wrap .wrapper .cloud:nth-child(0n + 3) {
-    width: 18%;
-    right: 10%;
-    top: 20%;
-    -webkit-animation: cloudb 40s linear 0s infinite alternate;
-            animation: cloudb 40s linear 0s infinite alternate;
-  }
-  .group-wrap .wrapper .cloud:nth-child(0n + 4) {
-    right: 30%;
-    top: 50%;
-    right: 0%;
-    -webkit-animation: cloudb 50s linear 0s infinite alternate;
-            animation: cloudb 50s linear 0s infinite alternate;
-  }
-  .group-wrap .wrapper .cloud:nth-child(0n + 5) {
-    width: 15%;
-    right: 80%;
-    top: 100%;
-    -webkit-animation: cloudb 60s linear 0s infinite alternate;
-            animation: cloudb 60s linear 0s infinite alternate;
-  }
-  @-webkit-keyframes clouda {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-    50% {
-      -webkit-transform: translateX(500%);
-              transform: translateX(500%);
-      opacity: 0.5;
-    }
-    100% {
-      -webkit-transform: translateX(1000%);
-              transform: translateX(1000%);
-      opacity: 1;
-    }
-  }
-  @keyframes clouda {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-    50% {
-      -webkit-transform: translateX(500%);
-              transform: translateX(500%);
-      opacity: 0.5;
-    }
-    100% {
-      -webkit-transform: translateX(1000%);
-              transform: translateX(1000%);
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes cloudb {
-    0% {
-      -webkit-transform: translateX(100%);
-              transform: translateX(100%);
-      opacity: 1;
-    }
-    50% {
-      -webkit-transform: translateX(-500%);
-              transform: translateX(-500%);
-      opacity: 0.5;
-    }
-    100% {
-      -webkit-transform: translateX(-1000%);
-              transform: translateX(-1000%);
-      opacity: 1;
-    }
-  }
-  @keyframes cloudb {
-    0% {
-      -webkit-transform: translateX(100%);
-              transform: translateX(100%);
-      opacity: 1;
-    }
-    50% {
-      -webkit-transform: translateX(-500%);
-              transform: translateX(-500%);
-      opacity: 0.5;
-    }
-    100% {
-      -webkit-transform: translateX(-1000%);
-              transform: translateX(-1000%);
-      opacity: 1;
-    }
-  }
-}
-
 @media all and (min-width: 992px) {
   .group-wrap .wrapper {
     padding-top: 200px;
@@ -1958,7 +1959,6 @@ body {
 }
 
 .group-message-wrap .pop-box {
-  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -1988,13 +1988,14 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-up .pop-close {
+.group-message-wrap .pop-box .pop-up #closeBtn {
   position: absolute;
   top: 15%;
   right: 10%;
+  cursor: pointer;
 }
 
-.group-message-wrap .pop-box .pop-up .pop-close img {
+.group-message-wrap .pop-box .pop-up #closeBtn img {
   width: 50px;
   height: 50px;
 }
