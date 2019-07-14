@@ -1,3 +1,21 @@
+
+<!-- //連線資料庫 -->
+<?php
+$prod_no = $_REQUEST["prod_no"];
+$errMsg = "";
+try{
+  require_once("connect-dd101g3.php");
+  $sql = "select * from product where prod_no = :prod_no";
+  $products = $pdo->prepare($sql);
+  $products->bindValue(":prod_no", $prod_no);
+  $products->execute();
+}catch(PDOException $e){
+  $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+  $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+}
+?>  
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +35,14 @@
 </head>
 
 <body class="page-shop-inside">
-
+    <?php 
+    if( $errMsg != ""){ //例外
+    echo "<div><center>$errMsg</center></div>";
+    }elseif($products->rowCount()==0){
+        echo "<div><center>查無此商品資料</center></div>";
+    }else{
+        $prodRow = $products->fetchObject();
+    ?>
     <input type="checkbox" id="menu-control" />
     <header id="header">
         <div class="item-group">
@@ -97,14 +122,14 @@
         <div class="col-lg-6 des-flex m-a">
             <div class="detailed-pic col-lg-6 col-10 rela ">
                 <div class="detaild-img-box col-lg-8 col-8 ">
-                    <img src="img/shop/inlove/inlove-mount01.png" alt="" class="detailed-ice">
+                    <img src="database/img_prod/<?php echo $prodRow->prod_pic ?>" alt="" class="detailed-ice">
                     <img src="img/shop/collection-red.png" alt="" class="collection">
                 </div>
             </div>
             <div class="detailed-content col-lg-6">
                 <div class="detailed-content-box col-lg-12">
-                    <h3 class="detailed-name">芋頭冰棒</h3>
-                    <div class="detailed-star">
+                    <h3 class="detailed-name"></h3>
+                    <div class="detailed-star"><?php echo $prodRow->prod_name;?>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -113,10 +138,10 @@
                         <span>(4.5)</span>
                     </div>
                     <p class="detailed-text">
-                        季節採收的芋頭,並使用有機甘蔗堂熬至10小時的芋頭,配上小農牧場的鮮奶所製成的冰絕對讓你愛不釋手
+                    <?php echo $prodRow->prod_desc;?>
                     </p>
                     <div class="pri-btn">
-                        <p class="detailed-pri">NT250</p>
+                        <p class="detailed-pri">NT<?php echo $prodRow->prod_price;?></p>
                         <div class="detailed-button ">
                             <div class="btn-numbox dis-mobile-n">
                                 <form id='myform' method='POST' action='#'>
@@ -240,7 +265,9 @@
         </div>
 
     </section>
-
+    <?php
+    }
+    ?>
 
 
 

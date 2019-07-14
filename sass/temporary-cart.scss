@@ -9,7 +9,7 @@ body{
    
     // overflow: hidden;
 }
-.mini-cart{
+#mini-cart{
     width: 35vw;
     height: 80vh;
     background-color:whitesmoke;
@@ -49,7 +49,12 @@ body{
     // .active-mini-cart{
     //     transform: translate(0%)
     // }
-
+    .mini-content{
+        display: flex;
+        span{
+            display: block;
+        }
+    }
 
 
 

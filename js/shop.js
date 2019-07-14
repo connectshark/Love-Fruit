@@ -1,73 +1,234 @@
-var storage = localStorage;
-function doFirst(){
-	if(storage['addItemList'] == null){
-		storage['addItemList'] = '';	//storage.setItem('addItemList','');
+
+let cart = {};
+//..............................顯示購物車	
+function showCart(){
+	let html = "";
+	if( isCartEmpty()){
+		html = "<div>尚無購物資料</div>";
 	}
 
-	// 幫每個Add Cart建事件聆聽功能
-	var list = document.querySelectorAll('.shop-btn');		//list是陣列
-	for(var i=0; i<list.length; i++){
-		console.log(i);
-		list[i].addEventListener('click', function(){
-			// var teddyInfo = document.querySelector('#'+this.id+' input').value;
-			var teddyInfo = document.querySelector(`#${this.id} input`).value;
-			addItem(this.id, teddyInfo);
-		});
+	// html += "<input type='button' value='close' id='btnCloseCart'>";
+	for(let prod_no in cart){
+		console.log(cart);  //cart[prod_no]
+		html += `
+            <div class="head">
+                <div id="cart-icon">
+                    <img src="img/navBar/shoppingCartIcon.png" alt="">
+                    <h3>
+                        我的購物車
+                    </h3>
+                </div>
+            </div>
+        
+            <div class="mini-content">
+				<form>
+				<input type="number" name="qty" value="${cart[prod_no].prod_name}" style="width:50px" min="0">
+				</form>	
+            </div>  `;
+
 	}
-}
-function addItem(itemId, itemValue){
-	// alert(itemId+' : '+itemValue);
-	var image = document.createElement('img');
-	image.src = 'imgs/' + itemValue.split('|')[1];
-
-	var title = document.createElement('span');
-	title.innerText = itemValue.split('|')[0];
-
-	var price = document.createElement('span');
-	price.innerText = itemValue.split('|')[2];
-
-	var newItem = document.getElementById('newItem');
+	if( !isCartEmpty()){
+		html += `<div class="gogo">結帳去</div>`;
+	}
 	
-	//先判斷此處是否已有物件，如果有要先刪除
-	while(newItem.childNodes.length >= 1){
-		newItem.removeChild(newItem.firstChild);
-	}
+	document.getElementById("aaaa").innerHTML = html;
+	// document.getElementById("mini-cart").style.display = "";
+	//----------------將購物車隱藏起來
+	// document.getElementsByClassName("cart-close").onclick = function(){
+	// 	document.getElementsByClassName("mini-cart").style.display = "none";
+	// };
+	//----------------註冊數量改變時的事件處理器
+	// let qtys = document.getElementsByName("qty");
+	// for(let i=0; i<qtys.length; i++){
+	// 	qtys[i].onchange = changeCart;
+	// }
+}	
 
-	//再顯示新物件
-	newItem.appendChild(image);
-	newItem.appendChild(title);
-	newItem.appendChild(price);
-
-	//存入storage ?我看不懂 ?       
-	if(storage[itemId]){
-		alert('You have checked.');
-	}else{
-		storage[itemId] = itemValue;		//storage.setItem(itemId,itemValue);
-		storage['addItemList'] += itemId + ', ';
+function isCartEmpty(){
+	if( JSON.stringify(cart) == "{}"){
+		return true;
+		
 	}
-
-	//計算購買數量和小計
-	var itemString = storage.getItem('addItemList');
-	var items = itemString.substr(0,itemString.length-2).split(', ');
-//	console.log(items);		//["A1001", "A1005", "A1006", "A1002"]
-	subtotal = 0 ;
-	for(var key in items){
-		var itemInfo = storage.getItem(items[key]);
-		var itemPrice = parseInt(itemInfo.split('|')[2]);
-		subtotal += itemPrice;
-	}
-	document.getElementById('itemCount').innerText = items.length;
-	document.getElementById('subtotal').innerText = subtotal;
+	return false;
 }
-window.addEventListener('load', doFirst);
+console.log(cart);
+
+//----------------數量改變時的事件處理器
+function changeCart(e){
+	let xhr = new XMLHttpRequest();
+	
+	xhr.onload = function (e){
+		cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
+		console.log(cart);
+	}
+
+	let url = "cart-update.php";
+	xhr.open("post",url,true);
+	console.log(this.parentNode);
+	let myForm = new FormData(this.parentNode);
+	xhr.send(myForm);
+	
+}
+
+//.............取得購物車資料
+// function getCart(){
+//   let xhr = new XMLHttpRequest();
+  
+//   xhr.onload = function(){
+//   	if( xhr.status == 200){
+//   		console.log(xhr.responseText)
+//   		cart = JSON.parse(xhr.responseText);
+//   	}else{
+//   		alert(xhr.status);
+//   	}
+//   }
+//   let url = "get-cart.php";
+//   xhr.open("get", url, true);
+//   xhr.send(null);
+
+// }
 
 
 
+window.addEventListener("load", function(){
+  //.............取得購物車資料
+  showCart();
+
+//按下購物車按鈕
+var btn = document.getElementsByClassName("shop-buy-btn");
+for(i=0;i<btn.length;i++){
+	btn[i].addEventListener("click",changeCart);
+}
+document.getElementsByClassName("shop-buy-btn").onclick = function(){
+	changeCart(e);}
+//顯示加減數量
+  var plus = document.getElementsByClassName("qtyplus");
+  var min = document.getElementsByClassName("qtyminus");
+//   var btn = document.getElementsByClassName("shop-buy-btn");
+function plusnum () {
+	var obj = this.parentNode.querySelectorAll(".qty")[0];
+			var val = parseInt(obj.value);
+			val++;
+			// if (val + 1 < 100) {
+			// }
+			obj.value = val;
+			this.parentNode.parentNode.parentNode.querySelectorAll(".shop-btn")[0].querySelectorAll(".add-cart")[0].querySelectorAll(".qty")[0].value = val;
+
+}
+function minnum(){
+	var obj = this.parentNode.querySelectorAll(".qty")[0];
+	var val = parseInt(obj.value);
+	if ( val>1){
+	val--;
+	obj.value = val;
+	this.parentNode.parentNode.parentNode.querySelectorAll(".shop-btn")[0].querySelectorAll(".add-cart")[0].querySelectorAll(".qty")[0].value = val;
+	}
+	// console.log(obj.value);
+}
+	 
+	  for(i=0;i<plus.length;i++){
+		//     0123 4
+		// plus[i].addEventListener("click",function(){
+		//     console.log(i);
+		//     console.log(plus[i]);
+		//     qty[i].value ++;;
+		// })
+		plus[i].addEventListener("click", plusnum);
+	  }
+	  for(i=0;i<plus.length;i++){
+		   min[i].addEventListener("click",minnum);
+		 
+		 
+	  }
+  //.............顯示購物車
+  document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
+  	showCart();
+  };
+// 右上角購物車開關
+$("#mini-cart").css("display" , "none");
+$(".shopping-cart-icon").click(function(){
+    $("#mini-cart").show();
+})
+$(".cart-close").click(function(){
+	alert("123");
+	$("#mini-cart").css("display","none");
+})
+
+
+});	
+
+  //----------------註冊數量改變時的事件處理器
+   // 數量的輸入盒
+//   let qtys = document.getElementsByName("qty"); 
+//   for(let i=0; i<qtys.length; i++){
+// 	qtys[i].onchange = changeCart;
+//   }
+
+  //----------------註冊+ , - 的事件處理器
+//   let btnMinus = document.getElementsByClassName("btnMinus"); 
+//   for(let i=0; i<btnMinus.length; i++){
+// 	btnMinus[i].onclick = function(e){
+// 		let qtyBox = e.target.nextElementSibling;
+// 		let qty = parseInt(qtyBox.value);
+// 		if( qty> 0){
+// 			qty--;
+// 			qtyBox.value = qty;
+// 			//.....
+// 			changeCart(e);
+// 		}
+// 	};
+//   }  
+
+//   let btnPlus = document.getElementsByClassName("btnPlus");  
+//   for(let i=0; i<btnPlus.length; i++){
+// 	btnPlus[i].onclick = function(e){
+// 		let qtyBox = e.target.previousElementSibling;
+// 		let qty = parseInt(qtyBox.value);
+// 		qty++;
+// 		qtyBox.value = qty;
+// 		changeCart(e);
+// 	};
+//   }    
 
 
 
+//自己寫數量加減                    
+// window.addEventListener("load",function(){
+//     var plus = document.getElementsByClassName("qtyplus");
+//     var min = document.getElementsByClassName("qtyminus");
+//     var qty = document.getElementsByClassName("qty");
+//     // var qtynum = 0;
+//         // btn.addEventListener("click",function(e){
+//         //     e.preventDefault();
 
+//         // })
+//         function plusnum (){
+//                 // this.value +=1;錯
+//                 this.parentNode.children[1].value ++;
+//                 console.log(this.value);
+//             }
+//         function minnum(){
+//             if(this.parentNode.children[1].value>0){
+//                 this.parentNode.children[1].value--;
+//             } ;
+//             console.log(this.value);
+//         }
 
+//         for(i=0;i<plus.length;i++){
+
+//             //     0123 4
+//             // plus[i].addEventListener("click",function(){
+                
+//             //     console.log(i);
+//             //     console.log(plus[i]);
+//             //     qty[i].value ++;;
+//             // })
+//             plus[i].addEventListener("click",plusnum);
+//         }
+//         for(i=0;i<plus.length;i++){
+//              min[i].addEventListener("click",minnum);
+//         }
+//     })
 
 
 //按鈕壞顏色
@@ -146,8 +307,7 @@ $(document).ready(function() {
 var love = document.getElementsByClassName("latest-collection-love");
 for(var i=0 ;i< love.length; i++){
    love[i].addEventListener("click",change)
-}
-
+}                                                  
 var gray = true;
 function change(){
 	if(gray) {
@@ -161,92 +321,5 @@ function change(){
 	
 }
 
-
-// 點擊愛心 js
-// window.addEventListener("load",function(){
-	
-// 	var love = document.getElementsByClassName("latest-collection-love");
-// 	for(i=0;i<love.length;i++){
-// 		love[i].addEventListener("click",chang);
-// 		console.log(love[i]);
-// 	}
-// })
-// function chang(){
-// 	var gray = true;
-// 	if(gray) {
-// 		$(this).attr("src","img/shop/collection-red.png");
-// 		gray = false;
-// 		console.log(gray);
-// 		}
-// 		else{
-// 			$(this).attr("src","img/shop/collection-gray.png");
-// 			gray = true;
-// 			console.log(gray);
-// 		}
-// }
-
-// $(function() {
-//     var status = true;
-//     $("#latest-collection-love").click(function() {
-//         if(status) {
-//             $(this).attr.attr("src") ="img/shop/collection-red.png";
-//             status = false;
-//         }else{
-//             $(this).attr.attr("src") = "img/shop/collection-gray.png"
-//             status = true;
-//         }
-//     });
-// })
-
-// $(".img").click(function(){
-//     if(this.src.search("../static/img/off.png")!=-1){
-//         (this).src="../static/img/on.png";
-
-//     }else{
-
-//         (this).src="../static/img/off.png"
-//     }
-// })
-
-
-
-//數量加減
-
-window.addEventListener("load",function(){
-    var plus = document.getElementsByClassName("qtyplus");
-    var min = document.getElementsByClassName("qtyminus");
-    var qty = document.getElementsByClassName("qty");
-    // var qtynum = 0;
-        // btn.addEventListener("click",function(e){
-        //     e.preventDefault();
-
-        // })
-        function plusnum (){
-                // this.value +=1;錯
-                this.parentNode.children[1].value ++;
-                console.log(this.value);
-            }
-        function minnum(){
-            if(this.parentNode.children[1].value>0){
-                this.parentNode.children[1].value--;
-            } ;
-            console.log(this.value);
-        }
-
-        for(i=0;i<plus.length;i++){
-
-            //     0123 4
-            // plus[i].addEventListener("click",function(){
-                
-            //     console.log(i);
-            //     console.log(plus[i]);
-            //     qty[i].value ++;;
-            // })
-            plus[i].addEventListener("click",plusnum);
-        }
-        for(i=0;i<plus.length;i++){
-             min[i].addEventListener("click",minnum);
-        }
-    })
 
 

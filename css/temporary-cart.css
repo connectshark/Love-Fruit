@@ -10,7 +10,7 @@
   font-family: "GenJyuuGothic-R";
 }
 
-.mini-cart {
+#mini-cart {
   width: 35vw;
   height: 80vh;
   background-color: whitesmoke;
@@ -20,7 +20,7 @@
   top: 0;
 }
 
-.mini-cart .head {
+#mini-cart .head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +30,7 @@
   border-bottom: 2px solid black;
 }
 
-.mini-cart .cart-icon {
+#mini-cart .cart-icon {
   width: 85%;
   padding: 10px;
   display: -webkit-box;
@@ -41,22 +41,32 @@
           align-items: center;
 }
 
-.mini-cart .cart-icon h3 {
+#mini-cart .cart-icon h3 {
   padding-left: 10px;
 }
 
-.mini-cart .cart-close {
+#mini-cart .cart-close {
   border-left: 2px solid black;
   width: 15%;
   padding: 10px 10px 10px 10px;
   text-align: center;
 }
 
-.mini-cart .cart-close:hover {
+#mini-cart .cart-close:hover {
   color: #DB4D6D;
 }
 
-.mini-cart .cart-close .fa-times {
+#mini-cart .cart-close .fa-times {
   font-size: 25px;
+}
+
+#mini-cart .mini-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#mini-cart .mini-content span {
+  display: block;
 }
 /*# sourceMappingURL=temporary-cart.css.map */
