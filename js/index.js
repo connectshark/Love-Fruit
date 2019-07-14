@@ -147,13 +147,23 @@ function ibox() {
       document.documentElement.scrollTop ||
       window.pageYOffset ||
       document.body.scrolltop;
-
-    if (scrolltop > 3200) {
-      i += 1;
-      if (i == 1) {
-        document
-          .querySelector(".course-blue-ship")
-          .classList.add("course-blue-ship-show");
+    if (window.innerWidth < 767) {
+      if (scrolltop > 6200) {
+        i += 1;
+        if (i == 1) {
+          document
+            .querySelector(".course-blue-ship")
+            .classList.add("course-blue-ship-show");
+        }
+      }
+    } else {
+      if (scrolltop > 3200) {
+        i += 1;
+        if (i == 1) {
+          document
+            .querySelector(".course-blue-ship")
+            .classList.add("course-blue-ship-show");
+        }
       }
     }
   });
@@ -162,3 +172,114 @@ function ibox() {
 // setTimeout(function() {
 //   $id("blue-ship-button").style.pointerEvents = "auto";
 // }, 5000);
+
+// 動畫客製化冰棒
+TweenMax.to("#single", 1, {
+  scaleY: 0.9,
+  scaleX: 0.9,
+  repeat: -1,
+  yoyo: true,
+  delay: 0.1,
+  ease: Back.easeOut
+});
+TweenMax.fromTo(
+  "#userIce1",
+  1,
+  {
+    y: 10,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -30,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+// 客製商品
+TweenMax.fromTo(
+  ".model-general",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.fromTo(
+  ".model-bear",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.fromTo(
+  ".model-rabbit",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.fromTo(
+  ".model-rocket",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.to("#iceShadow", 0.99, {
+  scaleY: 0.9,
+  scaleX: 1.3,
+  repeat: -1,
+  opacity: 0.4,
+  yoyo: true,
+  delay: 0.1,
+  ease: Back.easeOut
+});
+// 商城動畫
+TweenMax.fromTo(
+  ".store-group",
+  1,
+  {
+    y: 30,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: 0,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
