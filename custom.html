@@ -277,7 +277,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="custom-main" id="show">
+		<section class="custom-main">
 			<div class="back step-group">
                 <h2>流程</h2>
                 <ul class="step">
@@ -491,8 +491,6 @@
 							<span class="aside-button-in">下一步</span>
 						 </a>
     				</div>
-                    <button type="button" id="screen">screen</button>
-                    <img id="box">
     		</div>
 		</section>
 	</div>
@@ -514,17 +512,6 @@
             },
         });
     </script>
-    <script>
-        $('#screen').click(function () {
-html2canvas(document.getElementById('show'), {
-  onrendered: function(canvas) {
-    var image = canvas.toDataURL("image/png")
-    $('#box').attr({
-        src:image,
-    });
-  }
-});
-        });
-    </script>
+
 </body>
 </html>
