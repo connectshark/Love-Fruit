@@ -93,35 +93,111 @@ $deep-pink:#db4d6d;
 
 //歡迎頁
 .welcome-wrap{
+    @include rwd(mobile){
+        .spaceship{
+            display: none;
+        }
+     }
+  
+    @include rwd(medium){
+        .spaceship{
+        position: absolute;
+        transform: scale(0.4);
+        animation: airBall 10s linear ; 
+        animation-fill-mode: forwards;
+       }
+        @keyframes airBall {
+            0% {
+              left: -50%;
+              top:15%; }
+            20% {
+              top: 5%; }
+            40% {
+              top: 15%; }
+            50% {
+              top: 5%; }
+
+            70% {
+              top: 15%; }
+            100% {
+              left: 100%;
+              top: 5%; 
+             } 
+        }
+    }
+    
     @include rwd(medium){
     background: $bg-blue url(../img/indexImg/diyIcebgc-top.png) no-repeat bottom center ;
+     width: 100%;
+     height: 100%;
     }
-  
-    background-color: $bg-blue;
-    
+     background-color: $bg-blue;
+     
     .wrapper{
-        padding: 150px 0;
+        padding:10% 0;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
-                padding-top: 250px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            padding-top: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
     }
     .kanban{
         width: 100%;
         margin: auto;
         @include rwd(mobile){
-           padding: 50px 0; 
-            
+           padding: 50px 0;  
         }
+        @include rwd(medium){
+            opacity:0;
+            position: relative;  
+        }
+
     }
+
+    @include rwd(medium){
+        .kanban-y{
+            //animation: name duration timing-function delay iteration-count direction;
+              animation: throw-gift-y 0.8s  ease-in 4s 1 ; 
+              animation-fill-mode: forwards;// 在動畫結束之後，停在 100% 的狀態
+          }
+          .kanban-p{
+              //animation: name duration timing-function delay iteration-count direction;
+                animation: throw-gift-p 0.8s  ease-in 7s 1 ; 
+                animation-fill-mode: forwards;// 在動畫結束之後，停在 100% 的狀態
+          }
+          @keyframes throw-gift-y{
+              0%{
+              opacity:0;
+              transform:scale(0.3);
+              }
+              100%{ 
+                  opacity:1;//透明度
+                  transform:scale(1);
+              }
+      
+          }
+          @keyframes throw-gift-p {
+              0%{
+              opacity:0;
+              transform:scale(0.3);
+              }
+              100%{ 
+                  opacity:1;//透明度
+                  transform:scale(1);
+              }
+      
+          }
+    }
+
+    
     .gift{   
         text-align:center; 
         position: relative;
+        width: 100%;
+        margin: auto;
         span{
             display: inline-block;
             color: #fff;
@@ -146,7 +222,7 @@ $deep-pink:#db4d6d;
         }
         background-color: #fff;
         height: 300px;
-        width: 400px;
+        width: 350px;
         border-radius: 20px;
         margin: auto;
         vertical-align: middle;
