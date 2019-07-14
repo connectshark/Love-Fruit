@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "A-OTF-H";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+}
+
+@font-face {
+  font-family: "A-OTF-M";
+  src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+}
+
+/*思源圓黑體*/
+@font-face {
+  font-family: "GenJyuuGothic-B";
+  src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+}
+
+@font-face {
+  font-family: "GenJyuuGothic-R";
+  src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+}
+
+.page-backstage {
+  font-family: "GenJyuuGothic-R";
+  font-size: 20px;
+  background-color: #ffdee6;
+}
+
+.page-backstage header .navbar-brand {
+  font-size: 24px;
+  padding-right: 10px;
+}
+
+.page-backstage .nav-tabs {
+  border-bottom: 1px solid #ea7187;
+}
+
+.page-backstage .nav-tabs .nav-link {
+  color: #bdc0ba;
+}
+
+.page-backstage .nav-tabs .nav-link.active {
+  color: #cb1b45;
+  background-color: #fff;
+  border-color: #f596aa #f596aa #fff;
+}
+/*# sourceMappingURL=backstage.css.map */
