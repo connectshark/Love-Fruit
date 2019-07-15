@@ -335,6 +335,7 @@ try {
                                     <div class="shop-btn">
                                     <form class="add-cart">
                                         <input type='hidden' name='qty' value='1' class="qty"/>
+                                        <input type="hidden" name = prod_pic value = "<?php echo $prodRow["prod_pic"] ?>">
                                         <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
                                         <input type="hidden" name="prod_name" value="<?php echo $prodRow["prod_name"]?>">
                                         <input type="hidden" name="prod_price" value="<?php echo $prodRow["prod_price"]?>">	

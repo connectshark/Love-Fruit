@@ -20,6 +20,10 @@
   top: 0;
 }
 
+#mini-cart a {
+  color: black;
+}
+
 #mini-cart .head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,6 +182,7 @@
   display: block;
   font-size: 20px;
   padding: 15px;
+  text-align: center;
 }
 
 #mini-cart .mini-item-wrap img {

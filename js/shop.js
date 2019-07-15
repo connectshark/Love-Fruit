@@ -12,19 +12,19 @@ function showCart(){
 		console.log(cart);  //cart[prod_no]
 		html += `
 			<div class="mini-item-wrap">
-				<div class="mini-img col-lg-3"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
-				<span class="mini-name col-lg-3">
-					<a href="shop-inside.php?psn=${prod_no}">
+				<div class="mini-img col-lg-1"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
+				<span class="mini-name col-lg-1">
+					<a href="shop-inside.php?prod_no=${prod_no}">
 					${cart[prod_no].prod_name}
 					</a>	
 				</span>
 				<span class="mini-qty col-lg-1">${cart[prod_no].qty}x</span>
-				<span class="mini-pri col-lg-2">NT${cart[prod_no].prod_price}</span>
-				<div class="mini-trash col-lg-4"><i class="fas fa-trash"></i></div>
+				<span class="mini-pri col-lg-1">NT${cart[prod_no].prod_price}</span>
+				<div class="mini-trash col-lg-3"><i class="fas fa-trash"></i></div>
 			</div>`;	
 	}
 	if( !isCartEmpty()){
-		html += `<div class="gogo">結帳去</div>`;
+		html += `<div class="gogo"><a href="cart-show.php">結帳去</a></div>`;
 	}
 	
 	document.getElementById("mini-item").innerHTML = html;
@@ -42,7 +42,7 @@ function isCartEmpty(){
 	}
 	return false;
 }
-console.log(cart);
+// console.log(cart);
 
 //----------------數量改變時的事件處理器
 function changeCart(e){
@@ -100,8 +100,6 @@ function plusnum () {
 	var obj = this.parentNode.querySelectorAll(".qty")[0];
 			var val = parseInt(obj.value);
 			val++;
-			// if (val + 1 < 100) {
-			// }
 			obj.value = val;
 			this.parentNode.parentNode.parentNode.querySelectorAll(".shop-btn")[0].querySelectorAll(".add-cart")[0].querySelectorAll(".qty")[0].value = val;
 
