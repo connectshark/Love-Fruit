@@ -1,8 +1,10 @@
 @import "mixin/mixin";
 *{
+    outline: none;
     // outline: #f00 solid 1px;
     text-decoration: none;  
     box-sizing: border-box;
+
 }
 body{
     font-family: "GenJyuuGothic-R";
@@ -16,39 +18,186 @@ $bg-blue:#c9fcfb;
 $font-gray:#434343;
 $deep-pink:#db4d6d;
 
+.group-wrap,.general-wrap{
+    .cloud{
+        display: none;
+        z-index: 0;
+    }
+    @include rwd(medium){
+    .cloud{
+        display: block;
+        position: absolute;
+    }
+    .cloud:nth-child(0n + 1){
+        left: 0;
+        width: 10%;
+        top:30%;
+        animation: clouda 20s linear 0s infinite alternate;
+    }
+    .cloud:nth-child(0n + 2){
+        width: 8%;
+        top: 60%;
+        left: 20%;
+        animation: clouda 30s linear 1s infinite alternate;
+    }
+    .cloud:nth-child(0n + 3){
+        width: 18%;
+        right: 10%;
+        top: 20%;
+        animation: cloudb 40s linear 0s infinite alternate;
+    }
+    .cloud:nth-child(0n + 4){
+        width: 9%;
+        top: 50%;
+        right: 0%;
+        animation: cloudb 50s linear 1s infinite alternate;
+    }
+    .cloud:nth-child(0n + 5){
+        width: 15%;
+        right: 80%;
+        top: 40%;
+        animation: cloudb 60s linear 0s infinite alternate;
+    }
 
+    @keyframes clouda {
+        0% {
+        transform: translateX(0);
+        opacity: 1;
+        }
+        50% {
+        transform: translateX(500%);
+        opacity: 0.5;
+        }
+        100% {
+        transform: translateX(1000%);
+        opacity: 1;
+        }
+    }
+
+        @keyframes cloudb {
+            0% {
+            transform: translateX(100%);
+            opacity: 1;
+            }
+            50% {
+            transform: translateX(-500%);
+            opacity: 0.5;
+            }
+            100% {
+            transform: translateX(-1000%);
+            opacity: 1;
+            }
+        }
+    }
+}
 
 //歡迎頁
 .welcome-wrap{
+    @include rwd(mobile){
+        .spaceship{
+            display: none;
+        }
+     }
+  
+    @include rwd(medium){
+        .spaceship{
+        position: absolute;
+        transform: scale(0.4);
+        animation: airBall 10s linear ; 
+        animation-fill-mode: forwards;
+       }
+        @keyframes airBall {
+            0% {
+              left: -50%;
+              top:15%; }
+            20% {
+              top: 5%; }
+            40% {
+              top: 15%; }
+            50% {
+              top: 5%; }
+
+            70% {
+              top: 15%; }
+            100% {
+              left: 100%;
+              top: 5%; 
+             } 
+        }
+    }
+    
     @include rwd(medium){
     background: $bg-blue url(../img/indexImg/diyIcebgc-top.png) no-repeat bottom center ;
+     width: 100%;
+     height: 100%;
     }
-  
-    background-color: $bg-blue;
-    
+     background-color: $bg-blue;
+     
     .wrapper{
-        padding: 150px 0;
+        padding:10% 0;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
-                padding-top: 250px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            padding-top: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
     }
     .kanban{
         width: 100%;
         margin: auto;
         @include rwd(mobile){
-           padding: 50px 0; 
-            
+           padding: 50px 0;  
         }
+        @include rwd(medium){
+            opacity:0;
+            position: relative;  
+        }
+
     }
+
+    @include rwd(medium){
+        .kanban-y{
+            //animation: name duration timing-function delay iteration-count direction;
+              animation: throw-gift-y 0.8s  ease-in 4s 1 ; 
+              animation-fill-mode: forwards;// 在動畫結束之後，停在 100% 的狀態
+          }
+          .kanban-p{
+              //animation: name duration timing-function delay iteration-count direction;
+                animation: throw-gift-p 0.8s  ease-in 7s 1 ; 
+                animation-fill-mode: forwards;// 在動畫結束之後，停在 100% 的狀態
+          }
+          @keyframes throw-gift-y{
+              0%{
+              opacity:0;
+              transform:scale(0.3);
+              }
+              100%{ 
+                  opacity:1;//透明度
+                  transform:scale(1);
+              }
+      
+          }
+          @keyframes throw-gift-p {
+              0%{
+              opacity:0;
+              transform:scale(0.3);
+              }
+              100%{ 
+                  opacity:1;//透明度
+                  transform:scale(1);
+              }
+      
+          }
+    }
+
+    
     .gift{   
         text-align:center; 
         position: relative;
+        width: 100%;
+        margin: auto;
         span{
             display: inline-block;
             color: #fff;
@@ -73,7 +222,7 @@ $deep-pink:#db4d6d;
         }
         background-color: #fff;
         height: 300px;
-        width: 400px;
+        width: 350px;
         border-radius: 20px;
         margin: auto;
         vertical-align: middle;
@@ -236,9 +385,9 @@ $deep-pink:#db4d6d;
     background-size: 100%;
    
 }
-.message-wrap{
-   
+.general-message-wrap{
     background-color: $bg-light-yellow;
+    padding-bottom:50px; 
     .title-box{
         text-align: center;
         @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,課程留言板);
@@ -253,10 +402,13 @@ $deep-pink:#db4d6d;
             line-height: 32px;
         }
     }
-    .leave-message{
+    .leave-message-wrap{
+        @include rwd(medium){
+               width: 70%;
+        }
+        width: 90%;
         margin: 30px auto;
         padding: 20px 30px;
-        width: 70%;
         border-radius: 10px;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
         display: flex;
@@ -264,7 +416,7 @@ $deep-pink:#db4d6d;
         justify-content: center;
         background-color: $deep-pink;
         margin: 20px auto;
-            .message-meb{ 
+            .message-mem{ 
                 text-align: center;
                 line-height: 1.5;
                 i{
@@ -297,13 +449,89 @@ $deep-pink:#db4d6d;
             @include btn(message-btn-out,135px,message-btn-in,20px, 我要留言);
             }
     }
+    .mem-message-wrap{
+        @include rwd(medium){
+            width: 70%; 
+            padding: 20px 30px ;
+            font-size: 18px;
+     }
+     width: 90%;
+     padding:10px 20px ;
+     margin: 30px auto 0 ;
+     font-size: 16px;
+    
+        border-radius: 10px;
+        background-color:#FFC8C7 ;
+        .mem-message-item{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        
+        .message-mem{ 
+            text-align: center;
+            i{
+                color: #aaa;
+                font-size:55px;
+            }
+        }
+        .message-con{
+            p{
+                color: #434343;
+            }
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+            position: relative;;
+            &::before{
+                content: "";
+              
+                border-style: solid solid solid solid; 
+                border-color:transparent   #fff transparent transparent;
+                border-width: 15px  25px 15px 15px;
+                height: 0px; 
+                width: 0px; 
+                position:absolute;
+                left: -40px;
+                top: 20px;
+                @include rwd(mobile){
+                    border-width: 10px  15px 10px 10px;
+                    left: -25px;
+                    top: 20px;
+                 }
+            }
+            .mem-ifo{
+                width: 95%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                padding-bottom:10px; 
+                border-bottom: $deep-pink solid 1px;
+            }
+            .mem-con{
+                width: 95%;
+                margin: auto;
+                line-height: 36px;
+            }
+        }
+        .more-btn{
+            padding-top: 20px;
+            .more-btn-out{
+                width: 100%;
+                margin: auto;
+            }
+        @include btn(more-btn-out,135px,more-btn-in,20px, 查看更多);
+        }
+    }
 }
 
 //一般課程預約表單
 .general-form-wrap{
     background-color: $bg-pink;
     background-image: url(../img/background.png);
-    padding-bottom:10%; 
+
     .wrapper{
        
         padding-bottom:10%; 
@@ -314,7 +542,7 @@ $deep-pink:#db4d6d;
             padding-top: 150px;
         }
         .title{
-           
+            padding: 5% 0;
             position: relative;
             text-align:center; 
             margin: auto;
@@ -374,6 +602,7 @@ $deep-pink:#db4d6d;
                     visibility: hidden;
                 }
                 label{
+                    border: 3px solid #6a3e26;
                     font-size: 18px;
                     background-color: #fff;
                     padding: 10px 20px;
@@ -388,7 +617,7 @@ $deep-pink:#db4d6d;
                     border: none;
                     font-size: 16px;
                     &:checked + label {
-                    border: #ffb11b solid 2px;
+                    border: #ffb11b solid 5px;
                     }
                     &:checked + label + span{
                         visibility: visible;
@@ -399,6 +628,11 @@ $deep-pink:#db4d6d;
                     @include rwd(mobile){
                         display: block;
                     }
+                }
+                .check-pic{
+                    position: relative;
+                    top: -20px;
+                    right:15px;
                 }
             }
            
@@ -443,18 +677,17 @@ $deep-pink:#db4d6d;
                         border-radius: 30px;
                         color: #fff;
                     }
-                   
                 }
                     
             }
-            
             select{
+                border: 3px solid #6a3e26;
                 display: block;
-                margin: 20px;
+                margin: 20px 30px;
                 width: 40%;
                 height: 6%;
                 border-radius:15px; 
-                border: none;
+       
                 @include rwd(desktop){
                     width: 15%;
                 }
@@ -472,7 +705,7 @@ $deep-pink:#db4d6d;
 
     }
 }
-//揪團課程
+
 
 
 //揪團課程-預約表單
@@ -628,77 +861,7 @@ $deep-pink:#db4d6d;
     background-color: #9dc5f6 ;
     
     .wrapper{
-        .cloud{
-            display: none;
-        }
-        @include rwd(medium){
-
        
-        .cloud{
-            display: block;
-            position: absolute;
-        }
-        .cloud:nth-child(0n + 1){
-            left: 0;
-            width: 10%;
-            top:30%;
-            animation: clouda 20s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 2){
-            width: 8%;
-            top: 70%;
-            left: 20%;
-            animation: clouda 30s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 3){
-            width: 18%;
-            right: 10%;
-            top: 20%;
-            animation: cloudb 40s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 4){
-            right: 30%;
-            top: 50%;
-            right: 0%;
-            animation: cloudb 50s linear 0s infinite alternate;
-        }
-        .cloud:nth-child(0n + 5){
-            width: 15%;
-            right: 80%;
-            top: 100%;
-            animation: cloudb 60s linear 0s infinite alternate;
-        }
-
-        @keyframes clouda {
-            0% {
-              transform: translateX(0);
-              opacity: 1;
-            }
-            50% {
-              transform: translateX(500%);
-              opacity: 0.5;
-            }
-            100% {
-              transform: translateX(1000%);
-              opacity: 1;
-            }
-        }
-        
-        @keyframes cloudb {
-            0% {
-              transform: translateX(100%);
-              opacity: 1;
-            }
-            50% {
-              transform: translateX(-500%);
-              opacity: 0.5;
-            }
-            100% {
-              transform: translateX(-1000%);
-              opacity: 1;
-            }
-        }
-    }
         padding-top: 30%;
         max-width: 1200px;
         margin: auto;
@@ -825,10 +988,8 @@ $deep-pink:#db4d6d;
     }
 
 }
-//揪團留言板
-.group-message-wrap{ 
-    background-color: $bg-light-yellow;
-    .group-message-cloud{
+//揪團留言板 
+ .group-message-cloud{
         height: 200px;
         @include rwd(medium){
              height: 400px;
@@ -837,10 +998,18 @@ $deep-pink:#db4d6d;
         background-size: 100%;
   
     }
+.group-message-wrap{ 
+    background-color: $bg-light-yellow;
+    position: relative;
+  
     .title-box{
+        transform: translateY(-1%);
+   
+        background-color: $bg-light-yellow;
         text-align: center;
         @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
-        h3{
+        h3{  
+          
             font-family: A-OTF-M ;
         }
         span{
@@ -851,6 +1020,7 @@ $deep-pink:#db4d6d;
             line-height: 32px;
         }
     }
+    
     
     .group-message{
         max-width: 1200px;
@@ -1023,7 +1193,207 @@ $deep-pink:#db4d6d;
                 }
                 @include btn(message-btn-out,135px,message-btn-in,20px, 我要參加);
             }
+           
         }
-
     }  
+
+    .pop-box{
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+		height: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .pop-up{
+            margin: auto;
+            @include rwd(medium){
+                width:80%;
+                height:70%;
+            }
+               #closeBtn{
+                @include rwd(medium){
+                    top:15%;
+                 
+                }
+                    position: absolute;
+                    top:10%;
+                    right: 10%;
+                    cursor: pointer;
+                   img{
+                    width: 50px;
+                    height: 50px;
+                   }
+                }
+                .pop-team-name{
+                    @include rwd(medium){
+                        width: 30%;
+                        top: 20%;
+                        left: 35%;
+                        height: 45px;
+                        line-height: 45px;
+                    } 
+                     p{
+                        color: #fff;
+                        font-size: 16px ; 
+                        @include rwd(medium){
+                            font-size: 20px ; 
+                        }
+                    }
+                    box-shadow: #FFF8E4 2px 2px 3px;
+                    background-color: #434343 ;
+                    border-radius: 45px;
+                    text-align: center;
+                    width:80%;
+                    height: 35px;
+                    line-height: 35px;
+                    position: absolute;
+                    top: 20%;
+                    left: 10%;
+               
+            }
+            .pop-content{
+                @include rwd(medium){
+                background: url(../img/course/pop-bg.png)center center  no-repeat;
+                background-size: contain;
+                height:100%;
+                width:100%;
+                }
+                @include rwd(mobile){
+                background-color:#BEC23F ;
+                border-radius: 10px;
+                width:90%;
+                height: 50%;
+                margin: auto;
+            }
+                display: flex;
+                justify-content: center;
+                flex-flow: row wrap;
+                padding-top: 15%;
+                p{
+                    font-size: 16px;
+                    color: #434343;
+                    line-height: 1.5;
+                }
+                .time{
+                    font-size: 13px;
+                }
+                
+                .pop-main-message{
+                    @include rwd(mobile){
+                        background-color: $bg-medium-yellow;
+                        height: 70%;
+                        p{
+                          font-size:13px;  
+                        }
+                    }
+                    @include rwd(medium){
+                        width: 55%;
+                        height: 33%;
+                        background-color: #C9D34A;
+                    }
+                    box-shadow: #ccc 1px 1px 3px;
+                    padding:10px 20px;
+                   
+                    border-radius: 20px;
+                    display: flex;
+                    flex-flow: row wrap;
+                    .message-con{
+                        padding: 0 15px;
+                    }
+                }
+
+                .message-meb{
+                    text-align: center;
+                    line-height: 30px;
+                    i{
+                        color: #434343;
+                        font-size: 50px;
+                    }
+                
+                }
+
+                .all-message{
+                    display:none;
+                    padding:10px 20px;
+                    background-color: #bec23f;
+                    border-radius: 10px;
+                    height: 33%;
+                    width: 50%;
+                    @include rwd(medium){
+                        display: block;
+                    }
+                    
+                    .meb-add-message {
+                        background-color: #FFF0F4;
+                        border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        padding: 5px;
+                        .meb{
+                            text-align: center;
+                            i{
+                            color: #434343;
+                            font-size: 30px;
+                            }
+                            .name{
+                            font-size:13px;
+                            }
+                        }
+                      
+                    }
+                }
+                .pop-leave-message{
+                    vertical-align: middle;
+                    @include rwd(mobile){
+                     
+                    }
+                    @include rwd(medium){
+                        width: 55%;
+                        height: 15%;
+                        display: flex;
+                        justify-content:space-between;
+                    }
+                    
+                    #leave-message-box {
+                    font-size: 16px;
+                    padding:0 20px;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 50px;
+                    border: #6a3e26  solid 3px;
+                    margin: auto ;
+                        @include rwd(mobile){
+                            font-size: 13px;
+                            padding:0 10px;
+                            height: 30px;
+                            border-radius: 30px; 
+                        
+                        }
+                       
+                    }
+                    @include rwd(mobile){
+                    .message-btn{
+                        .message-btn-out{
+                            width: 80%;
+                            margin: auto;
+                            @include btn(message-btn-out,100px,message-btn-in,16px, 留言參加);
+                        } 
+                    }
+                }
+                    .message-btn{
+                        margin: auto;
+                        // @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
+                        @include btn(message-btn-out,100px,message-btn-in,16px, 留言參加);
+                    }
+                }
+            }
+
+        }
+   
+    }
+ 
 }

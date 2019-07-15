@@ -11,7 +11,7 @@ if (screenWidth >=768){ //手機不執行
 			bubDiv.style.left = Math.random() * document.body.offsetWidth + 'px';
 			// console.log(d.style.bottom);
 			// console.log(bubDiv.style.left);
-			$(bubDiv).appendTo(".inner-wrapper"); //把泡泡加到哪個div內
+			$(bubDiv).appendTo(".bubble-box"); //把泡泡加到哪個div內
 			Animate(bubDiv);
 		}
 		function Animate(bubSize) {

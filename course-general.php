@@ -17,141 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
   </head>   
   <body>
-    <input type="checkbox" id="menu-control" />
-    <header id="header">
-        <div class="item-group">
-          <div class="logo-item">
-            <a href="index.html" class="logo" title="菓籽戀冰所"
-              ><img src="img/navBar/logo.png" alt="菓籽戀冰所"
-            /></a>
-            <label class="hb" for="menu-control">
-              <span class="bar bar1"></span>
-              <span class="bar bar2"></span>
-              <span class="bar bar3"></span>
-            </label>
-          </div>
-          <div class="nav-item">
-            <ul class="nav-list nav-list-mp">
-              <li>
-                <a
-                  id="qa-item-show"
-                  class="nav-text"
-                  href="qa.html"
-                  title="戀愛冰品"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >戀愛冰品</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a
-                  id="custom-item-show"
-                  class="nav-text"
-                  href="custom.html"
-                  title="冰棒客製"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >冰棒客製</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a
-                  id="message-item-show"
-                  class="nav-text"
-                  href="leavemessage.html"
-                  title="愛的留言"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >愛的留言</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a
-                  id="newshop-item-show"
-                  class="nav-text"
-                  href="newshop.html"
-                  title="冰品商城"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >冰品商城</span
-                  ></a
-                >
-              </li>
-            </ul>
-            <ul class="nav-list nav-list-login">
-              <li id="nav-drop-down-menu-hover" class="nav-drop-down-menu-hover">
-                <a
-                  id="course-item-show"
-                  class="nav-text"
-                  href="course.html"
-                  title="體驗課程"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >體驗課程</span
-                  ></a
-                >
-                <ul id="nav-drop-down-menu" class="nav-drop-down-menu">
-                  <li><a href="courseGroup.html">揪團課程</a></li>
-                  <li><a href="courseGeneral.html">一般課程</a></li>
-                </ul>
-              </li>
-              <li>
-                <a
-                  id="new-item-show"
-                  class="nav-text"
-                  href="news.html"
-                  title="最新消息"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >最新消息</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a
-                  id="about-item-show"
-                  class="nav-text"
-                  href="javascript:;"
-                  title="關於園區"
-                  ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
-                    >關於園區</span
-                  ></a
-                >
-              </li>
-              <li class="nav-item-icom-group">
-                <ul class="nav-item-icom">
-                  <li class="shopping-cart-icon">
-                    <a href="javascript:;"
-                      ><img src="img/navBar/shoppingCartIcon.png" alt="購物車"
-                    /></a>
-                  </li>
-                  <li class="member-icon">
-                    <a class="nav-icon-login" href="javascript:;"
-                      ><img src="img/navBar/memberIcon.png" alt="會員" />
-                      <span>登入</span></a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <img class="nav-bar-mp" src="img/navBar/ＭpNavBar.png" alt="ＭpNavBar" />
-    
-        <div class="icon-mp">
-          <div class="icon-login-box-mp">
-            <a class="nav-icon-login" href="javascript:;"
-              ><img src="img/navBar/memberIcon.png" alt="會員" />
-              <span>登入</span></a
-            >
-          </div>
-          <a href="javascript:;"
-            ><img src="img/navBar/shoppingCartIcon.png" alt="購物車"
-          /></a>
-        </div>
-        <img
-          class="shopping-cart-icon-mp"
-          src="img/navBar/shoppingCartIcon.png"
-          alt="shoppingCartIcon.png"
-        />
-    </header>
+  <?php
+    require_once("nav.php");
+    ?>
     <div id="robot-container" class="robot-container">
       <div id="robot-title-block" class="robot-title-block">
         <span class="robot-title-icon"
@@ -219,7 +87,7 @@
                                             <p> 上午10:00、下午 1:00、下午 3:00(實際開課時間，以當日現場為主)</p>
             
                                             <li>創作時間：</li>
-                                            <p> 80分鐘</p>
+                                            <p> 100分鐘</p>
             
                                             <li>手做地點：</li>
                                             <p> 2F DIY教室Ａ</p>
@@ -245,10 +113,10 @@
                     </div>
                     <div class="kanban col-md-6 ">
                         <div class="item">
-                            <div class="gift"> <img src="img/course/gift-pink.png" alt="禮物粉帶"> <span class="subtitle">戀愛小馬夢幻冰品</span></div>
+                            <div class="gift"> <img src="img/course/gift-pink.png" alt="禮物粉帶"> <span class="subtitle">情人繽紛彩繪冰棒</span></div>
                             <div class="content-box">
                                 <div class="diy-img">
-                                    <img src="img/course/diyImg 1.png" alt="戀愛小馬夢幻冰品">
+                                    <img src="img/course/diyImg2.png" alt="情人繽紛彩繪冰棒">
                                 </div>
                                 <div class="info-title">
                                     <h4>課程資訊</h4>
@@ -262,10 +130,10 @@
                                         <p> 80分鐘</p>
         
                                         <li>手做地點：</li>
-                                        <p> 2F DIY教室Ａ</p>
+                                        <p> 2F DIY教室B</p>
         
                                         <li>收費方式：</li>
-                                        <p> 每份$500元(歡迎使用門票上之抵用券)</p>
+                                        <p> 每份$350元(歡迎使用門票上之抵用券)</p>
         
                                         <li>報名方式：</li>
                                         <p> 1.線上預約(須提前30分鐘至1F客服中心報到，逾時將留給現場後位)<br>2.入館後至1F客服中心使用QR
@@ -288,32 +156,83 @@
             </div>
     </section>
     
-    <section class="message-wrap">
-      <div class="message-cloud"></div>
-      <div class="title-box">
-        <h3  class="message-title">課程留言板</h3>
-        <span>寫下你對課程的想法！</span>
-      </div>
-      <div class="leave-message">
-          <div class="message-meb col-md-2">
-              <i class="fas fa-user-circle"></i>
-              <p>會員名稱</p>
-              <p>2019-07-07</p>
-          </div>
-          <div class="balloons col-md-10">
-          <textarea name="" id="" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea>
-          </div>
-          <div class="message-btn col-md-12">
-              <div class="message-btn-out">
-                  <span class="message-btn-in">
-                      我要留言
-                  </span>
-              </div>
-          </div>
-      </div>
- 
-      
+    <section class="general-message-wrap">
+        <div class="message-cloud"></div>
+    
+        <div class="title-box">
+            <h3  class="message-title">課程留言板</h3>
+            <span>寫下你對課程的想法！</span>
+        </div>
+
+        <div class="leave-message-wrap">
+            <div class="message-mem col-md-2">
+                <i class="fas fa-user-circle"></i>
+                <p>會員名稱</p>
+                <p>2019-07-07</p>
+            </div>
+            <div class="balloons col-md-10">
+            <textarea name="" id="" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea>
+            </div>
+            <div class="message-btn col-md-12">
+                <div class="message-btn-out">
+                    <span class="message-btn-in">
+                        我要留言
+                    </span>
+                </div>
+            </div>
+        </div>
+     
+
+        <div class="mem-message-wrap">
+            <div class="mem-message-item">
+                <div class="message-mem col-md-2 col-2">
+                    <i class="fas fa-user-circle"></i> 
+                </div>
+
+                <div class="message-con col-md-10 col-9">
+                    <div class="mem-ifo">
+                        <p>Sandra</p>
+                        <p class="time">2019-07-07</p>
+                    </div>
+                    <div class="mem-con">
+                        <p>
+                            手作超好玩～<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mem-message-item">
+                <div class="message-mem col-md-2 col-2">
+                    <i class="fas fa-user-circle"></i> 
+                </div>
+
+                <div class="message-con col-md-10 col-9">
+                    <div class="mem-ifo">
+                        <p>SARA</p>
+                        <p class="time">2019-07-01</p>
+                    </div>
+                    <div class="mem-con">
+                        <p>
+                            大家快來報名唷！啾咪<br>
+                            大家快來報名唷！啾咪<br>
+                            大家快來報名唷！啾咪<br>
+                            大家快來報名唷！啾咪<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more-btn col-md-12"  style="background-color:none;color:none;border:none;">
+                <button  class="more-btn-out">
+                    <span class="more-btn-in">
+                        查看更多
+                    </span>
+                </button >
+            </div>
+        </div>
     </section>
+
+
 
     <footer>
       <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
