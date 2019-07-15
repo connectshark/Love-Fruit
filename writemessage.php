@@ -24,6 +24,7 @@
 		</div>
 	</div>
 	<div id="app">
+		<form action="writecfs.php" method="post" enctype="multipart/form-data">
 		<section class="letter">
 			<div class="letter-area">
 				<div class="message-item break-up">
@@ -80,33 +81,28 @@
 									<i class="fas fa-plus"></i>
 								</div>
 							</div>
-	                    <input type="file" name="message-img" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
+	                    <input type="file" name="pic" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
 						</label>
 					</div>
 					<div class="letter-footer">
 		                <div class="write-title">
 		                    <p>寫給誰<span>{{whonum}} / 5</span></p>
-		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle" placeholder="寫給誰"></label>
+		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle" placeholder="寫給誰" name="cfsTo"></label>
 		                </div>
 		                <div class="write-content">
 		                    <p>留言內容<span>{{textnum}} / 30</span></p>
-		                    <label><input type="text" minlength="1" maxlength="30" v-model="text" id="userContent" placeholder="留言內容"></label>
+		                    <label><input type="text" minlength="1" maxlength="30" v-model="text" id="userContent" placeholder="留言內容" name="cfsContent"></label>
 		                </div>
 		                <div class="write-buttons">
 		                    <label><input type="reset" value="清除" @click="clear"></label>
 		                    <label><input type="submit" value="送出" id="submit"></label>
+		                    <input type="hidden" name="memNo" value="2">
 		                </div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section></form>
 	</div>
-	<section class="pop">
-		<div class="pop-btn-group">
-		<div class="btn-item"><button></button></div>
-		<div class="btn-item"></div>
-		</div>
-	</section>
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>

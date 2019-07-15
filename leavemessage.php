@@ -78,7 +78,7 @@
 			</div>
 			<a class="leave-message" href="writemessage.php">
 				<span class="leave-message-btn" id="leaveMessage">
-					<img src="img/btn/ICE.png" alt="" class="testclass">我要留言
+					<img src="img/btn/ICE.png" alt="冰棒" class="testclass">我要留言
 				</span>
 			</a>
 		</div>

@@ -200,20 +200,6 @@ body{
         }
     }
 }
-.pop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 5;
-    background-color: rgba(0,0,0,.5);
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../img/pop.png');
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-}
-
 .break-up{
     border: 12px solid $break;
     .fa-cloud{
