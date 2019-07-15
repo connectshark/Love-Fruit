@@ -42,13 +42,16 @@ body {
   }
   @keyframes flyship1 {
     0% {
-      transform: translateX(50%) translateY(40%);
+      transform: translateX(50%) translateY(0%);
+    }
+    25% {
+      transform: translateX(-50%) translateY(-30%);
     }
     50% {
-      transform: translateX(-50%) translateY(-40%);
+      transform: translateX(-50%) translateY(-30%);
     }
     100% {
-      transform: translateX(-180%) translateY(40%);
+      transform: translateX(-135%) translateY(0%);
     }
   }
   /* 雲 */
@@ -369,7 +372,7 @@ body {
   }
   .heroIce {
     margin: auto;
-    width: 60%;
+    width: 90%;
     bottom: 20%;
     right: 0;
     left: 0;
@@ -439,11 +442,11 @@ body {
   /* 草地 */
   .hero-green {
     position: absolute;
-    left: 32%;
+    left: 20%;
     bottom: 18%;
     border-radius: 100px;
     z-index: 4;
-    width: 5%;
+    width: 10%;
     height: 5%;
     background-color: #e5e54c;
   }
@@ -615,7 +618,7 @@ body {
     right: 10%;
     top: 12%;
     z-index: 1;
-    transform-origin: 50px 400px;
+    transform-origin: bottom;
     animation: heroImg-castle 2s linear 0s alternate;
   }
   @keyframes heroImg-castle {
@@ -807,7 +810,7 @@ body {
     position: absolute;
     text-align: center;
     z-index: 3;
-    transform-origin: 50px 300px;
+    transform-origin: bottom;
     animation: heroIce 4s linear 0s alternate;
   }
   @keyframes heroIce {
@@ -965,14 +968,32 @@ body {
     border: 4px solid #6a3e26;
     background-color: #ffffff;
   }
+  .ml9 {
+    position: relative;
+    font-weight: 200;
+    font-size: 4em;
+  }
+  .ml9 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  .ml9 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+  }
   .mailer-qa-box h3 {
     margin-top: 2%;
     padding: 7%;
     font-family: "GenJyuuGothic-B";
     color: #ea7187;
     font-size: 4vw;
-    letter-spacing: 0.1vw;
-    line-height: 5vw;
+    letter-spacing: 0.3vw;
+    line-height: 25px;
     text-align: justify;
   }
   .qabgc-bottom {
@@ -1128,14 +1149,32 @@ body {
     border: 4px solid #6a3e26;
     background-color: #ffffff;
   }
+  .ml9 {
+    position: relative;
+    font-weight: 200;
+    font-size: 4em;
+  }
+  .ml9 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  .ml9 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+  }
   .mailer-qa-box h3 {
     margin-top: 2%;
     padding: 7%;
     font-family: "GenJyuuGothic-B";
     color: #ea7187;
     font-size: 1.3vw;
-    letter-spacing: 0.1vw;
-    line-height: 1.8vw;
+    letter-spacing: 0.2vw;
+    line-height: 2vw;
     text-align: justify;
   }
   .mailer-bottom {
@@ -1871,15 +1910,11 @@ body {
     z-index: 7;
     top: 27%;
     left: 12.5%;
-    padding-bottom: 25%;
   }
   #userIce1 {
     position: absolute;
-    z-index: 2;
   }
   #single {
-    position: absolute;
-    z-index: 1;
     bottom: 0;
   }
   .c-p-single img {
@@ -2062,7 +2097,7 @@ body {
   }
   .store-item-img-box {
     width: 100%;
-    height: 41%;
+    height: 40%;
   }
   .store-item-img img {
     margin-top: 5%;
@@ -2429,9 +2464,9 @@ body {
   }
   .leavemessage-Material {
     position: absolute;
-    width: 100%;
+    width: 280%;
     z-index: -1;
-    bottom: 2%;
+    top: 0;
   }
   .leavemessage-item-group {
     position: absolute;
@@ -2688,7 +2723,7 @@ body {
     font-size: 1vw;
   }
   .message-header-icon {
-    width: 20%;
+    width: 16%;
     display: inline-block;
     vertical-align: middle;
   }
@@ -2792,18 +2827,16 @@ body {
     width: 100%;
     display: none;
   }
-  .course-blue-ship-show {
-    opacity: 1;
-  }
+
   .course-blue-ship {
     position: absolute;
     margin: auto;
     top: 25%;
-    left: 0%;
+    left: -191%;
     right: 0;
     width: 80%;
     height: 50%;
-    transition: 5s;
+    transition: 2s;
   }
   .course-blue-ship-img {
     position: absolute;
@@ -2832,11 +2865,11 @@ body {
     position: absolute;
     margin: auto;
     top: 25%;
-    left: -200%;
+    left: -191%;
     right: 0;
     width: 80%;
     height: 50%;
-    transition: 5s;
+    transition: 2s;
   }
   .course-pink-ship-img {
     position: absolute;
@@ -2859,6 +2892,28 @@ body {
     border-radius: 10px;
     background-color: #ed8080;
     border: 8px solid #6a3e26;
+  }
+  .course-blue-ship-show {
+    opacity: 1;
+    transform: translateX(117%);
+  }
+  .course-blue-ship-show-out {
+    opacity: 1;
+    animation: flyshipcourse 2s linear 0s;
+  }
+  @keyframes flyshipcourse {
+    0% {
+      opacity: 1;
+      transform: translateX(160.5%) translateY(0%);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(320%) translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(0%) translateY(-10%);
+    }
   }
 
   .course-title {
@@ -3494,5 +3549,9 @@ body {
     font-size: 0.3vw;
     margin-bottom: 2%;
     color: #939393;
+  }
+
+  .index-news-content-list:hover {
+    transform: scale(1.2);
   }
 }
