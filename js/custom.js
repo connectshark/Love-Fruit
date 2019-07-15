@@ -12,6 +12,24 @@ function flowChange(now) {
 		flow[i].style.display = 'none';
 	}
 	flow[now-1].style.display = 'block';
+	if (now == 4) {
+		$('#next').hide(0,function() {
+			$('#ice-stick').show();
+			$('#complete-all').show();
+			$('#last').show();
+		});
+	}else if(now == 1){
+		$('#last').hide(0,function() {
+			$('#complete-all').hide();
+			$('#none-last').hide();
+		});
+	}else{
+		$('#next').show(0,function() {
+			$('#ice-stick').hide();
+			$('#complete-all').hide();
+			$('#last').show();
+		});
+	}
 }
 function stepChange(now){
 	for (let i = 0; i < step.length; i++) {
@@ -19,10 +37,6 @@ function stepChange(now){
 	}
 	step[now-1].classList.add('active');
 }
-
-
-
-
 function lastChange() {
 	nowFlow--;
 	if (nowFlow < 1) {
@@ -43,10 +57,14 @@ function nextChange() {
 	flowChange(nowFlow);
 	stepChange(nowFlow);
 }
+
+// 傳給畫布的圖
+var textureImg;
 // 第一步換圖
 function imgChange(){
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
+	textureImg = src;
 	$('#texture-main').attr({
 		src:src,
 		alt:alt,
@@ -60,6 +78,7 @@ function imgChange(){
 	$('#texture-min').css('backgroundColor','#f596aa');
 	$('.texture-select').children('figure').css('backgroundColor','#f596aa');
 	$(this).children('figure').css('backgroundColor','#db4d6d');
+	totalPrice();
 }
 // 第二步換水果
 fruitePrice = [200,180,360,270,195,954];
@@ -92,6 +111,7 @@ function fruiteChange() {
 	bgcGradient();
 	listItemChange();
 	persentChange();
+	totalPrice();
 }
 function persentChange() {
 	if (fruiteItem.length == 1) {
@@ -107,6 +127,9 @@ function persentChange() {
 		$('.progress-bar').css('width',0);
 	}
 }
+// 價錢變數
+var AFruitePrice=0;
+var BFruitePrice=0;
 function listItemChange() {
 	if (fruiteItem.length == 1) {
 		$('#fruite-b').children().attr({
@@ -121,7 +144,8 @@ function listItemChange() {
 			'src': Aimg,
 			'alt': Aalt,
 		});
-		$('#list-price-a').text(fruitePrice[fruiteItem[0]]);
+		AFruitePrice = fruitePrice[fruiteItem[0]];
+		$('#list-price-a').text(AFruitePrice);
 		$('#list-description-a').text(Aalt);
 	}else if(fruiteItem.length == 2){
 		var Aimg = $('.fruite-item').eq(fruiteItem[0]).children().children().attr('src');
@@ -136,6 +160,8 @@ function listItemChange() {
 			'src': Bimg,
 			'alt': Balt,
 		});
+
+		BFruitePrice = fruitePrice[fruiteItem[1]];
 		$('#list-price-b').text(fruitePrice[fruiteItem[1]]);
 		$('#list-description-b').text(Balt);
 	}else {
@@ -230,16 +256,24 @@ function smile() {
 	context.stroke();
 }
 // 第三步
+var slicePrice=0;
 var sliceSize = 50;
 function imgPut() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
-	console.log(src);
+	$('#slice-m').children().attr({
+		src:src,
+		alt:alt,
+	});
+	$('#slice-description').text(alt);
 	$('#slice-main').children('img').attr({
 		src: src,
 		alt: alt,
 	});
+	slicePrice = 30;
+	$('#slice-price').text(slicePrice);
 	dragSliceImg();
+	totalPrice();
 }
 function imgBigger() {
 	sliceSize += 10;
@@ -268,6 +302,24 @@ function dragSliceImg() {
 		scroll: false,
 	});
 }
+// 第四步
+function putStickIn() {
+	$('#ice-stick').addClass('ice-stice-put');
+	$('#text').attr('disabled',true);
+	$('#slice-main').draggable({
+		disabled:true,
+	});
+	$('#last').hide(0,function() {
+		$('#none-last').show();
+	});
+	totalPrice();
+	html2img();
+}
+// 計算總價
+function totalPrice() {
+	var total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+150;
+	$('#total-price').text(total);
+}
 $(document).ready(function() {
 	$('#last').click(lastChange);
 	$('#next').click(nextChange);
@@ -290,4 +342,6 @@ $(document).ready(function() {
 	$('#slice-bigger').click(imgBigger);
 	$('#slice-smaller').click(imgSmaller);
 	sliceSizeChange(sliceSize);
+	$('#ice-stick').hide();
+	$('#complete-all').click(putStickIn);
 });
