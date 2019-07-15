@@ -326,9 +326,23 @@
   display: none;
 }
 
-.page-account .content-course .class-item {
+.page-account .content-course table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.page-account .content-course table thead.class-item {
+  padding: 0 20px;
+}
+
+.page-account .content-course table .class-item {
   padding: 20px;
-  margin: 20px 0;
+  margin: 5px 0;
   background-color: #ffdee6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -342,7 +356,11 @@
           align-items: center;
 }
 
-.page-account .content-course .class-item .class-desc {
+.page-account .content-course table .class-item td {
+  padding: 20px 0;
+}
+
+.page-account .content-course table .class-item .class-desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,25 +373,22 @@
           align-items: center;
 }
 
-.page-account .content-course .class-item .class-desc .cancel {
-  text-align: right;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+@media all and (min-width: 769px) {
+  .page-account .content-course table .class-item .class-desc .cancel, .page-account .content-course table .class-item .class-desc .qrcode {
+    text-align: right;
+  }
 }
 
-.page-account .content-course .class-item .class-desc .cancel a {
+.page-account .content-course table .class-item .class-desc .cancel a, .page-account .content-course table .class-item .class-desc .qrcode a {
   color: #db4d6d;
+  display: block;
 }
 
-.page-account .content-course .class-item .class-desc p {
+.page-account .content-course table .class-item .class-desc .cancel a:hover, .page-account .content-course table .class-item .class-desc .qrcode a:hover {
+  border-bottom: 1px solid #db4d6d;
+}
+
+.page-account .content-course table .class-item .class-desc p {
   padding: 10px;
 }
 
@@ -422,6 +437,8 @@
   }
   .page-account .content-area {
     padding: 20px 40px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
   }
   .page-account .content-area h2 {
     padding: 20px 0;

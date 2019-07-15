@@ -19,9 +19,7 @@
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
 /*Css寫 -> font-family: "什麼字型";*/
-* {
-  outline: 1px solid #f00;
-}
+
 
 /*header*/
 /*清除*/
