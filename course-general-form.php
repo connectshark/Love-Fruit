@@ -72,10 +72,10 @@
 
             <input type="radio" name="course" id="course1" value="">
             <label for="course1">戀愛小馬夢幻冰品</label>
-            <span><img src="img/course/checked.png" alt=""></span>
+            <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
             <input type="radio" name="course" id="course2" value="">
             <label for="course2">情人繽紛彩繪冰棒</label>
-            <span><img src="img/course/checked.png" alt=""></span>
+            <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
           </div>
         </div>
         <div class='form-info'>
@@ -155,13 +155,13 @@
           <p>選擇時段：</p>
           <div class="check">
             <input type="radio" name="time" id="time1" value="">
-            <label for="time1">上午 10:00</label> <span><img src="img/course/checked.png" alt=""></span>
+            <label for="time1">上午 10:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
 
             <input type="radio" name="time" id="time2" value="">
-            <label for="time2">下午 01:00</label> <span><img src="img/course/checked.png" alt=""></span>
+            <label for="time2">下午 01:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
 
             <input type="radio" name="time" id="time3" value="">
-            <label for="time3">下午 03:00</label> <span><img src="img/course/checked.png" alt=""></span>
+            <label for="time3">下午 03:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
           </div>
         </div>
         <div class='form-info'>

@@ -531,7 +531,7 @@ $deep-pink:#db4d6d;
 .general-form-wrap{
     background-color: $bg-pink;
     background-image: url(../img/background.png);
-    padding-bottom:10%; 
+
     .wrapper{
        
         padding-bottom:10%; 
@@ -542,7 +542,7 @@ $deep-pink:#db4d6d;
             padding-top: 150px;
         }
         .title{
-           
+            padding: 5% 0;
             position: relative;
             text-align:center; 
             margin: auto;
@@ -602,6 +602,7 @@ $deep-pink:#db4d6d;
                     visibility: hidden;
                 }
                 label{
+                    border: 3px solid #6a3e26;
                     font-size: 18px;
                     background-color: #fff;
                     padding: 10px 20px;
@@ -616,7 +617,7 @@ $deep-pink:#db4d6d;
                     border: none;
                     font-size: 16px;
                     &:checked + label {
-                    border: #ffb11b solid 2px;
+                    border: #ffb11b solid 5px;
                     }
                     &:checked + label + span{
                         visibility: visible;
@@ -627,6 +628,11 @@ $deep-pink:#db4d6d;
                     @include rwd(mobile){
                         display: block;
                     }
+                }
+                .check-pic{
+                    position: relative;
+                    top: -20px;
+                    right:15px;
                 }
             }
            
@@ -671,18 +677,17 @@ $deep-pink:#db4d6d;
                         border-radius: 30px;
                         color: #fff;
                     }
-                   
                 }
                     
             }
-            
             select{
+                border: 3px solid #6a3e26;
                 display: block;
-                margin: 20px;
+                margin: 20px 30px;
                 width: 40%;
                 height: 6%;
                 border-radius:15px; 
-                border: none;
+       
                 @include rwd(desktop){
                     width: 15%;
                 }
