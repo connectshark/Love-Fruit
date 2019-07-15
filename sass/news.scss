@@ -14,6 +14,12 @@ body{
     font-family: "GenJyuuGothic-R";
 }
 .news-wrap,.news-inner-wrap{
+    .bubble{
+        background-color: $deep-purple;
+        opacity: .5;
+        position: absolute;
+        border-radius: 100%;
+        }
     .banner{
         background-color: $light-purple;
         background-image:url(../img/news/news-bn-cloud.png),url(../img/background.png);
@@ -447,12 +453,7 @@ body{
         }
 
         
-            .bubble{
-            background-color: $deep-purple;
-            opacity: .5;
-            position: absolute;
-            border-radius: 100%;
-            }
+            
         
         
     }

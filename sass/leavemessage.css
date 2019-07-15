@@ -1,0 +1,763 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.banner {
+  background-color: #fad689;
+  background-image: url(../img/indexImg/diyIcebgc-top.png), url(../img/message/cloud-pink.png), url(../img/background.png);
+  background-position: bottom,bottom,center;
+  background-repeat: no-repeat,no-repeat,repeat;
+  background-size: 100%,100%,auto;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.banner .banner-heart-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media all and (max-width: 768px) {
+  .banner .banner-heart-group {
+    display: none;
+  }
+}
+
+.banner .banner-heart-group .heart-b-item {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.banner .banner-heart-group .heart-b-item .line-left {
+  height: 100px;
+}
+
+.banner .banner-heart-group .heart-b-item .line-right {
+  height: 200px;
+}
+
+.banner .banner-heart-group .heart-b-item .line {
+  display: block;
+  position: relative;
+  width: 6px;
+  background-color: #fc7389;
+}
+
+.banner .banner-heart-group .heart-b-item .line img {
+  position: absolute;
+  top: 85%;
+  left: -730%;
+  margin: auto;
+}
+
+.banner .banner-heart-group .heart-s-item .line {
+  display: block;
+  position: relative;
+  width: 6px;
+  background-color: #fc7389;
+  height: 150px;
+}
+
+.banner .banner-heart-group .heart-s-item .line img {
+  position: absolute;
+  top: 85%;
+  left: -730%;
+  margin: auto;
+}
+
+.banner .title {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 5% 0 0;
+  margin: auto;
+}
+
+@media all and (max-width: 768px) {
+  .banner .title {
+    padding: 20% 0 0;
+  }
+}
+
+.banner .title .title-img {
+  position: relative;
+}
+
+.banner .title .title-img img {
+  width: 100%;
+  max-width: 538px;
+}
+
+.banner .title .title-img h1 {
+  line-height: 80px;
+  color: #fff;
+  font: 40px "A-OTF-M";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+}
+
+.banner .title .title-img h1 .high {
+  color: #fff;
+  font-size: 40px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.banner .title .title-img h1 .high:after {
+  z-index: -1;
+  content: "愛的留言";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 8px #6a3e26;
+}
+
+@media all and (max-width: 768px) {
+  .banner .title .title-img h1 {
+    font: 24px "A-OTF-M";
+  }
+}
+
+.banner .banner-item-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.banner .banner-item-group .icecream-group {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .icecream-group {
+    display: none;
+  }
+}
+
+.banner .banner-item-group .icecream-group .icecream-item-blue {
+  width: 30%;
+}
+
+.banner .banner-item-group .icecream-group .icecream-item-blue img {
+  width: 100%;
+  -webkit-animation: rotate 3s alternate infinite;
+          animation: rotate 3s alternate infinite;
+}
+
+.banner .banner-item-group .icecream-group .icecream-item-yellow {
+  width: 20%;
+}
+
+.banner .banner-item-group .icecream-group .icecream-item-yellow img {
+  width: 100%;
+  -webkit-animation: rotate 2.5s alternate infinite -.5s;
+          animation: rotate 2.5s alternate infinite -.5s;
+}
+
+.banner .banner-item-group .fly-item {
+  width: 15%;
+}
+
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .fly-item {
+    padding: 3% 0;
+    width: 40%;
+  }
+}
+
+.banner .banner-item-group .fly-item img {
+  width: 100%;
+  vertical-align: middle;
+  position: relative;
+  -webkit-animation: UptoDown 2s infinite alternate linear;
+          animation: UptoDown 2s infinite alternate linear;
+}
+
+@media all and (max-width: 768px) {
+  .banner .banner-item-group .fly-item img {
+    -webkit-animation: LtoR 15s infinite linear -5s;
+            animation: LtoR 15s infinite linear -5s;
+  }
+}
+
+.btn {
+  background-color: #fff8e4;
+}
+
+.btn .btn-group {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
+.btn .btn-group .btn-filter-group {
+  width: 60%;
+  padding: 10px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fad689;
+  border-radius: 20px;
+  font-family: "A-OTF-M";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .btn-filter-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    width: 90%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.btn .btn-group .btn-filter-group h2 {
+  font: 24px "A-OTF-M";
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .btn-filter-group h2 {
+    width: 100%;
+  }
+}
+
+.btn .btn-group .btn-filter-group .filter-item {
+  cursor: pointer;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .btn-filter-group .filter-item {
+    display: none;
+  }
+}
+
+.btn .btn-group .btn-filter-group .filter-item button {
+  cursor: pointer;
+  background-color: #a3a3a3;
+  border: none;
+  padding: 0 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 3px 0px #555;
+          box-shadow: 0px 3px 0px #555;
+  color: #fff;
+  font: 18px "A-OTF-M";
+}
+
+.btn .btn-group .btn-filter-group .filter-item:hover button {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0px 1px 0px #555;
+          box-shadow: 0px 1px 0px #555;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.btn .btn-group .btn-filter-group .filter-active button {
+  background-color: #fc7389;
+}
+
+.btn .btn-group .leave-message {
+  width: 200px;
+  margin-left: auto;
+  margin-right: 20px;
+  text-decoration: none;
+  font-family: "A-OTF-M";
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group .leave-message {
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+}
+
+.btn .btn-group #filter-pull {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .btn .btn-group #filter-pull {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 3px solid #6a3e26;
+    border-radius: 20px;
+    font: 16px "A-OTF-M";
+  }
+}
+
+.leave-message {
+  display: block;
+  width: 200px;
+  padding: 2px;
+  height: 60px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.leave-message:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.leave-message .leave-message-btn {
+  display: block;
+  color: whitesmoke;
+  font-size: 24px;
+  line-height: 1.5;
+  position: relative;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 184px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  cursor: pointer;
+}
+
+.leave-message .leave-message-btn:hover {
+  background-color: #FAD689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.leave-message .leave-message-btn > img {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 54px;
+  height: 66.6px;
+}
+
+.leave-message .leave-message-btn:after {
+  z-index: -1;
+  content: "我要留言";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@-webkit-keyframes UptoDown {
+  0% {
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  100% {
+    -webkit-transform: translate(0, -10%);
+            transform: translate(0, -10%);
+  }
+}
+
+@keyframes UptoDown {
+  0% {
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  100% {
+    -webkit-transform: translate(0, -10%);
+            transform: translate(0, -10%);
+  }
+}
+
+@-webkit-keyframes LtoR {
+  0% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 20%);
+            transform: translate(-100%, 20%);
+  }
+  100% {
+    -webkit-transform: translate(200%, 0);
+            transform: translate(200%, 0);
+  }
+}
+
+@keyframes LtoR {
+  0% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 20%);
+            transform: translate(-100%, 20%);
+  }
+  100% {
+    -webkit-transform: translate(200%, 0);
+            transform: translate(200%, 0);
+  }
+}
+
+.message-bgi {
+  background-color: #fff8e4;
+  padding-top: 50px;
+}
+
+.message-bgi .message {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.message-bgi .message .break-up {
+  border: 12px solid #9dc5f6;
+}
+
+.message-bgi .message .break-up .fa-cloud {
+  color: #79a6cc;
+}
+
+.message-bgi .message .break-up .s-text {
+  color: #79a6cc;
+}
+
+.message-bgi .message .true-love {
+  border: 12px solid #6bdbda;
+}
+
+.message-bgi .message .true-love .fa-cloud {
+  color: #0abbb5;
+}
+
+.message-bgi .message .true-love .s-text {
+  color: #0abbb5;
+}
+
+.message-bgi .message .hot-love {
+  border: 12px solid #ea7187;
+}
+
+.message-bgi .message .hot-love .fa-cloud {
+  color: #db4d6d;
+}
+
+.message-bgi .message .hot-love .s-text {
+  color: #db4d6d;
+}
+
+.message-bgi .message .single {
+  border: 12px solid #fad689;
+}
+
+.message-bgi .message .single .fa-cloud {
+  color: #f6c555;
+}
+
+.message-bgi .message .single .s-text {
+  color: #f6c555;
+}
+
+.message-bgi .message .message-item {
+  width: calc(33.333333% - 50px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 6px 20px;
+  margin: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media all and (max-width: 768px) {
+  .message-bgi .message .message-item {
+    width: calc(100% - 50px);
+  }
+}
+
+.message-bgi .message .message-item .cloud {
+  position: absolute;
+  top: -7%;
+  right: -7%;
+}
+
+.message-bgi .message .message-item .cloud .fa-cloud {
+  font-size: 70px;
+}
+
+.message-bgi .message .message-item .cloud span {
+  text-align: center;
+  font-family: "A-OTF-M";
+  color: #fff;
+  font-size: 16px;
+  line-height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.message-bgi .message .message-item .message-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.message-bgi .message .message-item .message-header .fa-user-circle {
+  width: 10%;
+  font-size: 30px;
+  color: #f94982;
+}
+
+.message-bgi .message .message-item .message-header p {
+  margin-left: auto;
+  width: 85%;
+  font-size: 20px;
+  font-family: "GenJyuuGothic-R";
+}
+
+.message-bgi .message .message-item .message-body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.message-bgi .message .message-item .message-body figure {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.message-bgi .message .message-item .message-body figure img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.message-bgi .message .message-item .message-body h3 {
+  width: 70%;
+  font-size: 20px;
+  line-height: 40px;
+  font-family: "A-OTF-M";
+  margin-left: auto;
+  text-align: justify;
+}
+
+.message-bgi .message .message-item .message-body h3 span {
+  padding: 0 10px 0 0;
+}
+
+.message-bgi .message .message-item .message-body p {
+  width: 70%;
+  font-family: "A-OTF-M";
+  font-size: 16px;
+  line-height: 32px;
+  margin-left: auto;
+  padding: 0 0 10px;
+  text-align: justify;
+}
+
+.message-bgi .message .message-item .message-body .s-text {
+  text-align: right;
+}
+
+.message-bgi .message .message-item .message-footer {
+  margin-top: auto;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.message-bgi .message .message-item .message-footer button {
+  cursor: pointer;
+  font-family: "A-OTF-M";
+  width: 45%;
+  background-color: #fc7389;
+  border: 3px solid #6a3e26;
+  border-radius: 30px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 18px;
+}
+
+.message-bgi .message .custom-ice {
+  position: absolute;
+  width: 40%;
+  left: -10%;
+  bottom: -5%;
+}
+
+.message-bgi .message .custom-ice img {
+  width: 100%;
+}
+/*# sourceMappingURL=leavemessage.css.map */

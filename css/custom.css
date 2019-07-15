@@ -160,12 +160,12 @@ body{
 .price-s-table td{
 	width: 35%;
 }
-#fruite-a,#fruite-b,#texture-min{
+#fruite-a,#fruite-b,#texture-min,#slice-m{
 	width: 100%;
 	padding-bottom: 100%;
 	position: relative;
 }
-#fruite-a img,#fruite-b img,#texture-min img{
+#fruite-a img,#fruite-b img,#texture-min img,#slice-m img{
 	position: absolute;
 	max-height: 100%;
 	max-width: 100%;
@@ -348,18 +348,19 @@ body{
 	border-radius: 10px;
 	border: 2px solid #603813;
 	text-align: right;
-	/*transform: rotate(90deg);*/
-	animation: put-in 5s forwards;
 }
 .ice-stick p{
 	line-height: 2;
 	text-orientation:upright;
 }
+.ice-stice-put{
+	animation: put-in 5s forwards;
+}
 @keyframes put-in{
 	0%{
 		transform: rotate(0deg) translate(0,0);
 		width: 55%;
-	border: 2px solid #603813;
+		border: 2px solid #603813;
 	}
 	50%{
 		transform: rotate(90deg) translate(35px,0);
@@ -388,27 +389,43 @@ body{
 }
 .img-p-0{
 	-webkit-mask-image: url('../img/custom/texture1-p.png');
+	mask-image: url('../img/custom/texture1-p.png');
 	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
 	-webkit-mask-position: center;
+	mask-position: center;
 	-webkit-mask-size: 75%;
+	mask-size: 75%;
 }
 .img-p-1{
 	-webkit-mask-image: url('../img/custom/texture2-p.png');
+	mask-image: url('../img/custom/texture2-p.png');
 	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
 	-webkit-mask-position: center;
+	mask-position: center;
 	-webkit-mask-size: 73%;
+	mask-size: 73%;
 }
 .img-p-2{
 	-webkit-mask-image: url('../img/custom/texture3-p.png');
+	mask-image: url('../img/custom/texture3-p.png');
 	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
 	-webkit-mask-position: center;
+	mask-position: center;
 	-webkit-mask-size: 74%;
+	mask-size: 74%;
 }
 .img-p-3{
 	-webkit-mask-image: url('../img/custom/texture4-p.png');
+	mask-image: url('../img/custom/texture4-p.png');
 	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
 	-webkit-mask-position: center;
+	mask-position: center;
 	-webkit-mask-size: 72%;
+	mask-size: 72%;
 }
 #texture-main{
 	position: absolute;
@@ -664,7 +681,6 @@ body{
 	box-sizing: border-box;
 	border-radius: 20px;
 }
-
 .clearfix{
 	clear: both;
 }
@@ -701,4 +717,12 @@ body{
 	background-color: #fff;
 	border: 1px solid #ccc;
 	padding: 3px 10px;
+}
+/*客製畫布*/
+#canvas{
+	position: fixed;
+	z-index: -9999;
+	opacity: 0;
+	top: 0;
+	left: 0;
 }

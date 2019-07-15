@@ -2,7 +2,7 @@
     <header id="header">
       <div class="item-group">
         <div class="logo-item">
-          <a href="index.html" class="logo" title="菓籽戀冰所"
+          <a href="index.php" class="logo" title="菓籽戀冰所"
             ><img src="img/navBar/logo.png" alt="菓籽戀冰所"
           /></a>
           <label class="hb" for="menu-control">
@@ -17,7 +17,7 @@
               <a
                 id="qa-item-show"
                 class="nav-text"
-                href="qa.html"
+                href="qa.php"
                 title="戀愛冰品"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >戀愛冰品</span
@@ -28,7 +28,7 @@
               <a
                 id="custom-item-show"
                 class="nav-text"
-                href="custom.html"
+                href="custom.php"
                 title="冰棒客製"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >冰棒客製</span
@@ -39,7 +39,7 @@
               <a
                 id="message-item-show"
                 class="nav-text"
-                href="leavemessage.html"
+                href="leavemessage.php"
                 title="愛的留言"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >愛的留言</span
@@ -50,7 +50,7 @@
               <a
                 id="newshop-item-show"
                 class="nav-text"
-                href="shop.html"
+                href="shop.php"
                 title="冰品商城"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >冰品商城</span
@@ -64,22 +64,22 @@
               <a
                 id="course-item-show"
                 class="nav-text"
-                href="courseP.html"
+                href="course.php"
                 title="體驗課程"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >體驗課程</span
                 ></a
               >
               <ul id="nav-drop-down-menu" class="nav-drop-down-menu">
-                <li><a href="courseP-group.html">揪團課程</a></li>
-                <li><a href="courseP-general.html">一般課程</a></li>
+                <li><a href="course-group.php">揪團課程</a></li>
+                <li><a href="course-general.php">一般課程</a></li>
               </ul>
             </li>
             <li>
               <a
                 id="new-item-show"
                 class="nav-text"
-                href="news.html"
+                href="news.php"
                 title="最新消息"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >最新消息</span

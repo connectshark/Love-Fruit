@@ -15,7 +15,7 @@
         // padding: 100px 10px 10px 10px;
     }
     .detailed-pic{
-        border:5px solid#F6C555;
+        border:12px solid#F6C555;
         border-top-left-radius:20px;
         border-top-right-radius:20px;
         margin: auto;
@@ -50,10 +50,10 @@
        border-bottom-right-radius: 20px;
     //    border: 5px solid #F6C555;
     }
-    .detailed-star,.detailed-text,.detailed-pri,.detailed-button{
-        padding:10px 0px 0px 10px; 
+    // .detailed-star,.detailed-text,.detailed-pri,.detailed-button{
+    //     padding:10px 0px 0px 10px; 
      
-    }
+    // }
     // .detailed-name{
     //     font-size: 
     // }
@@ -112,15 +112,27 @@
         }
     }
     .message-input-box{
-        background-color: #3E556A;
+        background-color: #F596AA;
         border-radius: 20px;
+        padding: 10px 20px;
     }
     .message-title{
         text-align: center;
         padding-bottom: 10px;
         color:white;
     }
-    
+    .other-review-message-box{
+        background-color: whitesmoke;
+         border-radius:20px;
+         margin-top:10px; 
+    }
+    .other-review-wrap{
+        border-bottom:2px solid gray;
+        // background-color: whitesmoke;
+        padding: 10px 20px 10px 20px;
+        // padding: 20px;
+        // border-radius:20px;
+    }
     .message-input{
         height: 160px;
         background-color: white;
@@ -154,12 +166,15 @@
         border-bottom:1px solid gray;
         padding-bottom: 10px;
     }
-
+    .detailed-star,.detailed-text,.pri-btn,{
+         padding:10px 0px 0px 0px; 
+    }
     .number-name{
         font-size: 18px;
         padding: 5px 0px 8px 10px;
     }
     .number-pic{
+         background-color: whitesmoke;
         img{
             width: 100%;
         }
@@ -169,13 +184,36 @@
         padding-bottom: 5px;
         padding-left: 10px;
     }
-    @include btn(report-sentout-btn,60px,report-sentout-btn-in,12px, 檢舉);
+    
     .report-sentout-btn{
         margin-left:auto; 
     }
+    .detailed-pic{
+        background-color: whitesmoke;
+    }
+    .detaild-img-box{
+        width: 150px;
+        border-radius: 20px;
+        margin: auto;
+        padding: 10px; 
+
+    }
+    .detaild-button{
+        padding-top:15px; 
+    }
     .report-btn{
-        border-bottom:1px solid gray;
-        padding-bottom: 10px;
+       border-bottom:2px gray; 
+    //    padding-bottom: 10px;
+       text-align: right;
+    }
+    .report{
+        margin-left:auto; 
+        width: 50px;
+        height: 25px;
+        background-color: #EA7187;
+        border:0px;
+        border-radius: 10px;
+        // border-bottom:2px gray; 
     }
     .date{
         font-size: 12px;
@@ -199,10 +237,11 @@
             // padding: 100px 10px 10px 10px;
         }
         .detaild-img-box{
-            width: 280px;
+            width: 225px;
             background-color: whitesmoke;
             border-radius: 20px;
-            margin: auto; 
+            margin: auto;
+            padding: 10px; 
 
         }
         .detailed-pic{
@@ -212,7 +251,8 @@
             border-top-right-radius:0px;
             border-bottom-left-radius:20px;
             margin:0px;
-            padding: 30px; 
+            padding: 30px;
+            padding: 30px 30px 30px 40px; 
         }
         // .detailed-content-box{
         //     height: 100%;
@@ -227,26 +267,29 @@
         .detailed-ice{
             display: block;
             margin: auto;
-            width:100%;
-            padding: 10px;
+            width:60%;
         }
-        .collection{
-            width: 100%;
-            display: block;
-            position: absolute;
-            top:10px;
-            right:20px;
-            width: 40px;
-            height: 40px;
+        .pri-btn{
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .detailed-content{
 
             padding: 0px;
         }
+        .other-review-wrap{
+            border-bottom:2px solid gray;
+            // background-color: whitesmoke;
+            padding: 20px 20px 10px 20px;
+            // padding: 20px;
+            // border-radius:20px;
+        }
         .detailed-content-box{
-           background-color:#F6C555;
+           background-color:#FFF8E4;
            width: 100%;
-           padding: 30px;
+           padding: 30px 40px 30px 30px;
            height: 100%;
            margin-right:auto;
            border-top-right-radius: 20px;
@@ -254,10 +297,15 @@
            border-bottom-right-radius: 20px;
         //    border: 5px solid #F6C555;
         }
-        .detailed-star,.detailed-text,.detailed-pri,.detailed-button{
-            // padding:10px 0px 0px 10px; 
+        .detaild-button{
+
+            padding-top:25px; 
         }
-        @include btn(detaild-shop-buy,335px,detaild-shop-btn,24px, 加入購物車);
+        .detailed-star,.detailed-text,.pri-btn,{
+            padding:10px 0px 0px 0px; 
+            // padding-bottom: 0px 0px 10px 0px;
+        }
+        @include btn(detaild-shop-buy,250px,detaild-shop-btn,24px, 加入購物車);
         .detailed-name{
             font-size:28px;
             padding-bottom: 12px; 
@@ -266,7 +314,7 @@
             line-height: 25px;
         }
         .detailed-pri{
-            font-size: 20px;
+            font-size: 25px;
             // text-align:right;
         }
         .collection{
@@ -274,17 +322,20 @@
         display: block;
         position: absolute;
         top:40px;
-        right:40px;
+        right:50px;
         width: 30px;
         height: 30px;
+        }
+        .message-input-box{
+            padding: 10px 40px;
         }
         .btn-numbox{
             // margin: auto;
             width:120px;
             font-size: 0px;
-            padding-bottom:20px; 
+            // padding-bottom:20px; 
             .qty{
-                width: 30%;
+                width: 50%;
                 text-align: center;
                 height: 28px;
                 padding: 0px;
@@ -297,7 +348,7 @@
                 background-color: #6A3E26;
                 border-bottom-left-radius:20px;
                 border-top-left-radius:20px;
-                width: 20%;
+                width: 25%;
                 height:28px; 
                 border:0px; 
                 color:white;
@@ -312,7 +363,7 @@
                 background-color: #6A3E26;
                 border-bottom-right-radius:20px;
                 border-top-right-radius:20px;
-                width: 20%;
+                width: 25%;
                 height:28px; 
                 border:0px; 
                 color:white;

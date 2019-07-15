@@ -29,7 +29,7 @@
         </label>
       </div>
       <div class="nav-item">
-        <ul class="nav-list nav-list-mp">
+         <ul class="nav-list nav-list-mp">
           <li>
             <a
               id="qa-item-show"
@@ -151,8 +151,8 @@
     />
   </header>
 
-  <div class="news-wrap">
-      <section class="banner">
+  <div class="news-wrap ">
+      <section class="banner bubble-box">
           <div class="title">
             <div class="img-bg">
               <img src="img/ribbon.png" alt="標題底圖">
@@ -165,13 +165,16 @@
           </div>
       </section>
 
-    <section class="select">
+    <section class="select ">
       <div class="select-group">
         <div class="select-filter-group">
           <h3>篩選條件:</h3>
         
             <div class="filter-item filter-active">
               <button type="button" class="all">全部消息</button>
+            </div>
+            <div class="filter-item">
+              <button type="button" class="newgroup">揪團快訊</button>
             </div>
             <div class="filter-item">
               <button type="button" class="park">園區公告</button>
@@ -186,6 +189,7 @@
           <div class="mobile">
             <select name="" id="">
               <option value="all" class="all">全部消息</option>
+              <option value="newgroup" class="newgroup">揪團快訊</option>
               <option value="park" class="park">園區公告</option>
               <option value="newpds" class="newpds">新品上市</option>
               <option value="limit" class="limit">季節限定</option>
@@ -262,6 +266,7 @@
         </div>
       </div>
 
+      <div id="navigatediv">
 
       <div class="bookmark">
         <ul>
@@ -277,8 +282,11 @@
   </div>
   <footer>
     <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
-  </footer>
+  </footer> 
+  <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/news.js" ></script>
+  
 </body>
 
 </html>
