@@ -101,42 +101,41 @@ $(document).ready(function() {
 
 	// 第三個模型結束
 	// 第四個模型開始火箭
-	ctx.beginPath();
-	ctx.lineWidth=3;
-	ctx.strokeStyle="rgba(0,0,0,0)";
-	ctx.moveTo(90,222);
-	ctx.quadraticCurveTo(95,122,163,40);
-	ctx.quadraticCurveTo(180,44,201,36);
-	ctx.quadraticCurveTo(260,64,281,210);
-	ctx.quadraticCurveTo(308,225,310,250);
-	ctx.quadraticCurveTo(312,265,311,275);
-	ctx.quadraticCurveTo(320,280,322,290);
-	ctx.quadraticCurveTo(335,294,336,305);
-	ctx.quadraticCurveTo(338,350,290,375);
-	ctx.lineTo(70,378);
-	ctx.quadraticCurveTo(35,365,36,324);
-	ctx.quadraticCurveTo(40,305,65,285);
-	ctx.quadraticCurveTo(65,243,90,222);	
-	var gradient = ctx.createLinearGradient(175,0,175,500);//漸層色起點&漸層色終點
-	gradient.addColorStop(0,'orange');
-	// gradient.addColorStop(0.5,'#fff');
-	gradient.addColorStop(1,'red');
-	ctx.fillStyle=gradient;
-	ctx.fill();
-	ctx.stroke();
+	// ctx.beginPath();
+	// ctx.lineWidth=3;
+	// ctx.strokeStyle="rgba(0,0,0,0)";
+	// ctx.moveTo(90,222);
+	// ctx.quadraticCurveTo(95,122,163,40);
+	// ctx.quadraticCurveTo(180,44,201,36);
+	// ctx.quadraticCurveTo(260,64,281,210);
+	// ctx.quadraticCurveTo(308,225,310,250);
+	// ctx.quadraticCurveTo(312,265,311,275);
+	// ctx.quadraticCurveTo(320,280,322,290);
+	// ctx.quadraticCurveTo(335,294,336,305);
+	// ctx.quadraticCurveTo(338,350,290,375);
+	// ctx.lineTo(70,378);
+	// ctx.quadraticCurveTo(35,365,36,324);
+	// ctx.quadraticCurveTo(40,305,65,285);
+	// ctx.quadraticCurveTo(65,243,90,222);	
+	// var gradient = ctx.createLinearGradient(175,0,175,500);//漸層色起點&漸層色終點
+	// gradient.addColorStop(0,'orange');
+	// // gradient.addColorStop(0.5,'#fff');
+	// gradient.addColorStop(1,'red');
+	// ctx.fillStyle=gradient;
+	// ctx.fill();
+	// ctx.stroke();
 
-	// 冰棒棍
-	ctx.beginPath();
-	ctx.strokeStyle="rgba(0,0,0,1)";
-	ctx.moveTo(,222);
+	// // 冰棒棍
+	// ctx.beginPath();
+	// ctx.strokeStyle="rgba(0,0,0,1)";
 
-	ctx.stroke();
+	// ctx.stroke();
 
 
 	// 第四個模型結束
 
 	var texturePic = new Image();
-	texturePic.src = "../img/custom/texture4.png";
+	texturePic.src = "../img/custom/texture1.png";
 	texturePic.addEventListener('load',function () {
 		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 	});
