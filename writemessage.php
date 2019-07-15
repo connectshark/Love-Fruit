@@ -100,9 +100,13 @@
 				</div>
 			</div>
 		</section>
-		<section class="write-letter">
-		</section>
 	</div>
+	<section class="pop">
+		<div class="pop-btn-group">
+		<div class="btn-item"><button></button></div>
+		<div class="btn-item"></div>
+		</div>
+	</section>
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
 	</footer>
