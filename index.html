@@ -549,7 +549,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -578,7 +578,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -607,7 +607,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -636,7 +636,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -865,7 +865,7 @@
                 <div class="course-inner-style">
                   <div class="course-button-text-style">
                     <span class="course-button-text">
-                      立即揪團
+                      立即參加
                     </span>
                   </div>
                 </div>
@@ -908,27 +908,33 @@
               <img src="img/indexImg/news/news-img.png" alt="" />
             </div>
             <div class="index-news-content-item">
-              <div class="index-news-content-list">
-                <div class="index-news-content-icon">最新消息</div>
-                <div class="index-news-conten-text-group">
-                  <h3>《2019》水果冰特展 系列講座</h3>
-                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                </div>
-              </div>
-              <div class="index-news-content-list">
-                <div class="index-news-content-icon-g">最新消息</div>
-                <div class="index-news-conten-text-group">
-                  <h3>《2019》水果冰特展 系列講座</h3>
-                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                </div>
-              </div>
-              <div class="index-news-content-list">
-                <div class="index-news-content-icon-y">最新消息</div>
-                <div class="index-news-conten-text-group">
-                  <h3>《2019》水果冰特展 系列講座</h3>
-                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                </div>
-              </div>
+              <a href="">
+                <div class="index-news-content-list">
+                  <div class="index-news-content-icon">最新消息</div>
+                  <div class="index-news-conten-text-group">
+                    <h3>《2019》水果冰特展 系列講座</h3>
+                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                  </div>
+                </div></a
+              >
+              <a href="">
+                <div class="index-news-content-list">
+                  <div class="index-news-content-icon-g">揪團課程</div>
+                  <div class="index-news-conten-text-group">
+                    <h3>《2019》水果冰特展 系列講座</h3>
+                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                  </div>
+                </div></a
+              >
+              <a href="">
+                <div class="index-news-content-list">
+                  <div class="index-news-content-icon-y">一般課程</div>
+                  <div class="index-news-conten-text-group">
+                    <h3>《2019》水果冰特展 系列講座</h3>
+                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                  </div>
+                </div></a
+              >
             </div>
           </div>
         </div>
@@ -954,28 +960,5 @@
     </script>
     <script src="js/nav.js"></script>
     <script src="js/index.js"></script>
-
-    <script>
-      function robot() {
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-          if (xhr.status == 200) {
-            //modify here
-            console.log(`wow`);
-            $(".fruit").html(xhr.responseText);
-          } else {
-            alert(xhr.status);
-          }
-        };
-        // option link code
-        var url = "php/index.php?qusId=$fruit";
-        xhr.open("get", url, true);
-        // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-
-        // setInfo
-        // var date_info = `memId=1`;
-        xhr.send(null);
-      }
-    </script>
   </body>
 </html>
