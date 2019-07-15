@@ -231,18 +231,19 @@
 
             .custom-desc{
                 p{
-                    padding: 10px;
+                    padding: 10px 10px 10px 0;
+
+                    &:first-child{
+                        padding-top:0px; 
+                    }
                 }
+                
             }
         }
 
         @include rwd(medium){
             .custom-desc{
                 display: flex;
-    
-                .time{
-                    text-align: right;
-                }
             }
         }
     }
