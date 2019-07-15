@@ -423,6 +423,68 @@
   padding: 10px;
 }
 
+.page-confirm .pay-transport-title {
+  padding-bottom: 20px;
+}
+
+.page-confirm .pay-transport {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.page-confirm .pay-transport-btn {
+  font-size: 0px;
+  border-bottom: 1px solid #FAD689;
+}
+
+.page-confirm .tabtitle li {
+  font-size: 20px;
+  text-align: center;
+  line-height: 26px;
+}
+
+.page-confirm .tabtitle a {
+  color: black;
+}
+
+.page-confirm .pay, .page-confirm .transport {
+  display: inline-block;
+  background-color: #FAD689;
+  border: 2px solid #FAD689;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #282828;
+  height: 30px;
+}
+
+.page-confirm .pay:hover, .page-confirm .transport:hover {
+  background-color: #FFB11B;
+}
+
+.page-confirm .transport-check, .page-confirm .onlion-check {
+  font-size: 16px;
+}
+
+.page-confirm input[type="radio"] {
+  display: none;
+}
+
+.page-confirm input[type="radio"] + label span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background: url(../img/shop/circle-regular.svg);
+}
+
+.page-confirm .transport-check {
+  vertical-align: middle;
+}
+
+.page-confirm input[type="radio"]:checked + label span {
+  background: url(../img/shop/check-circle-solid.svg) no-repeat;
+}
+
 @media all and (min-width: 992px) {
   .page-confirm .confirm-title {
     padding: 150px 0px 20px 0px;
@@ -435,6 +497,12 @@
   }
   .page-confirm .confirm-row > div + div {
     border-left: 1px solid black;
+  }
+  .page-confirm .row-name > p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
   }
   .page-confirm .confirm-row {
     background-color: white;
@@ -512,4 +580,4 @@
     padding: 0px;
   }
 }
-/*# sourceMappingURL=confirm.css.map */
+/*# sourceMappingURL=cart-order.css.map */

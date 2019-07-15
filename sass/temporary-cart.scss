@@ -1,0 +1,156 @@
+@import 'mixin/mixin';
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "GenJyuuGothic-R";
+}
+body{
+   
+    // overflow: hidden;
+}
+#mini-cart{
+    a{
+        color: black;
+    }
+    width: 100vw;
+    height: 80vh;
+    background-color:whitesmoke;
+    position: fixed;
+    z-index:99;
+    right:0;
+    top:0;
+    // transform:translateX(100%)  ;
+    // transition: transform 0.5s ease-in;
+    .head{
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid black;
+    }
+    .cart-icon{
+        width: 85%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+       
+        h3{
+            font-size: 24px;
+            padding-left: 10px;
+        }
+    }
+    .cart-close{
+        border-left: 2px solid black;
+        width: 15%;
+        padding: 10px 10px 10px 10px;
+        text-align: center;
+        &:hover{
+            color:#DB4D6D;
+        }
+        .fa-times{
+            font-size: 25px;
+        }
+    }
+    .mini-item-wrap{
+        width: 100vw;
+        height: 130px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        border-bottom:2px solid gray;
+        ;
+        .mini-img{
+            padding: 10px;
+        }
+        span{
+            display: block;
+            font-size: 20px;
+            padding: 15px;
+        }
+        img{
+            display: block;
+            width: 50%;
+            margin: auto;
+        }
+        .mini-trash{
+            font-size: 30px;
+            .fa-trash{
+                display: block;
+                margin-left:10px;;
+            }
+        }
+    }
+
+}
+//網站版
+#mini-cart{
+    width: 50vw;
+    height: 100vh;
+    background-color:whitesmoke;
+    position: fixed;
+    z-index:99;
+    right:0;
+    top:0;
+    .no-item{
+        font-size: 20px;
+        text-align: center;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid black;
+    }
+    .cart-icon{
+        width: 85%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+       
+        h3{
+            font-size: 24px;
+            padding-left: 10px;
+        }
+    }
+    .cart-close{
+        border-left: 2px solid black;
+        width: 15%;
+        padding: 10px 10px 10px 10px;
+        text-align: center;
+        &:hover{
+            color:#DB4D6D;
+        }
+        .fa-times{
+            font-size: 25px;
+        }
+    }
+    .mini-item-wrap{
+        width: 100vw;
+        height: 130px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        border-bottom:2px solid gray;
+        ;
+        .mini-img{
+            padding: 10px;
+        }
+        span{
+            display: block;
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+        }
+        img{
+            display: block;
+            width: 50%;
+            margin: auto;
+        }
+        .mini-trash{
+            font-size: 30px;
+            .fa-trash{
+                display: block;
+                margin-left:10px;;
+            }
+        }
+    }
+
+}
