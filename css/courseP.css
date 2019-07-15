@@ -1791,24 +1791,27 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-message-wrap {
-  background-color: #fff8e4;
-  position: relative;
-}
-
-.group-message-wrap .group-message-cloud {
+.group-message-cloud {
   height: 200px;
   background: #9dc5f6 url(../img/course/course-Wcloud.png) center bottom no-repeat;
   background-size: 100%;
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .group-message-cloud {
+  .group-message-cloud {
     height: 400px;
   }
 }
 
+.group-message-wrap {
+  background-color: #fff8e4;
+  position: relative;
+}
+
 .group-message-wrap .title-box {
+  -webkit-transform: translateY(-1%);
+          transform: translateY(-1%);
+  background-color: #fff8e4;
   text-align: center;
 }
 
@@ -2254,10 +2257,6 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-message-wrap .group-message .main-group-message .join-pop-btn:target + .pop-box {
-  visibility: visible;
-}
-
 .group-message-wrap .pop-box {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -2290,9 +2289,15 @@ body {
 
 .group-message-wrap .pop-box .pop-up #closeBtn {
   position: absolute;
-  top: 15%;
+  top: 10%;
   right: 10%;
   cursor: pointer;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up #closeBtn {
+    top: 15%;
+  }
 }
 
 .group-message-wrap .pop-box .pop-up #closeBtn img {
@@ -2307,7 +2312,8 @@ body {
   border-radius: 45px;
   text-align: center;
   width: 80%;
-  height: 45px;
+  height: 35px;
+  line-height: 35px;
   position: absolute;
   top: 20%;
   left: 10%;
@@ -2318,23 +2324,23 @@ body {
     width: 30%;
     top: 20%;
     left: 35%;
-  }
-  .group-message-wrap .pop-box .pop-up .pop-team-name p {
-    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
   }
 }
 
 .group-message-wrap .pop-box .pop-up .pop-team-name p {
   color: #fff;
-  font-size: 20px;
-  line-height: 45px;
+  font-size: 16px;
+}
+
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up .pop-team-name p {
+    font-size: 20px;
+  }
 }
 
 .group-message-wrap .pop-box .pop-up .pop-content {
-  background: url(../img/course/pop-up.png) center center no-repeat;
-  background-size: contain;
-  height: 100%;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2348,6 +2354,25 @@ body {
   padding-top: 15%;
 }
 
+@media all and (min-width: 769px) {
+  .group-message-wrap .pop-box .pop-up .pop-content {
+    background: url(../img/course/pop-bg.png) center center no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .group-message-wrap .pop-box .pop-up .pop-content {
+    background-color: #BEC23F;
+    border-radius: 10px;
+    width: 90%;
+    height: 50%;
+    margin: auto;
+  }
+}
+
 .group-message-wrap .pop-box .pop-up .pop-content p {
   font-size: 16px;
   color: #434343;
@@ -2359,10 +2384,9 @@ body {
 }
 
 .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
-  -webkit-box-shadow: #FFF8E4 1px 1px 3px;
-          box-shadow: #FFF8E4 1px 1px 3px;
+  -webkit-box-shadow: #ccc 1px 1px 3px;
+          box-shadow: #ccc 1px 1px 3px;
   padding: 10px 20px;
-  background-color: #C9D34A;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2375,8 +2399,8 @@ body {
 
 @media all and (max-width: 768px) {
   .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
-    margin-top: 60%;
-    height: 20%;
+    background-color: #fad689;
+    height: 70%;
   }
   .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message p {
     font-size: 13px;
@@ -2385,7 +2409,9 @@ body {
 
 @media all and (min-width: 769px) {
   .group-message-wrap .pop-box .pop-up .pop-content .pop-main-message {
+    width: 55%;
     height: 33%;
+    background-color: #C9D34A;
   }
 }
 
@@ -2409,6 +2435,7 @@ body {
   background-color: #bec23f;
   border-radius: 10px;
   height: 33%;
+  width: 50%;
 }
 
 @media all and (min-width: 769px) {
@@ -2443,17 +2470,19 @@ body {
 }
 
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message {
-  height: 12%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   vertical-align: middle;
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 769px) {
   .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message {
-    height: 5%;
-    margin-top: -30%;
+    width: 55%;
+    height: 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -2476,19 +2505,14 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn {
-  margin: auto;
-}
-
-.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
-  width: 100%;
-  margin: auto;
-}
-
-@media all and (min-width: 769px) {
+@media all and (max-width: 768px) {
   .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
+    width: 80%;
+    margin: auto;
+  }
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-out {
     display: block;
-    width: 135px;
+    width: 100px;
     padding: 2px;
     border-radius: 40px;
     background-color: white;
@@ -2501,16 +2525,16 @@ body {
             justify-content: center;
     cursor: pointer;
   }
-  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-out .message-btn-in {
     display: block;
     color: whitesmoke;
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
     padding: 1px;
     z-index: 1;
     text-align: center;
     display: block;
-    width: 135px;
+    width: 100px;
     border-radius: 20px;
     background-color: #fc7389;
     border: 2px solid #e4575f;
@@ -2518,17 +2542,17 @@ body {
     margin: auto;
     cursor: pointer;
   }
-  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:hover {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-out .message-btn-in:hover {
     background-color: #ffabb1;
     -webkit-transition-duration: .2s;
             transition-duration: .2s;
   }
-  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:active {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-out .message-btn-in:active {
     background-color: #db4d6d;
     -webkit-transition-duration: .2s;
             transition-duration: .2s;
   }
-  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in:after {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-out .message-btn-in:after {
     z-index: -1;
     content: "留言參加";
     position: absolute;
@@ -2538,9 +2562,13 @@ body {
   }
 }
 
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn {
+  margin: auto;
+}
+
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out {
   display: block;
-  width: 80px;
+  width: 100px;
   padding: 2px;
   border-radius: 40px;
   background-color: white;
@@ -2557,13 +2585,13 @@ body {
 .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .message-btn .message-btn-out .message-btn-in {
   display: block;
   color: whitesmoke;
-  font-size: 13px;
+  font-size: 16px;
   position: relative;
   padding: 1px;
   z-index: 1;
   text-align: center;
   display: block;
-  width: 80px;
+  width: 100px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;

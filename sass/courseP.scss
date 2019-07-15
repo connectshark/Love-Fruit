@@ -700,7 +700,7 @@ $deep-pink:#db4d6d;
 
     }
 }
-//揪團課程
+
 
 
 //揪團課程-預約表單
@@ -983,11 +983,8 @@ $deep-pink:#db4d6d;
     }
 
 }
-//揪團留言板
-.group-message-wrap{ 
-    background-color: $bg-light-yellow;
-    position: relative;
-    .group-message-cloud{
+//揪團留言板 
+ .group-message-cloud{
         height: 200px;
         @include rwd(medium){
              height: 400px;
@@ -996,10 +993,18 @@ $deep-pink:#db4d6d;
         background-size: 100%;
   
     }
+.group-message-wrap{ 
+    background-color: $bg-light-yellow;
+    position: relative;
+  
     .title-box{
+        transform: translateY(-1%);
+   
+        background-color: $bg-light-yellow;
         text-align: center;
         @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
-        h3{
+        h3{  
+          
             font-family: A-OTF-M ;
         }
         span{
@@ -1010,6 +1015,7 @@ $deep-pink:#db4d6d;
             line-height: 32px;
         }
     }
+    
     
     .group-message{
         max-width: 1200px;
@@ -1182,16 +1188,11 @@ $deep-pink:#db4d6d;
                 }
                 @include btn(message-btn-out,135px,message-btn-in,20px, 我要參加);
             }
-            .join-pop-btn{
-                &:target + .pop-box{
-                    visibility: visible;
-                }
-            }
+           
         }
     }  
 
     .pop-box{
-       
         background-color: rgba(0, 0, 0, 0.9);
         position: fixed;
         top: 0;
@@ -1209,8 +1210,12 @@ $deep-pink:#db4d6d;
                 height:70%;
             }
                #closeBtn{
-                    position: absolute;
+                @include rwd(medium){
                     top:15%;
+                 
+                }
+                    position: absolute;
+                    top:10%;
                     right: 10%;
                     cursor: pointer;
                    img{
@@ -1223,8 +1228,14 @@ $deep-pink:#db4d6d;
                         width: 30%;
                         top: 20%;
                         left: 35%;
-                        p{
-                            font-size: 16px ; 
+                        height: 45px;
+                        line-height: 45px;
+                    } 
+                     p{
+                        color: #fff;
+                        font-size: 16px ; 
+                        @include rwd(medium){
+                            font-size: 20px ; 
                         }
                     }
                     box-shadow: #FFF8E4 2px 2px 3px;
@@ -1232,21 +1243,27 @@ $deep-pink:#db4d6d;
                     border-radius: 45px;
                     text-align: center;
                     width:80%;
-                    height: 45px;
+                    height: 35px;
+                    line-height: 35px;
                     position: absolute;
                     top: 20%;
                     left: 10%;
-                    p{
-                        color: #fff;
-                        font-size: 20px ;
-                        line-height: 45px;
-                    }
+               
             }
             .pop-content{
-                background: url(../img/course/pop-up.png) center center  no-repeat;
+                @include rwd(medium){
+                background: url(../img/course/pop-bg.png)center center  no-repeat;
                 background-size: contain;
                 height:100%;
                 width:100%;
+                }
+                @include rwd(mobile){
+                background-color:#BEC23F ;
+                border-radius: 10px;
+                width:90%;
+                height: 50%;
+                margin: auto;
+            }
                 display: flex;
                 justify-content: center;
                 flex-flow: row wrap;
@@ -1262,19 +1279,20 @@ $deep-pink:#db4d6d;
                 
                 .pop-main-message{
                     @include rwd(mobile){
-                        margin-top: 60%;
-                        height: 20%;
+                        background-color: $bg-medium-yellow;
+                        height: 70%;
                         p{
                           font-size:13px;  
                         }
                     }
                     @include rwd(medium){
-                      
+                        width: 55%;
                         height: 33%;
+                        background-color: #C9D34A;
                     }
-                    box-shadow: #FFF8E4 1px 1px 3px;
+                    box-shadow: #ccc 1px 1px 3px;
                     padding:10px 20px;
-                    background-color: #C9D34A;
+                   
                     border-radius: 20px;
                     display: flex;
                     flex-flow: row wrap;
@@ -1294,15 +1312,16 @@ $deep-pink:#db4d6d;
                 }
 
                 .all-message{
-                   
-                    @include rwd(medium){
-                        display: block;
-                    }
                     display:none;
                     padding:10px 20px;
                     background-color: #bec23f;
                     border-radius: 10px;
                     height: 33%;
+                    width: 50%;
+                    @include rwd(medium){
+                        display: block;
+                    }
+                    
                     .meb-add-message {
                         background-color: #FFF0F4;
                         border-radius: 5px;
@@ -1323,14 +1342,17 @@ $deep-pink:#db4d6d;
                     }
                 }
                 .pop-leave-message{
-                   
-                    @include rwd(mobile){
-                        height:5%;
-                        margin-top: -30%;
-                    }
-                    height: 12%;
-                    display: flex;
                     vertical-align: middle;
+                    @include rwd(mobile){
+                     
+                    }
+                    @include rwd(medium){
+                        width: 55%;
+                        height: 15%;
+                        display: flex;
+                        justify-content:space-between;
+                    }
+                    
                     #leave-message-box {
                     font-size: 16px;
                     padding:0 20px;
@@ -1343,19 +1365,24 @@ $deep-pink:#db4d6d;
                             font-size: 13px;
                             padding:0 10px;
                             height: 30px;
-                            border-radius: 30px;
+                            border-radius: 30px; 
+                        
                         }
+                       
                     }
+                    @include rwd(mobile){
+                    .message-btn{
+                        .message-btn-out{
+                            width: 80%;
+                            margin: auto;
+                            @include btn(message-btn-out,100px,message-btn-in,16px, 留言參加);
+                        } 
+                    }
+                }
                     .message-btn{
                         margin: auto;
-                        .message-btn-out{
-                            width: 100%;
-                            margin: auto;
-                        }
-                        @include rwd(medium){
-                           @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
-                        }
-                        @include btn(message-btn-out,80px,message-btn-in,13px, 留言參加);
+                        // @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
+                        @include btn(message-btn-out,100px,message-btn-in,16px, 留言參加);
                     }
                 }
             }
