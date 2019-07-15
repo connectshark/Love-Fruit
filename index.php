@@ -22,7 +22,6 @@
      <?php
       require_once("nav.php");
      ?>
-   
     <section class="index-hero-bgc ">
       <div class="mountain">
         <img src="img/indexImg/heroImg.png" alt="山" />
