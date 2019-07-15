@@ -345,13 +345,3 @@ $(document).ready(function() {
 	$('#ice-stick').hide();
 	$('#complete-all').click(putStickIn);
 });
-
-$(document).ready(function() {
-	var canvas = document.getElementById('canvas');
-	var ctx = canvas.getContext('2d');
-	var texturePic = new Image();
-	texturePic.src = textureImg;
-	texturePic.addEventListener('load',function () {
-		ctx.drawImage(texturePic,0,0,canvas.width,canvas.height)
-	});
-});
