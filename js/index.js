@@ -139,6 +139,8 @@ window.addEventListener("scroll", function() {
 // 飛船
 window.onload = function() {
   ibox();
+  // 問答字
+  abox();
 };
 function ibox() {
   var i = 0;
@@ -147,13 +149,23 @@ function ibox() {
       document.documentElement.scrollTop ||
       window.pageYOffset ||
       document.body.scrolltop;
-
-    if (scrolltop > 3200) {
-      i += 1;
-      if (i == 1) {
-        document
-          .querySelector(".course-blue-ship")
-          .classList.add("course-blue-ship-show");
+    if (window.innerWidth < 768) {
+      if (scrolltop > 3000) {
+        i += 1;
+        if (i == 1) {
+          document
+            .querySelector(".course-blue-ship")
+            .classList.add("course-blue-ship-show");
+        }
+      }
+    } else {
+      if (scrolltop > 3200) {
+        i += 1;
+        if (i == 1) {
+          document
+            .querySelector(".course-blue-ship")
+            .classList.add("course-blue-ship-show");
+        }
       }
     }
   });
@@ -162,3 +174,171 @@ function ibox() {
 // setTimeout(function() {
 //   $id("blue-ship-button").style.pointerEvents = "auto";
 // }, 5000);
+
+// 問答文字動畫
+function abox() {
+  var a = 0;
+  window.addEventListener("scroll", function() {
+    let scrolltop =
+      document.documentElement.scrollTop ||
+      window.pageYOffset ||
+      document.body.scrolltop;
+    if (window.innerWidth > 768) {
+      if (scrolltop > 400) {
+        a += 1;
+        if (a == 1) {
+          anime
+            .timeline({ loop: false })
+            .add({
+              targets: ".ml9 .letter",
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 60,
+              delay: function(el, i) {
+                return 120 * (i + 1);
+              }
+            })
+            .add({
+              targets: ".ml9",
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 600
+            });
+        }
+      }
+    } else {
+      if (scrolltop > 200) {
+        a += 1;
+        if (a == 1) {
+          anime
+            .timeline({ loop: false })
+            .add({
+              targets: ".ml9 .letter",
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 60,
+              delay: function(el, i) {
+                return 120 * (i + 1);
+              }
+            })
+            .add({
+              targets: ".ml9",
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 600
+            });
+        }
+      }
+    }
+  });
+}
+// Wrap every letter in a span
+$(".ml9 .letters").each(function() {
+  $(this).html(
+    $(this)
+      .text()
+      .replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>")
+  );
+});
+
+// 動畫客製化冰棒
+TweenMax.fromTo(
+  ["#user-ice1", "#user-ice2", "#user-ice3", "#user-ice4"],
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -8,
+    ease: Power0.easeNone,
+    repeat: -1,
+    yoyo: true
+  }
+);
+// 客製商品
+TweenMax.fromTo(
+  ".model-general",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.fromTo(
+  ".model-bear",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.fromTo(
+  ".model-rabbit",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.fromTo(
+  ".model-rocket",
+  1,
+  {
+    y: 0,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: -20,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);
+TweenMax.to("#iceShadow", 1, {
+  scaleY: 0.9,
+  scaleX: 1.3,
+  repeat: -1,
+  opacity: 0.4,
+  yoyo: true,
+  ease: Back.easeOut
+});
+// 商城動畫
+TweenMax.fromTo(
+  ".store-group",
+  1,
+  {
+    y: 30,
+    repeat: -1,
+    yoyo: true
+  },
+  {
+    y: 0,
+    ease: Power4.easeOut,
+    repeat: -1,
+    yoyo: true
+  }
+);

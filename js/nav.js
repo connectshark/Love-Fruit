@@ -102,9 +102,33 @@ $(document).ready(function() {
     $fruit = $(this).text();
     $("#robot-conversation-list").append(`<div class="robot-conversation">
     <p class="robot_text">${$fruit}</p></div>`).append(`<div class="robot-conversation">
-    <p class="robot_text"><span>小達人:</span>${$fruit}</p>
+    <p class="robot_text">小達人:<span class="robot-A" ></span></p>
   </div>`);
+
+    robot();
+
     $scrollHeight = $("#robot-conversation-list").height(); //scroll的高度
     $("#robot-conversation-block").animate({ scrollTop: $scrollHeight }, 200); //控制scroll bar的位置 並加一點動畫效果
+    robot();
   });
 });
+function robot() {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    if (xhr.status == 200) {
+      //modify here
+      console.log(`wow`);
+      $(".robot-A").html(xhr.responseText);
+    } else {
+      alert(xhr.status);
+    }
+  };
+  // option link code
+  var url = "php/index.php?keyword=" + $fruit;
+  xhr.open("get", url, true);
+  // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+  // setInfo
+  // var date_info = `memId=1`;
+  xhr.send(null);
+}

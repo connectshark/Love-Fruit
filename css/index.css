@@ -33,22 +33,25 @@ body {
 @media screen and (max-width: 767px) {
   /* 飛船 */
   .flyship {
-    width: 80%;
+    width: 120%;
     position: absolute;
     z-index: 3;
     top: 30%;
-    right: -40%;
+    right: -60%;
     animation: flyship1 20s linear 0s infinite;
   }
   @keyframes flyship1 {
     0% {
-      transform: translateX(40%) translateY(0%);
+      transform: translateX(50%) translateY(0%);
+    }
+    25% {
+      transform: translateX(-50%) translateY(-30%);
     }
     50% {
-      transform: translateX(-50%) translateY(-10%);
+      transform: translateX(-50%) translateY(-30%);
     }
     100% {
-      transform: translateX(-180%) translateY(0%);
+      transform: translateX(-135%) translateY(0%);
     }
   }
   /* 雲 */
@@ -169,15 +172,85 @@ body {
     z-index: 1;
   }
   .mountain {
-    width: 200%;
+    width: 180%;
     position: absolute;
-    bottom: 0%;
-    right: -50%;
-    z-index: 1;
+    bottom: 3%;
+    left: -40%;
+    z-index: 2;
   }
   .mountain img {
-    padding-top: 20%;
     width: 100%;
+  }
+  .heroImg-castle {
+    position: absolute;
+    width: 70%;
+    right: 0%;
+    bottom: 25%;
+    z-index: 1;
+    transform-origin: 50px 300px;
+    animation: heroImg-castle 2s linear 0s alternate;
+  }
+  @keyframes heroImg-castle {
+    0% {
+      transform: rotateX(100deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  .hero-bgi-cloud {
+    width: 180%;
+    position: absolute;
+    bottom: 30%;
+    z-index: 0;
+  }
+  .cloudA {
+    animation: cloudA 6s linear 0s alternate infinite;
+  }
+  @keyframes cloudA {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(1%);
+    }
+    100% {
+      transform: translateX(-1%);
+    }
+  }
+  .cloudB {
+    animation: cloudA 6s linear 0s alternate infinite;
+  }
+  @keyframes cloudB {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-1%);
+    }
+    100% {
+      transform: translateX(1%);
+    }
+  }
+  .heroImg-watermelon {
+    width: 40%;
+    position: absolute;
+    bottom: 26%;
+    left: 0%;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: heroImg-watermelon 3s linear 0s alternate;
+  }
+  @keyframes heroImg-watermelon {
+    0% {
+      transform: rotateX(100deg);
+    }
+    30% {
+      transform: rotateX(100deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
   }
   .cloud {
     position: relative;
@@ -188,30 +261,193 @@ body {
   .cloud img {
     width: 20%;
   }
+  .icecream {
+    display: none;
+    position: absolute;
+    width: 4%;
+    z-index: 3;
+    transform-origin: 50px 100px;
+    transition: 1s;
+    transform: rotate(0deg);
+  }
+  .icecream-lemon {
+    transform: rotate(-20deg);
+    transform-origin: 50px 50px;
+    width: 4%;
+    bottom: 30%;
+    right: 20%;
+    transform-origin: bottom;
+    animation: icecream 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  .icecream-b1 {
+    transform: rotate(20deg);
+    width: 3%;
+    bottom: 40%;
+    right: 10%;
+    transform-origin: bottom;
+    animation: icecream-r 6s linear 0s alternate infinite;
+  }
+  @keyframes icecream-r {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+  .icecream-y {
+    width: 6%;
+    transform: rotate(20deg);
+    bottom: 15%;
+    right: 9%;
+    transform-origin: bottom;
+    animation: icecream-r 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream-r {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+
+  .icecream-b {
+    transform: rotate(-20deg);
+    width: 3%;
+    bottom: 42%;
+    left: 14%;
+    transform-origin: bottom;
+    animation: icecream 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  .icecream-p {
+    transform: rotate(-20deg);
+    width: 4%;
+    bottom: 14%;
+    left: 8%;
+    transform-origin: bottom;
+    animation: icecream 6s linear 0s alternate infinite;
+  }
+  @keyframes icecream {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  .icecream-r {
+    transform: rotate(20deg);
+    bottom: 32%;
+    left: 25%;
+    transform-origin: bottom;
+    animation: icecream-r 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream-r {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+  .heroIce-p {
+    width: 60%;
+  }
   .heroIce {
     margin: auto;
-    width: 75%;
-    top: 55%;
-    left: 10%;
+    width: 90%;
+    bottom: 20%;
+    right: 0;
+    left: 0;
+    text-align: center;
     position: absolute;
     z-index: 3;
+    transform-origin: bottom;
+    animation: heroIce 4s linear 0s alternate;
   }
-  .sweetheart {
-    margin: auto;
-    width: 50%;
-    top: 47%;
-    left: 28%;
+  @keyframes heroIce {
+    0% {
+      transform: rotateX(90deg);
+    }
+    50% {
+      transform: rotateX(90deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  .love-S-a {
     position: absolute;
-    z-index: 3;
+    transform-origin: top;
+    right: 35%;
+    z-index: 4;
+    animation: love-S 6s linear 0s infinite;
   }
+  @keyframes love-S {
+    0% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0%) scale(1.3);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(-200%) scale(1.3);
+      opacity: 1;
+    }
+  }
+  .love-S {
+    position: absolute;
+    transform-origin: top;
+    right: 35%;
+    z-index: 4;
+    animation: love-S 3s linear 0s infinite;
+  }
+  @keyframes love-S {
+    0% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0%) scale(1);
+      opacity: 0;
+    }
+    95% {
+      transform: translateY(-200%) scale(1.3);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-200%) scale(1.3);
+      opacity: 0;
+    }
+  }
+  /* 草地 */
   .hero-green {
     position: absolute;
-    left: 10%;
-    bottom: 10%;
-    border-radius: 50%;
+    left: 20%;
+    bottom: 18%;
+    border-radius: 100px;
     z-index: 4;
-    width: 20%;
-    height: 8%;
+    width: 10%;
+    height: 5%;
     background-color: #e5e54c;
   }
 }
@@ -224,14 +460,17 @@ body {
     z-index: 3;
     top: 30%;
     right: -40%;
-    animation: flyship1 30s linear 0s infinite;
+    animation: flyship1 10s linear 0s infinite;
   }
   @keyframes flyship1 {
     0% {
       transform: translateX(0%) translateY(0%);
     }
+    25% {
+      transform: translateX(-180%) translateY(-60%);
+    }
     50% {
-      transform: translateX(-180%) translateY(-100%);
+      transform: translateX(-180%) translateY(-60%);
     }
     100% {
       transform: translateX(-370%) translateY(0%);
@@ -367,12 +606,82 @@ body {
   .mountain {
     width: 100%;
     position: absolute;
-    top: -12%;
-    z-index: 1;
+    bottom: 0%;
+    z-index: 2;
   }
   .mountain img {
-    padding-top: 20%;
     width: 100%;
+  }
+  .heroImg-castle {
+    position: absolute;
+    width: 30%;
+    right: 10%;
+    top: 12%;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: heroImg-castle 2s linear 0s alternate;
+  }
+  @keyframes heroImg-castle {
+    0% {
+      transform: rotateX(100deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  .hero-bgi-cloud {
+    width: 120%;
+    position: absolute;
+    bottom: 30%;
+    z-index: 0;
+  }
+  .cloudA {
+    animation: cloudA 6s linear 0s alternate infinite;
+  }
+  @keyframes cloudA {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(1%);
+    }
+    100% {
+      transform: translateX(-1%);
+    }
+  }
+  .cloudB {
+    animation: cloudA 6s linear 0s alternate infinite;
+  }
+  @keyframes cloudB {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-1%);
+    }
+    100% {
+      transform: translateX(1%);
+    }
+  }
+  .heroImg-watermelon {
+    width: 25%;
+    position: absolute;
+    bottom: 36%;
+    left: 15%;
+    z-index: 1;
+    transform-origin: 50px 300px;
+    animation: heroImg-watermelon 3s linear 0s alternate;
+  }
+  @keyframes heroImg-watermelon {
+    0% {
+      transform: rotateX(100deg);
+    }
+    30% {
+      transform: rotateX(100deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
   }
   .cloud {
     position: relative;
@@ -383,13 +692,181 @@ body {
   .cloud img {
     width: 20%;
   }
+  .icecream {
+    display: inline-block;
+    position: absolute;
+    width: 4%;
+    z-index: 3;
+    transform-origin: 50px 100px;
+    transition: 1s;
+    transform: rotate(0deg);
+  }
+  .icecream-lemon {
+    transform: rotate(-20deg);
+    transform-origin: 50px 50px;
+    width: 4%;
+    bottom: 30%;
+    right: 20%;
+    transform-origin: bottom;
+    animation: icecream 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  .icecream-b1 {
+    transform: rotate(20deg);
+    width: 3%;
+    bottom: 40%;
+    right: 10%;
+    transform-origin: bottom;
+    animation: icecream-r 6s linear 0s alternate infinite;
+  }
+  @keyframes icecream-r {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+  .icecream-y {
+    width: 6%;
+    transform: rotate(20deg);
+    bottom: 15%;
+    right: 9%;
+    transform-origin: bottom;
+    animation: icecream-r 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream-r {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+
+  .icecream-b {
+    transform: rotate(-20deg);
+    width: 3%;
+    bottom: 42%;
+    left: 14%;
+    transform-origin: bottom;
+    animation: icecream 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  .icecream-p {
+    transform: rotate(-20deg);
+    width: 4%;
+    bottom: 14%;
+    left: 8%;
+    transform-origin: bottom;
+    animation: icecream 6s linear 0s alternate infinite;
+  }
+  @keyframes icecream {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+  .icecream-r {
+    display: inline-block;
+    transform: rotate(20deg);
+    bottom: 32%;
+    left: 25%;
+    transform-origin: bottom;
+    animation: icecream-r 3s linear 0s alternate infinite;
+  }
+  @keyframes icecream-r {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+  }
+  .heroIce-p {
+    width: 50%;
+  }
   .heroIce {
     margin: auto;
     width: 46%;
-    top: 47%;
+    top: 40%;
     left: 25%;
     position: absolute;
+    text-align: center;
     z-index: 3;
+    transform-origin: bottom;
+    animation: heroIce 4s linear 0s alternate;
+  }
+  @keyframes heroIce {
+    0% {
+      transform: rotateX(90deg);
+    }
+    50% {
+      transform: rotateX(90deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  .love-S-a {
+    position: absolute;
+    right: 38%;
+    z-index: 4;
+    animation: love-S 6s linear 0s infinite;
+  }
+  @keyframes love-S {
+    0% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0%) scale(1);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(-200%) scale(2);
+      opacity: 1;
+    }
+  }
+  .love-S {
+    position: absolute;
+    right: 38%;
+    z-index: 4;
+    animation: love-S 3s linear 0s infinite;
+  }
+  @keyframes love-S {
+    0% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0%) scale(1);
+      opacity: 0;
+    }
+    95% {
+      transform: translateY(-200%) scale(2);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-200%) scale(2);
+      opacity: 0;
+    }
   }
   .sweetheart {
     margin: auto;
@@ -491,14 +968,32 @@ body {
     border: 4px solid #6a3e26;
     background-color: #ffffff;
   }
+  .ml9 {
+    position: relative;
+    font-weight: 200;
+    font-size: 4em;
+  }
+  .ml9 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  .ml9 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+  }
   .mailer-qa-box h3 {
     margin-top: 2%;
     padding: 7%;
     font-family: "GenJyuuGothic-B";
     color: #ea7187;
     font-size: 4vw;
-    letter-spacing: 0.1vw;
-    line-height: 5vw;
+    letter-spacing: 0.3vw;
+    line-height: 25px;
     text-align: justify;
   }
   .qabgc-bottom {
@@ -654,14 +1149,32 @@ body {
     border: 4px solid #6a3e26;
     background-color: #ffffff;
   }
+  .ml9 {
+    position: relative;
+    font-weight: 200;
+    font-size: 4em;
+  }
+  .ml9 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  .ml9 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+  }
   .mailer-qa-box h3 {
     margin-top: 2%;
     padding: 7%;
     font-family: "GenJyuuGothic-B";
     color: #ea7187;
     font-size: 1.3vw;
-    letter-spacing: 0.1vw;
-    line-height: 1.8vw;
+    letter-spacing: 0.2vw;
+    line-height: 2vw;
     text-align: justify;
   }
   .mailer-bottom {
@@ -741,7 +1254,7 @@ body {
 /*第三屏幕-手機*/
 @media screen and (max-width: 768px) {
   .index-cp-bgc {
-    background-color: #fff8e4;
+    background-color: #efd2a2;
     position: relative;
     width: 100%;
     z-index: 3;
@@ -784,7 +1297,7 @@ body {
   }
   .diy-ice-bgc {
     position: absolute;
-    width: 240%;
+    width: 300%;
     bottom: 20%;
     z-index: 4;
   }
@@ -809,7 +1322,7 @@ body {
     justify-content: space-around;
     width: 96%;
     height: 28%;
-    margin-bottom: 16%;
+    margin-bottom: 18%;
   }
   .panel-button-bottom {
     cursor: pointer;
@@ -865,7 +1378,7 @@ body {
     top: 10%;
     width: 50%;
     left: 25%;
-    animation: modelgeneral 5s ease 0s infinite alternate;
+    /* animation: modelgeneral 5s ease 0s infinite alternate;
   }
   @keyframes modelgeneral {
     0% {
@@ -877,7 +1390,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
 
   .model-bear {
@@ -887,7 +1400,7 @@ body {
     top: 10%;
     width: 50%;
     left: 25%;
-    animation: modelbear 5s ease 0s infinite alternate;
+    /* animation: modelbear 5s ease 0s infinite alternate;
   }
   @keyframes modelbear {
     0% {
@@ -899,7 +1412,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
   .model-rabbit {
     visibility: hidden;
@@ -908,7 +1421,7 @@ body {
     top: 10%;
     width: 50%;
     left: 25%;
-    animation: modelrabbit 5s ease 0s infinite alternate;
+    /* animation: modelrabbit 5s ease 0s infinite alternate;
   }
   @keyframes modelrabbit {
     0% {
@@ -920,7 +1433,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
   .model-rocket {
     visibility: hidden;
@@ -929,7 +1442,7 @@ body {
     top: 10%;
     width: 50%;
     left: 25%;
-    animation: modelrocket 5s ease 0s infinite alternate;
+    /* animation: modelrocket 5s ease 0s infinite alternate;
   }
   @keyframes modelrocket {
     0% {
@@ -941,7 +1454,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
   .ice-btn-out {
     width: 80%;
@@ -959,7 +1472,7 @@ body {
   }
   .c-p-button-style-botton {
     position: absolute;
-    top: -10%;
+    top: -16%;
     left: 0;
     display: inline-block;
     width: 100%;
@@ -1127,21 +1640,21 @@ body {
     left: 38%;
     top: 51%;
     z-index: 6;
-    animation: iceShadow 5s ease 0s infinite alternate;
+    /* animation: iceShadow 2s ease 0s infinite alternate;
   }
   @keyframes iceShadow {
     0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
       transform: scale(1.5);
       opacity: 0.4;
     }
-    100% {
+    50% {
       transform: scale(1);
       opacity: 1;
     }
+    100% {
+      transform: scale(1.5);
+      opacity: 0.4;
+    } */
   }
   .c-p-store {
     position: absolute;
@@ -1232,7 +1745,7 @@ body {
     top: 26%;
     width: 13%;
     left: 37%;
-    animation: modelgeneral 5s ease 0s infinite alternate;
+    /* animation: modelgeneral 5s ease 0s infinite alternate;
   }
   @keyframes modelgeneral {
     0% {
@@ -1244,7 +1757,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
 
   .model-bear {
@@ -1254,7 +1767,7 @@ body {
     top: 24%;
     width: 13%;
     left: 37%;
-    animation: modelbear 5s ease 0s infinite alternate;
+    /* animation: modelbear 5s ease 0s infinite alternate;
   }
   @keyframes modelbear {
     0% {
@@ -1266,7 +1779,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
   .model-rabbit {
     visibility: hidden;
@@ -1275,7 +1788,7 @@ body {
     top: 24%;
     width: 13%;
     left: 37%;
-    animation: modelrabbit 5s ease 0s infinite alternate;
+    /* animation: modelrabbit 5s ease 0s infinite alternate;
   }
   @keyframes modelrabbit {
     0% {
@@ -1287,7 +1800,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
   .model-rocket {
     visibility: hidden;
@@ -1296,7 +1809,7 @@ body {
     top: 24%;
     width: 13%;
     left: 37%;
-    animation: modelrocket 5s ease 0s infinite alternate;
+    /* animation: modelrocket 5s ease 0s infinite alternate;
   }
   @keyframes modelrocket {
     0% {
@@ -1308,7 +1821,7 @@ body {
 
     100% {
       transform: translateY(0%);
-    }
+    } */
   }
   .ice-btn-out {
     width: 80%;
@@ -1392,12 +1905,17 @@ body {
   /* 按鈕結束 */
 
   .c-p-single {
-    text-align: center;
     position: absolute;
     width: 10%;
     z-index: 7;
     top: 27%;
     left: 12.5%;
+  }
+  #userIce1 {
+    position: absolute;
+  }
+  #single {
+    bottom: 0;
   }
   .c-p-single img {
     width: 100%;
@@ -1579,7 +2097,7 @@ body {
   }
   .store-item-img-box {
     width: 100%;
-    height: 45%;
+    height: 40%;
   }
   .store-item-img img {
     margin-top: 5%;
@@ -1607,7 +2125,7 @@ body {
   }
   /* 按鈕 */
   .store-button-custom {
-    margin-top: 3%;
+    margin-top: 4%;
     display: block;
   }
   .store-button-style {
@@ -1615,8 +2133,8 @@ body {
     text-align: center;
     display: inline-block;
     margin: 0 auto;
-    width: 50%;
-    height: 8%;
+    width: 60%;
+    height: 10%;
   }
   .store-button-style-botton {
     position: absolute;
@@ -1946,9 +2464,9 @@ body {
   }
   .leavemessage-Material {
     position: absolute;
-    width: 100%;
+    width: 280%;
     z-index: -1;
-    bottom: 2%;
+    top: 0;
   }
   .leavemessage-item-group {
     position: absolute;
@@ -2019,12 +2537,19 @@ body {
   }
   .message-header p {
     display: inline-block;
+    font-family: "GenJyuuGothic-B";
+    color: #494949;
+    font-size: 13;
   }
   .message-header-icon {
     font-family: "GenJyuuGothic-B";
     color: #292929;
+    width: 20%;
     display: inline-block;
     vertical-align: middle;
+  }
+  .message-header-icon img {
+    width: 100%;
   }
   .message-body {
     display: inline-block;
@@ -2051,7 +2576,7 @@ body {
   }
   .message-text p {
     width: 100%;
-    height: 18%;
+    height: 28%;
     font-family: "GenJyuuGothic-R";
     line-height: 18px;
     font-size: 12px;
@@ -2073,45 +2598,11 @@ body {
     margin-left: 10%;
     display: inline-block;
   }
-  .message-footer {
-    display: inline-block;
-    width: 90%;
-    margin-top: 1.5%;
-    text-align: right;
-  }
-  .message-footer span {
-    color: #ffffff;
-    font-size: 12px;
-    display: none;
-  }
   .custom-ice {
     position: absolute;
     left: -10%;
     bottom: -2%;
     width: 34%;
-  }
-  .message-footer button {
-    display: inline-block;
-    font-family: "GenJyuuGothic-R";
-    background-color: #fc7389;
-    border: 2px solid #715124;
-    border-radius: 10px;
-    margin-top: 3%;
-    width: 30%;
-    height: 10%;
-  }
-  .message-button-icon {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .message-button-icon-share {
-    margin-top: 4%;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .message-button-icon-share img {
-    display: inline-block;
-    width: 110%;
   }
   .custom-ice img {
     width: 100%;
@@ -2227,12 +2718,17 @@ body {
   }
   .message-header p {
     display: inline-block;
+    font-family: "GenJyuuGothic-B";
+    color: #494949;
+    font-size: 1vw;
   }
   .message-header-icon {
-    font-family: "GenJyuuGothic-B";
-    color: #292929;
+    width: 16%;
     display: inline-block;
     vertical-align: middle;
+  }
+  .message-header-icon img {
+    width: 100%;
   }
   .message-body {
     display: inline-block;
@@ -2248,26 +2744,27 @@ body {
   }
   .message-text h3 span {
     font-family: "GenJyuuGothic-B";
-    font-size: 18px;
+    font-size: 1.5vw;
   }
   .message-text h3 {
     padding: 3% 0 3% 0;
+    font-size: 1.2vw;
     font-family: "GenJyuuGothic-B";
     text-align-last: left;
-    color: #292929;
+    color: #555555;
   }
   .message-text p {
     width: 100%;
     height: 18%;
     font-family: "GenJyuuGothic-R";
-    line-height: 25px;
-    font-size: 16px;
-    color: #545454;
+    line-height: 1.5vw;
+    font-size: 1vw;
+    color: #969696;
     text-align: justify;
   }
   .s-text {
     float: right;
-    font-size: 18px;
+    font-size: 1vw;
     color: #fad689;
   }
   .s-text::before {
@@ -2284,45 +2781,11 @@ body {
     display: block;
     clear: both;
   }
-  .message-footer {
-    display: inline-block;
-    width: 90%;
-    margin-top: 1.5%;
-    text-align: right;
-  }
-  .message-footer span {
-    color: #ffffff;
-    font-size: 18px;
-    display: inline-block;
-  }
   .custom-ice {
     position: absolute;
     left: -10%;
     bottom: -2%;
     width: 34%;
-  }
-  .message-footer button {
-    display: inline-block;
-    font-family: "GenJyuuGothic-R";
-    background-color: #fc7389;
-    border: 2px solid #715124;
-    border-radius: 10px;
-    margin-top: 3%;
-    width: 30%;
-    height: 6%;
-  }
-  .message-button-icon {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .message-button-icon-share {
-    margin-top: 4%;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .message-button-icon-share img {
-    display: inline-block;
-    width: 110%;
   }
   .custom-ice img {
     width: 100%;
@@ -2336,7 +2799,7 @@ body {
     background-color: #fff8e4;
     width: 100%;
     z-index: 6;
-    padding-bottom: 160%;
+    padding-bottom: 180%;
   }
   .course-cloud-bgc {
     position: absolute;
@@ -2347,11 +2810,14 @@ body {
     left: 0;
     top: -20%;
   }
+
   .ship-button {
     width: 15%;
     position: absolute;
-    right: 42%;
-    bottom: 17%;
+    margin: auto;
+    right: 0%;
+    left: 0%;
+    bottom: 20%;
   }
   #blue-ship-button {
     width: 100%;
@@ -2361,18 +2827,16 @@ body {
     width: 100%;
     display: none;
   }
-  .course-blue-ship-show {
-    opacity: 1;
-  }
+
   .course-blue-ship {
     position: absolute;
     margin: auto;
     top: 25%;
-    left: 0%;
+    left: -191%;
     right: 0;
     width: 80%;
     height: 50%;
-    transition: 5s;
+    transition: 2s;
   }
   .course-blue-ship-img {
     position: absolute;
@@ -2391,7 +2855,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90%;
+    height: 80%;
     border-radius: 10px;
     background-color: #6192d8;
     border: 8px solid #6a3e26;
@@ -2401,11 +2865,11 @@ body {
     position: absolute;
     margin: auto;
     top: 25%;
-    left: -200%;
+    left: -191%;
     right: 0;
     width: 80%;
     height: 50%;
-    transition: 5s;
+    transition: 2s;
   }
   .course-pink-ship-img {
     position: absolute;
@@ -2424,10 +2888,32 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90%;
+    height: 80%;
     border-radius: 10px;
     background-color: #ed8080;
     border: 8px solid #6a3e26;
+  }
+  .course-blue-ship-show {
+    opacity: 1;
+    transform: translateX(117%);
+  }
+  .course-blue-ship-show-out {
+    opacity: 1;
+    animation: flyshipcourse 2s linear 0s;
+  }
+  @keyframes flyshipcourse {
+    0% {
+      opacity: 1;
+      transform: translateX(160.5%) translateY(0%);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(320%) translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(0%) translateY(-10%);
+    }
   }
 
   .course-title {
@@ -2468,18 +2954,18 @@ body {
     font-family: "GenJyuuGothic-B";
     color: #fad689;
     letter-spacing: 0.2vw;
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 4%;
   }
   .course-title-content p {
     font-family: "GenJyuuGothic-R";
     line-height: 160%;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 12px;
   }
   .course-title-content p span {
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     padding-bottom: 1%;
   }
   /* 按鈕 */
@@ -2862,7 +3348,7 @@ body {
     vertical-align: middle;
     display: inline-block;
     border-radius: 5px;
-    font-size: 23px;
+    font-size: 20px;
     padding: 13px;
     color: #ffffff;
     background-color: #ff9393;
@@ -2875,7 +3361,7 @@ body {
     vertical-align: middle;
     display: inline-block;
     border-radius: 5px;
-    font-size: 23px;
+    font-size: 20px;
     padding: 13px;
     color: #ffffff;
     background-color: #7fdbd7;
@@ -2888,7 +3374,7 @@ body {
     vertical-align: middle;
     display: inline-block;
     border-radius: 5px;
-    font-size: 23px;
+    font-size: 20px;
     padding: 13px;
     color: #ffffff;
     background-color: #fad689;
@@ -2907,16 +3393,9 @@ body {
     width: 65%;
     display: inline-block;
   }
-  .index-news-conten-text-group span {
-    font-size: 12px;
-    display: inline-block;
-    padding-bottom: 1%;
-    font-family: "GenJyuuGothic-R";
-    color: #707070;
-  }
   .index-news-conten-text-group h3 {
     font-size: 15px;
-    padding-bottom: 1%;
+    padding-bottom: 3%;
     font-family: "GenJyuuGothic-R";
     color: #707070;
   }
@@ -3007,6 +3486,9 @@ body {
     margin-left: 3%;
     width: 40%;
   }
+  .index-news-content-item a {
+    text-decoration: none;
+  }
   .index-news-content-icon {
     font-family: "GenJyuuGothic-R";
     width: 15%;
@@ -3055,17 +3537,11 @@ body {
     width: 100%;
     height: 28%;
     margin-bottom: 8%;
+    transition: 1s;
   }
   .index-news-conten-text-group {
     width: 65%;
     display: inline-block;
-  }
-  .index-news-conten-text-group span {
-    font-size: 0.6vw;
-    margin-bottom: 2%;
-    display: inline-block;
-    font-family: "GenJyuuGothic-R";
-    color: #707070;
   }
   .index-news-conten-text-group h3 {
     font-size: 1.1vw;
@@ -3077,5 +3553,10 @@ body {
     font-size: 0.3vw;
     margin-bottom: 2%;
     color: #939393;
+  }
+
+  .index-news-content-list:hover {
+    transform: scale(1.02);
+    transition: 1s;
   }
 }

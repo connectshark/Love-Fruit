@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="WOW-master/css/libs/animate.css" />
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   </head>
   <body>
     <input type="checkbox" id="menu-control" />
@@ -192,10 +195,30 @@
       </div>
     </header>
 
-    <section class="index-hero-bgc">
+    <section class="index-hero-bgc ">
       <div class="mountain">
-        <img src="img/indexImg/heroImg.png" alt="background" />
+        <img src="img/indexImg/heroImg.png" alt="山" />
       </div>
+      <img
+        class="heroImg-watermelon"
+        src="img/indexImg/heroImg-watermelon.png"
+        alt="西瓜山"
+      />
+      <img
+        class="heroImg-castle"
+        src="img/indexImg/heroImg-castle.png"
+        alt="城堡"
+      />
+      <img
+        class="hero-bgi-cloud cloudA"
+        src="img/indexImg/hero-bgi-cloud-a.png"
+        alt="背景雲"
+      />
+      <img
+        class="hero-bgi-cloud cloudB"
+        src="img/indexImg/hero-bgi-cloud-b.png"
+        alt="背景雲"
+      />
       <img class="flyship" src="img/indexImg/flyship.gif" alt="fiyship-text" />
       <img
         class="style-cloud-a"
@@ -223,22 +246,47 @@
         alt="styleCloud"
       />
       <div class="hero-green"></div>
+      <img
+        class="icecream-lemon icecream"
+        src="img/indexImg/icecream-lemon .png"
+        alt="冰棒"
+      />
+      <img
+        class="icecream-b icecream"
+        src="img/indexImg/icecream-b.png"
+        alt="冰棒"
+      />
+      <img
+        class="icecream-p icecream"
+        src="img/indexImg/icecream-p.png"
+        alt="冰棒"
+      />
+      <img
+        class="icecream-r icecream"
+        src="img/indexImg/icecream-r.png"
+        alt="冰棒"
+      />
+      <img
+        class="icecream-b1 icecream"
+        src="img/indexImg/icecream-b1.png"
+        alt="冰棒"
+      />
+      <img
+        class="icecream-y icecream"
+        src="img/indexImg/icecream-y.png"
+        alt="冰棒"
+      />
       <div class="heroIce">
-        <img class="heroIce" src="img/indexImg/heroIce.png" alt="Ice" />
-      </div>
-      <div class="sweetheart">
-        <img
-          class="sweetheart"
-          src="img/indexImg/sweetheart.png"
-          alt="sweetheart"
-        />
+        <img class="heroIce-p" src="img/indexImg/heroIce.png" alt="冰棒人物" />
+        <img class="love-S" src="img/indexImg/love-S.png" alt="愛心" />
+        <img class="love-S-a" src="img/indexImg/love-S.png" alt="愛心" />
       </div>
     </section>
 
     <section class="index-qa-bgc">
       <img class="qabgc-top" src="img/indexImg/QaBgc-1.png" alt="QaBgc" />
 
-      <div class="index-title-group">
+      <div class="index-title-group  wow bounceIn">
         <div class="index-title-icon">
           <img src="img/indexImg/love-icon1.png" alt="icon" />
         </div>
@@ -248,10 +296,20 @@
         </div>
       </div>
 
-      <img class="mailer-top" src="img/indexImg/mailer-2.png" alt="QaBgc" />
-      <div id="mailer-middle" class="mailer-middle">
+      <img
+        class="mailer-top  wow bounceIn"
+        src="img/indexImg/mailer-2.png"
+        alt="QaBgc"
+      />
+      <div id="mailer-middle" class="mailer-middle wow bounceIn">
         <div class="mailer-qa-box">
-          <h3>Q:你希望自己在愛情裡收穫到的是什麼呢？</h3>
+          <h3 class="ml9">
+            <span class="text-wrapper">
+              <span class="letters"
+                >Q:你希望自己在愛情裡收穫到的是什麼呢？</span
+              >
+            </span>
+          </h3>
         </div>
         <a class="qa-button-custom" href="qa.html">
           <div class="qa-button-style">
@@ -294,12 +352,17 @@
         </a>
         <form action="qa.html" method="POST"></form>
       </div>
-      <img class="mailer-bottom" src="img/indexImg/mailer-1.png" alt="QaBgc" />
+      <img
+        class="mailer-bottom  wow bounceIn"
+        data-aos="fade-down-left"
+        src="img/indexImg/mailer-1.png"
+        alt="QaBgc"
+      />
       <img class="qabgc-bottom" src="img/indexImg/QaBgc.png" alt="background" />
     </section>
 
     <section class="index-cp-bgc">
-      <div class="index-title-group">
+      <div class="index-title-group  wow tada">
         <div class="index-title-icon">
           <img src="img/indexImg/love-icon2.png" alt="icon" />
         </div>
@@ -315,11 +378,11 @@
         alt="iceShadow"
       />
       <img
-        class="c-p-store"
+        class="c-p-store wow tada"
         src="img/indexImg/customized-products-store.png"
         alt="store"
       />
-      <div class="ice-panel">
+      <div class="ice-panel wow tada">
         <h3>選擇製冰容器</h3>
         <div class="panel-button-item-group">
           <div id="model-general-button" class="panel-button-bottom">
@@ -384,7 +447,7 @@
       </div>
       <img
         id="model-general"
-        class="model-general"
+        class="model-general wow tada"
         src="img/indexImg/model-general.png"
         alt="general"
       />
@@ -418,26 +481,49 @@
         alt="diyIcebgc"
       />
       <div class="c-p-single">
-        <img src="img/indexImg/userIce1.png" alt="userIce" />
-        <img src="img/indexImg/single.png" alt="single" />
+        <img
+          id="user-ice1"
+          class="wow bounceInDown"
+          src="img/indexImg/userIce1.png"
+          alt="userIce"
+        />
+        <img id="single" src="img/indexImg/single.png" alt="single" />
       </div>
       <div class="c-p-firstLove">
-        <img src="img/indexImg/userIce4.png" alt="userIce" />
+        <img
+          id="user-ice2"
+          class="wow bounceInDown"
+          data-wow-delay="0.5s"
+          src="img/indexImg/userIce4.png"
+          alt="userIce"
+        />
         <img src="img/indexImg/firstLove.png" alt="firstLove" />
       </div>
       <div class="c-p-love">
-        <img src="img/indexImg/userIce3.png" alt="userIce" />
+        <img
+          id="user-ice3"
+          class="wow bounceInDown"
+          data-wow-delay="1s"
+          src="img/indexImg/userIce3.png"
+          alt="userIce"
+        />
         <img src="img/indexImg/love.png" alt="love" />
       </div>
       <div class="c-p-lostLove">
-        <img src="img/indexImg/userIce2.png" alt="userIce" />
+        <img
+          id="user-ice4"
+          class="wow bounceInDown"
+          data-wow-delay="1.3s"
+          src="img/indexImg/userIce2.png"
+          alt="userIce"
+        />
         <img src="img/indexImg/lostLove.png" alt="love" />
       </div>
     </section>
 
     <section class="index-store-bgc">
       <img class="store-bgc" src="img/indexImg/store-bgc.png" alt="store" />
-      <div class="index-title-group">
+      <div class="index-title-group wow swing">
         <div class="index-title-icon">
           <img src="img/indexImg/love-icon3.png" alt="icon" />
         </div>
@@ -448,10 +534,10 @@
       </div>
 
       <div class="store-group">
-        <img src="img/indexImg/store.png" alt="store" />
+        <a href="shop.html"> <img src="img/indexImg/store.png" alt="store"/></a>
       </div>
       <div class="store-group-item-group">
-        <div class="store-item-single">
+        <div class="store-item-single wow bounceInRight">
           <span class="store-item-text">SINGLE</span>
           <div class="store-item-img">
             <div class="store-item-img-box">
@@ -463,7 +549,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -477,7 +563,10 @@
             </div>
           </a>
         </div>
-        <div class="store-item-first-love">
+        <div
+          class="store-item-first-love wow bounceInRight"
+          data-wow-delay="0.5s"
+        >
           <span class="store-item-text">FIRST LOVE</span>
           <div class="store-item-img">
             <div class="store-item-img-box">
@@ -489,7 +578,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -503,7 +592,10 @@
             </div>
           </a>
         </div>
-        <div class="store-item-fall-in-love">
+        <div
+          class="store-item-fall-in-love wow bounceInRight"
+          data-wow-delay="1s"
+        >
           <span class="store-item-text">FALL IN LOVE</span>
           <div class="store-item-img">
             <div class="store-item-img-box">
@@ -515,7 +607,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -529,7 +621,10 @@
             </div>
           </a>
         </div>
-        <div class="store-item-break-up">
+        <div
+          class="store-item-break-up wow bounceInRight"
+          data-wow-delay="1.5s"
+        >
           <span class="store-item-text">BREAK UP</span>
           <div class="store-item-img">
             <div class="store-item-img-box">
@@ -541,7 +636,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="newshop.html">
+          <a class="store-button-custom" href="shop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -565,7 +660,7 @@
     </section>
 
     <section class="index-leavemessage-bgc">
-      <div class="index-title-group">
+      <div class="index-title-group wow rotateInDownLeft">
         <div class="index-title-icon">
           <img src="img/indexImg/love-icon4.png" alt="icon" />
         </div>
@@ -575,7 +670,7 @@
         </div>
       </div>
       <div class="leavemessage-item-group">
-        <div class="message-item single">
+        <div class="message-item single wow flipInY">
           <div class="leavemessage-cloud">
             <img src="img/indexImg/store/store-single-item-icon.png" alt="" />
           </div>
@@ -595,25 +690,11 @@
               <span class="s-text">#語重心長</span>
             </div>
           </div>
-          <div class="message-footer">
-            <button type="button">
-              <div class="message-button-icon">
-                <img src="img/indexImg/store/belaud-icon.png" alt="讚按鈕" />
-              </div>
-              <span>10</span>
-            </button>
-            <button type="button">
-              <div class="message-button-icon-share">
-                <img src="img/indexImg/store/share-icon.png" alt="讚按鈕" />
-              </div>
-              <span>分享</span>
-            </button>
-          </div>
           <div class="custom-ice">
             <img src="img/message/ice-blue.png" alt="客製冰棒" />
           </div>
         </div>
-        <div class="message-item first-love">
+        <div class="message-item first-love wow flipInY" data-wow-delay="0.5s">
           <div class="leavemessage-cloud">
             <img
               src="img/indexImg/store/store-first-lovepng-item-icon.png"
@@ -636,25 +717,11 @@
               <span class="s-text">#語重心長</span>
             </div>
           </div>
-          <div class="message-footer">
-            <button type="button">
-              <div class="message-button-icon">
-                <img src="img/indexImg/store/belaud-icon.png" alt="讚按鈕" />
-              </div>
-              <span>10</span>
-            </button>
-            <button type="button">
-              <div class="message-button-icon-share">
-                <img src="img/indexImg/store/share-icon.png" alt="讚按鈕" />
-              </div>
-              <span>分享</span>
-            </button>
-          </div>
           <div class="custom-ice">
             <img src="img/message/ice-blue.png" alt="客製冰棒" />
           </div>
         </div>
-        <div class="message-item fall-in-love">
+        <div class="message-item fall-in-love wow flipInY " data-wow-delay="1s">
           <div class="leavemessage-cloud">
             <img src="img/indexImg/store/store-love-item-icon.png" alt="" />
           </div>
@@ -674,25 +741,11 @@
               <span class="s-text">#語重心長</span>
             </div>
           </div>
-          <div class="message-footer">
-            <button type="button">
-              <div class="message-button-icon">
-                <img src="img/indexImg/store/belaud-icon.png" alt="讚按鈕" />
-              </div>
-              <span>10</span>
-            </button>
-            <button type="button">
-              <div class="message-button-icon-share">
-                <img src="img/indexImg/store/share-icon.png" alt="讚按鈕" />
-              </div>
-              <span>分享</span>
-            </button>
-          </div>
           <div class="custom-ice">
             <img src="img/message/ice-blue.png" alt="客製冰棒" />
           </div>
         </div>
-        <div class="message-item break-up">
+        <div class="message-item break-up wow flipInY" data-wow-delay="1.5s">
           <div class="leavemessage-cloud">
             <img
               src="img/indexImg/store/store-lost-love-item-icon.png"
@@ -714,20 +767,6 @@
               <p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
               <span class="s-text">#語重心長</span>
             </div>
-          </div>
-          <div class="message-footer">
-            <button type="button">
-              <div class="message-button-icon">
-                <img src="img/indexImg/store/belaud-icon.png" alt="讚按鈕" />
-              </div>
-              <span>10</span>
-            </button>
-            <button type="button">
-              <div class="message-button-icon-share">
-                <img src="img/indexImg/store/share-icon.png" alt="讚按鈕" />
-              </div>
-              <span>分享</span>
-            </button>
           </div>
           <div class="custom-ice">
             <img src="img/message/ice-blue.png" alt="客製冰棒" />
@@ -754,13 +793,13 @@
         src="img/indexImg/course/course-cloud-bgc.png"
         alt="course-cloud"
       />
-      <div class="index-title-group">
+      <div class="index-title-group wow rollIn">
         <div class="index-title-icon">
           <img src="img/indexImg/course/love-icon5.png" alt="icon" />
         </div>
         <div class="index-title-content">
           <h2>體驗課程</h2>
-          <span>各式各樣的冰品都在戀冰商店唷</span>
+          <span>參加各種活動來增加自己的甜蜜愛情吧</span>
         </div>
       </div>
       <div id="course-blue-ship" class="course-blue-ship">
@@ -810,7 +849,7 @@
                 alt="course-ice-icon"
               />
             </div>
-            <h3>一班課程</h3>
+            <h3>一般課程</h3>
           </div>
           <div class="course-title-content">
             <h4>戀愛小馬夢幻冰品</h4>
@@ -826,7 +865,7 @@
                 <div class="course-inner-style">
                   <div class="course-button-text-style">
                     <span class="course-button-text">
-                      立即揪團
+                      立即參加
                     </span>
                   </div>
                 </div>
@@ -853,7 +892,7 @@
     </section>
 
     <section class="index-news-bgc">
-      <div class="index-title-group">
+      <div class="index-title-group wow bounceInDown">
         <div class="index-title-icon">
           <img src="img/indexImg/news/love-icon6.png" alt="icon" />
         </div>
@@ -862,37 +901,40 @@
           <span>菓籽戀冰所的最新消息都在這哦</span>
         </div>
       </div>
-      <div class="index-news-content">
+      <div class="index-news-content wow bounceInUp">
         <div class="index-news-content-group">
           <div class="index-news-content-item-group">
             <div class="index-news-content-img">
               <img src="img/indexImg/news/news-img.png" alt="" />
             </div>
             <div class="index-news-content-item">
-              <div class="index-news-content-list">
-                <div class="index-news-content-icon">最新消息</div>
-                <div class="index-news-conten-text-group">
-                  <span>【菓籽戀冰所】</span>
-                  <h3>《2019》水果冰特展 系列專題講座</h3>
-                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                </div>
-              </div>
-              <div class="index-news-content-list">
-                <div class="index-news-content-icon-g">最新消息</div>
-                <div class="index-news-conten-text-group">
-                  <span>【菓籽戀冰所】</span>
-                  <h3>《2019》水果冰特展 系列專題講座</h3>
-                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                </div>
-              </div>
-              <div class="index-news-content-list">
-                <div class="index-news-content-icon-y">最新消息</div>
-                <div class="index-news-conten-text-group">
-                  <span>【菓籽戀冰所】</span>
-                  <h3>《2019》水果冰特展 系列專題講座</h3>
-                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                </div>
-              </div>
+              <a href="">
+                <div class="index-news-content-list">
+                  <div class="index-news-content-icon">最新消息</div>
+                  <div class="index-news-conten-text-group">
+                    <h3>《2019》水果冰特展 系列講座</h3>
+                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                  </div>
+                </div></a
+              >
+              <a href="">
+                <div class="index-news-content-list">
+                  <div class="index-news-content-icon-g">揪團課程</div>
+                  <div class="index-news-conten-text-group">
+                    <h3>《2019》水果冰特展 系列講座</h3>
+                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                  </div>
+                </div></a
+              >
+              <a href="">
+                <div class="index-news-content-list">
+                  <div class="index-news-content-icon-y">一般課程</div>
+                  <div class="index-news-conten-text-group">
+                    <h3>《2019》水果冰特展 系列講座</h3>
+                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                  </div>
+                </div></a
+              >
             </div>
           </div>
         </div>
@@ -912,6 +954,10 @@
     <footer>
       <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
     </footer>
+    <script src="WOW-master/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="js/nav.js"></script>
     <script src="js/index.js"></script>
   </body>
