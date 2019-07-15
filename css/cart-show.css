@@ -239,6 +239,10 @@
   border-radius: 20px;
 }
 
+.page-cartlist form {
+  padding: 10px;
+}
+
 .page-cartlist .fa-trash {
   position: absolute;
   position: absolute;
@@ -530,6 +534,9 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  .page-cartlist form {
+    padding: 0px;
+  }
   .page-cartlist .cart-row {
     background-color: white;
     border-bottom: 1px solid #c8c8c8;
@@ -758,4 +765,4 @@
     padding: 5px 0px;
   }
 }
-/*# sourceMappingURL=cartlist.css.map */
+/*# sourceMappingURL=cart-show.css.map */

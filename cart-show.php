@@ -1,3 +1,8 @@
+<?php 
+ob_start();
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +15,7 @@
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/cartlist.css">
+  <link rel="stylesheet" href="css/cart-show.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
@@ -89,18 +94,11 @@
     </div>
     <img class="shopping-cart-icon-mp" src="img/navBar/shoppingCartIcon.png" alt="shoppingCartIcon.png" />
   </header>
-  <!-- <section class="cart-step">
-        <ul class="step">
-            <li class="active step-item">外觀</li>
-            <li class="step-item">基底</li>
-            <li class="step-item">加料</li>
-            <div class="clearfix"></div>
-        </ul>
-</section> -->
+ 
 
-
+  
   <div class="cart-head m-a">
-    <h2 class="cart-title">購物車</h2>
+    <h2 class="cart-title">購物清單</h2>
     <div class="cart-column des-flex ai-c ju-c  p-10 dis-mobile-n ">
       <div class="col-lg-2"><span class="text-20">商品</span></div>
       <div class="col-lg-2"><span class="text-20">品名</span></div>
@@ -110,7 +108,57 @@
       <div class="col-lg-2 "><span class="text-20">刪除</span></div>
     </div>
   </div>
+
+  <?php
+  foreach($_SESSION['cart'] as $i=>$value){
+
+    // echo $_SESSION["cart"][$prod_no];
+  
+  ?>
+
   <form action="get">
+    <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
+      <div class="col-lg-2 col-6 item-pic">
+        <div class="col-2 m-a"><img src="img/shop/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
+      </div>
+      <div class="col-lg-2 col-6 mobile-price">
+        <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
+        <p class="dis-lg-n">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></p>
+      </div>
+      <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></div>
+      <div class="col-lg-2 col-6 cartlist-btn">
+        <span class="btn-numbox col-4">
+          <input type='button' value='-' class='qtyminus' field='quantity' />
+          <input type='text' name='quantity' value='0' class='qty' />
+          <input type='button' value='+' class='qtyplus' field='quantity' />
+        </span>
+      </div>
+      <div class="col-lg-2 col-6 small-total"><span>NT<?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
+      <div class="col-lg-2 delete"><span><i class="fas fa-trash"></i></span></div>
+    </div>
+  </form>
+ 
+ 
+<?php
+  }
+ ?>
+
+  <div class="total-pri container p-10 ">
+    <p><span>總計:450元</span></p>
+  </div>
+ <div class="cart-btn container des-flex ju-c">
+    <a href="shop.html">
+      <div class="continue-shop"><span class="continue-shop-in">繼續購物</span></div>
+    </a>
+
+  </div>
+
+
+
+
+
+<!-- 備份 -->
+  <!-- <form action="get">
     <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
       <div class="col-lg-2 col-6 item-pic">
         <div class="col-2 m-a"><img src="img/shop/inlove/inlove-ball01.png" alt=""></div>
@@ -119,7 +167,7 @@
         <p>芋頭牛奶</p>
         <p class="dis-lg-n">價格:450</p>
       </div>
-      <div class="col-lg-2 col-6 dis-mobile-n unit-price">單價450s</div>
+      <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT450</div>
       <div class="col-lg-2 col-6 cartlist-btn">
         <span class="btn-numbox col-4">
           <input type='button' value='-' class='qtyminus' field='quantity' />
@@ -135,55 +183,34 @@
     <p><span>總計:450元</span></p>
   </div>
   <div class="cart-btn container des-flex ju-c">
-    <a href="newshop.html">
+    <a href="shop.html">
       <div class="continue-shop"><span class="continue-shop-in">繼續購物</span></div>
     </a>
 
   </div>
 
-
-  <section class="pay-transport container p-20 bagc-w">
-    <h3 class="pay-transport-title">付款方式及貨運方式</h3>
-
-
-    <div class="pay-transport-btn tabtitle">
-      <ul class="tabtitle">
-        <li class="pay col-lg-2 "><a href="#pay-way">付款方式</a> </li>
-        <li class="transport col-lg-2"><a href="#transport-way">貨運方式</a> </li>
-      </ul>
-    </div>
-    <!-- <ul class="tabtitle">
-      <li> <a href="#pay-way">1231</a> </li>
-      <li> <a href="#transport-way">11131441</a> </li>
-    </ul> -->
-
-    <div class="p-10 tab-inner" id="pay-way">
-      <p>測試內容不知道會不會成功</p>
-      <div class="p-10 rela ">
-        <input type="radio" name="pay-method" id="tick">
-        <label for="tick"><span></span></label>
-        <span class="transport-check">貨到付款</span>
-      </div>
-      <div class="p-10">
-        <input type="radio" name="pay-method" id="tick1">
-        <label for="tick1"><span></span></label>
-        <span class="onlion-check">線上刷卡</span>
-      </div>
-    </div>
-    <div class="p-10 tab-inner" id="transport-way">
-      <p>我式貨運方式請讓我出現或消失</p>
-    </div>
-  </section>
-
+ -->
 
   <div class="cart-btn container des-flex ju-c;">
-    <a href="confirm.html">
+    <a href="cart-order.html">
       <button type="submit" class="button">
         <div class="go-buy"><span class="go-buy-in">進行結帳</span>
       </button>
     </a>
 
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <section class="maybe-like container ">
@@ -227,7 +254,7 @@
   <!-- <script src="js/cartlist.js"></script> -->
   <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
+  <!-- <script>
     $(function () {
       var $li = $('ul.tabtitle li');
       $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
@@ -241,7 +268,7 @@
 
 
 
-  </script>
+  </script> -->
 </body>
 
 </html>
