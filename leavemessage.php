@@ -76,7 +76,7 @@
 					<option>分手</option>
 				</select>
 			</div>
-			<a class="leave-message" href="writemessage.html">
+			<a class="leave-message" href="writemessage.php">
 				<span class="leave-message-btn" id="leaveMessage">
 					<img src="img/btn/ICE.png" alt="" class="testclass">我要留言
 				</span>

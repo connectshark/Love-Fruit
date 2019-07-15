@@ -18,42 +18,6 @@
 <?php
     require_once("nav.php");
     ?>
-    <div id="robot-container" class="robot-container">
-      <div id="robot-title-block" class="robot-title-block">
-        <span class="robot-title-icon"
-          ><img
-            id="robot-title-icon-img"
-            src="img/navBar/robot/robot-icon.png"
-            alt="robot-icon"
-          />
-        </span>
-        <h3>冰棒小達人</h3>
-        <div class="robot-pic">
-          <img src="img/navBar/robot/robot.png" alt="robot-pic" />
-        </div>
-      </div>
-      <div id="robot-conversation-block" class="robot-conversation-block">
-        <div id="robot-conversation-list">
-          <div class="robot-conversation">
-            <p class="robot_text"><span>小達人:</span>請問有需要幫忙嗎？</p>
-          </div>
-        </div>
-      </div>
-      <ul class="chatBot-keyword">
-        <li class="fruit">草莓</li>
-        <li class="fruit">香蕉</li>
-        <li class="fruit">青蘋果</li>
-        <li class="fruit">葡萄</li>
-        <li class="fruit">橘子</li>
-        <li class="fruit">藍莓</li>
-      </ul>
-      <form>
-        <div class="robot-input-block">
-          <textarea name="message" id="message"></textarea>
-          <button type="button" id="robot-submit">送出</button>
-        </div>
-      </form>
-    </div>
 
   <div class="news-wrap ">
       <section class="banner bubble-box">
@@ -109,7 +73,7 @@
 
       <div class="items-group">
         <div class="item">
-          <a href="newsInner.html">
+          <a href="newsinner.php">
             <div class="sort">園區公告</div>
             <div class="img"><img src="" alt=""></div>
             <span class='time'>2019.07.08</span>
@@ -119,7 +83,7 @@
           </a>
         </div>
         <div class="item">
-          <a href="newsInner.html">
+          <a href="newsinner.php">
             <div class="sort">園區公告 </div>
             <div class="img"><img src="" alt=""></div>
             <span class='time'>2019.07.08</span>
@@ -129,7 +93,7 @@
           </a>
         </div>
         <div class="item">
-          <a href="newsInner.html">
+          <a href="newsinner.php">
             <div class="sort"> 園區公告</div>
             <div class="img"><img src="" alt=""></div>
             <span class='time'>2019.07.08</span>
@@ -139,7 +103,7 @@
           </a>
         </div>
         <div class="item">
-          <a href="newsInner.html">
+          <a href="newsinner.php">
             <div class="sort">園區公告 </div>
             <div class="img"><img src="" alt=""></div>
             <span class='time'>2019.07.08</span>
@@ -149,7 +113,7 @@
           </a>
         </div>
         <div class="item">
-          <a href="newsInner.html">
+          <a href="newsinner.php">
             <div class="sort">園區公告 </div>
             <div class="img"><img src="" alt=""></div>
             <span class='time'>2019.07.08</span>
@@ -159,7 +123,7 @@
           </a>
         </div>
         <div class="item">
-          <a href="newsInner.html">
+          <a href="newsinner.php">
             <div class="sort">園區公告</div>
             <div class="img"><img src="" alt=""></div>
             <span class='time'>2019.07.08</span>
