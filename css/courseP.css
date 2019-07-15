@@ -5,6 +5,7 @@
 }
 
 * {
+  outline: none;
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -33,10 +34,10 @@ body {
   }
   .group-wrap .cloud:nth-child(0n + 2), .general-wrap .cloud:nth-child(0n + 2) {
     width: 8%;
-    top: 70%;
+    top: 60%;
     left: 20%;
-    -webkit-animation: clouda 30s linear 0s infinite alternate;
-            animation: clouda 30s linear 0s infinite alternate;
+    -webkit-animation: clouda 30s linear 1s infinite alternate;
+            animation: clouda 30s linear 1s infinite alternate;
   }
   .group-wrap .cloud:nth-child(0n + 3), .general-wrap .cloud:nth-child(0n + 3) {
     width: 18%;
@@ -46,16 +47,16 @@ body {
             animation: cloudb 40s linear 0s infinite alternate;
   }
   .group-wrap .cloud:nth-child(0n + 4), .general-wrap .cloud:nth-child(0n + 4) {
-    right: 30%;
+    width: 9%;
     top: 50%;
     right: 0%;
-    -webkit-animation: cloudb 50s linear 0s infinite alternate;
-            animation: cloudb 50s linear 0s infinite alternate;
+    -webkit-animation: cloudb 50s linear 1s infinite alternate;
+            animation: cloudb 50s linear 1s infinite alternate;
   }
   .group-wrap .cloud:nth-child(0n + 5), .general-wrap .cloud:nth-child(0n + 5) {
     width: 15%;
     right: 80%;
-    top: 100%;
+    top: 40%;
     -webkit-animation: cloudb 60s linear 0s infinite alternate;
             animation: cloudb 60s linear 0s infinite alternate;
   }
@@ -681,15 +682,16 @@ body {
   }
 }
 
-.message-wrap {
+.general-message-wrap {
   background-color: #fff8e4;
+  padding-bottom: 50px;
 }
 
-.message-wrap .title-box {
+.general-message-wrap .title-box {
   text-align: center;
 }
 
-.message-wrap .title-box .message-title {
+.general-message-wrap .title-box .message-title {
   color: #fff;
   font-size: 40px;
   position: relative;
@@ -697,7 +699,7 @@ body {
   text-align: center;
 }
 
-.message-wrap .title-box .message-title:after {
+.general-message-wrap .title-box .message-title:after {
   z-index: -1;
   content: "課程留言板";
   position: absolute;
@@ -708,11 +710,11 @@ body {
   -webkit-text-stroke: 8px #db4d6d;
 }
 
-.message-wrap .title-box h3 {
+.general-message-wrap .title-box h3 {
   font-family: A-OTF-M;
 }
 
-.message-wrap .title-box span {
+.general-message-wrap .title-box span {
   text-align: center;
   font-size: 18px;
   color: #434343;
@@ -720,10 +722,10 @@ body {
   line-height: 32px;
 }
 
-.message-wrap .leave-message {
+.general-message-wrap .leave-message-wrap {
+  width: 90%;
   margin: 30px auto;
   padding: 20px 30px;
-  width: 70%;
   border-radius: 10px;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -741,22 +743,28 @@ body {
   margin: 20px auto;
 }
 
-.message-wrap .leave-message .message-meb {
+@media all and (min-width: 769px) {
+  .general-message-wrap .leave-message-wrap {
+    width: 70%;
+  }
+}
+
+.general-message-wrap .leave-message-wrap .message-mem {
   text-align: center;
   line-height: 1.5;
 }
 
-.message-wrap .leave-message .message-meb i {
+.general-message-wrap .leave-message-wrap .message-mem i {
   color: #fff;
   font-size: 50px;
 }
 
-.message-wrap .leave-message .message-meb p {
+.general-message-wrap .leave-message-wrap .message-mem p {
   font-size: 18px;
   color: #fff;
 }
 
-.message-wrap .leave-message .balloons textarea {
+.general-message-wrap .leave-message-wrap .balloons textarea {
   width: 100%;
   font-size: 16px;
   border-radius: 20px;
@@ -767,16 +775,16 @@ body {
   resize: none;
 }
 
-.message-wrap .leave-message .message-btn {
+.general-message-wrap .leave-message-wrap .message-btn {
   padding-top: 20px;
 }
 
-.message-wrap .leave-message .message-btn .message-btn-out {
+.general-message-wrap .leave-message-wrap .message-btn .message-btn-out {
   width: 100%;
   margin: auto;
 }
 
-.message-wrap .leave-message .message-btn .message-btn-out {
+.general-message-wrap .leave-message-wrap .message-btn .message-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -792,7 +800,7 @@ body {
   cursor: pointer;
 }
 
-.message-wrap .leave-message .message-btn .message-btn-out .message-btn-in {
+.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -810,21 +818,177 @@ body {
   cursor: pointer;
 }
 
-.message-wrap .leave-message .message-btn .message-btn-out .message-btn-in:hover {
+.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.message-wrap .leave-message .message-btn .message-btn-out .message-btn-in:active {
+.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.message-wrap .leave-message .message-btn .message-btn-out .message-btn-in:after {
+.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:after {
   z-index: -1;
   content: "我要留言";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.general-message-wrap .mem-message-wrap {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 30px auto 0;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #FFC8C7;
+}
+
+@media all and (min-width: 769px) {
+  .general-message-wrap .mem-message-wrap {
+    width: 70%;
+    padding: 20px 30px;
+    font-size: 18px;
+  }
+}
+
+.general-message-wrap .mem-message-wrap .mem-message-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+}
+
+.general-message-wrap .mem-message-wrap .message-mem {
+  text-align: center;
+}
+
+.general-message-wrap .mem-message-wrap .message-mem i {
+  color: #aaa;
+  font-size: 55px;
+}
+
+.general-message-wrap .mem-message-wrap .message-con {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.general-message-wrap .mem-message-wrap .message-con p {
+  color: #434343;
+}
+
+.general-message-wrap .mem-message-wrap .message-con::before {
+  content: "";
+  border-style: solid solid solid solid;
+  border-color: transparent   #fff transparent transparent;
+  border-width: 15px  25px 15px 15px;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  left: -40px;
+  top: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .general-message-wrap .mem-message-wrap .message-con::before {
+    border-width: 10px  15px 10px 10px;
+    left: -25px;
+    top: 20px;
+  }
+}
+
+.general-message-wrap .mem-message-wrap .message-con .mem-ifo {
+  width: 95%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: #db4d6d solid 1px;
+}
+
+.general-message-wrap .mem-message-wrap .message-con .mem-con {
+  width: 95%;
+  margin: auto;
+  line-height: 36px;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn {
+  padding-top: 20px;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn .more-btn-out {
+  width: 100%;
+  margin: auto;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn .more-btn-out {
+  display: block;
+  width: 135px;
+  padding: 2px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  position: relative;
+  padding: 1px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 135px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:after {
+  z-index: -1;
+  content: "查看更多";
   position: absolute;
   left: 0px;
   right: 0px;
