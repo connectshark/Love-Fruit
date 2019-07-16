@@ -526,6 +526,8 @@ body {
   width: 40%;
   left: -10%;
   bottom: -5%;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 .custom-ice img {
