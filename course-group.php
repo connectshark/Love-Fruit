@@ -64,23 +64,27 @@
                 </ul>
               </div>
             </div>
-            <div id="scroll-message" class="course-btn  col-md-12">
-              <div class="course-ice-btn-out">
-                <span class="course-ice-btn-in">
-                  <img src="img/btn/ICE.png" alt="btn">
-                  我要開團
-                </span>
+            
+              <div id="scroll-message" class="course-btn  col-md-12">
+                <a href="#comment">
+                  <div class="course-ice-btn-out">
+                  <span class="course-ice-btn-in">
+                    <img src="img/btn/ICE.png" alt="btn">
+                    我要開團
+                  </span>
+                </div> 
+              </a>
               </div>
-            </div>
+           
           </div>
         </div>
       </div>
     </div>
   </section>
- <div id="comment" class="group-message-cloud"></div>
+ <div  class="group-message-cloud"></div>
   <section class="group-message-wrap">
    
-    <div class="title-box">
+    <div id="comment"  class="title-box">
       <h3 class="message-title">開團留言板</h3>
       <span>快來開團玩課程！</span>
     </div>
@@ -112,7 +116,7 @@ e-mail：
       </div>
       <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
       <div class="array-btn">
-        <a class="array-ice-btn-out" href="courseGroupForm.html">
+        <a class="array-ice-btn-out" href="course-group-form.php">
           <span class="array-ice-btn-in">
             <img src="img/btn/ICE.png" alt="btn">
             主揪報團

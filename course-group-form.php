@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="css/course.css">
+  
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/courseP.css">
 </head>

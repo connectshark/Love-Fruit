@@ -65,7 +65,7 @@
                                         </ul>
                                     </div>
                                     <div class="course-btn">
-                                        <a class="course-ice-btn-out" href="courseGeneralForm.html">
+                                        <a class="course-ice-btn-out" href="course-general-form.php">
                                             <span class="course-ice-btn-in">
                                                 <img src="img/btn/ICE.png" alt="btn">
                                                 我要預約
@@ -105,7 +105,7 @@
                                     </ul>
                                 </div>
                                 <div class="course-btn">
-                                    <a class="course-ice-btn-out" href="courseGeneralForm.html">
+                                    <a class="course-ice-btn-out" href="course-general-form.php">
                                         <span class="course-ice-btn-in">
                                             <img src="img/btn/ICE.png" alt="btn">
                                             我要預約
