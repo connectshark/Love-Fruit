@@ -5,8 +5,8 @@ try {
 	$psw = "root";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
 	$pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select * from customize where mem_no = :memNo";
-	$memNo = $_REQUEST['memNo'];//之後改為session
+	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo";
+	$memNo = 2;//之後改為session
 	$messages = $pdo->prepare($sql);
 	$messages -> bindValue(':memNo',$memNo);
 	$messages -> execute();
@@ -52,7 +52,7 @@ try {
 					</div>
 					<div class="message-header">
 						<i class="fas fa-user-circle"></i>
-						<p>會員名稱</p>
+						<p><?php echo $row->mem_name; ?></p>
 					</div>
 
 					<div class="message-body">
@@ -84,7 +84,7 @@ try {
 							<i class="fas fa-user-circle"></i>
 						</div>
 						<div class="user-name">
-							<p>使用者名稱</p>
+							<p><?php echo $row->mem_name; ?></p>
 						</div>
 					</div>
 					<div class="letter-body">
