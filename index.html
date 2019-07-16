@@ -18,12 +18,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   </head>
+
   <body>
     <input type="checkbox" id="menu-control" />
     <header id="header">
       <div class="item-group">
         <div class="logo-item">
-          <a href="index.html" class="logo" title="菓籽戀冰所"
+          <a href="index.php" class="logo" title="菓籽戀冰所"
             ><img src="img/navBar/logo.png" alt="菓籽戀冰所"
           /></a>
           <label class="hb" for="menu-control">
@@ -38,7 +39,7 @@
               <a
                 id="qa-item-show"
                 class="nav-text"
-                href="qa.html"
+                href="qa.php"
                 title="戀愛冰品"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >戀愛冰品</span
@@ -49,7 +50,7 @@
               <a
                 id="custom-item-show"
                 class="nav-text"
-                href="custom.html"
+                href="custom.php"
                 title="冰棒客製"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >冰棒客製</span
@@ -60,7 +61,7 @@
               <a
                 id="message-item-show"
                 class="nav-text"
-                href="leavemessage.html"
+                href="leavemessage.php"
                 title="愛的留言"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >愛的留言</span
@@ -71,7 +72,7 @@
               <a
                 id="newshop-item-show"
                 class="nav-text"
-                href="shop.html"
+                href="shop.php"
                 title="冰品商城"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >冰品商城</span
@@ -85,22 +86,22 @@
               <a
                 id="course-item-show"
                 class="nav-text"
-                href="courseP.html"
+                href="course.php"
                 title="體驗課程"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >體驗課程</span
                 ></a
               >
               <ul id="nav-drop-down-menu" class="nav-drop-down-menu">
-                <li><a href="courseP-group.html">揪團課程</a></li>
-                <li><a href="courseP-general.html">一般課程</a></li>
+                <li><a href="course-group.php">揪團課程</a></li>
+                <li><a href="course-general.php">一般課程</a></li>
               </ul>
             </li>
             <li>
               <a
                 id="new-item-show"
                 class="nav-text"
-                href="news.html"
+                href="news.php"
                 title="最新消息"
                 ><img src="img/navBar/navIcon.png" alt="iceIcon" /><span
                   >最新消息</span
@@ -126,10 +127,9 @@
                   /></a>
                 </li>
                 <li class="member-icon">
-                  <a class="nav-icon-login" href="account-profile.html"
-                    ><img src="img/navBar/memberIcon.png" alt="會員" />
-                    <span>登入</span></a
-                  >
+                  <a class="nav-icon-login" href="account-profile.php"
+                    ><img src="img/navBar/memberIcon.png" alt="會員" /> </a
+                  ><span id="nav-login-icon">登入</span>
                 </li>
               </ul>
             </li>
@@ -141,9 +141,8 @@
       <div class="icon-mp">
         <div class="icon-login-box-mp">
           <a class="nav-icon-login" href="javascript:;"
-            ><img src="img/navBar/memberIcon.png" alt="會員" />
-            <span>登入</span></a
-          >
+            ><img src="img/navBar/memberIcon.png" alt="會員" /> </a
+          ><span id="nav-login-icon-p">登入</span>
         </div>
         <a href="javascript:;"
           ><img src="img/navBar/shoppingCartIcon.png" alt="購物車"
@@ -194,8 +193,153 @@
         </form>
       </div>
     </header>
-
-    <section class="index-hero-bgc ">
+    <div id="member-login" class="member-login">
+      <div id="login-interface" class="login-interface">
+        <div id="member-login-close-button" class="member-login-close-button">
+          <img src="img/navBar/login-interface/pop-close.png" alt="pop-close" />
+        </div>
+        <h2>會員登入</h2>
+        <input
+          type="text"
+          name="mem-id"
+          id="mem-id"
+          value
+          placeholder="  帳號："
+        />
+        <input
+          type="password"
+          name="mem-psw"
+          id="mem-psw"
+          value
+          placeholder="  密碼："
+        />
+        <div class="login-interface-group">
+          <span id="register">註冊新會員</span>
+          <span id="psw-back">取回密碼</span>
+          <div class="member-login-button-style">
+            <div class="member-login-button-style-botton">
+              <div class="member-login-inner-style">
+                <div class="member-login-button-text-style">
+                  <span class="member-login-button-text">
+                    <img
+                      class="member-login-btn-ice"
+                      src="img/btn/ICE.png"
+                      alt="ICE"
+                    />
+                    登入
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="retrieve-password" class="retrieve-password">
+        <div
+          id="retrieve-password-close-button"
+          class="member-login-close-button"
+        >
+          <img src="img/navBar/login-interface/pop-close.png" alt="pop-close" />
+        </div>
+        <h2>取回密碼</h2>
+        <input
+          type="text"
+          name="retrieve-mem-id"
+          id="retrieve-mem-id"
+          value
+          placeholder="  帳號："
+        />
+        <input
+          type="email"
+          name="emailaddress"
+          id="email-address"
+          value
+          placeholder="  信箱："
+        />
+        <div class="login-interface-group">
+          <div class="member-login-button-style">
+            <div class="member-login-button-style-botton">
+              <div class="member-login-inner-style">
+                <div class="member-login-button-text-style">
+                  <span class="retrieve-password-button-text">
+                    <img
+                      class="member-login-btn-ice"
+                      src="img/btn/ICE.png"
+                      alt="ICE"
+                    />
+                    確認送出
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="register-account"></div>
+        </div>
+      </div>
+      <div id="register-account" class="register-account">
+        <div
+          id="register-account-close-button"
+          class="register-account-close-button"
+        >
+          <img src="img/navBar/login-interface/pop-close.png" alt="pop-close" />
+        </div>
+        <h2 id="register-account-title">會員註冊</h2>
+        <div class="register-account-group">
+          <input
+            type="text"
+            name="register-account-memName"
+            id="register-account-memName"
+            value
+            placeholder="  姓名："
+          />
+          <input
+            type="text"
+            name="register-account-mem-id"
+            id="register-account-mem-id"
+            value
+            placeholder="  帳號："
+          />
+          <input
+            type="password"
+            name="register-account-mem-psw"
+            id="register-account-mem-psw"
+            value
+            placeholder="  密碼："
+          />
+          <input
+            type="password"
+            name="register-account-confirm-mem-psw"
+            id="register-account-confirm-mem-psw"
+            value
+            placeholder="  確認密碼："
+          />
+          <input
+            type="email"
+            name="register-account-emailaddress"
+            id="register-account-email-address"
+            value
+            placeholder="  信箱："
+          />
+        </div>
+        <div class="register-account-button-style">
+          <div class="register-account-button-style-botton">
+            <div class="register-account-inner-style">
+              <div class="register-account-button-text-style">
+                <span class="register-account-button-text">
+                  <img
+                    class="register-account-btn-ice"
+                    src="img/btn/ICE.png"
+                    alt="ICE"
+                  />
+                  確認送出
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="index-hero-bgc">
       <div class="mountain">
         <img src="img/indexImg/heroImg.png" alt="山" />
       </div>
@@ -549,7 +693,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="shop.html">
+          <a class="store-button-custom" href="newshop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -578,7 +722,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="shop.html">
+          <a class="store-button-custom" href="newshop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -607,7 +751,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="shop.html">
+          <a class="store-button-custom" href="newshop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -636,7 +780,7 @@
             <span>芋頭牛奶</span>
             <span>NT250</span>
           </div>
-          <a class="store-button-custom" href="shop.html">
+          <a class="store-button-custom" href="newshop.html">
             <div class="store-button-style">
               <div class="store-button-style-botton">
                 <div class="store-inner-style">
@@ -865,7 +1009,7 @@
                 <div class="course-inner-style">
                   <div class="course-button-text-style">
                     <span class="course-button-text">
-                      立即參加
+                      立即揪團
                     </span>
                   </div>
                 </div>
@@ -908,33 +1052,27 @@
               <img src="img/indexImg/news/news-img.png" alt="" />
             </div>
             <div class="index-news-content-item">
-              <a href="">
-                <div class="index-news-content-list">
-                  <div class="index-news-content-icon">最新消息</div>
-                  <div class="index-news-conten-text-group">
-                    <h3>《2019》水果冰特展 系列講座</h3>
-                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                  </div>
-                </div></a
-              >
-              <a href="">
-                <div class="index-news-content-list">
-                  <div class="index-news-content-icon-g">揪團課程</div>
-                  <div class="index-news-conten-text-group">
-                    <h3>《2019》水果冰特展 系列講座</h3>
-                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                  </div>
-                </div></a
-              >
-              <a href="">
-                <div class="index-news-content-list">
-                  <div class="index-news-content-icon-y">一般課程</div>
-                  <div class="index-news-conten-text-group">
-                    <h3>《2019》水果冰特展 系列講座</h3>
-                    <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
-                  </div>
-                </div></a
-              >
+              <div class="index-news-content-list">
+                <div class="index-news-content-icon">最新消息</div>
+                <div class="index-news-conten-text-group">
+                  <h3>《2019》水果冰特展 系列講座</h3>
+                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                </div>
+              </div>
+              <div class="index-news-content-list">
+                <div class="index-news-content-icon-g">最新消息</div>
+                <div class="index-news-conten-text-group">
+                  <h3>《2019》水果冰特展 系列講座</h3>
+                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                </div>
+              </div>
+              <div class="index-news-content-list">
+                <div class="index-news-content-icon-y">最新消息</div>
+                <div class="index-news-conten-text-group">
+                  <h3>《2019》水果冰特展 系列講座</h3>
+                  <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -37,8 +37,109 @@ function init() {
 }
 window.addEventListener("load", init, false);
 
-// 機器人
 window.addEventListener("load", function() {
+  // 會員登入
+  var memberLogin = document.getElementById("member-login");
+  var navLoginIcon = document.getElementById("nav-login-icon");
+  let memberLoginCloseButton = document.getElementById(
+    "member-login-close-button"
+  );
+  let registerAccount = document.getElementById("register-account");
+  let loginInterface = document.getElementById("login-interface");
+  let retrievePassword = document.getElementById("retrieve-password");
+
+  let navLoginIconP = document.getElementById("nav-login-icon-p");
+
+  let register = document.getElementById("register");
+  let pswBack = document.getElementById("psw-back");
+  // 開關按鈕
+  let registerAccountCoseButton = document.getElementById(
+    "register-account-close-button"
+  );
+  let retrievePasswordCloseButton = document.getElementById(
+    "retrieve-password-close-button"
+  );
+  // 清空input裡面的值
+  // 會員登入
+  let memId = document.getElementById("mem-id");
+  let memPsw = document.getElementById("mem-psw");
+  // 忘記密碼
+  let retrieveMemId = document.getElementById("retrieve-mem-id");
+  let emailAddress = document.getElementById("email-address");
+  // 會員註冊
+  let registerAccountMemName = document.getElementById(
+    "register-account-memName"
+  );
+  let registerAccountMemId = document.getElementById("register-account-mem-id");
+  let registerAccountMemPsw = document.getElementById(
+    "register-account-mem-psw"
+  );
+  let registerAccountConfirmMemPsw = document.getElementById(
+    "register-account-confirm-mem-psw"
+  );
+  let registerAccountEmailAddress = document.getElementById(
+    "register-account-email-address"
+  );
+
+  // 手機會員登入文字按鈕
+  navLoginIconP.addEventListener("click", function() {
+    memberLogin.style.display = "inline-block";
+  });
+  // 會員登入文字按鈕
+  navLoginIcon.addEventListener("click", function() {
+    memberLogin.style.display = "inline-block";
+  });
+  // 取回密碼－面板關掉
+  pswBack.addEventListener("click", function() {
+    loginInterface.style.display = "none";
+    retrievePassword.style.display = "block";
+  });
+  // 註冊會員－面板關掉
+  register.addEventListener("click", function() {
+    loginInterface.style.display = "none";
+    retrievePassword.style.display = "none";
+    registerAccount.style.display = "block";
+  });
+  // 註冊會員-面板關掉
+  registerAccountCoseButton.addEventListener("click", function() {
+    loginInterface.style.display = "block";
+    registerAccount.style.display = "none";
+    memberLogin.style.display = "none";
+    //註冊會員-清空值
+    registerAccountMemName.value = "";
+    registerAccountMemId.value = "";
+    registerAccountMemPsw.value = "";
+    registerAccountConfirmMemPsw.value = "";
+    registerAccountEmailAddress.value = "";
+    //會員登入-清空值
+    memId.value = "";
+    memPsw.value = "";
+    //取回密碼-清空值
+    retrieveMemId.value = "";
+    emailAddress.value = "";
+  });
+  //登入－面板關掉
+  memberLoginCloseButton.addEventListener("click", function() {
+    memberLogin.style.display = "none";
+    memId.value = "";
+    memPsw.value = "";
+    retrieveMemId.value = "";
+    emailAddress.value = "";
+  });
+  //取回密碼－面板關掉
+  retrievePasswordCloseButton.addEventListener("click", function() {
+    memberLogin.style.display = "none";
+    loginInterface.style.display = "block";
+    retrievePassword.style.display = "none";
+    //會員登入-清空值
+    memId.value = "";
+    memPsw.value = "";
+    //取回密碼-清空值
+    retrieveMemId.value = "";
+    emailAddress.value = "";
+  });
+  // 會員登入結束
+  // 機器人
   var robotcontainer = document.getElementById("robot-container");
   var robottitleiconimg = document.getElementById("robot-title-icon-img");
   var robotTitleBlock = document.getElementById("robot-title-block");
