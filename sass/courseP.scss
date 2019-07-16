@@ -1,10 +1,9 @@
 @import "mixin/mixin";
 *{
-    outline: none;
+    // outline: none;
     // outline: #f00 solid 1px;
     text-decoration: none;  
     box-sizing: border-box;
-
 }
 body{
     font-family: "GenJyuuGothic-R";
@@ -533,15 +532,16 @@ $deep-pink:#db4d6d;
     background-image: url(../img/background.png);
 
     .wrapper{
-       
-        padding-bottom:10%; 
+        width: 95%;
         max-width: 1200px; 
-        padding-top:30%;
+        padding:30% 0 10%;
         margin: auto;
         @include rwd(desktop){
             padding-top: 150px;
+            
         }
         .title{
+            @include out-Line-Font(general-form-title,#fff,34px,5px,#6a3e26,一般課程預約);
             padding: 5% 0;
             position: relative;
             text-align:center; 
@@ -555,25 +555,26 @@ $deep-pink:#db4d6d;
                     width: 60%;
                 }
             }
-            h3{
+            .general-form-title{
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-75%);
+                transform: translate(-50%,-80%);
                 @include rwd(mobile){
                     font-size: 20px;
-                  
+
                 }
             }
         }
         form{
-            padding: 5%;
+            width: 90%;
+            padding: 3%;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 3px 3px 10px #aaa;
             margin:  auto ;
-            @include rwd(desktop){
-                width: 70%;
+            @include rwd(medium){
+                width: 80%;
             }
             img{
                 width: 20px;
@@ -597,6 +598,7 @@ $deep-pink:#db4d6d;
                 padding: 0 15px;
             }
             .check{
+                position: relative;
                 padding-bottom: 20px;
                 #course1, #course2,#time1,#time2,#time3,span{
                     visibility: hidden;
@@ -630,17 +632,39 @@ $deep-pink:#db4d6d;
                     }
                 }
                 .check-pic{
+              
                     position: relative;
-                    top: -20px;
+                    top: -40px;
+                    right: -20px;
+                    @include rwd(medium){
+                        top: -20px;
                     right:15px;
+                    }
+                    
                 }
             }
            
 
-            #date-picker{
-                padding: 10px;
+            .calender-box{
+                margin: 15px 0;
+                @include rwd(medium){
+                    padding: 10px;
                 margin: 15px;
+                }
                 
+                .calendar-top{
+                        padding: 20px 0;
+                        background-color:#ea7187;
+                        border-radius: 10px 10px 0 0;
+                        color: #fff;
+                        font-weight: bold;
+                        box-shadow: 2px 2px 2px #888888;
+                    }
+                    .mm,.yy{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                    }
                 table {
                     vertical-align: middle;
                     background-color: #fff;
@@ -649,14 +673,8 @@ $deep-pink:#db4d6d;
                     text-align: center;
                     border-radius:  0 0 10px 10px;
                     box-shadow: 2px 2px 2px #888888;
-                    #mon{
-                        padding: 20px 0;
-                        background-color:#ea7187;
-                        border-radius: 10px 10px 0 0;
-                        color: #fff;
-                        font-weight: bold;
-                        box-shadow: 2px 2px 2px #888888;
-                    }
+                    
+
                     th{
                         padding:60px 0 20px;
                         color: #ea7187;
@@ -664,19 +682,29 @@ $deep-pink:#db4d6d;
                     }
                     tr{
                         width: 100%;
-                        height: 60px;
+                        height: 30px;
+                        @include rwd(medium){
+                            height: 60px;
+            
+                        }
                     }
-                    td{
-                        width:14%;
-                        height: 60px;
-                        vertical-align:middle;
+                   
+                    .tdclass{
+                        @include rwd(medium){
+                            height: 60px;
+                            line-height: 60px;
+                            width: 60px;
+                        }
                        
+                        margin: auto;
+                        vertical-align:middle;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 30px;
                     }
-                    .now{
-                        background: #ea7187;
-                        border-radius: 30px;
-                        color: #fff;
-                    }
+                  
                 }
                     
             }
@@ -723,6 +751,7 @@ $deep-pink:#db4d6d;
             padding-top: 150px;
         }
         .title{
+            @include out-Line-Font(group-form-title,#fff,34px,5px,#6a3e26,揪團課程預約);
             padding: 5% 0;
             position: relative;
             text-align:center; 
@@ -790,8 +819,7 @@ $deep-pink:#db4d6d;
            
             }
 
-            #date-picker{
-           
+            #calender-box{
                 margin: 10px 0;
                 border-radius: 20px;
                 border: 5px solid $bg-yellow;
@@ -850,7 +878,6 @@ $deep-pink:#db4d6d;
                  width: 90%;
             margin: auto;
             }
-           
             @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,  確認預約);
         }
     }   

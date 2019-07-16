@@ -1,3 +1,23 @@
+<?php 
+try {
+	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+  $pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "select * from course_msg where mem_no = :memNo";
+	$memNo = 1;//之後改為session
+	$messages = $pdo->prepare($sql);
+	$messages -> bindValue(':memNo',$memNo);
+	$messages -> execute();
+	$row = $messages -> fetchObject();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+  $errMsg .= "行數:". $e->getLine()."<br>";
+  echo $errMsg;
+}
+?>
+
 <html lang="UTF-8">
 
 <head>
@@ -64,23 +84,27 @@
                 </ul>
               </div>
             </div>
-            <div id="scroll-message" class="course-btn  col-md-12">
-              <div class="course-ice-btn-out">
-                <span class="course-ice-btn-in">
-                  <img src="img/btn/ICE.png" alt="btn">
-                  我要開團
-                </span>
+            
+              <div id="scroll-message" class="course-btn  col-md-12">
+                <a href="#comment">
+                  <div class="course-ice-btn-out">
+                  <span class="course-ice-btn-in">
+                    <img src="img/btn/ICE.png" alt="btn">
+                    我要開團
+                  </span>
+                </div> 
+              </a>
               </div>
-            </div>
+           
           </div>
         </div>
       </div>
     </div>
   </section>
- <div id="comment" class="group-message-cloud"></div>
+ <div  class="group-message-cloud"></div>
   <section class="group-message-wrap">
    
-    <div class="title-box">
+    <div id="comment"  class="title-box">
       <h3 class="message-title">開團留言板</h3>
       <span>快來開團玩課程！</span>
     </div>
@@ -112,7 +136,7 @@ e-mail：
       </div>
       <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
       <div class="array-btn">
-        <a class="array-ice-btn-out" href="courseGroupForm.html">
+        <a class="array-ice-btn-out" href="course-group-form.php">
           <span class="array-ice-btn-in">
             <img src="img/btn/ICE.png" alt="btn">
             主揪報團
@@ -120,22 +144,19 @@ e-mail：
         </a>
       </div>
       <div class="team-name">
-        <span>團名：</span><span>快來一起玩～～～</span>
+        <span>團名：<?php echo $row->msg_title;?> </span>
       </div>
       <div class="main-group-message">
 
         <div class="message-meb col-md-2 col-2">
           <i class="fas fa-user-circle"></i>
-          <p>Sandra</p>
-          <p class="time">2019-07-07</p>
+          <p>會員名稱</p>
+          <p class="time"> <?php echo $row->msg_date;?> </p>
         </div>
 
         <div class="message-con col-md-10 col-10">
           <p>
-            揪團課程時間：2019/07/02---上午 10:00<br>
-            聯絡電話：0960529999<br>
-            e-mail：abc123@gmail.com<br>
-            快來一起做冰淇淋蛋糕！！！！！！！<br>
+            <?php echo $row->msg_content; ?>
           </p>
         </div>
 
@@ -160,15 +181,12 @@ e-mail：
               <div class="message-meb col-md-2 col-2">
                 <i class="fas fa-user-circle"></i>
                 <p>Sandra</p>
-                <p class="time">2019-07-07</p>
+                <p class="time"><?php echo $row->msg_date; ?></p>
               </div>
 
               <div class="message-con col-md-10 col-10">
                 <p>
-                  揪團課程時間：2019/07/02---上午 10:00<br>
-                  聯絡電話：0960529999<br>
-                  e-mail：abc123@gmail.com<br>
-                  快來一起做冰淇淋蛋糕！！！！！！！<br>
+                <?php echo $row->msg_content; ?>
                 </p>
               </div>
             </div>

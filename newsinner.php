@@ -23,7 +23,7 @@
 
   <section class="news-inner-wrap">
 
-    <section class="banner bubble-box">
+    <section class="banner">
       <div class="title">
         <div class="img-bg">
           <img src="img/ribbon.png" alt="標題底圖">
