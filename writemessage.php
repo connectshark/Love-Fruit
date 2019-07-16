@@ -1,3 +1,22 @@
+<?php 
+try {
+	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "root";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+	$pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "select * from customize where mem_no = :memNo";
+	$memNo = $_REQUEST['memNo'];//之後改為session
+	$messages = $pdo->prepare($sql);
+	$messages -> bindValue(':memNo',$memNo);
+	$messages -> execute();
+	$row = $messages -> fetchObject();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+	$errMsg .= "行數:". $e->getLine()."<br>";
+}
+ ?>
+
 <html lang="UTF-8">
 
 <head>
@@ -56,7 +75,7 @@
 						</button>
 					</div>
 					<div class="custom-ice">
-						<img src="img/message/ice-blue.png" alt="客製冰棒">
+						<img src="<?php echo $row->cto_pic ?>" alt="客製冰棒">
 					</div>
 				</div>
 				<div class="letter-content">

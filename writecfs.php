@@ -33,12 +33,12 @@ if($to){
 		$memNo = $_REQUEST['memNo'];
 		$cfsTo = $_REQUEST['cfsTo'];
 		$cfsContent = $_REQUEST['cfsContent'];
-		$products = $pdo->prepare($sql);
-		$products->bindValue(':memNo',$memNo);
-		$products->bindValue(':cfsTo',$cfsTo);
-		$products->bindValue(':cfsContent',$cfsContent);
-		$products->bindValue(':cfsPic',$to);
-		$products->execute();
+		$messages = $pdo->prepare($sql);
+		$messages->bindValue(':memNo',$memNo);
+		$messages->bindValue(':cfsTo',$cfsTo);
+		$messages->bindValue(':cfsContent',$cfsContent);
+		$messages->bindValue(':cfsPic',$to);
+		$messages->execute();
 	} catch (PDOException $e) {
 		$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
 		$errMsg .= "行數:". $e->getLine()."<br>";

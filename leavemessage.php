@@ -17,6 +17,10 @@
 	<?php 
 	require_once("nav.php");
 	?>
+	<form action="writemessage.php" method="post" accept-charset="utf-8">
+		<input type="number" name="memNo" value="2" placeholder="2">
+		<input type="submit" value="送出">
+	</form>
 	<section class="banner">
 		<div class="banner-heart-group">
 			<div class="heart-b-item">
