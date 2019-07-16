@@ -12,6 +12,7 @@ function showCart(){
 		console.log(cart);  //cart[prod_no]
 		html += `
 			<div class="mini-item-wrap">
+				<span style='display:none'>${prod_no}</span>
 				<div class="mini-img col-lg-1"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
 				<span class="mini-name col-lg-1">
 					<a href="shop-inside.php?prod_no=${prod_no}">
@@ -20,7 +21,9 @@ function showCart(){
 				</span>
 				<span class="mini-qty col-lg-1">${cart[prod_no].qty}x</span>
 				<span class="mini-pri col-lg-1">NT${cart[prod_no].prod_price}</span>
-				<div class="mini-trash col-lg-3"><i class="fas fa-trash"></i></div>
+				<div class="mini-trash col-lg-3"><i class="trash">刪除</i></div>
+
+				
 			</div>`;	
 	}
 	if( !isCartEmpty()){
@@ -28,6 +31,35 @@ function showCart(){
 	}
 	
 	document.getElementById("mini-item").innerHTML = html;
+	//...............trash
+	function gettrash(e){
+		console.log(e);
+		let miniItem = document.getElementById("mini-item");
+		let item = e.target.parentNode.parentNode;
+		let prod_no = item.firstElementChild.innerText;
+		let xhr = new XMLHttpRequest();
+		
+		xhr.onload = function (){
+			miniItem.removeChild(item);
+			cart = JSON.parse(xhr.responseText);
+			// delete cart[prod_no];
+		}
+	
+		let url = "trash.php?prod_no=" + prod_no;
+	
+		xhr.open("get",url,true);
+		console.log(this.parentNode);
+		// let myForm = new FormData(this.parentNode);
+		xhr.send(null);
+	}
+	// var trash = document.getElementsByClassName("fa-trash");
+	var trash = document.getElementsByClassName("trash");
+	console.log(trash.length);
+	for(i=0;i<trash.length;i++){
+		trash[i].addEventListener("click",gettrash)
+	}
+	
+	//...............
 	//----------------註冊數量改變時的事件處理器
 	// let qtys = document.getElementsByName("qty");
 	// for(let i=0; i<qtys.length; i++){
@@ -141,6 +173,8 @@ $(".shopping-cart-icon").click(function(){
 $(".cart-close").click(function(){
 	$("#mini-cart").css("display","none");
 })
+
+
 
 
 });	

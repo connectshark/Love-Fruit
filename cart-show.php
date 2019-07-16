@@ -116,7 +116,6 @@ session_start();
   
   ?>
 
-  <form action="get">
     <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
       <div class="col-lg-2 col-6 item-pic">
         <div class="col-2 m-a"><img src="img/shop/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
@@ -127,16 +126,24 @@ session_start();
       </div>
       <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></div>
       <div class="col-lg-2 col-6 cartlist-btn">
+      <form action="">
         <span class="btn-numbox col-4">
-          <input type='button' value='-' class='qtyminus' field='quantity' />
-          <input type='text' name='quantity' value='0' class='qty' />
-          <input type='button' value='+' class='qtyplus' field='quantity' />
+            <input type='button' value='-' class='qtyminus' field='quantity' />
+            <input type='number' value='<?php echo $_SESSION["cart"][$i]["qty"] ?>' class='qty'    name='qty'  />
+            <input type='button' value='+' class='qtyplus' field='quantity' />
+            <input type="hidden" name="prod_no" value="<?php echo $i; ?>">
+            <input type="hidden" name="prod_name" value="<?php echo $_SESSION["cart"][$i]["prod_name"]?>">
+            <input type="hidden" name="prod_price" value="<?php echo $_SESSION["cart"][$i]["prod_price"]?>">	
         </span>
+      </form>
+       
       </div>
       <div class="col-lg-2 col-6 small-total"><span>NT<?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
-      <div class="col-lg-2 delete"><span><i class="fas fa-trash"></i></span></div>
+      <form action="delete-cart.php">
+        <div class="col-lg-2 delete"><span><i class="fas fa-trash"></i></span></div>
+      </form>
+     
     </div>
-  </form>
  
  
 <?php
@@ -251,6 +258,7 @@ session_start();
     <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
   </footer>
   <script src="js/nav.js"></script>
+  <script src="js/cart-show.js"></script>
   <!-- <script src="js/cartlist.js"></script> -->
   <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

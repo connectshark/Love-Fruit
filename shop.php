@@ -331,8 +331,7 @@ try {
                                         <!-- </form> -->
                                     </div>
                                 </div>
-                            
-                                    <div class="shop-btn">
+                                <div class="shop-btn">
                                     <form class="add-cart">
                                         <input type='hidden' name='qty' value='1' class="qty"/>
                                         <input type="hidden" name = prod_pic value = "<?php echo $prodRow["prod_pic"] ?>">
@@ -345,9 +344,7 @@ try {
                                             </span>
                                         </div>
                                     </form>
-                                    </div>
-                                </form>
-                               
+                                </div>
                             </div>
                         </div>
 
