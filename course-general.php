@@ -128,23 +128,23 @@
             <span>寫下你對課程的想法！</span>
         </div>
       
-        <form class="leave-message-wrap" action=".php" method="post" enctype="multipart/form-data">
+    <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
                 <p>會員名稱</p>
                 <p>2019-07-07</p>
             </div>
             <div class="balloons col-md-10">
-            <textarea name="" id="" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea>
+            <textarea  id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea>
             </div>
             <div class="message-btn col-md-12">
-                <div class="message-btn-out">
+                <button class="message-btn-out">
                     <span class="message-btn-in">
                         我要留言
                     </span>
-                </div>
+                </button>
             </div>
-        </form>
+    </form>
        
 
         <div class="mem-message-wrap">
