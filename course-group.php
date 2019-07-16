@@ -1,3 +1,23 @@
+<?php 
+try {
+	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "root";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+  $pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "select * from course_msg where mem_no = :memNo";
+	$memNo = 1;//之後改為session
+	$messages = $pdo->prepare($sql);
+	$messages -> bindValue(':memNo',$memNo);
+	$messages -> execute();
+	$row = $messages -> fetchObject();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+  $errMsg .= "行數:". $e->getLine()."<br>";
+  echo $errMsg;
+}
+?>
+
 <html lang="UTF-8">
 
 <head>
@@ -124,22 +144,19 @@ e-mail：
         </a>
       </div>
       <div class="team-name">
-        <span>團名：</span><span>快來一起玩～～～</span>
+        <span>團名：<?php echo $row->msg_title;?> </span>
       </div>
       <div class="main-group-message">
 
         <div class="message-meb col-md-2 col-2">
           <i class="fas fa-user-circle"></i>
-          <p>Sandra</p>
-          <p class="time">2019-07-07</p>
+          <p>會員名稱</p>
+          <p class="time"> <?php echo $row->msg_date;?> </p>
         </div>
 
         <div class="message-con col-md-10 col-10">
           <p>
-            揪團課程時間：2019/07/02---上午 10:00<br>
-            聯絡電話：0960529999<br>
-            e-mail：abc123@gmail.com<br>
-            快來一起做冰淇淋蛋糕！！！！！！！<br>
+            <?php echo $row->msg_content; ?>
           </p>
         </div>
 
@@ -164,15 +181,12 @@ e-mail：
               <div class="message-meb col-md-2 col-2">
                 <i class="fas fa-user-circle"></i>
                 <p>Sandra</p>
-                <p class="time">2019-07-07</p>
+                <p class="time"><?php echo $row->msg_date; ?></p>
               </div>
 
               <div class="message-con col-md-10 col-10">
                 <p>
-                  揪團課程時間：2019/07/02---上午 10:00<br>
-                  聯絡電話：0960529999<br>
-                  e-mail：abc123@gmail.com<br>
-                  快來一起做冰淇淋蛋糕！！！！！！！<br>
+                <?php echo $row->msg_content; ?>
                 </p>
               </div>
             </div>
