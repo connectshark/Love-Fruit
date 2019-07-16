@@ -30,7 +30,7 @@ if($to){
 		$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
 		$pdo = new PDO( $dsn , $user , $psw, $options );
 		$sql = "insert confessions set mem_no = :memNo , cfs_to = :cfsTo , cfs_content = :cfsContent, cfs_pic = :cfsPic , cfs_good = '0'";
-		$memNo = $_REQUEST['memNo'];
+		$memNo = $_REQUEST['memNo'];//session抓
 		$cfsTo = $_REQUEST['cfsTo'];
 		$cfsContent = $_REQUEST['cfsContent'];
 		$messages = $pdo->prepare($sql);

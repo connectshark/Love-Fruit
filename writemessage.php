@@ -62,7 +62,7 @@ try {
 						<h3><span>To:</span>{{forWho}}</h3>
 						<p v-if="text">{{text}}</p>
 						<p class="m-text" v-else></p>
-						<p class="s-text">#</p>
+						<p class="s-text">#<?php echo $row->cto_words ?></p>
 					</div>
 					<div class="message-footer">
 						<button type="button">
