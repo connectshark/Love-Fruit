@@ -1,3 +1,24 @@
+<?php 
+try {
+	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "select m.mem_name, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0";
+	$courseMsg = $pdo->prepare($sql);
+    // $courseMsg->bindValue(':memNo',$memNo);
+    // $courseMsg->bindValue(':msgDate',$msgDate);
+    // $courseMsg->bindValue(':msgTitle',$msgTitle);
+    // $courseMsg->bindValue(':msgContent',$msgContent);
+	$courseMsg -> execute();
+	$row = $courseMsg -> fetchObject();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+  $errMsg .= "行數:". $e->getLine()."<br>";
+  echo $errMsg;
+}
+?>
 <html lang="UTF-8">
   <head>
     <meta charset="UTF-8" />
@@ -135,10 +156,10 @@
                 <p>2019-07-07</p>
             </div>
             <div class="balloons col-md-10">
-            <textarea  id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea>
+           <label><textarea name="msgContent" id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea></label> 
             </div>
             <div class="message-btn col-md-12">
-                <button class="message-btn-out">
+                <button  type="button" class="message-btn-out">
                     <span class="message-btn-in">
                         我要留言
                     </span>
@@ -149,18 +170,18 @@
 
         <div class="mem-message-wrap">
             <div class="mem-message-item">
+              <input type="hidden" name="memNo" value="0">
                 <div class="message-mem col-md-2 col-2">
                     <i class="fas fa-user-circle"></i> 
                 </div>
-
                 <div class="message-con col-md-10 col-9">
                     <div class="mem-ifo">
-                        <p>Sandra</p>
+                        <p><?php echo $row->mem_name; ?></p>
                         <p class="time">2019-07-07</p>
                     </div>
                     <div class="mem-con">
                         <p>
-                            手作超好玩～<br>
+                        <?php echo $row->msg_content; ?>
                         </p>
                     </div>
                 </div>
