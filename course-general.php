@@ -5,17 +5,13 @@ try {
 	$psw = "";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
     $pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select m.mem_name, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0";
+	$sql = "select m.mem_name, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
 	$courseMsg = $pdo->prepare($sql);
-    // $courseMsg->bindValue(':memNo',$memNo);
-    // $courseMsg->bindValue(':msgDate',$msgDate);
-    // $courseMsg->bindValue(':msgTitle',$msgTitle);
-    // $courseMsg->bindValue(':msgContent',$msgContent);
 	$courseMsg -> execute();
 	$row = $courseMsg -> fetchObject();
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
-  $errMsg .= "行數:". $e->getLine()."<br>";
+    $errMsg .= "行數:". $e->getLine()."<br>";
   echo $errMsg;
 }
 ?>
@@ -169,15 +165,16 @@ try {
        
 
         <div class="mem-message-wrap">
+        <?php while ($row = $courseMsg -> fetchObject()) {?>
             <div class="mem-message-item">
-              <input type="hidden" name="memNo" value="0">
+           
                 <div class="message-mem col-md-2 col-2">
                     <i class="fas fa-user-circle"></i> 
                 </div>
                 <div class="message-con col-md-10 col-9">
                     <div class="mem-ifo">
                         <p><?php echo $row->mem_name; ?></p>
-                        <p class="time">2019-07-07</p>
+                        <p class="time"><?php echo $row->msg_date; ?></p>
                     </div>
                     <div class="mem-con">
                         <p>
@@ -186,26 +183,8 @@ try {
                     </div>
                 </div>
             </div>
-            <div class="mem-message-item">
-                <div class="message-mem col-md-2 col-2">
-                    <i class="fas fa-user-circle"></i> 
-                </div>
-
-                <div class="message-con col-md-10 col-9">
-                    <div class="mem-ifo">
-                        <p>SARA</p>
-                        <p class="time">2019-07-01</p>
-                    </div>
-                    <div class="mem-con">
-                        <p>
-                            大家快來報名唷！啾咪<br>
-                            大家快來報名唷！啾咪<br>
-                            大家快來報名唷！啾咪<br>
-                            大家快來報名唷！啾咪<br>
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <?php } ?>    
+      
 
             <div class="more-btn col-md-12"  style="background-color:none;color:none;border:none;">
                 <button  class="more-btn-out">
