@@ -341,7 +341,7 @@ body{
 }
 /*冰棒棍*/
 .ice-stick{
-	width: 60%;
+	width: 70%;
 	margin: auto;
 	background-color: #FFD5B3;
 	padding: 6px 10px;
@@ -349,9 +349,22 @@ body{
 	border: 2px solid #603813;
 	text-align: right;
 }
+@media screen and (min-width: 768px) {
+	.ice-stick{
+		width: 60%;
+	}
+}
 .ice-stick p{
 	line-height: 2;
+	font-size: 12px;
 	text-orientation:upright;
+}
+@media screen and (min-width: 768px) {
+	.ice-stick p{
+		line-height: 2;
+		font-size: 18px;
+		text-orientation:upright;
+	}
 }
 .ice-stice-put{
 	animation: put-in 5s forwards;
@@ -359,28 +372,55 @@ body{
 @keyframes put-in{
 	0%{
 		transform: rotate(0deg) translate(0,0);
-		width: 55%;
+		width: 70%;
 		border: 2px solid #603813;
 	}
 	50%{
-		transform: rotate(90deg) translate(35px,0);
-		width: 55%;
+		transform: rotate(90deg) translate(45px,0);
+		width: 70%;
 		border: 2px solid #603813;
 	}
 	50.5%{
-		transform: rotate(90deg) translate(35px,0);
-		width: 55%;
+		transform: rotate(90deg) translate(45px,0);
+		width: 70%;
 		border: 2px solid #603813;
+		border-radius: 0 10px 10px 0;
 		border-left:none; 
 	}
 	100%{
-		transform: rotate(90deg) translate(0,0);
-		width: 34%;
+		transform: rotate(90deg) translate(5px,0);
+		width: 40%;
+		border: 2px solid #603813;
 		border-radius: 0 10px 10px 0;
 		border-left:none; 
 	}
 }
-
+@media screen and (min-width: 768px) {
+	@keyframes put-in{
+		0%{
+			transform: rotate(0deg) translate(0,0);
+			width: 55%;
+			border: 2px solid #603813;
+		}
+		50%{
+			transform: rotate(90deg) translate(35px,0);
+			width: 55%;
+			border: 2px solid #603813;
+		}
+		50.5%{
+			transform: rotate(90deg) translate(34px,0);
+			width: 55%;
+			border: 2px solid #603813;
+			border-left:none; 
+		}
+		100%{
+			transform: rotate(90deg) translate(-1px,0);
+			width: 34%;
+			border-radius: 0 10px 10px 0;
+			border-left:none; 
+		}
+	}
+}
 
 .custom-show-area{
 	width: 100%;
@@ -493,11 +533,11 @@ body{
 	width: 90%;
 	padding: 20px;
 	box-sizing: border-box;
-	min-height: 600px;
 }
 @media screen and (min-width: 768px) {
 	.custom-aside{
 		width: 30%;
+		min-height: 600px;
 	}
 }
 .aside-title{
@@ -721,8 +761,8 @@ body{
 /*客製畫布*/
 #canvas{
 	position: fixed;
-	z-index: -9999;
-	opacity: 0;
+	z-index: 9999;
+	opacity: 1;
 	top: 0;
 	left: 0;
 }

@@ -1,3 +1,56 @@
+<?php 
+try {
+	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "root";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+	$pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "SELECT m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.mem_no = cus.mem_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
+	$confessions = $pdo->prepare($sql);
+	$confessions -> execute();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+	$errMsg .= "行數:". $e->getLine()."<br>";
+}
+
+
+
+function stageNo($stage)
+{
+	switch ($stage) {
+		case '1':
+			return 'single';
+			break;
+		case '2':
+			return 'true-love';
+			break;
+		case '3':
+			return 'hot-love';
+			break;
+		case '4':
+			return 'break-up';
+			break;
+	}
+}
+function stageName($stage)
+{
+	switch ($stage) {
+		case '1':
+			return '單身';
+			break;
+		case '2':
+			return '初戀';
+			break;
+		case '3':
+			return '熱戀';
+			break;
+		case '4':
+			return '分手';
+			break;
+	}
+}
+ ?>
+
 <html lang="UTF-8">
 
 <head>
@@ -17,10 +70,6 @@
 	<?php 
 	require_once("nav.php");
 	?>
-	<form action="writemessage.php" method="post" accept-charset="utf-8">
-		<input type="number" name="memNo" value="2" placeholder="2">
-		<input type="submit" value="送出">
-	</form>
 	<section class="banner">
 		<div class="banner-heart-group">
 			<div class="heart-b-item">
@@ -89,27 +138,28 @@
 	</section>
 	<section class="message-bgi">
 		<div class="message">
-			<div class="message-item break-up">
+			<?php while ($row = $confessions -> fetchObject()) {?>
+			<div class="message-item <?php echo stageNo($row->stage_no); ?>">
 				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>分手</span>
+					<i class='fas fa-cloud'></i><span><?php echo stageName($row->stage_no); ?></span>
 				</div>
 				<div class="message-header">
 					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
+					<p><?php echo $row->mem_name; ?></p>
 				</div>
 
 				<div class="message-body">
 					<figure>
-						<img src="img/message/ice-yellow.png" alt="上傳照片">
+						<img src="<?php echo $row->cfs_pic; ?>" alt="上傳照片">
 					</figure>
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
+						<h3><span>To:</span><?php echo $row->cfs_to; ?></h3>
+					<p><?php echo $row->cfs_content; ?></p>
+					<p class="s-text">#<?php echo $row->cto_words; ?></p>
 				</div>
 				<div class="message-footer">
 					<button type="button">
 						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
+						<span><?php echo $row->cfs_good; ?></span>
 					</button>
 					<button type="button">
 						<i class="fas fa-share-alt"></i>
@@ -117,471 +167,10 @@
 					</button>
 				</div>
 				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
+					<img src="<?php echo $row->cto_pic; ?>" alt="客製冰棒">
 				</div>
 			</div>
-			<div class="message-item true-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>初戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-					<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item true-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>初戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/news/orange-ball.png" alt="上傳照片">
-					</figure>
-					<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item break-up">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>分手</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item hot-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>熱戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item single">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>單身</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item hot-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>熱戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item single">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>單身</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item break-up">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>分手</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item true-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>初戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item true-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>初戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item break-up">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>分手</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item hot-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>熱戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item single">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>單身</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item hot-love">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>熱戀</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/course/diyimg3.png" alt="上傳照片">
-					</figure>
-						
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
-			<div class="message-item single">
-				<div class="cloud">
-					<i class="fas fa-cloud"></i><span>單身</span>
-				</div>
-				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
-					<p>會員名稱</p>
-				</div>
-				<div class="message-body">
-					<figure>
-						<img src="img/greenapple.png" alt="上傳照片">
-					</figure>
-						<h3><span>To:</span>王先生</h3>
-					<p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-					<p class="s-text">#語重心長</p>
-				</div>
-				<div class="message-footer">
-					<button type="button">
-						<i class="fas fa-thumbs-up"></i>
-						<span>10</span>
-					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
-				</div>
-				<div class="custom-ice">
-					<img src="img/message/ice-blue.png" alt="客製冰棒">
-				</div>
-			</div>
+			<?php } ?>
 		</div>
 	</section>
 

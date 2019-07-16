@@ -5,7 +5,7 @@ try {
 	$psw = "root";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
 	$pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo";
+	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic, c.stage_no from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo";
 	$memNo = 2;//之後改為session
 	$messages = $pdo->prepare($sql);
 	$messages -> bindValue(':memNo',$memNo);
@@ -15,8 +15,42 @@ try {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
 	$errMsg .= "行數:". $e->getLine()."<br>";
 }
- ?>
 
+function stageNo($stage)
+{
+	switch ($stage) {
+		case '1':
+			return 'single';
+			break;
+		case '2':
+			return 'true-love';
+			break;
+		case '3':
+			return 'hot-love';
+			break;
+		case '4':
+			return 'break-up';
+			break;
+	}
+}
+function stageName($stage)
+{
+	switch ($stage) {
+		case '1':
+			return '單身';
+			break;
+		case '2':
+			return '初戀';
+			break;
+		case '3':
+			return '熱戀';
+			break;
+		case '4':
+			return '分手';
+			break;
+	}
+}
+ ?>
 <html lang="UTF-8">
 
 <head>
@@ -46,9 +80,9 @@ try {
 		<form action="writecfs.php" method="post" enctype="multipart/form-data">
 		<section class="letter">
 			<div class="letter-area">
-				<div class="message-item break-up">
+				<div class="message-item <?php echo stageNo($row->stage_no); ?>">
 					<div class="cloud">
-						<i class="fas fa-cloud"></i><span>分手</span>
+						<i class="fas fa-cloud"></i><span><?php echo stageName($row->stage_no); ?></span>
 					</div>
 					<div class="message-header">
 						<i class="fas fa-user-circle"></i>
