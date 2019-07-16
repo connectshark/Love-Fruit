@@ -1,8 +1,8 @@
 <?php 
 try {
-	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
+	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
 	$user = "root";
-	$psw = "root";
+	$psw = "";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
   $pdo = new PDO( $dsn , $user , $psw, $options );
 	$sql = "select * from course_msg where mem_no = :memNo";
