@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#submit').attr('disabled',true);
+    // $('#submit').attr('disabled',true);
     $('#userTitle').focus(open).blur(close);
     $('#userContent').focus(open).blur(close);
     $('#userPhrase').focus(open).blur(close);

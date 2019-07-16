@@ -1,3 +1,22 @@
+<?php 
+try {
+	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "root";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+	$pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "select * from customize where mem_no = :memNo";
+	$memNo = $_REQUEST['memNo'];//之後改為session
+	$messages = $pdo->prepare($sql);
+	$messages -> bindValue(':memNo',$memNo);
+	$messages -> execute();
+	$row = $messages -> fetchObject();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+	$errMsg .= "行數:". $e->getLine()."<br>";
+}
+ ?>
+
 <html lang="UTF-8">
 
 <head>
@@ -24,6 +43,7 @@
 		</div>
 	</div>
 	<div id="app">
+		<form action="writecfs.php" method="post" enctype="multipart/form-data">
 		<section class="letter">
 			<div class="letter-area">
 				<div class="message-item break-up">
@@ -42,7 +62,7 @@
 						<h3><span>To:</span>{{forWho}}</h3>
 						<p v-if="text">{{text}}</p>
 						<p class="m-text" v-else></p>
-						<p class="s-text">#</p>
+						<p class="s-text">#<?php echo $row->cto_words ?></p>
 					</div>
 					<div class="message-footer">
 						<button type="button">
@@ -55,7 +75,7 @@
 						</button>
 					</div>
 					<div class="custom-ice">
-						<img src="img/message/ice-blue.png" alt="客製冰棒">
+						<img src="<?php echo $row->cto_pic ?>" alt="客製冰棒">
 					</div>
 				</div>
 				<div class="letter-content">
@@ -80,28 +100,27 @@
 									<i class="fas fa-plus"></i>
 								</div>
 							</div>
-	                    <input type="file" name="message-img" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
+	                    <input type="file" name="pic" @change="fileLoad" accept="image/png, image/jpeg" value="上傳照片">
 						</label>
 					</div>
 					<div class="letter-footer">
 		                <div class="write-title">
 		                    <p>寫給誰<span>{{whonum}} / 5</span></p>
-		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle" placeholder="寫給誰"></label>
+		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle" placeholder="寫給誰" name="cfsTo"></label>
 		                </div>
 		                <div class="write-content">
 		                    <p>留言內容<span>{{textnum}} / 30</span></p>
-		                    <label><input type="text" minlength="1" maxlength="30" v-model="text" id="userContent" placeholder="留言內容"></label>
+		                    <label><input type="text" minlength="1" maxlength="30" v-model="text" id="userContent" placeholder="留言內容" name="cfsContent"></label>
 		                </div>
 		                <div class="write-buttons">
 		                    <label><input type="reset" value="清除" @click="clear"></label>
 		                    <label><input type="submit" value="送出" id="submit"></label>
+		                    <input type="hidden" name="memNo" value="2">
 		                </div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="write-letter">
-		</section>
+		</section></form>
 	</div>
 	<footer>
 		<span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
