@@ -168,4 +168,203 @@
   right: 0px;
   -webkit-text-stroke: 2px black;
 }
+
+.message-btn {
+  display: block;
+  width: 200px;
+  padding: 2px;
+  height: 60px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.message-btn:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.message-btn .message-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  line-height: 1.5;
+  position: relative;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 184px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  cursor: pointer;
+}
+
+.message-btn .message-btn-in:hover {
+  background-color: #FAD689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.message-btn .message-btn-in > img {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 54px;
+  height: 66.6px;
+}
+
+.message-btn .message-btn-in:after {
+  z-index: -1;
+  content: "我要留言";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.cart-btn {
+  display: block;
+  width: 200px;
+  padding: 2px;
+  height: 60px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px #715124;
+          box-shadow: 0px 3px #715124;
+}
+
+.cart-btn:active {
+  -webkit-box-shadow: 0 1px black;
+          box-shadow: 0 1px black;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.cart-btn .cart-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  line-height: 1.5;
+  position: relative;
+  padding: 3px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 184px;
+  height: 46px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cart-btn .cart-btn-in:hover {
+  background-color: #FAD689;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.cart-btn .cart-btn-in > img {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -13px;
+  width: 54px;
+  height: 66.6px;
+}
+
+.cart-btn .cart-btn-in:after {
+  z-index: -1;
+  content: "放入購物車";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
+
+.reset-btn {
+  display: block;
+  width: 180px;
+  padding: 2px;
+  border-radius: 40px;
+  background-color: white;
+  border: 2px solid #715124;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.reset-btn .reset-btn-in {
+  display: block;
+  color: whitesmoke;
+  font-size: 20px;
+  position: relative;
+  padding: 1px;
+  z-index: 1;
+  text-align: center;
+  display: block;
+  width: 180px;
+  border-radius: 20px;
+  background-color: #fc7389;
+  border: 2px solid #e4575f;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.reset-btn .reset-btn-in:hover {
+  background-color: #ffabb1;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.reset-btn .reset-btn-in:active {
+  background-color: #db4d6d;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.reset-btn .reset-btn-in:after {
+  z-index: -1;
+  content: "重作一個";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-stroke: 2px black;
+}
 /*# sourceMappingURL=custombtn.css.map */

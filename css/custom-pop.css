@@ -1,0 +1,67 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*跳窗*/
+.pop {
+  position: fixed;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+}
+
+.pop .pop-area {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 25%;
+  height: 50%;
+  min-width: 375.25px;
+  min-height: 472.5px;
+  background-image: url("../img/pop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.pop .pop-area h2 {
+  font-size: 40px;
+  color: #fff;
+  margin: auto;
+}
+
+.pop .pop-area .close {
+  position: absolute;
+  top: -10%;
+  right: 10%;
+}
+
+.pop .pop-area .btn-item {
+  padding: 5px 0;
+}
+
+.pop .pop-area .btn-item a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=custom-pop.css.map */
