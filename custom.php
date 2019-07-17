@@ -349,7 +349,10 @@
             <span class="close" id="close-pop">
                 <img src="img/pop-close.png" alt="關閉視窗">
             </span>
+            <div class="pop-title">
                 <h2>製作完成</h2>
+                <p>總價格為:<span id="pop-total-price"></span>元</p>
+            </div>
                 <div class="btn-item">
                     <a class="cart-btn" href="writemessage.php">
                         <span class="cart-btn-in">放入購物車</span>

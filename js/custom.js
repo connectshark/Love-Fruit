@@ -312,7 +312,9 @@ function putStickIn() {
 	$('#last').hide(0,function() {
 		$('#none-last').show();
 	});
-	$('#pop').show();
+	$('#pop').fadeIn('fast', function() {
+		$('#pop-total-price').text($('#total-price').text());
+	});
 	totalPrice();
 	imgPrint();
 }

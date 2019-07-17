@@ -171,7 +171,7 @@
 
 .message-btn {
   display: block;
-  width: 180px;
+  width: 150px;
   padding: 2px;
   border-radius: 40px;
   background-color: white;
@@ -194,7 +194,7 @@
   z-index: 1;
   text-align: center;
   display: block;
-  width: 180px;
+  width: 150px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;
@@ -226,7 +226,7 @@
 
 .cart-btn {
   display: block;
-  width: 180px;
+  width: 150px;
   padding: 2px;
   border-radius: 40px;
   background-color: white;
@@ -249,7 +249,7 @@
   z-index: 1;
   text-align: center;
   display: block;
-  width: 180px;
+  width: 150px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;
@@ -281,7 +281,7 @@
 
 .reset-btn {
   display: block;
-  width: 180px;
+  width: 150px;
   padding: 2px;
   border-radius: 40px;
   background-color: white;
@@ -304,7 +304,7 @@
   z-index: 1;
   text-align: center;
   display: block;
-  width: 180px;
+  width: 150px;
   border-radius: 20px;
   background-color: #fc7389;
   border: 2px solid #e4575f;
