@@ -46,12 +46,12 @@
             </li>
             <li class="member-icon">
               <img id="membe-centre-img" src="img/navBar/memberIcon.png" alt="會員" />
-              <span id="nav-login-icon">登入</span>
               <ul id="member-centre-down-menu">
                 <div class="member-centre-triangle"></div>
                 <li><a href="account.php">會員中心</a></li>
                 <li><span>登出</span></li>
               </ul>
+              <span id="nav-login-icon">登入</span>
             </li>
           </ul>
         </li>
