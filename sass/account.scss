@@ -43,6 +43,10 @@
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
+
+            .profile-id{
+                font-size: 16px;
+            }
         }
     }
 
@@ -58,15 +62,30 @@
             display: flex;
             flex-flow: row wrap;
             align-items: center;
+            justify-content: space-between;
 
-            i{
-                font-size: 50px;
+            .btn-file{
+                font-size: 16px;
+                color: blue;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            #upFile{
+                display: none;
+            }
+
+            img{
+                width: 100%;
                 display: block;
-                padding-right: 20px;
+                border-radius: 50%;
+            }
+            p{
+                padding-bottom: 10px;
             }
 
             a{
-                display: block;
                 padding-top: 10px;
                 font-size: 18px;
             }
@@ -178,6 +197,13 @@
             align-items: center;
 
             .order-desc{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+
+                .thead{
+                    font-weight: bold;
+                }
                 p{
                     padding: 10px;
                 }
@@ -205,12 +231,21 @@
             flex-flow: row wrap;
             align-items: center;
 
+            .prod-img img{
+                width: 50%;
+            }
+
             .collection-desc{
                 display: flex;
+                flex-flow: row wrap;
 
                 .heart{
                     text-align: right;
-                    cursor: pointer;
+
+                    i{
+                        color: #cb1b45;
+                        font-size: 24px;
+                    }
                 }
                 p{
                     padding: 10px;
@@ -221,6 +256,10 @@
 
     .content-custom{
         display: none;
+        table{
+            display: flex;
+            flex-flow: row wrap;
+        }
         .custom-item{
             padding: 20px;
             margin: 20px 0;
@@ -230,48 +269,67 @@
             align-items: center;
 
             .custom-desc{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                .thead{
+                    border-bottom:1px solid #ffbaba;                    
+                    p{
+                        font-weight: bold;
+                    }
+
+                    @include rwd(mobile){
+                        border-bottom:none; 
+                    }
+                }
                 p{
                     padding: 10px;
                 }
+                
             }
         }
-
         @include rwd(medium){
-            .custom-desc{
-                display: flex;
-    
-                .time{
-                    text-align: right;
-                }
+            .thead-img{
+                display: none;
             }
         }
     }
 
     .content-course{
         display: none;
-        table{
-            display: flex;
-            flex-flow: row wrap;
 
-            thead.class-item{
-                padding: 0 20px;
+            thead{
+                // border-right: 1px solid #ffbaba;
+                td{
+                    font-weight: bold;
+                }
+
+                @include rwd(medium){
+                    border-right: none;
+                    border-bottom: 1px solid #ffbaba;
+                }
             }
+
             .class-item{
-                padding: 20px;
-                margin: 5px 0;
+                padding: 10px 20px;
+                margin: 20px 0;
                 background-color: #ffdee6;
                 display: flex;
                 flex-flow: row wrap;
-                align-items: center;
-
-                td{
-                    padding: 20px 0;
-                }
+                align-items: center;                
     
                 .class-desc{
                     display: flex;
                     flex-flow: row wrap;
                     align-items: center;
+
+                    .thead{
+                        font-weight: bold;
+                    }
+
+                    p{
+                        padding: 10px;
+                    }
     
                     .cancel, .qrcode{ 
                         @include rwd(medium){
@@ -280,19 +338,15 @@
                         
                         a{
                             color: #db4d6d;
-                            display: block;
     
                             &:hover{
                                 border-bottom: 1px solid #db4d6d;
                             }
                         }
                     }
-                    p{
-                        padding: 10px;
-                    }
                 }
             }
-        }
+        
         
     }
 
