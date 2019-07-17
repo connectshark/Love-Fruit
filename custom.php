@@ -352,16 +352,12 @@
                 <h2>製作完成</h2>
                 <div class="btn-item">
                     <a class="cart-btn" href="writemessage.php">
-                        <span class="cart-btn-in">
-                            <img src="img/btn/ICE.png" alt="冰棒" class="testclass">放入購物車
-                        </span>
+                        <span class="cart-btn-in">放入購物車</span>
                     </a>
                 </div>
                 <div class="btn-item">
                     <a class="message-btn" href="writemessage.php">
-                        <span class="message-btn-in">
-                            <img src="img/btn/ICE.png" alt="冰棒" class="testclass">我要留言
-                        </span>
+                        <span class="message-btn-in">我要留言</span>
                     </a>
                 </div>
                 <div class="btn-item">

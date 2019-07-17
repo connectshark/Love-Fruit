@@ -2,6 +2,6 @@
 @include btn(aside-button-out-last,100px,aside-button-in,16px,上一步);
 @include btn(aside-button-out-next,100px,aside-button-in,16px,下一步);
 @include btn(aside-button-out-complete,100px,aside-button-in,16px,完成);
-@include ice-btn(message-btn,200px,message-btn-in,20px,1.5,我要留言);
-@include ice-btn(cart-btn,200px,cart-btn-in,20px,1.5,放入購物車);
+@include btn(message-btn,180px,message-btn-in,20px,我要留言);
+@include btn(cart-btn,180px,cart-btn-in,20px,放入購物車);
 @include btn(reset-btn,180px,reset-btn-in,20px,重作一個);
