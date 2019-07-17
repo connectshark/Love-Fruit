@@ -429,14 +429,69 @@
     justify-content: space-between;
     flex-flow: row nowrap;
   }
+
+  #membe-centre-img {
+    /* display: none; */
+    cursor: pointer;
+  }
+  .member-centre-triangle {
+    position: absolute;
+    margin: auto;
+    top: -13%;
+    left: 35%;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #ffdee6 transparent;
+  }
+  #member-centre-down-menu {
+    position: absolute;
+    transform: translateY(0%);
+    top: -70%;
+    min-width: 100px;
+    margin: auto;
+    opacity: 0;
+    display: none;
+    left: -30px;
+    border-radius: 10px;
+    background-color: #ffdee6;
+    text-align: center;
+    transition: 1s;
+  }
+  #member-centre-down-menu li {
+    margin: 0 auto;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+  }
+  #member-centre-down-menu li span {
+    display: inline-block;
+    padding: 10px 0px 10px 0px;
+    text-decoration: none;
+    font-size: 1vw;
+    letter-spacing: 0.3vw;
+    color: #ea7187;
+    font-family: "GenJyuuGothic-R";
+  }
+  #member-centre-down-menu li a {
+    display: inline-block;
+    padding: 10px 0px 10px 0px;
+    text-decoration: none;
+    font-size: 1vw;
+    letter-spacing: 0.3vw;
+    color: #ea7187;
+    font-family: "GenJyuuGothic-R";
+  }
+
+  #member-centre-down-menu li:hover {
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
   .member-icon {
     position: relative;
   }
   .shopping-cart-icon {
     margin-right: 0.3vw;
-  }
-  .nav-icon-login {
-    text-decoration: none;
   }
   #nav-login-icon {
     position: absolute;
