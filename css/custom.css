@@ -761,8 +761,8 @@ body{
 /*客製畫布*/
 #canvas{
 	position: fixed;
-	z-index: 9999;
-	opacity: 1;
+	z-index: -9999;
+	opacity: 0;
 	top: 0;
 	left: 0;
 }

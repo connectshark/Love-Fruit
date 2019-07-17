@@ -312,6 +312,7 @@ function putStickIn() {
 	$('#last').hide(0,function() {
 		$('#none-last').show();
 	});
+	$('#pop').show();
 	totalPrice();
 	imgPrint();
 }

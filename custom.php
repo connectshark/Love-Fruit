@@ -344,11 +344,11 @@
                 </div>
     		</div>
 		</section>
-        <section class="pop">
+        <section class="pop" id="pop">
             <div class="pop-area">
-            <a href="javascript:;" class="close">
+            <span class="close" id="close-pop">
                 <img src="img/pop-close.png" alt="關閉視窗">
-            </a>
+            </span>
                 <h2>製作完成</h2>
                 <div class="btn-item">
                     <a class="cart-btn" href="writemessage.php">
@@ -383,6 +383,7 @@
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
     <script src="js/custom-img.js"></script>
+    <script src="js/custom-pop.js"></script>
     <script>
         new Vue({
             el:'#app',
