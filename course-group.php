@@ -5,12 +5,12 @@ try {
 	$psw = "";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
   $pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select * from course_msg where mem_no = :memNo";
-	$memNo = 1;//之後改為session
-	$messages = $pdo->prepare($sql);
-	$messages -> bindValue(':memNo',$memNo);
-	$messages -> execute();
-	$row = $messages -> fetchObject();
+	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
+  $memNo = 1;//之後改為session
+  $courseMsg  = $pdo->prepare($sql);
+  $courseMsg -> bindValue(':memNo',$memNo);
+  $courseMsg -> execute();
+	
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
   $errMsg .= "行數:". $e->getLine()."<br>";
@@ -108,32 +108,38 @@ try {
       <h3 class="message-title">開團留言板</h3>
       <span>快來開團玩課程！</span>
     </div>
-    <div class="group-message">
+
+<form action="course-msg.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="1" name="courseClassNo">
+     <div class="group-message" >
       <div class="open-group">
         <div class="message-meb col-md-2">
           <i class="fas fa-user-circle"></i>
-          <p>會員名稱</p>
-          <p class="time">2019-07-07</p>
+          <p><?php echo $row->mem_name; ?></p>
+          <p class="time"><?php echo date("Y-m-d"); ?></p>
         </div>
         <div class="write-area  col-md-10">
           <p>你的團名：</p>
-          <input type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
+          <input name="msgTitle" type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
           <p>開團資訊：</p>
-          <textarea name="" id="" cols="90" rows="8" 
-
+          <textarea name="msgContent" maxlength="100" minlength="1" id="" cols="90" rows="8" wrap="hard" 
 placeholder="揪團課程時間：
 聯絡電話：
 e-mail：
 邀請的話～"></textarea>
         </div>
         <div class="message-btn col-md-12">
-          <div class="message-btn-out">
+        <a href="course-msg.php">
+          <button type="submit" class="message-btn-out">
             <span class="message-btn-in">
               我要留言
             </span>
-          </div>
+          </button>
+         </a> 
         </div>
       </div>
+</form>
+
       <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
       <div class="array-btn">
         <a class="array-ice-btn-out" href="course-group-form.php">
@@ -143,6 +149,8 @@ e-mail：
           </span>
         </a>
       </div>
+
+    <?php while ($row = $courseMsg -> fetchObject()) {?>
       <div class="team-name">
         <span>團名：<?php echo $row->msg_title;?> </span>
       </div>
@@ -150,7 +158,7 @@ e-mail：
 
         <div class="message-meb col-md-2 col-2">
           <i class="fas fa-user-circle"></i>
-          <p>會員名稱</p>
+          <p><?php echo $row->mem_name; ?></p>
           <p class="time"> <?php echo $row->msg_date;?> </p>
         </div>
 
@@ -168,10 +176,13 @@ e-mail：
           </div>
         </div>
       </div>
+    <?php } ?> 
+
+ 
       <div  id="dialog" class="pop-box">
         <div class="pop-up">
           <span  id="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
-
+          <label for=""><input type="hidden" name="" id="" ><?php echo $row->msg_date; ?></label> 
           <div class="pop-team-name">
             <p>團名：山抓手作團山抓手作團</p>
           </div>
@@ -189,7 +200,9 @@ e-mail：
                 <?php echo $row->msg_content; ?>
                 </p>
               </div>
-            </div>
+
+          </div>
+ 
             <div class="all-message col-md-7 col-10">
               <div class="meb-add-message ">
                 <div class="meb col-md-2 ">
@@ -199,23 +212,24 @@ e-mail：
                 <p class="text col-md-10">+1+1+1</p>
               </div>
             </div>
+
+
             <div class="pop-leave-message col-md-8 col-10">
               <div class="leave-message col-md-9 col-12"> <input type="text" name="" id="leave-message-box"></div>
-              <div class="message-btn col-md-2 col-12">
-                <div class="message-btn-out">
-                  <span class="message-btn-in">
-                    留言參加
-                  </span>
+                <div class="message-btn col-md-2 col-12">
+                  <div class="message-btn-out">
+                    <span class="message-btn-in">
+                      留言參加
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-
           </div>
-
         </div>
       </div>
-
     </div>
+
+ 
   </section>
 
   <footer>

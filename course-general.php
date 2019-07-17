@@ -5,10 +5,10 @@ try {
 	$psw = "";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
     $pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select m.mem_name, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
-	$courseMsg = $pdo->prepare($sql);
+	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
+  
+    $courseMsg = $pdo->prepare($sql);
 	$courseMsg -> execute();
-	$row = $courseMsg -> fetchObject();
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";
@@ -146,20 +146,23 @@ try {
         </div>
       
     <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="0" name="courseClassNo">
+    <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
-                <p>會員名稱</p>
-                <p>2019-07-07</p>
+                <p>會員資料</p>
+                <p><?php echo date("Y-m-d"); ?></p>
             </div>
             <div class="balloons col-md-10">
-           <label><textarea name="msgContent" id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea></label> 
+           <label><textarea name="msgContent" id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......" wrap="hard" ></textarea></label> 
             </div>
             <div class="message-btn col-md-12">
-                <button  type="button" class="message-btn-out">
+                <a href="course-msg.php">
+                <button  type="submit" class="message-btn-out">
                     <span class="message-btn-in">
                         我要留言
                     </span>
-                </button>
+                </button></a>
             </div>
     </form>
        
