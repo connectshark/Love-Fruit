@@ -144,7 +144,11 @@ function stageName($stage)
 					<i class='fas fa-cloud'></i><span><?php echo stageName($row->stage_no); ?></span>
 				</div>
 				<div class="message-header">
-					<i class="fas fa-user-circle"></i>
+					<?php if ($row->mem_pic) { ?>
+						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="使用者頭像"></div>
+					<?php }else{
+						echo "<i class='fas fa-user-circle'></i>";
+					} ?>
 					<p><?php echo $row->mem_name; ?></p>
 				</div>
 
@@ -171,6 +175,130 @@ function stageName($stage)
 				</div>
 			</div>
 			<?php } ?>
+			<div class="message-item hot-love">
+				<div class="cloud">
+					<i class='fas fa-cloud'></i><span>熱戀</span>
+				</div>
+				<div class="message-header">
+					<i class='fas fa-user-circle'></i>
+					<p>bdfasd</p>
+				</div>
+
+				<div class="message-body">
+					<figure>
+						<img src="img/cherry.png" alt="上傳照片">
+					</figure>
+						<h3><span>To:</span>4146131</h3>
+					<p>fasdf,sal;df;sadkf;lsadmfs</p>
+					<p class="s-text">#sdfgdsfgkmdfkg</p>
+				</div>
+				<div class="message-footer">
+					<button type="button">
+						<i class="fas fa-thumbs-up"></i>
+						<span>5</span>
+					</button>
+					<button type="button">
+						<i class="fas fa-share-alt"></i>
+						<span>分享</span>
+					</button>
+				</div>
+				<div class="custom-ice">
+					<img src="img/custom/texture1.png" alt="客製冰棒">
+				</div>
+			</div>
+			<div class="message-item true-love">
+				<div class="cloud">
+					<i class='fas fa-cloud'></i><span>熱戀</span>
+				</div>
+				<div class="message-header">
+					<i class='fas fa-user-circle'></i>
+					<p>bdfasd</p>
+				</div>
+
+				<div class="message-body">
+					<figure>
+						<img src="img/cherry.png" alt="上傳照片">
+					</figure>
+						<h3><span>To:</span>4146131</h3>
+					<p>fasdf,sal;df;sadkf;lsadmfs</p>
+					<p class="s-text">#sdfgdsfgkmdfkg</p>
+				</div>
+				<div class="message-footer">
+					<button type="button">
+						<i class="fas fa-thumbs-up"></i>
+						<span>5</span>
+					</button>
+					<button type="button">
+						<i class="fas fa-share-alt"></i>
+						<span>分享</span>
+					</button>
+				</div>
+				<div class="custom-ice">
+					<img src="img/custom/texture1.png" alt="客製冰棒">
+				</div>
+			</div>
+			<div class="message-item break-up">
+				<div class="cloud">
+					<i class='fas fa-cloud'></i><span>熱戀</span>
+				</div>
+				<div class="message-header">
+					<i class='fas fa-user-circle'></i>
+					<p>bdfasd</p>
+				</div>
+
+				<div class="message-body">
+					<figure>
+						<img src="img/cherry.png" alt="上傳照片">
+					</figure>
+						<h3><span>To:</span>4146131</h3>
+					<p>fasdf,sal;df;sadkf;lsadmfs</p>
+					<p class="s-text">#sdfgdsfgkmdfkg</p>
+				</div>
+				<div class="message-footer">
+					<button type="button">
+						<i class="fas fa-thumbs-up"></i>
+						<span>5</span>
+					</button>
+					<button type="button">
+						<i class="fas fa-share-alt"></i>
+						<span>分享</span>
+					</button>
+				</div>
+				<div class="custom-ice">
+					<img src="img/custom/texture1.png" alt="客製冰棒">
+				</div>
+			</div>
+			<div class="message-item single">
+				<div class="cloud">
+					<i class='fas fa-cloud'></i><span>熱戀</span>
+				</div>
+				<div class="message-header">
+					<i class='fas fa-user-circle'></i>
+					<p>bdfasd</p>
+				</div>
+
+				<div class="message-body">
+					<figure>
+						<img src="img/cherry.png" alt="上傳照片">
+					</figure>
+						<h3><span>To:</span>4146131</h3>
+					<p>fasdf,sal;df;sadkf;lsadmfs</p>
+					<p class="s-text">#sdfgdsfgkmdfkg</p>
+				</div>
+				<div class="message-footer">
+					<button type="button">
+						<i class="fas fa-thumbs-up"></i>
+						<span>5</span>
+					</button>
+					<button type="button">
+						<i class="fas fa-share-alt"></i>
+						<span>分享</span>
+					</button>
+				</div>
+				<div class="custom-ice">
+					<img src="img/custom/texture1.png" alt="客製冰棒">
+				</div>
+			</div>
 		</div>
 	</section>
 

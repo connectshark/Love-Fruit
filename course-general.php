@@ -1,3 +1,20 @@
+<?php 
+try {
+	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
+	$user = "root";
+	$psw = "";
+	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO( $dsn , $user , $psw, $options );
+	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
+  
+    $courseMsg = $pdo->prepare($sql);
+	$courseMsg -> execute();
+} catch (PDOException $e) {
+	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+    $errMsg .= "行數:". $e->getLine()."<br>";
+  echo $errMsg;
+}
+?>
 <html lang="UTF-8">
   <head>
     <meta charset="UTF-8" />
@@ -128,63 +145,49 @@
             <span>寫下你對課程的想法！</span>
         </div>
       
-        <form class="leave-message-wrap" action=".php" method="post" enctype="multipart/form-data">
+    <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" value="0" name="courseClassNo">
+    <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
-                <p>會員名稱</p>
-                <p>2019-07-07</p>
+                <p>會員資料</p>
+                <p><?php echo date("Y-m-d"); ?></p>
             </div>
             <div class="balloons col-md-10">
-            <textarea name="" id="" cols="90" rows="8" placeholder="寫下你對課程的想法......"></textarea>
+           <label><textarea name="msgContent" id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......" wrap="hard" ></textarea></label> 
             </div>
             <div class="message-btn col-md-12">
-                <div class="message-btn-out">
+                <a href="course-msg.php">
+                <button  type="submit" class="message-btn-out">
                     <span class="message-btn-in">
                         我要留言
                     </span>
-                </div>
+                </button></a>
             </div>
-        </form>
+    </form>
        
 
         <div class="mem-message-wrap">
+        <?php while ($row = $courseMsg -> fetchObject()) {?>
             <div class="mem-message-item">
+           
                 <div class="message-mem col-md-2 col-2">
                     <i class="fas fa-user-circle"></i> 
                 </div>
-
                 <div class="message-con col-md-10 col-9">
                     <div class="mem-ifo">
-                        <p>Sandra</p>
-                        <p class="time">2019-07-07</p>
+                        <p><?php echo $row->mem_name; ?></p>
+                        <p class="time"><?php echo $row->msg_date; ?></p>
                     </div>
                     <div class="mem-con">
                         <p>
-                            手作超好玩～<br>
+                        <?php echo $row->msg_content; ?>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="mem-message-item">
-                <div class="message-mem col-md-2 col-2">
-                    <i class="fas fa-user-circle"></i> 
-                </div>
-
-                <div class="message-con col-md-10 col-9">
-                    <div class="mem-ifo">
-                        <p>SARA</p>
-                        <p class="time">2019-07-01</p>
-                    </div>
-                    <div class="mem-con">
-                        <p>
-                            大家快來報名唷！啾咪<br>
-                            大家快來報名唷！啾咪<br>
-                            大家快來報名唷！啾咪<br>
-                            大家快來報名唷！啾咪<br>
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <?php } ?>    
+      
 
             <div class="more-btn col-md-12"  style="background-color:none;color:none;border:none;">
                 <button  class="more-btn-out">

@@ -129,8 +129,15 @@
 	<section class="account">
 		<div class="wrap">
 			<div class="menu col-12 col-md-2">
-				<div class="profile-picture"><i class="fas fa-user-circle"></i>
-					<div>member<a href="javascript:;">編輯頭貼</a></div>
+				<div class="profile-picture">
+					<div class="col-4"><img src="img/database/img_mem/defult_f.jpg" alt=""></div>
+					<div class="col-7">
+						<p class="profile-id">member</p>
+						<label class="btn-file" for="upFile">
+							上傳頭貼
+							<input type="file" name="upFile" id="upFile" accept=".jpg,.png">
+						</label>
+					</div>
 				</div>
 				<ul class="account-list">
 					<li class="col-4 col-md-10"><a class="link-item active" href="#profile"><i
@@ -172,9 +179,7 @@
 						</div>
 						<div class="profile-item col-12">
 							<label class="col-3 col-md-1" for="address">地址</label>
-							<div class="col-8">
-								<p class="address">桃園市中壢區中大路200號</p><a href="javascript:;">變更</a>
-							</div>
+							<input class="col-8" type="text" id="address" value="桃園市中壢區中大路200號">
 						</div>
 						<div class="profile-item col-12">
 							<label class="col-3 col-md-1" for="phone">電話</label>
@@ -188,38 +193,27 @@
 					<form action="">
 						<h2>歷史訂單</h2>
 						<div class="order-item col-12">
-							<div class="prod-img col-5 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
+							<div class="order-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12"><p>訂單編號</p></div>
+								<div class="col-7 col-md-12"><p>1</p></div>
 							</div>
-							<div class="order-desc col-7 col-md-10">
-								<p class="time col-md-6">2010/12/30</p>
-								<p class="total col-md-6">總金額:120</p>
+							<div class="order-desc col-12 col-md-4">
+								<div class="thead col-5 col-md-12"><p>下單時間</p></div>
+								<div class="col-7 col-md-12"><p>2019-12-20 00:00:00</p></div>
 							</div>
-						</div>
-						<div class="order-item col-12">
-							<div class="prod-img col-5 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
+							<div class="order-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12"><p>配送方式</p></div>
+								<div class="col-7 col-md-12"><p>宅配到府</p></div>
 							</div>
-							<div class="order-desc col-7 col-md-10">
-								<p class="time col-md-6">2010/12/30</p>
-								<p class="total col-md-6">總金額:120</p>
+							<div class="order-desc col-12 col-md-3">
+								<div class="thead col-5 col-md-12"><p>訂單總金額</p></div>
+								<div class="col-7 col-md-12"><p>1000元</p></div>
 							</div>
-						</div>
-						<div class="order-item col-12">
-							<div class="prod-img col-5 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
-							</div>
-							<div class="order-desc col-7 col-md-10">
-								<p class="time col-md-6">2010/12/30</p>
-								<p class="total col-md-6">總金額:120</p>
+							<div class="order-desc col-12 col-md-1">
+								<div class="thead col-5 col-md-12"><p>備註</p></div>
+								<div class="col-7 col-md-12"><p><a href="#">詳情</a></p></div>
 							</div>
 						</div>
-						<div class="order-item col-12">
-							<div class="prod-img col-5 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
-							</div>
-							<div class="order-desc col-7 col-md-10">
-								<p class="time col-md-6">2010/12/30</p>
-								<p class="total col-md-6">總金額:120</p>
-							</div>
-						</div>
-
 					</form>
 				</div>
 
@@ -227,38 +221,15 @@
 					<form action="">
 						<h2>收藏清單</h2>
 						<div class="collection-item col-12">
-							<div class="prod-img col-4 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
+							<div class="prod-img col-2 col-md-1"><img src="img/database/img_prod/popsicle_1.png">
 							</div>
-							<div class="collection-desc col-8 col-md-10">
-								<p class="col-10 col-md-6">清新酸梅冰</p>
-								<p class="heart col-2 col-md-6"><i class="fas fa-heart"></i></p>
-							</div>
-						</div>
-						<div class="collection-item col-12">
-							<div class="prod-img col-4 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
-							</div>
-							<div class="collection-desc col-8 col-md-10">
-								<p class="col-10 col-md-6">草莓牛奶冰</p>
-								<p class="heart col-2 col-md-6"><i class="fas fa-heart"></i></p>
+							<div class="collection-desc col-10 col-md-11">
+								<div class="col-5 col-md-3">清新酸梅冰</div>
+								<div class="col-3 col-md-3">200元</div>
+								<div class="col-3 col-md-3"><a href="#">詳情</a></div>
+								<div class="heart col-1 col-md-3"><a href="#"><i class="fas fa-heart"></i></a></div>
 							</div>
 						</div>
-						<div class="collection-item col-12">
-							<div class="prod-img col-4 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
-							</div>
-							<div class="collection-desc col-8 col-md-10">
-								<p class="col-10 col-md-6">草莓牛奶冰</p>
-								<p class="heart col-2 col-md-6"><i class="fas fa-heart"></i></p>
-							</div>
-						</div>
-						<div class="collection-item col-12">
-							<div class="prod-img col-4 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
-							</div>
-							<div class="collection-desc col-8 col-md-10">
-								<p class="col-10 col-md-6">草莓牛奶冰</p>
-								<p class="heart col-2 col-md-6"><i class="fas fa-heart"></i></p>
-							</div>
-						</div>
-
 					</form>
 				</div>
 
@@ -266,26 +237,104 @@
 				<div id="custom" class="content content-custom">
 					<form action="">
 						<h2>歷史客製</h2>
-						<table class="col-12">
-							<thead class="custom-item col-5 col-md-12">
-								<tr class="class-desc col-12">
-									<td class="col-12 col-md-3">客製圖片</td>
-									<td class="col-12 col-md-3">冰棒小語</td>
-									<td class="col-12 col-md-3">客製內容</td>
-									<td class="col-12 col-md-3">客製日期</td>
-								</tr>
-							</thead>
-
-							<tbody>
-								
-							</tbody>
-						</table>
 						<div class="custom-item col-12">
-							<div class="prod-img col-5 col-md-2"><img src="https://fakeimg.pl/80x80/aaa/?text=image">
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead thead-img col-5 col-md-12">
+									<p>圖片</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p><img src="https://fakeimg.pl/80x80/aaa/?text=image" alt="客製圖"></p>
+								</div>
 							</div>
-							<div class="custom-desc col-7 col-md-10">
-								<p class="col-md-6">戀愛小語</p>
-								<p class="time col-md-6">2010/12/30</p>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>模具</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>兔兔模具</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>基底1</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>草莓</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>基底2</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>藍莓</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>配料</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>苦瓜</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>冰棒小語</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>戀愛小語</p>
+								</div>
+							</div>
+						</div>
+						<div class="custom-item col-12">
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead thead-img col-5 col-md-12">
+									<p>圖片</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p><img src="https://fakeimg.pl/80x80/aaa/?text=image" alt="客製圖"></p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>模具</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>兔兔模具</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>基底1</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>草莓</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>基底2</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>藍莓</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>配料</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>苦瓜</p>
+								</div>
+							</div>
+							<div class="custom-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>冰棒小語</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>戀愛小語</p>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -294,28 +343,56 @@
 				<div id="course" class="content content-course">
 					<form action="">
 						<h2>預約紀錄</h2>
-						<table class="col-12">
-							<thead class="class-item col-5 col-md-12">
-								<tr class="class-desc col-12">
-									<td class="col-12 col-md-3">課程名稱</td>
-									<td class="col-12 col-md-2">預約日期</td>
-									<td class="col-12 col-md-2">預約時段</td>
-									<td class="col-12 col-md-1">人數</td>
-									<td class="qrcode col-12 col-md-2">報到條碼</td>
-									<td class="cancel col-12 col-md-2">取消預約</td>
-								</tr>
-							</thead>
-							<tbody class="class-item col-7 col-md-12">
-								<tr class="class-desc col-12">
-									<td class="col-12 col-md-3">情人繽紛彩繪冰棒</td>
-									<td class="time col-12 col-md-2">2019/9/1</td>
-									<td class="time col-12 col-md-2">上午 10:00</td>
-									<td class="time col-12 col-md-1">2人</td>
-									<td class="qrcode col-12 col-md-2"><a href="javascrip:;">QRcode</a></td>
-									<td class="cancel col-12 col-md-2"><a href="javascrip:;">我要取消</a></td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="class-item col-12">
+							<div class="class-desc col-12 col-md-3">
+								<div class="thead col-5 col-md-12">
+									<p>課程名稱</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>情人繽紛彩繪冰棒</p>
+								</div>
+							</div>
+							<div class="class-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>預約日期</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>2019/09/01</p>
+								</div>
+							</div>
+							<div class="class-desc col-12 col-md-2">
+								<div class="thead col-5 col-md-12">
+									<p>預約時段</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>上午 10:00</p>
+								</div>
+							</div>
+							<div class="class-desc col-12 col-md-1">
+								<div class="thead col-5 col-md-12">
+									<p>人數</p>
+								</div>
+								<div class="col-7 col-md-12">
+									<p>2人</p>
+								</div>
+							</div>
+							<div class="class-desc col-12 col-md-2">
+								<div class="qrcode thead col-5 col-md-12">
+									<p>報到條碼</p>
+								</div>
+								<div class="qrcode col-7 col-md-12">
+									<p><a href="javascrip:;">QRcode</a></p>
+								</div>
+							</div>
+							<div class="class-desc col-12 col-md-2">
+								<div class="cancel thead col-5 col-md-12">
+									<p>取消預約</p>
+								</div>
+								<div class="cancel col-7 col-md-12">
+									<p><a href="javascrip:;">我要取消</a></p>
+								</div>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -342,7 +419,7 @@
 						linkItems[j].classList.remove("active");
 					}
 					this.classList.add("active");
-					var linkString = this.href;
+					var linkString = this.getAttribute('href');
 					var idStr = linkString.split("#");
 					var contents = $class("content");
 

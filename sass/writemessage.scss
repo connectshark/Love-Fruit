@@ -71,19 +71,30 @@ body{
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-            padding: 20px 0;
-            .user-img{
-                .fa-user-circle{
-                    font-size: 30px;
+            padding: 10px 0;
+            .user-head{
+                width: 15%;
+                padding-bottom: 15%;
+                position: relative;
+                img{
+                    position: absolute;
+                    max-width: 100%;
+                    max-height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
                 }
             }
-            .user-name{
-                width: 85%;
+            .fa-user-circle{
+                font-size: 30px;
+            }
+            p{
+                width: 80%;
                 margin-left: auto;
-                p{
-                    font-size: 20px;
-                    font-family: "GenJyuuGothic-R";
-                }
+                font-size: 20px;
+                font-family: "GenJyuuGothic-R";
             }
         }
         .letter-body{
@@ -275,6 +286,21 @@ body{
         align-items: center;
         width: 100%;
         padding: 10px 0;
+        .user-head{
+            width: 15%;
+            padding-bottom: 15%;
+            position: relative;
+            img{
+                position: absolute;
+                max-width: 100%;
+                max-height: 100%;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
         .fa-user-circle{
             width: 10%;
             font-size: 30px;
@@ -282,7 +308,7 @@ body{
         }
         p{
             margin-left: auto;
-            width: 85%;
+            width: 80%;
             font-size: 20px;
             font-family: "GenJyuuGothic-R";
         }
@@ -314,7 +340,7 @@ body{
             width: 70%;
             font-size: 20px;
             line-height: 40px;
-            font-family: "A-OTF-M";
+            font-family: "GenJyuuGothic-R";
             margin-left: auto;
             text-align: justify;
             span{
@@ -323,7 +349,7 @@ body{
         }
         p{
             width: 70%;
-            font-family: "A-OTF-M";
+            font-family: "GenJyuuGothic-R";
             font-size: 16px;
             line-height: 32px;
             margin-left: auto;
@@ -363,6 +389,7 @@ body{
     width: 40%;
     left: -10%;
     bottom: -5%;
+    transform: rotate(-15deg);
     img{
         width: 100%;
     }

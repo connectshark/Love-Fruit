@@ -85,7 +85,11 @@ function stageName($stage)
 						<i class="fas fa-cloud"></i><span><?php echo stageName($row->stage_no); ?></span>
 					</div>
 					<div class="message-header">
-						<i class="fas fa-user-circle"></i>
+						<?php if ($row->mem_pic) {?>
+							<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="使用者頭像"></div>
+						<?php }else{
+							echo "<i class='fas fa-user-circle'></i>";
+						} ?>
 						<p><?php echo $row->mem_name; ?></p>
 					</div>
 
@@ -114,12 +118,12 @@ function stageName($stage)
 				</div>
 				<div class="letter-content">
 					<div class="letter-header">
-						<div class="user-img">
-							<i class="fas fa-user-circle"></i>
-						</div>
-						<div class="user-name">
-							<p><?php echo $row->mem_name; ?></p>
-						</div>
+						<?php if ($row->mem_pic) {?>
+							<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="使用者頭像" srcset=""></div>
+						<?php }else{
+							echo "<i class='fas fa-user-circle'></i>";
+						} ?>						
+						<p><?php echo $row->mem_name; ?></p>
 					</div>
 					<div class="letter-body">
 						<label>

@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/custom.css" />
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/custombtn.css">
+    <link rel="stylesheet" href="css/custom-pop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
@@ -342,8 +343,33 @@
                     </a>
                 </div>
     		</div>
-                <div id="boxx"></div>
 		</section>
+        <section class="pop" id="pop">
+            <div class="pop-area">
+            <span class="close" id="close-pop">
+                <img src="img/pop-close.png" alt="關閉視窗">
+            </span>
+            <div class="pop-title">
+                <h2>製作完成</h2>
+                <p>總價格為:<span id="pop-total-price"></span>元</p>
+            </div>
+                <div class="btn-item">
+                    <a class="cart-btn" href="writemessage.php">
+                        <span class="cart-btn-in">放入購物車</span>
+                    </a>
+                </div>
+                <div class="btn-item">
+                    <a class="message-btn" href="writemessage.php">
+                        <span class="message-btn-in">我要留言</span>
+                    </a>
+                </div>
+                <div class="btn-item">
+                    <a class="reset-btn">
+                        <span class="reset-btn-in">重作一個</span>
+                     </a>
+                </div>
+            </div>
+        </section>
 	</div>
     <canvas width="400px" height="500px" id="canvas"></canvas>
 	<footer>
@@ -356,6 +382,7 @@
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
     <script src="js/custom-img.js"></script>
+    <script src="js/custom-pop.js"></script>
     <script>
         new Vue({
             el:'#app',
