@@ -6,28 +6,27 @@ $errMsg="";
         $psw = "";
         $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
         $pdo = new PDO( $dsn , $user , $psw, $options );
-        $sql = "insert course_msg set mem_no = :memNo , course_class_no = :courseClassNo, msg_date = :msgDate, msg_title = :msgTitle , msg_content = :msgContent";
+        $sql = "insert course_reservation set mem_no = :memNo , course_name = :courseName, course_date = :courseDate, course_slot = :courseSlot , res_ppl = :resPpl,res_date = :resDate";
         $memNo = 1;//session抓
-        $courseClassNo = $_REQUEST['courseClassNo'];
-        $msgTitle  = $_REQUEST['msgTitle'];
-        $msgContent = $_REQUEST['msgContent'];
-        $courseMsg = $pdo->prepare($sql);
-        $courseMsg->bindValue(':memNo',$memNo);
-        $courseMsg->bindValue(':courseClassNo',$courseClassNo);
-        $courseMsg->bindValue(':msgDate',date("Y-m-d"));
-        $courseMsg->bindValue(':msgTitle',$msgTitle);
-        $courseMsg->bindValue(':msgContent',$msgContent);
-        $courseMsg->execute();
+        $courseName = $_REQUEST['courseName'];
+        $courseDate  = $_REQUEST['courseDate'];
+        $courseSlot = $_REQUEST['courseSlot'];
+        $resPpl = $_REQUEST['resPpl'];
+      
+        $courseR = $pdo->prepare($sql);
+        $courseR->bindValue(':memNo',$memNo);
+        $courseR->bindValue(':courseName',$courseName);
+        $courseR->bindValue(':courseDate',$courseDate);
+        $courseR->bindValue(':courseSlot',$courseSlot);
+        $courseR->bindValue(':resPpl',$resPpl);
+        $courseR->bindValue(':resDate',date("Y-m-d h:i:sa"));
+        $courseR->execute();
         echo "sucess";
     } catch (PDOException $e) {
         $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
         $errMsg .= "行數:". $e->getLine()."<br>";
         echo $errMsg;
     }
-    // if($courseClassNo==1){
-    //     header("location:course-group.php");
-    // }else{
-    //     header("location:course-general.php");
-    // }
-    
+   
+    header("location:account.php");
 ?>

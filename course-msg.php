@@ -14,7 +14,7 @@ $errMsg="";
         $courseMsg = $pdo->prepare($sql);
         $courseMsg->bindValue(':memNo',$memNo);
         $courseMsg->bindValue(':courseClassNo',$courseClassNo);
-        $courseMsg->bindValue(':msgDate',date("Y-m-d"));
+        $courseMsg->bindValue(':msgDate',date("Y-m-d h:i:sa"));
         $courseMsg->bindValue(':msgTitle',$msgTitle);
         $courseMsg->bindValue(':msgContent',$msgContent);
         $courseMsg->execute();
@@ -24,10 +24,10 @@ $errMsg="";
         $errMsg .= "行數:". $e->getLine()."<br>";
         echo $errMsg;
     }
-    // if($courseClassNo==1){
-    //     header("location:course-group.php");
-    // }else{
-    //     header("location:course-general.php");
-    // }
+    if($courseClassNo ==1){
+        header("location:course-group.php");
+    }else{
+        header("location:course-general.php");
+    }
     
 ?>
