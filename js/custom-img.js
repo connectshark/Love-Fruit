@@ -32,6 +32,11 @@
 	// ctx.fillStyle=gradient;
 	// ctx.fillRect(0,0,500,365);
 	// ctx.fill();
+	// var texturePic = new Image();
+	// texturePic.src = "../img/custom/texture1.png";
+	// texturePic.addEventListener('load',function () {
+	// 	ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+	// });
 	// 第一個模型結束
 
 	// 第二個模型開始熊掌
@@ -66,11 +71,15 @@
 	// ctx.fillRect(170,365,50,150);
 	// var gradient = ctx.createLinearGradient(175,0,175,500);//漸層色起點&漸層色終點
 	// gradient.addColorStop(0,'orange');
-	// // gradient.addColorStop(0.5,'#fff');
 	// gradient.addColorStop(1,'red');
 	// ctx.fillStyle=gradient;
 	// ctx.fillRect(0,0,500,365);
 	// ctx.fill();
+	// var texturePic = new Image();
+	// texturePic.src = "../img/custom/texture2.png";
+	// texturePic.addEventListener('load',function () {
+	// 	ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+	// });
 	// 第二個模型結束
 	// 第三個模型開始兔兔
 	// ctx.beginPath();
@@ -89,25 +98,30 @@
 	// ctx.quadraticCurveTo(326,265,304,294);
 	// ctx.quadraticCurveTo(326,295,325,305);
 	// ctx.quadraticCurveTo(346,306,344,330);
-	// ctx.quadraticCurveTo(344,368,295,380);
-	// ctx.lineTo(220,380);
+	// ctx.quadraticCurveTo(344,368,295,390);
+	// ctx.lineTo(220,390);
 	// ctx.lineTo(220,475);
 	// ctx.quadraticCurveTo(195,500,170,475);
-	// ctx.lineTo(170,380);
-	// ctx.lineTo(80,380);
+	// ctx.lineTo(170,390);
+	// ctx.lineTo(80,390);
 	// ctx.quadraticCurveTo(42,378,44,340);
 	// ctx.quadraticCurveTo(53,312,77,300);
 	// ctx.quadraticCurveTo(65,275,82,260);
 	// ctx.quadraticCurveTo(70,225,105,190);
 	// ctx.clip();
-	// ctx.fillStyle="#FFD5B3";
-	// ctx.fillRect(170,380,50,200);
 	// var gradient = ctx.createLinearGradient(175,0,175,500);//漸層色起點&漸層色終點
 	// gradient.addColorStop(0,'orange');
 	// gradient.addColorStop(1,'red');
 	// ctx.fillStyle=gradient;
 	// ctx.fillRect(0,0,500,380);
 	// ctx.fill();
+	// ctx.fillStyle="#FFD5B3";
+	// ctx.fillRect(170,390,50,200);
+	// var texturePic = new Image();
+	// texturePic.src = "../img/custom/texture3.png";
+	// texturePic.addEventListener('load',function () {
+	// 	ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+	// });
 
 	// 第三個模型結束
 
@@ -119,7 +133,7 @@
 
 
 	// 第四個模型開始火箭
-	// ctx.beginPath();
+	ctx.beginPath();
 	ctx.lineWidth=3;
 	ctx.strokeStyle="rgba(0,0,0,0)";
 	ctx.moveTo(90,222);
@@ -151,27 +165,22 @@
 	ctx.fillStyle=gradient;
 	ctx.fillRect(0,0,500,375);
 	ctx.fill();
-
-	// 第四個模型結束
-
-	// ctx.beginPath();
-	// ctx.fillStyle="#FFD5B3";
-	// ctx.fillRect(170,365,50,150);
-	// var gradient = ctx.createLinearGradient(175,0,175,500);//漸層色起點&漸層色終點
-	// gradient.addColorStop(0,'orange');
-	// // gradient.addColorStop(0.5,'#fff');
-	// gradient.addColorStop(1,'red');
-	// ctx.fillStyle=gradient;
-	// ctx.fillRect(0,0,500,365);
-	// ctx.fill();
-
-
-
 	var texturePic = new Image();
 	texturePic.src = "../img/custom/texture4.png";
 	texturePic.addEventListener('load',function () {
 		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 	});
+
+	// 第四個模型結束
+	ctx.save();
+	ctx.fillStyle="#333";
+	ctx.font = "18px Tahoma";
+	ctx.fillText('LOL~~~~~~~HAHAHA gg ^^',175,450);
+	ctx.rotate(Math.PI/2);
+	ctx.restore();
+
+
+
 
 	
 	// var fruiteslice = new Image();
@@ -179,7 +188,7 @@
 	// fruiteslice.addEventListener('load',function() {
 	// 	ctx.drawImage(fruiteslice,175,0,fruiteslice.width,fruiteslice.height);
 	// })
-	bg = canvas.toDataURL("image/png");
+	// bg = canvas.toDataURL("image/png");
 	// ctx.clearRect(0, 0, canvas.width, canvas.height);
 	// console.log(bg);
 	// var bgi = new Image();

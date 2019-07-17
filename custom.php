@@ -1,3 +1,30 @@
+<?php 
+try {
+    $dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
+    $user = "root";
+    $psw = "root";
+    $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO( $dsn , $user , $psw, $options );
+    // 抓切片
+    $sql = "SELECT ii_no, ii_name,ii_pic FROM ingredients";
+    $ii = $pdo->prepare($sql);
+    $ii -> execute();
+    // 抓模具
+    $sql = "SELECT mold_name,mold_pic FROM mold";
+    $mold = $pdo->prepare($sql);
+    $mold -> execute();
+    // 抓水果
+    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base";
+    $fruite = $pdo->prepare($sql);
+    $fruite -> execute();
+} catch (PDOException $e) {
+    $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+    $errMsg .= "行數:". $e->getLine()."<br>";
+}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="UTF-8">
 
@@ -146,36 +173,18 @@
     				<h2>選擇製冰容器</h2>
     			</div>
     			<div class="aside-select">
-    				<div class="select-item select-item-4">
+                    <?php while ($moldrow = $mold -> fetchObject()) { ?>
+                    <div class="select-item select-item-4">
                         <label for="texture1">
-    					<div class="texture-item texture-select">
-    						<figure>
-                                <img src="img/custom/texture1.png" alt="冰棒模型">
+                        <div class="texture-item texture-select">
+                            <figure>
+                                <img src="<?php echo $moldrow->mold_pic; ?>" alt="<?php echo $moldrow->mold_name; ?>">
                             </figure>
-                                <p>冰棒模型</p>
-    					</div></label>
-    				</div>
-    				<div class="select-item select-item-4">
-                        <label for="texture2">
-    					<div class="texture-item texture-select">
-    						<figure><img src="img/custom/texture2.png" alt="熊掌模型"></figure>
-    						<p>熊掌模型</p>
-    					</div></label>
-    				</div>
-    				<div class="select-item select-item-4">
-                        <label for="texture3">
-    					<div class="texture-item texture-select">
-    						<figure><img src="img/custom/texture3.png" alt="兔兔模型"></figure>
-    						<p>兔兔模型</p>
-    					</div></label>
-    				</div>
-    				<div class="select-item select-item-4">
-                        <label for="texture4">
-    					<div class="texture-item texture-select">
-    						<figure><img src="img/custom/texture4.png" alt="火箭模型"></figure>
-    						<p>火箭模型</p>
-    					</div></label>
-    				</div>
+                                <p><?php echo $moldrow->mold_name; ?></p>
+                        </div></label>
+                    </div>
+
+                    <?php } ?>
     			</div>
             </div>
 
@@ -185,49 +194,16 @@
                     <h2>選擇基底水果</h2>
                 </div>
                 <div class="aside-select">
+                    <?php while ($fruiterow = $fruite -> fetchObject()) {?>
                     <div class="select-item select-item-6 select-item-4">
                         <label for="option1">
                             <div class="fruite-item texture-item">
-                                <figure><img src="img/greenapple.png" alt="青蘋果"></figure>
-                                <p>青蘋果</p>
+                                <figure><img src="<?php echo $fruiterow->fruite_pic ?>" alt="<?php echo $fruiterow->fruit_name ?>"></figure>
+                                <p><?php echo $fruiterow->fruit_name ?></p>
                             </div>
                         </label>
                     </div>
-                    <div class="select-item select-item-6 select-item-4">
-                        <label for="option2">
-                        <div class="fruite-item texture-item">
-                            <figure><img src="img/banana.png" alt="香蕉"></figure>
-                            <p>香蕉</p>
-                        </div></label>
-                    </div>
-                    <div class="select-item select-item-6 select-item-4">
-                        <label for="option3">
-                        <div class="fruite-item texture-item">
-                            <figure><img src="img/blueberry.png" alt="藍莓"></figure>
-                            <p>藍莓</p>
-                        </div></label>
-                    </div>
-                    <div class="select-item select-item-6 select-item-4">
-                        <label for="option4">
-                        <div class="fruite-item texture-item">
-                            <figure><img src="img/orange.png" alt="橘子"></figure>
-                            <p>橘子</p>
-                        </div></label>
-                    </div>
-                    <div class="select-item select-item-6 select-item-4">
-                        <label for="option5">
-                        <div class="fruite-item texture-item">
-                            <figure><img src="img/grape.png" alt="葡萄"></figure>
-                            <p>葡萄</p>
-                        </div></label>
-                    </div>
-                    <div class="select-item select-item-6 select-item-4">
-                        <label for="option6">
-                        <div class="fruite-item texture-item">
-                            <figure><img src="img/streberry.png" alt="草莓"></figure>
-                            <p>草莓</p>
-                        </div></label>
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="range-area">
                     <div class="gradual">
@@ -255,34 +231,15 @@
                     <h2>選擇水果切片</h2>
                 </div>
                 <div class="aside-select">
+                    <?php while ($row = $ii -> fetchObject()) { ?>
                     <div class="select-item select-item-4 select-item-6">
                         <label for="fruite-slice1">
                         <div class="texture-item slice-item">
-                            <figure><img src="img/chocolate.png" alt="巧克力"></figure>
-                            <p>巧克力</p>
+                            <figure><img src="<?php echo $row->ii_pic ?>" alt="<?php echo $row->ii_name ?>"></figure>
+                            <p><?php echo $row->ii_name ?></p>
                         </div></label>
                     </div>
-                    <div class="select-item select-item-4 select-item-6">
-                        <label for="fruite-slice2">
-                        <div class="texture-item slice-item">
-                            <figure><img src="img/bittergourd.png" alt="苦瓜"></figure>
-                            <p>苦瓜</p>
-                        </div></label>
-                    </div>
-                    <div class="select-item select-item-4 select-item-6">
-                        <label for="fruite-slice3">
-                        <div class="texture-item slice-item">
-                            <figure><img src="img/saltedplum.png" alt="酸梅"></figure>
-                            <p>酸梅</p>
-                        </div></label>
-                    </div>
-                    <div class="select-item select-item-4 select-item-6">
-                        <label for="fruite-slice4">
-                        <div class="texture-item slice-item">
-                            <figure><img src="img/Roselle.png" alt="洛神花"></figure>
-                            <p>洛神花</p>
-                        </div></label>
-                    </div>
+                    <?php } ?>
                     <div class="location-btn-group">
                         <div class="location-btn-item"><button type="button" class="operate" id="slice-bigger"><i class="fas fa-search-plus"></i></button></div>
                         <div class="location-btn-item"><button type="button" class="operate" id="slice-smaller"><i class="fas fa-search-minus"></i></button></div>
@@ -378,11 +335,13 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
 	<script src="js/nav.js"></script>
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
     <script src="js/custom-img.js"></script>
     <script src="js/custom-pop.js"></script>
+    <script src="js/custom-load.js"></script>
     <script>
         new Vue({
             el:'#app',
