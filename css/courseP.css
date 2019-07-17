@@ -5,7 +5,6 @@
 }
 
 * {
-  outline: none;
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1001,9 +1000,9 @@ body {
 }
 
 .general-form-wrap .wrapper {
-  padding-bottom: 10%;
+  width: 95%;
   max-width: 1200px;
-  padding-top: 30%;
+  padding: 30% 0 10%;
   margin: auto;
 }
 
@@ -1018,6 +1017,25 @@ body {
   position: relative;
   text-align: center;
   margin: auto;
+}
+
+.general-form-wrap .wrapper .title .general-form-title {
+  color: #fff;
+  font-size: 34px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.general-form-wrap .wrapper .title .general-form-title:after {
+  z-index: -1;
+  content: "一般課程預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
 }
 
 @media all and (min-width: 992px) {
@@ -1036,22 +1054,23 @@ body {
   }
 }
 
-.general-form-wrap .wrapper .title h3 {
+.general-form-wrap .wrapper .title .general-form-title {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -75%);
-          transform: translate(-50%, -75%);
+  -webkit-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
 }
 
 @media all and (max-width: 768px) {
-  .general-form-wrap .wrapper .title h3 {
+  .general-form-wrap .wrapper .title .general-form-title {
     font-size: 20px;
   }
 }
 
 .general-form-wrap .wrapper form {
-  padding: 5%;
+  width: 90%;
+  padding: 3%;
   background-color: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 10px #aaa;
@@ -1059,9 +1078,9 @@ body {
   margin: auto;
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) {
   .general-form-wrap .wrapper form {
-    width: 70%;
+    width: 80%;
   }
 }
 
@@ -1087,6 +1106,7 @@ body {
 }
 
 .general-form-wrap .wrapper form .check {
+  position: relative;
   padding-bottom: 20px;
 }
 
@@ -1133,16 +1153,50 @@ body {
 
 .general-form-wrap .wrapper form .check .check-pic {
   position: relative;
-  top: -20px;
-  right: 15px;
+  top: -40px;
+  right: -20px;
 }
 
-.general-form-wrap .wrapper form #date-picker {
-  padding: 10px;
-  margin: 15px;
+@media all and (min-width: 769px) {
+  .general-form-wrap .wrapper form .check .check-pic {
+    top: -20px;
+    right: 15px;
+  }
 }
 
-.general-form-wrap .wrapper form #date-picker table {
+.general-form-wrap .wrapper form .calender-box {
+  margin: 15px 0;
+}
+
+@media all and (min-width: 769px) {
+  .general-form-wrap .wrapper form .calender-box {
+    padding: 10px;
+    margin: 15px;
+  }
+}
+
+.general-form-wrap .wrapper form .calender-box .calendar-top {
+  padding: 20px 0;
+  background-color: #ea7187;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+          box-shadow: 2px 2px 2px #888888;
+}
+
+.general-form-wrap .wrapper form .calender-box .mm, .general-form-wrap .wrapper form .calender-box .yy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.general-form-wrap .wrapper form .calender-box table {
   vertical-align: middle;
   background-color: #fff;
   width: 100%;
@@ -1153,37 +1207,39 @@ body {
           box-shadow: 2px 2px 2px #888888;
 }
 
-.general-form-wrap .wrapper form #date-picker table #mon {
-  padding: 20px 0;
-  background-color: #ea7187;
-  border-radius: 10px 10px 0 0;
-  color: #fff;
-  font-weight: bold;
-  -webkit-box-shadow: 2px 2px 2px #888888;
-          box-shadow: 2px 2px 2px #888888;
-}
-
-.general-form-wrap .wrapper form #date-picker table th {
+.general-form-wrap .wrapper form .calender-box table th {
   padding: 60px 0 20px;
   color: #ea7187;
   font-weight: bold;
 }
 
-.general-form-wrap .wrapper form #date-picker table tr {
+.general-form-wrap .wrapper form .calender-box table tr {
   width: 100%;
-  height: 60px;
+  height: 30px;
 }
 
-.general-form-wrap .wrapper form #date-picker table td {
-  width: 14%;
-  height: 60px;
+@media all and (min-width: 769px) {
+  .general-form-wrap .wrapper form .calender-box table tr {
+    height: 60px;
+  }
+}
+
+.general-form-wrap .wrapper form .calender-box table .tdclass {
+  margin: auto;
   vertical-align: middle;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
 }
 
-.general-form-wrap .wrapper form #date-picker table .now {
-  background: #ea7187;
-  border-radius: 30px;
-  color: #fff;
+@media all and (min-width: 769px) {
+  .general-form-wrap .wrapper form .calender-box table .tdclass {
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+  }
 }
 
 .general-form-wrap .wrapper form select {
@@ -1307,6 +1363,25 @@ body {
   margin: auto;
 }
 
+.group-form-wrap .wrapper .title .group-form-title {
+  color: #fff;
+  font-size: 34px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.group-form-wrap .wrapper .title .group-form-title:after {
+  z-index: -1;
+  content: "揪團課程預約";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 5px #6a3e26;
+}
+
 @media all and (min-width: 992px) {
   .group-form-wrap .wrapper .title {
     width: 70%;
@@ -1382,13 +1457,13 @@ body {
   margin: 10px 0;
 }
 
-.group-form-wrap .wrapper form #date-picker {
+.group-form-wrap .wrapper form #calender-box {
   margin: 10px 0;
   border-radius: 20px;
   border: 5px solid #f6c555;
 }
 
-.group-form-wrap .wrapper form #date-picker table {
+.group-form-wrap .wrapper form #calender-box table {
   vertical-align: middle;
   background-color: #fff;
   width: 100%;
@@ -1397,7 +1472,7 @@ body {
   border-radius: 0 0 10px 10px;
 }
 
-.group-form-wrap .wrapper form #date-picker table #mon {
+.group-form-wrap .wrapper form #calender-box table #mon {
   padding: 20px 0;
   background-color: #f6c555;
   border-radius: 10px 10px 0 0;
@@ -1405,23 +1480,23 @@ body {
   font-weight: bold;
 }
 
-.group-form-wrap .wrapper form #date-picker table th {
+.group-form-wrap .wrapper form #calender-box table th {
   padding: 60px 0 20px;
   color: #ffb11b;
 }
 
-.group-form-wrap .wrapper form #date-picker table tr {
+.group-form-wrap .wrapper form #calender-box table tr {
   width: 100%;
   height: 60px;
 }
 
-.group-form-wrap .wrapper form #date-picker table td {
+.group-form-wrap .wrapper form #calender-box table td {
   width: 14%;
   height: 60px;
   vertical-align: middle;
 }
 
-.group-form-wrap .wrapper form #date-picker table .now {
+.group-form-wrap .wrapper form #calender-box table .now {
   background: #ffb11b;
   border-radius: 30px;
   color: #fff;

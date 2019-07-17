@@ -313,7 +313,9 @@ function putStickIn() {
 		$('#none-last').show();
 	});
 	totalPrice();
-	html2img();
+	imgPrint();
+}
+function imgPrint() {
 }
 // 計算總價
 function totalPrice() {

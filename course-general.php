@@ -65,7 +65,7 @@
                                         </ul>
                                     </div>
                                     <div class="course-btn">
-                                        <a class="course-ice-btn-out" href="courseGeneralForm.html">
+                                        <a class="course-ice-btn-out" href="course-general-form.php">
                                             <span class="course-ice-btn-in">
                                                 <img src="img/btn/ICE.png" alt="btn">
                                                 我要預約
@@ -105,7 +105,7 @@
                                     </ul>
                                 </div>
                                 <div class="course-btn">
-                                    <a class="course-ice-btn-out" href="courseGeneralForm.html">
+                                    <a class="course-ice-btn-out" href="course-general-form.php">
                                         <span class="course-ice-btn-in">
                                             <img src="img/btn/ICE.png" alt="btn">
                                             我要預約
@@ -127,8 +127,8 @@
             <h3  class="message-title">課程留言板</h3>
             <span>寫下你對課程的想法！</span>
         </div>
-
-        <div class="leave-message-wrap">
+      
+        <form class="leave-message-wrap" action=".php" method="post" enctype="multipart/form-data">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
                 <p>會員名稱</p>
@@ -144,8 +144,8 @@
                     </span>
                 </div>
             </div>
-        </div>
-     
+        </form>
+       
 
         <div class="mem-message-wrap">
             <div class="mem-message-item">
