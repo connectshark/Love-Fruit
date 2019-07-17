@@ -76,6 +76,10 @@
           justify-content: center;
 }
 
+.page-account .account .wrap .profile-id {
+  font-size: 16px;
+}
+
 .page-account .menu {
   background-color: #ea7187;
   border-top-left-radius: 10px;
@@ -96,16 +100,35 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.page-account .menu .profile-picture i {
-  font-size: 50px;
+.page-account .menu .profile-picture .btn-file {
+  font-size: 16px;
+  color: blue;
+}
+
+.page-account .menu .profile-picture .btn-file:hover {
+  cursor: pointer;
+}
+
+.page-account .menu .profile-picture #upFile {
+  display: none;
+}
+
+.page-account .menu .profile-picture img {
+  width: 100%;
   display: block;
-  padding-right: 20px;
+  border-radius: 50%;
+}
+
+.page-account .menu .profile-picture p {
+  padding-bottom: 10px;
 }
 
 .page-account .menu .profile-picture a {
-  display: block;
   padding-top: 10px;
   font-size: 18px;
 }
@@ -237,6 +260,23 @@
           align-items: center;
 }
 
+.page-account .content-order .order-item .order-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-account .content-order .order-item .order-desc .thead {
+  font-weight: bold;
+}
+
 .page-account .content-order .order-item .order-desc p {
   padding: 10px;
 }
@@ -272,15 +312,27 @@
           align-items: center;
 }
 
+.page-account .content-collection .collection-item .prod-img img {
+  width: 50%;
+}
+
 .page-account .content-collection .collection-item .collection-desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .page-account .content-collection .collection-item .collection-desc .heart {
   text-align: right;
-  cursor: pointer;
+}
+
+.page-account .content-collection .collection-item .collection-desc .heart i {
+  color: #cb1b45;
+  font-size: 24px;
 }
 
 .page-account .content-collection .collection-item .collection-desc p {
@@ -289,6 +341,16 @@
 
 .page-account .content-custom {
   display: none;
+}
+
+.page-account .content-custom table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .page-account .content-custom .custom-item {
@@ -307,27 +369,7 @@
           align-items: center;
 }
 
-.page-account .content-custom .custom-item .custom-desc p {
-  padding: 10px 10px 10px 0;
-}
-
-.page-account .content-custom .custom-item .custom-desc p:first-child {
-  padding-top: 0px;
-}
-
-@media all and (min-width: 769px) {
-  .page-account .content-custom .custom-desc {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.page-account .content-course {
-  display: none;
-}
-
-.page-account .content-course table {
+.page-account .content-custom .custom-item .custom-desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,15 +377,53 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.page-account .content-course table thead.class-item {
-  padding: 0 20px;
+.page-account .content-custom .custom-item .custom-desc .thead {
+  border-bottom: 1px solid #ffbaba;
 }
 
-.page-account .content-course table .class-item {
-  padding: 20px;
-  margin: 5px 0;
+.page-account .content-custom .custom-item .custom-desc .thead p {
+  font-weight: bold;
+}
+
+@media all and (max-width: 768px) {
+  .page-account .content-custom .custom-item .custom-desc .thead {
+    border-bottom: none;
+  }
+}
+
+.page-account .content-custom .custom-item .custom-desc p {
+  padding: 10px;
+}
+
+@media all and (min-width: 769px) {
+  .page-account .content-custom .thead-img {
+    display: none;
+  }
+}
+
+.page-account .content-course {
+  display: none;
+}
+
+.page-account .content-course thead td {
+  font-weight: bold;
+}
+
+@media all and (min-width: 769px) {
+  .page-account .content-course thead {
+    border-right: none;
+    border-bottom: 1px solid #ffbaba;
+  }
+}
+
+.page-account .content-course .class-item {
+  padding: 10px 20px;
+  margin: 20px 0;
   background-color: #ffdee6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -357,11 +437,7 @@
           align-items: center;
 }
 
-.page-account .content-course table .class-item td {
-  padding: 20px 0;
-}
-
-.page-account .content-course table .class-item .class-desc {
+.page-account .content-course .class-item .class-desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,23 +450,26 @@
           align-items: center;
 }
 
+.page-account .content-course .class-item .class-desc .thead {
+  font-weight: bold;
+}
+
+.page-account .content-course .class-item .class-desc p {
+  padding: 10px;
+}
+
 @media all and (min-width: 769px) {
-  .page-account .content-course table .class-item .class-desc .cancel, .page-account .content-course table .class-item .class-desc .qrcode {
+  .page-account .content-course .class-item .class-desc .cancel, .page-account .content-course .class-item .class-desc .qrcode {
     text-align: right;
   }
 }
 
-.page-account .content-course table .class-item .class-desc .cancel a, .page-account .content-course table .class-item .class-desc .qrcode a {
+.page-account .content-course .class-item .class-desc .cancel a, .page-account .content-course .class-item .class-desc .qrcode a {
   color: #db4d6d;
-  display: block;
 }
 
-.page-account .content-course table .class-item .class-desc .cancel a:hover, .page-account .content-course table .class-item .class-desc .qrcode a:hover {
+.page-account .content-course .class-item .class-desc .cancel a:hover, .page-account .content-course .class-item .class-desc .qrcode a:hover {
   border-bottom: 1px solid #db4d6d;
-}
-
-.page-account .content-course table .class-item .class-desc p {
-  padding: 10px;
 }
 
 @media all and (max-width: 768px) {
