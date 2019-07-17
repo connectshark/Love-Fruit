@@ -24,6 +24,25 @@
   color: black;
 }
 
+#mini-cart .gogo {
+  cursor: pointer;
+  background-color: #DB4D6D;
+  width: 100vw;
+  height: 20vh;
+  font-size: 28px;
+}
+
+#mini-cart .gogo:hover {
+  background-color: #EA7187;
+}
+
+#mini-cart .gogo a {
+  padding-top: 4%;
+  width: 56vw;
+  display: block;
+  margin: auto;
+}
+
 #mini-cart .head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,101 +82,10 @@
 
 #mini-cart .cart-close .fa-times {
   font-size: 25px;
-}
-
-#mini-cart .mini-item-wrap {
-  width: 100vw;
-  height: 130px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 2px solid gray;
-}
-
-#mini-cart .mini-item-wrap .mini-img {
-  padding: 10px;
-}
-
-#mini-cart .mini-item-wrap span {
-  display: block;
-  font-size: 20px;
-  padding: 15px;
-}
-
-#mini-cart .mini-item-wrap img {
-  display: block;
-  width: 50%;
-  margin: auto;
-}
-
-#mini-cart .mini-item-wrap .mini-trash {
-  font-size: 30px;
-}
-
-#mini-cart .mini-item-wrap .mini-trash .fa-trash {
-  display: block;
-  margin-left: 10px;
-}
-
-#mini-cart {
-  width: 50vw;
-  height: 100vh;
-  background-color: whitesmoke;
-  position: fixed;
-  z-index: 99;
-  right: 0;
-  top: 0;
 }
 
 #mini-cart .no-item {
-  font-size: 20px;
-  text-align: center;
-}
-
-#mini-cart .head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 2px solid black;
-}
-
-#mini-cart .cart-icon {
-  width: 85%;
-  padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#mini-cart .cart-icon h3 {
   font-size: 24px;
-  padding-left: 10px;
-}
-
-#mini-cart .cart-close {
-  border-left: 2px solid black;
-  width: 15%;
-  padding: 10px 10px 10px 10px;
-  text-align: center;
-}
-
-#mini-cart .cart-close:hover {
-  color: #DB4D6D;
-}
-
-#mini-cart .cart-close .fa-times {
-  font-size: 25px;
 }
 
 #mini-cart .mini-item-wrap {
@@ -182,7 +110,6 @@
   display: block;
   font-size: 20px;
   padding: 15px;
-  text-align: center;
 }
 
 #mini-cart .mini-item-wrap img {
@@ -195,8 +122,95 @@
   font-size: 30px;
 }
 
-#mini-cart .mini-item-wrap .mini-trash .fa-trash {
+#mini-cart .mini-item-wrap .mini-trash .trash-img {
+  cursor: pointer;
   display: block;
   margin-left: 10px;
+}
+
+@media all and (min-width: 992px) {
+  #mini-cart {
+    width: 50vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    top: 0;
+  }
+  #mini-cart .no-item {
+    font-size: 28px;
+    text-align: center;
+    padding: 20px;
+  }
+  #mini-cart .head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 2px solid black;
+  }
+  #mini-cart .cart-icon {
+    width: 85%;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #mini-cart .cart-icon h3 {
+    font-size: 24px;
+    padding-left: 10px;
+  }
+  #mini-cart .cart-close {
+    border-left: 2px solid black;
+    width: 15%;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+  }
+  #mini-cart .cart-close:hover {
+    color: #DB4D6D;
+  }
+  #mini-cart .cart-close .fa-times {
+    font-size: 25px;
+  }
+  #mini-cart .mini-item-wrap {
+    width: 100vw;
+    height: 130px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 2px solid gray;
+  }
+  #mini-cart .mini-item-wrap .mini-img {
+    padding: 10px;
+  }
+  #mini-cart .mini-item-wrap span {
+    display: block;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+  }
+  #mini-cart .mini-item-wrap img {
+    display: block;
+    width: 50%;
+    margin: auto;
+  }
+  #mini-cart .mini-item-wrap .mini-trash {
+    font-size: 30px;
+  }
+  #mini-cart .mini-item-wrap .mini-trash .fa-trash {
+    display: block;
+    margin-left: 10px;
+  }
 }
 /*# sourceMappingURL=temporary-cart.css.map */

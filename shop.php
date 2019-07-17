@@ -161,11 +161,6 @@ try {
                 </div>
             </div>    
             <div id="mini-item">
-                <!-- <div class="mini-img col-lg-3"><img src="img/shop/popsicle-single.png" alt=""></div>
-                <span class="mini-name col-lg-3">冰心透涼</span>
-                <span class="mini-qty col-lg-1">2x</span>
-                <span class="mini-pri col-lg-2">NT250</span>
-                <div class="mini-trash col-lg-4"><i class="fas fa-trash"></i></div> -->
             </div>
         </section>
     </header>
@@ -289,39 +284,41 @@ try {
                     //     $qty = 0;
                     // }
                 ?>
-                        <div class="general-item col-6 col-lg-3 single">
+                        <div class="general-item col-6 col-lg-3 <?php
+                        if($prodRow["stage_no"] == 1){echo "single";
+                            
+                        }elseif($prodRow["stage_no"] == 2){echo "first-love";
+
+                        }elseif($prodRow["stage_no"] == 3){echo "fall-in-love";
+
+                        }else{echo "break-up";
+
+                        }
+                        ?>">
                             <div class="ice-type col-11">
-                                <img src="img/shop/icetype-popsicle.png" alt="">
+                                <img src="database/img_type/<?php
+                                if($prodRow["type_no"]==1){echo "popsicle.png";
+                                }elseif($prodRow["type_no"]==2){echo "ball.png";}
+                                else{echo "mount.png";}?>" alt="">
                                 <p><?php echo $prodRow["stage_name"] ?></p>
                             </div>
                             <div class="general-item-content col-11 ">
                            
                                 <div class="item-img col-12">
                                     <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
-                                        <img src="img/shop/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
+                                        <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
                                     </a>    
                                     <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
                                 </div>
                                 
                                 <div class="item-text ">
-                                    <span class="item-name col-12"><?php echo $prodRow["prod_name"] ?></span>
-                                    <div class="review col-12">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <span>(4.5)</span>
-                                    </div>
-                                </div>
-                                <div class="item-pri ">
-                                    <span>
+                                    <span class="item-name col-lg-6 col-12"><?php echo $prodRow["prod_name"] ?></span>
+                                    <span class="col-lg-6">
                                         NT<?php echo $prodRow["prod_price"] ?>
                                     </span>
-
-                                    
-                                    <div class="btn-numbox">
-                                        <!-- <form id='myform' method='POST' action='#'> -->
+                                </div>
+                                <div class="item-pri">
+                                    <div class="btn-numbox col-lg-12">
                                             <input type='button' value='-' class='qtyminus' field='quantity' />
                                             <input type='number' min="1"  name='quantity' value='1' class='qty' />
                                             <input type='button' value='+' class='qtyplus' field='quantity' />

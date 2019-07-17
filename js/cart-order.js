@@ -1,3 +1,5 @@
+
+
 $(function(){
     var $li = $('ul.tabtitle li');
         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
@@ -8,24 +10,49 @@ $(function(){
         });
     });
 
+function orderSession(){
+    let xhr = new XMLHttpRequest();
+	
+	xhr.onload = function (e){
+		cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
+		console.log(cart);
+	}
+    var member = {};
+    member.name = document.getElementById(name).value;
+    member.phone = document.getElementById(phone).value;
+    member.email = document.getElementById(email).value;
+    if( document.getElementsByName("pay")[0].checked){
+        member.pay = 0;
+      }else{
+        member.pay = 1;
+      }
+
+      if( document.getElementsByName("transport")[0].checked){
+        member.transport = 0;
+      }else{
+        member.transport = 2;
+      }  
 
 
 
-    // $(function(){
-    //     //获取点击事件的对象
-    //     $(".nav li").click(function(){
-    //         //获取要显示或隐藏的对象
-    //         var divShow = $(".content").children('.list');
-    //         //判断当前对象是否被选中，如果没选中的话进入if循环
-    //         if (!$(this).hasClass('selected')) {
-    //             //获取当前对象的索引
-    //             var index = $(this).index();
-    //             //当前对象添加选中样式并且其同胞移除选中样式；
-    //             $(this).addClass('selected').siblings('li').removeClass('selected');
-    //             //索引对应的div块显示
-    //             $(divShow[index]).show();
-    //             //索引对应的div块的同胞隐藏
-    //             $(divShow[index]).siblings('.list').hide();
-    //         }
-    //     });
-    // });   
+
+      var jsonStr = JSON.stringify( member );
+      var url = "order=inset.php?jsonStr=" + jsonStr ;
+
+    // console.log(this.parentNode);
+    xhr.open("get",url,true);
+	xhr.send(myForm);
+}
+
+
+
+
+
+window.addEventListener("load",function(){
+    var confirm_btn = document.getElementsByClassName("confirm-shop"); 
+        confirm_btn.addEventListener("click",orderSession);
+})
+
+
+
+    

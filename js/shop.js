@@ -2,6 +2,7 @@
 let cart = {};
 //..............................顯示購物車	
 function showCart(){
+	getCart();
 	let html = "";
 	if( isCartEmpty()){
 		html = `<div class="no-item">尚無購物資料</div>`;
@@ -21,7 +22,7 @@ function showCart(){
 				</span>
 				<span class="mini-qty col-lg-1">${cart[prod_no].qty}x</span>
 				<span class="mini-pri col-lg-1">NT${cart[prod_no].prod_price}</span>
-				<div class="mini-trash col-lg-3"><i class="trash">刪除</i></div>
+				<div class="mini-trash col-lg-1"><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
 
 				
 			</div>`;	
@@ -32,7 +33,7 @@ function showCart(){
 	
 	document.getElementById("mini-item").innerHTML = html;
 	//...............trash
-	function gettrash(e){
+	function getTrash(e){
 		console.log(e);
 		let miniItem = document.getElementById("mini-item");
 		let item = e.target.parentNode.parentNode;
@@ -40,9 +41,10 @@ function showCart(){
 		let xhr = new XMLHttpRequest();
 		
 		xhr.onload = function (){
-			miniItem.removeChild(item);
+			miniItem.removeChild(item);// 消除視覺介面
 			cart = JSON.parse(xhr.responseText);
-			// delete cart[prod_no];
+			// delete cart[prod_no]; 消除記憶體
+			
 		}
 	
 		let url = "trash.php?prod_no=" + prod_no;
@@ -53,10 +55,10 @@ function showCart(){
 		xhr.send(null);
 	}
 	// var trash = document.getElementsByClassName("fa-trash");
-	var trash = document.getElementsByClassName("trash");
-	console.log(trash.length);
+	var trash = document.getElementsByClassName("trash-img");
+	// console.log(trash.length);
 	for(i=0;i<trash.length;i++){
-		trash[i].addEventListener("click",gettrash)
+		trash[i].addEventListener("click",getTrash)
 	}
 	
 	//...............
@@ -85,7 +87,7 @@ function changeCart(e){
 		console.log(cart);
 	}
 
-	let url = "cart-update.php";
+	let url = "shop-update.php";
 	xhr.open("post",url,true);
 	console.log(this.parentNode);
 	let myForm = new FormData(this.parentNode);
@@ -94,28 +96,31 @@ function changeCart(e){
 }
 
 //.............取得購物車資料
-// function getCart(){
-//   let xhr = new XMLHttpRequest();
+function getCart(){
+  let xhr = new XMLHttpRequest();
   
-//   xhr.onload = function(){
-//   	if( xhr.status == 200){
-//   		console.log(xhr.responseText)
-//   		cart = JSON.parse(xhr.responseText);
-//   	}else{
-//   		alert(xhr.status);
-//   	}
-//   }
-//   let url = "get-cart.php";
-//   xhr.open("get", url, true);
-//   xhr.send(null);
+  xhr.onload = function(){
+  	if( xhr.status == 200){
+ 
+		  cart = JSON.parse(xhr.responseText);
+		  console.log(cart);
+		
+  	}else{
+  		alert(xhr.status);
+  	}
+  }
+  let url = "shop-update.php";
+  xhr.open("get", url, true);
+  xhr.send(null);
 
-// }
+}
 
 
 
 window.addEventListener("load", function(){
   //.............取得購物車資料
-  showCart();
+  getCart();
+
 
 //按下購物車按鈕
 var btn = document.getElementsByClassName("shop-buy-btn");
@@ -134,6 +139,8 @@ function plusnum () {
 			val++;
 			obj.value = val;
 			this.parentNode.parentNode.parentNode.querySelectorAll(".shop-btn")[0].querySelectorAll(".add-cart")[0].querySelectorAll(".qty")[0].value = val;
+			
+
 
 }
 function minnum(){
@@ -168,7 +175,8 @@ function minnum(){
 // 右上角購物車開關
 $("#mini-cart").css("display" , "none");
 $(".shopping-cart-icon").click(function(){
-    $("#mini-cart").show();
+	$("#mini-cart").show();
+	showCart();
 })
 $(".cart-close").click(function(){
 	$("#mini-cart").css("display","none");
@@ -178,80 +186,6 @@ $(".cart-close").click(function(){
 
 
 });	
-
-  //----------------註冊數量改變時的事件處理器
-   // 數量的輸入盒
-//   let qtys = document.getElementsByName("qty"); 
-//   for(let i=0; i<qtys.length; i++){
-// 	qtys[i].onchange = changeCart;
-//   }
-
-  //----------------註冊+ , - 的事件處理器
-//   let btnMinus = document.getElementsByClassName("btnMinus"); 
-//   for(let i=0; i<btnMinus.length; i++){
-// 	btnMinus[i].onclick = function(e){
-// 		let qtyBox = e.target.nextElementSibling;
-// 		let qty = parseInt(qtyBox.value);
-// 		if( qty> 0){
-// 			qty--;
-// 			qtyBox.value = qty;
-// 			//.....
-// 			changeCart(e);
-// 		}
-// 	};
-//   }  
-
-//   let btnPlus = document.getElementsByClassName("btnPlus");  
-//   for(let i=0; i<btnPlus.length; i++){
-// 	btnPlus[i].onclick = function(e){
-// 		let qtyBox = e.target.previousElementSibling;
-// 		let qty = parseInt(qtyBox.value);
-// 		qty++;
-// 		qtyBox.value = qty;
-// 		changeCart(e);
-// 	};
-//   }    
-
-
-
-//自己寫數量加減                    
-// window.addEventListener("load",function(){
-//     var plus = document.getElementsByClassName("qtyplus");
-//     var min = document.getElementsByClassName("qtyminus");
-//     var qty = document.getElementsByClassName("qty");
-//     // var qtynum = 0;
-//         // btn.addEventListener("click",function(e){
-//         //     e.preventDefault();
-
-//         // })
-//         function plusnum (){
-//                 // this.value +=1;錯
-//                 this.parentNode.children[1].value ++;
-//                 console.log(this.value);
-//             }
-//         function minnum(){
-//             if(this.parentNode.children[1].value>0){
-//                 this.parentNode.children[1].value--;
-//             } ;
-//             console.log(this.value);
-//         }
-
-//         for(i=0;i<plus.length;i++){
-
-//             //     0123 4
-//             // plus[i].addEventListener("click",function(){
-                
-//             //     console.log(i);
-//             //     console.log(plus[i]);
-//             //     qty[i].value ++;;
-//             // })
-//             plus[i].addEventListener("click",plusnum);
-//         }
-//         for(i=0;i<plus.length;i++){
-//              min[i].addEventListener("click",minnum);
-//         }
-//     })
-
 
 //按鈕壞顏色
 $(document).ready(function() {

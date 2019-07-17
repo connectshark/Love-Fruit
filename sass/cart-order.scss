@@ -226,14 +226,15 @@
         }
     }
     .confirm-btn{
-        display: none;
         text-align: center;
     }
     button{
         margin: 0px 10px;
     }
+    .confirm-a{
+        display: inline-block;
+    }
     @include ice-btn(confirm-shop,100px,confirm-shop-in,16px,16px,確認結帳);
-    // @include btn(confirm-shop,100px,confirm-shop-in,16px, 確認結帳);
     @include btn(Previous,100px,Previous-in,12px, 上一步);
     .confirm-list{
         padding: 10px;
@@ -245,6 +246,7 @@
     .pay-transport{
         background-color: white;
         border-radius: 20px;
+        height: 300px;
     }
     .pay-transport-btn{
         font-size: 0px;
@@ -262,7 +264,7 @@
         }
         
     }
-    .pay,.transport{
+    .pay,.transport,.recipient{
         display: inline-block;
         background-color: #FAD689;
         border: 2px solid #FAD689;
@@ -273,25 +275,49 @@
         &:hover{
             background-color: #FFB11B;
         }
-        }
+    }
+    .transport-way{
+        height: 900px;
+    }
     .transport-check,.onlion-check{
         font-size: 16px;
     }
-    input[type="radio"] {
-        display:none;
-    }
-    input[type="radio"] + label span {
-        display:inline-block;
-        width:16px;
-        height:16px;
-        cursor:pointer;
-        background: url(../img/shop/circle-regular.svg);         
-    }
+    // input[type="radio"] {
+    //     display:none;
+    // }
+    // input[type="radio"] + label span {
+    //     display:inline-block;
+    //     width:16px;
+    //     height:16px;
+    //     cursor:pointer;
+    //     background: url(../img/shop/circle-regular.svg);         
+    // }
     .transport-check{
         vertical-align:middle; 
     }
-    input[type="radio"]:checked + label span {
-        background:url(../img/shop/check-circle-solid.svg)no-repeat;
+    // input[type="radio"]:checked + label span {
+    //     background:url(../img/shop/check-circle-solid.svg)no-repeat;
+    // }
+    #recipient{
+        span{
+            display: inline-block;
+        }
+        input{
+            display: block;
+        }
+        // input[type="checkbox"] {
+        //     // display:none;
+        // }
+        // input[type="checkbox"] + label span {
+        //     // display:inline-block;
+        //     width:16px;
+        //     height:16px;
+        //     cursor:pointer;
+        //     background: url(../img/shop/circle-regular.svg);         
+        // }
+        // input[type="checkbox"]:checked + label span {
+        //     background:url(../img/shop/check-circle-solid.svg)no-repeat;
+        // }
     }    
 
 
@@ -372,6 +398,11 @@
          padding-right:20px;   
          font-size: 20px;
        }
+       .pay-transport{
+        background-color: white;
+        border-radius: 20px;
+        height: 300px;
+    }
        .package-information-title{
            border-bottom:2px solid #FAD689;
            span{

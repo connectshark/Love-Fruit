@@ -284,12 +284,15 @@
 }
 
 .page-confirm .confirm-btn {
-  display: none;
   text-align: center;
 }
 
 .page-confirm button {
   margin: 0px 10px;
+}
+
+.page-confirm .confirm-a {
+  display: inline-block;
 }
 
 .page-confirm .confirm-shop {
@@ -430,6 +433,7 @@
 .page-confirm .pay-transport {
   background-color: white;
   border-radius: 20px;
+  height: 300px;
 }
 
 .page-confirm .pay-transport-btn {
@@ -447,7 +451,7 @@
   color: black;
 }
 
-.page-confirm .pay, .page-confirm .transport {
+.page-confirm .pay, .page-confirm .transport, .page-confirm .recipient {
   display: inline-block;
   background-color: #FAD689;
   border: 2px solid #FAD689;
@@ -457,32 +461,28 @@
   height: 30px;
 }
 
-.page-confirm .pay:hover, .page-confirm .transport:hover {
+.page-confirm .pay:hover, .page-confirm .transport:hover, .page-confirm .recipient:hover {
   background-color: #FFB11B;
+}
+
+.page-confirm .transport-way {
+  height: 900px;
 }
 
 .page-confirm .transport-check, .page-confirm .onlion-check {
   font-size: 16px;
 }
 
-.page-confirm input[type="radio"] {
-  display: none;
-}
-
-.page-confirm input[type="radio"] + label span {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  background: url(../img/shop/circle-regular.svg);
-}
-
 .page-confirm .transport-check {
   vertical-align: middle;
 }
 
-.page-confirm input[type="radio"]:checked + label span {
-  background: url(../img/shop/check-circle-solid.svg) no-repeat;
+.page-confirm #recipient span {
+  display: inline-block;
+}
+
+.page-confirm #recipient input {
+  display: block;
 }
 
 @media all and (min-width: 992px) {
@@ -562,6 +562,11 @@
     text-align: right;
     padding-right: 20px;
     font-size: 20px;
+  }
+  .page-confirm .pay-transport {
+    background-color: white;
+    border-radius: 20px;
+    height: 300px;
   }
   .page-confirm .package-information-title {
     border-bottom: 2px solid #FAD689;
