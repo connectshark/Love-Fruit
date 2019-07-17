@@ -45,7 +45,13 @@
               <a href="javascript:;"><img src="img/navBar/shoppingCartIcon.png" alt="購物車" /></a>
             </li>
             <li class="member-icon">
-              <a class="nav-icon-login" href="account-profile.php"><img src="img/navBar/memberIcon.png" alt="會員" /> </a><span id="nav-login-icon">登入</span>
+              <img id="membe-centre-img" src="img/navBar/memberIcon.png" alt="會員" />
+              <span id="nav-login-icon">登入</span>
+              <ul id="member-centre-down-menu">
+                <div class="member-centre-triangle"></div>
+                <li><a href="account.php">會員中心</a></li>
+                <li><span>登出</span></li>
+              </ul>
             </li>
           </ul>
         </li>
@@ -141,9 +147,6 @@
           </div>
         </div>
       </div>
-      <div class="register-account">
-
-      </div>
     </div>
 
 
@@ -154,7 +157,7 @@
     </div>
     <h2 id="register-account-title">會員註冊</h2>
     <div class="register-account-group">
-      <input type="text" name="register-account-memName" id="register-account-memName" value placeholder="  姓名：" />
+      <input type="text" name="register-account-memName" id="register-account-mem-name" value placeholder="  姓名：" />
       <input type="text" name="register-account-mem-id" id="register-account-mem-id" value placeholder="  帳號：" />
       <input type="password" name="register-account-mem-psw" id="register-account-mem-psw" value placeholder="  密碼：" />
       <input type="password" name="register-account-confirm-mem-psw" id="register-account-confirm-mem-psw" value placeholder="  確認密碼：" />
