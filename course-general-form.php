@@ -1,3 +1,4 @@
+
 <html lang="UTF-8">
 
 <head>
@@ -28,19 +29,18 @@
         <h3 class="general-form-title">一般課程預約</h3>
       </div>
 
-      <form action="" method="">
+<form action="course-reservation.php" method="post" enctype="multipart/form-data">
         <div class='form-info'>
           <img src="img/btn/ICE.png" alt="title-img">
           <p>選擇課程：</p>
-          <div class="check">
-
-            <input type="radio" name="course" id="course1" value="">
+          <label class="check">
+            <input type="radio" name="courseName" id="course1" value="戀愛小馬夢幻冰品">
             <label for="course1">戀愛小馬夢幻冰品</label>
             <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
-            <input type="radio" name="course" id="course2" value="">
+            <input type="radio" name="courseName" id="course2" value="情人繽紛彩繪冰棒">
             <label for="course2">情人繽紛彩繪冰棒</label>
             <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
-          </div>
+          </label>
         </div>
         <div class='form-info'>
           <img src="img/btn/ICE.png" alt="title-img">
@@ -80,6 +80,7 @@
                       <tbody id="calendar-tb"></tbody>
                   </table>
               </div>
+              <input type="hidden" name="courseDate">
           </div>
           
         </div>
@@ -87,28 +88,29 @@
           <img src="img/btn/ICE.png" alt="">
           <p>選擇時段：</p>
           <div class="check">
-            <input type="radio" name="time" id="time1" value="">
+          <input type="radio" name="  courseSlot" id="time1" value="上午 10:00">
             <label for="time1">上午 10:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
 
-            <input type="radio" name="time" id="time2" value="">
+            <input type="radio" name="courseSlot" id="time2" value="下午 01:00">
             <label for="time2">下午 01:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
 
-            <input type="radio" name="time" id="time3" value="">
+            <input type="radio" name="courseSlot" id="time3" value="下午 03:00">
             <label for="time3">下午 03:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
           </div>
         </div>
         <div class='form-info'>
           <img src="img/btn/ICE.png" alt="">
           <p>選擇人數：</p>
-          <select name="" id="apply-num"></select>
+          <select name="resPpl" id="apply-num"></select>
         </div>
+
         <div class="form-btn">
-          <a class="form-ice-btn-out" href="javascript:;">
+          <button type="submit" class="form-ice-btn-out" href="javascript:;">
             <span class="form-ice-btn-in">
               <img src="img/btn/ICE.png" alt="">
               確認預約
             </span>
-          </a>
+          </button>
         </div>
 
       </form>

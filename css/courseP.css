@@ -763,13 +763,13 @@ body {
   color: #fff;
 }
 
-.general-message-wrap .leave-message-wrap .balloons textarea {
+.general-message-wrap .leave-message-wrap .balloons #general-msg {
   width: 100%;
   font-size: 16px;
   border-radius: 20px;
   border: 3px solid #6a3e26;
   padding: 10px;
-  height: 200px;
+  height: 100px;
   line-height: 1.5;
   resize: none;
 }
