@@ -76,7 +76,7 @@ try {
                                             <img id="texture-min-img">
                                         </div>
                                     </th>
-                                    <td class="list-description"></td>
+                                    <td class="list-description">選擇外觀</td>
 									<td id="mold-price"></td>
 								</tr>
 								<tr>
@@ -85,7 +85,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-a"></td>
+                                    <td id="list-description-a">選擇水果</td>
 									<td id="list-price-a"></td>
 								</tr>
 								<tr>
@@ -94,7 +94,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-b"></td>
+                                    <td id="list-description-b">選擇水果</td>
 									<td id="list-price-b"></td>
 								</tr>
                                 <tr>
@@ -103,7 +103,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="slice-description"></td>
+                                    <td id="slice-description">選擇切片</td>
                                     <td id="slice-price"></td>
                                 </tr>
 								<tfoot>
@@ -254,7 +254,7 @@ try {
                 <div class="aside-select message-pull">
                     <div class="select-item select-item-1">
                         <label for="text">
-                        <input type="text" maxlength="5" v-model="message" id="text"></label>
+                        <input type="text" min-length="1" maxlength="5" v-model="message" id="text"></label>
                     </div>
                 </div>
             </div>

@@ -62,10 +62,9 @@ function nextChange() {
 var textureImg;
 // 第一步換圖
 function imgChange(){
-	console.log($(this).eq('.texture-select'));
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
-	textureImg = src;
+	textureImg = $(this).index('.texture-select');
 	$('#texture-main').attr({
 		src:src,
 		alt:alt,
@@ -324,7 +323,7 @@ function putStickIn() {
 		$('#pop-total-price').text($('#total-price').text());
 	});
 	totalPrice();
-	draw('2','yellow','blue');
+	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]]);
 }
 function checkList() {
 	if ($('#mold-price').text() == "") {

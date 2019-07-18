@@ -2,7 +2,7 @@ function draw(texture,color1,color2) {
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
 switch (texture) {
-	case '1':	
+	case 0:	
 	// 第一個模型開始冰棒
 	ctx.beginPath();
 	ctx.lineWidth=0;
@@ -41,7 +41,7 @@ switch (texture) {
 		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 	});
 		break;
-	case '2':
+	case 1:
 	// 第二個模型開始熊掌
 	ctx.beginPath();
 	ctx.lineWidth=3;
@@ -90,7 +90,7 @@ switch (texture) {
 		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 	});
 		break;
-	case '3':
+	case 2:
 	ctx.beginPath();
 	ctx.lineWidth=3;
 	ctx.strokeStyle="rgba(0,0,0,0)";
@@ -128,7 +128,7 @@ switch (texture) {
 	gradient.addColorStop(0,color1);
 	gradient.addColorStop(1,color2);
 	ctx.fillStyle=gradient;
-	ctx.fillRect(0,0,500,380);
+	ctx.fillRect(0,0,500,392);
 	ctx.fill();
 
 
@@ -139,7 +139,7 @@ switch (texture) {
 		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 	});
 		break;
-	case '4':
+	case 3:
 	ctx.beginPath();
 	ctx.lineWidth=3;
 	ctx.strokeStyle="rgba(0,0,0,0)";
