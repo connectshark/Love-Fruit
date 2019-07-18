@@ -109,17 +109,18 @@ function fruiteChange() {
 function persentChange() {
 	if (fruiteItem.length == 1) {
 		$('.progress-bar').css('width',0);
-		$.each(fruiteQuality[fruiteItem[0]],function(index, el) {
-			$('.progress-bar').eq(index).css('width', el * 5 +"%");
-			console.log(el);
-		});
+		for (var i = 0; i < fruiteQuality[fruiteItem[0]].length; i++) {
+			$('.progress-bar').eq(i).css('width',(fruiteQuality[fruiteItem[0]][i]*parseInt($('.default').css('width'))/30)+"px"); 
+		}
 	}else if(fruiteItem.length == 2){
-		for (var i = 0; i <3; i++) {
-			$('.progress-bar').eq(i).css('width', ( fruiteQuality[fruiteItem[0]][i]+fruiteQuality[fruiteItem[1]][i] )  +"%");
+		for (var i = 0; i <fruiteQuality[fruiteItem[0]].length; i++) {
+			$('.progress-bar').eq(i).css('width', ( fruiteQuality[fruiteItem[0]][i]*parseInt($('.default').css('width'))/30 + fruiteQuality[fruiteItem[1]][i]*parseInt($('.default').css('width'))/30 )  +"px");
 		}
 	}else{
 		$('.progress-bar').css('width',0);
 	}
+	console.log(parseInt($('.default').css('width'))/20);
+
 }
 // 價錢變數
 var AFruitePrice=0;

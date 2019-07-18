@@ -1,21 +1,17 @@
 <?php 
 $errMsg="";
 try {
-    $dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
-    $user = "root";
-    $psw = "root";
-    $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-    $pdo = new PDO( $dsn , $user , $psw, $options );
+    require_once("connect-dd101g3.php");
     // 抓切片
-    $sql = "SELECT ii_no, ii_name,ii_pic FROM ingredients";
+    $sql = "SELECT ii_no, ii_name,ii_pic FROM ingredients WHERE ii_state = 1";
     $ii = $pdo->prepare($sql);
     $ii -> execute();
     // 抓模具
-    $sql = "SELECT mold_name,mold_pic FROM mold";
+    $sql = "SELECT mold_name,mold_pic FROM mold WHERE mold_state = 1";
     $mold = $pdo->prepare($sql);
     $mold -> execute();
     // 抓水果
-    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base";
+    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1";
     $fruite = $pdo->prepare($sql);
     $fruite -> execute();
 } catch (PDOException $e) {

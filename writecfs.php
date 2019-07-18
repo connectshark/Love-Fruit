@@ -24,11 +24,7 @@ switch ($_FILES['pic']['error']) {
 }
 if($to){
 	try {
-		$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
-		$user = "root";
-		$psw = "root";
-		$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-		$pdo = new PDO( $dsn , $user , $psw, $options );
+		require_once("connect-dd101g3.php");
 		$sql = "insert confessions set mem_no = :memNo , cfs_to = :cfsTo , cfs_content = :cfsContent, cfs_pic = :cfsPic , cfs_good = '0'";
 		$memNo = $_REQUEST['memNo'];//session抓
 		$cfsTo = $_REQUEST['cfsTo'];
