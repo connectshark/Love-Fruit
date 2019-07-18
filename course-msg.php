@@ -1,7 +1,7 @@
 <?php 
 $errMsg="";
     try {
-        $dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
+        $dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
         $user = "root";
         $psw = "";
         $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
@@ -14,7 +14,7 @@ $errMsg="";
         $courseMsg = $pdo->prepare($sql);
         $courseMsg->bindValue(':memNo',$memNo);
         $courseMsg->bindValue(':courseClassNo',$courseClassNo);
-        $courseMsg->bindValue(':msgDate',date("Y-m-d h:i:sa"));
+        $courseMsg->bindValue(':msgDate',date("Y-m-d h:i:s"));
         $courseMsg->bindValue(':msgTitle',$msgTitle);
         $courseMsg->bindValue(':msgContent',$msgContent);
         $courseMsg->execute();

@@ -1,18 +1,19 @@
 <?php 
+$errMsg="";
 try {
-	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
+	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
 	$user = "root";
 	$psw = "";
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
     $pdo = new PDO( $dsn , $user , $psw, $options );
 	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
-  
+    
     $courseMsg = $pdo->prepare($sql);
 	$courseMsg -> execute();
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";
-  echo $errMsg;
+    echo $errMsg;
 }
 ?>
 <html lang="UTF-8">
@@ -150,7 +151,7 @@ try {
     <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
-                <p>會員資料</p>
+                <p>會員</p>
                 <p><?php echo date("Y-m-d"); ?></p>
             </div>
             <div class="balloons col-md-10">
