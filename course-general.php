@@ -7,7 +7,6 @@ try {
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
     $pdo = new PDO( $dsn , $user , $psw, $options );
 	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
-    
     $courseMsg = $pdo->prepare($sql);
 	$courseMsg -> execute();
 } catch (PDOException $e) {
@@ -149,8 +148,8 @@ try {
         </div>
       
     <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" value="0" name="courseClassNo">
-    <input type="hidden"   name="msgTitle">
+        <input type="hidden" value="0" name="courseClassNo">
+        <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
                 <p>會員</p>
@@ -200,6 +199,7 @@ try {
                 </button >
             </div>
         </div>
+
     </section>
 
 

@@ -110,7 +110,7 @@ try {
     </div>
 
 <form action="course-msg.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" value="1" name="courseClassNo">
+      <input type="hidden" value="1" name="courseClassNo">
      <div class="group-message" >
       <div class="open-group">
         <div class="message-meb col-md-2">
@@ -150,7 +150,7 @@ e-mail：
         </a>
       </div>
 
-    <?php while ($row = $courseMsg -> fetchObject()) {?>
+<?php while ($row = $courseMsg -> fetchObject()) {?>
       <div class="team-name">
         <span>團名：<?php echo $row->msg_title;?> </span>
       </div>
@@ -176,33 +176,27 @@ e-mail：
           </div>
         </div>
       </div>
-    <?php } ?> 
+
 
  
       <div  id="dialog" class="pop-box">
         <div class="pop-up">
           <span  id="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
-          <label for=""><input type="hidden" name="" id="" ><?php echo $row->msg_date; ?></label> 
-          <div class="pop-team-name">
-            <p>團名：山抓手作團山抓手作團</p>
-          </div>
+          <div class="pop-team-name"><p><?php echo $row->msg_title; ?></p></div>
 
           <div class="pop-content">
+           <!-- 跳窗主揪留言 -->
             <div class="pop-main-message col-md-7 col-10">
               <div class="message-meb col-md-2 col-2">
                 <i class="fas fa-user-circle"></i>
-                <p>Sandra</p>
+                <p><?php echo $row->mem_name; ?></p>
                 <p class="time"><?php echo $row->msg_date; ?></p>
               </div>
-
               <div class="message-con col-md-10 col-10">
-                <p>
-                <?php echo $row->msg_content; ?>
-                </p>
+                <p><?php echo $row->msg_content; ?></p>
               </div>
-
-          </div>
- 
+            </div>
+            <!-- 跳窗回覆留言 -->
             <div class="all-message col-md-7 col-10">
               <div class="meb-add-message ">
                 <div class="meb col-md-2 ">
@@ -213,7 +207,7 @@ e-mail：
               </div>
             </div>
 
-
+            <!-- 跳窗留言 -->
             <div class="pop-leave-message col-md-8 col-10">
               <div class="leave-message col-md-9 col-12"> <input type="text" name="" id="leave-message-box"></div>
                 <div class="message-btn col-md-2 col-12">
@@ -224,11 +218,13 @@ e-mail：
                   </div>
                 </div>
               </div>
-          </div>
-        </div>
+            </div>
+
+         </div>
+
       </div>
     </div>
-
+<?}?>
  
   </section>
 
@@ -238,8 +234,7 @@ e-mail：
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/course.js"></script>
-
-    <script src="js/shop.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 
 </html>
