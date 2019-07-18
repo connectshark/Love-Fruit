@@ -39,6 +39,7 @@ try {
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/custombtn.css">
     <link rel="stylesheet" href="css/custom-pop.css">
+    <link rel="stylesheet" href="css/temporary-cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
@@ -334,6 +335,7 @@ try {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
+    <script src="js/shop.js"></script>
 	<script src="js/nav.js"></script>
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>

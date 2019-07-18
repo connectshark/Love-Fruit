@@ -59,6 +59,7 @@ function stageName($stage)
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/nav.css" />
 	<link rel="stylesheet" href="css/writemessage.css">
+	<link rel="stylesheet" href="css/temporary-cart.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
@@ -163,6 +164,7 @@ function stageName($stage)
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/writemessage.js"></script>
+	<script src="js/shop.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 	<script>
 		new Vue({
