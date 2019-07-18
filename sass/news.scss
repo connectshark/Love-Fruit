@@ -14,6 +14,12 @@ body{
     font-family: "GenJyuuGothic-R";
 }
 .news-wrap,.news-inner-wrap{
+    .bubble{
+        background-color: $deep-purple;
+        opacity: .5;
+        position: absolute;
+        border-radius: 100%;
+        }
     .banner{
         background-color: $light-purple;
         background-image:url(../img/news/news-bn-cloud.png),url(../img/background.png);
@@ -22,7 +28,6 @@ body{
         background-size: 100%,auto;
         width: 100%;
         padding-top: 50px;
-    
         .title{
             @include out-Line-Font(news,#fff,34,5px,#6a3e26,最新消息);
             width: 100%;
@@ -55,8 +60,7 @@ body{
                     }
 
                 }
-            }
-        
+            } 
         }
     }
     .air-ball{
@@ -119,7 +123,6 @@ body{
           }
     }
 }
-
 .news-wrap{
     .select{
         background-color:$light-yellow;
@@ -317,9 +320,7 @@ body{
 }
 .news-inner-wrap{
     font-family: "GenJyuuGothic-R";
-
     .inner-wrapper{
-        
         margin-top: -2px;
         background-color:$light-yellow ;
         width: 100%;
@@ -333,11 +334,9 @@ body{
             flex-direction: column;
             align-items: center;
             margin: auto;
-    
             @include rwd(medium){
                 width: 70%;
             }
-
             &::before{
                 content: '';
                 flex-grow: .5;
@@ -360,7 +359,6 @@ body{
                     height: 100%;
                 }
             }
-        
             span{
                 color:$font-gray;
                 font-size: 16px;
@@ -381,7 +379,6 @@ body{
                 }
             }
         }
-
         .article-image{
             text-align: center;
             vertical-align: middle;
@@ -408,7 +405,6 @@ body{
                 width: 80%;
                 font-size: 16px;
                 line-height: 32px;
-
             }
         }
         .change-page{
@@ -444,16 +440,6 @@ body{
             .post{
                 border-radius:0 10px 10px 0; 
             }
-        }
-
-        
-            .bubble{
-            background-color: $deep-purple;
-            opacity: .5;
-            position: absolute;
-            border-radius: 100%;
-            }
-        
-        
+        }  
     }
 }

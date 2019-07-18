@@ -645,6 +645,23 @@
   padding: 10px 0;
 }
 
+.message-bgi .message .message-item .message-header .user-head {
+  width: 15%;
+  padding-bottom: 15%;
+  position: relative;
+}
+
+.message-bgi .message .message-item .message-header .user-head img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .message-bgi .message .message-item .message-header .fa-user-circle {
   width: 10%;
   font-size: 30px;
@@ -653,7 +670,7 @@
 
 .message-bgi .message .message-item .message-header p {
   margin-left: auto;
-  width: 85%;
+  width: 80%;
   font-size: 20px;
   font-family: "GenJyuuGothic-R";
 }
@@ -755,6 +772,8 @@
   width: 40%;
   left: -10%;
   bottom: -5%;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 .message-bgi .message .custom-ice img {

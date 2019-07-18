@@ -56,9 +56,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -102,19 +102,33 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
-.letter .letter-content .letter-header .user-img .fa-user-circle {
+.letter .letter-content .letter-header .user-head {
+  width: 15%;
+  padding-bottom: 15%;
+  position: relative;
+}
+
+.letter .letter-content .letter-header .user-head img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.letter .letter-content .letter-header .fa-user-circle {
   font-size: 30px;
 }
 
-.letter .letter-content .letter-header .user-name {
-  width: 85%;
+.letter .letter-content .letter-header p {
+  width: 80%;
   margin-left: auto;
-}
-
-.letter .letter-content .letter-header .user-name p {
   font-size: 20px;
   font-family: "GenJyuuGothic-R";
 }
@@ -203,7 +217,7 @@ body {
   line-height: 2;
 }
 
-.letter .letter-content .letter-footer .write-title input {
+.letter .letter-content .letter-footer .write-title input, .letter .letter-content .letter-footer .write-content input {
   width: 100%;
   padding: 5px 20px;
   -webkit-box-sizing: border-box;
@@ -215,28 +229,9 @@ body {
   transition: padding .5s;
 }
 
-.letter .letter-content .letter-footer .write-content input {
-  width: 100%;
-  padding: 5px 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 18px;
-  border-radius: 20px;
-  border: 3px solid #6a3e26;
-  -webkit-transition: padding .5s;
-  transition: padding .5s;
-}
-
-.letter .letter-content .letter-footer .write-phrase input {
-  width: 100%;
-  padding: 5px 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 18px;
-  border-radius: 20px;
-  border: 3px solid #6a3e26;
-  -webkit-transition: padding .5s;
-  transition: padding .5s;
+.letter .letter-content .letter-footer .write-title p span, .letter .letter-content .letter-footer .write-content p span {
+  font-size: 16px;
+  color: #949494;
 }
 
 .letter .letter-content .letter-footer .write-buttons {
@@ -398,6 +393,23 @@ body {
   padding: 10px 0;
 }
 
+.message-item .message-header .user-head {
+  width: 15%;
+  padding-bottom: 15%;
+  position: relative;
+}
+
+.message-item .message-header .user-head img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .message-item .message-header .fa-user-circle {
   width: 10%;
   font-size: 30px;
@@ -406,7 +418,7 @@ body {
 
 .message-item .message-header p {
   margin-left: auto;
-  width: 85%;
+  width: 80%;
   font-size: 20px;
   font-family: "GenJyuuGothic-R";
 }
@@ -450,7 +462,7 @@ body {
   width: 70%;
   font-size: 20px;
   line-height: 40px;
-  font-family: "A-OTF-M";
+  font-family: "GenJyuuGothic-R";
   margin-left: auto;
   text-align: justify;
 }
@@ -461,12 +473,13 @@ body {
 
 .message-item .message-body p {
   width: 70%;
-  font-family: "A-OTF-M";
+  font-family: "GenJyuuGothic-R";
   font-size: 16px;
   line-height: 32px;
   margin-left: auto;
   padding: 0 0 10px;
   text-align: justify;
+  word-wrap: break-word;
 }
 
 .message-item .message-body .m-text {
@@ -513,6 +526,8 @@ body {
   width: 40%;
   left: -10%;
   bottom: -5%;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 .custom-ice img {
