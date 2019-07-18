@@ -1,37 +1,32 @@
 <?php
-    // session_start();
-    // $memId = $_REQUEST['memId'];
-    // $memPsw = $_REQUEST['memPsw'];
+// session_start();
+// $memId = $_REQUEST["memId"];
+// $memPsw = $_REQUEST["memPsw"];
 
-    // $errMsg = '';
-    // try{
-    //     $dsn = 'mysql:host=localhost; port=3306; dbname=dd101g3; charset=utf8';
+$errMsg = "";
+try {
+    // 將dbname 改成自己的資料表名稱
+    require_once("connect-LoveFruitIce.php");
+    if ($_REQUEST["type"] == "text") { // 如果前端送來的 type 等於 text 就執行以下 ↓↓↓
+        // select 你想選擇的欄位名 from 資料表名 where LOCATE(關鍵字, :輸入框)>0
+        $sql = "select keyword, answer from robot where LOCATE(keyword, :message)>0";
+        $qa = $pdo->prepare($sql);
+        // 將前端輸入框的訊息送進 DB, 如果有相對的值就會抓到
+        $qa->bindValue(":message", $_REQUEST["message"]);
+    } else { //tag使用標籤來查
+        $sql = "select * from robot where keyword = :keyword";
+        $qa = $pdo->prepare($sql);
+        $qa->bindValue(":keyword", $_REQUEST["keyword"]);
+    }
 
-    //     $user = 'root';
-    //     $password = '';
-        
-    //     $options = array( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE => PDO::CASE_NATURAL);
-    //     $pdo = new PDO($dsn, $user, $password, $options);
-
-    //     $keyword = $_REQUEST['keyword'];
-        
-    //     // Update 資料表 set 欄位1 = 欄位1 + 值 where 欄位2 = 值
-    //     $sql = 'select answer from robot where keyword = :keyword ';
-    //     $answer = $pdo->prepare($sql);
-    //     // $answer->bindValue(':answer', $answer); // 50point 代入資料
-    //     $answer->bindValue(':keyword', $keyword); // 代入資料
-    //     $answer->execute();
-
-    // }catch(PDOException $e){
-    //     echo 'FailMsg:', $e->getMessage(), '<br>';
-    //     echo 'FailNbr:', $e->getLine(), '<br>';
-    // }
-
-
-    // if($keyword)
-
-
-
-
-    
-?>
+    $qa->execute();
+    if ($qa->rowCount() == 0) { //没有符合的關鍵字
+        echo "{}";
+    } else {
+        $qaRow = $qa->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($qaRow); //回應前端的Ajax
+    }
+} catch (PDOException $e) {
+    $errMsg .=  $e->getMessage() . "<br>";
+    $errMsg .=  $e->getLine() . "<br>";
+}

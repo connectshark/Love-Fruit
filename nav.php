@@ -84,29 +84,31 @@
       </div>
     </div>
     <div id="robot-conversation-block" class="robot-conversation-block">
-      <div id="robot-conversation-list">
-        <div class="robot-conversation">
-          <p class="robot_text"><span>小達人:</span>請問有需要幫忙嗎？</p>
+      <div id="robot-conversation-list-group">
+        <div id="robot-conversation-list" class="robot-conversation-list" style="display:none">
+          <div class="robot-conversation-robot">
+            <span class="question">使用者回答</span>
+          </div>
+          <div class="robot-conversation-user">
+            <span class="answer">機器人回答</span>
+          </div>
         </div>
       </div>
     </div>
-    <ul class="chatBot-keyword">
-      <li class="fruit">粿籽戀冰所</li>
-      <li class="fruit">戀冰測驗</li>
-      <li class="fruit">客製冰棒</li>
-      <li class="fruit">戀菓商店</li>
-      <li class="fruit">愛的留言</li>
-      <li class="fruit">體驗課程</li>
-      <li class="fruit">營業時間</li>
-      <li class="fruit">店家地址</li>
-      <li class="fruit">店家電話</li>
-    </ul>
-    <form>
-      <div class="robot-input-block">
-        <textarea name="message" id="message"></textarea>
-        <button type="button" id="robot-submit">送出</button>
-      </div>
-    </form>
+    <div class="chatBot-keyword">
+      <input class="fruit" value="粿籽戀冰所" type="button">
+      <input class="fruit" value="戀冰測驗" type="button">
+      <input class="fruit" value="客製冰棒" type="button">
+      <input class="fruit" value="戀菓商店" type="button">
+      <input class="fruit" value="愛的留言" type="button">
+      <input class="fruit" value="體驗課程" type="button">
+      <input class="fruit" value="營業時間" type="button">
+      <input class="fruit" value="店家電話" type="button">
+    </div>
+    <div class="robot-input-block">
+      <input id="message" type="text">
+      <button type="button" id="robot-submit">送出</button>
+    </div>
   </div>
 </header>
 <div id="member-login" class="member-login">

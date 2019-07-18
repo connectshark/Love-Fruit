@@ -704,6 +704,7 @@
   }
   /* 帳號密碼 */
   .member-login input {
+    text-indent: 10px;
     display: inline-block;
     font-family: "A-OTF-M";
     border: none;
@@ -1011,6 +1012,7 @@
   }
   /* 帳號密碼 */
   .member-login input {
+    text-indent: 10px;
     display: inline-block;
     font-family: "A-OTF-M";
     border: none;
@@ -1223,6 +1225,10 @@
   }
   /* 按鈕結束 */
 }
+#robot-conversation-list-group {
+  width: 100%;
+  display: block;
+}
 /* 機器人文字區塊 */
 .robot-conversation-block {
   width: 330px;
@@ -1233,10 +1239,33 @@
   border-radius: 10px;
   background-color: #fff;
 }
-.robot-conversation {
+.robot-conversation-robot {
   width: 100%;
 }
-.robot_text {
+.robot-conversation-user {
+  width: 100%;
+}
+.robot-conversation-list {
+  content: "";
+  display: block;
+  clear: both;
+}
+.question {
+  float: right;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: 75%;
+  line-height: 16px;
+  color: rgb(80, 80, 80);
+  margin: 4% 2%;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: "GenJyuuGothic-R";
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #ffd0d0;
+}
+.answer {
   float: left;
   word-wrap: break-word;
   text-align: left;
@@ -1251,14 +1280,12 @@
   border-radius: 5px;
   background-color: #ffd0d0;
 }
-.robot_text span {
+.question::after {
+  content: "";
   display: block;
-  white-space: nowrap;
+  clear: both;
 }
-.robot-conversation:nth-child(even) p {
-  float: right;
-}
-.robot-conversation::after {
+.answer {
   content: "";
   display: block;
   clear: both;
@@ -1285,12 +1312,15 @@
   white-space: nowrap;
   margin: 10px;
 }
-.chatBot-keyword li {
+.fruit {
+  outline: none;
+  border: none;
   display: inline-block;
   margin-left: 5px;
   padding: 5px 10px 5px 10px;
   line-height: 30px;
   color: rgb(255, 255, 255);
+  font-size: 1.2vw;
   font-family: "GenJyuuGothic-R";
   background-color: #ea7187;
   border-radius: 5px;
@@ -1302,8 +1332,9 @@
   justify-content: space-between;
   height: 10%;
 }
-.robot-input-block textarea {
+#message {
   width: 69%;
+  border: none;
   height: 88%;
   outline: none;
   border-radius: 5px;
@@ -1333,6 +1364,9 @@
 /*rwd內容*/
 #menu-control {
   display: none;
+}
+.robot-conversation-list-group {
+  height: 300px;
 }
 /* footer */
 footer {
