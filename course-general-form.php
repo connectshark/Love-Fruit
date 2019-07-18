@@ -11,7 +11,6 @@
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/courseP.css">
 </head>
@@ -80,7 +79,7 @@
                       <tbody id="calendar-tb"></tbody>
                   </table>
               </div>
-              <input type="hidden" name="courseDate">
+              <!-- <input type="hidden" name="courseDate"> -->
           </div>
           
         </div>
@@ -88,7 +87,7 @@
           <img src="img/btn/ICE.png" alt="">
           <p>選擇時段：</p>
           <div class="check">
-          <input type="radio" name="  courseSlot" id="time1" value="上午 10:00">
+          <input type="radio" name="courseSlot" id="time1" value="上午 10:00">
             <label for="time1">上午 10:00</label> <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
 
             <input type="radio" name="courseSlot" id="time2" value="下午 01:00">
