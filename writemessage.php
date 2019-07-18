@@ -64,9 +64,7 @@ function stageName($stage)
 </head>
 
 <body>
-	<?php 
-	require_once("nav.php");
-	?>
+	<?php require_once("nav.php"); ?>
 	<div class="letter-title">
 		<div class="title-img">
 			<img src="img/ribbon.png" alt="標題背景">
