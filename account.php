@@ -13,13 +13,54 @@ try {
     $order = $pdo->prepare($sqlOrder);
     $order->bindValue(":mem_no", 1);
     $order->execute();
+
+    $sqlCollect = "select * from collection c join product p where (c.prod_no=p.prod_no) & (c.mem_no=:mem_no);";
+    $collection = $pdo->prepare($sqlCollect);
+    $collection->bindValue(":mem_no", 1);
+    $collection->execute();
+
+
+    $sqlMold = "select * from mold";
+    $mold = $pdo->query($sqlMold);
+    $moldArr = array();
+    while ($moldRows = $mold->fetch(PDO::FETCH_ASSOC)) {
+        $mold_no = $moldRows["mold_no"];
+        $mold_name = $moldRows["mold_name"];
+        $moldArr[$mold_no] = $mold_name;
+    }
+
+    $sqlBase = "select * from fruit_base";
+    $base = $pdo->query($sqlBase);
+    $baseArr = array();
+    while ($baseRows = $base->fetch(PDO::FETCH_ASSOC)) {
+        $fruit_no = $moldRows["fruit_no"];
+        $fruit_name = $moldRows["fruit_name"];
+        $baseArr[$fruit_no] = $fruit_name;
+    }
+
+    $sqlIi = "select * from ingredients";
+    $ingredient = $pdo->query($sqlIi);
+    $ingredientArr = array();
+    while ($ingredientRows = $ingredient->fetch(PDO::FETCH_ASSOC)) {
+        $ii_no = $ingredientRows["ii_no"];
+        $ii_name = $ingredientRows["ii_name"];
+        $ingredientArr[$ii_no] = $ii_name;
+    }
+
+    $sqlCustom = "select * from customize where mem_no = :mem_no";
+    $custom = $pdo->prepare($sqlCustom);
+    $custom->bindValue(":mem_no", 1);
+    $custom->execute();
+
+
+    $sqlCourse = "select * from course_reservation where mem_no = :mem_no";
+    $course = $pdo->prepare($sqlCourse);
+    $course->bindValue(":mem_no", 1);
+    $course->execute();
 } catch (PDOException $e) {
     $errMsg .=  $e->getMessage() . "<br>";
     $errMsg .=  $e->getLine() . "<br>";
 }
-
-
-
 ?>
 
 <html lang="UTF-8">
@@ -52,13 +93,18 @@ try {
         <div class="wrap">
             <div class="menu col-12 col-md-2">
                 <div class="profile-picture">
-                    <div class="col-4"><img src="img/database/img_mem/<?php echo $profileRow["mem_pic"] ?>" alt=""></div>
-                    <div class="col-7">
+                    <div class="col-2 col-md-4">
+                        <div class="profile-img"><img src="database/img_mem/<?php echo $profileRow["mem_pic"] ?>" alt=""></div>
+                    </div>
+                    <div class="col-9 col-md-7">
                         <p class="profile-id"><?php echo $profileRow["mem_id"] ?></p>
-                        <label class="btn-file" for="upFile">
-                            上傳頭貼
-                            <input type="file" name="upFile" id="upFile" accept=".jpg,.png">
-                        </label>
+                        <form action="fileUpload.php" method="post" enctype="multipart/form-data">
+                            <label class="btn-file" for="upFile">
+                                上傳頭貼
+                                <input type="file" name="upFile" id="upFile" accept=".jpg,.png">
+                            </label>
+                        </form>
+
                     </div>
                 </div>
                 <ul class="account-list">
@@ -79,7 +125,7 @@ try {
                         <h2>我的檔案</h2>
                         <div class="profile-item col-12">
                             <label class="col-3 col-md-1" for="name">姓名</label>
-                            <input class="col-8 col-md-3" type="text" id="name" value="<?php echo $profileRow["mem_name"] ?>" placeholder="請輸入姓名(最多5字)">
+                            <input class="col-8 col-md-3" type="text" id="name" value="<?php echo $profileRow["mem_name"]; ?>" placeholder="請輸入姓名(最多5字)">
                         </div>
                         <div class="profile-item col-12">
                             <label class="col-3 col-md-1" for="">帳號</label>
@@ -89,22 +135,22 @@ try {
                             <label class="col-3 col-md-1" for="">密碼</label>
                             <div class="col-8">
                                 <p class="passwaord">
-                                    <input id="password" type="password" maxlength="8" value="<?php echo $profileRow["mem_psw"] ?>" readonly="readonly" placeholder="請輸入密碼(最多8碼)">
+                                    <input id="password" type="password" maxlength="8" value="<?php echo $profileRow["mem_psw"]; ?>" readonly="readonly" placeholder="請輸入密碼(最多8碼)">
                                 </p>
                                 <a href="javascript:;">變更</a>
                             </div>
                         </div>
                         <div class="profile-item col-12">
                             <label class="col-3 col-md-1" for="email">信箱</label>
-                            <input class="col-8" type="email" id="email" value="<?php echo $profileRow["email"] ?>" placeholder="請輸入電子信箱">
+                            <input class="col-8" type="email" id="email" value="<?php echo $profileRow["email"]; ?>" placeholder="請輸入電子信箱">
                         </div>
                         <div class="profile-item col-12">
                             <label class="col-3 col-md-1" for="address">地址</label>
-                            <input class="col-8" type="text" id="address" value="<?php echo $profileRow["address"] ?>" placeholder="請輸入地址">
+                            <input class="col-8" type="text" id="address" value="<?php echo $profileRow["address"]; ?>" placeholder="請輸入地址">
                         </div>
                         <div class="profile-item col-12">
                             <label class="col-3 col-md-1" for="phone">電話</label>
-                            <input class="col-8 col-md-3" type="tel" id="phone" maxlength="10" value="<?php echo $profileRow["phone"] ?>" placeholder="請輸入電話(最多10碼)">
+                            <input class="col-8 col-md-3" type="tel" id="phone" maxlength="10" value="<?php echo $profileRow["phone"]; ?>" placeholder="請輸入電話(最多10碼)">
                         </div>
                         <input id="profile-save" type="submit" value="儲存">
                     </form>
@@ -114,7 +160,7 @@ try {
                     <h2>歷史訂單</h2>
                     <?php
                     while ($orderRows = $order->fetch(PDO::FETCH_ASSOC)) {
-                    ?>
+                        ?>
                         <div class="order-item col-12">
                             <div class="order-desc col-12 col-md-1">
                                 <div class="thead col-5 col-md-12">
@@ -137,7 +183,11 @@ try {
                                     <p>配送方式</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p><?php if($orderRows["order_ship"]==0){echo "宅配到府";}elseif($orderRows["order_ship"]==1) { echo "7-11取貨";};?></p>
+                                    <p><?php if ($orderRows["order_ship"] == 0) {
+                                            echo "宅配到府";
+                                        } elseif ($orderRows["order_ship"] == 1) {
+                                            echo "7-11取貨";
+                                        }; ?></p>
                                 </div>
                             </div>
                             <div class="order-desc col-12 col-md-2">
@@ -145,7 +195,11 @@ try {
                                     <p>付款方式</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p><?php if($orderRows["order_pay"]==0){echo "貨到付款";}elseif($orderRows["order_ship"]==1) { echo "信用卡";};?></p>
+                                    <p><?php if ($orderRows["order_pay"] == 0) {
+                                            echo "貨到付款";
+                                        } elseif ($orderRows["order_ship"] == 1) {
+                                            echo "信用卡";
+                                        }; ?></p>
                                 </div>
                             </div>
                             <div class="order-desc col-12 col-md-2">
@@ -173,32 +227,41 @@ try {
                 </div>
 
                 <div id="collection" class="content content-collection">
-                    <form action="">
-                        <h2>收藏清單</h2>
+                    <h2>收藏清單</h2>
+                    <?php
+                    while ($collections = $collection->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
                         <div class="collection-item col-12">
-                            <div class="prod-img col-2 col-md-1"><img src="img/database/img_prod/popsicle_1.png">
+                            <div class="prod-img col-2 col-md-1"><img src="database/img_prod/<?php echo $collections["prod_pic"]; ?>">
                             </div>
                             <div class="collection-desc col-10 col-md-11">
-                                <div class="col-5 col-md-3">清新酸梅冰</div>
-                                <div class="col-3 col-md-3">200元</div>
-                                <div class="col-3 col-md-3"><a href="#">詳情</a></div>
-                                <div class="heart col-1 col-md-3"><a href="#"><i class="fas fa-heart"></i></a></div>
+                                <div class="col-5 col-md-3"><?php echo $collections["prod_name"]; ?></div>
+                                <div class="col-3 col-md-3"><?php echo $collections["prod_price"]; ?></div>
+                                <div class="col-3 col-md-3"><a href="javascript:;">詳情</a></div>
+                                <div class="heart col-1 col-md-3"><a href="javascript:;"><i class="fas fa-heart"></i></a></div>
                             </div>
                         </div>
-                    </form>
+
+                    <?php
+                    }
+                    ?>
+
                 </div>
 
 
                 <div id="custom" class="content content-custom">
-                    <form action="">
-                        <h2>歷史客製</h2>
+                    <h2>歷史客製</h2>
+                    <?php
+                    while ($customRows = $custom->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+
                         <div class="custom-item col-12">
                             <div class="custom-desc col-12 col-md-2">
                                 <div class="thead thead-img col-5 col-md-12">
                                     <p>圖片</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p><img src="https://fakeimg.pl/80x80/aaa/?text=image" alt="客製圖"></p>
+                                    <p class="cto-img"><img src="database/img_cto/<?php echo $customRows["cto_pic"] ?>" alt="客製圖"></p>
                                 </div>
                             </div>
                             <div class="custom-desc col-12 col-md-2">
@@ -206,7 +269,7 @@ try {
                                     <p>模具</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>兔兔模具</p>
+                                    <p><?php echo $moldArr[$customRows["mold_no"]] ?></p>
                                 </div>
                             </div>
                             <div class="custom-desc col-12 col-md-2">
@@ -230,7 +293,7 @@ try {
                                     <p>配料</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>苦瓜</p>
+                                    <p><?php echo $ingredientArr[$customRows["ii_no"]] ?></p>
                                 </div>
                             </div>
                             <div class="custom-desc col-12 col-md-2">
@@ -238,73 +301,30 @@ try {
                                     <p>冰棒小語</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>戀愛小語</p>
+                                    <p><?php echo $customRows["cto_words"] ?></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="custom-item col-12">
-                            <div class="custom-desc col-12 col-md-2">
-                                <div class="thead thead-img col-5 col-md-12">
-                                    <p>圖片</p>
-                                </div>
-                                <div class="col-7 col-md-12">
-                                    <p><img src="https://fakeimg.pl/80x80/aaa/?text=image" alt="客製圖"></p>
-                                </div>
-                            </div>
-                            <div class="custom-desc col-12 col-md-2">
-                                <div class="thead col-5 col-md-12">
-                                    <p>模具</p>
-                                </div>
-                                <div class="col-7 col-md-12">
-                                    <p>兔兔模具</p>
-                                </div>
-                            </div>
-                            <div class="custom-desc col-12 col-md-2">
-                                <div class="thead col-5 col-md-12">
-                                    <p>基底1</p>
-                                </div>
-                                <div class="col-7 col-md-12">
-                                    <p>草莓</p>
-                                </div>
-                            </div>
-                            <div class="custom-desc col-12 col-md-2">
-                                <div class="thead col-5 col-md-12">
-                                    <p>基底2</p>
-                                </div>
-                                <div class="col-7 col-md-12">
-                                    <p>藍莓</p>
-                                </div>
-                            </div>
-                            <div class="custom-desc col-12 col-md-2">
-                                <div class="thead col-5 col-md-12">
-                                    <p>配料</p>
-                                </div>
-                                <div class="col-7 col-md-12">
-                                    <p>苦瓜</p>
-                                </div>
-                            </div>
-                            <div class="custom-desc col-12 col-md-2">
-                                <div class="thead col-5 col-md-12">
-                                    <p>冰棒小語</p>
-                                </div>
-                                <div class="col-7 col-md-12">
-                                    <p>戀愛小語</p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+
+
+                    <?php
+                    }
+                    ?>
+
                 </div>
 
                 <div id="course" class="content content-course">
-                    <form action="">
-                        <h2>預約紀錄</h2>
+                    <h2>預約紀錄</h2>
+                    <?php
+                    while ($courseRows = $course->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
                         <div class="class-item col-12">
                             <div class="class-desc col-12 col-md-3">
                                 <div class="thead col-5 col-md-12">
                                     <p>課程名稱</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>情人繽紛彩繪冰棒</p>
+                                    <p><?php echo $courseRows["course_name"]; ?></p>
                                 </div>
                             </div>
                             <div class="class-desc col-12 col-md-2">
@@ -312,7 +332,7 @@ try {
                                     <p>預約日期</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>2019/09/01</p>
+                                    <p><?php echo $courseRows["course_date"]; ?></p>
                                 </div>
                             </div>
                             <div class="class-desc col-12 col-md-2">
@@ -320,7 +340,7 @@ try {
                                     <p>預約時段</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>上午 10:00</p>
+                                    <p><?php echo $courseRows["course_slot"]; ?></p>
                                 </div>
                             </div>
                             <div class="class-desc col-12 col-md-1">
@@ -328,7 +348,7 @@ try {
                                     <p>人數</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p>2人</p>
+                                    <p><?php echo $courseRows["res_ppl"]; ?>人</p>
                                 </div>
                             </div>
                             <div class="class-desc col-12 col-md-2">
@@ -348,7 +368,11 @@ try {
                                 </div>
                             </div>
                         </div>
-                    </form>
+
+                    <?php
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -410,10 +434,16 @@ try {
                 }
                 xhr.open("post", "ajaxProfileChange.php", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-                var data_info = `mem_name=${$id("name").value}&mem_psw=${$id("password").value}&email=${$id("email").value}&address=${$id("address").value}&phone=${$id("phone").value}`;
+                let data_info = `mem_name=${$id("name").value}&mem_psw=${$id("password").value}&email=${$id("email").value}&address=${$id("address").value}&phone=${$id("phone").value}`;
                 xhr.send(data_info);
             }, false);
 
+            document.getElementById("upFile").onchange = function(e) {
+                e.target.form.submit();
+                // let file = e.target.files[0];
+                // let reader = new FileReader();
+                // reader.readAsDataURL(file);
+            };
 
 
         }, false);

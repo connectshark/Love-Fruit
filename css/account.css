@@ -118,10 +118,16 @@
   display: none;
 }
 
-.page-account .menu .profile-picture img {
+.page-account .menu .profile-picture .profile-img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.page-account .menu .profile-picture .profile-img img {
   width: 100%;
   display: block;
-  border-radius: 50%;
 }
 
 .page-account .menu .profile-picture p {
@@ -398,6 +404,10 @@
 
 .page-account .content-custom .custom-item .custom-desc p {
   padding: 10px;
+}
+
+.page-account .content-custom .custom-item .custom-desc .cto-img img {
+  width: 50%;
 }
 
 @media all and (min-width: 769px) {
