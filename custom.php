@@ -158,9 +158,9 @@ try {
                         <img>
                     </div>
                 </div>
-                    <div class="ice-stick" id="ice-stick">
-                        <p><span>#</span>{{message}}</p>
-                    </div>
+                <div class="ice-stick" id="ice-stick">
+                    <p><span>#</span>{{message}}</p>
+                </div>
 			</div>
 			<div class="custom-bottom">
 			</div>

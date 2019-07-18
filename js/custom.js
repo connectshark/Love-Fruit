@@ -364,6 +364,6 @@ $(document).ready(function() {
 	$('#slice-bigger').click(imgBigger);
 	$('#slice-smaller').click(imgSmaller);
 	sliceSizeChange(sliceSize);
-	$('#ice-stick').hide();
+	// $('#ice-stick').hide();
 	$('#complete-all').click(putStickIn);
 });

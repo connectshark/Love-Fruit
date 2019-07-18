@@ -357,19 +357,17 @@ body{
 .ice-stick p{
 	line-height: 2;
 	font-size: 12px;
-	text-orientation:upright;
 }
 @media screen and (min-width: 768px) {
 	.ice-stick p{
 		line-height: 2;
 		font-size: 18px;
-		text-orientation:upright;
 	}
 }
 .ice-stice-put{
 	animation: put-in 5s forwards;
 }
-@keyframes put-in{
+/*@keyframes put-in{
 	0%{
 		transform: rotate(0deg) translate(0,0);
 		width: 70%;
@@ -420,7 +418,7 @@ body{
 			border-left:none; 
 		}
 	}
-}
+}*/
 
 .custom-show-area{
 	width: 100%;
