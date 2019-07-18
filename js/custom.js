@@ -78,6 +78,7 @@ function imgChange(){
 	$('#texture-min').css('backgroundColor','#f596aa');
 	$('.texture-select').children('figure').css('backgroundColor','#f596aa');
 	$(this).children('figure').css('backgroundColor','#db4d6d');
+	$('#mold-price').text('200');
 	totalPrice();
 }
 // 第二步換水果
@@ -105,6 +106,7 @@ function fruiteChange() {
 	listItemChange();
 	persentChange();
 	totalPrice();
+	$(window).resize(persentChange);
 }
 function persentChange() {
 	if (fruiteItem.length == 1) {
@@ -119,7 +121,7 @@ function persentChange() {
 	}else{
 		$('.progress-bar').css('width',0);
 	}
-	console.log(parseInt($('.default').css('width'))/20);
+	console.log();
 
 }
 // 價錢變數
@@ -300,6 +302,11 @@ function dragSliceImg() {
 }
 // 第四步
 function putStickIn() {
+	var check = checkList();
+	if (check !== true) {
+		window.alert(check);
+		return;
+	}
 	$('#ice-stick').addClass('ice-stice-put');
 	$('#text').attr('disabled',true);
 	$('#slice-main').draggable({
@@ -311,13 +318,20 @@ function putStickIn() {
 	$('#pop').fadeIn('fast', function() {
 		$('#pop-total-price').text($('#total-price').text());
 	});
-	imgPrint();
 	totalPrice();
 
 }
-function imgPrint() {
-
-
+function checkList() {
+	if ($('#mold-price').text() == "") {
+		return "模型未選";
+	}
+	if ($('#list-price-b').text() == "") {
+		return "水果未選完成";
+	}
+	if ($('#slice-price').text() == "") {
+		return "切片未選";
+	}
+	return true;
 }
 // 計算總價
 function totalPrice() {

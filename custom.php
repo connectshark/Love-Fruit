@@ -75,8 +75,8 @@ try {
                                             <img id="texture-min-img">
                                         </div>
                                     </th>
-                                    <td class="list-description">模型</td>
-									<td>150</td>
+                                    <td class="list-description"></td>
+									<td id="mold-price"></td>
 								</tr>
 								<tr>
 									<th>
@@ -84,7 +84,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-a">水果A</td>
+                                    <td id="list-description-a"></td>
 									<td id="list-price-a"></td>
 								</tr>
 								<tr>
@@ -93,7 +93,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-b">水果B</td>
+                                    <td id="list-description-b"></td>
 									<td id="list-price-b"></td>
 								</tr>
                                 <tr>
