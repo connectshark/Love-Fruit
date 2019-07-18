@@ -81,9 +81,9 @@ function imgChange(){
 	totalPrice();
 }
 // 第二步換水果
-fruitePrice = [];
+fruitePrice = new Array();
 fruiteQuality = new Array();
-fruiteColor = ['green','yellow','blue','orange','purple','red'];
+fruiteColor = new Array();
 fruiteItem = new Array();
 function fruiteChange() {
 	var itemNumber = $(this).index('.fruite-item');
@@ -111,6 +111,7 @@ function persentChange() {
 		$('.progress-bar').css('width',0);
 		$.each(fruiteQuality[fruiteItem[0]],function(index, el) {
 			$('.progress-bar').eq(index).css('width', el * 5 +"%");
+			console.log(el);
 		});
 	}else if(fruiteItem.length == 2){
 		for (var i = 0; i <3; i++) {
@@ -314,17 +315,7 @@ function putStickIn() {
 
 }
 function imgPrint() {
-	html2canvas(document.getElementById('show'), {
-        onrendered: function (canvas) {
-            canvas.setAttribute('id', 'thecanvas');	//添加属性
-            document.body.appendChild(canvas);
-        },
-        background: "",		//canvas的背景颜色，如果没有设定默认透明
-        logging: true,		//在console.log()中输出信息
-        width: 500,			//图片宽
-        height: 500,		//图片高
-        useCORS: true, // 【重要】开启跨域配置
-    });
+
 
 }
 // 計算總價

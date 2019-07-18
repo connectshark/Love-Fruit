@@ -7,7 +7,7 @@ try {
     $pdo = new PDO( $dsn , $user , $psw, $options );
     switch ($_REQUEST['category']) {
     	case 'fruite':
-	    	$sql = "SELECT fruit_sour, fruit_sweet, fruit_bitter,fruit_price FROM fruit_base";
+	    	$sql = "SELECT fruit_sour, fruit_sweet, fruit_bitter, fruit_price, fruite_color FROM fruit_base";
 	    	$fruite = $pdo->query($sql);
 	    	$fruite = $fruite->fetchAll();
 	    	echo json_encode($fruite);

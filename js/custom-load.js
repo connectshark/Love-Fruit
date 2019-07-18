@@ -30,7 +30,9 @@ function fruitepush(str) {
 	for (var i = 0; i < JSON.parse(str).length; i++) {
 		fruitePrice.push(parseInt(JSON.parse(str)[i][3]));
 	}
-	console.log(fruitePrice);
+	for (var i = 0; i < JSON.parse(str).length; i++) {
+		fruiteColor.push(JSON.parse(str)[i][4]);
+	}
 }
 function slicepush(str) {
 	for (var i = 0; i < JSON.parse(str).length; i++) {
@@ -39,5 +41,4 @@ function slicepush(str) {
 	for (var i = 0; i < JSON.parse(str).length; i++) {
 		slicePrice.push(parseInt(JSON.parse(str)[i][3]));
 	}
-	console.log(slicePrice);
 }
