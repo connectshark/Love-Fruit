@@ -62,9 +62,16 @@
 
   <div class="icon-mp">
     <div class="icon-login-box-mp">
-      <a class="nav-icon-login" href="javascript:;"><img src="img/navBar/memberIcon.png" alt="會員" /> </a><span id="nav-login-icon-p">登入</span>
+      <img id="icon-login-box-mp-img" src="img/navBar/memberIcon.png" alt="會員" />
+      <span id="nav-login-icon-p">登入</span>
+      <div id="member-centre-panel-p" class="member-centre-panel-p">
+        <div class="member-centre-panel-p-triangle"></div>
+        <span id="user-nam-p">會員名稱</span>
+        <span>會員中心</span>
+        <span>登出</span>
+      </div>
     </div>
-    <a href="javascript:;"><img src="img/navBar/shoppingCartIcon.png" alt="購物車" /></a>
+    <img id="shoppingCartIconP" src="img/navBar/shoppingCartIcon.png" alt="購物車" />
   </div>
   <img class="shopping-cart-icon-mp" src="img/navBar/shoppingCartIcon.png" alt="shoppingCartIcon.png" />
   <div id="robot-container" class="robot-container">
@@ -113,7 +120,7 @@
     <div class="login-interface-group">
       <span id="register">註冊新會員</span>
       <span id="psw-back">取回密碼</span>
-      <div class="member-login-button-style">
+      <div id="member-login-button-style" class="member-login-button-style">
         <div class="member-login-button-style-botton">
           <div class="member-login-inner-style">
             <div class="member-login-button-text-style">

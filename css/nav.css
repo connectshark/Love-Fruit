@@ -91,24 +91,65 @@
     width: 22%;
     font-size: 0;
   }
-  .icon-mp span {
-    padding-top: 4px;
-    display: inline-block;
-    color: #fff;
-    font-size: 2.7vw;
+  .member-centre-panel-p-triangle {
+    position: absolute;
+    top: -9px;
+    left: 7px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #ffdee6 transparent;
+  }
+  #icon-login-box-mp-img {
+    display: none;
+  }
+  .member-centre-panel-p {
+    position: absolute;
+    transform: translateY(0%);
+    opacity: 0;
+    top: -183px;
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 10px;
+    height: 115px;
+    background-color: #ffdee6;
+  }
+  .member-centre-panel-p span {
+    vertical-align: top;
+    display: block;
+    padding: 10px 0 10px 0;
+    width: 100%;
     font-family: "A-OTF-M";
+    font-size: 18px;
+    color: #ea7187;
     text-decoration: none;
   }
+  .member-centre-panel-p span:hover {
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
   .icon-login-box-mp {
-    width: 30%;
+    position: relative;
+    /* width: 30%; */
     text-align: center;
     display: inline-block;
     vertical-align: top;
     margin-right: 10%;
     font-size: 1vw;
+    font-size: 0;
   }
   #nav-login-icon-p {
+    padding-top: 5px;
     cursor: pointer;
+    display: block;
+    width: 33px;
+    font-family: "GenJyuuGothic-R";
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    /* display: none; */
+  }
+  .shoppingCartIconP {
+    display: block;
   }
   .icon-login-box-mp img {
     width: 100%;
@@ -431,7 +472,7 @@
   }
 
   #membe-centre-img {
-    /* display: none; */
+    display: none;
     cursor: pointer;
   }
   .member-centre-triangle {
@@ -445,12 +486,12 @@
   }
   #member-centre-down-menu {
     position: absolute;
+    z-index: -2;
     transform: translateY(0%);
-    top: -70%;
+    top: -300%;
     min-width: 100px;
     margin: auto;
     opacity: 0;
-    display: none;
     left: -30px;
     border-radius: 10px;
     background-color: #ffdee6;
@@ -466,6 +507,7 @@
   #member-centre-down-menu li span {
     display: inline-block;
     padding: 10px 0px 10px 0px;
+    cursor: pointer;
     text-decoration: none;
     font-size: 1vw;
     letter-spacing: 0.3vw;

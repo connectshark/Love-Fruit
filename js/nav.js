@@ -22,35 +22,55 @@ function navDropDownMenuout() {
     $id("nav-drop-down-menu").style.transform = "translateY(-90%)";
   }
 }
+// 會員主選單;
 function memberCentreDownMenu() {
   if (window.innerWidth > 767) {
-    $id("member-centre-down-menu").style.opacity = "1";
-    $id("member-centre-down-menu").style.display = "inline-block";
-    $id("member-centre-down-menu").style.transform = "translateY(95%)";
+    $id("nav-drop-down-menu").style.opacity = "1";
+    $id("nav-drop-down-menu").style.transform = "translateY(10%)";
   }
 }
+
 function memberCentreDownMenuOut() {
   if (window.innerWidth > 767) {
-    $id("member-centre-down-menu").style.opacity = "0";
-    $id("member-centre-down-menu").style.display = "none";
-    $id("member-centre-down-menu").style.transform = "translateY(0%)";
+    if ($id("member-centre-down-menu").style.opacity == "0") {
+      $id("member-centre-down-menu").style.opacity = "1";
+      $id("member-centre-down-menu").style.transform = "translateY(190%)";
+    } else {
+      $id("member-centre-down-menu").style.opacity = "0";
+      $id("member-centre-down-menu").style.transform = "translateY(0%)";
+    }
+  }
+}
+// 會員手機主選單
+function memberCentreDownMenuOutP() {
+  if (window.innerWidth < 767) {
+    if ($id("member-centre-panel-p").style.opacity == "0") {
+      $id("member-centre-panel-p").style.opacity = "1";
+      $id("member-centre-panel-p").style.transform = "translateY(180%)";
+    } else {
+      $id("member-centre-panel-p").style.opacity = "0";
+      $id("member-centre-panel-p").style.transform = "translateY(0%)";
+    }
   }
 }
 
 function init() {
+  // 會員主選單
   $id("membe-centre-img").addEventListener(
-    "mouseover",
-    memberCentreDownMenu,
-    false
-  );
-  $id("membe-centre-img").addEventListener(
-    "mouseout",
+    "click",
     memberCentreDownMenuOut,
     false
   );
+  // 會員手機主選單
+  $id("icon-login-box-mp-img").addEventListener(
+    "click",
+    memberCentreDownMenuOutP,
+    false
+  );
+
   $id("nav-drop-down-menu-hover").addEventListener(
     "mouseover",
-    navDropDownMenu,
+    memberCentreDownMenu,
     false
   );
   $id("nav-drop-down-menu-hover").addEventListener(
