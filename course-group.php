@@ -1,16 +1,20 @@
 <?php 
 try {
-	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
-	$user = "root";
-	$psw = "";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-  $pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
+  require_once("mac-require.php");
+  //抓開團留言
+	$sql = "SELECT m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content FROM course_msg cm JOIN member m ON cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
   $memNo = 1;//之後改為session
   $courseMsg  = $pdo->prepare($sql);
   $courseMsg -> bindValue(':memNo',$memNo);
   $courseMsg -> execute();
-	
+  
+  //抓回覆留言
+  $sql = "SELECT m.mem_no,m.mem_name,m.mem_pic, cm.msg_no,cm.msg_title, cm.msg_date,cm.course_class_no,cm.msg_content,mr.reply_date,mr.reply_no,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 ORDER BY msg_date desc";
+  $memNo = 1;//之後改為session
+  $replayMsg  = $pdo->prepare($sql);
+  $replayMsg -> bindValue(':memNo',$memNo);
+  $replayMsg -> execute();
+  
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
   $errMsg .= "行數:". $e->getLine()."<br>";
@@ -36,9 +40,10 @@ try {
 </head>
 
 <body>
+
   <?php
     require_once("nav.php");
-    ?>
+  ?>
 
   <section class="group-wrap">
     <div class="wrapper">
@@ -101,13 +106,14 @@ try {
       </div>
     </div>
   </section>
- <div  class="group-message-cloud"></div>
-  <section class="group-message-wrap">
+
+<div  class="group-message-cloud"></div>
+<section class="group-message-wrap">
    
-    <div id="comment"  class="title-box">
+<div id="comment"  class="title-box">
       <h3 class="message-title">開團留言板</h3>
       <span>快來開團玩課程！</span>
-    </div>
+</div>
 
 <form action="course-msg.php" method="post" enctype="multipart/form-data">
       <input type="hidden" value="1" name="courseClassNo">
@@ -140,21 +146,22 @@ e-mail：
       </div>
 </form>
 
-      <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
-      <div class="array-btn">
+<div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
+    <div class="array-btn">
         <a class="array-ice-btn-out" href="course-group-form.php">
           <span class="array-ice-btn-in">
             <img src="img/btn/ICE.png" alt="btn">
             主揪報團
           </span>
         </a>
-      </div>
+    </div>
 
-<?php while ($row = $courseMsg -> fetchObject()) {?>
-      <div class="team-name">
+ <?php while ($row = $courseMsg -> fetchObject()) {?> 
+    <div class="team-name">
         <span>團名：<?php echo $row->msg_title;?> </span>
-      </div>
-      <div class="main-group-message">
+    </div>
+
+    <div class="main-group-message">
 
         <div class="message-meb col-md-2 col-2">
           <i class="fas fa-user-circle"></i>
@@ -175,10 +182,10 @@ e-mail：
             </span>
           </div>
         </div>
-      </div>
+    </div>
+<?php } ?>
 
-
- 
+<?php while ($row = $replayMsg -> fetchObject()) {?> 
       <div  id="dialog" class="pop-box">
         <div class="pop-up">
           <span  id="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
@@ -196,36 +203,39 @@ e-mail：
                 <p><?php echo $row->msg_content; ?></p>
               </div>
             </div>
+            
+
             <!-- 跳窗回覆留言 -->
             <div class="all-message col-md-7 col-10">
               <div class="meb-add-message ">
                 <div class="meb col-md-2 ">
                   <i class="fas fa-user-circle"></i>
-                  <p class="name">Sandra</p>
+                  <p class="name"><?php echo $row->mem_name; ?></p>
+                  <p class="time"><?php echo $row->reply_date; ?></p>
                 </div>
-                <p class="text col-md-10">+1+1+1</p>
+                <p class="text col-md-10"><?php echo $row->reply_content; ?></p>
               </div>
             </div>
-
+<?php } ?> 
+ 
             <!-- 跳窗留言 -->
-            <div class="pop-leave-message col-md-8 col-10">
-              <div class="leave-message col-md-9 col-12"> <input type="text" name="" id="leave-message-box"></div>
+            <form class="pop-leave-message col-md-8 col-10" action="course-msg.php" method="post" enctype="multipart/form-data">
+              <div class="leave-message col-md-9 col-12"> <input type="text" name="replyContent" id="leave-message-box"></div>
                 <div class="message-btn col-md-2 col-12">
-                  <div class="message-btn-out">
+                  <button type="submit" class="message-btn-out">
                     <span class="message-btn-in">
                       留言參加
                     </span>
-                  </div>
+                  </button>
                 </div>
               </div>
-            </div>
+            </form>
 
          </div>
 
       </div>
     </div>
-<?}?>
- 
+  
   </section>
 
   <footer>
