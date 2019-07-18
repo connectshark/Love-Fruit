@@ -1,10 +1,6 @@
 <?php 
 try {
-	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
-	$user = "root";
-	$psw = "root";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-	$pdo = new PDO( $dsn , $user , $psw, $options );
+    require_once("connect-dd101g3.php");
 	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic, c.stage_no from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo";
 	$memNo = 2;//之後改為session
 	$messages = $pdo->prepare($sql);

@@ -1,21 +1,17 @@
 <?php 
 $errMsg="";
 try {
-    $dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
-    $user = "root";
-    $psw = "root";
-    $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-    $pdo = new PDO( $dsn , $user , $psw, $options );
+    require_once("connect-dd101g3.php");
     // 抓切片
-    $sql = "SELECT ii_no, ii_name,ii_pic FROM ingredients";
+    $sql = "SELECT ii_no, ii_name,ii_pic FROM ingredients WHERE ii_state = 1";
     $ii = $pdo->prepare($sql);
     $ii -> execute();
     // 抓模具
-    $sql = "SELECT mold_name,mold_pic FROM mold";
+    $sql = "SELECT mold_name,mold_pic FROM mold WHERE mold_state = 1";
     $mold = $pdo->prepare($sql);
     $mold -> execute();
     // 抓水果
-    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base";
+    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1";
     $fruite = $pdo->prepare($sql);
     $fruite -> execute();
 } catch (PDOException $e) {
@@ -79,8 +75,8 @@ try {
                                             <img id="texture-min-img">
                                         </div>
                                     </th>
-                                    <td class="list-description">模型</td>
-									<td>150</td>
+                                    <td class="list-description"></td>
+									<td id="mold-price"></td>
 								</tr>
 								<tr>
 									<th>
@@ -88,7 +84,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-a">水果A</td>
+                                    <td id="list-description-a"></td>
 									<td id="list-price-a"></td>
 								</tr>
 								<tr>
@@ -97,7 +93,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-b">水果B</td>
+                                    <td id="list-description-b"></td>
 									<td id="list-price-b"></td>
 								</tr>
                                 <tr>
@@ -264,20 +260,20 @@ try {
     		<div class="aside-button-group">
                 <div class="custom-box">
                     <form>
-                        <input type="radio" name="texture" value="ice" id="texture1">
-                        <input type="radio" name="texture" value="bear" id="texture2">
-                        <input type="radio" name="texture" value="rabbit" id="texture3">
-                        <input type="radio" name="texture" value="rocky" id="texture4">
-                        <input type="checkbox" name="fruite[]" value="greenapple" id="option1">
-                        <input type="checkbox" name="fruite[]" value="banana" id="option2">
-                        <input type="checkbox" name="fruite[]" value="blueberry" id="option3">
-                        <input type="checkbox" name="fruite[]" value="orange" id="option4">
-                        <input type="checkbox" name="fruite[]" value="grapes" id="option5">
-                        <input type="checkbox" name="fruite[]" value="streberry" id="option6">
-                        <input type="radio" name="fruite-slice" value="chocolate" id="fruite-slice1">
-                        <input type="radio" name="fruite-slice" value="bittergourd" id="fruite-slice2">
-                        <input type="radio" name="fruite-slice" value="saltedplum" id="fruite-slice3">
-                        <input type="radio" name="fruite-slice" value="Roselle" id="fruite-slice4">
+                        <input type="radio" name="texture" value="1" id="texture1">
+                        <input type="radio" name="texture" value="2" id="texture2">
+                        <input type="radio" name="texture" value="3" id="texture3">
+                        <input type="radio" name="texture" value="4" id="texture4">
+                        <input type="checkbox" name="fruite[]" value="1" id="option1">
+                        <input type="checkbox" name="fruite[]" value="2" id="option2">
+                        <input type="checkbox" name="fruite[]" value="3" id="option3">
+                        <input type="checkbox" name="fruite[]" value="4" id="option4">
+                        <input type="checkbox" name="fruite[]" value="5" id="option5">
+                        <input type="checkbox" name="fruite[]" value="6" id="option6">
+                        <input type="radio" name="fruite-slice" value="1" id="fruite-slice1">
+                        <input type="radio" name="fruite-slice" value="2" id="fruite-slice2">
+                        <input type="radio" name="fruite-slice" value="3" id="fruite-slice3">
+                        <input type="radio" name="fruite-slice" value="4" id="fruite-slice4">
                     </form>
                 </div>
 				<div class="aside-button" id="last">
