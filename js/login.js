@@ -60,7 +60,49 @@ function retrievePasswordCloseButton() {
   $id("email-address").value = "";
 }
 
+var mem_id_hide = "";
+function sendForm() {
+  //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上  送出檢查帳號密碼
+  //..........................................................
+  var xhr = new XMLHttpRequest();
+
+  xhr.onload = function() {
+    if (xhr.status == 200) {
+      console.log(xhr.responseText);
+      if (xhr.responseText == "1") {
+        alert("帳密錯誤");
+      } else {
+        //登入成功
+        alert("登入成功！");
+        $id("mem_id_hide").innerHTML = xhr.responseText;
+        // echo過來的字串
+        console.log(xhr.responseText);
+
+        // mem_id_hide
+        //將登入表單上的資料清空，並隱藏燈箱
+        $id("member-login").style.display = "none";
+        $id("mem_id").value = "";
+        $id("mem_psw").value = "";
+        $id("nav-login-icon").innerHTML = "登出";
+      }
+    } else {
+      alert(xhr.status);
+    }
+  };
+
+  xhr.open("post", "php/login.php", true);
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+  var data_info = `mem_id=${$id("mem-id").value}&mem-psw=${
+    $id("mem-psw").value
+  }`;
+
+  xhr.send(data_info);
+  //..........................................................
+}
+
 function init() {
+  $id("member-login-button-style").onclick = sendForm;
   $id("nav-login-icon-p").onclick = navLoginIconP;
   $id("nav-login-icon").onclick = navLoginIcon;
   $id("psw-back").onclick = pswBack;
