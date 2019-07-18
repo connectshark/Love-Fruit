@@ -242,7 +242,7 @@ function setRobotAns_B(e) {
         newQA_item.getElementsByTagName("span")[0].innerText = result.keyword; // DB內 User 詢問欄位
         newQA_item.getElementsByTagName("span")[1].innerHTML = result.answer; // DB內 Robot 回覆欄位
 
-        $scrollHeight = $("#robot-conversation-block").height(); //scroll的高度
+        $scrollHeight = $("#robot-conversation-list-group").height(); //scroll的高度
         console.log($scrollHeight);
         $("#robot-conversation-block").animate(
           { scrollTop: $scrollHeight },
