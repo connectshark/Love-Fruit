@@ -76,11 +76,19 @@
                 display: none;
             }
 
-            img{
-                width: 100%;
-                display: block;
+            .profile-img{
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
                 border-radius: 50%;
+                img{
+                    width: 100%;
+                    display: block;
+                   
+                }
             }
+
+            
             p{
                 padding-bottom: 10px;
             }
@@ -284,6 +292,10 @@
                 }
                 p{
                     padding: 10px;
+                }
+
+                .cto-img img{                   
+                     width: 50%;                   
                 }
                 
             }
