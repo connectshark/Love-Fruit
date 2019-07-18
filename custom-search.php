@@ -1,4 +1,5 @@
 <?php 
+$errMsg="";
 try {
     $dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
     $user = "root";
@@ -23,7 +24,8 @@ try {
     
 } catch (PDOException $e) {
     $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
-    $errMsg .= "行數:". $e->getLine()."<br>";
+	$errMsg .= "行數:". $e->getLine()."<br>";
+	echo $errMsg;
 }
 
  ?>
