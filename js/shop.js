@@ -101,7 +101,7 @@ function getCart(){
   
   xhr.onload = function(){
   	if( xhr.status == 200){
- 
+			console.log(xhr.responseText);
 		  cart = JSON.parse(xhr.responseText);
 		  console.log(cart);
 		
@@ -109,7 +109,7 @@ function getCart(){
   		alert(xhr.status);
   	}
   }
-  let url = "shop-update.php";
+  let url = "get-cart.php";
   xhr.open("get", url, true);
   xhr.send(null);
 
@@ -120,8 +120,6 @@ function getCart(){
 window.addEventListener("load", function(){
   //.............取得購物車資料
   getCart();
-
-
 //按下購物車按鈕
 var btn = document.getElementsByClassName("shop-buy-btn");
 for(i=0;i<btn.length;i++){

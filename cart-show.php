@@ -108,7 +108,8 @@ session_start();
       <div class="col-lg-2 "><span class="text-20">刪除</span></div>
     </div>
   </div>
-<div id="show-wrap">   
+<div id="show-wrap">
+  <div id="empty-text"></div>
   <?php
   $total = 0;
   foreach($_SESSION['cart'] as $i=>$value){

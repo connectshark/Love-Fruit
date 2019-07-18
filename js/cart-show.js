@@ -3,8 +3,7 @@ var cart = {};
 	//...............trash
 	function getTrash(e){
     // console.log(e);
-    let smalltotal = parseInt(e.target.parentNode.parentNode.previousElementSibling.querySelector("div span").innerText);
-    console.log(smalltotal);
+    
 		let miniItem = document.getElementById("show-wrap");
 		let item = e.target.parentNode.parentNode.parentNode;
     let prod_no = item.firstElementChild.value;
@@ -14,19 +13,36 @@ var cart = {};
 		xhr.onload = function (){
        console.log(item)
       miniItem.removeChild(item);// 消除視覺介面
-			cart = JSON.parse(xhr.responseText);
+      cart = JSON.parse(xhr.responseText);
+      console.log(cart);
+      cart = JSON.stringify(cart);
+      console.log(cart);
       // delete cart[prod_no]; 消除記憶體
       
+
+      // 刪除項目總計跟著變
+      let smalltotal = parseInt(e.target.parentNode.parentNode.previousElementSibling.querySelector("div span").innerText);
+      // console.log(smalltotal);
       var big_total_minus = document.getElementById("big-total").innerText;
-      console.log(big_total_minus);
+      // console.log(big_total_minus);
       math_big_total = parseInt(big_total_minus );
-      console.log(math_big_total );
+      // console.log(math_big_total );
       newtotal = math_big_total - smalltotal;
-      console.log(newtotal);
+      // console.log(newtotal);
       var aaa = big_total_minus = document.getElementById("big-total");
       aaa.innerText = newtotal ;
-      // console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode);
-      // e.target.parentNode.parentNode.nextElementSibling.querySelector("div p span").innerText = String(newtotal) ;
+      
+      var empty = document.getElementById("empty-text");
+      console.log(empty );
+      console.log(aaa);
+      if( aaa.innerText == 0){
+        empty.innerText = "dhdojwqoidjq";
+      }
+      // 購物車無資料顯示
+    //   if( isCartEmpty()){
+    //     window.alert("123");
+    //   }
+     
 			
 		}
 	
@@ -36,14 +52,21 @@ var cart = {};
 		console.log(this.parentNode);
 		// let myForm = new FormData(this.parentNode);
 		xhr.send(null);
-	}
+	};
 	// var trash = document.getElementsByClassName("fa-trash");
 	var trash = document.getElementsByClassName("trash");
 	// console.log(trash.length);
 	for(i=0;i<trash.length;i++){
 		trash[i].addEventListener("click",getTrash)
-  }
+  };
   
+// 檢查購物車清單是否為空
+  // function isCartEmpty(){
+  //   if( JSON.stringify(cart) == "{}"){
+  //     return true;
+  //   }
+  //   return false;
+  // }
   
 //----------------數量改變時的事件處理器
 function changeCart(e){
@@ -132,34 +155,5 @@ window.addEventListener("load" , function(){
       }
       return total;
     }
-    // function deletecart(e){
-    //   let xhr = new XMLHttpRequest();
-	
-    //   xhr.onload = function (e){
-    //         cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
-    //         // console.log(cart);
-    //   }
-    
-    //   let url = "cart-show-update.php";
-    //   xhr.open("post",url,true);
-    
-    //   let myForm = new FormData(e.target.form);
-    //   console.log(e.target.form);
-    //   xhr.send(myForm);
-    // }
-    // // 刪除按鈕
-    // var delet = document.getElementsByClassName("delete");
-    // for(var i=0; i<delet.length; i++){
-    //   delet[i].onclick = function(){
-    //     deletecart(e);
-    //   }
-    // }
-
-
-
-
-
-
-
-    });
-    
+   
+  });

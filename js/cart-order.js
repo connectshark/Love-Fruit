@@ -10,6 +10,7 @@ $(function(){
         });
     });
 
+// 把收件人資訊打成字串丟到php寫入訂單;
 function orderSession(){
     let xhr = new XMLHttpRequest();
 	
@@ -37,7 +38,7 @@ function orderSession(){
 
 
       var jsonStr = JSON.stringify( member );
-      var url = "order=inset.php?jsonStr=" + jsonStr ;
+      var url = "order-inset.php?jsonStr=" + jsonStr ;
 
     // console.log(this.parentNode);
     xhr.open("get",url,true);
