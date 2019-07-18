@@ -305,6 +305,7 @@ try {
             <span class="close" id="close-pop">
                 <img src="img/pop-close.png" alt="關閉視窗">
             </span>
+            <div class="pop-img"><img id="pop-img"></div>
             <div class="pop-title">
                 <h2>製作完成</h2>
                 <p>總價格為:<span id="pop-total-price"></span>元</p>

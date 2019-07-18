@@ -256,9 +256,11 @@ function smile() {
 var sliceQuality=new Array();
 var slicePrice=new Array();
 var sliceSize = 50;
+var sliceSrc;
 function imgPut() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
+	sliceSrc = src;
 	$('#slice-m').children().attr({
 		src:src,
 		alt:alt,
@@ -323,7 +325,7 @@ function putStickIn() {
 		$('#pop-total-price').text($('#total-price').text());
 	});
 	totalPrice();
-	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]]);
+	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
 }
 function checkList() {
 	if ($('#mold-price').text() == "") {
