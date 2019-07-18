@@ -149,7 +149,7 @@
       </div>
     </div>
 
-
+  
   </div>
   <div id="register-account" class="register-account">
     <div id="register-account-close-button" class="register-account-close-button">
@@ -177,3 +177,20 @@
     </div>
   </div>
 </div>
+
+<section id="mini-cart">
+    <div class="head">
+        <div class="cart-icon">
+            <img src="img/navBar/shoppingCartIcon.png" alt="">
+            <h3>
+                我的購物車
+            </h3>
+        </div>
+        <div class="cart-close">
+            <i class="fas fa-times ">  
+            </i>
+        </div>
+    </div>    
+    <div id="mini-item">
+    </div>
+</section>

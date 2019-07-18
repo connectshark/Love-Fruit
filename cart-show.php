@@ -108,107 +108,60 @@ session_start();
       <div class="col-lg-2 "><span class="text-20">刪除</span></div>
     </div>
   </div>
-
+<div id="show-wrap">
+  <div id="empty-text"></div>
   <?php
+  $total = 0;
   foreach($_SESSION['cart'] as $i=>$value){
-
+  $total += $_SESSION["cart"][$i]["prod_price"]*$_SESSION["cart"][$i]["qty"];
     // echo $_SESSION["cart"][$prod_no];
-  
   ?>
-
-  <form action="get">
-    <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
+  <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
+      <input type="hidden" value="<?php echo $i ?>">
       <div class="col-lg-2 col-6 item-pic">
-        <div class="col-2 m-a"><img src="img/shop/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
+        <div class="col-2 m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
       </div>
       <div class="col-lg-2 col-6 mobile-price">
         <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
         <p class="dis-lg-n">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></p>
       </div>
-      <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></div>
+      <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT <span><?php echo $_SESSION["cart"][$i]["prod_price"] ?></span> </div>
       <div class="col-lg-2 col-6 cartlist-btn">
-        <span class="btn-numbox col-4">
-          <input type='button' value='-' class='qtyminus' field='quantity' />
-          <input type='text' name='quantity' value='0' class='qty' />
-          <input type='button' value='+' class='qtyplus' field='quantity' />
-        </span>
+        <form action="">
+          <span class="btn-numbox col-4">
+              <input type='button' value='-' class='qtyminus' field='quantity' />
+              <input type='number' value='<?php echo $_SESSION["cart"][$i]["qty"] ?>' class='qty'    name='qty'  />
+              <input type='button' value='+' class='qtyplus' field='quantity' />
+              <input type="hidden" name="prod_no" value="<?php echo $i; ?>">
+              <input type="hidden" name="prod_name" value="<?php echo $_SESSION["cart"][$i]["prod_name"]?>">
+              <input type="hidden" name="prod_price" value="<?php echo $_SESSION["cart"][$i]["prod_price"]?>">	
+          </span>
+        </form>
       </div>
-      <div class="col-lg-2 col-6 small-total"><span>NT<?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
-      <div class="col-lg-2 delete"><span><i class="fas fa-trash"></i></span></div>
-    </div>
-  </form>
- 
- 
+      <div class="col-lg-2 col-6 small-total">NT<span class="small-total-span"><?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
+      <form action="delete-cart.php">
+        <div class="col-lg-2 delete"><span class=" trash">刪除</span></div>
+      </form>
+  </div>
 <?php
   }
  ?>
-
-  <div class="total-pri container p-10 ">
-    <p><span>總計:450元</span></p>
-  </div>
+</div>
+<div class="total-pri container p-10 ">
+  <p>總計:<span id="big-total"><?php echo $total ?></span></p>
+</div>
  <div class="cart-btn container des-flex ju-c">
-    <a href="shop.html">
+    <a href="shop.php">
       <div class="continue-shop"><span class="continue-shop-in">繼續購物</span></div>
     </a>
+    <a href="cart-order.php">
+        <button type="submit" class="button">
+          <div class="go-buy"><span class="go-buy-in">進行結帳</span>
+        </button>
+      </a>
+</div>
 
-  </div>
-
-
-
-
-
-<!-- 備份 -->
-  <!-- <form action="get">
-    <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
-      <div class="col-lg-2 col-6 item-pic">
-        <div class="col-2 m-a"><img src="img/shop/inlove/inlove-ball01.png" alt=""></div>
-      </div>
-      <div class="col-lg-2 col-6 mobile-price ">
-        <p>芋頭牛奶</p>
-        <p class="dis-lg-n">價格:450</p>
-      </div>
-      <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT450</div>
-      <div class="col-lg-2 col-6 cartlist-btn">
-        <span class="btn-numbox col-4">
-          <input type='button' value='-' class='qtyminus' field='quantity' />
-          <input type='text' name='quantity' value='0' class='qty' />
-          <input type='button' value='+' class='qtyplus' field='quantity' />
-        </span>
-      </div>
-      <div class="col-lg-2 col-6 small-total"><span>小計450</span></div>
-      <div class="col-lg-2 delete"><span><i class="fas fa-trash"></i></span></div>
-    </div>
-  </form>
-  <div class="total-pri container p-10 ">
-    <p><span>總計:450元</span></p>
-  </div>
-  <div class="cart-btn container des-flex ju-c">
-    <a href="shop.html">
-      <div class="continue-shop"><span class="continue-shop-in">繼續購物</span></div>
-    </a>
-
-  </div>
-
- -->
-
-  <div class="cart-btn container des-flex ju-c;">
-    <a href="cart-order.html">
-      <button type="submit" class="button">
-        <div class="go-buy"><span class="go-buy-in">進行結帳</span>
-      </button>
-    </a>
-
-  </div>
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -251,6 +204,7 @@ session_start();
     <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
   </footer>
   <script src="js/nav.js"></script>
+  <script src="js/cart-show.js"></script>
   <!-- <script src="js/cartlist.js"></script> -->
   <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

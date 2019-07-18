@@ -25,7 +25,6 @@ try {
     <link rel="icon" href="img/navBar/logo.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href= "css/common.css" />
     <link rel="stylesheet" href="css/temporary-cart.css">
     <link rel="stylesheet" href="css/shop.css">
@@ -35,13 +34,13 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
-<body>
+<body class="page-shop">
  
 
            
-   <?php
-   require_once("nav.php");
-   ?>
+<?php
+require_once("nav.php");
+?>
 
     <section class="latest-news">
         <div class="title-main">
@@ -162,39 +161,41 @@ try {
                     //     $qty = 0;
                     // }
                 ?>
-                        <div class="general-item col-6 col-lg-3 single">
+                        <div class="general-item col-6 col-lg-3 <?php
+                        if($prodRow["stage_no"] == 1){echo "single";
+                            
+                        }elseif($prodRow["stage_no"] == 2){echo "first-love";
+
+                        }elseif($prodRow["stage_no"] == 3){echo "fall-in-love";
+
+                        }else{echo "break-up";
+
+                        }
+                        ?>">
                             <div class="ice-type col-11">
-                                <img src="img/shop/icetype-popsicle.png" alt="">
+                                <img src="database/img_type/<?php
+                                if($prodRow["type_no"]==1){echo "popsicle.png";
+                                }elseif($prodRow["type_no"]==2){echo "ball.png";}
+                                else{echo "mount.png";}?>" alt="">
                                 <p><?php echo $prodRow["stage_name"] ?></p>
                             </div>
                             <div class="general-item-content col-11 ">
                            
                                 <div class="item-img col-12">
                                     <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
-                                        <img src="img/shop/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
+                                        <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
                                     </a>    
                                     <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
                                 </div>
                                 
                                 <div class="item-text ">
-                                    <span class="item-name col-12"><?php echo $prodRow["prod_name"] ?></span>
-                                    <div class="review col-12">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <span>(4.5)</span>
-                                    </div>
-                                </div>
-                                <div class="item-pri ">
-                                    <span>
+                                    <span class="item-name col-lg-6 col-12"><?php echo $prodRow["prod_name"] ?></span>
+                                    <span class="col-lg-6">
                                         NT<?php echo $prodRow["prod_price"] ?>
                                     </span>
-
-                                    
-                                    <div class="btn-numbox">
-                                        <!-- <form id='myform' method='POST' action='#'> -->
+                                </div>
+                                <div class="item-pri">
+                                    <div class="btn-numbox col-lg-12">
                                             <input type='button' value='-' class='qtyminus' field='quantity' />
                                             <input type='number' min="1"  name='quantity' value='1' class='qty' />
                                             <input type='button' value='+' class='qtyplus' field='quantity' />
@@ -204,8 +205,7 @@ try {
                                         <!-- </form> -->
                                     </div>
                                 </div>
-                            
-                                    <div class="shop-btn">
+                                <div class="shop-btn">
                                     <form class="add-cart">
                                         <input type='hidden' name='qty' value='1' class="qty"/>
                                         <input type="hidden" name = prod_pic value = "<?php echo $prodRow["prod_pic"] ?>">
@@ -218,9 +218,7 @@ try {
                                             </span>
                                         </div>
                                     </form>
-                                    </div>
-                                </form>
-                               
+                                </div>
                             </div>
                         </div>
 

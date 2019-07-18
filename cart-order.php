@@ -1,3 +1,7 @@
+<?php 
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,86 +168,96 @@
                 <div class="col-lg-3 text-center"><span>小計</span></div>
             </div>
         </section>
+        <?php
+       foreach($_SESSION['cart'] as $i=>$value){
+        ?>
+       
         <form action="get" class="confirm-list" >
             <div class="confirm-row fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
-                <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="img/shop/inlove/inlove-ball01.png" alt=""></div></div>
+                <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>"></div></div>
                 <div class="row-name col-lg-3 col-6  ">
-                  <p>芋頭牛奶</p>
+                  <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
                   <div>商品:
-                     <span>芋頭牛奶</span>
+                     <span><?php echo $_SESSION["cart"][$i]["prod_name"] ?></span>
                   </div>  
                   <div>數量:
-                      <span>2</span>
+                      <span><?php echo $_SESSION["cart"][$i]["qty"] ?></span>
                    </div>  
                    <div>價格
-                      <span>450</span>
+                      <span><?php echo $_SESSION["cart"][$i]["prod_price"]?></span>
                    </div>  
                 </div>
-                <div class="confirm-unit-price col-lg-3 col-6 dis-mobile-n ">NT450</div>
-                <div class="confirm-btn btn-numbox  col-lg-3 col-6">
-                  <span>2</span>
-                      <input type='button' value='-' class='qtyminus' field='quantity' />
-                      <input type='text' name='quantity' value='0' class='qty' />
-                      <input type='button' value='+' class='qtyplus' field='quantity' />
+                <div class="confirm-unit-price col-lg-3 col-6 dis-mobile-n "><?php echo $_SESSION["cart"][$i]["prod_price"]?></div>
+                <div class="confirm-btn col-lg-3 col-6">
+                  <span>
+                    <?php echo $_SESSION["cart"][$i]["qty"]?>
                   </span>
               </div>
-               <div class="col-lg-3 col-6 small-total"><span>NT900</span></div>
+               <div class="col-lg-3 col-6 small-total"><span>NT<?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
             </div>
         </form>
+      
+        
+        <?php
+        }
+        ?>
         <div class="confirm-total container p-10 ">
             <p><span>總計:450元</span></p>
         </div>
 
-
-
-        <section class="pay-transport container p-20 bagc-w">
+        <section class="pay-transport container p-20 ">
             <h3 class="pay-transport-title">付款&貨運</h3>
-        
+
             <div class="pay-transport-btn">
               <ul class="tabtitle">
                 <li class="pay col-lg-2 "><a href="#pay-way">付款方式</a></li>
                 <li class="transport col-lg-2"><a href="#transport-way">貨運方式</a> </li>
+                <li class="recipient col-lg-2"><a href="#recipient">收件人資訊</a></li>
               </ul>
             </div>
-            <!-- <ul class="tabtitle">
-              <li> <a href="#pay-way">1231</a> </li>
-              <li> <a href="#transport-way">11131441</a> </li>
-            </ul> -->
-        
-            <div class="p-10 tab-inner" id="pay-way">
-              <p>測試內容不知道會不會成功</p>
-              <div class="p-10 rela ">
-                <input type="radio" name="pay-method" id="tick">
-                <label for="tick"><span></span></label>
-                <span class="transport-check">貨到付款</span>
-              </div>
-              <div class="p-10">
-                <input type="radio" name="pay-method" id="tick1">
-                <label for="tick1"><span></span></label>
-                <span class="onlion-check">線上刷卡</span>
-              </div>
+
+            <div class="p-10 rela tab-inner" id="pay-way">
+              <input type="radio" name="pay" value="0">貨到付款
+              <input type="radio" name="pay"  value="1">線上刷卡
             </div>
-            <div class="p-10 tab-inner" id="transport-way">
-              <p>我式貨運方式請讓我出現或消失</p>
+            
+            <div class="p-10 rela tab-inner" id="transport-way">
+                <input type="radio" name="transport" value="0">7-11取貨
+                <input type="radio" name="transport"  value="2">宅配
             </div>
+
+            <div class="p-10 tab-inner" id="recipient">
+                姓名:<input type="text" id="name" name="name">
+                <span> </span>                                        
+                電話:<input type="text" id="phone" name="phone">
+                <span> </span> 
+                信箱:<input type="text" id="email" name="email">
+                <div class="p-10">
+                  <input type="checkbox" name="same-member" id="tick1">
+                  <label for="tick1"><span></span></label>
+                  <span class="onlion-check">同會員資料</span>
+                </div>
+            </div>
+         
+          
         </section>
 
 
         <div class="confirm-btn container ju-c;">
-            <a href="cart-show.html"> 
+            <a href="cart-show.php"> 
               <button type="submit" class="col-lg-3n"><div class="Previous">
                 <span class="Previous-in">上一步</span></button>
             </a>
-            <button type="submit" class="button"><div class="confirm-shop">
-              <span class="confirm-shop-in">
-              確認結帳
-              <img src="img/btn/ICE.png" alt="" class="testclass">
-              </span>
-            </button>
+            <a href="to-do.php" class="confirm-a">
+               <div class="confirm-shop">
+                <span class="confirm-shop-in">
+                  確認結帳
+                <img src="img/btn/ICE.png" alt="" class="testclass">
+                </span>
+              </div> 
+            </a>
+           
         </div>
-
-
-
 
         <!-- <section class=" package-information container p-10">
           <p class="package-information-title"><span>收件人資訊</span> </p>
@@ -255,15 +269,6 @@
             <div><span class="pay-method">付款方式:</span></div>
           </form>
         </section> -->
-
-
-
-
-
-
-
-
-
         <footer>
                 <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
           </footer>
