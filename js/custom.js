@@ -272,6 +272,7 @@ function imgPut() {
 	$('#slice-price').text(slicePrice);
 	dragSliceImg();
 	totalPrice();
+	slicePersentChange();
 }
 function imgBigger() {
 	sliceSize += 10;
@@ -299,6 +300,9 @@ function dragSliceImg() {
 		containment: '#texture-main',
 		scroll: false,
 	});
+}
+function slicePersentChange() {
+	console.log(sliceQuality);
 }
 // 第四步
 function putStickIn() {
