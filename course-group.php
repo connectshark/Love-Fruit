@@ -29,10 +29,10 @@ try {
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/courseP.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+  <link rel="stylesheet" href="css/temporary-cart.css">
 </head>
 
 <body>
@@ -115,7 +115,7 @@ try {
       <div class="open-group">
         <div class="message-meb col-md-2">
           <i class="fas fa-user-circle"></i>
-          <p><?php echo $row->mem_name; ?></p>
+          <p>會員名稱</p>
           <p class="time"><?php echo date("Y-m-d"); ?></p>
         </div>
         <div class="write-area  col-md-10">
@@ -238,6 +238,8 @@ e-mail：
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/course.js"></script>
+
+    <script src="js/shop.js"></script>
 </body>
 
 </html>

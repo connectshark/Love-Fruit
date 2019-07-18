@@ -11,9 +11,9 @@
     <link rel="icon" href="img/navBar/logo.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/courseP.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/temporary-cart.css">
   </head>   
   <body>
     <?php
@@ -47,7 +47,8 @@
     <footer>
       <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
     </footer>
-
-    <script src="js/nav.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/shop.js"></script>
+     <script src="js/nav.js"></script>
   </body>
 </html>

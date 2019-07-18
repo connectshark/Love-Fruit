@@ -33,7 +33,9 @@ try {
     <link rel="stylesheet" href="css/courseP.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-  </head>   
+    <link rel="stylesheet" href="css/temporary-cart.css">
+ 
+</head>   
   <body>
   <?php
     require_once("nav.php");
@@ -205,7 +207,10 @@ try {
     <footer>
       <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
     </footer>
-
+  
     <script src="js/nav.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/shop.js"></script>
+    
   </body>
 </html>
