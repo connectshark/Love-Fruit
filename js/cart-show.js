@@ -78,7 +78,7 @@ function changeCart(e){
         // console.log(JSON.parse(xhr.responseText));
 	}
 
-	let url = "cart-show-update.php";
+	let url = "order-insert.php";
 	xhr.open("post",url,true);
 
   let myForm = new FormData(e.target.form);

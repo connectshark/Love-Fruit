@@ -172,42 +172,43 @@ session_start();
        foreach($_SESSION['cart'] as $i=>$value){
         ?>
        
-        <form action="get" class="confirm-list" >
-            <div class="confirm-row fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
-                <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>"></div></div>
-                <div class="row-name col-lg-3 col-6  ">
-                  <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
-                  <div>商品:
-                     <span><?php echo $_SESSION["cart"][$i]["prod_name"] ?></span>
-                  </div>  
-                  <div>數量:
-                      <span><?php echo $_SESSION["cart"][$i]["qty"] ?></span>
-                   </div>  
-                   <div>價格
-                      <span><?php echo $_SESSION["cart"][$i]["prod_price"]?></span>
-                   </div>  
-                </div>
-                <div class="confirm-unit-price col-lg-3 col-6 dis-mobile-n "><?php echo $_SESSION["cart"][$i]["prod_price"]?></div>
-                <div class="confirm-btn col-lg-3 col-6">
-                  <span>
-                    <?php echo $_SESSION["cart"][$i]["qty"]?>
-                  </span>
-              </div>
-               <div class="col-lg-3 col-6 small-total"><span>NT<?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
+       
+        <div class="confirm-row fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
+            <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>"></div></div>
+            <div class="row-name col-lg-3 col-6  ">
+              <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
+              <div>商品:
+                  <span><?php echo $_SESSION["cart"][$i]["prod_name"] ?></span>
+              </div>  
+              <div>數量:
+                  <span><?php echo $_SESSION["cart"][$i]["qty"] ?></span>
+                </div>  
+                <div>價格
+                  <span><?php echo $_SESSION["cart"][$i]["prod_price"]?></span>
+                </div>  
             </div>
-        </form>
+            <div class="confirm-unit-price col-lg-3 col-6 dis-mobile-n "><?php echo $_SESSION["cart"][$i]["prod_price"]?></div>
+            <div class="confirm-btn col-lg-3 col-6">
+              <span>
+                <?php echo $_SESSION["cart"][$i]["qty"]?>
+              </span>
+          </div>
+            <div class="col-lg-3 col-6 small-total"><span>NT<?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
+        </div>
+
       
         
         <?php
         }
         ?>
+         
         <div class="confirm-total container p-10 ">
             <p><span>總計:450元</span></p>
         </div>
-
+   
         <section class="pay-transport container p-20 ">
             <h3 class="pay-transport-title">付款&貨運</h3>
-
+        <form>  
             <div class="pay-transport-btn">
               <ul class="tabtitle">
                 <li class="pay col-lg-2 "><a href="#pay-way">付款方式</a></li>
@@ -215,32 +216,31 @@ session_start();
                 <li class="recipient col-lg-2"><a href="#recipient">收件人資訊</a></li>
               </ul>
             </div>
+        
+              <div class="p-10 rela tab-inner" id="pay-way">
+                <input type="radio" name="pay" value="0">貨到付款
+                <input type="radio" name="pay"  value="1">線上刷卡
+              </div>
+              
+              <div class="p-10 rela tab-inner" id="transport-way">
+                  <input type="radio" name="transport" value="0">7-11取貨
+                  <input type="radio" name="transport"  value="2">宅配
+              </div>
 
-            <div class="p-10 rela tab-inner" id="pay-way">
-              <input type="radio" name="pay" value="0">貨到付款
-              <input type="radio" name="pay"  value="1">線上刷卡
-            </div>
-            
-            <div class="p-10 rela tab-inner" id="transport-way">
-                <input type="radio" name="transport" value="0">7-11取貨
-                <input type="radio" name="transport"  value="2">宅配
-            </div>
-
-            <div class="p-10 tab-inner" id="recipient">
-                姓名:<input type="text" id="name" name="name">
-                <span> </span>                                        
-                電話:<input type="text" id="phone" name="phone">
-                <span> </span> 
-                信箱:<input type="text" id="email" name="email">
-                <div class="p-10">
-                  <input type="checkbox" name="same-member" id="tick1">
-                  <label for="tick1"><span></span></label>
-                  <span class="onlion-check">同會員資料</span>
-                </div>
-            </div>
-         
-          
-        </section>
+              <div class="p-10 tab-inner" id="recipient">
+                  姓名:<input type="text" id="name" name="name">               
+                  電話:<input type="text" id="phone" name="phone">
+                  地址:<input type="text" id="add" name="add">
+                  信箱:<input type="text" id="email" name="email">
+                  <div class="p-10">
+                    <input type="checkbox" name="same-member" id="tick1">
+                    <label for="tick1"><span></span></label>
+                    <span class="onlion-check">同會員資料</span>
+                  </div>
+              </div>
+          </form>     
+  
+        </section>  
 
 
         <div class="confirm-btn container ju-c;">
@@ -248,7 +248,7 @@ session_start();
               <button type="submit" class="col-lg-3n"><div class="Previous">
                 <span class="Previous-in">上一步</span></button>
             </a>
-            <a href="to-do.php" class="confirm-a">
+            <a class="confirm-a">
                <div class="confirm-shop">
                 <span class="confirm-shop-in">
                   確認結帳
@@ -259,16 +259,7 @@ session_start();
            
         </div>
 
-        <!-- <section class=" package-information container p-10">
-          <p class="package-information-title"><span>收件人資訊</span> </p>
-          <form action="">
-            <div><span class="recipient">收件人:</span></div>
-            <div><span class="phone">電話:</span></div>
-            <div><span class="email">信箱:</span></div>
-            <div><span classs="adress">地址:</span></div>
-            <div><span class="pay-method">付款方式:</span></div>
-          </form>
-        </section> -->
+
         <footer>
                 <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
           </footer>

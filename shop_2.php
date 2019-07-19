@@ -3,6 +3,7 @@ session_start();
 $errMsg = "";
 try {
 	require_once("connect-dd101g3.php");
+
 	$sql = "select * from product p , love_stage l where p.stage_no = l.stage_no";
 	$products = $pdo->query($sql);
 	$prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
@@ -106,30 +107,32 @@ require_once("nav.php");
             </div>
 
             <div class="general-type-btn col-11">
+            <form>
                 <div class="filter-item filter-active">
-                    <button type="button" class="filter" id="all">全部</button>
+                    <button type="submit" name="item" value="" class="filter" id="all">全部</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="single">單身</button>
+                    <button type="submit" name="item" value="" class="filter" id="single">單身</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="first-love">初戀</button>
+                    <input type="submit" name="item" value="1" class="filter" id="first-love" >初戀
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="fall-in-love">熱戀</button>
+                    <input type="submit" name="item" value="2" class="filter" id="fall-in-love">熱戀
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="break-up">分手</button>
+                    <input type="submit" name="item" value="3" class="filter" id="break-up">分手
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="popscial">冰棒</button>
+                    <input type="submit" name="item" value="4" class="filter" id="popscial">冰棒
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="ice-cream">霜淇淋</button>
+                    <input type="submit" name="item" value="5" class="filter" id="ice-cream">霜淇淋
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="icecream-ball">冰淇淋</button>
+                    <input type="submit" name="item" value="6" class="filter" id="icecream-ball">冰淇淋
                 </div>
+                </form>
                 <div class="select">
                     <select v-model="status" id="select-pull">
                         <option>全部</option>
