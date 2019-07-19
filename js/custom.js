@@ -343,6 +343,7 @@ function checkList() {
 function totalPrice() {
 	var total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+150;
 	$('#total-price').text(total);
+	$('#custom-price').val(total);
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);

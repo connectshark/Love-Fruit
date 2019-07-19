@@ -1,14 +1,21 @@
 $(document).ready(function() {
-	$("input[name='fruite[]']").click(function(e) {
-	    var obj=document.getElementsByName("fruite");
-	    var num=0;
-	    for (var i=0;i<obj.length ;i++ )
-	        if (obj[i].checked) num++;
-
-	    if (num>2){
-	        for (var i=0;i<obj.length ;i++){
-	            e.target.checked=false;
-	        }
-	    }
+	$("input[name='fruite[]']").click(function() {
+			console.log($("input[name='fruite[]']:checked").length);
+			console.log($("input[name='fruite[]']").not("input[name='fruite[]']:checked").length);
+		if ($("input[name='fruite[]']:checked").length >= 2){
+			$("input[name='fruite[]']").not("input[name='fruite[]']:checked").attr('disabled', true);
+		}else{
+			$("input[name='fruite[]']").not("input[name='fruite[]']:checked").attr('disabled', false);
+		}
+	});
+	$('#complete-all').click(function(){
+		$.ajax({
+			url:'../custom-complete.php',
+			data: $('#custom-choose').serialize(),
+			type: 'POST',
+			success: function(data){
+				alert(`${data}`);
+			},
+		});
 	});
 });

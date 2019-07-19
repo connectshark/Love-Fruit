@@ -260,7 +260,8 @@ try {
             </div>
     		<div class="aside-button-group">
                 <div class="custom-box">
-                    <form>
+                    <form id="custom-choose">
+                        <input type="text" name="parse" v-model="message">
                         <input type="radio" name="texture" value="1" id="texture1">
                         <input type="radio" name="texture" value="2" id="texture2">
                         <input type="radio" name="texture" value="3" id="texture3">
@@ -275,6 +276,7 @@ try {
                         <input type="radio" name="fruite-slice" value="2" id="fruite-slice2">
                         <input type="radio" name="fruite-slice" value="3" id="fruite-slice3">
                         <input type="radio" name="fruite-slice" value="4" id="fruite-slice4">
+                        <input type="number" id="custom-price" name="price">
                     </form>
                 </div>
 				<div class="aside-button" id="last">
