@@ -41,6 +41,7 @@
             <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
           </div>
         </div>
+        
         <div class='form-info'>
           <img src="img/btn/ICE.png" alt="title-img">
           <p>選擇日期：</p>
