@@ -21,7 +21,6 @@
         background-image: url('../img/pop.png');
         background-position: center;
         background-repeat: no-repeat;
-        -webkit-background-size: contain;
         background-size: contain;
         padding:0 0 20px;
         display: flex;
@@ -29,11 +28,34 @@
         align-items: center;
         justify-content: flex-end;
         padding-top: 50px;
-        h2{
-            font-size: 40px;
-            color: #fff;
-            margin: auto;
-            color: #6a3e26;
+        .pop-img{
+            top: -10%;
+            width: 60%;
+            padding-bottom: 60%;
+            position: relative;
+            img{
+                position: absolute;
+                max-width: 110%;
+                max-height: 110%;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+        .pop-title{
+            h2{
+                font-size: 40px;
+                color: #fff;
+                margin: auto;
+                color: #6a3e26;
+            }
+            p{
+                font-size: 20px;
+                line-height: 1.5;
+                text-align: center;
+            }
         }
         .close{
             position: absolute;

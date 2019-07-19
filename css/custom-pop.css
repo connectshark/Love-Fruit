@@ -47,11 +47,35 @@
   padding-top: 50px;
 }
 
-.pop .pop-area h2 {
+.pop .pop-area .pop-img {
+  top: -10%;
+  width: 60%;
+  padding-bottom: 60%;
+  position: relative;
+}
+
+.pop .pop-area .pop-img img {
+  position: absolute;
+  max-width: 110%;
+  max-height: 110%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.pop .pop-area .pop-title h2 {
   font-size: 40px;
   color: #fff;
   margin: auto;
   color: #6a3e26;
+}
+
+.pop .pop-area .pop-title p {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .pop .pop-area .close {

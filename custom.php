@@ -7,11 +7,11 @@ try {
     $ii = $pdo->prepare($sql);
     $ii -> execute();
     // 抓模具
-    $sql = "SELECT mold_name,mold_pic FROM mold WHERE mold_state = 1";
+    $sql = "SELECT mold_no, mold_name,mold_pic FROM mold WHERE mold_state = 1 ";
     $mold = $pdo->prepare($sql);
     $mold -> execute();
     // 抓水果
-    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1";
+    $sql = "SELECT fruit_no, fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1 ";
     $fruite = $pdo->prepare($sql);
     $fruite -> execute();
 } catch (PDOException $e) {
@@ -174,7 +174,7 @@ try {
     			<div class="aside-select">
                     <?php while ($moldrow = $mold -> fetchObject()) { ?>
                     <div class="select-item select-item-4">
-                        <label for="texture1">
+                        <label for="texture<?php echo $moldrow->mold_no; ?>">
                         <div class="texture-item texture-select">
                             <figure>
                                 <img src="<?php echo $moldrow->mold_pic; ?>" alt="<?php echo $moldrow->mold_name; ?>">
@@ -195,7 +195,7 @@ try {
                 <div class="aside-select">
                     <?php while ($fruiterow = $fruite -> fetchObject()) {?>
                     <div class="select-item select-item-6 select-item-4">
-                        <label for="option1">
+                        <label for="option<?php echo $fruiterow->fruit_no ?>">
                             <div class="fruite-item texture-item">
                                 <figure><img src="<?php echo $fruiterow->fruite_pic ?>" alt="<?php echo $fruiterow->fruit_name ?>"></figure>
                                 <p><?php echo $fruiterow->fruit_name ?></p>
@@ -232,7 +232,7 @@ try {
                 <div class="aside-select">
                     <?php while ($row = $ii -> fetchObject()) { ?>
                     <div class="select-item select-item-4 select-item-6">
-                        <label for="fruite-slice1">
+                        <label for="fruite-slice<?php echo $row->ii_no ?>">
                         <div class="texture-item slice-item">
                             <figure><img src="<?php echo $row->ii_pic ?>" alt="<?php echo $row->ii_name ?>"></figure>
                             <p><?php echo $row->ii_name ?></p>
@@ -343,6 +343,7 @@ try {
     <script src="js/custom-img.js"></script>
     <script src="js/custom-pop.js"></script>
     <script src="js/custom-load.js"></script>
+    <script src="js/custom-option.js"></script>
     <script>
         new Vue({
             el:'#app',
