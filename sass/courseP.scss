@@ -1,6 +1,6 @@
 @import "mixin/mixin";
 *{
-    // outline: none;
+   
     // outline: #f00 solid 1px;
     text-decoration: none;  
     box-sizing: border-box;
@@ -644,15 +644,12 @@ $deep-pink:#db4d6d;
                     
                 }
             }
-           
-
             .calender-box{
                 margin: 15px 0;
                 @include rwd(medium){
                     padding: 10px;
                 margin: 15px;
                 }
-                
                 .calendar-top{
                         padding: 20px 0;
                         background-color:#ea7187;
@@ -752,7 +749,7 @@ $deep-pink:#db4d6d;
             padding-top: 150px;
         }
         .title{
-            @include out-Line-Font(group-form-title,#fff,34px,5px,#6a3e26,揪團課程預約);
+            @include out-Line-Font(group-form-title,#fff,30px,5px,#6a3e26,揪團課程預約);
             padding: 5% 0;
             position: relative;
             text-align:center; 
@@ -761,20 +758,19 @@ $deep-pink:#db4d6d;
                 width: 70%;
             }
             img{
-                width: 70%;
-                @include rwd(desktop){
+                width: 80%;
+                @include rwd(medium){
                     width: 60%;
                 }
             }
-            h3{
+            .general-form-title{
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-78%);
-                
-                @include rwd(mobile){
-                    font-size: 20px;
-                    transform: translate(-50%,-60%);
+                transform: translate(-50%,-280%);
+                @include rwd(medium){
+                    font-size: 28px;
+                    transform: translate(-50%,-220%);
                 }
             }
         }
@@ -807,12 +803,9 @@ $deep-pink:#db4d6d;
             }
 
             input{
-               
                 padding: 20px;
-              
                 width: 100%;
                 height: 6%;
-              
                 font-size: 18px;
                 border-radius: 20px;
                 border: 3px solid #6a3e26;
@@ -820,49 +813,62 @@ $deep-pink:#db4d6d;
            
             }
 
-            #calender-box{
-                margin: 10px 0;
-                border-radius: 20px;
-                border: 5px solid $bg-yellow;
-                table {
-                    vertical-align: middle;
-                    background-color: #fff;
-                    width: 100%;
-                    // height: 200px;
-                    margin: auto;
-                    text-align: center;
-                    border-radius:  0 0 10px 10px;
-                    #mon{
+            .calendar-box{
+                margin: 15px 0;
+                @include rwd(medium){
+                    padding: 10px;
+                    margin: 15px;
+                }
+                .calendar-top{
                         padding: 20px 0;
                         background-color:$bg-yellow;
                         border-radius: 10px 10px 0 0;
                         color: #fff;
                         font-weight: bold;
+                        box-shadow: 2px 2px 2px #888888;
                     }
+                    .mm,.yy{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                    }
+                table {
+                    vertical-align: middle;
+                    background-color: #fff;
+                    width: 100%;
+                    margin: auto;
+                    text-align: center;
+                    border-radius:  0 0 10px 10px;
+                    box-shadow: 2px 2px 2px #888888;
                     th{
                         padding:60px 0 20px;
-                        color: #ffb11b;
+                        color: $bg-yellow;
+                        font-weight: bold;
                     }
                     tr{
                         width: 100%;
-                        height: 60px;
+                        height: 30px;
+                        @include rwd(medium){
+                            height: 60px;
+                        }
                     }
-                    td{
-                        width:14%;
-                        height: 60px;
+                    .tdclass{
+                        @include rwd(medium){
+                            height: 60px;
+                            line-height: 60px;
+                            width: 60px;
+                        }
+                        margin: auto;
                         vertical-align:middle;
-                       
+                        border-radius: 50%;
+                        cursor: pointer;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 30px;
                     }
-                    .now{
-                        background: #ffb11b;
-                        border-radius: 30px;
-                        color: #fff;
-                    }
-                   
                 }
-                    
-            }
-            
+                }
+           
             select{
                 border: 3px solid #6a3e26;
                 display: block;
@@ -876,8 +882,8 @@ $deep-pink:#db4d6d;
         .form-btn{
             padding: 5% 0;
             .form-ice-btn-out{
-                 width: 90%;
-            margin: auto;
+                width: 90%;
+                margin: auto;
             }
             @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,  確認預約);
         }
@@ -887,16 +893,13 @@ $deep-pink:#db4d6d;
 //揪團課程
 .group-wrap{
     background-color: #9dc5f6 ;
-    
     .wrapper{
-       
         padding-top: 30%;
         max-width: 1200px;
         margin: auto;
         @include rwd(desktop){
                 padding-top: 200px;
         }
-
         .group-ribbon{
             z-index: 1;
             margin: auto;
@@ -1011,10 +1014,7 @@ $deep-pink:#db4d6d;
                 @include ice-btn(course-ice-btn-out,135px,course-ice-btn-in,20px,20px, 我要開團);
             }
         }   
- 
-    
     }
-
 }
 //揪團留言板 
  .group-message-cloud{
@@ -1242,7 +1242,7 @@ $deep-pink:#db4d6d;
                 width:80%;
                 height:70%;
             }
-               #closeBtn{
+               .closeBtn{
                 @include rwd(medium){
                     top:15%;
                 }

@@ -28,16 +28,18 @@
         <h3 class="group-form-title">揪團課程預約</h3>
       </div>
   <form action="course-reservation.php" method="post" enctype="multipart/form-data">
-        <span><img src="img/btn/ICE.png" alt="">你的團名：<input type="text" name="courseName" id="gname" placeholder="ex:揪團戀冰"></span>
+        <span><img src="img/btn/ICE.png" alt="">你的團名：
+        <input type="text" name="courseName" id="gname" placeholder="ex:揪團戀冰"></span>
        
         <span><img src="img/btn/ICE.png" alt="">選擇日期： </span>
-        <div class="calender-box">
+        <div class="calendar-box">
               <div class="calendar-top">
                   <div class="yy">
                       <p>
                           <span id="yy-sp">年份</span>
                       </p>
                   </div>
+
                   <div class="mm">
                       <!-- <div class="arrow_left" id="left-1"></div> -->
                       <i id="left-1" class="fas fa-chevron-left"></i>
@@ -67,7 +69,7 @@
                   </table>
               </div>
               <!-- <input type="hidden" name="courseDate"> -->
-          </div>
+        </div>
        
         <span><img src="img/btn/ICE.png" alt="">填寫時段：<input type="text" name="courseSlot" id=""
             placeholder="ex:上午10:00"></span>

@@ -7,13 +7,14 @@
 
 
 //pop-up
-$('#dialog').hide();
-$('#showBtn').click(function(){
-    $('#dialog').show();
+$('.pop-box').hide();
+$('.message-btn-out').click(function(){
+  console.log($(this).parent().index('.join-pop-btn'));
+    $('.pop-box').eq($(this).parent().index('.join-pop-btn')).fadeIn('fast');
 });
 
-$('#closeBtn').click(function(){
-    $('#dialog').hide();
+$('.closeBtn').click(function(){
+    $('.pop-box').fadeOut('fast');
 });
 
 
