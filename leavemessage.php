@@ -99,7 +99,7 @@ function stageName($stage)
 					</div>
 		</div>
 	</section>
-	<section class="btn">
+	<section class="btn" id="app">
 		<div class="btn-group">
 			<div class="btn-filter-group">
 				<h2>篩選條件:</h2>
@@ -107,7 +107,7 @@ function stageName($stage)
 					<button type="button" class="filter" id="all">全部</button>
 				</div>
 				<div class="filter-item">
-					<button type="button" class="filter" id="single">單身</button>
+					<button type="button" class="filter" id="singlebtn">單身</button>
 				</div>
 				<div class="filter-item">
 					<button type="button" class="filter" id="trueLove">初戀</button>

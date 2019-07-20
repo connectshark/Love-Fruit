@@ -108,7 +108,7 @@ function fruiteChange() {
 	totalPrice();
 	$(window).resize(persentChange);
 }
-function persentChange() {
+function persentChange(sliceIndex) {
 	if (fruiteItem.length == 1) {
 		$('.progress-bar').css('width',0);
 		for (var i = 0; i < fruiteQuality[fruiteItem[0]].length; i++) {
@@ -120,8 +120,16 @@ function persentChange() {
 		}
 	}else{
 		$('.progress-bar').css('width',0);
+		console.log('run');
 	}
-	console.log();
+	if (slice >= 0 && slice <= 3) {
+		console.log(slice);
+		var Mon = parseInt($('.default').css('width'))/30;
+		for (var i = 0; i < sliceQuality[slice].length; i++) {
+			var WW = parseInt($('.progress-bar').eq(i).css('width'));
+			$('.progress-bar').eq(i).css('width',sliceQuality[slice][i]*Mon+WW);
+		}
+	}
 
 }
 // 價錢變數
@@ -257,9 +265,11 @@ var sliceQuality=new Array();
 var slicePrice=new Array();
 var sliceSize = 50;
 var sliceSrc;
+var sliceIndex;
 function imgPut() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
+	sliceIndex = $(this).index('.slice-item');
 	sliceSrc = src;
 	$('#slice-m').children().attr({
 		src:src,
@@ -274,7 +284,7 @@ function imgPut() {
 	$('#slice-price').text(slicePrice);
 	dragSliceImg();
 	totalPrice();
-	slicePersentChange();
+	persentChange(sliceIndex);
 }
 function imgBigger() {
 	sliceSize += 10;
@@ -302,9 +312,6 @@ function dragSliceImg() {
 		containment: '#texture-main',
 		scroll: false,
 	});
-}
-function slicePersentChange() {
-	console.log(sliceQuality);
 }
 // 第四步
 function putStickIn() {
