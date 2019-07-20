@@ -176,23 +176,38 @@ function draw(texture,color1,color2,src) {
 			break;
 	}
 	//放切片
+
 	var fruiteslice = new Image();
 	fruiteslice.src = src;
-	fruiteslice.addEventListener('load',function() {
-		ctx.drawImage(fruiteslice,175,0,fruiteslice.width,fruiteslice.height);
-	})
-	ctx.save();
-	ctx.fillStyle="#333";
-	ctx.font = "18px Tahoma";
-	ctx.fillText('LOL~~~~~~~HAHAHA gg ^^',175,450);
-	ctx.rotate(Math.PI/2);
-	ctx.restore();
+    var ah = document.getElementById("texture-main").offsetHeight;
+    var aw = document.getElementById("texture-main").offsetWidth;
+    var eh = document.getElementById("slice-main").offsetHeight;
+    var ew = document.getElementById("slice-main").offsetWidth;
+    var et = document.getElementById("slice-main").offsetTop;
+    var el = document.getElementById("slice-main").offsetLeft;
+
+    var few = (texturePic.width/aw)*ew;
+    var feh = (texturePic.height/ah)*eh;
+    var fel = (texturePic.width/aw)*el;
+    var fet = (texturePic.height/ah)*et;
+    console.log(few,feh,fel,fet);
+
+
+
+	
+	ctx.drawImage(fruiteslice,fel,fet,few,feh);
+	
+	// ctx.save();
+	// ctx.fillStyle="#333";
+	// ctx.font = "18px Tahoma";
+	// ctx.fillText('LOL~~~~~~~HAHAHA gg ^^',175,450);
+	// ctx.rotate(Math.PI/2);
+	// ctx.restore();
 
 
 
 	
 	bg = canvas.toDataURL("image/png");
-	console.log(bg);
 	canvasPut();
 }
 function canvasPut() {
