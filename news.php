@@ -1,3 +1,18 @@
+<?php 
+$errMsg="";
+try {
+	require_once("mac-require.php");
+	$sql = "select n.news_no, n.news_title,n.news_pic,n.news_content,n.news_date,n.news_class,e.emp_name from news n join employee e on n.emp_no = e.emp_no WHERE emp_state = 1 ORDER BY n.news_date desc";
+  $news = $pdo->prepare($sql);
+	$news -> execute();
+} catch (PDOException $e) {
+	  $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+    $errMsg .= "行數:". $e->getLine()."<br>";
+    echo $errMsg;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +24,6 @@
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
@@ -42,7 +56,7 @@
               <button type="button" class="all">全部消息</button>
             </div>
             <div class="filter-item">
-              <button type="button" class="newgroup">揪團快訊</button>
+              <button type="button" class="newgroup">揪團新訊</button>
             </div>
             <div class="filter-item">
               <button type="button" class="park">園區公告</button>
@@ -70,69 +84,31 @@
     </section>
 
     <section class="wrapper">
-
+   
       <div class="items-group">
-        <div class="item">
-          <a href="newsinner.php">
-            <div class="sort">園區公告</div>
-            <div class="img"><img src="" alt=""></div>
-            <span class='time'>2019.07.08</span>
+      
+      <?php while ($row = $news -> fetchObject()) {?>
+        <div class="item"  >
+         
+          <a href="newsinner.php?news_no=<?php echo $row->news_no;?>">
+          <div class="sort">
+          <?php
+              if($row->news_class == 0){echo "揪團新訊";     
+              }elseif($row->news_class == 1){echo "新品上市";
+              }elseif($row->news_class == 2){echo "園區公告";
+              }else{echo "季節限定";
+              }?>    
+          </div>
+       <!-- <a style="background-image:url(<?php echo $row->news_pic; ?>);" class="img"><img src="<?php echo $row->news_pic; ?>" alt=""></div> -->
+            <figure class="img"><img src="<?php echo $row->news_pic; ?>" alt=""></figure>
+            <span class='time'><?php echo $row->news_date; ?></span>
             <span class="content">
-              <h3>3F創意遊戲室暫停開放公告</h3><img class="ice" src="img/btn/ICE.png" alt="">
+              <h3><?php echo $row->news_title; ?></h3><img class="ice" src="img/btn/ICE.png" alt="">
             </span>
           </a>
         </div>
-        <div class="item">
-          <a href="newsinner.php">
-            <div class="sort">園區公告 </div>
-            <div class="img"><img src="" alt=""></div>
-            <span class='time'>2019.07.08</span>
-            <span class="content">
-              <h3>3F創意遊戲室暫停開放公告</h3><img class="ice" src="img/btn/ICE.png" alt="">
-            </span>
-          </a>
-        </div>
-        <div class="item">
-          <a href="newsinner.php">
-            <div class="sort"> 園區公告</div>
-            <div class="img"><img src="" alt=""></div>
-            <span class='time'>2019.07.08</span>
-            <span class="content">
-              <h3>3F創意遊戲室暫停開放公告</h3><img class="ice" src="img/btn/ICE.png" alt="">
-            </span>
-          </a>
-        </div>
-        <div class="item">
-          <a href="newsinner.php">
-            <div class="sort">園區公告 </div>
-            <div class="img"><img src="" alt=""></div>
-            <span class='time'>2019.07.08</span>
-            <span class="content">
-              <h3>3F創意遊戲室暫停開放公告</h3><img class="ice" src="img/btn/ICE.png" alt="">
-            </span>
-          </a>
-        </div>
-        <div class="item">
-          <a href="newsinner.php">
-            <div class="sort">園區公告 </div>
-            <div class="img"><img src="" alt=""></div>
-            <span class='time'>2019.07.08</span>
-            <span class="content">
-              <h3>3F創意遊戲室暫停開放公告</h3><img class="ice" src="img/btn/ICE.png" alt="">
-            </span>
-          </a>
-        </div>
-        <div class="item">
-          <a href="newsinner.php">
-            <div class="sort">園區公告</div>
-            <div class="img"><img src="" alt=""></div>
-            <span class='time'>2019.07.08</span>
-            <span class="content">
-              <h3>3F創意遊戲室暫停開放公告</h3><img class="ice" src="img/btn/ICE.png" alt="">
-            </span>
-          </a>
-        </div>
-      </div>
+      <?php } ?>   
+    </div>
 
       <div id="navigatediv">
 
