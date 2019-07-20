@@ -190,7 +190,6 @@ function draw(texture,color1,color2,src) {
     var feh = (texturePic.height/ah)*eh;
     var fel = (texturePic.width/aw)*el;
     var fet = (texturePic.height/ah)*et;
-    console.log(few,feh,fel,fet);
 
 
 
@@ -213,5 +212,4 @@ function draw(texture,color1,color2,src) {
 function canvasPut() {
 	$('#pop-img').attr('src', bg);
 	$('#cto-pic').val(bg);
-	$('#slice-main').hide();
 }

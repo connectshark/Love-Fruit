@@ -194,7 +194,7 @@ try {
                 </div>
                 <div class="aside-select">
                     <?php while ($fruiterow = $fruite -> fetchObject()) {?>
-                    <div class="select-item select-item-6 select-item-4">
+                    <div class="select-item select-item-6">
                         <label for="option<?php echo $fruiterow->fruit_no ?>">
                             <div class="fruite-item texture-item">
                                 <figure><img src="<?php echo $fruiterow->fruite_pic ?>" alt="<?php echo $fruiterow->fruit_name ?>"></figure>
@@ -229,9 +229,9 @@ try {
                 <div class="aside-title">
                     <h2>選擇水果切片</h2>
                 </div>
-                <div class="aside-select">
+                <div class="aside-select aside-select-scale">
                     <?php while ($row = $ii -> fetchObject()) { ?>
-                    <div class="select-item select-item-4 select-item-6">
+                    <div class="select-item select-item-6">
                         <label for="fruite-slice<?php echo $row->ii_no ?>">
                         <div class="texture-item slice-item">
                             <figure><img src="<?php echo $row->ii_pic ?>" alt="<?php echo $row->ii_name ?>"></figure>
