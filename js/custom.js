@@ -313,19 +313,20 @@ function putStickIn() {
 		window.alert(check);
 		return;
 	}
-	$('#ice-stick').addClass('ice-stice-put');
+	// $('#ice-stick').addClass('ice-stice-put');
 	$('#text').attr('disabled',true);
 	$('#slice-main').draggable({
 		disabled:true,
 	});
+	// 按鈕收起來
 	$('#last').hide(0,function() {
 		$('#none-last').show();
 	});
+	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
+	sendFormData();
 	$('#pop').fadeIn('fast', function() {
 		$('#pop-total-price').text($('#total-price').text());
 	});
-	totalPrice();
-	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
 }
 function checkList() {
 	if ($('#mold-price').text() == "") {

@@ -261,6 +261,7 @@ try {
     		<div class="aside-button-group">
                 <div class="custom-box">
                     <form id="custom-choose">
+                        <input type="text" name="ctoPic" id="cto-pic">
                         <input type="text" name="parse" v-model="message">
                         <input type="radio" name="texture" value="1" id="texture1">
                         <input type="radio" name="texture" value="2" id="texture2">

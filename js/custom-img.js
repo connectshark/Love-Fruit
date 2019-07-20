@@ -197,5 +197,6 @@ function draw(texture,color1,color2,src) {
 }
 function canvasPut() {
 	$('#pop-img').attr('src', bg);
+	$('#cto-pic').val(bg);
 	$('#slice-main').hide();
 }

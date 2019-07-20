@@ -8,14 +8,15 @@ $(document).ready(function() {
 			$("input[name='fruite[]']").not("input[name='fruite[]']:checked").attr('disabled', false);
 		}
 	});
-	$('#complete-all').click(function(){
-		$.ajax({
-			url:'../custom-complete.php',
-			data: $('#custom-choose').serialize(),
-			type: 'POST',
-			success: function(data){
-				alert(`${data}`);
-			},
-		});
-	});
 });
+function sendFormData(){
+	$.ajax({
+		url:'../custom-complete.php',
+		data: $('#custom-choose').serialize(),
+		type: 'POST',
+		success: function(data){
+			// alert(`${data}`);
+			totalPrice();
+		},
+	});
+}

@@ -20,7 +20,7 @@ $(document).ready(function() {
 	})
 	var sliceurl = "../custom-search.php?category=slice";
 	slicexhr.open("Get",sliceurl,true);
-	slicexhr.send()
+	slicexhr.send();
 });
 
 function fruitepush(str) {
