@@ -1,5 +1,87 @@
 
 let cart = {};
+
+
+//點擊愛心
+
+var click_love = document.getElementsByClassName("latest-collection-love");
+for(var i=0 ;i<click_love.length; i++){
+	click_love[i].addEventListener("click",function(e){
+
+		var imgSrc = this.getAttribute( "src" ); 
+		// console.log(imgSrc);
+			// 加入購物車
+		if(imgSrc === "img/shop/collection-gray.png"){
+			this.setAttribute( "src" ,"img/shop/collection-red.png" )
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState ==4 ){
+				  if(xhr.status ==200){
+					  alert(xhr.responseText);
+				  }else{
+					alert(xhr.status);
+				  }
+				}
+			  }
+			let url = "add-favorite.php";
+			xhr.open("post" , url ,false);
+			console.log(this);
+			console.log(this.parentNode);
+			let myForm = new FormData(this.parentNode);
+			xhr.send(myForm);
+			
+		}else{
+			// 從購物車刪除
+			this.setAttribute( "src" ,"img/shop/collection-gray.png" )
+			let xhr = new XMLHttpRequest();
+
+
+
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState ==4 ){
+				  if(xhr.status ==200){
+					  alert(xhr.responseText);
+				  }else{
+					alert(xhr.status);
+				  }
+				}
+			  }
+
+
+			let url = "delete-favorite.php";
+			xhr.open("post" , url ,false);
+			let myForm = new FormData(this.parentNode);
+			xhr.send(myForm);
+	}	
+
+
+
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	};
+
+
+
+
 //..............................顯示購物車	
 function showCart(){
 	getCart();
@@ -101,9 +183,9 @@ function getCart(){
   
   xhr.onload = function(){
   	if( xhr.status == 200){
-			console.log(xhr.responseText);
+			// console.log(xhr.responseText);
 		  cart = JSON.parse(xhr.responseText);
-		  console.log(cart);
+		//   console.log(cart);
 		
   	}else{
   		alert(xhr.status);
@@ -127,19 +209,15 @@ for(i=0;i<btn.length;i++){
 }
 document.getElementsByClassName("shop-buy-btn").onclick = function(){
 	changeCart(e);}
-//顯示加減數量
-  var plus = document.getElementsByClassName("qtyplus");
-  var min = document.getElementsByClassName("qtyminus");
-//   var btn = document.getElementsByClassName("shop-buy-btn");
+
+ 
+
 function plusnum () {
 	var obj = this.parentNode.querySelectorAll(".qty")[0];
 			var val = parseInt(obj.value);
 			val++;
 			obj.value = val;
 			this.parentNode.parentNode.parentNode.querySelectorAll(".shop-btn")[0].querySelectorAll(".add-cart")[0].querySelectorAll(".qty")[0].value = val;
-			
-
-
 }
 function minnum(){
 	var obj = this.parentNode.querySelectorAll(".qty")[0];
@@ -151,20 +229,15 @@ function minnum(){
 	}
 	// console.log(obj.value);
 }
-	 
+// 註冊加減
+ var plus = document.getElementsByClassName("qtyplus");
+  var min = document.getElementsByClassName("qtyminus");	 
 	  for(i=0;i<plus.length;i++){
-		//     0123 4
-		// plus[i].addEventListener("click",function(){
-		//     console.log(i);
-		//     console.log(plus[i]);
-		//     qty[i].value ++;;
-		// })
 		plus[i].addEventListener("click", plusnum);
 	  }
+	  this.console.log()
 	  for(i=0;i<plus.length;i++){
 		   min[i].addEventListener("click",minnum);
-		 
-		 
 	  }
   //.............顯示購物車
   document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
@@ -179,6 +252,14 @@ $(".shopping-cart-icon").click(function(){
 $(".cart-close").click(function(){
 	$("#mini-cart").css("display","none");
 })
+
+
+
+
+	
+	// console.log(click_love[i]);
+
+
 
 
 
@@ -257,23 +338,24 @@ $(document).ready(function() {
 	});
 });
 
+
 //點擊愛心
-var love = document.getElementsByClassName("latest-collection-love");
-for(var i=0 ;i< love.length; i++){
-   love[i].addEventListener("click",change)
-}                                                  
-var gray = true;
-function change(){
-	if(gray) {
-		$(this).attr("src","img/shop/collection-red.png");
-		gray = false;
-		console.log(gray);
-		}else{
-		$(this).attr("src","img/shop/collection-gray.png");
-		gray = true;
-	}
+// var love = document.getElementsByClassName("latest-collection-love");
+// for(var i=0 ;i< love.length; i++){
+//    love[i].addEventListener("click",change)
+// }                                                  
+// var gray = true;
+// function change(){
+// 	if(gray) {
+// 		$(this).attr("src","img/shop/collection-red.png");
+// 		gray = false;
+// 		console.log(gray);
+// 		}else{
+// 		$(this).attr("src","img/shop/collection-gray.png");
+// 		gray = true;
+// 	}
 	
-}
+// }
 
 
 

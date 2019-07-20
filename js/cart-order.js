@@ -29,7 +29,6 @@ confirm_btn.addEventListener("click",function(e){
     }
   }
     
-
     let url = "order-insert.php";
     xhr.open("post",url,true);
     let myForm = new FormData(e.target.parentNode.parentNode.parentNode.previousElementSibling.querySelector("form"));

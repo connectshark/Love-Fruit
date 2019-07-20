@@ -247,6 +247,9 @@
 
 .page-confirm .confirm-btn {
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .page-confirm .small-total {

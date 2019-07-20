@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 $errMsg = "";
 try {
@@ -11,6 +12,25 @@ try {
 	echo "行號 : ", $e -> getLine(), "<br>";
 }
 ?> 
+
+<!-- 抓會員已收藏 -->
+<?php
+try{
+    $sql = "select * from collection where mem_no " ;
+    $collection = $pdo->query($sql);
+    $collection_row =  $collection->fetchALL(PDO::FETCH_ASSOC);
+    $collection_arr = array();
+    for($i = 0; $i<count($collection_arr); $i++){
+        array_push($collection_arr, $collection_row[$i]["prod_no"]);
+
+    }
+}catch(PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+};
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -181,10 +201,17 @@ require_once("nav.php");
                             <div class="general-item-content col-11 ">
                            
                                 <div class="item-img col-12">
-                                    <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
-                                        <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
-                                    </a>    
-                                    <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
+                                    <form>
+                                        <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
+                                        <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
+                                            <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
+                                        </a>    
+                                        <img src="img/shop/collection-<?php if(in_array($prodRow["prod_no"],$collection_arr)){
+                                            echo "red.png";
+                                        }else{
+                                            echo "gray.png";
+                                        }?>" alt="" class="latest-collection-love">
+                                    </form>
                                 </div>
                                 
                                 <div class="item-text ">
