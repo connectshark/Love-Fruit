@@ -17,9 +17,9 @@ for(var i=0 ;i<click_love.length; i++){
 			xhr.onreadystatechange = function(){
 				if(xhr.readyState ==4 ){
 				  if(xhr.status ==200){
-					  alert(xhr.responseText);
+					//   alert(xhr.responseText);
 				  }else{
-					alert(xhr.status);
+					// alert(xhr.status);
 				  }
 				}
 			  }
@@ -40,9 +40,9 @@ for(var i=0 ;i<click_love.length; i++){
 			xhr.onreadystatechange = function(){
 				if(xhr.readyState ==4 ){
 				  if(xhr.status ==200){
-					  alert(xhr.responseText);
+					//   alert(xhr.responseText);
 				  }else{
-					alert(xhr.status);
+					// alert(xhr.status);
 				  }
 				}
 			  }
@@ -57,25 +57,6 @@ for(var i=0 ;i<click_love.length; i++){
 
 
 	})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	};
 
@@ -96,20 +77,19 @@ function showCart(){
 		html += `
 			<div class="mini-item-wrap">
 				<span style='display:none'>${prod_no}</span>
-				<div class="mini-img col-lg-1"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
-				<span class="mini-name col-lg-1">
+				<div class="mini-img col-3 col-lg-2"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
+				<span class="mini-name col-3 col-lg-3">
 					<a href="shop-inside.php?prod_no=${prod_no}">
 					${cart[prod_no].prod_name}
 					</a>	
 				</span>
-				<span class="mini-qty col-lg-1">${cart[prod_no].qty}x</span>
-				<span class="mini-pri col-lg-1">NT${cart[prod_no].prod_price}</span>
-				<div class="mini-trash col-lg-1"><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
-
-				
+				<span class="mini-qty col-2 col-lg-3">${cart[prod_no].qty}x</span>
+				<span class="mini-pri col-2 col-lg-3">NT${cart[prod_no].prod_price}</span>
+				<div class="mini-trash col-2 col-lg-2"><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
 			</div>`;	
 	}
 	if( !isCartEmpty()){
+
 		html += `<div class="gogo"><a href="cart-show.php">結帳去</a></div>`;
 	}
 	
@@ -198,7 +178,6 @@ function getCart(){
 }
 
 
-
 window.addEventListener("load", function(){
   //.............取得購物車資料
   getCart();
@@ -243,21 +222,24 @@ function minnum(){
   document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
   	showCart();
   };
-// 右上角購物車開關
-$("#mini-cart").css("display" , "none");
-$(".shopping-cart-icon").click(function(){
-	$("#mini-cart").show();
-	showCart();
-})
-$(".cart-close").click(function(){
-	$("#mini-cart").css("display","none");
-})
-
-
-
-
-	
-	// console.log(click_love[i]);
+	// 右上角購物車開關
+	$("#mini-cart").css("display" , "none");
+	$(".shopping-cart-icon").click(function(){
+		$("#mini-cart").show();
+		showCart();
+	})
+	$(".cart-close").click(function(){
+		$("#mini-cart").css("display","none");
+	})
+	// 手機版購物車
+	$("#mini-cart").css("display" , "none");
+	$("#shoppingCartIconP").click(function(){
+		$("#mini-cart").show();
+		showCart();
+	})
+	$(".cart-close").click(function(){
+		$("#mini-cart").css("display","none");
+	})
 
 
 
@@ -302,6 +284,8 @@ $(document).ready(function() {
 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
 		$('#filter-pull').val('分手');
 	});
+
+
 	$('#select-pull').change(function(){
 		map = $('#select-pull').val();
 		switch (map) {
@@ -356,6 +340,3 @@ $(document).ready(function() {
 // 	}
 	
 // }
-
-
-

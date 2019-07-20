@@ -12,31 +12,18 @@ try {
 	echo "行號 : ", $e -> getLine(), "<br>";
 }
 ?> 
-<?php
-// try {
-// 	require_once("connect-dd101g3.php");
-// 	$sql = "select * from product";
-// 	$newproducts = $pdo->query($sql);
-//     $newproductsRows = $newproducts->fetchAll(PDO::FETCH_ASSOC);
-//     shuffle( $newproductsRows);
-// } catch (PDOException $e) {
-// 	echo "錯誤 : ", $e -> getMessage(), "<br>";
-// 	echo "行號 : ", $e -> getLine(), "<br>";
-// }
-?> 
+
 <!-- 抓會員已收藏 -->
 <?php
 try{
-    $sql = "select * from collection where mem_no = 1 " ;
+    $sql = "select * from collection where mem_no " ;
     $collection = $pdo->query($sql);
     $collection_row =  $collection->fetchALL(PDO::FETCH_ASSOC);
     $collection_arr = array();
-    // echo `$collection_row[0]["prod_no"]`;
-    for($i = 0; $i<count($collection_row); $i++){
+    for($i = 0; $i<count($collection_arr); $i++){
         array_push($collection_arr, $collection_row[$i]["prod_no"]);
 
     }
-    // print_r($collection_arr);
 }catch(PDOException $e) {
 	echo "錯誤 : ", $e -> getMessage(), "<br>";
 	echo "行號 : ", $e -> getLine(), "<br>";
@@ -73,22 +60,19 @@ try{
 <?php
 require_once("nav.php");
 ?>
-    
+
     <section class="latest-news">
         <div class="title-main">
             <h1 class="title">最新商品</h1>
         </div>
         <div class="owl-carousel owl-theme wrap">
-        <?php
-        ?>
-        
             <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
-                    <img src="database/img_prod/<?php echo $newproductsRows["prod_pic"] ?>" alt="">
+                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
                     <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
                 </div>
-                <p class="latest-name"><?php echo $newproductsRows["prod_name"]?> </p>
-                <p class="latest-pri"><?php echo $newproductsRows["prod_price"]?> </p>
+                <p class="latest-name">芋頭芒果</p>
+                <p class="latest-pri">NT280</p>
             </div>
             <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
@@ -158,13 +142,13 @@ require_once("nav.php");
                     <button type="button" class="filter" id="break-up">分手</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="id-popscial">冰棒</button>
+                    <button type="button" class="filter" id="popscial">冰棒</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="id-ice-cream">霜淇淋</button>
+                    <button type="button" class="filter" id="ice-cream">霜淇淋</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="id-icecream-ball">冰淇淋</button>
+                    <button type="button" class="filter" id="icecream-ball">冰淇淋</button>
                 </div>
                 <div class="select">
                     <select v-model="status" id="select-pull">
@@ -185,6 +169,7 @@ require_once("nav.php");
 
 
             <div class="general-store col-11 col-lg-11">
+
                 <?php
                 foreach($prodRows as $i => $prodRow){
                     //檢查商品是否已在購物車中，若是，則數量以購物車中的為主
@@ -197,7 +182,7 @@ require_once("nav.php");
                 ?>
                         <div class="general-item col-6 col-lg-3 <?php
                         if($prodRow["stage_no"] == 1){echo "single";
-                        
+                            
                         }elseif($prodRow["stage_no"] == 2){echo "first-love";
 
                         }elseif($prodRow["stage_no"] == 3){echo "fall-in-love";

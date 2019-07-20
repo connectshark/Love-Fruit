@@ -121,6 +121,7 @@ session_start();
       <div class="col-lg-2 col-6 item-pic">
         <div class="col-2 m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
       </div>
+      
       <div class="col-lg-2 col-6 mobile-price">
         <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
         <p class="dis-lg-n">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></p>
