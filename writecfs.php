@@ -25,11 +25,13 @@ switch ($_FILES['pic']['error']) {
 if($to){
 	try {
 		require_once("connect-dd101g3.php");
-		$sql = "insert confessions set mem_no = :memNo , cfs_to = :cfsTo , cfs_content = :cfsContent, cfs_pic = :cfsPic , cfs_good = '0'";
+		$sql = "insert confessions set cto_no = :ctoNo , mem_no = :memNo , cfs_to = :cfsTo , cfs_content = :cfsContent, cfs_pic = :cfsPic , cfs_good = '0'";
 		$memNo = $_REQUEST['memNo'];//session抓
+		$ctoNo = $_REQUEST['ctoNo'];
 		$cfsTo = $_REQUEST['cfsTo'];
 		$cfsContent = $_REQUEST['cfsContent'];
 		$messages = $pdo->prepare($sql);
+		$messages->bindValue(':ctoNo',$ctoNo);
 		$messages->bindValue(':memNo',$memNo);
 		$messages->bindValue(':cfsTo',$cfsTo);
 		$messages->bindValue(':cfsContent',$cfsContent);

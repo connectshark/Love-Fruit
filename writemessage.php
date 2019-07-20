@@ -1,8 +1,8 @@
 <?php 
 try {
     require_once("connect-dd101g3.php");
-	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic, c.stage_no from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo";
-	$memNo = 2;//之後改為session
+	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic, c.stage_no, c.cto_no from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo";
+	$memNo = 3;//之後改為session
 	$messages = $pdo->prepare($sql);
 	$messages -> bindValue(':memNo',$memNo);
 	$messages -> execute();
@@ -148,6 +148,7 @@ function stageName($stage)
 		                <div class="write-buttons">
 		                    <label><input type="reset" value="清除" @click="clear"></label>
 		                    <label><input type="submit" value="送出" id="submit"></label>
+		                    <input type="hidden" name="ctoNo" value="<?php echo $row->cto_no; ?>">
 		                    <input type="hidden" name="memNo" value="2">
 		                </div>
 					</div>

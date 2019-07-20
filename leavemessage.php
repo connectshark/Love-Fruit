@@ -1,7 +1,7 @@
 <?php 
 try {
     require_once("connect-dd101g3.php");
-	$sql = "SELECT m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.mem_no = cus.mem_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
+	$sql = "SELECT m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.cto_no = cus.cto_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
 	$confessions = $pdo->prepare($sql);
 	$confessions -> execute();
 } catch (PDOException $e) {

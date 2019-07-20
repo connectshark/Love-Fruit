@@ -12,7 +12,7 @@ $success = file_put_contents($file, $data);
 try {
     require_once("connect-dd101g3.php");
     // 接前一頁資料
-    $memNo = 2;//session撈
+    $memNo = 3;//session撈
     $moldNo = $_REQUEST['texture'];
     $fruiteA = $_REQUEST['fruite'][0];
     $fruiteB = $_REQUEST['fruite'][1];
