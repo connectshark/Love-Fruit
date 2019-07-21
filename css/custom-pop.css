@@ -78,13 +78,6 @@
   text-align: center;
 }
 
-.pop .pop-area .close {
-  position: absolute;
-  top: -10%;
-  right: 10%;
-  cursor: pointer;
-}
-
 .pop .pop-area .btn-item {
   padding: 5px 0;
 }

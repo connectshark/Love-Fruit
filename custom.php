@@ -305,16 +305,13 @@ try {
 		</section>
         <section class="pop" id="pop">
             <div class="pop-area">
-            <span class="close" id="close-pop">
-                <img src="img/pop-close.png" alt="關閉視窗">
-            </span>
             <div class="pop-img"><img id="pop-img"></div>
             <div class="pop-title">
                 <h2>製作完成</h2>
                 <p>總價格為:<span id="pop-total-price"></span>元</p>
             </div>
                 <div class="btn-item">
-                    <a class="cart-btn" href="writemessage.php">
+                    <a class="cart-btn" id="addcart">
                         <span class="cart-btn-in">放入購物車</span>
                     </a>
                 </div>
@@ -347,6 +344,7 @@ try {
     <script src="js/custom-pop.js"></script>
     <script src="js/custom-load.js"></script>
     <script src="js/custom-option.js"></script>
+    <script src="js/custom-addcart.js"></script>
     <script>
         new Vue({
             el:'#app',

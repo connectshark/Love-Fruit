@@ -106,11 +106,12 @@ function fruiteChange() {
 	listItemChange();
 	persentChange();
 	totalPrice();
-	$(window).resize(persentChange);
+	$(window).resize(function () {
+		persentChange(sliceIndex);
+	});
 }
 function persentChange(slice) {
 	if (fruiteItem.length == 1) {
-		$('.progress-bar').css('width',0);
 		for (var i = 0; i < fruiteQuality[fruiteItem[0]].length; i++) {
 			$('.progress-bar').eq(i).css('width',(fruiteQuality[fruiteItem[0]][i]*parseInt($('.default').css('width'))/30)+"px"); 
 		}
@@ -118,7 +119,6 @@ function persentChange(slice) {
 		for (var i = 0; i <fruiteQuality[fruiteItem[0]].length; i++) {
 			$('.progress-bar').eq(i).css('width', ( fruiteQuality[fruiteItem[0]][i]*parseInt($('.default').css('width'))/30 + fruiteQuality[fruiteItem[1]][i]*parseInt($('.default').css('width'))/30 )  +"px");
 		}
-		console.log('run');
 	}else{
 		$('.progress-bar').css('width',0);
 	}
@@ -265,7 +265,7 @@ var sliceQuality=new Array();
 var slicePrice=new Array();
 var sliceSize = 50;
 var sliceSrc;
-var sliceIndex;
+var sliceIndex = -1;
 function imgPut() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
