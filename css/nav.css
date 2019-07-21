@@ -102,11 +102,18 @@
   #icon-login-box-mp-img {
     display: none;
   }
+  #icon-login-box-mp-user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ffffff;
+  }
   .member-centre-panel-p {
     position: absolute;
     transform: translateY(0%);
     opacity: 0;
-    top: -183px;
+    bottom: 150px;
     margin-top: 20px;
     width: 100px;
     border-radius: 10px;
@@ -470,15 +477,10 @@
     justify-content: space-between;
     flex-flow: row nowrap;
   }
-
-  #membe-centre-img {
-    display: none;
-    cursor: pointer;
-  }
   .member-centre-triangle {
     position: absolute;
     margin: auto;
-    top: -13%;
+    top: -9%;
     left: 35%;
     border-style: solid;
     border-width: 0 10px 10px 10px;
@@ -488,7 +490,7 @@
     position: absolute;
     z-index: -2;
     transform: translateY(0%);
-    top: -300%;
+    bottom: 220%;
     min-width: 100px;
     margin: auto;
     opacity: 0;
@@ -497,6 +499,9 @@
     background-color: #ffdee6;
     text-align: center;
     transition: 1s;
+  }
+  #user-name {
+    letter-spacing: 0vw;
   }
   #member-centre-down-menu li {
     margin: 0 auto;
@@ -528,9 +533,19 @@
     border-radius: 10px;
     background-color: #fff;
   }
-
   .member-icon {
     position: relative;
+  }
+  #membe-centre-img-circle {
+    display: none;
+  }
+  .membe-centre-img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ffffff;
   }
   .shopping-cart-icon {
     margin-right: 0.3vw;
@@ -810,6 +825,9 @@
     -webkit-text-stroke: 5px #6a3e26;
   }
   /* 註冊帳號 */
+  #register-memberIcon {
+    display: none;
+  }
   .register-account-button-style {
     cursor: pointer;
     position: relative;
@@ -1011,6 +1029,9 @@
     color: #6a3e26;
   }
   /* 帳號密碼 */
+  #register-memberIcon {
+    display: none;
+  }
   .member-login input {
     text-indent: 10px;
     display: inline-block;
@@ -1121,7 +1142,7 @@
   .register-account-button-style {
     cursor: pointer;
     position: relative;
-    margin-top: 10%;
+    margin-top: 2%;
     text-align: center;
     display: inline-block;
     width: 50%;
@@ -1226,7 +1247,6 @@
   /* 按鈕結束 */
 }
 #robot-conversation-list-group {
-  width: 100%;
   display: block;
 }
 /* 機器人文字區塊 */
@@ -1241,9 +1261,26 @@
 }
 .robot-conversation-robot {
   width: 100%;
+  display: block;
 }
 .robot-conversation-user {
   width: 100%;
+  display: block;
+}
+.robot-conversation-robot::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.robot-conversation-user::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.robot-conversation-list::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .robot-conversation-list {
   content: "";
@@ -1279,6 +1316,9 @@
   padding: 8px 12px;
   border-radius: 5px;
   background-color: #ffd0d0;
+}
+.answer u {
+  color: #ea7187;
 }
 .question::after {
   content: "";
@@ -1364,9 +1404,6 @@
 /*rwd內容*/
 #menu-control {
   display: none;
-}
-.robot-conversation-list-group {
-  height: 300px;
 }
 /* footer */
 footer {

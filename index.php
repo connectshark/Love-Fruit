@@ -11,16 +11,19 @@
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/temporary-cart.css">
   <link rel="stylesheet" href="WOW-master/css/libs/animate.css" />
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 </head>
 
-<body>
+
+<body class="index-body">
   <?php
   require_once("nav.php");
   ?>
+
   <section class="index-hero-bgc">
     <div class="mountain">
       <img src="img/indexImg/heroImg.png" alt="山" />
@@ -582,6 +585,8 @@
   <script src="js/nav.js"></script>
   <script src="js/login.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/shop.js"></script>
+
 
 </body>
 

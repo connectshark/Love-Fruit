@@ -21,13 +21,19 @@
 * {
   /* outline: 1px solid #f00; */
 }
+
 html {
   position: relative;
   overflow-x: hidden;
 }
-body {
+.index-body {
   position: relative;
   overflow-x: hidden;
+}
+
+.index-body * {
+  -webkit-box-sizing: content-box !important ;
+  box-sizing: content-box !important;
 }
 /*第一屏幕*/
 @media screen and (max-width: 767px) {
