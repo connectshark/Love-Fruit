@@ -493,6 +493,10 @@
   background: url(../img/shop/check-circle-solid.svg) no-repeat;
 }
 
+.page-cartlist #empty-text {
+  background-color: black;
+}
+
 @media all and (min-width: 992px) {
   .page-cartlist .cart-head {
     padding-top: 150px;

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/nav.css" />
 	<link rel="stylesheet" href="css/qa.css" />
+	<link rel="stylesheet" href="css/temporary-cart.css">
 
 </head>
 
@@ -36,7 +37,7 @@
 					<div class="q1 show">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/blueberry.png" alt="藍莓">
-							<p class="question">你希望自己在愛情收穫到什麼？</p>
+							<p class="quest">你希望自己在愛情收穫到什麼？</p>
 						</div>
 						<div class="asw">
 							<a id="asw1" class="asw-btn" href="javascript:;"><span>(A)真愛</span></a>
@@ -47,7 +48,7 @@
 					<div class="q2">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/banana.png" alt="香蕉">
-							<p class="question">如果你的愛情沒有得到收穫，你會選擇放棄嗎？</p>
+							<p class="quest">如果你的愛情沒有得到收穫，你會選擇放棄嗎？</p>
 						</div>
 						<div class="asw">
 							<a id="asw4" class="asw-btn" href="javascript:;"><span>(A)放棄</span></a>
@@ -58,7 +59,7 @@
 					<div class="q3">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/cherry.png" alt="櫻桃">
-							<p class="question">你覺得你會在愛情中收穫得最多的是什麼呢？</p>
+							<p class="quest">你覺得你會在愛情中收穫得最多的是什麼呢？</p>
 						</div>
 						<div class="asw">
 							<a id="asw7" class="asw-btn" href="javascript:;"><span>(A)信任</span></a>
@@ -69,7 +70,7 @@
 					<div class="q4">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/lemon.png" alt="檸檬">
-							<p class="question">你一直期待愛情嗎？</p>
+							<p class="quest">你一直期待愛情嗎？</p>
 						</div>
 						<div class="asw">
 							<a id="asw10" class="asw-btn" href="javascript:;"><span>(A)是</span></a>
@@ -80,7 +81,7 @@
 					<div class="q5">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/grape.png" alt="葡萄">
-							<p class="question">愛情中有哪項是你最反感的呢？</p>
+							<p class="quest">愛情中有哪項是你最反感的呢？</p>
 						</div>
 						<div class="asw">
 							<a id="asw13" class="asw-btn" href="javascript:;"><span>(A)隱瞞</span></a>
@@ -91,7 +92,7 @@
 					<div class="q6">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/orange.png" alt="橘子">
-							<p class="question">你能夠為自己的愛情做主嗎？</p>
+							<p class="quest">你能為自己的愛情做主嗎？</p>
 						</div>
 						<div class="asw">
 							<a id="asw16" class="asw-btn" href="javascript:;"><span>(A)對方做主</span></a>
@@ -102,7 +103,7 @@
 					<div class="q7">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/greenapple.png" alt="青蘋果">
-							<p class="question">你心目中的愛情是什麼樣子的？</p>
+							<p class="quest">你心目中的愛情是什麼樣子的？</p>
 						</div>
 						<div class="asw">
 							<a id="asw19" class="asw-btn" href="javascript:;"><span>(A)相互理解</span></a>
@@ -113,7 +114,7 @@
 					<div class="q8">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/chocolate.png" alt="巧克力">
-							<p class="question">你願意為了愛情做出怎樣的改變？</p>
+							<p class="quest">你願意為了愛情做出怎樣的改變？</p>
 						</div>
 						<div class="asw">
 							<a id="asw22" class="asw-btn" href="javascript:;"><span>(A)收斂脾氣</span></a>
@@ -124,7 +125,7 @@
 					<div class="q9">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/bittergourd.png" alt="苦瓜">
-							<p class="question">你會因為什麼對愛情失去信心呢？</p>
+							<p class="quest">你會因為什麼對愛情失去信心呢？</p>
 						</div>
 						<div class="asw">
 							<a id="asw25" class="asw-btn" href="javascript:;"><span>(A)失敗</span></a>
@@ -135,7 +136,7 @@
 					<div class="q10">
 						<div class="title-area">
 							<img id="topic-fruit" class="topic-fruit" src="img/qa/saltedplum.png" alt="酸梅">
-							<p class="question">你能夠為愛情勇敢幾次呢？</p>
+							<p class="quest">你能夠為愛情勇敢幾次呢？</p>
 						</div>
 						<div class="asw">
 							<a id="asw28" class="asw-btn" href="javascript:;"><span>(A)一直勇敢</span></a>
@@ -356,7 +357,7 @@
 			<div class="result-content col-8">
 				<p class="">推薦結果</p>
 				<p class="result-stage">熱戀階段</p>
-				<a class="result-btn asw-btn" href="#infatuation"><span>查看詳情</span></a>
+				<a class="result-btn asw-btn" href="#infatuation"><span>看詳情</span></a>
 			</div>
 		</div>
 		<div class="result result-b col-10 col-md-3">
@@ -364,7 +365,7 @@
 			<div class="result-content col-8">
 				<p class="">推薦結果</p>
 				<p class="result-stage">初戀階段</p>
-				<a class="result-btn asw-btn" href="#firstlove"><span>查看詳情</span></a>
+				<a class="result-btn asw-btn" href="#firstlove"><span>看詳情</span></a>
 			</div>
 		</div>
 		<div class="result result-c col-10 col-md-3">
@@ -372,7 +373,7 @@
 			<div class="result-content col-8">
 				<p class="">推薦結果</p>
 				<p class="result-stage">單身階段</p>
-				<a class="result-btn asw-btn" href="#single"><span>查看詳情</span></a>
+				<a class="result-btn asw-btn" href="#single"><span>看詳情</span></a>
 			</div>
 		</div>
 		<div class="result result-d col-10 col-md-3">
@@ -380,7 +381,7 @@
 			<div class="result-content col-8">
 				<p class="">推薦結果</p>
 				<p class="result-stage">分手階段</p>
-				<a class="result-btn asw-btn" href="#break"><span>查看詳情</span></a>
+				<a class="result-btn asw-btn" href="#break"><span>看詳情</span></a>
 			</div>
 		</div>
 	</div>
@@ -388,6 +389,7 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/nav.js"></script>
 	<script src="js/qa.js"></script>
+	<script src="js/shop.js"></script>
 </body>
 
 </html>

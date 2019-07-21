@@ -2419,6 +2419,19 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-lovefruit {
+  color: #fff;
+  background-color: #db4d6d;
+  border-color: #db4d6d;
+}
+
+.btn-lovefruit:hover {
+  color: #fff;
+  background-color: #cb1b45;
+  border-color: #bb1c41;
+}
+
+
 .btn-primary {
   color: #fff;
   background-color: #007bff;

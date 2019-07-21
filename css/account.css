@@ -192,6 +192,34 @@
   display: block;
 }
 
+.page-account label {
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.page-account input {
+  border-radius: 5px;
+  font-size: 18px;
+  display: block;
+  padding: 5px;
+}
+
+.page-account input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #db4d6d;
+  color: #fff;
+  font-family: "GenJyuuGothic-R";
+  font-size: 18px;
+}
+
+.page-account input[type=submit]:hover {
+  background-color: #cb1b45;
+}
+
 .page-account .content-profile {
   display: none;
 }
@@ -216,34 +244,6 @@
 .page-account .content-profile .profile-item .passwaord, .page-account .content-profile .profile-item .address {
   display: inline-block;
   padding-right: 10px;
-}
-
-.page-account .content-profile .profile-item label {
-  display: block;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.page-account .content-profile .profile-item input {
-  border-radius: 5px;
-  font-size: 18px;
-  display: block;
-  padding: 5px;
-}
-
-.page-account .content-profile input[type=submit] {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #db4d6d;
-  color: #fff;
-  font-family: "GenJyuuGothic-R";
-  font-size: 18px;
-}
-
-.page-account .content-profile input[type=submit]:hover {
-  background-color: #cb1b45;
 }
 
 .page-account .content-order {
@@ -285,6 +285,44 @@
 
 .page-account .content-order .order-item .order-desc p {
   padding: 10px;
+}
+
+.page-account .content-order .order-item .prod-item-pop {
+  display: none;
+  padding: 10px;
+  border-top: 1px solid #000;
+}
+
+.page-account .content-order .order-item .prod-item-pop p {
+  padding-bottom: 10px;
+}
+
+.page-account .content-order .order-item .prod-item-pop .item-list-group {
+  padding: 5px;
+  background-color: #ffbaba;
+}
+
+.page-account .content-order .order-item .prod-item-pop .item-list-group .list-head {
+  border-bottom: 1px solid #000;
+}
+
+.page-account .content-order .order-item .prod-item-pop .item-list-group .item-list {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.page-account .content-order .order-item .prod-item-pop .item-list-group .item-list .list-count {
+  text-align: right;
+}
+
+.page-account .content-order .order-item .prod-item-pop.prod-item-show {
+  display: block;
 }
 
 @media all and (min-width: 769px) {
@@ -480,6 +518,94 @@
 
 .page-account .content-course .class-item .class-desc .cancel a:hover, .page-account .content-course .class-item .class-desc .qrcode a:hover {
   border-bottom: 1px solid #db4d6d;
+}
+
+.page-account .psw-change-box {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.page-account .psw-change-box .psw-bg {
+  padding: 20px;
+  background-color: #d1d631;
+  border-radius: 10px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.page-account .psw-change-box .psw-bg #psw-box-close {
+  position: absolute;
+  top: -80px;
+  right: -10px;
+}
+
+.page-account .psw-change-box .psw-bg .psw-content {
+  margin: auto;
+}
+
+.page-account .psw-change-box .psw-bg .psw-box-title {
+  text-align: center;
+  color: #6a3e26;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.page-account .psw-change-box .psw-bg .psw-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.page-account .psw-change-box .psw-bg .psw-item label {
+  padding-right: 0;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.page-account .psw-change-box .psw-bg .psw-item #profile-save {
+  margin: auto;
+}
+
+.page-account .psw-change-box .psw-bg .psw-item #new-psw-save {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #db4d6d;
+  color: #fff;
+  font-family: "GenJyuuGothic-R";
+  font-size: 18px;
+  margin: auto;
+}
+
+.page-account .psw-change-box .psw-bg .psw-item #new-psw-save:hover {
+  background-color: #cb1b45;
+}
+
+.page-account .psw-change-box .psw-bg .psw-item #psw-error {
+  display: block;
+  color: #cb1b45;
+  font-size: 20px;
+  padding-bottom: 10px;
+  margin: auto;
+  text-align: center;
 }
 
 @media all and (max-width: 768px) {
