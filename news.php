@@ -3,9 +3,9 @@ $errMsg="";
 try {
 	require_once("mac-require.php");
 	$sql = "select n.news_no, n.news_title,n.news_pic,n.news_content,n.news_date,n.news_class,e.emp_name from news n join employee e on n.emp_no = e.emp_no WHERE emp_state = 1 ORDER BY n.news_date desc";
-  $number=10;
-  $total=mysql_num_rows($sql);
-  $pages=ceil($total/$number);
+  // $number=10;
+  // $total=mysql_num_rows($sql);
+  // $pages=ceil($total/$number);
   $news = $pdo->prepare($sql);
 	$news -> execute();
 } catch (PDOException $e) {
