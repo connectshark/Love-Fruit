@@ -201,7 +201,7 @@
   width: 60px;
 }
 
-.page-qa .qa .letter .topic .title-area .question {
+.page-qa .qa .letter .topic .title-area .quest {
   font-size: 16px;
   text-align: left;
   color: #cb1b45;
@@ -708,7 +708,7 @@
     pointer-events: auto;
     text-align: center;
   }
-  .page-qa .qa .letter .topic .title-area .question {
+  .page-qa .qa .letter .topic .title-area .quest {
     font-size: 28px;
     text-align: center;
   }
