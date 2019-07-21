@@ -1,4 +1,21 @@
+<?php 
+$news_no = $_REQUEST["news_no"];
+$errMsg="";
+    try {
+      require_once("mac-require.php");
+      $sql = "select * from news WHERE news_no = :news_no";
+      $newsInner = $pdo->prepare($sql);
+      $newsInner -> bindValue(":news_no", $news_no);
+      $newsInner -> execute();
+    } catch (PDOException $e) {
+        $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
+        $errMsg .= "行數:". $e->getLine()."<br>";
+        echo $errMsg;
+    }
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -9,17 +26,25 @@
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/common.css">
   
 </head>
 
-<body>
+ <body>
+
   <?php
     require_once("nav.php");
     ?>
-
+ <?php 
+    if( $errMsg != ""){ //例外
+    echo "<div><center>$errMsg</center></div>";
+    }elseif($newsInner->rowCount()==0){
+        echo "<div><center>查無此篇消息</center></div>";
+    }else{
+        $newsRow = $newsInner->fetchObject();
+    }
+?>
 
   <section class="news-inner-wrap">
 
@@ -42,33 +67,18 @@
         <div class="before">
           <div class="img"><img src="img/btn/ICE.png" alt=""></div>
           <p class="text-box">
-            <span class="text" id="time">2019.06.28</span>
-            <span class="text" id="sort">園區公告</span>
+            <span class="text" id="time"><?php echo $newsRow->news_date; ?></span>
+            <span class="text" id="sort"><?php echo $newsRow->news_class; ?></span>
           </p>
-          <h3 id="title">3F創意遊戲室 暫停開放公告</h3>
+          <h3 id="title"><?php echo $newsRow->news_title; ?></h3>
           <div class="clear"></div>
         </div>
       </div>
 
-      <div class="article-image"><img src="img/course/article-img.png" alt="article-img"></div>
+      <div class="article-image"><img src="<?php echo $newsRow->news_pic; ?>" alt="article-img"></div>
 
       <p class="article-text">
-        【緊急公告】<br>
-        1/22-1/25 導覽場次、DIY課程部份時段暫停<br>
-
-        導覽時段 暫停場次如下：<br>
-        1/22(二)➡11:00<br>
-        1/23(三)➡11:00<br>
-        <br>
-        DIY課程 暫停場次如下：<br>
-        1/22(二)➡11:00、11:30(心願可可果)、13:00、14:00<br>
-        1/23(三)➡11:00、11:30(心願可可果)<br>
-        1/24(四)➡11:30(心願可可果)、14:00、14:30(心願可可果)<br>
-        1/25(五)➡11:30(心願可可果、14:30(心願可可果)、15:00<br>
-        <br>
-        除上列場次外，其餘場次皆可正常報名<br>
-        1/22-1/25 導覽場次、DIY課程部份時段暫停<br>
-        感謝可可粉們的體諒~~~<br>
+       <?php echo $newsRow->news_content; ?>
       </p>
 
       <div class="change-page">
@@ -89,10 +99,12 @@
   <footer>
     <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
   </footer>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/news.js" ></script>
+  <script src="js/news.js"></script>
   
-</body>
+ </body>
+
 
 </html>

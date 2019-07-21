@@ -1,31 +1,29 @@
 //scroll滑動到指定區塊
 
-// $("#scroll-message").click(function(){
-//     $("html,body").animate({ scrollTop:$("#comment").offset().top}, 1000);
-  
-// }); //代表一個完整的執行區塊
+
 
 
 //pop-up
-$('#dialog').hide();
-$('#showBtn').click(function(){
-    $('#dialog').show();
+$('.pop-box').hide();
+$('.join-btn').click(function(){
+    console.log($(this).parent().index('.join-pop-btn'));
+    $('.pop-box').eq($(this).parent().index('.join-pop-btn')).fadeIn('fast');
 });
 
-$('#closeBtn').click(function(){
-    $('#dialog').hide();
+$('.closeBtn').click(function(){
+    $('.pop-box').fadeOut('fast');
 });
 
 
 
-//checkbox-num
-var select = document.getElementById('apply-num');
-for (var i = 1; i <= 20; i++) {
-  var opt = document.createElement("option");
-  opt.value = i;
-  opt.innerHTML = i;
-  select.appendChild(opt);
-}
+// //checkbox-num
+// var select = document.getElementById('apply-num');
+// for (var i = 1; i <= 20; i++) {
+//   var opt = document.createElement("option");
+//   opt.value = i;
+//   opt.innerHTML = i;
+//   select.appendChild(opt);
+// }
 
 
 

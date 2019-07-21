@@ -1123,6 +1123,7 @@ body {
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px #888888;
           box-shadow: 2px 2px 2px #888888;
+  cursor: pointer;
 }
 
 .general-form-wrap .wrapper form .check input {
@@ -1365,7 +1366,7 @@ body {
 
 .group-form-wrap .wrapper .title .group-form-title {
   color: #fff;
-  font-size: 34px;
+  font-size: 30px;
   position: relative;
   z-index: 0;
   text-align: center;
@@ -1389,28 +1390,28 @@ body {
 }
 
 .group-form-wrap .wrapper .title img {
-  width: 70%;
+  width: 80%;
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) {
   .group-form-wrap .wrapper .title img {
     width: 60%;
   }
 }
 
-.group-form-wrap .wrapper .title h3 {
+.group-form-wrap .wrapper .title .general-form-title {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -78%);
-          transform: translate(-50%, -78%);
+  -webkit-transform: translate(-50%, -280%);
+          transform: translate(-50%, -280%);
 }
 
-@media all and (max-width: 768px) {
-  .group-form-wrap .wrapper .title h3 {
-    font-size: 20px;
-    -webkit-transform: translate(-50%, -60%);
-            transform: translate(-50%, -60%);
+@media all and (min-width: 769px) {
+  .group-form-wrap .wrapper .title .general-form-title {
+    font-size: 28px;
+    -webkit-transform: translate(-50%, -220%);
+            transform: translate(-50%, -220%);
   }
 }
 
@@ -1457,49 +1458,82 @@ body {
   margin: 10px 0;
 }
 
-.group-form-wrap .wrapper form #calender-box {
-  margin: 10px 0;
-  border-radius: 20px;
-  border: 5px solid #f6c555;
+.group-form-wrap .wrapper form .calendar-box {
+  margin: 15px 0;
 }
 
-.group-form-wrap .wrapper form #calender-box table {
+@media all and (min-width: 769px) {
+  .group-form-wrap .wrapper form .calendar-box {
+    padding: 10px;
+    margin: 15px;
+  }
+}
+
+.group-form-wrap .wrapper form .calendar-box .calendar-top {
+  padding: 20px 0;
+  background-color: #f6c555;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+          box-shadow: 2px 2px 2px #888888;
+}
+
+.group-form-wrap .wrapper form .calendar-box .mm, .group-form-wrap .wrapper form .calendar-box .yy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.group-form-wrap .wrapper form .calendar-box table {
   vertical-align: middle;
   background-color: #fff;
   width: 100%;
   margin: auto;
   text-align: center;
   border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 2px 2px 2px #888888;
+          box-shadow: 2px 2px 2px #888888;
 }
 
-.group-form-wrap .wrapper form #calender-box table #mon {
-  padding: 20px 0;
-  background-color: #f6c555;
-  border-radius: 10px 10px 0 0;
-  color: #fff;
+.group-form-wrap .wrapper form .calendar-box table th {
+  padding: 60px 0 20px;
+  color: #f6c555;
   font-weight: bold;
 }
 
-.group-form-wrap .wrapper form #calender-box table th {
-  padding: 60px 0 20px;
-  color: #ffb11b;
-}
-
-.group-form-wrap .wrapper form #calender-box table tr {
+.group-form-wrap .wrapper form .calendar-box table tr {
   width: 100%;
-  height: 60px;
+  height: 30px;
 }
 
-.group-form-wrap .wrapper form #calender-box table td {
-  width: 14%;
-  height: 60px;
+@media all and (min-width: 769px) {
+  .group-form-wrap .wrapper form .calendar-box table tr {
+    height: 60px;
+  }
+}
+
+.group-form-wrap .wrapper form .calendar-box table .tdclass {
+  margin: auto;
   vertical-align: middle;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
 }
 
-.group-form-wrap .wrapper form #calender-box table .now {
-  background: #ffb11b;
-  border-radius: 30px;
-  color: #fff;
+@media all and (min-width: 769px) {
+  .group-form-wrap .wrapper form .calendar-box table .tdclass {
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+  }
 }
 
 .group-form-wrap .wrapper form select {
@@ -2369,7 +2403,7 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-up #closeBtn {
+.group-message-wrap .pop-box .pop-up .closeBtn {
   position: absolute;
   top: 10%;
   right: 10%;
@@ -2377,12 +2411,12 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-up #closeBtn {
+  .group-message-wrap .pop-box .pop-up .closeBtn {
     top: 15%;
   }
 }
 
-.group-message-wrap .pop-box .pop-up #closeBtn img {
+.group-message-wrap .pop-box .pop-up .closeBtn img {
   width: 50px;
   height: 50px;
 }
@@ -2568,7 +2602,7 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .leave-message-box {
   font-size: 16px;
   padding: 0 20px;
   width: 100%;
@@ -2579,7 +2613,7 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .leave-message-box {
     font-size: 13px;
     padding: 0 10px;
     height: 30px;
