@@ -7,11 +7,11 @@ try {
     $ii = $pdo->prepare($sql);
     $ii -> execute();
     // 抓模具
-    $sql = "SELECT mold_name,mold_pic FROM mold WHERE mold_state = 1";
+    $sql = "SELECT mold_no, mold_name,mold_pic FROM mold WHERE mold_state = 1 ";
     $mold = $pdo->prepare($sql);
     $mold -> execute();
     // 抓水果
-    $sql = "SELECT fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1";
+    $sql = "SELECT fruit_no, fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1 ";
     $fruite = $pdo->prepare($sql);
     $fruite -> execute();
 } catch (PDOException $e) {
@@ -76,7 +76,7 @@ try {
                                             <img id="texture-min-img">
                                         </div>
                                     </th>
-                                    <td class="list-description"></td>
+                                    <td class="list-description">選擇外觀</td>
 									<td id="mold-price"></td>
 								</tr>
 								<tr>
@@ -85,7 +85,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-a"></td>
+                                    <td id="list-description-a">選擇水果</td>
 									<td id="list-price-a"></td>
 								</tr>
 								<tr>
@@ -94,7 +94,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="list-description-b"></td>
+                                    <td id="list-description-b">選擇水果</td>
 									<td id="list-price-b"></td>
 								</tr>
                                 <tr>
@@ -103,7 +103,7 @@ try {
                                             <img>
                                         </div>
                                     </th>
-                                    <td id="slice-description"></td>
+                                    <td id="slice-description">選擇切片</td>
                                     <td id="slice-price"></td>
                                 </tr>
 								<tfoot>
@@ -174,7 +174,7 @@ try {
     			<div class="aside-select">
                     <?php while ($moldrow = $mold -> fetchObject()) { ?>
                     <div class="select-item select-item-4">
-                        <label for="texture1">
+                        <label for="texture<?php echo $moldrow->mold_no; ?>">
                         <div class="texture-item texture-select">
                             <figure>
                                 <img src="<?php echo $moldrow->mold_pic; ?>" alt="<?php echo $moldrow->mold_name; ?>">
@@ -194,8 +194,8 @@ try {
                 </div>
                 <div class="aside-select">
                     <?php while ($fruiterow = $fruite -> fetchObject()) {?>
-                    <div class="select-item select-item-6 select-item-4">
-                        <label for="option1">
+                    <div class="select-item select-item-6">
+                        <label for="option<?php echo $fruiterow->fruit_no ?>">
                             <div class="fruite-item texture-item">
                                 <figure><img src="<?php echo $fruiterow->fruite_pic ?>" alt="<?php echo $fruiterow->fruit_name ?>"></figure>
                                 <p><?php echo $fruiterow->fruit_name ?></p>
@@ -229,10 +229,10 @@ try {
                 <div class="aside-title">
                     <h2>選擇水果切片</h2>
                 </div>
-                <div class="aside-select">
+                <div class="aside-select aside-select-scale">
                     <?php while ($row = $ii -> fetchObject()) { ?>
-                    <div class="select-item select-item-4 select-item-6">
-                        <label for="fruite-slice1">
+                    <div class="select-item select-item-6">
+                        <label for="fruite-slice<?php echo $row->ii_no ?>">
                         <div class="texture-item slice-item">
                             <figure><img src="<?php echo $row->ii_pic ?>" alt="<?php echo $row->ii_name ?>"></figure>
                             <p><?php echo $row->ii_name ?></p>
@@ -254,13 +254,15 @@ try {
                 <div class="aside-select message-pull">
                     <div class="select-item select-item-1">
                         <label for="text">
-                        <input type="text" maxlength="5" v-model="message" id="text"></label>
+                        <input type="text" min-length="1" maxlength="5" v-model="message" id="text"></label>
                     </div>
                 </div>
             </div>
     		<div class="aside-button-group">
                 <div class="custom-box">
-                    <form>
+                    <form id="custom-choose">
+                        <input type="text" name="ctoPic" id="cto-pic">
+                        <input type="text" name="parse" v-model="message">
                         <input type="radio" name="texture" value="1" id="texture1">
                         <input type="radio" name="texture" value="2" id="texture2">
                         <input type="radio" name="texture" value="3" id="texture3">
@@ -275,6 +277,7 @@ try {
                         <input type="radio" name="fruite-slice" value="2" id="fruite-slice2">
                         <input type="radio" name="fruite-slice" value="3" id="fruite-slice3">
                         <input type="radio" name="fruite-slice" value="4" id="fruite-slice4">
+                        <input type="number" id="custom-price" name="price">
                     </form>
                 </div>
 				<div class="aside-button" id="last">
@@ -302,15 +305,13 @@ try {
 		</section>
         <section class="pop" id="pop">
             <div class="pop-area">
-            <span class="close" id="close-pop">
-                <img src="img/pop-close.png" alt="關閉視窗">
-            </span>
+            <div class="pop-img"><img id="pop-img"></div>
             <div class="pop-title">
                 <h2>製作完成</h2>
                 <p>總價格為:<span id="pop-total-price"></span>元</p>
             </div>
                 <div class="btn-item">
-                    <a class="cart-btn" href="writemessage.php">
+                    <a class="cart-btn" id="addcart">
                         <span class="cart-btn-in">放入購物車</span>
                     </a>
                 </div>
@@ -342,6 +343,8 @@ try {
     <script src="js/custom-img.js"></script>
     <script src="js/custom-pop.js"></script>
     <script src="js/custom-load.js"></script>
+    <script src="js/custom-option.js"></script>
+    <script src="js/custom-addcart.js"></script>
     <script>
         new Vue({
             el:'#app',

@@ -1,7 +1,3 @@
-
-
-
-
 $(document).ready(function() {
 	$('#all').click(function(){
 		$('.message-item').show('slow');
@@ -9,7 +5,7 @@ $(document).ready(function() {
 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
 		$('#filter-pull').val('全部');
 	});
-	$('#single').click(function(){
+	$('#singlebtn').click(function(){
 		$('.message-item').not('.single').hide('slow',function(){
 			$('.single').show('slow');
 		});

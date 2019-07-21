@@ -1,16 +1,17 @@
 <?php 
 try {
-	$dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
-	$user = "root";
-	$psw = "";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-  $pdo = new PDO( $dsn , $user , $psw, $options );
-	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
+  require_once("mac-require.php");
+  //抓開團留言
+	$sql = "SELECT m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content FROM course_msg cm JOIN member m ON cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
   $memNo = 1;//之後改為session
   $courseMsg  = $pdo->prepare($sql);
   $courseMsg -> bindValue(':memNo',$memNo);
   $courseMsg -> execute();
-	
+  //.............
+  $sql2 = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 and cm.msg_no = :msg_no ORDER BY reply_date desc";      
+  //???   $memNo = 1;//之後改為session
+  $replayMsg  = $pdo->prepare($sql2);
+  
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
   $errMsg .= "行數:". $e->getLine()."<br>";
@@ -29,16 +30,17 @@ try {
   <link rel="icon" href="img/navBar/logo.png" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/courseP.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+  <link rel="stylesheet" href="css/temporary-cart.css">
 </head>
 
 <body>
+
   <?php
     require_once("nav.php");
-    ?>
+  ?>
 
   <section class="group-wrap">
     <div class="wrapper">
@@ -101,61 +103,63 @@ try {
       </div>
     </div>
   </section>
- <div  class="group-message-cloud"></div>
-  <section class="group-message-wrap">
+
+   <div  class="group-message-cloud"></div>
+
+<section class="group-message-wrap">
    
     <div id="comment"  class="title-box">
-      <h3 class="message-title">開團留言板</h3>
-      <span>快來開團玩課程！</span>
+          <h3 class="message-title">開團留言板</h3>
+          <span>快來開團玩課程！</span>
     </div>
 
-<form action="course-msg.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" value="1" name="courseClassNo">
-     <div class="group-message" >
-      <div class="open-group">
-        <div class="message-meb col-md-2">
-          <i class="fas fa-user-circle"></i>
-          <p><?php echo $row->mem_name; ?></p>
-          <p class="time"><?php echo date("Y-m-d"); ?></p>
+  <form action="course-msg.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="1" name="courseClassNo">
+      <div class="group-message" >
+        <div class="open-group">
+          <div class="message-meb col-md-2">
+            <i class="fas fa-user-circle"></i>
+            <p>會員名稱</p>
+            <p class="time"><?php echo date("Y-m-d"); ?></p>
+          </div>
+          <div class="write-area  col-md-10">
+            <p>你的團名：</p>
+            <input name="msgTitle" type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
+            <p>開團資訊：</p>
+            <textarea name="msgContent" maxlength="100" minlength="1" id="" cols="90" rows="8" wrap="hard" 
+  placeholder="揪團課程時間：
+  聯絡電話：
+  e-mail：
+  邀請的話～"></textarea>
+          </div>
+          <div class="message-btn col-md-12">
+          <a href="course-msg.php">
+            <button type="submit" class="message-btn-out">
+              <span class="message-btn-in">
+                我要留言
+              </span>
+            </button>
+          </a> 
+          </div>
         </div>
-        <div class="write-area  col-md-10">
-          <p>你的團名：</p>
-          <input name="msgTitle" type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
-          <p>開團資訊：</p>
-          <textarea name="msgContent" maxlength="100" minlength="1" id="" cols="90" rows="8" wrap="hard" 
-placeholder="揪團課程時間：
-聯絡電話：
-e-mail：
-邀請的話～"></textarea>
-        </div>
-        <div class="message-btn col-md-12">
-        <a href="course-msg.php">
-          <button type="submit" class="message-btn-out">
-            <span class="message-btn-in">
-              我要留言
-            </span>
-          </button>
-         </a> 
-        </div>
-      </div>
-</form>
+  </form>
 
-      <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
-      <div class="array-btn">
+  <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
+
+    <div class="array-btn">
         <a class="array-ice-btn-out" href="course-group-form.php">
           <span class="array-ice-btn-in">
             <img src="img/btn/ICE.png" alt="btn">
             主揪報團
           </span>
         </a>
-      </div>
+    </div>
 
-    <?php while ($row = $courseMsg -> fetchObject()) {?>
-      <div class="team-name">
+  <?php while ($row = $courseMsg -> fetchObject()) {?> 
+    <div class="team-name">
         <span>團名：<?php echo $row->msg_title;?> </span>
-      </div>
-      <div class="main-group-message">
-
+    </div>
+    <div class="main-group-message">
         <div class="message-meb col-md-2 col-2">
           <i class="fas fa-user-circle"></i>
           <p><?php echo $row->mem_name; ?></p>
@@ -168,76 +172,103 @@ e-mail：
           </p>
         </div>
 
-        <div id="showBtn" class="message-btn col-md-12 join-pop-btn">
-          <div class="message-btn-out">
+        <div  class="message-btn col-md-12 join-pop-btn">
+          <div class="message-btn-out join-btn">
             <span class="message-btn-in">
               我要參加
             </span>
           </div>
         </div>
-      </div>
-    <?php } ?> 
+    </div>
+   
 
- 
-      <div  id="dialog" class="pop-box">
-        <div class="pop-up">
-          <span  id="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
-          <label for=""><input type="hidden" name="" id="" ><?php echo $row->msg_date; ?></label> 
-          <div class="pop-team-name">
-            <p>團名：山抓手作團山抓手作團</p>
-          </div>
+    <div class="pop-box">
+            <div class="pop-up">
+              <span  class="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
+              <div class="pop-team-name"><p><?php echo $row->msg_title; ?></p></div>
 
-          <div class="pop-content">
-            <div class="pop-main-message col-md-7 col-10">
-              <div class="message-meb col-md-2 col-2">
-                <i class="fas fa-user-circle"></i>
-                <p>Sandra</p>
-                <p class="time"><?php echo $row->msg_date; ?></p>
-              </div>
-
-              <div class="message-con col-md-10 col-10">
-                <p>
-                <?php echo $row->msg_content; ?>
-                </p>
-              </div>
-
-          </div>
- 
-            <div class="all-message col-md-7 col-10">
-              <div class="meb-add-message ">
-                <div class="meb col-md-2 ">
-                  <i class="fas fa-user-circle"></i>
-                  <p class="name">Sandra</p>
-                </div>
-                <p class="text col-md-10">+1+1+1</p>
-              </div>
-            </div>
-
-
-            <div class="pop-leave-message col-md-8 col-10">
-              <div class="leave-message col-md-9 col-12"> <input type="text" name="" id="leave-message-box"></div>
-                <div class="message-btn col-md-2 col-12">
-                  <div class="message-btn-out">
-                    <span class="message-btn-in">
-                      留言參加
-                    </span>
+              <div class="pop-content">
+              <!-- 跳窗主揪留言 -->
+                <div class="pop-main-message col-md-7 col-10">
+                  <div class="message-meb col-md-2 col-2">
+                    <i class="fas fa-user-circle"></i>
+                    <p><?php echo $row->mem_name; ?></p>
+                    <p class="time"><?php echo $row->msg_date; ?></p>
+                  </div>
+                  <div class="message-con col-md-10 col-10">
+                    <p><?php echo $row->msg_content; ?></p>
                   </div>
                 </div>
+  
+  
+                <!-- 跳窗回覆留言 -->
+              <div  class="all-message col-md-7 col-10">
+                <?php 
+        
+        //..............抓回覆留言
+            // $sql = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 ORDER BY msg_date desc";
+            //找出該留言的所有回覆
+            // exit("==========".$row->msg_no);
+            $replayMsg -> bindValue(':msg_no',$row->msg_no);
+            $replayMsg -> execute();
+            // exit("==========".$replayMsg->rowCount());
+            while ($replayMsgRow = $replayMsg -> fetchObject()) { 
+      
+            ?> 
+                  <div class="meb-add-message ">
+                    <div class="meb col-md-2 ">
+                      <i class="fas fa-user-circle"></i>
+                      <p class="name"><?php echo $replayMsgRow->mem_name; ?></p>
+                      <p class="time"><?php echo $replayMsgRow->reply_date; ?></p>
+                    </div>
+                    <p class="text col-md-10"><?php echo $replayMsgRow->reply_content; ?></p>
+                  </div>
+                    <?php  } ?> 
+                </div>
+    
+
+      <div id="spotPack" style="display:none">
+         
+              <div class="meb-add-message " id="content">
+                <div class="meb col-md-2 ">
+                  <i class="fas fa-user-circle"></i>
+                  <p class="name"></p>
+                  <p class="time"></p>
+                </div>
+                <p class="text col-md-10"></p>
               </div>
-          </div>
-        </div>
+         
       </div>
+            <!-- 跳窗留言 -->
+            <span class="msgno"><?php echo  $row->msg_no ?> </span>
+            <form class="pop-leave-message col-md-8 col-10" action="course-msg.php" method="post" enctype="multipart/form-data">
+              <div class="leave-message col-md-9 col-12"> <input type="text" name="reply_content"  class="leave-message-box"></div>
+                <div class="message-btn col-md-2 col-12">
+                  <input type="button" class="message-btn-out btn-add" name="btnReply" value="留言參加">
+                    <!-- <span class="message-btn-in">
+                      留言參加
+                    </span> -->
+                </div>
+              </div>
+            </form>
+
+         </div>
+      </div>
+        <?php } ?>  
+    
     </div>
 
- 
   </section>
 
   <footer>
     <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
   </footer>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/course.js"></script>
+  <script src="js/course-group.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 
 </html>

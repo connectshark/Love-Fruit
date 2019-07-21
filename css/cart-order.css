@@ -206,9 +206,11 @@
 }
 
 .page-confirm .confirm-row {
+  width: 90%;
   background-color: white;
   border-radius: 20px;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .page-confirm .row-pic {
@@ -247,15 +249,23 @@
 
 .page-confirm .confirm-btn {
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page-confirm .confirm-btn span {
+  display: none;
 }
 
 .page-confirm .small-total {
   padding-top: 10px;
+  text-align: right;
 }
 
 .page-confirm .confirm-total {
   text-align: right;
-  padding-right: 20px;
+  padding-right: 30px;
   font-size: 20px;
 }
 
@@ -386,7 +396,7 @@
 .page-confirm .Previous .Previous-in {
   display: block;
   color: whitesmoke;
-  font-size: 12px;
+  font-size: 16px;
   position: relative;
   padding: 1px;
   z-index: 1;
@@ -441,6 +451,20 @@
   border-bottom: 1px solid #FAD689;
 }
 
+.page-confirm .confirm-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 20px;
+}
+
+.page-confirm .confirm-btn a {
+  margin-right: 10px;
+}
+
 .page-confirm .tabtitle li {
   font-size: 20px;
   text-align: center;
@@ -471,6 +495,13 @@
 
 .page-confirm .transport-check, .page-confirm .onlion-check {
   font-size: 16px;
+}
+
+.page-confirm .pay-transport {
+  width: 90%;
+  background-color: white;
+  border-radius: 20px;
+  height: 390px;
 }
 
 .page-confirm .transport-check {
@@ -505,11 +536,14 @@
     margin: auto;
   }
   .page-confirm .confirm-row {
+    width: 100%;
     background-color: white;
     border-radius: 0px;
     font-size: 16px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #c8c8c8;
   }
   .page-confirm .row-pic {
     border-bottom: 0px solid black;
@@ -546,6 +580,10 @@
     height: 104px;
     line-height: 105px;
   }
+  .page-confirm #recipient input {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
   .page-confirm .confirm-btn {
     display: block;
     text-align: center;
@@ -553,10 +591,14 @@
     height: 104px;
     line-height: 105px;
   }
+  .page-confirm .confirm-btn span {
+    display: block;
+  }
   .page-confirm .small-total {
     padding-top: 0px;
     height: 104px;
     line-height: 105px;
+    text-align: center;
   }
   .page-confirm .confirm-total {
     text-align: right;
@@ -564,6 +606,7 @@
     font-size: 20px;
   }
   .page-confirm .pay-transport {
+    width: 100%;
     background-color: white;
     border-radius: 20px;
     height: 300px;

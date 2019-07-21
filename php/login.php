@@ -9,7 +9,7 @@ try {
     $member->execute();
 
     if ($member->rowCount() == 0) { //查無此人, 帳密錯誤
-        echo "1";
+        echo "error";
     } else { //登入成功
         //自資料庫中取回資料
         $memRow = $member->fetch(PDO::FETCH_ASSOC);
@@ -17,6 +17,7 @@ try {
         $_SESSION["mem_no"] = $memRow["mem_no"];
         $_SESSION["mem_name"] = $memRow["mem_name"];
         $_SESSION["mem_id"] = $memRow["mem_id"];
+        $_SESSION["mem_pic"] = $memRow["mem_pic"];
         $_SESSION["email"] = $memRow["email"];
 
         //送出登入者的姓名資料

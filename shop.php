@@ -1,9 +1,9 @@
 <?php
+ob_start();
 session_start();
 $errMsg = "";
 try {
 	require_once("connect-dd101g3.php");
-
 	$sql = "select * from product p , love_stage l where p.stage_no = l.stage_no";
 	$products = $pdo->query($sql);
 	$prodRows = $products->fetchAll(PDO::FETCH_ASSOC);
@@ -12,6 +12,69 @@ try {
 	echo "行號 : ", $e -> getLine(), "<br>";
 }
 ?> 
+<?php
+try {
+	require_once("connect-dd101g3.php");
+	$sql = "select * from product";
+	$newproducts = $pdo->query($sql);
+    $newproductsRows = $newproducts->fetchAll(PDO::FETCH_ASSOC);
+    shuffle( $newproductsRows);
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+?> 
+<!-- 抓會員已收藏 -->
+<?php
+try{
+    $sql = "select * from collection where mem_no = 1 " ;
+    $collection = $pdo->query($sql);
+    $collection_row =  $collection->fetchALL(PDO::FETCH_ASSOC);
+    $collection_arr = array();
+    // echo `$collection_row[0]["prod_no"]`;
+    for($i = 0; $i<count($collection_row); $i++){
+        array_push($collection_arr, $collection_row[$i]["prod_no"]);
+
+    }
+    // print_r($collection_arr);
+}catch(PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+};
+
+function stageNo($stage)
+{
+	switch ($stage) {
+		case '1':
+			return "single";
+			break;
+		case '2':
+			return "first-love";
+			break;
+		case '3':
+			return "fall-in-love";
+			break;
+		case '4':
+			return "break-up";
+			break;
+	}
+}
+function typeno($typeno)
+{
+	switch($typeno) {
+		case '1':
+			return 'popscial';
+			break;
+		case '2':
+			return 'ball';
+			break;
+		case '3':
+			return 'icecream';
+			break;
+	}
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -41,13 +104,39 @@ try {
 <?php
 require_once("nav.php");
 ?>
-
+    
     <section class="latest-news">
         <div class="title-main">
             <h1 class="title">最新商品</h1>
         </div>
         <div class="owl-carousel owl-theme wrap">
+        <?php
+         foreach($newproductsRows as $a => $newproductsRow){
+        ?>
+        
             <div class="item latest-item col-6 col-lg-10">
+                <div class="latest-pic">
+                    <form action="">
+                        <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
+                        <a href="shop-inside.php?prod_no=<?php echo $newproductsRow["prod_no"]?>">
+                            <img src="database/img_prod/<?php echo $newproductsRow["prod_pic"] ?>" alt="">
+                        </a>
+                        <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
+                    </form>
+                </div>
+                <p class="latest-name"><?php echo $newproductsRow["prod_name"]?></p>
+                <p class="latest-pri">NT<?php echo $newproductsRow["prod_price"]?></p>
+            </div>
+        
+            
+        <?php
+         }
+        ?>
+
+
+
+
+            <!-- <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
                     <img src="img/shop/inlove/inlove-ball01.png" alt="">
                     <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
@@ -58,14 +147,6 @@ require_once("nav.php");
             <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
                     <img src="img/shop/inlove/inlove-ball01.png" alt="">
-                    <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                </div>
-                <p class="latest-name">芋頭芒果</p>
-                <p class="latest-pri">NT280</p>
-            </div>
-            <div class="item latest-item col-6 col-lg-10">
-                <div class="latest-pic">
-                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
                     <img src="img/shop/collection-red.png" alt="" class="latest-collection-love">
                 </div>
                 <p class="latest-name">芋頭芒果</p>
@@ -94,7 +175,7 @@ require_once("nav.php");
                 </div>
                 <p class="latest-name">芋頭芒果</p>
                 <p class="latest-pri">NT280</p>
-            </div>
+            </div> -->
 
         </div>
     </section>
@@ -123,13 +204,13 @@ require_once("nav.php");
                     <button type="button" class="filter" id="break-up">分手</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="popscial">冰棒</button>
+                    <button type="button" class="filter" id="id-popscial">冰棒</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="ice-cream">霜淇淋</button>
+                    <button type="button" class="filter" id="id-ice-cream">霜淇淋</button>
                 </div>
                 <div class="filter-item">
-                    <button type="button" class="filter" id="icecream-ball">冰淇淋</button>
+                    <button type="button" class="filter" id="id-icecream-ball">冰淇淋</button>
                 </div>
                 <div class="select">
                     <select v-model="status" id="select-pull">
@@ -139,7 +220,7 @@ require_once("nav.php");
                         <option>熱戀</option>
                         <option>分手</option>
                     </select>
-                    <select v-model="status" id="select-pull">
+                    <select v-model="status" id="a-select-pull">
                         <option>冰棒</option>
                         <option>霜淇淋</option>
                         <option>冰淇淋</option>
@@ -150,7 +231,6 @@ require_once("nav.php");
 
 
             <div class="general-store col-11 col-lg-11">
-
                 <?php
                 foreach($prodRows as $i => $prodRow){
                     //檢查商品是否已在購物車中，若是，則數量以購物車中的為主
@@ -161,17 +241,7 @@ require_once("nav.php");
                     //     $qty = 0;
                     // }
                 ?>
-                        <div class="general-item col-6 col-lg-3 <?php
-                        if($prodRow["stage_no"] == 1){echo "single";
-                            
-                        }elseif($prodRow["stage_no"] == 2){echo "first-love";
-
-                        }elseif($prodRow["stage_no"] == 3){echo "fall-in-love";
-
-                        }else{echo "break-up";
-
-                        }
-                        ?>">
+                        <div class="general-item col-6 col-lg-3 <?php echo stageNo($prodRow["stage_no"]); ?> <?php echo typeno($prodRow["type_no"]); ?>">
                             <div class="ice-type col-11">
                                 <img src="database/img_type/<?php
                                 if($prodRow["type_no"]==1){echo "popsicle.png";
@@ -182,10 +252,17 @@ require_once("nav.php");
                             <div class="general-item-content col-11 ">
                            
                                 <div class="item-img col-12">
-                                    <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
-                                        <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
-                                    </a>    
-                                    <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
+                                    <form>
+                                        <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
+                                        <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
+                                            <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
+                                        </a>    
+                                        <img src="img/shop/collection-<?php if(in_array($prodRow["prod_no"],$collection_arr)){
+                                            echo "red.png";
+                                        }else{
+                                            echo "gray.png";
+                                        }?>" alt="" class="latest-collection-love">
+                                    </form>
                                 </div>
                                 
                                 <div class="item-text ">
@@ -196,9 +273,9 @@ require_once("nav.php");
                                 </div>
                                 <div class="item-pri">
                                     <div class="btn-numbox col-lg-12">
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
+                                            <input type='button' value='-' class='qtyminus' />
                                             <input type='number' min="1"  name='quantity' value='1' class='qty' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input type='button' value='+' class='qtyplus' />
                                             <!-- <input type="hidden" name="prod_no" value="<?php //echo $prodRow["prod_no"]?>">
                                             <input type="hidden" name="prod_name" value="<?php //echo $prodRow["prod_name"]?>">
                                             <input type="hidden" name="prod_price" value="<?php //echo $prodRow["prod_price"]?>">	 -->

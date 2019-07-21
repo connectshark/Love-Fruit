@@ -231,29 +231,29 @@
 }
 
 .page-cartlist .cart-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-top: 20px;
 }
 
 .page-cartlist .cart-btn a {
   display: block;
+  margin: 0px 5px;
 }
 
 .page-cartlist .cart-list-item {
   background-color: white;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  width: 90%;
 }
 
 .page-cartlist form {
   padding: 10px;
-}
-
-.page-cartlist .fa-trash {
-  position: absolute;
-  position: absolute;
-  right: 20px;
-  top: 5px;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 .page-cartlist .small-total {
@@ -263,6 +263,7 @@
 
 .page-cartlist .total-pri {
   text-align: right;
+  padding-right: 30px;
 }
 
 .page-cartlist .continue-shop {
@@ -276,6 +277,16 @@
 .page-cartlist .maybe-title {
   text-align: center;
   padding-bottom: 30px;
+}
+
+.page-cartlist .delete {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.page-cartlist .trash-img {
+  width: 100%;
 }
 
 .page-cartlist .news-item {
@@ -542,6 +553,22 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  .page-cartlist .delete {
+    display: block;
+    position: static;
+    top: 0px;
+    right: 10px;
+    margin: auto;
+    height: 50px;
+    line-height: 74px;
+    border-left: 1px solid black;
+  }
+  .page-cartlist .delete div {
+    margin: auto;
+  }
+  .page-cartlist .delete div .trash-img {
+    width: 100%;
+  }
   .page-cartlist form {
     padding: 0px;
   }
@@ -553,16 +580,23 @@
     width: 100%;
   }
   .page-cartlist .cart-list-item {
+    width: 100%;
+    background-color: white;
     border-radius: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: space-around;
+            flex-flow: space-around;
+    margin-bottom: 0px;
   }
   .page-cartlist .cartlist-btn {
     padding-top: 0px;
-    line-height: 50px;
-  }
-  .page-cartlist .fa-trash {
-    font-size: 32px;
-    cursor: pointer;
-    position: static;
     line-height: 50px;
   }
   .page-cartlist .item-pic {
@@ -576,74 +610,26 @@
     border-radius: 0px;
   }
   .page-cartlist .total-pri {
+    font-size: 20px;
     background-color: white;
     text-align: right;
   }
   .page-cartlist .total-pri span {
     font-size: 20px;
+    margin-right: 20px;
   }
   .page-cartlist .cart-btn {
     background-color: white;
     padding: 10px 0px 30px 0px;
-  }
-  .page-cartlist .cart-btn a {
-    margin: auto;
+    margin-bottom: 100px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
   .page-cartlist a {
     text-decoration: none;
   }
   .page-cartlist .button {
     margin: auto;
-  }
-  .page-cartlist .continue-shop {
-    display: block;
-    width: 100px;
-    padding: 2px;
-    border-radius: 40px;
-    background-color: white;
-    border: 2px solid #715124;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    cursor: pointer;
-  }
-  .page-cartlist .continue-shop .continue-shop-in {
-    display: block;
-    color: whitesmoke;
-    font-size: 16px;
-    position: relative;
-    padding: 1px;
-    z-index: 1;
-    text-align: center;
-    display: block;
-    width: 100px;
-    border-radius: 20px;
-    background-color: #fc7389;
-    border: 2px solid #e4575f;
-    text-align: center;
-    margin: auto;
-    cursor: pointer;
-  }
-  .page-cartlist .continue-shop .continue-shop-in:hover {
-    background-color: #ffabb1;
-    -webkit-transition-duration: .2s;
-            transition-duration: .2s;
-  }
-  .page-cartlist .continue-shop .continue-shop-in:active {
-    background-color: #db4d6d;
-    -webkit-transition-duration: .2s;
-            transition-duration: .2s;
-  }
-  .page-cartlist .continue-shop .continue-shop-in:after {
-    z-index: -1;
-    content: "繼續購物";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    -webkit-text-stroke: 2px black;
   }
   .page-cartlist .continue-shop-in {
     background-color: white;
@@ -670,56 +656,6 @@
   }
   .page-cartlist .transport-check {
     line-height: 10px;
-  }
-  .page-cartlist .go-buy {
-    display: block;
-    width: 100px;
-    padding: 2px;
-    border-radius: 40px;
-    background-color: white;
-    border: 2px solid #715124;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    cursor: pointer;
-  }
-  .page-cartlist .go-buy .go-buy-in {
-    display: block;
-    color: whitesmoke;
-    font-size: 16px;
-    position: relative;
-    padding: 1px;
-    z-index: 1;
-    text-align: center;
-    display: block;
-    width: 100px;
-    border-radius: 20px;
-    background-color: #fc7389;
-    border: 2px solid #e4575f;
-    text-align: center;
-    margin: auto;
-    cursor: pointer;
-  }
-  .page-cartlist .go-buy .go-buy-in:hover {
-    background-color: #ffabb1;
-    -webkit-transition-duration: .2s;
-            transition-duration: .2s;
-  }
-  .page-cartlist .go-buy .go-buy-in:active {
-    background-color: #db4d6d;
-    -webkit-transition-duration: .2s;
-            transition-duration: .2s;
-  }
-  .page-cartlist .go-buy .go-buy-in:after {
-    z-index: -1;
-    content: "進行結帳";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    -webkit-text-stroke: 2px black;
   }
   .page-cartlist .maybe-like {
     padding: 40px 0px;
