@@ -12,9 +12,9 @@ $errMsg="";
         $insertReply ->bindValue(':mem_no',$mem_no);
         $insertReply ->bindValue(':msg_no',$msg_no);
         $insertReply ->bindValue(':reply_content',$reply_content);
-        $$insertReply ->bindValue(':reply_date',date("Y-m-d h:i:s"));
+        $insertReply ->bindValue(':reply_date',date("Y-m-d h:i:s"));
         
-        $courseMsg->execute();
+        $insertReply->execute();
         
     } catch (PDOException $e) {
         $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";

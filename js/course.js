@@ -1,17 +1,11 @@
 //scroll滑動到指定區塊
 
-$(".all-message").on("mouseenter mouseleave", function (event) { //挷定滑鼠進入及離開事件
-  if (event.type == "mouseenter") {
-    $(this).css({"overflow-y": "scroll"}); //滑鼠進入
-  } else {
-    $(this).scrollTop(0).css({"overflow-y": "hidden"}); //滑鼠離開
-  }
-});
+
 
 
 //pop-up
 $('.pop-box').hide();
-$('.message-btn-out').click(function(){
+$('.join-btn').click(function(){
     console.log($(this).parent().index('.join-pop-btn'));
     $('.pop-box').eq($(this).parent().index('.join-pop-btn')).fadeIn('fast');
 });
@@ -22,14 +16,14 @@ $('.closeBtn').click(function(){
 
 
 
-//checkbox-num
-var select = document.getElementById('apply-num');
-for (var i = 1; i <= 20; i++) {
-  var opt = document.createElement("option");
-  opt.value = i;
-  opt.innerHTML = i;
-  select.appendChild(opt);
-}
+// //checkbox-num
+// var select = document.getElementById('apply-num');
+// for (var i = 1; i <= 20; i++) {
+//   var opt = document.createElement("option");
+//   opt.value = i;
+//   opt.innerHTML = i;
+//   select.appendChild(opt);
+// }
 
 
 
