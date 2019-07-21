@@ -7,7 +7,7 @@ function checkedSign() {
 			if (data == true) {
 				putStickIn();
 			}else {
-				$('#member-login').fadeIn('fast').Callbacks(checkedSign);
+				$('#member-login').fadeIn('fast');
 			}
 		},
 	});

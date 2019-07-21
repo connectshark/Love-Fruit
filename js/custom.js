@@ -315,7 +315,6 @@ function dragSliceImg() {
 }
 // 第四步
 function putStickIn() {
-	checkedSign();
 	var check = checkList();
 	if (check !== true) {
 		window.alert(check);
