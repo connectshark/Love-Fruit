@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	$('#leaveMessage').click(checkedSign);
+	$('#close-pop').click(function () {
+		$('#pop').fadeOut('fast');
+	});
 	$('#all').click(function(){
 		$('.message-item').show('slow');
 		$(this).css('backgroundColor','#fc7389');
@@ -76,3 +80,33 @@ $(document).ready(function() {
 		}
 	});
 });
+function checkedSign() {
+	$.ajax({
+		url:'../checksign.php',
+		data: '',
+		type: 'GET',
+		success: function(data){
+			if (data == true) {
+				checkCto();
+			}else {
+				$('#member-login').fadeIn('fast');
+			}
+		},
+	});
+}
+function checkCto() {
+	$.ajax({
+		url: '../checkCto.php',
+		data: '',
+		type: 'GET',
+	})
+	.done(function(data) {
+		console.log(data);
+		if (data > 0) {
+			location.href="../writemessage.php";
+		}else {
+			$('#pop').fadeIn('fast');
+		}
+	});
+	
+}

@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if (isset($_SESSION['mem_no']) === false) {
+	header("location:leavemessage.php");
+}
 try {
     require_once("connect-dd101g3.php");
 	$sql = "select m.mem_name, m.mem_pic, c.cto_words, c.cto_pic, c.stage_no, c.cto_no from customize c join member m on c.mem_no = m.mem_no where c.mem_no = :memNo ORDER BY c.cto_no DESC";
