@@ -1,16 +1,13 @@
-$(document).ready(function() {
-	$('#addcart').click(checkedSign);
-});
 function checkedSign() {
 	$.ajax({
 		url:'../checksign.php',
 		data: '',
 		type: 'GET',
 		success: function(data){
-			if (data === true) {
-				alert('有');
+			if (data == true) {
+				putStickIn();
 			}else {
-				alert('沒有');
+				$('#member-login').fadeIn('fast').Callbacks(checkedSign);
 			}
 		},
 	});

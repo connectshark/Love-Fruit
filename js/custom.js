@@ -315,6 +315,7 @@ function dragSliceImg() {
 }
 // 第四步
 function putStickIn() {
+	checkedSign();
 	var check = checkList();
 	if (check !== true) {
 		window.alert(check);
@@ -376,5 +377,5 @@ $(document).ready(function() {
 	$('#slice-smaller').click(imgSmaller);
 	sliceSizeChange(sliceSize);
 	$('#ice-stick').hide();
-	$('#complete-all').click(putStickIn);
+	$('#complete-all').click(checkedSign);
 });
