@@ -310,6 +310,7 @@ function stageName($stage)
 	<script src="js/nav.js"></script>
 	<script src="js/message.js"></script>
 	<script src="js/shop.js"></script>
+	<script src="js/login.js"></script>
 	<script>
 		new Vue({
 			el:"#app",

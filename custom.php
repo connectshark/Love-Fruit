@@ -345,6 +345,7 @@ try {
     <script src="js/custom-load.js"></script>
     <script src="js/custom-option.js"></script>
     <script src="js/custom-addcart.js"></script>
+    <script src="js/login.js"></script>
     <script>
         new Vue({
             el:'#app',
