@@ -1,15 +1,18 @@
 //scroll滑動到指定區塊
 
-// $("#scroll-message").click(function(){
-//     $("html,body").animate({ scrollTop:$("#comment").offset().top}, 1000);
-  
-// }); //代表一個完整的執行區塊
+$(".all-message").on("mouseenter mouseleave", function (event) { //挷定滑鼠進入及離開事件
+  if (event.type == "mouseenter") {
+    $(this).css({"overflow-y": "scroll"}); //滑鼠進入
+  } else {
+    $(this).scrollTop(0).css({"overflow-y": "hidden"}); //滑鼠離開
+  }
+});
 
 
 //pop-up
 $('.pop-box').hide();
 $('.message-btn-out').click(function(){
-  console.log($(this).parent().index('.join-pop-btn'));
+    console.log($(this).parent().index('.join-pop-btn'));
     $('.pop-box').eq($(this).parent().index('.join-pop-btn')).fadeIn('fast');
 });
 

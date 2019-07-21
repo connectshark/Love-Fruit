@@ -2602,7 +2602,7 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
+.group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .leave-message-box {
   font-size: 16px;
   padding: 0 20px;
   width: 100%;
@@ -2613,7 +2613,7 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message #leave-message-box {
+  .group-message-wrap .pop-box .pop-up .pop-content .pop-leave-message .leave-message-box {
     font-size: 13px;
     padding: 0 10px;
     height: 30px;

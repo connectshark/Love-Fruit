@@ -200,20 +200,21 @@ try {
                   </div>
                 </div>
   
-      <?php 
-        
-  //..............抓回覆留言
-      // $sql = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 ORDER BY msg_date desc";
-      //找出該留言的所有回覆
-      // exit("==========".$row->msg_no);
-      $replayMsg -> bindValue(':msg_no',$row->msg_no);
-      $replayMsg -> execute();
-      // exit("==========".$replayMsg->rowCount());
-      while ($replayMsgRow = $replayMsg -> fetchObject()) { 
-
-      ?> 
+  
                 <!-- 跳窗回覆留言 -->
-                <div class="all-message col-md-7 col-10">
+                <div   id="all-message" class="all-message col-md-7 col-10">
+                <?php 
+        
+        //..............抓回覆留言
+            // $sql = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 ORDER BY msg_date desc";
+            //找出該留言的所有回覆
+            // exit("==========".$row->msg_no);
+            $replayMsg -> bindValue(':msg_no',$row->msg_no);
+            $replayMsg -> execute();
+            // exit("==========".$replayMsg->rowCount());
+            while ($replayMsgRow = $replayMsg -> fetchObject()) { 
+      
+            ?> 
                   <div class="meb-add-message ">
                     <div class="meb col-md-2 ">
                       <i class="fas fa-user-circle"></i>
@@ -222,18 +223,31 @@ try {
                     </div>
                     <p class="text col-md-10"><?php echo $replayMsgRow->reply_content; ?></p>
                   </div>
+                    <?php  } ?> 
                 </div>
-      <?php  } ?> 
- 
+    
 
+      <div id="spotPack" style="display:none">
+         
+              <div class="meb-add-message " id="content">
+                <div class="meb col-md-2 ">
+                  <i class="fas fa-user-circle"></i>
+                  <p class="name"><?php echo $replayMsgRow->mem_name; ?></p>
+                  <p class="time"><?php echo $replayMsgRow->reply_date; ?></p>
+                </div>
+                <p class="text col-md-10"><?php echo $replayMsgRow->reply_content; ?></p>
+              </div>
+         
+      </div>
             <!-- 跳窗留言 -->
+            <span class="msgno"><?php echo  $row->msg_no ?> </span>
             <form class="pop-leave-message col-md-8 col-10" action="course-msg.php" method="post" enctype="multipart/form-data">
-              <div class="leave-message col-md-9 col-12"> <input type="text" name="replyContent"  id="leave-message-box"></div>
+              <div class="leave-message col-md-9 col-12"> <input type="text" name="reply_content"  class="leave-message-box"></div>
                 <div class="message-btn col-md-2 col-12">
-                  <input type="button" class="message-btn-out">
-                    <span class="message-btn-in">
+                  <input type="button" class="message-btn-out" name="btnReply" value="留言參加">
+                    <!-- <span class="message-btn-in">
                       留言參加
-                    </span>
+                    </span> -->
                 </div>
               </div>
             </form>
@@ -253,6 +267,7 @@ try {
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/course.js"></script>
+  <script src="js/course-group.js"></script>
   <script src="js/shop.js"></script>
 </body>
 

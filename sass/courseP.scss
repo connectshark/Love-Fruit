@@ -1375,9 +1375,7 @@ $deep-pink:#db4d6d;
                 }
                 .pop-leave-message{
                     vertical-align: middle;
-                    @include rwd(mobile){
-                     
-                    }
+
                     @include rwd(medium){
                         width: 55%;
                         height: 15%;
@@ -1385,7 +1383,7 @@ $deep-pink:#db4d6d;
                         justify-content:space-between;
                     }
                     
-                    #leave-message-box {
+                    .leave-message-box {
                     font-size: 16px;
                     padding:0 20px;
                     width: 100%;

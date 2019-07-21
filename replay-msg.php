@@ -1,11 +1,7 @@
 <?php 
 $errMsg="";
     try {
-        $dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
-        $user = "root";
-        $psw = "";
-        $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-        $pdo = new PDO( $dsn , $user , $psw, $options );
+        require_once("mac-require.php");
         $sql = "insert course_msg set mem_no = :memNo , course_class_no = :courseClassNo, msg_date = :msgDate, msg_title = :msgTitle , msg_content = :msgContent";
         $memNo = 1;//session抓
         $courseClassNo = $_REQUEST['courseClassNo'];
