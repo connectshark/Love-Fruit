@@ -108,7 +108,7 @@ function fruiteChange() {
 	totalPrice();
 	$(window).resize(persentChange);
 }
-function persentChange(sliceIndex) {
+function persentChange(slice) {
 	if (fruiteItem.length == 1) {
 		$('.progress-bar').css('width',0);
 		for (var i = 0; i < fruiteQuality[fruiteItem[0]].length; i++) {
@@ -118,9 +118,9 @@ function persentChange(sliceIndex) {
 		for (var i = 0; i <fruiteQuality[fruiteItem[0]].length; i++) {
 			$('.progress-bar').eq(i).css('width', ( fruiteQuality[fruiteItem[0]][i]*parseInt($('.default').css('width'))/30 + fruiteQuality[fruiteItem[1]][i]*parseInt($('.default').css('width'))/30 )  +"px");
 		}
+		console.log('run');
 	}else{
 		$('.progress-bar').css('width',0);
-		console.log('run');
 	}
 	if (slice >= 0 && slice <= 3) {
 		console.log(slice);
