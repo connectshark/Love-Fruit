@@ -186,7 +186,7 @@
     </div>
   </div>
 </div>
-<!-- <div class="black-opacity"> -->
+<div class="black-opacity">
   <section id="mini-cart">
       <div class="head">
           <div class="cart-icon">
@@ -203,4 +203,4 @@
       <div id="mini-item">
       </div>
   </section>
-<!-- </div> -->
+</div>
