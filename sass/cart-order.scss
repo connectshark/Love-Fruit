@@ -164,9 +164,11 @@
        
     // }
     .confirm-row{
+        width: 90%;
          background-color: white; 
          border-radius:20px; 
          font-size: 16px;
+         margin-bottom: 20px;
     }
     .row-pic{
         border-bottom: 2px solid black;
@@ -194,13 +196,17 @@
     .confirm-btn{
         padding-top:10px;
         display: flex;
+        span{
+            display: none;
+        }
     }
     .small-total{
-        padding-top:10px; 
+        padding-top:10px;
+        text-align:right;
     }
     .confirm-total{
       text-align: right;
-      padding-right:20px;   
+      padding-right:30px;   
       font-size: 20px;
     }
     .package-information-title{
@@ -217,6 +223,7 @@
         }
       
     }
+   
     .package-information{
         >form{
             background-color: white;
@@ -236,7 +243,7 @@
         display: inline-block;
     }
     @include ice-btn(confirm-shop,100px,confirm-shop-in,16px,16px,確認結帳);
-    @include btn(Previous,100px,Previous-in,12px, 上一步);
+    @include btn(Previous,100px,Previous-in,16px, 上一步);
     .confirm-list{
         padding: 10px;
     }
@@ -252,6 +259,14 @@
     .pay-transport-btn{
         font-size: 0px;
         border-bottom: 1px solid #FAD689;
+    }
+    .confirm-btn{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        a{
+            margin-right: 10px;
+        }
     }
     .tabtitle{
 
@@ -282,6 +297,12 @@
     }
     .transport-check,.onlion-check{
         font-size: 16px;
+    }
+    .pay-transport{
+        width: 90%;
+        background-color: white;
+        border-radius: 20px;
+        height: 390px;
     }
     // input[type="radio"] {
     //     display:none;
@@ -348,10 +369,14 @@
             }
         }
        .confirm-row{
+            width: 100%;
             background-color: white; 
             border-radius:0px; 
             font-size: 16px;
             flex-wrap:nowrap;
+            margin-bottom: 0px;
+            border-bottom: 1px solid #c8c8c8;
+
         }
        .row-pic{
            border-bottom: 0px solid black;
@@ -382,17 +407,25 @@
            height: 104px;
            line-height: 105px;
        }
+       #recipient input{
+        display: inline-block;
+        margin-bottom: 10px;
+    }
        .confirm-btn{
            display:block;
            text-align: center;
            padding-top:0px;
            height: 104px;
            line-height: 105px;
+           span{
+            display: block;
+        }
        }
        .small-total{
            padding-top:0px; 
            height: 104px;
            line-height: 105px;
+           text-align:center;
        }
        .confirm-total{
          text-align: right;
@@ -400,6 +433,7 @@
          font-size: 20px;
        }
        .pay-transport{
+        width: 100%;
         background-color: white;
         border-radius: 20px;
         height: 300px;

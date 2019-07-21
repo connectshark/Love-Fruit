@@ -13,16 +13,16 @@ try {
 }
 ?> 
 <?php
-// try {
-// 	require_once("connect-dd101g3.php");
-// 	$sql = "select * from product";
-// 	$newproducts = $pdo->query($sql);
-//     $newproductsRows = $newproducts->fetchAll(PDO::FETCH_ASSOC);
-//     shuffle( $newproductsRows);
-// } catch (PDOException $e) {
-// 	echo "錯誤 : ", $e -> getMessage(), "<br>";
-// 	echo "行號 : ", $e -> getLine(), "<br>";
-// }
+try {
+	require_once("connect-dd101g3.php");
+	$sql = "select * from product";
+	$newproducts = $pdo->query($sql);
+    $newproductsRows = $newproducts->fetchAll(PDO::FETCH_ASSOC);
+    shuffle( $newproductsRows);
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
 ?> 
 <!-- 抓會員已收藏 -->
 <?php
@@ -42,6 +42,37 @@ try{
 	echo "行號 : ", $e -> getLine(), "<br>";
 };
 
+function stageNo($stage)
+{
+	switch ($stage) {
+		case '1':
+			return "single";
+			break;
+		case '2':
+			return "first-love";
+			break;
+		case '3':
+			return "fall-in-love";
+			break;
+		case '4':
+			return "break-up";
+			break;
+	}
+}
+function typeno($typeno)
+{
+	switch($typeno) {
+		case '1':
+			return 'popscial';
+			break;
+		case '2':
+			return 'ball';
+			break;
+		case '3':
+			return 'icecream';
+			break;
+	}
+}
 ?>
 
 
@@ -80,17 +111,32 @@ require_once("nav.php");
         </div>
         <div class="owl-carousel owl-theme wrap">
         <?php
+         foreach($newproductsRows as $a => $newproductsRow){
         ?>
         
             <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
-                    <img src="database/img_prod/<?php echo $newproductsRows["prod_pic"] ?>" alt="">
-                    <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
+                    <form action="">
+                        <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
+                        <a href="shop-inside.php?prod_no=<?php echo $newproductsRow["prod_no"]?>">
+                            <img src="database/img_prod/<?php echo $newproductsRow["prod_pic"] ?>" alt="">
+                        </a>
+                        <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
+                    </form>
                 </div>
-                <p class="latest-name"><?php echo $newproductsRows["prod_name"]?> </p>
-                <p class="latest-pri"><?php echo $newproductsRows["prod_price"]?> </p>
+                <p class="latest-name"><?php echo $newproductsRow["prod_name"]?></p>
+                <p class="latest-pri">NT<?php echo $newproductsRow["prod_price"]?></p>
             </div>
-            <div class="item latest-item col-6 col-lg-10">
+        
+            
+        <?php
+         }
+        ?>
+
+
+
+
+            <!-- <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
                     <img src="img/shop/inlove/inlove-ball01.png" alt="">
                     <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
@@ -129,7 +175,7 @@ require_once("nav.php");
                 </div>
                 <p class="latest-name">芋頭芒果</p>
                 <p class="latest-pri">NT280</p>
-            </div>
+            </div> -->
 
         </div>
     </section>
@@ -174,7 +220,7 @@ require_once("nav.php");
                         <option>熱戀</option>
                         <option>分手</option>
                     </select>
-                    <select v-model="status" id="select-pull">
+                    <select v-model="status" id="a-select-pull">
                         <option>冰棒</option>
                         <option>霜淇淋</option>
                         <option>冰淇淋</option>
@@ -195,17 +241,7 @@ require_once("nav.php");
                     //     $qty = 0;
                     // }
                 ?>
-                        <div class="general-item col-6 col-lg-3 <?php
-                        if($prodRow["stage_no"] == 1){echo "single";
-                        
-                        }elseif($prodRow["stage_no"] == 2){echo "first-love";
-
-                        }elseif($prodRow["stage_no"] == 3){echo "fall-in-love";
-
-                        }else{echo "break-up";
-
-                        }
-                        ?>">
+                        <div class="general-item col-6 col-lg-3 <?php echo stageNo($prodRow["stage_no"]); ?> <?php echo typeno($prodRow["type_no"]); ?>">
                             <div class="ice-type col-11">
                                 <img src="database/img_type/<?php
                                 if($prodRow["type_no"]==1){echo "popsicle.png";
@@ -237,9 +273,9 @@ require_once("nav.php");
                                 </div>
                                 <div class="item-pri">
                                     <div class="btn-numbox col-lg-12">
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
+                                            <input type='button' value='-' class='qtyminus' />
                                             <input type='number' min="1"  name='quantity' value='1' class='qty' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input type='button' value='+' class='qtyplus' />
                                             <!-- <input type="hidden" name="prod_no" value="<?php //echo $prodRow["prod_no"]?>">
                                             <input type="hidden" name="prod_name" value="<?php //echo $prodRow["prod_name"]?>">
                                             <input type="hidden" name="prod_price" value="<?php //echo $prodRow["prod_price"]?>">	 -->

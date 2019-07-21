@@ -159,7 +159,7 @@ session_start();
         </header>
 
         <section class="confirm-column container ">
-            <h2 class="confirm-title text-center">購物訂單確認</h2>
+            <h2 class="confirm-title text-center">訂單確認</h2>
             <div class="list-wrap des-flex ju-c ai-c dis-mobile-n p-10">
                 <div class="col-lg-3 text-center"><span>商品</span></div>
                 <div class="col-lg-3 text-center"><span>品名</span></div>
@@ -169,7 +169,9 @@ session_start();
             </div>
         </section>
         <?php
-       foreach($_SESSION['cart'] as $i=>$value){
+        $total = 0;
+        foreach($_SESSION['cart'] as $i=>$value){
+        $total += $_SESSION["cart"][$i]["prod_price"]*$_SESSION["cart"][$i]["qty"];
         ?>
        
        
@@ -177,13 +179,13 @@ session_start();
             <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>"></div></div>
             <div class="row-name col-lg-3 col-6  ">
               <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
-              <div>商品:
+              <div>品名:
                   <span><?php echo $_SESSION["cart"][$i]["prod_name"] ?></span>
               </div>  
               <div>數量:
                   <span><?php echo $_SESSION["cart"][$i]["qty"] ?></span>
                 </div>  
-                <div>價格
+                <div>單價:
                   <span><?php echo $_SESSION["cart"][$i]["prod_price"]?></span>
                 </div>  
             </div>
@@ -203,7 +205,7 @@ session_start();
         ?>
          
         <div class="confirm-total container p-10 ">
-            <p><span>總計:450元</span></p>
+            <p><span>總計:NT<?php echo $total ?></span></p>
         </div>
    
         <section class="pay-transport container p-20 ">
@@ -228,10 +230,10 @@ session_start();
               </div>
 
               <div class="p-10 tab-inner" id="recipient">
-                  姓名:<input type="text" id="name" name="name">               
-                  電話:<input type="text" id="phone" name="phone">
-                  地址:<input type="text" id="add" name="add">
-                  信箱:<input type="text" id="email" name="email">
+                  姓名:<input type="text" id="name" name="name"><br>               
+                  電話:<input type="text" id="phone" name="phone"><br>  
+                  地址:<input type="text" id="add" name="add"><br>  
+                  信箱:<input type="text" id="email" name="email"><br>  
                   <div class="p-10">
                     <input type="checkbox" name="same-member" id="tick1">
                     <label for="tick1"><span></span></label>
@@ -245,8 +247,9 @@ session_start();
 
         <div class="confirm-btn container ju-c;">
             <a href="cart-show.php"> 
-              <button type="submit" class="col-lg-3n"><div class="Previous">
-                <span class="Previous-in">上一步</span></button>
+              <div class="Previous">
+                <span class="Previous-in">上一步</span>
+              </div>
             </a>
             <a class="confirm-a">
                <div class="confirm-shop">

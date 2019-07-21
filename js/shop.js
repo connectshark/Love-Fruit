@@ -140,7 +140,7 @@ function isCartEmpty(){
 }
 // console.log(cart);
 
-//----------------數量改變時的事件處理器
+//----------------按下加入購物車的事件處理器
 function changeCart(e){
 	let xhr = new XMLHttpRequest();
 	
@@ -219,9 +219,9 @@ function minnum(){
 		   min[i].addEventListener("click",minnum);
 	  }
   //.............顯示購物車
-  document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
-  	showCart();
-  };
+//   document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
+//   	showCart();
+//   };
 	// 右上角購物車開關
 	$("#mini-cart").css("display" , "none");
 	$(".shopping-cart-icon").click(function(){
@@ -284,6 +284,27 @@ $(document).ready(function() {
 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
 		$('#filter-pull').val('分手');
 	});
+	$('#id-popscial').click(function(){
+		$('.general-item').css('display','none');
+		$('.popscial').css('display','block');
+		$(this).css('backgroundColor','#79a6cc')
+		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+		$('#filter-pull').val('冰棒');
+	});
+	$('#id-ice-cream').click(function(){
+		$('.general-item').css('display','none');
+		$('.ball').css('display','block');
+		$(this).css('backgroundColor','#79a6cc')
+		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+		$('#filter-pull').val('冰淇淋');
+	});
+	$('#id-icecream-ball').click(function(){
+		$('.general-item').css('display','none');
+		$('.icecream').css('display','block');
+		$(this).css('backgroundColor','#79a6cc')
+		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+		$('#filter-pull').val('霜淇淋');
+	});
 
 
 	$('#select-pull').change(function(){
@@ -297,46 +318,78 @@ $(document).ready(function() {
 			case '單身':
 				$('.general-item').css('display','none');
 				$('.single').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(1).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(1).css('backgroundColor', '#fc7389');
 				break;
 			case '初戀':
 				$('.general-item').css('display','none');
 				$('.first-love').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(2).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
 				break;
 			case '熱戀':
 				$('.general-item').css('display','none');
 				$('.fall-in-love').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(3).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
 				break;
 			case '分手':
 				$('.general-item').css('display','none');
 				$('.break-up').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(4).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
 				break;
+
+			case '冰棒':
+				$('.general-item').css('display','none');
+				$('.popscial').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+				break;
+			case '霜淇淋':
+				$('.general-item').css('display','none');
+				$('.icecream').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+				break;
+			case '冰淇淋':
+				$('.general-item').css('display','none');
+				$('.ball').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+				break;	
 		}
 	});
+
+
+	
+	$('#a-select-pull').change(function(){
+		amap = $('#a-select-pull').val();
+		switch (amap) {
+			case '冰棒':
+				$('.general-item').css('display','none');
+				$('.popscial').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+				break;
+			case '霜淇淋':
+				$('.general-item').css('display','none');
+				$('.icecream').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+				break;
+			case '冰淇淋':
+				$('.general-item').css('display','none');
+				$('.ball').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+				break;	
+		}
+	});
+
+
+
+
 });
 
 
-//點擊愛心
-// var love = document.getElementsByClassName("latest-collection-love");
-// for(var i=0 ;i< love.length; i++){
-//    love[i].addEventListener("click",change)
-// }                                                  
-// var gray = true;
-// function change(){
-// 	if(gray) {
-// 		$(this).attr("src","img/shop/collection-red.png");
-// 		gray = false;
-// 		console.log(gray);
-// 		}else{
-// 		$(this).attr("src","img/shop/collection-gray.png");
-// 		gray = true;
-// 	}
-	
-// }

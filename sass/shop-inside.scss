@@ -166,8 +166,11 @@
         border-bottom:1px solid gray;
         padding-bottom: 10px;
     }
-    .detailed-star,.detailed-text,.pri-btn,{
+    .detailed-star,.detailed-text,.pri-btn{
          padding:10px 0px 0px 0px; 
+    }
+    .detailed-star{
+        font-size: 28px;
     }
     .number-name{
         font-size: 18px;

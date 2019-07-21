@@ -54,7 +54,7 @@ var cart = {};
 		xhr.send(null);
 	};
 	// var trash = document.getElementsByClassName("fa-trash");
-	var trash = document.getElementsByClassName("trash");
+	var trash = document.getElementsByClassName("trash-img");
 	// console.log(trash.length);
 	for(i=0;i<trash.length;i++){
 		trash[i].addEventListener("click",getTrash)

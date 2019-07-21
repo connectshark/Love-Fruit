@@ -109,7 +109,7 @@ session_start();
     </div>
   </div>
 <div id="show-wrap">
-  <div id="empty-text"></div>
+  <!-- <div id="empty-text"></div> -->
   <?php
   $total = 0;
   foreach($_SESSION['cart'] as $i=>$value){
@@ -119,12 +119,12 @@ session_start();
   <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
       <input type="hidden" value="<?php echo $i ?>">
       <div class="col-lg-2 col-6 item-pic">
-        <div class="col-2 m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
+        <div class="col-3 m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
       </div>
       
       <div class="col-lg-2 col-6 mobile-price">
-        <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
-        <p class="dis-lg-n">NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></p>
+        <p>品名:<?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
+        <p class="dis-lg-n">單價:NT<?php echo $_SESSION["cart"][$i]["prod_price"] ?></p>
       </div>
       <div class="col-lg-2 col-6 dis-mobile-n unit-price">NT <span><?php echo $_SESSION["cart"][$i]["prod_price"] ?></span> </div>
       <div class="col-lg-2 col-6 cartlist-btn">
@@ -140,8 +140,8 @@ session_start();
         </form>
       </div>
       <div class="col-lg-2 col-6 small-total">NT<span class="small-total-span"><?php echo ($_SESSION["cart"][$i]["prod_price"])*($_SESSION["cart"][$i]["qty"])?></span></div>
-      <form action="delete-cart.php">
-        <div class="col-lg-2 delete"><span class=" trash">刪除</span></div>
+      <form action=" delete-cart.php " class="col-lg-2 delete">
+        <div class="col-lg-2 col-1 "><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
       </form>
   </div>
 <?php
@@ -149,16 +149,14 @@ session_start();
  ?>
 </div>
 <div class="total-pri container p-10 ">
-  <p>總計:<span id="big-total"><?php echo $total ?></span></p>
+  <p>總計:NT<span id="big-total"><?php echo $total ?></span></p>
 </div>
  <div class="cart-btn container des-flex ju-c">
     <a href="shop.php">
       <div class="continue-shop"><span class="continue-shop-in">繼續購物</span></div>
     </a>
     <a href="cart-order.php">
-        <button type="submit" class="button">
-          <div class="go-buy"><span class="go-buy-in">進行結帳</span>
-        </button>
+          <div class="go-buy"><span class="go-buy-in">進行結帳</span></div>
       </a>
 </div>
 
@@ -167,7 +165,7 @@ session_start();
 
 
 
-  <section class="maybe-like container ">
+  <!-- <section class="maybe-like container ">
     <h2 class="maybe-title">推薦商品</h2>
     <div class="maybe-wrap des-flex rela">
       <img src="img/shop/left-arrow.png" alt="" class="left-arrow">
@@ -198,7 +196,7 @@ session_start();
         <p class="new-pic">NT280$</p>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <footer>

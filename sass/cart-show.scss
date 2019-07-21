@@ -182,33 +182,31 @@
         padding-top:10px; 
     }
     .cart-btn{
+        display: flex;
         padding-top:20px;
         a{
             display: block;
+            margin: 0px 5px;
         }
     }
     .cart-list-item{
         background-color: white;
         border-radius: 20px;
-
+        display: flex;
+        margin-bottom: 10px;
+        width:90%;
     }
     form{
         padding: 10px;
     }
-    .fa-trash{
-        position: absolute;
-        position: absolute;
-        right:20px;
-        top:5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+   
     .small-total{
         padding-top:18px;
         height: 38px; 
     }
     .total-pri{
         text-align: right;
+        padding-right: 30px;
     }
     .continue-shop{
         margin: auto;
@@ -219,6 +217,14 @@
     .maybe-title{
         text-align: center;
         padding-bottom: 30px;
+    }
+    .delete{
+        position: absolute;
+        top:0px;
+        right: 10px;
+    }
+    .trash-img{
+        width: 100%;
     }
     .news-item{
         background-color: #FFF4DE;
@@ -354,6 +360,24 @@
             justify-content: space-around;
             align-items: center;
         }
+        .delete{
+            display: block;
+            position: static;
+            top:0px;
+            right: 10px;
+            margin:auto;
+            height: 50px;
+            line-height: 74px;
+            border-left:1px solid black; 
+            div{
+            margin: auto;
+            .trash-img{
+                        width: 100%;
+                    }       
+            }
+            
+        }
+       
         form{
             padding: 0px;
         }
@@ -365,22 +389,19 @@
              }
         }
         .cart-list-item{
-            border-radius:0px;
+            width: 100%;
+            background-color: white;
+            border-radius: 0px;
+            display: flex;
+            flex-wrap: nowrap;
+            position: relative;
+            flex-flow: space-around;
+            margin-bottom:  0px;
+    
         }
         .cartlist-btn{
             padding-top:0px;
             line-height: 50px;
-        }
-        .fa-trash{
-            font-size: 32px;
-            cursor: pointer;
-            position: static;
-            line-height: 50px;
-            // position: absolute;
-            // position: absolute;
-            // right:20px;
-            // top:5px;
-            // font-size: 16px;
         }
         .item-pic{
             border-bottom: 0px ;
@@ -394,18 +415,23 @@
             border-radius:0px;
         }
         .total-pri{
+            font-size: 20px;
             background-color: white;
             text-align: right;
             span{
                 font-size: 20px;
+                margin-right: 20px;
             }
            
         }
         .cart-btn{
             background-color: white; 
              padding: 10px 0px 30px 0px;
+             margin-bottom: 100px;
+             border-bottom-left-radius:20px;
+             border-bottom-right-radius:20px;
              a{
-                  margin: auto;
+                //   margin: auto;
              }
             
             
@@ -417,7 +443,7 @@
         .button{
             margin: auto;
         }
-        @include btn(continue-shop,100px,continue-shop-in,16px, 繼續購物);
+        // @include btn(continue-shop,100px,continue-shop-in,16px, 繼續購物);
         .continue-shop-in{
             background-color: white;
         }
@@ -458,7 +484,7 @@
 
     //     }
     //    }
-       @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
+    //    @include btn(go-buy,100px,go-buy-in,16px, 進行結帳);
         .maybe-like{
             padding:40px 0px; 
         }

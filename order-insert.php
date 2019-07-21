@@ -2,6 +2,10 @@
 ob_start();
 session_start();
 $prod_no = $_SESSION["prod_no"];
+$total = 0;
+foreach($_SESSION['cart'] as $i=>$value){
+$total += $_SESSION["cart"][$i]["prod_price"]*$_SESSION["cart"][$i]["qty"];}
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +25,7 @@ try {
                              values(NULL ,   :mem_no,:order_total, NOW(),           :order_cancle_date,:order_state,:order_name,:order_add,:order_phone,:order_pay,:order_ship)";  
     $prod_order = $pdo->prepare($sql);
     $prod_order->bindValue(":mem_no","001");
-    $prod_order->bindValue(":order_total",496);
+    $prod_order->bindValue(":order_total",$total);
     $prod_order->bindValue(":order_cancle_date","2019/10/28");
     $prod_order->bindValue(":order_state","1");
     $prod_order->bindValue(":order_name", $_REQUEST["name"]);
