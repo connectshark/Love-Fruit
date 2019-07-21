@@ -221,6 +221,7 @@ body{
             flex-flow: row wrap;
             justify-content: space-around;
             .item{
+                display: inline-block;
                 position: relative;
                 margin: 40px 20px;
                 padding: 20px 20px 10px;
@@ -279,12 +280,35 @@ body{
                         height: 23%;
                     }
                 }
+
+                figure{
+					width: 100%;
+					padding-bottom: 100%;
+					position: relative;
+					img{
+						max-width: 100%;
+						max-height: 100%;
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						top: 0;
+						margin: auto;
+					}
+                }
+                form {
+                    display: none;
+                }
                 .img{
                     margin: auto;
                     width: 250px;
                     height: 250px;
-                    background-color: #ffc;
-                    color:#555 ;
+                    // background-color: #ffc;
+                    // color:#555 ;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
                 &:hover{
                     background-color: #cdb3e5;

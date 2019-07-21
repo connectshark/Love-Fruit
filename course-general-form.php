@@ -1,6 +1,4 @@
-
 <html lang="UTF-8">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="keywords" content="菓籽戀冰所" />
@@ -13,14 +11,16 @@
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/courseP.css">
+  <link rel="stylesheet" href="css/temporary-cart.css">
+
 </head>
 
 <body>
 <?php
     require_once("nav.php");
-    ?>
+?>
   
-    <section class="general-form-wrap">
+<section class="general-form-wrap">
 
     <div class="wrapper">
       <div class="title">
@@ -28,19 +28,20 @@
         <h3 class="general-form-title">一般課程預約</h3>
       </div>
 
-<form action="course-reservation.php" method="post" enctype="multipart/form-data">
+    <form action="course-reservation.php" method="post" enctype="multipart/form-data">
         <div class='form-info'>
           <img src="img/btn/ICE.png" alt="title-img">
           <p>選擇課程：</p>
-          <label class="check">
+          <div class="check">
             <input type="radio" name="courseName" id="course1" value="戀愛小馬夢幻冰品">
             <label for="course1">戀愛小馬夢幻冰品</label>
             <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
             <input type="radio" name="courseName" id="course2" value="情人繽紛彩繪冰棒">
-            <label for="course2">情人繽紛彩繪冰棒</label>
+            <label  for="course2">情人繽紛彩繪冰棒</label>
             <span class="check-pic"><img src="img/course/checked.png" alt=""></span>
-          </label>
+          </div>
         </div>
+        
         <div class='form-info'>
           <img src="img/btn/ICE.png" alt="title-img">
           <p>選擇日期：</p>
@@ -104,7 +105,7 @@
         </div>
 
         <div class="form-btn">
-          <button type="submit" class="form-ice-btn-out" href="javascript:;">
+          <button type="submit" class="form-ice-btn-out">
             <span class="form-ice-btn-in">
               <img src="img/btn/ICE.png" alt="">
               確認預約
@@ -128,6 +129,8 @@
   <script src="js/nav.js"></script>
   <script src="js/course.js"></script>
   <script src="js/calendar.js"></script>
+  <script src="js/shop.js"></script>
+    
 
 </body>
 

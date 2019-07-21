@@ -336,6 +336,7 @@ body {
 }
 
 .news-wrap .wrapper .items-group .item {
+  display: inline-block;
   position: relative;
   margin: 40px 20px;
   padding: 20px 20px 10px;
@@ -408,12 +409,36 @@ body {
   height: 23%;
 }
 
+.news-wrap .wrapper .items-group .item figure {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.news-wrap .wrapper .items-group .item figure img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.news-wrap .wrapper .items-group .item form {
+  display: none;
+}
+
 .news-wrap .wrapper .items-group .item .img {
   margin: auto;
   width: 250px;
   height: 250px;
-  background-color: #ffc;
-  color: #555;
+}
+
+.news-wrap .wrapper .items-group .item .img img {
+  width: 100%;
+  height: 100%;
 }
 
 .news-wrap .wrapper .items-group .item:hover {

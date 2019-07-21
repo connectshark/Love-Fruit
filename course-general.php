@@ -1,13 +1,8 @@
 <?php 
 $errMsg="";
 try {
-	$dsn="mysql:host=localhost;port=3306;dbname=dd101g3;charset=utf8";
-	$user = "root";
-	$psw = "";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-    $pdo = new PDO( $dsn , $user , $psw, $options );
+	require_once("mac-require.php");
 	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
-    
     $courseMsg = $pdo->prepare($sql);
 	$courseMsg -> execute();
 } catch (PDOException $e) {
@@ -33,7 +28,9 @@ try {
     <link rel="stylesheet" href="css/courseP.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-  </head>   
+    <link rel="stylesheet" href="css/temporary-cart.css">
+ 
+</head>   
   <body>
   <?php
     require_once("nav.php");
@@ -147,8 +144,8 @@ try {
         </div>
       
     <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" value="0" name="courseClassNo">
-    <input type="hidden"   name="msgTitle">
+        <input type="hidden" value="0" name="courseClassNo">
+        <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
                 <i class="fas fa-user-circle"></i>
                 <p>會員</p>
@@ -198,6 +195,7 @@ try {
                 </button >
             </div>
         </div>
+
     </section>
 
 
@@ -205,7 +203,10 @@ try {
     <footer>
       <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
     </footer>
-
+  
     <script src="js/nav.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/shop.js"></script>
+    
   </body>
 </html>
