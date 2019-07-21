@@ -1,5 +1,68 @@
 
 let cart = {};
+
+
+//點擊愛心
+
+var click_love = document.getElementsByClassName("latest-collection-love");
+for(var i=0 ;i<click_love.length; i++){
+	click_love[i].addEventListener("click",function(e){
+
+		var imgSrc = this.getAttribute( "src" ); 
+		// console.log(imgSrc);
+			// 加入購物車
+		if(imgSrc === "img/shop/collection-gray.png"){
+			this.setAttribute( "src" ,"img/shop/collection-red.png" )
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState ==4 ){
+				  if(xhr.status ==200){
+					//   alert(xhr.responseText);
+				  }else{
+					// alert(xhr.status);
+				  }
+				}
+			  }
+			let url = "add-favorite.php";
+			xhr.open("post" , url ,false);
+			console.log(this);
+			console.log(this.parentNode);
+			let myForm = new FormData(this.parentNode);
+			xhr.send(myForm);
+			
+		}else{
+			// 從購物車刪除
+			this.setAttribute( "src" ,"img/shop/collection-gray.png" )
+			let xhr = new XMLHttpRequest();
+
+
+
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState ==4 ){
+				  if(xhr.status ==200){
+					//   alert(xhr.responseText);
+				  }else{
+					// alert(xhr.status);
+				  }
+				}
+			  }
+
+
+			let url = "delete-favorite.php";
+			xhr.open("post" , url ,false);
+			let myForm = new FormData(this.parentNode);
+			xhr.send(myForm);
+	}	
+
+
+
+	})
+
+	};
+
+
+
+
 //..............................顯示購物車	
 function showCart(){
 	getCart();
@@ -14,20 +77,19 @@ function showCart(){
 		html += `
 			<div class="mini-item-wrap">
 				<span style='display:none'>${prod_no}</span>
-				<div class="mini-img col-lg-1"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
-				<span class="mini-name col-lg-1">
+				<div class="mini-img col-3 col-lg-2"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
+				<span class="mini-name col-3 col-lg-3">
 					<a href="shop-inside.php?prod_no=${prod_no}">
 					${cart[prod_no].prod_name}
 					</a>	
 				</span>
-				<span class="mini-qty col-lg-1">${cart[prod_no].qty}x</span>
-				<span class="mini-pri col-lg-1">NT${cart[prod_no].prod_price}</span>
-				<div class="mini-trash col-lg-1"><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
-
-				
+				<span class="mini-qty col-2 col-lg-3">${cart[prod_no].qty}x</span>
+				<span class="mini-pri col-2 col-lg-3">NT${cart[prod_no].prod_price}</span>
+				<div class="mini-trash col-2 col-lg-2"><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
 			</div>`;	
 	}
 	if( !isCartEmpty()){
+
 		html += `<div class="gogo"><a href="cart-show.php">結帳去</a></div>`;
 	}
 	
@@ -78,7 +140,7 @@ function isCartEmpty(){
 }
 // console.log(cart);
 
-//----------------數量改變時的事件處理器
+//----------------按下加入購物車的事件處理器
 function changeCart(e){
 	let xhr = new XMLHttpRequest();
 	
@@ -101,9 +163,9 @@ function getCart(){
   
   xhr.onload = function(){
   	if( xhr.status == 200){
-			console.log(xhr.responseText);
+			// console.log(xhr.responseText);
 		  cart = JSON.parse(xhr.responseText);
-		  console.log(cart);
+		//   console.log(cart);
 		
   	}else{
   		alert(xhr.status);
@@ -116,7 +178,6 @@ function getCart(){
 }
 
 
-
 window.addEventListener("load", function(){
   //.............取得購物車資料
   getCart();
@@ -127,19 +188,15 @@ for(i=0;i<btn.length;i++){
 }
 document.getElementsByClassName("shop-buy-btn").onclick = function(){
 	changeCart(e);}
-//顯示加減數量
-  var plus = document.getElementsByClassName("qtyplus");
-  var min = document.getElementsByClassName("qtyminus");
-//   var btn = document.getElementsByClassName("shop-buy-btn");
+
+ 
+
 function plusnum () {
 	var obj = this.parentNode.querySelectorAll(".qty")[0];
 			var val = parseInt(obj.value);
 			val++;
 			obj.value = val;
 			this.parentNode.parentNode.parentNode.querySelectorAll(".shop-btn")[0].querySelectorAll(".add-cart")[0].querySelectorAll(".qty")[0].value = val;
-			
-
-
 }
 function minnum(){
 	var obj = this.parentNode.querySelectorAll(".qty")[0];
@@ -151,34 +208,40 @@ function minnum(){
 	}
 	// console.log(obj.value);
 }
-	 
+// 註冊加減
+ var plus = document.getElementsByClassName("qtyplus");
+  var min = document.getElementsByClassName("qtyminus");	 
 	  for(i=0;i<plus.length;i++){
-		//     0123 4
-		// plus[i].addEventListener("click",function(){
-		//     console.log(i);
-		//     console.log(plus[i]);
-		//     qty[i].value ++;;
-		// })
 		plus[i].addEventListener("click", plusnum);
 	  }
+	  this.console.log()
 	  for(i=0;i<plus.length;i++){
 		   min[i].addEventListener("click",minnum);
-		 
-		 
 	  }
   //.............顯示購物車
-  document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
-  	showCart();
-  };
-// 右上角購物車開關
-$("#mini-cart").css("display" , "none");
-$(".shopping-cart-icon").click(function(){
-	$("#mini-cart").show();
-	showCart();
-})
-$(".cart-close").click(function(){
-	$("#mini-cart").css("display","none");
-})
+//   document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
+//   	showCart();
+//   };
+	// 右上角購物車開關
+	$("#mini-cart").css("display" , "none");
+	$(".shopping-cart-icon").click(function(){
+		$("#mini-cart").show();
+		showCart();
+	})
+	$(".cart-close").click(function(){
+		$("#mini-cart").css("display","none");
+	})
+	// 手機版購物車
+	$("#mini-cart").css("display" , "none");
+	$("#shoppingCartIconP").click(function(){
+		$("#mini-cart").show();
+		showCart();
+	})
+	$(".cart-close").click(function(){
+		$("#mini-cart").css("display","none");
+	})
+
+
 
 
 
@@ -221,6 +284,29 @@ $(document).ready(function() {
 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
 		$('#filter-pull').val('分手');
 	});
+	$('#id-popscial').click(function(){
+		$('.general-item').css('display','none');
+		$('.popscial').css('display','block');
+		$(this).css('backgroundColor','#79a6cc')
+		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+		$('#filter-pull').val('冰棒');
+	});
+	$('#id-ice-cream').click(function(){
+		$('.general-item').css('display','none');
+		$('.ball').css('display','block');
+		$(this).css('backgroundColor','#79a6cc')
+		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+		$('#filter-pull').val('冰淇淋');
+	});
+	$('#id-icecream-ball').click(function(){
+		$('.general-item').css('display','none');
+		$('.icecream').css('display','block');
+		$(this).css('backgroundColor','#79a6cc')
+		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+		$('#filter-pull').val('霜淇淋');
+	});
+
+
 	$('#select-pull').change(function(){
 		map = $('#select-pull').val();
 		switch (map) {
@@ -232,48 +318,78 @@ $(document).ready(function() {
 			case '單身':
 				$('.general-item').css('display','none');
 				$('.single').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(1).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(1).css('backgroundColor', '#fc7389');
 				break;
 			case '初戀':
 				$('.general-item').css('display','none');
 				$('.first-love').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(2).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
 				break;
 			case '熱戀':
 				$('.general-item').css('display','none');
 				$('.fall-in-love').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(3).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
 				break;
 			case '分手':
 				$('.general-item').css('display','none');
 				$('.break-up').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(4).css('backgroundColor', '#fc7389');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
 				break;
+
+			case '冰棒':
+				$('.general-item').css('display','none');
+				$('.popscial').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+				break;
+			case '霜淇淋':
+				$('.general-item').css('display','none');
+				$('.icecream').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+				break;
+			case '冰淇淋':
+				$('.general-item').css('display','none');
+				$('.ball').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+				break;	
 		}
 	});
-});
 
-//點擊愛心
-var love = document.getElementsByClassName("latest-collection-love");
-for(var i=0 ;i< love.length; i++){
-   love[i].addEventListener("click",change)
-}                                                  
-var gray = true;
-function change(){
-	if(gray) {
-		$(this).attr("src","img/shop/collection-red.png");
-		gray = false;
-		console.log(gray);
-		}else{
-		$(this).attr("src","img/shop/collection-gray.png");
-		gray = true;
-	}
+
 	
-}
+	$('#a-select-pull').change(function(){
+		amap = $('#a-select-pull').val();
+		switch (amap) {
+			case '冰棒':
+				$('.general-item').css('display','none');
+				$('.popscial').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+				break;
+			case '霜淇淋':
+				$('.general-item').css('display','none');
+				$('.icecream').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+				break;
+			case '冰淇淋':
+				$('.general-item').css('display','none');
+				$('.ball').css('display','block');
+				// $('.filter').css('backgroundColor', '#a3a3a3');
+				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+				break;	
+		}
+	});
 
+
+
+
+});
 
 

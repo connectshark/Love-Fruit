@@ -6,8 +6,9 @@
     
 }
 
-
 .page-shop{
+    background: #F8C3CD url(../img/shop/backgroundpic.png);
+    font-family: "GenJyuuGothic-B";
     .roof{
         margin: auto;
         img{
@@ -53,14 +54,6 @@
         width: 100%;
         max-width: 1200px;
         margin: auto;
-    }
-    body{
-        background: #F8C3CD url(../img/shop/backgroundpic.png);
-        font-family: "GenJyuuGothic-B";
-        // a{
-        //     display: block;
-        //     color: black;
-        // }
     }
     .product-img{
         width: 50%;
