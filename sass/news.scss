@@ -33,17 +33,20 @@ body{
             width: 100%;
             max-width: 1200px;
             text-align: center;
-            padding-top: 23% ;
+            padding-top: 15% ;
+            padding-bottom: 25%;
             margin: auto;
             @include rwd(medium){
-                padding: 130px 0 ;  
+                padding: 10% 0;  
             }
             .img-bg{
                 position: relative;  
+                
                 img{
                 width: 80%;
                 @include rwd(medium){
                     width: 50%;
+                    padding-bottom: 0;
                     }
                 }
                 span{
@@ -64,14 +67,15 @@ body{
         }
     }
     .air-ball{
+        display: none;
         max-width: 1200px;
         height: 270px;
         margin: auto;
-        display: flex;
         justify-content: space-between;
         padding:0 3% 5%;
         @include rwd (medium){
             padding-bottom: 5%;
+            display: flex;
            }
         
         img{

@@ -48,7 +48,7 @@ $errMsg="";
 
   <section class="news-inner-wrap">
 
-    <section class="banner">
+    <section class="banner bubble-box">
       <div class="title">
         <div class="img-bg">
           <img src="img/ribbon.png" alt="標題底圖">
@@ -58,12 +58,12 @@ $errMsg="";
       <div class="air-ball">
         <img class="apple-ball"src="img/news/apple-ball.png" alt="蘋果熱氣球">
         <img class="apple-ball"src="img/news/apple-ball.png" alt="頻果熱氣球">
-        </div>
+      </div>
     </section>
 
     <section class="inner-wrapper ">
   
-      <div class="title-box ">
+      <div class="title-box">
         <div class="before">
           <div class="img"><img src="img/btn/ICE.png" alt=""></div>
           <p class="text-box">
