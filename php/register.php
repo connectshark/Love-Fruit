@@ -11,6 +11,8 @@ try {
         $member->bindValue(":email", $_REQUEST["email"]);
         $member->bindValue(":mem_pic", $_REQUEST["mem_pic"]);
         $member->execute();
+    } else {
+        echo "error";
     }
 } catch (PDOException $e) {
     echo "error";
