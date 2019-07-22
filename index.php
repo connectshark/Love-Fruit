@@ -1,3 +1,59 @@
+<?php
+session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
+?>
+<?php
+$errMsg = "";
+try {
+  require_once("connect-dd101g3.php");
+  $sql = "SELECT m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.cto_no = cus.cto_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
+  $confessions = $pdo->prepare($sql);
+  $confessions->execute();
+} catch (PDOException $e) {
+  $errMsg .= "錯誤訊息:" . $e->getMessage() . "<br>";
+  $errMsg .= "行數:" . $e->getLine() . "<br>";
+  echo $errMsg;
+}
+
+function stageNo($stage)
+{
+  switch ($stage) {
+    case '1':
+      return 'single';
+      break;
+    case '2':
+      return 'true-love';
+      break;
+    case '3':
+      return 'hot-love';
+      break;
+    case '4':
+      return 'break-up';
+      break;
+  }
+}
+function stageName($stage)
+{
+  switch ($stage) {
+    case '1':
+      return '單身';
+      break;
+    case '2':
+      return '初戀';
+      break;
+    case '3':
+      return '熱戀';
+      break;
+    case '4':
+      return '分手';
+      break;
+  }
+}
+?>
+
+
 <html lang="UTF-8">
 
 <head>
@@ -72,7 +128,7 @@
           </span>
         </h3>
       </div>
-      <a class="qa-button-custom" href="qa.html">
+      <a class="qa-button-custom" href="qa.php">
         <div class="qa-button-style">
           <div class="qa-button-style-botton">
             <div class="qa-inner-style">
@@ -85,7 +141,7 @@
           </div>
         </div>
       </a>
-      <a class="qa-button-custom" href="qa.html">
+      <a class="qa-button-custom" href="qa.php">
         <div class="qa-button-style">
           <div class="qa-button-style-botton">
             <div class="qa-inner-style">
@@ -98,7 +154,7 @@
           </div>
         </div>
       </a>
-      <a class="qa-button-custom" href="qa.html">
+      <a class="qa-button-custom" href="qa.php">
         <div class="qa-button-style">
           <div class="qa-button-style-botton">
             <div class="qa-inner-style">
@@ -139,10 +195,6 @@
             </div>
             <span>一般模型</span>
             <div class="panel-button-center-triangle-group">
-              <div class="panel-button-center-triangle"></div>
-              <div class="panel-button-center-triangle"></div>
-              <div class="panel-button-center-triangle"></div>
-              <div class="panel-button-center-triangle"></div>
             </div>
           </div>
         </div>
@@ -174,7 +226,7 @@
           </div>
         </div>
       </div>
-      <a class="c-p-button-custom" href="custom.html">
+      <a class="c-p-button-custom" href="custom.php">
         <div class="c-p-button-style">
           <div class="c-p-button-style-botton">
             <div class="inner-style">

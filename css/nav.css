@@ -836,7 +836,7 @@
     font-family: "GenJyuuGothic-B";
   }
   .login-interface {
-    background-image: url(/img/navBar/login-interface/pop.png);
+    background-image: url(../img/navBar/login-interface/pop.png);
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -852,7 +852,7 @@
     padding-bottom: 22%;
   }
   .retrieve-password {
-    background-image: url(/img/navBar/login-interface/pop.png);
+    background-image: url(../img/navBar/login-interface/pop.png);
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -1178,7 +1178,7 @@
     color: #6a3e26;
   }
   .login-interface {
-    background-image: url(/img/navBar/login-interface/pop.png);
+    background-image: url(../img/navBar/login-interface/pop.png);
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -1195,7 +1195,7 @@
   }
 
   .retrieve-password {
-    background-image: url(/img/navBar/login-interface/pop.png);
+    background-image: url(../img/navBar/login-interface/pop.png);
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
