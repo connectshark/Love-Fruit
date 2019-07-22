@@ -135,7 +135,7 @@ try{
                                 <div class="btn-numbox dis-mobile-n">
                                     <form id='myform' method='POST' action='#'>
                                         <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='qty' value='0' class='qty' />
+                                        <input type='text' name='qty' value='1' class='qty' />
                                         <input type='button' value='+' class='qtyplus' field='quantity' />
                                     </form>
                                 </div>
