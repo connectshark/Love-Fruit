@@ -174,7 +174,7 @@ try {
                 </div>
                 <div class="message-con col-md-10 col-9">
                     <div class="mem-ifo">
-                        <p><?php echo $row->mem_name; ?></p>
+                        <p class=mem-name><?php echo $row->mem_name; ?></p>
                         <p class="time"><?php echo $row->msg_date; ?></p>
                     </div>
                     <div class="mem-con">
@@ -187,13 +187,13 @@ try {
         <?php } ?>    
       
 
-            <div class="more-btn col-md-12"  style="background-color:none;color:none;border:none;">
+            <!-- <div class="more-btn col-md-12"  style="background-color:none;color:none;border:none;">
                 <button  class="more-btn-out">
                     <span class="more-btn-in">
                         查看更多
                     </span>
                 </button >
-            </div>
+            </div> -->
         </div>
 
     </section>
@@ -207,6 +207,6 @@ try {
     <script src="js/nav.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/shop.js"></script>
-    
+    <script src="js/login.js"></script>
   </body>
 </html>

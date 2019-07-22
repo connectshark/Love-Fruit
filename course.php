@@ -50,5 +50,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/shop.js"></script>
      <script src="js/nav.js"></script>
+     <script src="js/login.js"></script>
   </body>
 </html>

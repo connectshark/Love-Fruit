@@ -1,15 +1,16 @@
 <?php 
+session_start();
+$_SESSION["mem_no"]=1;
 try {
   require_once("mac-require.php");
   //抓開團留言
 	$sql = "SELECT m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content FROM course_msg cm JOIN member m ON cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
-  $memNo = 1;//之後改為session
+ 
   $courseMsg  = $pdo->prepare($sql);
-  $courseMsg -> bindValue(':memNo',$memNo);
+  $courseMsg -> bindValue(':mem_no',$_SESSION["mem_no"]);
   $courseMsg -> execute();
   //.............
   $sql2 = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 and cm.msg_no = :msg_no ORDER BY reply_date desc";      
-  //???   $memNo = 1;//之後改為session
   $replayMsg  = $pdo->prepare($sql2);
   
 } catch (PDOException $e) {
@@ -114,10 +115,11 @@ try {
     </div>
 
   <form action="course-msg.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" value="1" name="courseClassNo">
+      <input type="hidden" value="1" name="courseClassNo">
       <div class="group-message" >
         <div class="open-group">
           <div class="message-meb col-md-2">
+            <div class="mem-pic"><img src="" alt=""></div>
             <i class="fas fa-user-circle"></i>
             <p>會員名稱</p>
             <p class="time"><?php echo date("Y-m-d"); ?></p>
@@ -127,7 +129,8 @@ try {
             <input name="msgTitle" type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
             <p>開團資訊：</p>
             <textarea name="msgContent" maxlength="100" minlength="1" id="" cols="90" rows="8" wrap="hard" 
-  placeholder="揪團課程時間：
+  placeholder="
+  揪團課程時間：
   聯絡電話：
   e-mail：
   邀請的話～"></textarea>
@@ -185,18 +188,18 @@ try {
     <div class="pop-box">
             <div class="pop-up">
               <span  class="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
-              <div class="pop-team-name"><p><?php echo $row->msg_title; ?></p></div>
+              <div class="pop-team-name"><p>團名：<?php echo $row->msg_title; ?></p></div>
 
               <div class="pop-content">
               <!-- 跳窗主揪留言 -->
                 <div class="pop-main-message col-md-7 col-10">
                   <div class="message-meb col-md-2 col-2">
                     <i class="fas fa-user-circle"></i>
-                    <p><?php echo $row->mem_name; ?></p>
+                    <p class="mem"><?php echo $row->mem_name; ?></p>
                     <p class="time"><?php echo $row->msg_date; ?></p>
                   </div>
                   <div class="message-con col-md-10 col-10">
-                    <p><?php echo $row->msg_content; ?></p>
+                    <p class="text"><?php echo $row->msg_content; ?></p>
                   </div>
                 </div>
   
@@ -243,18 +246,15 @@ try {
             <span class="msgno"><?php echo  $row->msg_no ?> </span>
             <form class="pop-leave-message col-md-8 col-10" action="course-msg.php" method="post" enctype="multipart/form-data">
               <div class="leave-message col-md-9 col-12"> <input type="text" name="reply_content"  class="leave-message-box"></div>
-                <div class="message-btn col-md-2 col-12">
+                <div class="message-btn col-md-2 ">
                   <input type="button" class="message-btn-out btn-add" name="btnReply" value="留言參加">
-                    <!-- <span class="message-btn-in">
-                      留言參加
-                    </span> -->
                 </div>
               </div>
             </form>
 
          </div>
       </div>
-        <?php } ?>  
+  <?php } ?>  
     
     </div>
 
@@ -269,6 +269,7 @@ try {
   <script src="js/course.js"></script>
   <script src="js/course-group.js"></script>
   <script src="js/shop.js"></script>
+  <script src="js/login.js"></script>
 </body>
 
 </html>
