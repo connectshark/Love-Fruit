@@ -230,10 +230,10 @@ session_start();
               </div>
 
               <div class="p-10 tab-inner" id="recipient">
-                  姓名:<input type="text" id="name" name="name"><br>               
-                  電話:<input type="text" id="phone" name="phone"><br>  
-                  地址:<input type="text" id="add" name="add"><br>  
-                  信箱:<input type="text" id="email" name="email"><br>  
+                  姓名:<input type="text" id="name" name="name" value=""><br>               
+                  電話:<input type="text" id="phone" name="phone" value=""><br>  
+                  地址:<input type="text" id="add" name="add" value=""><br>  
+                  信箱:<input type="text" id="email" name="email" value=""><br>  
                   <div class="p-10">
                     <input type="checkbox" name="same-member" id="tick1">
                     <label for="tick1"><span></span></label>

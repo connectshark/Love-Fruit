@@ -87,6 +87,7 @@ function RetrievePassword() {
         $id("retrieve-mem-id").value = "";
         $id("email-address").value = "";
       } else pq = "您的密碼";
+      console.log(xhr.responseText);
       pa = pq += xhr.responseText;
       $id("member-login-erroMsg").innerText = pa;
       $id("retrieve-mem-id").value = "";

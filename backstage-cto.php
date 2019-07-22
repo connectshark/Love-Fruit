@@ -81,12 +81,15 @@ try {
                                         ?>
 
                                         <tr>
-                                            <form action="">
+                                            <form action="moldChange.php" method="POST">
+                                                <input class="d-none" type="text" name="mold_no" value="<?php echo $moldRows["mold_no"] ?>">
                                                 <th scope="row"><?php echo $moldRows["mold_no"] ?></th>
-                                                <td><input class="form-control" type="text" value="<?php echo $moldRows["mold_name"] ?>"></td>
-                                                <td><input class="form-control" type="text" value="<?php echo $moldRows["mold_pic"] ?>">
+                                                <td><input class="form-control" type="text" name="mold_name" value="<?php echo $moldRows["mold_name"] ?>"></td>
+                                                <td>
+                                                    <input class="form-control d-none" type="text" name="mold_pic" value="<?php echo $moldRows["mold_pic"] ?>">
+                                                    <img class="col-2" src="<?php echo $moldRows["mold_pic"] ?>" alt="">
                                                 </td>
-                                                <td><select class="form-control">
+                                                <td><select name="mold_state" class="form-control">
                                                         <option value="0" <?php if (!(strcmp("0", $moldRows["mold_state"]))) {
                                                                                 echo "selected=\"selected\"";
                                                                             } ?>>下架</option>
@@ -95,7 +98,7 @@ try {
                                                                             } ?>>上架</option>
                                                     </select>
                                                 </td>
-                                                <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                                <td><input class="btn btn-info" type="submit" value="送出修改"></td>
                                             </form>
                                         </tr>
 
@@ -129,18 +132,20 @@ try {
                                         ?>
 
                                         <tr>
-                                            <form action="">
+                                            <form action="fruitChange.php" method="POST">
+                                                <input class="d-none" type="text" name="fruit_no" value="<?php echo $baseRows["fruit_no"] ?>">
                                                 <th scope="row"><?php echo $baseRows["fruit_no"] ?></th>
-                                                <td><input class="form-control" type="text" value="<?php echo $baseRows["fruit_name"] ?>"></td>
-                                                <td><input class="col-auto form-control" type="text" value="<?php echo $baseRows["fruit_price"] ?>">
+                                                <td>
+                                                    <input class="form-control" type="text" name="fruit_name" value="<?php echo $baseRows["fruit_name"] ?>"></td>
+                                                <td><input class="form-control" type="text" name="fruit_price" value="<?php echo $baseRows["fruit_price"] ?>">
                                                 </td>
-                                                <td><input class="form-control" type="text" value="<?php echo $baseRows["fruit_sour"] ?>">
+                                                <td><input class="form-control" type="text" name="fruit_sour" value="<?php echo $baseRows["fruit_sour"] ?>">
                                                 </td>
-                                                <td><input class="form-control" type="text" value="<?php echo $baseRows["fruit_sweet"] ?>">
+                                                <td><input class="form-control" type="text" name="fruit_sweet" value="<?php echo $baseRows["fruit_sweet"] ?>">
                                                 </td>
-                                                <td><input class="form-control" type="text" value="<?php echo $baseRows["fruit_bitter"] ?>">
+                                                <td><input class="form-control" type="text" name="fruit_bitter" value="<?php echo $baseRows["fruit_bitter"] ?>">
                                                 </td>
-                                                <td><select id="" class="form-control">
+                                                <td><select name="fruit_state" class="form-control">
                                                         <option value="0" <?php if (!(strcmp("0", $baseRows["fruit_state"]))) {
                                                                                 echo "selected=\"selected\"";
                                                                             } ?>>下架</option>
@@ -149,7 +154,7 @@ try {
                                                                             } ?>>上架</option>
                                                     </select>
                                                 </td>
-                                                <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                                <td><input class="btn btn-info" type="submit" value="送出修改"></td>
                                             </form>
                                         </tr>
 

@@ -97,6 +97,8 @@
 
 #mini-cart .no-item {
   font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 #mini-cart .mini-item-wrap {

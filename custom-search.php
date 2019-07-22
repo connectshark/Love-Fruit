@@ -3,8 +3,8 @@ $errMsg="";
 try {
     require_once("connect-dd101g3.php");
     switch ($_REQUEST['category']) {
-    	case 'fruite':
-	    	$sql = "SELECT fruit_sour, fruit_sweet, fruit_bitter, fruit_price, fruite_color FROM fruit_base WHERE fruit_state = 1 ";
+    	case 'fruit':
+	    	$sql = "SELECT fruit_sour, fruit_sweet, fruit_bitter, fruit_price, fruit_color FROM fruit_base WHERE fruit_state = 1 ";
 	    	$fruite = $pdo->query($sql);
 	    	$fruite = $fruite->fetchAll();
 	    	echo json_encode($fruite);

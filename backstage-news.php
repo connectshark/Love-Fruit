@@ -8,7 +8,6 @@ try {
     echo  $errMsg .=  $e->getMessage() . "<br>";
     echo  $errMsg .=  $e->getLine() . "<br>";
 }
-
 ?>
 
 <html lang="UTF-8">
@@ -96,14 +95,14 @@ try {
                                                 </select>
                                             </td>
                                             <td><input class="btn btn-info" type="button" value="送出修改">
-                                                <a class="btn btn-info" href="backstage-editnews.php?news_no=<?php echo $newsRows["news_no"];?>">編輯內容</a>
+                                                <a class="btn btn-info" href="backstage-editnews.php?news_no=<?php echo $newsRows["news_no"]; ?>">編輯內容</a>
                                             </td>
                                             <td><input class="btn btn-danger" type="button" value="刪除文章"></td>
                                         </tr>
 
                                     <?php
-                                    }
-                                    ?>
+                                }
+                                ?>
 
                                 </tbody>
                             </table>

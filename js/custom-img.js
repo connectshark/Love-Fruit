@@ -1,4 +1,5 @@
 function draw(texture,color1,color2,src) {
+	console.log(texture,color1,color2,src);
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
 	switch (texture) {
@@ -36,7 +37,7 @@ function draw(texture,color1,color2,src) {
 
 
 		var texturePic = new Image();
-		texturePic.src = "../img/custom/texture1.png";
+		texturePic.src = "img/custom/texture1.png";
 		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 			break;
 		case 1:
@@ -83,7 +84,7 @@ function draw(texture,color1,color2,src) {
 
 
 		var texturePic = new Image();
-		texturePic.src = "../img/custom/texture2.png";
+		texturePic.src = "img/custom/texture2.png";
 			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 			break;
 		case 2:
@@ -130,7 +131,7 @@ function draw(texture,color1,color2,src) {
 
 
 		var texturePic = new Image();
-		texturePic.src = "../img/custom/texture3.png";
+		texturePic.src = "img/custom/texture3.png";
 			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 			break;
 		case 3:
@@ -171,7 +172,7 @@ function draw(texture,color1,color2,src) {
 
 
 		var texturePic = new Image();
-		texturePic.src = "../img/custom/texture4.png";
+		texturePic.src = "img/custom/texture4.png";
 			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
 			break;
 	}
@@ -212,4 +213,8 @@ function draw(texture,color1,color2,src) {
 function canvasPut() {
 	$('#pop-img').attr('src', bg);
 	$('#cto-pic').val(bg);
+	sendFormData();
+	$('#pop').fadeIn('fast', function() {
+		$('#pop-total-price').text($('#total-price').text());
+	});
 }

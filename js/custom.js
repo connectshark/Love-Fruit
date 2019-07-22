@@ -123,7 +123,6 @@ function persentChange(slice) {
 		$('.progress-bar').css('width',0);
 	}
 	if (slice >= 0 && slice <= 3) {
-		console.log(slice);
 		var Mon = parseInt($('.default').css('width'))/30;
 		for (var i = 0; i < sliceQuality[slice].length; i++) {
 			var WW = parseInt($('.progress-bar').eq(i).css('width'));
@@ -301,10 +300,6 @@ function putStickIn() {
 	});
 	$('#cto-category-stage').text(setStage(sliceIndex));
 	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
-	sendFormData();
-	$('#pop').fadeIn('fast', function() {
-		$('#pop-total-price').text($('#total-price').text());
-	});
 }
 function checkList() {
 	if ($('#mold-price').text() == "") {

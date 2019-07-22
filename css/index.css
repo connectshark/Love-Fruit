@@ -2050,7 +2050,7 @@ html {
     z-index: 5;
   }
   .store-item-first-love {
-    background-image: url(/img/indexImg/store-first-love.png);
+    background-image: url(../img/indexImg/store-first-love.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 45%;
@@ -2061,7 +2061,7 @@ html {
     padding-bottom: 5%;
   }
   .store-item-fall-in-love {
-    background-image: url(/img/indexImg/store-love.png);
+    background-image: url(../img/indexImg/store-love.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 45%;
@@ -2071,7 +2071,7 @@ html {
     z-index: 5;
   }
   .store-item-single {
-    background-image: url(/img/indexImg/store-single.png);
+    background-image: url(../img/indexImg/store-single.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 45%;
@@ -2081,7 +2081,7 @@ html {
     z-index: 5;
   }
   .store-item-break-up {
-    background-image: url(/img/indexImg/store-lost-love.png);
+    background-image: url(../img/indexImg/store-lost-love.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 45%;
@@ -2284,7 +2284,7 @@ html {
     z-index: 5;
   }
   .store-item-first-love {
-    background-image: url(/img/indexImg/store-first-love.png);
+    background-image: url(../img/indexImg/store-first-love.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 23%;
@@ -2294,7 +2294,7 @@ html {
     z-index: 5;
   }
   .store-item-fall-in-love {
-    background-image: url(/img/indexImg/store-love.png);
+    background-image: url(../img/indexImg/store-love.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 23%;
@@ -2304,7 +2304,7 @@ html {
     z-index: 5;
   }
   .store-item-single {
-    background-image: url(/img/indexImg/store-single.png);
+    background-image: url(../img/indexImg/store-single.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 23%;
@@ -2314,7 +2314,7 @@ html {
     z-index: 5;
   }
   .store-item-break-up {
-    background-image: url(/img/indexImg/store-lost-love.png);
+    background-image: url(../img/indexImg/store-lost-love.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 23%;
