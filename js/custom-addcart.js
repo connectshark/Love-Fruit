@@ -1,14 +1,21 @@
-function checkedSign() {
-	$.ajax({
-		url:'../checksign.php',
-		data: '',
-		type: 'GET',
-		success: function(data){
-			if (data == true) {
-				putStickIn();
-			}else {
-				$('#member-login').fadeIn('fast');
-			}
-		},
+$(document).ready(function() {
+	$('#addcart').click(function() {
+		console.log(imgPath);
+		$.ajax({
+			url: `../cto-addcart.php?img=${imgPath}`,
+			type: 'GET',
+			data: '',
+		})
+		.done(function(data) {
+			alert(`${data}`);
+			console.log("success");
+		})
+		.fail(function(data) {
+			alert(`${data}`);
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 	});
-}
+});

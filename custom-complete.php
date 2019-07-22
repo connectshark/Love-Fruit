@@ -1,6 +1,6 @@
 <?php 
-$errMsg="";
 session_start();
+$errMsg="";
 $path = 'database/img_cto/';
 $img = $_REQUEST['ctoPic'];
 $img = str_replace('data:image/png;base64,', '', $img);

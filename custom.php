@@ -341,7 +341,7 @@ try {
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
     <script src="js/custom-img.js"></script>
-    <script src="js/custom-pop.js"></script>
+    <script src="js/custom-checkedsign.js"></script>
     <script src="js/custom-load.js"></script>
     <script src="js/custom-option.js"></script>
     <script src="js/custom-addcart.js"></script>
