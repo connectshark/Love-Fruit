@@ -10,12 +10,12 @@ $(document).ready(function() {
 var imgPath;
 function sendFormData(){
 	$.ajax({
-		url:'../custom-complete.php',
+		url:'custom-complete.php',
 		data: $('#custom-choose').serialize(),
 		type: 'POST',
-		success: function(data){
-			imgPath=data;
-			totalPrice();
-		},
+	}).done(function(data) {
+		alert(`${data}`);
+	}).error(function(data){
+		alert(`${data}`);
 	});
 }

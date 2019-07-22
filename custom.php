@@ -11,7 +11,7 @@ try {
     $mold = $pdo->prepare($sql);
     $mold -> execute();
     // 抓水果
-    $sql = "SELECT fruit_no, fruit_name, fruite_pic FROM fruit_base WHERE fruit_state =1 ";
+    $sql = "SELECT fruit_no, fruit_name, fruit_pic FROM fruit_base WHERE fruit_state =1 ";
     $fruite = $pdo->prepare($sql);
     $fruite -> execute();
 } catch (PDOException $e) {
@@ -192,7 +192,7 @@ try {
                     <div class="select-item select-item-6">
                         <label for="option<?php echo $fruiterow->fruit_no ?>">
                             <div class="fruite-item texture-item">
-                                <figure><img src="<?php echo $fruiterow->fruite_pic ?>" alt="<?php echo $fruiterow->fruit_name ?>"></figure>
+                                <figure><img src="<?php echo $fruiterow->fruit_pic ?>" alt="<?php echo $fruiterow->fruit_name ?>"></figure>
                                 <p><?php echo $fruiterow->fruit_name ?></p>
                             </div>
                         </label>

@@ -7,7 +7,7 @@ $(document).ready(function() {
 			alert(fruitexhr.status);
 		}
 	})
-	var fruiteurl = "../custom-search.php?category=fruite";
+	var fruiteurl = "custom-search.php?category=fruit";
 	fruitexhr.open("Get",fruiteurl,true);
 	fruitexhr.send();
 	var slicexhr = new XMLHttpRequest();
@@ -18,7 +18,7 @@ $(document).ready(function() {
 			alert(slicexhr.status);
 		}
 	})
-	var sliceurl = "../custom-search.php?category=slice";
+	var sliceurl = "custom-search.php?category=slice";
 	slicexhr.open("Get",sliceurl,true);
 	slicexhr.send();
 });

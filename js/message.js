@@ -82,7 +82,7 @@ $(document).ready(function() {
 });
 function checkedSign() {
 	$.ajax({
-		url:'../checksign.php',
+		url:'checksign.php',
 		data: '',
 		type: 'GET',
 		success: function(data){
@@ -96,14 +96,14 @@ function checkedSign() {
 }
 function checkCto() {
 	$.ajax({
-		url: '../checkCto.php',
+		url: 'checkCto.php',
 		data: '',
 		type: 'GET',
 	})
 	.done(function(data) {
 		console.log(data);
 		if (data > 0) {
-			location.href="../writemessage.php";
+			location.href="writemessage.php";
 		}else {
 			$('#pop').fadeIn('fast');
 		}
