@@ -39,6 +39,23 @@ function registerAccountCoseButton() {
   $id("retrieve-mem-id").value = "";
   $id("email-address").value = "";
 }
+function registerClear() {
+  //註冊會員-清空值
+  $id("register-account-mem-name").value = "";
+  $id("register-account-mem-id").value = "";
+  $id("register-account-mem-psw").value = "";
+  $id("register-account-confirm-mem-psw").value = "";
+  $id("register-account-email-address").value = "";
+  //會員登入-清空值
+  $id("mem-id").value = "";
+  $id("mem-psw").value = "";
+  //取回密碼-清空值
+  $id("retrieve-mem-id").value = "";
+  $id("email-address").value = "";
+  // 註冊會員Msg
+  $id("register-erroMsg").innerText = "";
+}
+
 //登入－面板關掉
 function memberLoginCloseButton() {
   $id("member-login").style.display = "none";
@@ -66,10 +83,12 @@ function RetrievePassword() {
   xhr.onload = function() {
     if (xhr.status == 200) {
       if (xhr.responseText == "error") {
-        alert("查無此人");
+        $id("member-login-erroMsg").innerText = "查無此人";
         $id("retrieve-mem-id").value = "";
         $id("email-address").value = "";
-      } else alert(xhr.responseText);
+      } else pq = "您的密碼";
+      pa = pq += xhr.responseText;
+      $id("member-login-erroMsg").innerText = pa;
       $id("retrieve-mem-id").value = "";
       $id("email-address").value = "";
       $id("login-interface").style.display = "block";
@@ -137,7 +156,7 @@ function sendForm() {
   xhr.onload = function() {
     if (xhr.status == 200) {
       if (xhr.responseText == "error") {
-        alert("帳密錯誤");
+        $id("member-login-erroMsg").innerText = "帳密錯誤";
         $id("mem-psw").value = "";
       } else {
         // 桌機版
@@ -153,6 +172,7 @@ function sendForm() {
         $id("mem-id").value = "";
         $id("mem-pws").value = "";
         $id("nav-login-icon").style.display = "none";
+        $id("member-login-erroMsg").innerText = "";
         $id("membe-centre-img-circle").style.display = "inline-block";
         // 手機版
         $id("nav-login-icon-p").style.display = "none";
@@ -175,17 +195,38 @@ function sendForm() {
 }
 
 // 檢查帳號
+
+// 檢查姓名
+function checkName() {
+  let registerAccountMemName = document.getElementById(
+    "register-account-mem-name"
+  ).value;
+  // let regexpcheckName = new RegExp(/^(\w){1,10}$/);
+  if (registerAccountMemName.length != 0) {
+    checkAccount();
+  } else {
+    $id("register-erroMsg").innerText = "姓名不能空白";
+  }
+}
+
 function checkAccount() {
   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上  送出檢查帳號密碼
   //..........................................................
   var xhr = new XMLHttpRequest();
+  var regexpAccount = new RegExp(/^(\w){3,10}$/);
+  var registerAccountMemId = document.getElementById("register-account-mem-id")
+    .value;
 
   xhr.onload = function() {
     if (xhr.status == 200) {
       if (xhr.responseText == "error") {
-        alert("帳號重複");
+        $id("register-erroMsg").innerText = "帳號重複";
       } else {
-        confirmPassword();
+        if (regexpAccount.test(registerAccountMemId)) {
+          confirmPassword();
+        } else {
+          $id("register-erroMsg").innerText = "帳號請大於3碼，或是小於10碼!";
+        }
       }
     } else {
       alert(xhr.status);
@@ -203,16 +244,55 @@ function checkAccount() {
 
 // 檢查密碼
 function confirmPassword() {
-  if (
-    $id("register-account-mem-psw").value ===
-    $id("register-account-confirm-mem-psw").value
-  ) {
-    registeredMember();
+  let regexpPassword = new RegExp(/^(\w){3,10}$/);
+  let regexpPasswordAz = new RegExp(/(?=.*[a-zA-Z])/);
+  let registerAccountMemId = document.getElementById("register-account-mem-psw")
+    .value;
+  if (regexpPassword.test(registerAccountMemId)) {
+    if (regexpPasswordAz.test(registerAccountMemId)) {
+      if (
+        $id("register-account-mem-psw").value ===
+        $id("register-account-confirm-mem-psw").value
+      ) {
+        emailCheck();
+      } else {
+        $id("register-erroMsg").innerText = "密碼不相同";
+      }
+    } else {
+      $id("register-erroMsg").innerText = "密碼必須含有一個大小寫英文字母";
+    }
   } else {
-    alert("密碼不相同");
+    $id("register-erroMsg").innerText = "密碼長度太短";
   }
 }
 
+// 檢查信箱
+function emailCheck() {
+  let registerAccountEmailAddress = document.getElementById(
+    "register-account-email-address"
+  ).value;
+  let regexpemailPat = new RegExp(
+    /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
+  );
+  if (registerAccountEmailAddress.length != 0) {
+    if (regexpemailPat.test(registerAccountEmailAddress)) {
+      registeredMember();
+    } else {
+      $id("register-erroMsg").innerText = "信箱必須包括(@和.)";
+    }
+  } else {
+    $id("register-erroMsg").innerText = "請輸入信箱";
+  }
+}
+// ^\w+：@ 之前必須以一個以上的文字&數字開頭，例如 abc
+// ((-\w+)：@ 之前可以出現 1 個以上的文字、數字或「-」的組合，例如 -abc-
+// (\.\w+))：@ 之前可以出現 1 個以上的文字、數字或「.」的組合，例如 .abc.
+// ((-\w+)|(\.\w+))*：以上兩個規則以 or 的關係出現，並且出現 0 次以上 (所以不能 –. 同時出現)
+// @：中間一定要出現一個 @
+// [A-Za-z0-9]+：@ 之後出現 1 個以上的大小寫英文及數字的組合
+// (\.|-)：@ 之後只能出現「.」或是「-」，但這兩個字元不能連續時出現
+// ((\.|-)[A-Za-z0-9]+)*：@ 之後出現 0 個以上的「.」或是「-」配上大小寫英文及數字的組合
+// \.[A-Za-z]+$/：@ 之後出現 1 個以上的「.」配上大小寫英文及數字的組合，結尾需為大小寫英文
 //註冊
 function registeredMember() {
   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上  送出檢查帳號密碼
@@ -228,6 +308,7 @@ function registeredMember() {
         $id("login-interface").style.display = "block";
         $id("retrieve-password").style.display = "none";
         $id("register-account").style.display = "none";
+        registerClear();
       }
     } else {
       alert(xhr.status);
@@ -264,7 +345,7 @@ function init() {
   xhr.open("get", "php/UserProfile.php", true);
   xhr.send(null);
 
-  $id("register-account-button-style").onclick = checkAccount;
+  $id("register-account-button-style").onclick = checkName;
   $id("member-login-button-style").onclick = sendForm;
   $id("nav-login-icon-p").onclick = navLoginIconP;
   $id("nav-login-icon").onclick = navLoginIcon;

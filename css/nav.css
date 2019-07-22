@@ -480,7 +480,7 @@
   .member-centre-triangle {
     position: absolute;
     margin: auto;
-    top: -9%;
+    top: -9px;
     left: 35%;
     border-style: solid;
     border-width: 0 10px 10px 10px;
@@ -514,17 +514,16 @@
     padding: 10px 0px 10px 0px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1vw;
-    letter-spacing: 0.3vw;
+    font-size: 15px;
+    letter-spacing: 2px;
     color: #ea7187;
     font-family: "GenJyuuGothic-R";
   }
   #member-centre-down-menu li a {
     display: inline-block;
     padding: 10px 0px 10px 0px;
-    text-decoration: none;
-    font-size: 1vw;
-    letter-spacing: 0.3vw;
+    font-size: 15px;
+    letter-spacing: 2px;
     color: #ea7187;
     font-family: "GenJyuuGothic-R";
   }
@@ -618,636 +617,6 @@
 }
 .robot-pic img {
   width: 100%;
-}
-/* 登入畫面 */
-/* 登入畫面 */
-/* ------------------ */
-/* 背景黑屏 */
-@media screen and (max-width: 768px) {
-  .member-login {
-    position: fixed;
-    display: none;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.721);
-  }
-  .register-account {
-    background-color: #c9d34a;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 300px;
-    max-height: 450px;
-    border-radius: 20px;
-    top: 20%;
-    right: 0;
-    left: 0;
-    bottom: 0%;
-    text-align: center;
-    margin: auto;
-    display: none;
-    padding-bottom: 4%;
-  }
-  .register-account-close-button {
-    position: absolute;
-    cursor: pointer;
-    right: 2%;
-    top: 1%;
-    width: 15%;
-  }
-  .register-account-close-button img {
-    width: 100%;
-  }
-
-  #register-account-title {
-    padding-top: 10%;
-    /* padding-bottom: 10%; */
-    letter-spacing: 1%;
-    font-family: "A-OTF-M";
-    font-size: 5vw;
-    color: #6a3e26;
-  }
-  .login-interface {
-    background-image: url(/img/navBar/login-interface/pop.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 300px;
-    max-height: 600px;
-    top: 30%;
-    right: 0;
-    left: 0;
-    bottom: 0%;
-    text-align: center;
-    margin: auto;
-    display: block;
-    padding-bottom: 22%;
-  }
-  .retrieve-password {
-    background-image: url(/img/navBar/login-interface/pop.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 300px;
-    max-height: 600px;
-    top: 30%;
-    right: 0;
-    left: 0;
-    bottom: 0%;
-    text-align: center;
-    margin: auto;
-    display: none;
-    padding-bottom: 22%;
-  }
-  .member-login-close-button {
-    position: absolute;
-    cursor: pointer;
-    right: 0%;
-    top: -10%;
-    width: 15%;
-  }
-  .member-login-close-button img {
-    width: 100%;
-  }
-  .member-login h2 {
-    padding-top: 40%;
-    padding-bottom: 5%;
-    letter-spacing: 1%;
-    font-family: "A-OTF-M";
-    font-size: 20px;
-    color: #6a3e26;
-  }
-  /* 帳號密碼 */
-  .member-login input {
-    text-indent: 10px;
-    display: inline-block;
-    font-family: "A-OTF-M";
-    border: none;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.146);
-    width: 80%;
-    height: 35px;
-    border-radius: 10px;
-    font-size: 16px;
-    color: #6a6a6a;
-  }
-  .login-interface-group {
-    width: 50%;
-    padding-top: 2%;
-    display: inline-block;
-  }
-  #register {
-    float: left;
-    display: inline-block;
-    cursor: pointer;
-    font-family: "GenJyuuGothic-R";
-    color: #9a3d1e;
-    font-size: 14px;
-  }
-  #psw-back {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-    font-family: "GenJyuuGothic-R";
-    color: #9a3d1e;
-    font-size: 14px;
-  }
-  /* 按鈕 */
-  .member-login-button-style {
-    cursor: pointer;
-    position: relative;
-    margin-top: 22%;
-    text-align: center;
-    display: inline-block;
-    width: 90%;
-    height: 5%;
-    border-radius: 50px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .member-login-button-style-botton {
-    position: absolute;
-    top: -16%;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .member-login-inner-style {
-    margin-top: 1.5%;
-    display: inline-block;
-    width: 95%;
-    height: 90%;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    background-color: #e4575f;
-    text-align: center;
-    display: inline-block;
-  }
-  .member-login-btn-ice {
-    width: 25%;
-    position: absolute;
-    top: -30%;
-    left: -10%;
-  }
-  .member-login-button-text-style {
-    position: relative;
-    top: 5%;
-    z-index: 0;
-    display: inline-block;
-    width: 97%;
-    height: 90%;
-    border-radius: 30px;
-    background-color: #ffabb1;
-  }
-  .member-login-button-text {
-    margin-left: 15%;
-    font-size: 16px;
-    line-height: 7vw;
-    letter-spacing: 1vw;
-    margin-top: 1.2%;
-    color: #ffffff;
-    font-family: "A-OTF-M";
-  }
-  .member-login-button-text::after {
-    z-index: -1;
-    margin-left: 15%;
-    content: "登入";
-    font-family: "A-OTF-M";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    -webkit-text-stroke: 5px #6a3e26;
-  }
-  /* 註冊帳號 */
-  #register-memberIcon {
-    display: none;
-  }
-  .register-account-button-style {
-    cursor: pointer;
-    position: relative;
-    margin-top: 3%;
-    text-align: center;
-    display: inline-block;
-    width: 50%;
-    height: 5%;
-    border-radius: 30px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .register-account-button-style-botton {
-    position: absolute;
-    top: -16%;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .register-account-inner-style {
-    margin-top: 1.5%;
-    display: inline-block;
-    width: 95%;
-    height: 90%;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    background-color: #e4575f;
-    text-align: center;
-    display: inline-block;
-  }
-  .register-account-btn-ice {
-    width: 25%;
-    position: absolute;
-    top: -30%;
-    left: -10%;
-  }
-  .register-account-button-text-style {
-    position: relative;
-    top: 5%;
-    z-index: 0;
-    display: inline-block;
-    width: 97%;
-    height: 90%;
-    border-radius: 30px;
-    background-color: #ffabb1;
-  }
-  .register-account-button-text {
-    margin-left: 10%;
-    font-size: 16px;
-    line-height: 7vw;
-    letter-spacing: 0.5vw;
-    margin-top: 1.2%;
-    color: #ffffff;
-    font-family: "A-OTF-M";
-  }
-  .register-account-button-text::after {
-    z-index: -1;
-    margin-left: 10%;
-    content: "確認送出";
-    font-family: "A-OTF-M";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    -webkit-text-stroke: 5px #6a3e26;
-  }
-  .register-account-button-style:hover .register-account-button-text-style {
-    background-color: #fad689;
-  }
-  .register-account-button-style:active .register-account-button-style-botton {
-    transform: translateY(2%);
-  }
-  /* 取回密碼 */
-  .retrieve-password-button-text {
-    margin-left: 10%;
-    font-size: 16px;
-    line-height: 7vw;
-    letter-spacing: 0.2vw;
-    margin-top: 1.2%;
-    color: #ffffff;
-    font-family: "A-OTF-M";
-  }
-  .retrieve-password-button-text::after {
-    z-index: -1;
-    margin-left: 10%;
-    content: "確認送出";
-    font-family: "A-OTF-M";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    -webkit-text-stroke: 5px #6a3e26;
-  }
-  .member-login-button-style:hover .member-login-button-text-style {
-    background-color: #fad689;
-  }
-  .member-login-button-style:active .member-login-button-style-botton {
-    transform: translateY(2%);
-  }
-}
-@media screen and (min-width: 768px) {
-  .member-login {
-    position: fixed;
-    display: none;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.721);
-  }
-  .register-account {
-    background-color: #c9d34a;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 300px;
-    max-height: 450px;
-    border-radius: 20px;
-    top: 10%;
-    right: 0;
-    left: 0;
-    bottom: 0%;
-    text-align: center;
-    margin: auto;
-    display: none;
-    padding-bottom: 4%;
-  }
-  .register-account-close-button {
-    position: absolute;
-    cursor: pointer;
-    right: 2%;
-    top: 1%;
-    width: 15%;
-  }
-  .register-account-close-button img {
-    width: 100%;
-  }
-
-  #register-account-title {
-    padding-top: 20%;
-    padding-bottom: 10%;
-    letter-spacing: 1%;
-    font-family: "A-OTF-M";
-    font-size: 2vw;
-    color: #6a3e26;
-  }
-  .login-interface {
-    background-image: url(/img/navBar/login-interface/pop.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 300px;
-    max-height: 600px;
-    top: 30%;
-    right: 0;
-    left: 0;
-    bottom: 0%;
-    text-align: center;
-    margin: auto;
-    display: block;
-    padding-bottom: 4%;
-  }
-  .retrieve-password {
-    background-image: url(/img/navBar/login-interface/pop.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    max-width: 300px;
-    max-height: 600px;
-    top: 30%;
-    right: 0;
-    left: 0;
-    bottom: 0%;
-    text-align: center;
-    margin: auto;
-    display: none;
-    padding-bottom: 4%;
-  }
-  .member-login-close-button {
-    position: absolute;
-    cursor: pointer;
-    right: 0%;
-    top: -10%;
-    width: 15%;
-  }
-  .member-login-close-button img {
-    width: 100%;
-  }
-  .member-login h2 {
-    padding-top: 40%;
-    padding-bottom: 5%;
-    letter-spacing: 1%;
-    font-family: "A-OTF-M";
-    font-size: 2vw;
-    color: #6a3e26;
-  }
-  /* 帳號密碼 */
-  #register-memberIcon {
-    display: none;
-  }
-  .member-login input {
-    text-indent: 10px;
-    display: inline-block;
-    font-family: "A-OTF-M";
-    border: none;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.146);
-    width: 80%;
-    height: 7%;
-    border-radius: 10px;
-    font-size: 1vw;
-    color: #6a6a6a;
-  }
-  .login-interface-group {
-    width: 50%;
-    padding-top: 2%;
-    display: inline-block;
-  }
-  #register {
-    float: left;
-    display: inline-block;
-    cursor: pointer;
-    font-family: "GenJyuuGothic-R";
-    color: #9a3d1e;
-    font-size: 0.8vw;
-  }
-  #psw-back {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-    font-family: "GenJyuuGothic-R";
-    color: #9a3d1e;
-    font-size: 0.8vw;
-  }
-  /* 按鈕 */
-  .member-login-button-style {
-    cursor: pointer;
-    position: relative;
-    margin-top: 10%;
-    text-align: center;
-    display: inline-block;
-    width: 90%;
-    height: 5%;
-    border-radius: 50px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .member-login-button-style-botton {
-    position: absolute;
-    top: -16%;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .member-login-inner-style {
-    margin-top: 1.5%;
-    display: inline-block;
-    width: 95%;
-    height: 90%;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    background-color: #e4575f;
-    text-align: center;
-    display: inline-block;
-  }
-  .member-login-btn-ice {
-    width: 25%;
-    position: absolute;
-    top: -30%;
-    left: -10%;
-  }
-  .member-login-button-text-style {
-    position: relative;
-    top: 5%;
-    z-index: 0;
-    display: inline-block;
-    width: 97%;
-    height: 90%;
-    border-radius: 30px;
-    background-color: #ffabb1;
-  }
-  .member-login-button-text {
-    margin-left: 18%;
-    font-size: 16px;
-    line-height: 1.9vw;
-    letter-spacing: 1vw;
-    margin-top: 1.2%;
-    color: #ffffff;
-    font-family: "A-OTF-M";
-  }
-  .member-login-button-text::after {
-    z-index: -1;
-    margin-left: 18%;
-    content: "登入";
-    font-family: "A-OTF-M";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    -webkit-text-stroke: 5px #6a3e26;
-  }
-  /* 註冊帳號 */
-  .register-account-button-style {
-    cursor: pointer;
-    position: relative;
-    margin-top: 2%;
-    text-align: center;
-    display: inline-block;
-    width: 50%;
-    height: 5%;
-    border-radius: 30px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .register-account-button-style-botton {
-    position: absolute;
-    top: -16%;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    background-color: #6a3e26;
-    transform: translateY(0%);
-  }
-  .register-account-inner-style {
-    margin-top: 1.5%;
-    display: inline-block;
-    width: 95%;
-    height: 90%;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    background-color: #e4575f;
-    text-align: center;
-    display: inline-block;
-  }
-  .register-account-btn-ice {
-    width: 25%;
-    position: absolute;
-    top: -30%;
-    left: -10%;
-  }
-  .register-account-button-text-style {
-    position: relative;
-    top: 5%;
-    z-index: 0;
-    display: inline-block;
-    width: 97%;
-    height: 90%;
-    border-radius: 30px;
-    background-color: #ffabb1;
-  }
-  .register-account-button-text {
-    margin-left: 10%;
-    font-size: 16px;
-    line-height: 1.9vw;
-    letter-spacing: 0.5vw;
-    margin-top: 1.2%;
-    color: #ffffff;
-    font-family: "A-OTF-M";
-  }
-  .register-account-button-text::after {
-    z-index: -1;
-    margin-left: 10%;
-    content: "確認送出";
-    font-family: "A-OTF-M";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    -webkit-text-stroke: 5px #6a3e26;
-  }
-  .register-account-button-style:hover .register-account-button-text-style {
-    background-color: #fad689;
-  }
-  .register-account-button-style:active .register-account-button-style-botton {
-    transform: translateY(2%);
-  }
-  /* 取回密碼 */
-  .retrieve-password-button-text {
-    margin-left: 10%;
-    font-size: 16px;
-    line-height: 1.9vw;
-    letter-spacing: 0.2vw;
-    margin-top: 1.2%;
-    color: #ffffff;
-    font-family: "A-OTF-M";
-  }
-  .retrieve-password-button-text::after {
-    z-index: -1;
-    margin-left: 10%;
-    content: "確認送出";
-    font-family: "A-OTF-M";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    -webkit-text-stroke: 5px #6a3e26;
-  }
-  .member-login-button-style:hover .member-login-button-text-style {
-    background-color: #fad689;
-  }
-  .member-login-button-style:active .member-login-button-style-botton {
-    transform: translateY(2%);
-  }
-  /* 按鈕結束 */
-}
-#robot-conversation-list-group {
-  display: block;
 }
 /* 機器人文字區塊 */
 .robot-conversation-block {
@@ -1401,6 +770,727 @@
 .robot-input-block button:active {
   background-color: #cb1b45;
 }
+#robot-conversation-list-group {
+  display: block;
+}
+/* 登入畫面 */
+/* 登入畫面 */
+/* ------------------ */
+/* 背景黑屏 */
+@media screen and (max-width: 768px) {
+  .member-login {
+    position: fixed;
+    display: none;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.721);
+  }
+  .register-account {
+    background-color: #c9d34a;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 300px;
+    max-height: 450px;
+    border-radius: 20px;
+    top: 20%;
+    right: 0;
+    left: 0;
+    bottom: 0%;
+    text-align: center;
+    margin: auto;
+    display: none;
+    padding-bottom: 4%;
+  }
+  .register-account-close-button {
+    position: absolute;
+    cursor: pointer;
+    right: 2%;
+    top: 1%;
+    width: 15%;
+  }
+  .register-account-close-button img {
+    width: 100%;
+  }
+  .member-login-input input {
+    margin-bottom: 10px;
+  }
+  #register-account-title {
+    padding-top: 10%;
+    /* padding-bottom: 10%; */
+    letter-spacing: 1%;
+    font-family: "A-OTF-M";
+    font-size: 5vw;
+    color: #6a3e26;
+  }
+  .register-account-input-group {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  .register-account-input-group span {
+    width: 28%;
+    display: inline-block;
+    text-align-last: justify;
+    font-size: 16px;
+    color: #6a3e26;
+    font-family: "GenJyuuGothic-B";
+  }
+  .login-interface {
+    background-image: url(/img/navBar/login-interface/pop.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 300px;
+    max-height: 600px;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0%;
+    text-align: center;
+    margin: auto;
+    display: block;
+    padding-bottom: 22%;
+  }
+  .retrieve-password {
+    background-image: url(/img/navBar/login-interface/pop.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 300px;
+    max-height: 600px;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0%;
+    text-align: center;
+    margin: auto;
+    display: none;
+    padding-bottom: 22%;
+  }
+  .member-login-close-button {
+    position: absolute;
+    cursor: pointer;
+    right: 0%;
+    top: -10%;
+    width: 15%;
+  }
+  .member-login-close-button img {
+    width: 100%;
+  }
+  .member-login h2 {
+    padding-top: 40%;
+    padding-bottom: 5%;
+    letter-spacing: 1%;
+    font-family: "A-OTF-M";
+    font-size: 20px;
+    color: #6a3e26;
+  }
+  /* 帳號密碼 */
+  .member-login input {
+    text-indent: 10px;
+    display: inline-block;
+    font-family: "A-OTF-M";
+    border: none;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.146);
+    width: 50%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #6a6a6a;
+  }
+  .login-interface-group {
+    width: 50%;
+    padding-top: 2%;
+    display: inline-block;
+  }
+  #register {
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "GenJyuuGothic-R";
+    color: #9a3d1e;
+    font-size: 14px;
+  }
+  #psw-back {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "GenJyuuGothic-R";
+    color: #9a3d1e;
+    font-size: 14px;
+  }
+  #member-login-erroMsg {
+    display: block;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    height: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgb(201, 7, 7);
+  }
+  /* 按鈕 */
+  .member-login-button-style {
+    cursor: pointer;
+    position: relative;
+    margin-top: 6px;
+    text-align: center;
+    display: inline-block;
+    width: 48%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .member-login-button-style-botton {
+    position: absolute;
+    top: -16%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .member-login-inner-style {
+    margin-top: 1.5%;
+    display: inline-block;
+    width: 95%;
+    height: 90%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+    display: inline-block;
+  }
+  .member-login-btn-ice {
+    width: 25%;
+    position: absolute;
+    top: -30%;
+    left: -10%;
+  }
+  .member-login-button-text-style {
+    position: relative;
+    top: 5%;
+    z-index: 0;
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #ffabb1;
+  }
+  .member-login-button-text {
+    margin-left: 15%;
+    font-size: 16px;
+    line-height: 7vw;
+    letter-spacing: 1vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .member-login-button-text::after {
+    z-index: -1;
+    margin-left: 15%;
+    content: "登入";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  /* 註冊帳號 */
+  #register-memberIcon {
+    display: none;
+  }
+  #retrieve-password-erroMsg {
+    display: block;
+    padding: 10px 0px 10px 0;
+    width: 100%;
+    height: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgb(201, 7, 7);
+  }
+  .retrieve-password input {
+    margin-bottom: 10px;
+  }
+  #register-erroMsg {
+    display: block;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgb(201, 7, 7);
+  }
+  .register-account-button-style {
+    cursor: pointer;
+    position: relative;
+    margin-top: 3%;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    height: 43px;
+    border-radius: 30px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .register-account-button-style-botton {
+    position: absolute;
+    top: -16%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .register-account-inner-style {
+    margin-top: 1.5%;
+    display: inline-block;
+    width: 95%;
+    height: 90%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+    display: inline-block;
+  }
+  .register-account-btn-ice {
+    width: 25%;
+    position: absolute;
+    top: -30%;
+    left: -10%;
+  }
+  .register-account-button-text-style {
+    position: relative;
+    top: 4%;
+    z-index: 0;
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #ffabb1;
+  }
+  .register-account-button-text {
+    margin-left: 10%;
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 0.5vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .register-account-button-text::after {
+    z-index: -1;
+    margin-left: 10%;
+    content: "確認送出";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .register-account-button-style:hover .register-account-button-text-style {
+    background-color: #fad689;
+  }
+  .register-account-button-style:active .register-account-button-style-botton {
+    transform: translateY(2%);
+  }
+  /* 取回密碼 */
+  .login-retrieve-password-button {
+    /* width: 50%; */
+  }
+  .retrieve-password-button-text {
+    margin-left: 10%;
+    font-size: 16px;
+    line-height: 31px;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .retrieve-password-button-text::after {
+    z-index: -1;
+    margin-left: 10%;
+    content: "確認送出";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .member-login-button-style:hover .member-login-button-text-style {
+    background-color: #fad689;
+  }
+  .member-login-button-style:active .member-login-button-style-botton {
+    transform: translateY(2%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .member-login {
+    position: fixed;
+    display: none;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.721);
+  }
+  .register-account {
+    background-color: #c9d34a;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 300px;
+    max-height: 500px;
+    border-radius: 20px;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    display: none;
+  }
+  .register-account-close-button {
+    position: absolute;
+    cursor: pointer;
+    right: 2%;
+    top: 1%;
+    width: 15%;
+  }
+  .register-account-close-button img {
+    width: 100%;
+  }
+
+  #register-account-title {
+    padding-top: 10%;
+    padding-bottom: 5%;
+    letter-spacing: 1%;
+    font-family: "A-OTF-M";
+    font-size: 30px;
+    color: #6a3e26;
+  }
+  .login-interface {
+    background-image: url(/img/navBar/login-interface/pop.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 300px;
+    max-height: 600px;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0%;
+    text-align: center;
+    margin: auto;
+    display: block;
+    padding-bottom: 4%;
+  }
+
+  .retrieve-password {
+    background-image: url(/img/navBar/login-interface/pop.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 300px;
+    max-height: 600px;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0%;
+    text-align: center;
+    margin: auto;
+    display: none;
+    padding-bottom: 4%;
+  }
+  .member-login-close-button {
+    position: absolute;
+    cursor: pointer;
+    right: 0%;
+    top: -10%;
+    width: 15%;
+  }
+  .member-login-close-button img {
+    width: 100%;
+  }
+  .member-login h2 {
+    padding-top: 40%;
+    padding-bottom: 5%;
+    letter-spacing: 1%;
+    font-family: "A-OTF-M";
+    font-size: 30px;
+    color: #6a3e26;
+  }
+  /* 帳號密碼 */
+  #member-login-erroMsg {
+    display: block;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(201, 7, 7);
+  }
+  #register-memberIcon {
+    display: none;
+  }
+  .register-account-input-group {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  .register-account-input-group span {
+    width: 28%;
+    display: inline-block;
+    text-align-last: justify;
+    font-size: 16px;
+    color: #6a3e26;
+    font-family: "GenJyuuGothic-B";
+  }
+  .member-login input {
+    text-indent: 10px;
+    display: inline-block;
+    font-family: "A-OTF-M";
+    border: none;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.146);
+    width: 50%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #6a6a6a;
+  }
+  .login-interface-group {
+    width: 50%;
+    padding-top: 2%;
+    display: inline-block;
+  }
+  .member-login-input input {
+    margin-bottom: 10px;
+  }
+  #register {
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "GenJyuuGothic-R";
+    color: #9a3d1e;
+    font-size: 0.8vw;
+  }
+  #psw-back {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "GenJyuuGothic-R";
+    color: #9a3d1e;
+    font-size: 0.8vw;
+  }
+  /* 按鈕 */
+  .member-login-button-style {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 49%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .member-login-button-style-botton {
+    position: absolute;
+    top: -16%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .member-login-inner-style {
+    margin-top: 1.5%;
+    display: inline-block;
+    width: 95%;
+    height: 90%;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+    display: inline-block;
+  }
+  .member-login-btn-ice {
+    width: 25%;
+    position: absolute;
+    top: -30%;
+    left: -10%;
+  }
+  .member-login-button-text-style {
+    position: relative;
+    top: 5%;
+    z-index: 0;
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #ffabb1;
+  }
+  .member-login-button-text {
+    margin-left: 18%;
+    font-size: 16px;
+    line-height: 1.9vw;
+    letter-spacing: 1vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .member-login-button-text::after {
+    z-index: -1;
+    margin-left: 18%;
+    content: "登入";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  /* 註冊帳號 */
+  #register-erroMsg {
+    display: block;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(201, 7, 7);
+  }
+  .register-account-button-style {
+    cursor: pointer;
+    position: relative;
+    margin-top: 2%;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    height: 40px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+  }
+  .register-account-button-style-botton {
+    position: absolute;
+    top: -16%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #6a3e26;
+    transform: translateY(0%);
+    margin-bottom: 20px;
+  }
+  .register-account-inner-style {
+    margin-top: 1.5%;
+    display: inline-block;
+    width: 95%;
+    height: 90%;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    background-color: #e4575f;
+    text-align: center;
+    display: inline-block;
+  }
+  .register-account-btn-ice {
+    width: 25%;
+    position: absolute;
+    top: -30%;
+    left: -10%;
+  }
+  .register-account-button-text-style {
+    position: relative;
+    top: 5%;
+    z-index: 0;
+    display: inline-block;
+    width: 97%;
+    height: 90%;
+    border-radius: 30px;
+    background-color: #ffabb1;
+  }
+  .register-account-button-text {
+    margin-left: 10%;
+    font-size: 16px;
+    line-height: 33px;
+    letter-spacing: 0.5vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .register-account-button-text::after {
+    z-index: -1;
+    margin-left: 10%;
+    content: "確認送出";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .register-account-button-style:hover .register-account-button-text-style {
+    background-color: #fad689;
+  }
+  .register-account-button-style:active .register-account-button-style-botton {
+    transform: translateY(2%);
+  }
+  /* 取回密碼 */
+  #retrieve-password-erroMsg {
+    display: block;
+    padding: 10px 0px 10px 0;
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(201, 7, 7);
+  }
+  .retrieve-password input {
+    margin-bottom: 10px;
+  }
+  .retrieve-password-button-text {
+    margin-left: 10%;
+    font-size: 16px;
+    line-height: 1.9vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1.2%;
+    color: #ffffff;
+    font-family: "A-OTF-M";
+  }
+  .retrieve-password-button-text::after {
+    z-index: -1;
+    margin-left: 10%;
+    content: "確認送出";
+    font-family: "A-OTF-M";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .member-login-button-style:hover .member-login-button-text-style {
+    background-color: #fad689;
+  }
+  .member-login-button-style:active .member-login-button-style-botton {
+    transform: translateY(2%);
+  }
+  /* 按鈕結束 */
+}
 /*rwd內容*/
 #menu-control {
   display: none;
@@ -1420,11 +1510,6 @@ footer span {
   letter-spacing: 1px;
   font-size: 16px;
   color: #ffffff;
-}
-.box {
-  width: 100%;
-  background-color: rgb(133, 35, 35);
-  height: 700px;
 }
 @media screen and (max-width: 768px) {
   footer {
