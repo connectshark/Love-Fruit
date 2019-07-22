@@ -388,10 +388,15 @@ $deep-pink:#db4d6d;
     background-color: $bg-light-yellow;
     padding-bottom:50px; 
     .title-box{
+        transform: translateY(-1%);
+        background-color: $bg-light-yellow;
         text-align: center;
         @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,課程留言板);
-        h3{
+        .message-title{  
             font-family: A-OTF-M ;
+            @include rwd(mobile){
+                font-size: 24px;
+            }
         }
         span{
             text-align: center;
@@ -399,6 +404,9 @@ $deep-pink:#db4d6d;
             color: $font-gray;
             font-family: A-OTF-M ;
             line-height: 32px;
+            @include rwd(mobile){
+                font-size: 13px;
+            }
         }
     }
     .leave-message-wrap{
@@ -423,8 +431,11 @@ $deep-pink:#db4d6d;
                     font-size: 50px;
                 }
                 p{
-                    font-size: 18px;
+                    font-size: 13px;
                     color: #fff;
+                    @include rwd(medium){
+                        font-size: 16px;
+                    }
                 }
             }
             .balloons{
@@ -454,11 +465,10 @@ $deep-pink:#db4d6d;
             padding: 20px 30px ;
             font-size: 18px;
      }
-     width: 90%;
-     padding:10px 20px ;
-     margin: 30px auto 0 ;
-     font-size: 16px;
-    
+        width: 90%;
+        padding:10px 20px ;
+        margin: 30px auto 0 ;
+        font-size: 16px;
         border-radius: 10px;
         background-color:#FFC8C7 ;
         .mem-message-item{
@@ -470,14 +480,20 @@ $deep-pink:#db4d6d;
         
         .message-mem{ 
             text-align: center;
+            width: 55px;
             i{
                 color: #aaa;
                 font-size:55px;
             }
+            
         }
         .message-con{
             p{
+                font-size: 13px;
                 color: #434343;
+                @include rwd(medium){
+                    font-size: 16px;
+                }
             }
             padding: 10px;
             background-color: #fff;
@@ -486,7 +502,6 @@ $deep-pink:#db4d6d;
             position: relative;;
             &::before{
                 content: "";
-              
                 border-style: solid solid solid solid; 
                 border-color:transparent   #fff transparent transparent;
                 border-width: 15px  25px 15px 15px;
@@ -726,9 +741,7 @@ $deep-pink:#db4d6d;
          margin: auto;
      }
                 @include ice-btn(form-ice-btn-out,135px,form-ice-btn-in,18px,18px,確認預約);
-
         }
-
     }
 }
 
@@ -739,7 +752,6 @@ $deep-pink:#db4d6d;
 .group-form-wrap{
     background-color: #fad689;
     background-image: url(../img/background.png);
-   
     .wrapper{
         width: 95%;
         max-width: 1200px; 
@@ -1032,16 +1044,18 @@ $deep-pink:#db4d6d;
 .group-message-wrap{ 
     background-color: $bg-light-yellow;
     position: relative;
+    padding-bottom:  5%;
   
     .title-box{
         transform: translateY(-1%);
-   
         background-color: $bg-light-yellow;
         text-align: center;
         @include out-Line-Font(message-title,#fff,40px,8px,$deep-pink,開團留言板);
-        h3{  
-          
+        .message-title{  
             font-family: A-OTF-M ;
+            @include rwd(mobile){
+                font-size: 24px;
+            }
         }
         span{
             text-align: center;
@@ -1049,6 +1063,9 @@ $deep-pink:#db4d6d;
             color: $font-gray;
             font-family: A-OTF-M ;
             line-height: 32px;
+            @include rwd(mobile){
+                font-size: 13px;
+            }
         }
     }
     
@@ -1068,9 +1085,15 @@ $deep-pink:#db4d6d;
             p{
                 font-size: 20px;
                 color:$font-gray;
+                @include rwd(mobile){
+                    font-size: 16px;
+                }
             }
             .time{
                 font-size: 16px;
+                @include rwd(mobile){
+                    font-size: 13px;
+                }
             }
             .message-meb{
                 text-align: center;
@@ -1166,12 +1189,14 @@ $deep-pink:#db4d6d;
                 font-size: 16px;
                 color:$font-gray;
                 @include rwd(medium){
-                
                     font-size: 18px;
                 }
             }
             .time{
                 font-size: 16px;
+                @include rwd(mobile){
+                    font-size: 13px;
+                }
             }
             .message-meb{
                 text-align: center;
@@ -1250,7 +1275,7 @@ $deep-pink:#db4d6d;
                     top:15%;
                 }
                     position: absolute;
-                    top:10%;
+                    top:5%;
                     right: 10%;
                     cursor: pointer;
                    img{
@@ -1262,7 +1287,6 @@ $deep-pink:#db4d6d;
                     @include rwd(medium){
                         width: 30%;
                         top: 20%;
-                        left: 35%;
                         height: 45px;
                         line-height: 45px;
                     } 
@@ -1277,12 +1301,13 @@ $deep-pink:#db4d6d;
                     background-color: #434343 ;
                     border-radius: 45px;
                     text-align: center;
-                    width:80%;
-                    height: 35px;
-                    line-height: 35px;
-                    position: absolute;
-                    top: 20%;
-                    left: 10%;
+                    width:70%;
+                    height: 40px;
+                    line-height: 40px;
+                    position: relative;
+                    top: 15px;
+                    margin: auto;
+                }
                
             }
             .pop-content{
@@ -1296,7 +1321,7 @@ $deep-pink:#db4d6d;
                 background-color:#BEC23F ;
                 border-radius: 10px;
                 width:90%;
-                height: 50%;
+                height: 400px;
                 margin: auto;
             }
                 display: flex;
@@ -1315,33 +1340,44 @@ $deep-pink:#db4d6d;
                 .pop-main-message{
                     @include rwd(mobile){
                         background-color: $bg-medium-yellow;
-                        height: 70%;
+                        height: 60%;
                         p{
                           font-size:13px;  
                         }
                     }
                     @include rwd(medium){
-                        width: 55%;
+                        width: 50%;
                         height: 33%;
                         background-color: #C9D34A;
                     }
                     box-shadow: #ccc 1px 1px 3px;
                     padding:10px 20px;
-                   
                     border-radius: 20px;
                     display: flex;
+                    justify-content: center;
                     flex-flow: row wrap;
+                    margin: 5px;
+                 
                     .message-con{
                         padding: 0 15px;
+                        @include rwd(mobile){
+                            padding: 0 50px;
+                        }
                     }
+                    
                 }
-
+                .msgno{
+                        display: none;
+                    }
                 .message-meb{
                     text-align: center;
                     line-height: 30px;
                     i{
                         color: #434343;
                         font-size: 50px;
+                        @include rwd(mobile){
+                            font-size: 30px;
+                        }
                     }
                 
                 }
@@ -1352,7 +1388,7 @@ $deep-pink:#db4d6d;
                     background-color: #bec23f;
                     border-radius: 10px;
                     height: 33%;
-                    width: 50%;
+                    width: 51%;
                     @include rwd(medium){
                         display: block;
                     }
@@ -1360,6 +1396,7 @@ $deep-pink:#db4d6d;
                     .meb-add-message {
                         background-color: #FFF0F4;
                         border-radius: 5px;
+                        margin: 3px 0;
                         display: flex;
                         justify-content: center;
                         padding: 5px;
@@ -1378,45 +1415,59 @@ $deep-pink:#db4d6d;
                 }
                 .pop-leave-message{
                     vertical-align: middle;
-
+                    text-align: center;
+                    width: 100%;
+                    margin: auto;
                     @include rwd(medium){
-                        width: 55%;
+                        width: 50%;
                         height: 15%;
                         display: flex;
                         justify-content:space-between;
+                        align-items: center;
                     }
-                    
+                   
+                    .leave-message {
+                        width: 90%;
+                        margin: auto;
+                    }
                     .leave-message-box {
-                    font-size: 16px;
-                    padding:0 20px;
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 50px;
-                    border: #6a3e26  solid 3px;
-                    margin: auto ;
+                        font-size: 16px;
+                        padding:0 20px;
+                        width: 90%;
+                        height: 50px;
+                        border-radius: 50px;
+                        border: #6a3e26  solid 3px;
+                        margin: auto;
                         @include rwd(mobile){
                             font-size: 13px;
-                            padding:0 10px;
-                            height: 30px;
+                            padding:10px;
+                            height: 40px;
+                            margin: auto;
                             border-radius: 30px; 
-                        
+                            margin: 5px 0;
                         }
                        
                     }
-                    @include rwd(mobile){
-                    .message-btn{
-                        .message-btn-out{
-                            width: 80%;
+
+                    .message-btn {
+                        @include rwd(mobile){
+                            width: 90%;
                             margin: auto;
-                            @include btn(message-btn-out,100px,message-btn-in,16px, 留言參加);
-                        } 
-                    }
-                }
-                    .message-btn{
+                 
+                        }
+                    .btn-add{
+                        width: 100px;
+                        color: whitesmoke;
+                        font-size: 18px;
+                        border-radius: 20px;
+                        background-color: #fc7389;
+                        border: 2px solid #e4575f;
+                        text-align: center;
                         margin: auto;
-                        // @include btn(message-btn-out,135px,message-btn-in,20px, 留言參加);
-                        @include btn(message-btn-out,100px,message-btn-in,16px, 留言參加);
+                        cursor: pointer;
                     }
+                    }
+                   
                 }
             }
 
@@ -1424,4 +1475,3 @@ $deep-pink:#db4d6d;
    
     }
  
-}
