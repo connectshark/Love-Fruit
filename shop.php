@@ -97,10 +97,7 @@ function typeno($typeno)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
-<body class="page-shop">
- 
-
-           
+<body class="page-shop">       
 <?php
 require_once("nav.php");
 ?>
@@ -760,6 +757,7 @@ require_once("nav.php");
     </footer>
 
     <script src="js/nav.js"></script>
+    <script> src="js/login.js"</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/shop.js"></script>

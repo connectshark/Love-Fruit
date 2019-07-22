@@ -64,7 +64,7 @@ var textureImg;
 function imgChange(){
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
-	textureImg = src;
+	textureImg = $(this).index('.texture-select');
 	$('#texture-main').attr({
 		src:src,
 		alt:alt,
@@ -106,11 +106,12 @@ function fruiteChange() {
 	listItemChange();
 	persentChange();
 	totalPrice();
-	$(window).resize(persentChange);
+	$(window).resize(function () {
+		persentChange(sliceIndex);
+	});
 }
-function persentChange() {
+function persentChange(slice) {
 	if (fruiteItem.length == 1) {
-		$('.progress-bar').css('width',0);
 		for (var i = 0; i < fruiteQuality[fruiteItem[0]].length; i++) {
 			$('.progress-bar').eq(i).css('width',(fruiteQuality[fruiteItem[0]][i]*parseInt($('.default').css('width'))/30)+"px"); 
 		}
@@ -121,7 +122,14 @@ function persentChange() {
 	}else{
 		$('.progress-bar').css('width',0);
 	}
-	console.log();
+	if (slice >= 0 && slice <= 3) {
+		console.log(slice);
+		var Mon = parseInt($('.default').css('width'))/30;
+		for (var i = 0; i < sliceQuality[slice].length; i++) {
+			var WW = parseInt($('.progress-bar').eq(i).css('width'));
+			$('.progress-bar').eq(i).css('width',sliceQuality[slice][i]*Mon+WW);
+		}
+	}
 
 }
 // 價錢變數
@@ -256,9 +264,13 @@ function smile() {
 var sliceQuality=new Array();
 var slicePrice=new Array();
 var sliceSize = 50;
+var sliceSrc;
+var sliceIndex = -1;
 function imgPut() {
 	var src = $(this).children().children().attr('src');
 	var alt = $(this).children().children().attr('alt');
+	sliceIndex = $(this).index('.slice-item');
+	sliceSrc = src;
 	$('#slice-m').children().attr({
 		src:src,
 		alt:alt,
@@ -272,7 +284,7 @@ function imgPut() {
 	$('#slice-price').text(slicePrice);
 	dragSliceImg();
 	totalPrice();
-	slicePersentChange();
+	persentChange(sliceIndex);
 }
 function imgBigger() {
 	sliceSize += 10;
@@ -301,9 +313,6 @@ function dragSliceImg() {
 		scroll: false,
 	});
 }
-function slicePersentChange() {
-	console.log(sliceQuality);
-}
 // 第四步
 function putStickIn() {
 	var check = checkList();
@@ -311,19 +320,20 @@ function putStickIn() {
 		window.alert(check);
 		return;
 	}
-	$('#ice-stick').addClass('ice-stice-put');
+	// $('#ice-stick').addClass('ice-stice-put');
 	$('#text').attr('disabled',true);
 	$('#slice-main').draggable({
 		disabled:true,
 	});
+	// 按鈕收起來
 	$('#last').hide(0,function() {
 		$('#none-last').show();
 	});
+	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
+	sendFormData();
 	$('#pop').fadeIn('fast', function() {
 		$('#pop-total-price').text($('#total-price').text());
 	});
-	totalPrice();
-
 }
 function checkList() {
 	if ($('#mold-price').text() == "") {
@@ -341,6 +351,7 @@ function checkList() {
 function totalPrice() {
 	var total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+150;
 	$('#total-price').text(total);
+	$('#custom-price').val(total);
 }
 $(document).ready(function() {
 	$('#last').click(lastChange);
@@ -364,6 +375,6 @@ $(document).ready(function() {
 	$('#slice-bigger').click(imgBigger);
 	$('#slice-smaller').click(imgSmaller);
 	sliceSizeChange(sliceSize);
-	// $('#ice-stick').hide();
+	$('#ice-stick').hide();
 	$('#complete-all').click(putStickIn);
 });

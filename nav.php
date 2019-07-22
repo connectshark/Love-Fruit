@@ -1,3 +1,11 @@
+<?php
+
+
+echo $_SESSION["mem_name"];
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
+?>  
 <input type="checkbox" id="menu-control" />
 <header id="header">
   <div class="item-group">
@@ -45,11 +53,14 @@
               <a href="javascript:;"><img src="img/navBar/shoppingCartIcon.png" alt="購物車" /></a>
             </li>
             <li class="member-icon">
-              <img id="membe-centre-img" src="img/navBar/memberIcon.png" alt="會員" />
-              <ul id="member-centre-down-menu">
+              <div id="membe-centre-img-circle">
+                <img id="membe-centre-use-img" class="membe-centre-img" src="database/img_mem/<?php echo $_SESSION["mem_pic"] ?>" alt="會員" />
+              </div>
+              <ul id="member-centre-down-menu" style="opacity: 0; transform: translateY(0%);">
                 <div class="member-centre-triangle"></div>
+                <li><span id="user-name"><?php echo $_SESSION["mem_name"] ?></span></li>
                 <li><a href="account.php">會員中心</a></li>
-                <li><span>登出</span></li>
+                <li><span id="login-out">登出</span></li>
               </ul>
               <span id="nav-login-icon">登入</span>
             </li>
@@ -62,13 +73,15 @@
 
   <div class="icon-mp">
     <div class="icon-login-box-mp">
-      <img id="icon-login-box-mp-img" src="img/navBar/memberIcon.png" alt="會員" />
+      <div id="icon-login-box-mp-img">
+        <img id="icon-login-box-mp-user-img" src="database/img_mem/<?php echo $_SESSION["mem_pic"] ?>" alt="會員" />
+      </div>
       <span id="nav-login-icon-p">登入</span>
-      <div id="member-centre-panel-p" class="member-centre-panel-p">
+      <div id="member-centre-panel-p" class="member-centre-panel-p" style="opacity: 0; transform: translateY(0%);">
         <div class="member-centre-panel-p-triangle"></div>
-        <span id="user-nam-p">會員名稱</span>
+        <span id="user-nam-p"><?php echo $_SESSION["mem_name"] ?></span>
         <span>會員中心</span>
-        <span>登出</span>
+        <span id="login-out-p">登出</span>
       </div>
     </div>
     <img id="shoppingCartIconP" src="img/navBar/shoppingCartIcon.png" alt="購物車" />
@@ -86,10 +99,10 @@
     <div id="robot-conversation-block" class="robot-conversation-block">
       <div id="robot-conversation-list-group">
         <div id="robot-conversation-list" class="robot-conversation-list" style="display:none">
-          <div class="robot-conversation-robot">
+          <div id="robot-conversation-robot" class="robot-conversation-robot">
             <span class="question">使用者回答</span>
           </div>
-          <div class="robot-conversation-user">
+          <div id="robot-conversation-user" class="robot-conversation-user">
             <span class="answer">機器人回答</span>
           </div>
         </div>
@@ -111,7 +124,7 @@
     </div>
   </div>
 </header>
-<div id="member-login" class="member-login">
+<section id="member-login" class="member-login">
   <div id="login-interface" class="login-interface">
     <div id="member-login-close-button" class="member-login-close-button">
       <img src="img/navBar/login-interface/pop-close.png" alt="pop-close" />
@@ -143,7 +156,7 @@
     <h2>取回密碼</h2>
     <input type="text" name="retrieve-mem-id" id="retrieve-mem-id" value placeholder="  帳號：" />
     <input type="email" name="emailaddress" id="email-address" value placeholder="  信箱：" />
-    <div class="login-interface-group">
+    <div id="login-retrieve-password-button" class="login-interface-group">
       <div class="member-login-button-style">
         <div class="member-login-button-style-botton">
           <div class="member-login-inner-style">
@@ -158,7 +171,7 @@
       </div>
     </div>
 
-  
+
   </div>
   <div id="register-account" class="register-account">
     <div id="register-account-close-button" class="register-account-close-button">
@@ -166,13 +179,14 @@
     </div>
     <h2 id="register-account-title">會員註冊</h2>
     <div class="register-account-group">
-      <input type="text" name="register-account-memName" id="register-account-mem-name" value placeholder="  姓名：" />
+      <input maxlength="8" type="text" name="register-account-memName" id="register-account-mem-name" value placeholder="  姓名：" />
       <input type="text" name="register-account-mem-id" id="register-account-mem-id" value placeholder="  帳號：" />
       <input type="password" name="register-account-mem-psw" id="register-account-mem-psw" value placeholder="  密碼：" />
       <input type="password" name="register-account-confirm-mem-psw" id="register-account-confirm-mem-psw" value placeholder="  確認密碼：" />
       <input type="email" name="register-account-emailaddress" id="register-account-email-address" value placeholder="  信箱：" />
+      <input type="register-memberIcon" name="register-memberIcon" id="register-memberIcon" value="memberIcon.png" />
     </div>
-    <div class="register-account-button-style">
+    <div id="register-account-button-style" class="register-account-button-style">
       <div class="register-account-button-style-botton">
         <div class="register-account-inner-style">
           <div class="register-account-button-text-style">
@@ -185,22 +199,21 @@
       </div>
     </div>
   </div>
-</div>
-<div class="black-opacity">
-  <section id="mini-cart">
-      <div class="head">
-          <div class="cart-icon">
-              <img src="img/navBar/shoppingCartIcon.png" alt="">
-              <h3>
-                  我的購物車
-              </h3>
-          </div>
-          <div class="cart-close">
-              <i class="fas fa-times ">  
-              </i>
-          </div>
-      </div>    
-      <div id="mini-item">
-      </div>
-  </section>
-</div>
+</section>
+
+<section id="mini-cart">
+  <div class="head">
+    <div class="cart-icon">
+      <img src="img/navBar/shoppingCartIcon.png" alt="">
+      <h3>
+        我的購物車
+      </h3>
+    </div>
+    <div class="cart-close">
+      <i class="fas fa-times ">
+      </i>
+    </div>
+  </div>
+  <div id="mini-item">
+  </div>
+</section>

@@ -108,14 +108,16 @@ session_start();
       <div class="col-lg-2 "><span class="text-20">刪除</span></div>
     </div>
   </div>
-<div id="show-wrap">
+<div id="col-lg-2 col-6 " class="show-wrap">
   <!-- <div id="empty-text"></div> -->
-  <?php
-  $total = 0;
-  foreach($_SESSION['cart'] as $i=>$value){
-  $total += $_SESSION["cart"][$i]["prod_price"]*$_SESSION["cart"][$i]["qty"];
-    // echo $_SESSION["cart"][$prod_no];
-  ?>
+      <?php
+      // if (isset($_SESSION["cart"]) === false || count($_SESSION["cart"]) == 0){
+      //   無資料
+      // }
+      $total = 0;
+      foreach($_SESSION['cart'] as $i=>$value){
+      $total += $_SESSION["cart"][$i]["prod_price"]*$_SESSION["cart"][$i]["qty"];
+      ?>
   <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
       <input type="hidden" value="<?php echo $i ?>">
       <div class="col-lg-2 col-6 item-pic">
@@ -144,9 +146,9 @@ session_start();
         <div class="col-lg-2 col-1 "><img src="database/img_prod/trash.png" alt="" class="trash-img"></div>
       </form>
   </div>
-<?php
-  }
- ?>
+    <?php
+      }
+    ?>
 </div>
 <div class="total-pri container p-10 ">
   <p>總計:NT<span id="big-total"><?php echo $total ?></span></p>

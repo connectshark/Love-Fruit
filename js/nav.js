@@ -46,7 +46,7 @@ function memberCentreDownMenuOutP() {
   if (window.innerWidth < 767) {
     if ($id("member-centre-panel-p").style.opacity == "0") {
       $id("member-centre-panel-p").style.opacity = "1";
-      $id("member-centre-panel-p").style.transform = "translateY(180%)";
+      $id("member-centre-panel-p").style.transform = "translateY(240%)";
     } else {
       $id("member-centre-panel-p").style.opacity = "0";
       $id("member-centre-panel-p").style.transform = "translateY(0%)";
@@ -56,7 +56,7 @@ function memberCentreDownMenuOutP() {
 
 function init() {
   // 會員主選單
-  $id("membe-centre-img").addEventListener(
+  $id("membe-centre-use-img").addEventListener(
     "click",
     memberCentreDownMenuOut,
     false
@@ -105,11 +105,11 @@ window.addEventListener("load", function() {
     }
   });
 });
-// 使用者回話
+// 使用者回話;
 // $(document).ready(function() {
 //   $("#robot-submit").click(function() {
-//   $message = $("#message").val();
-//   $("#robot-conversation-list").append(`<div class="robot-conversation">
+//     $message = $("#message").val();
+//     $("#robot-conversation-list").append(`<div class="robot-conversation">
 //   <p class="robot_text">${$message}</p></div>`).append(`<div class="robot-conversation">
 //   <p class="robot_text"><span>小達人:</span>${$message}</p>
 // </div>`);
@@ -156,6 +156,10 @@ window.addEventListener("load", function() {
 // robot();
 //   });
 // });
+function scrollTop() {
+  $scrollHeight = $("#robot-conversation-list-group").height(); //scroll的高度
+  $("#robot-conversation-block").animate({ scrollTop: $scrollHeight }, 200);
+}
 
 // Robot!Robot!Robot!Robot!Robot!Robot!Robot!Robot!
 // Ajax Robot!
@@ -173,7 +177,7 @@ function setRobotAns_A() {
       if (result.answer) {
         // 將questionReply 換成 robot 要官方回覆給 User 看的 DB 欄位名
         //...................
-        let QA = document.getElementById("robot-conversation-block");
+        let QA = document.getElementById("robot-conversation-list-group");
         let QA_item = document.querySelector(".robot-conversation-list");
         let newQA_item = QA_item.cloneNode(true);
         // cloneNode節點物件的拷貝。
@@ -183,26 +187,21 @@ function setRobotAns_A() {
           "span"
         )[0].innerText = document.getElementById("message").value; // DB內 User 詢問欄位
         newQA_item.getElementsByTagName("span")[1].innerHTML = result.answer; // DB內 Robot 回覆欄位
-
-        $scrollHeight = $(".robot-conversation-user").height(); //scroll的高度
-        console.log($scrollHeight);
-        $("#robot-conversation-block").animate(
-          { scrollTop: $scrollHeight },
-          200
-        ); //控制scroll bar的位置 並加一點動畫效果
+        scrollTop();
         //.....................
       } else {
-        let QA = document.getElementById("robot-conversation-block");
+        let QA = document.getElementById("robot-conversation-list-group");
         let QA_item = document.querySelector(".robot-conversation-list");
         let newQA_item = QA_item.cloneNode(true);
         newQA_item.style.display = "";
         QA.appendChild(newQA_item);
-        // console.log(msg);
-        // console.log()
+
         newQA_item.getElementsByTagName(
           "span"
         )[0].innerText = document.getElementById("message").value; // DB內 User 詢問欄位
-        newQA_item.getElementsByTagName("span")[1].innerText = "無法回答"; // DB內 Robot 回覆欄位
+        newQA_item.getElementsByTagName("span")[1].innerText =
+          "問題太熱情了無法回答"; // DB內 Robot 回覆欄位
+        scrollTop();
         // document.getElementById("message").value="";
       }
       document.getElementById("message").value = "";
@@ -234,7 +233,7 @@ function setRobotAns_B(e) {
       let result = JSON.parse(xhr.response);
       if (result.answer) {
         //...................
-        let QA = document.getElementById("robot-conversation-block");
+        let QA = document.getElementById("robot-conversation-list-group");
         let QA_item = document.querySelector(".robot-conversation-list");
         let newQA_item = QA_item.cloneNode(true);
         newQA_item.style.display = "";
@@ -242,13 +241,10 @@ function setRobotAns_B(e) {
         newQA_item.getElementsByTagName("span")[0].innerText = result.keyword; // DB內 User 詢問欄位
         newQA_item.getElementsByTagName("span")[1].innerHTML = result.answer; // DB內 Robot 回覆欄位
 
-        $scrollHeight = $("#robot-conversation-block").height(); //scroll的高度
-        console.log($scrollHeight);
-        $("#robot-conversation-block").animate(
-          { scrollTop: $scrollHeight },
-          200
-        ); //控制scroll bar的位置 並加一點動畫效果
+        scrollTop();
+        //控制scroll bar的位置 並加一點動畫效果
         //.....................
+        console.log($scrollHeight);
       } else {
         alert("目前無法回答您的問題, 請洽詢專線3345678");
       }

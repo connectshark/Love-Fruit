@@ -411,49 +411,60 @@
         display: inline-block;
         margin-bottom: 10px;
     }
-       .confirm-btn{
-           display:block;
-           text-align: center;
-           padding-top:0px;
-           height: 104px;
-           line-height: 105px;
-           span{
+    //    .confirm-btn{
+    //        display:block;
+    //        text-align: center;
+    //        padding-top:0px;
+    //        height: 104px;
+    //        line-height: 105px;
+    //        span{
+    //         display: block;
+    //     }
+    //    }
+    .confirm-btn{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+        a{
+            margin-right: 10px;
+        }
+        span{
             display: block;
         }
-       }
-       .small-total{
-           padding-top:0px; 
-           height: 104px;
-           line-height: 105px;
-           text-align:center;
-       }
-       .confirm-total{
-         text-align: right;
-         padding-right:20px;   
-         font-size: 20px;
-       }
-       .pay-transport{
-        width: 100%;
-        background-color: white;
-        border-radius: 20px;
-        height: 300px;
+    }   
+    .small-total{
+        padding-top:0px; 
+        height: 104px;
+        line-height: 105px;
+        text-align:center;
     }
-       .package-information-title{
-           border-bottom:2px solid #FAD689;
-           span{
-               text-align: center;
-               display: inline-block;
-               width:100px;
-               height: 30px;
-               line-height: 30px;
-               border-top-left-radius:10px;
-               border-top-right-radius:10px; 
-               background-color: #FAD689;
-           }
-         
-       }
-       .confirm-list{
-        padding: 0px;
+    .confirm-total{
+        text-align: right;
+        padding-right:20px;   
+        font-size: 20px;
     }
+    .pay-transport{
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    height: 300px;
+    }
+    .package-information-title{
+        border-bottom:2px solid #FAD689;
+        span{
+            text-align: center;
+            display: inline-block;
+            width:100px;
+            height: 30px;
+            line-height: 30px;
+            border-top-left-radius:10px;
+            border-top-right-radius:10px; 
+            background-color: #FAD689;
+        }
+        
+    }
+    .confirm-list{
+    padding: 0px;
+        }
     }
 }

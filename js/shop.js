@@ -1,9 +1,6 @@
-
 let cart = {};
 
-
 //點擊愛心
-
 var click_love = document.getElementsByClassName("latest-collection-love");
 for(var i=0 ;i<click_love.length; i++){
 	click_love[i].addEventListener("click",function(e){
@@ -103,32 +100,25 @@ function showCart(){
 		let xhr = new XMLHttpRequest();
 		
 		xhr.onload = function (){
+
 			miniItem.removeChild(item);// 消除視覺介面
 			cart = JSON.parse(xhr.responseText);
+			console.log(xhr.responseText);
+			if( JSON.stringify(cart) == "{}"){
+				html = `<div class="no-item">尚無購物資料</div>`;
+			}
 			// delete cart[prod_no]; 消除記憶體
-			
 		}
-	
 		let url = "trash.php?prod_no=" + prod_no;
-	
 		xhr.open("get",url,true);
 		console.log(this.parentNode);
-		// let myForm = new FormData(this.parentNode);
 		xhr.send(null);
 	}
-	// var trash = document.getElementsByClassName("fa-trash");
 	var trash = document.getElementsByClassName("trash-img");
 	// console.log(trash.length);
 	for(i=0;i<trash.length;i++){
 		trash[i].addEventListener("click",getTrash)
 	}
-	
-	//...............
-	//----------------註冊數量改變時的事件處理器
-	// let qtys = document.getElementsByName("qty");
-	// for(let i=0; i<qtys.length; i++){
-	// 	qtys[i].onchange = changeCart;
-	// }
 }	
 
 function isCartEmpty(){
@@ -138,7 +128,6 @@ function isCartEmpty(){
 	}
 	return false;
 }
-// console.log(cart);
 
 //----------------按下加入購物車的事件處理器
 function changeCart(e){
