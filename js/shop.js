@@ -1,9 +1,7 @@
-
 let cart = {};
-
+console.log(JSON.stringify(cart));
 
 //點擊愛心
-
 var click_love = document.getElementsByClassName("latest-collection-love");
 for(var i=0 ;i<click_love.length; i++){
 	click_love[i].addEventListener("click",function(e){
@@ -60,17 +58,13 @@ for(var i=0 ;i<click_love.length; i++){
 
 	};
 
-
-
-
 //..............................顯示購物車	
 function showCart(){
 	getCart();
 	let html = "";
-	if( isCartEmpty()){
+	if(isCartEmpty()){
 		html = `<div class="no-item">尚無購物資料</div>`;
 	}
-
 	// html += "<input type='button' value='close' id='btnCloseCart'>";
 	for(let prod_no in cart){
 		console.log(cart);  //cart[prod_no]
@@ -89,7 +83,6 @@ function showCart(){
 			</div>`;	
 	}
 	if( !isCartEmpty()){
-
 		html += `<div class="gogo"><a href="cart-show.php">結帳去</a></div>`;
 	}
 	
@@ -103,42 +96,42 @@ function showCart(){
 		let xhr = new XMLHttpRequest();
 		
 		xhr.onload = function (){
+
 			miniItem.removeChild(item);// 消除視覺介面
-			cart = JSON.parse(xhr.responseText);
-			// delete cart[prod_no]; 消除記憶體
+			console.log(xhr.responseText);
 			
+			cart = JSON.parse(xhr.responseText);
+			// cart.typeof();
+			// console.log(cart.typeof());
+			// console.log(cart);
+			cart = JSON.stringify(cart);
+			console.log(Object.keys(cart).length);
+			if(Object.keys(cart).length == 2 ){
+				html = "";
+				html += '<div class="no-item">尚無購物資料</div>';
+				document.getElementById("mini-item").innerHTML = html;
+			}
+			// delete cart[prod_no]; 消除記憶體
 		}
-	
 		let url = "trash.php?prod_no=" + prod_no;
-	
 		xhr.open("get",url,true);
 		console.log(this.parentNode);
-		// let myForm = new FormData(this.parentNode);
 		xhr.send(null);
 	}
-	// var trash = document.getElementsByClassName("fa-trash");
+	
 	var trash = document.getElementsByClassName("trash-img");
 	// console.log(trash.length);
 	for(i=0;i<trash.length;i++){
 		trash[i].addEventListener("click",getTrash)
 	}
-	
-	//...............
-	//----------------註冊數量改變時的事件處理器
-	// let qtys = document.getElementsByName("qty");
-	// for(let i=0; i<qtys.length; i++){
-	// 	qtys[i].onchange = changeCart;
-	// }
 }	
 
 function isCartEmpty(){
-	if( JSON.stringify(cart) == "{}"){
+	if( JSON.stringify(cart) =="{}"){
 		return true;
-		
 	}
-	return false;
+		return false;
 }
-// console.log(cart);
 
 //----------------按下加入購物車的事件處理器
 function changeCart(e){
@@ -146,7 +139,7 @@ function changeCart(e){
 	
 	xhr.onload = function (e){
 		cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
-		console.log(cart);
+		console.log(JSON.stringify(cart));
 	}
 
 	let url = "shop-update.php";
@@ -218,11 +211,9 @@ function minnum(){
 	  for(i=0;i<plus.length;i++){
 		   min[i].addEventListener("click",minnum);
 	  }
-  //.............顯示購物車
-//   document.getElementsByClassName("shopping-cart-icon")[0].onclick = function(){
-//   	showCart();
-//   };
-	// 右上角購物車開關
+  
+
+	// 右上角購物車開關  
 	$("#mini-cart").css("display" , "none");
 	$(".shopping-cart-icon").click(function(){
 		$("#mini-cart").show();
@@ -241,6 +232,8 @@ function minnum(){
 		$("#mini-cart").css("display","none");
 	})
 
+	// 右上角購物車滾輪
+	$().on()
 
 
 

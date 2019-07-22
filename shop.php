@@ -97,10 +97,7 @@ function typeno($typeno)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
-<body class="page-shop">
- 
-
-           
+<body class="page-shop">       
 <?php
 require_once("nav.php");
 ?>
@@ -132,51 +129,6 @@ require_once("nav.php");
         <?php
          }
         ?>
-
-
-
-
-            <!-- <div class="item latest-item col-6 col-lg-10">
-                <div class="latest-pic">
-                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
-                    <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                </div>
-                <p class="latest-name">芋頭芒果</p>
-                <p class="latest-pri">NT280</p>
-            </div>
-            <div class="item latest-item col-6 col-lg-10">
-                <div class="latest-pic">
-                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
-                    <img src="img/shop/collection-red.png" alt="" class="latest-collection-love">
-                </div>
-                <p class="latest-name">芋頭芒果</p>
-                <p class="latest-pri">NT280</p>
-            </div>
-            <div class="item latest-item col-6 col-lg-10">
-                <div class="latest-pic">
-                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
-                    <img src="img/shop/collection-red.png" alt="" class="latest-collection-love">
-                </div>
-                <p class="latest-name">芋頭芒果</p>
-                <p class="latest-pri">NT280</p>
-            </div>
-            <div class="item latest-item col-6 col-lg-10">
-                <div class="latest-pic">
-                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
-                    <img src="img/shop/collection-red.png" alt="" class="latest-collection-love">
-                </div>
-                <p class="latest-name">芋頭芒果</p>
-                <p class="latest-pri">NT280</p>
-            </div>
-            <div class="item latest-item col-6 col-lg-10">
-                <div class="latest-pic">
-                    <img src="img/shop/inlove/inlove-ball01.png" alt="">
-                    <img src="img/shop/collection-red.png" alt="" class="latest-collection-love">
-                </div>
-                <p class="latest-name">芋頭芒果</p>
-                <p class="latest-pri">NT280</p>
-            </div> -->
-
         </div>
     </section>
 
@@ -233,13 +185,6 @@ require_once("nav.php");
             <div class="general-store col-11 col-lg-11">
                 <?php
                 foreach($prodRows as $i => $prodRow){
-                    //檢查商品是否已在購物車中，若是，則數量以購物車中的為主
-                    // $prod_no = $prodRow["prod_no"];
-                    // if( isset($_SESSION["cart"]) && isset($_SESSION["cart"][$prod_no])){
-                    //     $qty = $_SESSION["cart"][$prod_no]["qty"];
-                    // }else{
-                    //     $qty = 0;
-                    // }
                 ?>
                         <div class="general-item col-6 col-lg-3 <?php echo stageNo($prodRow["stage_no"]); ?> <?php echo typeno($prodRow["type_no"]); ?>">
                             <div class="ice-type col-11">
@@ -276,10 +221,6 @@ require_once("nav.php");
                                             <input type='button' value='-' class='qtyminus' />
                                             <input type='number' min="1"  name='quantity' value='1' class='qty' />
                                             <input type='button' value='+' class='qtyplus' />
-                                            <!-- <input type="hidden" name="prod_no" value="<?php //echo $prodRow["prod_no"]?>">
-                                            <input type="hidden" name="prod_name" value="<?php //echo $prodRow["prod_name"]?>">
-                                            <input type="hidden" name="prod_price" value="<?php //echo $prodRow["prod_price"]?>">	 -->
-                                        <!-- </form> -->
                                     </div>
                                 </div>
                                 <div class="shop-btn">
@@ -303,318 +244,6 @@ require_once("nav.php");
                 <?php
                 }
                 ?>
-
-                <!-- <div class="general-item col-6 col-lg-3 first-love">
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-item col-6 col-lg-3 fall-in-love"
-                >
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-item col-6 col-lg-3 break-up">
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-item col-6 col-lg-3 single">
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-item col-6 col-lg-3 first-love">
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-item col-6 col-lg-3 fall-in-love">
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="general-item col-6 col-lg-3 break-up">
-                    <div class="ice-type col-11 ">
-                        <img src="img/shop/icetype-popsicle.png" alt="">
-                        <p>single</p>
-                    </div>
-                    <div class="general-item-content col-11 ">
-                        <div class="item-img col-12">
-                            <img src="img/shop/popsicle-single.png" alt="" class="product-img">
-                            <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
-                        </div>
-                        <div class="item-text ">
-                            <span class="item-name col-12">芋頭牛奶</span>
-                            <div class="review col-12">
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <i class="fas fa-star star"></i>
-                                <span>(4.5)</span>
-                            </div>
-
-                        </div>
-                        <div class="item-pri ">
-                            <span>
-                                NT250
-                            </span>
-                            <div class="btn-numbox">
-                                <form id='myform' method='POST' action='#'>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </div>
-                        </div>
-                        <div class="shop-btn">
-                            <div class="shop-buy-btn">
-                                <span class="shop-btn-in">
-                                    加入購物車
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-
             </div>
         </div>    
 
@@ -760,6 +389,7 @@ require_once("nav.php");
     </footer>
 
     <script src="js/nav.js"></script>
+    <script> src="js/login.js"</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/shop.js"></script>

@@ -1,10 +1,11 @@
 <?php
-session_start();
-// echo $_SESSION["mem_name"];
+
+
+echo $_SESSION["mem_name"];
 if (isset($_SESSION["mem_id"]) != true) {
   $_SESSION["mem_id"] = null;
 }
-?>
+?>  
 <input type="checkbox" id="menu-control" />
 <header id="header">
   <div class="item-group">

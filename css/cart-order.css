@@ -585,11 +585,16 @@
     margin-bottom: 10px;
   }
   .page-confirm .confirm-btn {
-    display: block;
-    text-align: center;
-    padding-top: 0px;
-    height: 104px;
-    line-height: 105px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 20px;
+  }
+  .page-confirm .confirm-btn a {
+    margin-right: 10px;
   }
   .page-confirm .confirm-btn span {
     display: block;

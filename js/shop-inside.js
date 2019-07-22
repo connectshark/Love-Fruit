@@ -185,6 +185,13 @@ function showCart(){
 			miniItem.removeChild(item);// 消除視覺介面
 			cart = JSON.parse(xhr.responseText);
 			// delete cart[prod_no]; 消除記憶體
+			cart = JSON.stringify(cart);
+			console.log(Object.keys(cart).length);
+			if(Object.keys(cart).length == 2 ){
+				html = "";
+				html += '<div class="no-item">尚無購物資料</div>';
+				document.getElementById("mini-item").innerHTML = html;
+			}
 			
 		}
 	
