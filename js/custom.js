@@ -204,10 +204,10 @@ function bgcGradient() {
 		$('.gradual-item').eq(1).children().attr('src', Bimg);
 		$('#range').css({
 			'backgroundColor' : 'transparent',
-			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+$('#range').val()+'%,'+Bfruite+')',
+			'backgroundImage' : 'linear-gradient(to right, '+Afruite+','+Bfruite+')',
 		});
 		gradintChangeClear();
-		gradintChange(Afruite,Bfruite,$('#range').val());
+		gradintChange(Afruite,Bfruite);
 	}else {
 		$('.gradual-item').children().attr('src', '');
 		$('#range').css({
@@ -220,46 +220,16 @@ function bgcGradient() {
 function gradintChangeClear() {
 	$('#texture-p').css('backgroundImage', 'none');
 }
-function gradintChange(Aimg,Bimg,persent) {
-	$('#texture-p').css('backgroundImage', 'linear-gradient('+$('#angle').val()+'deg, '+Aimg+','+persent+'%,'+Bimg+')');
+function gradintChange(Aimg,Bimg) {
+	$('#texture-p').css('backgroundImage', 'linear-gradient(to right, '+Aimg+','+Bimg+')');
 }
-function angleChange() {
-	if ($(this).val() > 360 || $(this).val() < 0 || $(this).val() == "") {
-		$(this).css('borderColor','#FF4500');
-		return;
-	}
-	bgcGradient();
-}
-function smile() {
-	var canvas = document.getElementById('mood');
-	var context = canvas.getContext('2d');
-	for (var i = 0; i <= 20; i++) {
-		var line = i * 50;
-		context.moveTo(0,line);
-		context.lineTo(canvas.width,line);
-		context.fillText(line,0,line);
-		context.moveTo(line,0);
-		context.lineTo(line,canvas.height);
-		context.fillText(line,line,8);
-	}
-	context.strokeStyle='rgba(0,0,0,.3)';
-	context.stroke();
-
-
-	context.beginPath();
-	context.lineWidth=3;
-	context.strokeStyle= 'LightSkyBlue';
-	context.moveTo(40,60);
-	context.arcTo(60,40,80,60,20);
-	context.stroke();
-
-
-	context.beginPath();
-	context.lineWidth=3;
-	context.moveTo(110,60);
-	context.arcTo(90,60,70,60,0);
-	context.stroke();
-}
+// function angleChange() {
+// 	if ($(this).val() > 360 || $(this).val() < 0 || $(this).val() == "") {
+// 		$(this).css('borderColor','#FF4500');
+// 		return;
+// 	}
+// 	bgcGradient();
+// }
 // 第三步
 var sliceQuality=new Array();
 var slicePrice=new Array();
@@ -329,6 +299,7 @@ function putStickIn() {
 	$('#last').hide(0,function() {
 		$('#none-last').show();
 	});
+	$('#cto-category-stage').text(setStage(sliceIndex));
 	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
 	sendFormData();
 	$('#pop').fadeIn('fast', function() {
@@ -347,9 +318,27 @@ function checkList() {
 	}
 	return true;
 }
+// 計算四階段
+function setStage(slice) {
+	var option1 = parseInt(fruiteQuality[fruiteItem[0]][0])+parseInt(fruiteQuality[fruiteItem[1]][0])+parseInt(sliceQuality[slice][0]);
+	var option2 = parseInt(fruiteQuality[fruiteItem[0]][1])+parseInt(fruiteQuality[fruiteItem[1]][1])+parseInt(sliceQuality[slice][1]);
+	var option3 = parseInt(fruiteQuality[fruiteItem[0]][2])+parseInt(fruiteQuality[fruiteItem[1]][2])+parseInt(sliceQuality[slice][2]);
+	if (option1 > 20) {
+		return "單身";
+	}else if(option2 > 20){
+		return "熱戀";
+	}else if(option3 > 20){
+		return "初戀";
+	}else{
+		return "分手";
+	}
+}
+
+
 // 計算總價
+var total;
 function totalPrice() {
-	var total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+150;
+	total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+200;
 	$('#total-price').text(total);
 	$('#custom-price').val(total);
 }
@@ -364,17 +353,15 @@ $(document).ready(function() {
 	$('.texture-select').click(imgChange);
 	// 第二步
 	$('.fruite-item').click(fruiteChange);
-	$('#range').change(bgcGradient);
-	$('#angle').keyup(angleChange).change(angleChange).focus(function() {
-		$(this).css('borderColor','#333');
-	}).blur(function() {
-		$(this).css('borderColor','#ccc');
-	});
-	smile();
+	// $('#angle').keyup(angleChange).change(angleChange).focus(function() {
+	// 	$(this).css('borderColor','#333');
+	// }).blur(function() {
+	// 	$(this).css('borderColor','#ccc');
+	// });
 	$('.slice-item').click(imgPut);
 	$('#slice-bigger').click(imgBigger);
 	$('#slice-smaller').click(imgSmaller);
 	sliceSizeChange(sliceSize);
 	$('#ice-stick').hide();
-	$('#complete-all').click(putStickIn);
+	$('#complete-all').click(checkedSign);
 });

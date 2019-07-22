@@ -1,10 +1,9 @@
 <?php
 session_start();
-// echo $_SESSION["mem_name"];
 if (isset($_SESSION["mem_id"]) != true) {
   $_SESSION["mem_id"] = null;
 }
-?>
+?>  
 <input type="checkbox" id="menu-control" />
 <header id="header">
   <div class="item-group">
@@ -53,7 +52,7 @@ if (isset($_SESSION["mem_id"]) != true) {
             </li>
             <li class="member-icon">
               <div id="membe-centre-img-circle">
-                <img id="membe-centre-use-img" class="membe-centre-img" src="database/img_mem/<?php echo $_SESSION["mem_pic"] ?>" alt="會員" />
+                <img id="membe-centre-use-img" class="membe-centre-img" src="<?php echo $_SESSION["mem_pic"] ?>" alt="會員" />
               </div>
               <ul id="member-centre-down-menu" style="opacity: 0; transform: translateY(0%);">
                 <div class="member-centre-triangle"></div>
@@ -73,7 +72,7 @@ if (isset($_SESSION["mem_id"]) != true) {
   <div class="icon-mp">
     <div class="icon-login-box-mp">
       <div id="icon-login-box-mp-img">
-        <img id="icon-login-box-mp-user-img" src="database/img_mem/<?php echo $_SESSION["mem_pic"] ?>" alt="會員" />
+        <img id="icon-login-box-mp-user-img" src="<?php echo $_SESSION["mem_pic"] ?>" alt="會員" />
       </div>
       <span id="nav-login-icon-p">登入</span>
       <div id="member-centre-panel-p" class="member-centre-panel-p" style="opacity: 0; transform: translateY(0%);">
@@ -129,20 +128,23 @@ if (isset($_SESSION["mem_id"]) != true) {
       <img src="img/navBar/login-interface/pop-close.png" alt="pop-close" />
     </div>
     <h2>會員登入</h2>
-    <input type="text" name="mem-id" id="mem-id" value placeholder="  帳號：" />
-    <input type="password" name="mem-psw" id="mem-psw" value placeholder="  密碼：" />
+    <div class="member-login-input">
+      <input type="text" name="mem-id" id="mem-id" placeholder="  帳號：" />
+      <input type="password" name="mem-psw" id="mem-psw" placeholder="  密碼：" />
+    </div>
     <div class="login-interface-group">
       <span id="register">註冊新會員</span>
       <span id="psw-back">取回密碼</span>
-      <div id="member-login-button-style" class="member-login-button-style">
-        <div class="member-login-button-style-botton">
-          <div class="member-login-inner-style">
-            <div class="member-login-button-text-style">
-              <span class="member-login-button-text">
-                <img class="member-login-btn-ice" src="img/btn/ICE.png" alt="ICE" />
-                登入
-              </span>
-            </div>
+    </div>
+    <span id="member-login-erroMsg"></span>
+    <div id="member-login-button-style" class="member-login-button-style">
+      <div class="member-login-button-style-botton">
+        <div class="member-login-inner-style">
+          <div class="member-login-button-text-style">
+            <span class="member-login-button-text">
+              <img class="member-login-btn-ice" src="img/btn/ICE.png" alt="ICE" />
+              登入
+            </span>
           </div>
         </div>
       </div>
@@ -153,9 +155,10 @@ if (isset($_SESSION["mem_id"]) != true) {
       <img src="img/navBar/login-interface/pop-close.png" alt="pop-close" />
     </div>
     <h2>取回密碼</h2>
-    <input type="text" name="retrieve-mem-id" id="retrieve-mem-id" value placeholder="  帳號：" />
-    <input type="email" name="emailaddress" id="email-address" value placeholder="  信箱：" />
-    <div id="login-retrieve-password-button" class="login-interface-group">
+    <input type="text" name="retrieve-mem-id" id="retrieve-mem-id" placeholder="  帳號：" />
+    <input type="email" name="emailaddress" id="email-address" placeholder="  信箱：" />
+    <span id="retrieve-password-erroMsg"></span>
+    <div id="login-retrieve-password-button" class="login-retrieve-password-button">
       <div class="member-login-button-style">
         <div class="member-login-button-style-botton">
           <div class="member-login-inner-style">
@@ -178,13 +181,29 @@ if (isset($_SESSION["mem_id"]) != true) {
     </div>
     <h2 id="register-account-title">會員註冊</h2>
     <div class="register-account-group">
-      <input maxlength="8" type="text" name="register-account-memName" id="register-account-mem-name" value placeholder="  姓名：" />
-      <input type="text" name="register-account-mem-id" id="register-account-mem-id" value placeholder="  帳號：" />
-      <input type="password" name="register-account-mem-psw" id="register-account-mem-psw" value placeholder="  密碼：" />
-      <input type="password" name="register-account-confirm-mem-psw" id="register-account-confirm-mem-psw" value placeholder="  確認密碼：" />
-      <input type="email" name="register-account-emailaddress" id="register-account-email-address" value placeholder="  信箱：" />
-      <input type="register-memberIcon" name="register-memberIcon" id="register-memberIcon" value="memberIcon.png" />
+      <div class="register-account-input-group">
+        <span>姓名：</span>
+        <input maxlength="10" type="text" name="register-account-memName" id="register-account-mem-name" placeholder=" 姓名：" />
+      </div>
+      <div class="register-account-input-group">
+        <span>帳號：</span>
+        <input maxlength="10" type="text" name="register-account-mem-id" id="register-account-mem-id" placeholder=" 帳號：" />
+      </div>
+      <div class="register-account-input-group">
+        <span>密碼：</span>
+        <input maxlength="10" type="password" name="register-account-mem-psw" id="register-account-mem-psw" placeholder=" 密碼：" />
+      </div>
+      <div class="register-account-input-group">
+        <span>確認密碼：</span>
+        <input maxlength="10" type="password" name="register-account-confirm-mem-psw" id="register-account-confirm-mem-psw" placeholder=" 確認密碼：" />
+      </div>
+      <div class="register-account-input-group">
+        <span>信箱：</span>
+        <input maxlength="30" type="email" name="register-account-emailaddress" id="register-account-email-address" placeholder=" 信箱：" />
+      </div>
+      <input type="register-memberIcon" name="register-memberIcon" id="register-memberIcon" value="database/img_mem/memberIcon.png" />
     </div>
+    <span id="register-erroMsg"></span>
     <div id="register-account-button-style" class="register-account-button-style">
       <div class="register-account-button-style-botton">
         <div class="register-account-inner-style">

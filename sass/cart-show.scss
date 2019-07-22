@@ -318,12 +318,22 @@
         background:url(../img/shop/check-circle-solid.svg)no-repeat;
     }
     #empty-text{
-        background-color: black;
+        width: 94.6%;
+        margin: auto;
+        background-color: white;
+        
     }
     
     
     // 網頁版
     @include rwd(desktop){
+        #empty-text{
+        text-align: center;
+        width: 95%;
+        margin: auto;
+        background-color: white;
+            
+        }
         .cart-head{
             padding-top:150px;
             max-width: 1200px;
@@ -430,11 +440,6 @@
              margin-bottom: 100px;
              border-bottom-left-radius:20px;
              border-bottom-right-radius:20px;
-             a{
-                //   margin: auto;
-             }
-            
-            
         }
         
         a{

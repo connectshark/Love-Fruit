@@ -116,11 +116,6 @@ try {
 				</div>
 			</div>
 			<div class="mood">
-				<div class="face">
-					<canvas width="150px" height="150px" id="mood">
-						看不到
-					</canvas>
-				</div>
 				<div class="progress">
 					<div class="category">
 						<span class="category-item">酸</span>
@@ -210,17 +205,14 @@ try {
                             <div class="gradual-item"><img></div>
                             <div class="gradual-item"><img></div>
                         </div>
-                        <div class="gradual-range">
-                            <label for="range">
-                                <input type="range" min="0" max="100" value="50" id="range">
-                            </label>
+                        <div class="gradual-range" id="range">
                         </div>
                     </div>
-                    <div class="range-angle">
+                    <!-- <div class="range-angle">
                         <label for="angle">
                             角度:
                         <input type="number" min="0" max="360" value="90" id="angle">°</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -310,6 +302,9 @@ try {
                 <h2>製作完成</h2>
                 <p>總價格為:<span id="pop-total-price"></span>元</p>
             </div>
+            <div class="cto-category">
+                <p>你的冰棒屬於:<span id="cto-category-stage"></span>階段</p>
+            </div>
                 <div class="btn-item">
                     <a class="cart-btn" id="addcart">
                         <span class="cart-btn-in">放入購物車</span>
@@ -321,7 +316,7 @@ try {
                     </a>
                 </div>
                 <div class="btn-item">
-                    <a class="reset-btn">
+                    <a class="reset-btn" href="custom.php">
                         <span class="reset-btn-in">重作一個</span>
                      </a>
                 </div>
@@ -341,10 +336,11 @@ try {
     <script src="js/vue.js"></script>
 	<script src="js/custom.js"></script>
     <script src="js/custom-img.js"></script>
-    <script src="js/custom-pop.js"></script>
+    <script src="js/custom-checksign.js"></script>
     <script src="js/custom-load.js"></script>
     <script src="js/custom-option.js"></script>
     <script src="js/custom-addcart.js"></script>
+    <script src="js/login.js"></script>
     <script>
         new Vue({
             el:'#app',

@@ -18,12 +18,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 </head>
 
-
 <body class="index-body">
   <?php
   require_once("nav.php");
   ?>
-
   <section class="index-hero-bgc">
     <div class="mountain">
       <img src="img/indexImg/heroImg.png" alt="山" />

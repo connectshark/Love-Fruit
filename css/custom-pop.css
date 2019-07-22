@@ -78,6 +78,28 @@
   text-align: center;
 }
 
+.pop .pop-area .cto-category {
+  width: 50%;
+  text-align: center;
+}
+
+.pop .pop-area .cto-category p {
+  font-size: 20px;
+}
+
+.pop .pop-area .cto-category p span {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+@media all and (max-width: 768px) {
+  .pop .pop-area .cto-category {
+    width: 80%;
+  }
+}
+
 .pop .pop-area .btn-item {
   padding: 5px 0;
 }

@@ -1,64 +1,9 @@
 var cart = {};
 
 	//...............trash
-	function getTrash(e){
-    // console.log(e);
-    
-		let miniItem = document.getElementById("show-wrap");
-		let item = e.target.parentNode.parentNode.parentNode;
-    let prod_no = item.firstElementChild.value;
-    console.log(prod_no);
-		let xhr = new XMLHttpRequest();
-		
-		xhr.onload = function (){
-       console.log(item)
-      miniItem.removeChild(item);// 消除視覺介面
-      cart = JSON.parse(xhr.responseText);
-      console.log(cart);
-      cart = JSON.stringify(cart);
-      console.log(cart);
-      // delete cart[prod_no]; 消除記憶體
-      
 
-      // 刪除項目總計跟著變
-      let smalltotal = parseInt(e.target.parentNode.parentNode.previousElementSibling.querySelector("div span").innerText);
-      // console.log(smalltotal);
-      var big_total_minus = document.getElementById("big-total").innerText;
-      // console.log(big_total_minus);
-      math_big_total = parseInt(big_total_minus );
-      // console.log(math_big_total );
-      newtotal = math_big_total - smalltotal;
-      // console.log(newtotal);
-      var aaa = big_total_minus = document.getElementById("big-total");
-      aaa.innerText = newtotal ;
-      
-      var empty = document.getElementById("empty-text");
-      console.log(empty );
-      console.log(aaa);
-      if( aaa.innerText == 0){
-        empty.innerText = "dhdojwqoidjq";
-      }
-      // 購物車無資料顯示
-    //   if( isCartEmpty()){
-    //     window.alert("123");
-    //   }
-     
-			
-		}
-	
-		let url = "trash.php?prod_no=" + prod_no;
-	
-		xhr.open("get",url,true);
-		console.log(this.parentNode);
-		// let myForm = new FormData(this.parentNode);
-		xhr.send(null);
-	};
 	// var trash = document.getElementsByClassName("fa-trash");
-	var trash = document.getElementsByClassName("trash-img");
-	// console.log(trash.length);
-	for(i=0;i<trash.length;i++){
-		trash[i].addEventListener("click",getTrash)
-  };
+	
   
 // 檢查購物車清單是否為空
   // function isCartEmpty(){
@@ -85,9 +30,79 @@ function changeCart(e){
   // console.log(e.target.form);
 	xhr.send(myForm);
 }
+//.............取得購物車資料
+function getCart(){
+  let xhr = new XMLHttpRequest();
+  
+  xhr.onload = function(){
+  	if( xhr.status == 200){
+			// console.log(xhr.responseText);
+		  cart = JSON.parse(xhr.responseText);
+		//   console.log(cart);
+  	}else{
+  		alert(xhr.status);
+  	}
+  }
+  let url = "get-cart.php";
+  xhr.open("get", url, true);
+  xhr.send(null);
 
+}
 
 window.addEventListener("load" , function(){
+  var trash = document.getElementsByClassName("trash-img");
+	// console.log(trash.length);
+	for(i=0;i<trash.length;i++){
+		trash[i].addEventListener("click",cartshowTrash)
+  };
+
+
+	function cartshowTrash(e){
+    var mini = document.getElementsByClassName("show-wrap")[0];
+    console.log(mini);
+    var mini_item = e.target.parentNode.parentNode.parentNode;
+    console.log(mini_item);
+    var prod_no = mini_item.firstElementChild.value;
+    console.log(prod_no);
+		let xhr = new XMLHttpRequest();
+		 
+		xhr.onload = function (){
+      mini.removeChild(mini_item);
+      // console.log(xhr.responseText);
+      console.log(cart);
+      cart = JSON.parse(xhr.responseText);
+      console.log(cart);
+
+
+      // 刪除項目總計跟著變
+      let smalltotal = parseInt(e.target.parentNode.parentNode.previousElementSibling.querySelector("div span").innerText);
+      // console.log(smalltotal);
+      var big_total_minus = document.getElementById("big-total").innerText;
+      // console.log(big_total_minus);
+      math_big_total = parseInt(big_total_minus );
+      // console.log(math_big_total );
+      newtotal = math_big_total - smalltotal;
+      // console.log(newtotal);
+      var aaa = big_total_minus = document.getElementById("big-total");
+      aaa.innerText = newtotal ;
+      if(aaa.innerText == 0){
+        let empty_text = document.getElementsByClassName("cart-column")[0];
+        let go_buy = document.getElementsByClassName("go-buy")[0];
+        empty_text.innerHTML="<div>尚無購物資料喔<div/>" ;
+        go_buy.style.display="none";
+      }
+		}
+
+    let url = "trash.php?prod_no=" + prod_no;
+	
+		xhr.open("get",url,true);
+		console.log(this.parentNode);
+		// let myForm = new FormData(this.parentNode);
+		xhr.send(null);
+	};
+
+
+
     var qtya = document.getElementsByClassName("qty");
     for(var a=0; a<qtya.length; a++){
       // console.log(qtya[a].value);
@@ -120,7 +135,6 @@ window.addEventListener("load" , function(){
               //  console.log( qtyBox.value);
               document.getElementById("big-total").innerText = bigTotal();
           }
-         
       };
      
     }  

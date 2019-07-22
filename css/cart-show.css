@@ -505,10 +505,18 @@
 }
 
 .page-cartlist #empty-text {
-  background-color: black;
+  width: 94.6%;
+  margin: auto;
+  background-color: white;
 }
 
 @media all and (min-width: 992px) {
+  .page-cartlist #empty-text {
+    text-align: center;
+    width: 95%;
+    margin: auto;
+    background-color: white;
+  }
   .page-cartlist .cart-head {
     padding-top: 150px;
     max-width: 1200px;
