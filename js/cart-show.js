@@ -30,11 +30,26 @@ function changeCart(e){
   // console.log(e.target.form);
 	xhr.send(myForm);
 }
+//.............取得購物車資料
+function getCart(){
+  let xhr = new XMLHttpRequest();
+  
+  xhr.onload = function(){
+  	if( xhr.status == 200){
+			// console.log(xhr.responseText);
+		  cart = JSON.parse(xhr.responseText);
+		//   console.log(cart);
+  	}else{
+  		alert(xhr.status);
+  	}
+  }
+  let url = "get-cart.php";
+  xhr.open("get", url, true);
+  xhr.send(null);
 
+}
 
 window.addEventListener("load" , function(){
-
-
   var trash = document.getElementsByClassName("trash-img");
 	// console.log(trash.length);
 	for(i=0;i<trash.length;i++){
@@ -43,25 +58,21 @@ window.addEventListener("load" , function(){
 
 
 	function cartshowTrash(e){
-    let mini = document.getElementsByClassName("show-wrap");
-    // console.log( miniItem);
-		let items = e.target.parentNode.parentNode.parentNode;
-    let prod_no = items.firstElementChild.value;
+    var mini = document.getElementsByClassName("show-wrap")[0];
+    console.log(mini);
+    var mini_item = e.target.parentNode.parentNode.parentNode;
+    console.log(mini_item);
+    var prod_no = mini_item.firstElementChild.value;
     console.log(prod_no);
 		let xhr = new XMLHttpRequest();
 		 
 		xhr.onload = function (){
-    
+      mini.removeChild(mini_item);
       // console.log(xhr.responseText);
+      console.log(cart);
       cart = JSON.parse(xhr.responseText);
-      mini.removeChild(items);
-      // miniItem.removeChild(item);
-    
       console.log(cart);
-      // cart = JSON.stringify(cart);
-      console.log(cart);
-      // delete cart[prod_no]; 消除記憶體
-      
+
 
       // 刪除項目總計跟著變
       let smalltotal = parseInt(e.target.parentNode.parentNode.previousElementSibling.querySelector("div span").innerText);
@@ -74,8 +85,12 @@ window.addEventListener("load" , function(){
       // console.log(newtotal);
       var aaa = big_total_minus = document.getElementById("big-total");
       aaa.innerText = newtotal ;
-      
-			
+      if(aaa.innerText == 0){
+        let empty_text = document.getElementsByClassName("cart-column")[0];
+        let go_buy = document.getElementsByClassName("go-buy")[0];
+        empty_text.innerHTML="<div>尚無購物資料喔<div/>" ;
+        go_buy.style.display="none";
+      }
 		}
 
     let url = "trash.php?prod_no=" + prod_no;

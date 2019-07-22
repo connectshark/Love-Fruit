@@ -108,12 +108,9 @@ session_start();
       <div class="col-lg-2 "><span class="text-20">刪除</span></div>
     </div>
   </div>
-<div id="col-lg-2 col-6 " class="show-wrap">
-  <!-- <div id="empty-text"></div> -->
+<div class="show-wrap">
+  <div id="empty-text"><span></span></div>
       <?php
-      // if (isset($_SESSION["cart"]) === false || count($_SESSION["cart"]) == 0){
-      //   無資料
-      // }
       $total = 0;
       foreach($_SESSION['cart'] as $i=>$value){
       $total += $_SESSION["cart"][$i]["prod_price"]*$_SESSION["cart"][$i]["qty"];
