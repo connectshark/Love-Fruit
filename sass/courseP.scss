@@ -741,6 +741,7 @@ $deep-pink:#db4d6d;
     background-image: url(../img/background.png);
    
     .wrapper{
+        width: 95%;
         max-width: 1200px; 
         padding-top:30%;
         padding-bottom:10%; 
@@ -749,7 +750,7 @@ $deep-pink:#db4d6d;
             padding-top: 150px;
         }
         .title{
-            @include out-Line-Font(group-form-title,#fff,30px,5px,#6a3e26,揪團課程預約);
+            @include out-Line-Font(group-form-title,#fff,34px,5px,#6a3e26,揪團課程預約);
             padding: 5% 0;
             position: relative;
             text-align:center; 
@@ -758,30 +759,30 @@ $deep-pink:#db4d6d;
                 width: 70%;
             }
             img{
-                width: 80%;
+                width: 70%;
                 @include rwd(medium){
                     width: 60%;
                 }
             }
-            .general-form-title{
+            .group-form-title{
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-280%);
-                @include rwd(medium){
-                    font-size: 28px;
-                    transform: translate(-50%,-220%);
+                transform: translate(-50%,-80%);
+                @include rwd(mobile){
+                    font-size: 20px;
                 }
             }
         }
         form{
-            padding: 5%;
+            width: 90%;
+            padding: 3%;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 3px 3px 10px #aaa;
             margin: auto;
-            @include rwd(desktop){
-                width: 70%;
+            @include rwd(medium){
+                width: 80%;
             }
             > span{
                 font-size: 18px;
@@ -872,8 +873,10 @@ $deep-pink:#db4d6d;
             select{
                 border: 3px solid #6a3e26;
                 display: block;
-                margin: 10px 0;
-                height: 40px;
+                margin: 20px 0;
+                width: 40%;
+                height: 6%;
+                border-radius:15px; 
                 @include rwd(desktop){
                     width: 15%;
                 }

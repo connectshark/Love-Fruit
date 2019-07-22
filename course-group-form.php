@@ -25,7 +25,7 @@
   <div class="wrapper">
       <div class="title">
         <img src="img/ribbon.png" alt="title-img">
-        <h3 class="group-form-title">揪團課程預約</h3>
+         <h3 class="group-form-title">揪團課程預約</h3>
       </div>
   <form action="course-reservation.php" method="post" enctype="multipart/form-data">
         <span><img src="img/btn/ICE.png" alt="">你的團名：

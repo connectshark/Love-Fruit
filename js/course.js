@@ -16,14 +16,14 @@ $('.closeBtn').click(function(){
 
 
 
-// //checkbox-num
-// var select = document.getElementById('apply-num');
-// for (var i = 1; i <= 20; i++) {
-//   var opt = document.createElement("option");
-//   opt.value = i;
-//   opt.innerHTML = i;
-//   select.appendChild(opt);
-// }
+//checkbox-num
+var select = document.getElementById('apply-num');
+for (var i = 1; i <= 20; i++) {
+  var opt = document.createElement("option");
+  opt.value = i;
+  opt.innerHTML = i;
+  select.appendChild(opt);
+}
 
 
 
