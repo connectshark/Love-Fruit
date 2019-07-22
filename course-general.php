@@ -122,7 +122,7 @@ try {
                                 </div>
                                 <div class="course-btn">
                                     <a class="course-ice-btn-out" href="course-general-form.php">
-                                        <span class="course-ice-btn-in">
+                                        <span class="course-ice-btn-in click-check">
                                             <img src="img/btn/ICE.png" alt="btn">
                                             我要預約
                                         </span>
