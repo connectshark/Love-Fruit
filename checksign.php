@@ -5,3 +5,4 @@ if (isset($_SESSION['mem_no']) === true) {
 }else{
 	echo false;
 }
+?>

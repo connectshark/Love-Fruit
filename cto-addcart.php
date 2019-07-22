@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 $path = $_REQUEST['img'];
 $price = $_REQUEST['price'];

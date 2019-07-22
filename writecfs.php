@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $errMsg="";  //檢查資料夾存不存在
 switch ($_FILES['pic']['error']) {
 	case UPLOAD_ERR_OK:
@@ -40,6 +41,7 @@ if($to){
 	} catch (PDOException $e) {
 		$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
 		$errMsg .= "行數:". $e->getLine()."<br>";
+		echo $errMsg;
 	}
 }
 

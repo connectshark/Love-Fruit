@@ -17,7 +17,7 @@ try {
     $iiNo = $_REQUEST['fruite-slice'];
     $ctoPrice = $_REQUEST['price'];
     $ctoWords = $_REQUEST['parse'];
-    $stageNo = rand()%4+1;
+    $stageNo = $_REQUEST['stageNo'];
     $sql = "SELECT mem_no,cto_no FROM customize WHERE mem_no = $memNo";
     $search = $pdo->query($sql);
     $row = $search->fetchObject();

@@ -316,6 +316,11 @@ body{
 			@include rwd(mobile){
 				width: calc(100% - 50px);
 			}
+			.cfs-no{
+				visibility: hidden;
+				position: absolute;
+				z-index: -2;
+			}
 			.cloud{
 				position: absolute;
 				top: -7%;
@@ -409,6 +414,7 @@ body{
 					margin-left: auto;
 					padding:0 0 10px;
 					text-align: justify;
+					word-wrap: break-word;
 				}
 				.s-text{
 					text-align: right;
@@ -431,6 +437,11 @@ body{
 					color: #fff;
 					box-sizing: border-box;
 					font-size: 18px;
+				}
+				.great-btn{
+					span{
+						font-size: 16px;
+					}
 				}
 			}
 		}

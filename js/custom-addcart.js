@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	$('#addcart').click(function() {
-		console.log(total);
+		console.log(imgPath);
 		$.ajax({
-			url: `../cto-addcart.php?img=${imgPath}&price=${total}`,
+			url: `cto-addcart.php?img=${imgPath}&price=${total}`,
 			type: 'GET',
 			data: '',
 		})
@@ -10,7 +10,7 @@ $(document).ready(function() {
 			alert(`加入成功`);
 		})
 		.fail(function(data) {
-			alert(`加入失敗`);
+			alert(`加入失敗${data}`);
 		})
 	});
 });

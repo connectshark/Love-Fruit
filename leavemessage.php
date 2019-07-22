@@ -3,7 +3,7 @@ session_start();
 $errMsg="";
 try {
     require_once("connect-dd101g3.php");
-	$sql = "SELECT m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.cto_no = cus.cto_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
+	$sql = "SELECT con.cfs_no, m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.cto_no = cus.cto_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
 	$confessions = $pdo->prepare($sql);
 	$confessions -> execute();
 } catch (PDOException $e) {
@@ -142,7 +142,7 @@ function stageName($stage)
 			<div class="message-item <?php echo stageNo($row->stage_no); ?>">
 				<div class="cloud">
 					<i class='fas fa-cloud'></i><span><?php echo stageName($row->stage_no); ?></span>
-				</div>
+				</div><span class="cfs-no"><?php echo $row->cfs_no; ?></span>
 				<div class="message-header">
 					<?php if ($row->mem_pic) { ?>
 						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="使用者頭像"></div>
@@ -161,7 +161,7 @@ function stageName($stage)
 					<p class="s-text">#<?php echo $row->cto_words; ?></p>
 				</div>
 				<div class="message-footer">
-					<button type="button">
+					<button type="button" class="great-btn">
 						<i class="fas fa-thumbs-up"></i>
 						<span><?php echo $row->cfs_good; ?></span>
 					</button>
@@ -202,6 +202,7 @@ function stageName($stage)
 	<script src="js/message.js"></script>
 	<script src="js/shop.js"></script>
 	<script src="js/login.js"></script>
+	<script src="js/great.js"></script>
 	<script>
 		new Vue({
 			el:"#app",

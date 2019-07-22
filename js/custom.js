@@ -296,7 +296,9 @@ function putStickIn() {
 	});
 	// 按鈕收起來
 	$('#last').hide(0,function() {
-		$('#none-last').show();
+		$('#none-last').show(function(){
+			$('#stage-no').val(stageNo(setStage(sliceIndex)));
+		});
 	});
 	$('#cto-category-stage').text(setStage(sliceIndex));
 	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
@@ -328,7 +330,18 @@ function setStage(slice) {
 		return "分手";
 	}
 }
-
+function stageNo(stage){
+	switch (stage) {
+		case '單身':
+			return 1;
+		case '初戀':
+			return 2;
+		case '熱戀':
+			return 3;
+		case '分手':
+			return 4;
+	}
+}
 
 // 計算總價
 var total;
