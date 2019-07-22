@@ -1,21 +1,16 @@
 $(document).ready(function() {
 	$('#addcart').click(function() {
-		console.log(imgPath);
+		console.log(total);
 		$.ajax({
-			url: `../cto-addcart.php?img=${imgPath}`,
+			url: `../cto-addcart.php?img=${imgPath}&price=${total}`,
 			type: 'GET',
 			data: '',
 		})
 		.done(function(data) {
-			alert(`${data}`);
-			console.log("success");
+			alert(`加入成功`);
 		})
 		.fail(function(data) {
-			alert(`${data}`);
-			console.log("error");
+			alert(`加入失敗`);
 		})
-		.always(function() {
-			console.log("complete");
-		});
 	});
 });

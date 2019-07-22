@@ -348,8 +348,9 @@ function checkList() {
 	return true;
 }
 // 計算總價
+var total;
 function totalPrice() {
-	var total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+150;
+	total = parseInt(slicePrice)+parseInt(AFruitePrice)+parseInt(BFruitePrice)+150;
 	$('#total-price').text(total);
 	$('#custom-price').val(total);
 }
