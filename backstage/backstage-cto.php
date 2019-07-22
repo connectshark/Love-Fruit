@@ -24,9 +24,9 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>菓籽戀冰所</title>
-    <link rel="icon" href="img/navBar/logo.png" />
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/backstage.css">
+    <link rel="icon" href="../img/navBar/logo.png" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/backstage.css">
 
 </head>
 
@@ -87,7 +87,7 @@ try {
                                                 <td><input class="form-control" type="text" name="mold_name" value="<?php echo $moldRows["mold_name"] ?>"></td>
                                                 <td>
                                                     <input class="form-control d-none" type="text" name="mold_pic" value="<?php echo $moldRows["mold_pic"] ?>">
-                                                    <img class="col-2" src="<?php echo $moldRows["mold_pic"] ?>" alt="">
+                                                    <img class="col-2" src="../<?php echo $moldRows["mold_pic"] ?>" alt="">
                                                 </td>
                                                 <td><select name="mold_state" class="form-control">
                                                         <option value="0" <?php if (!(strcmp("0", $moldRows["mold_state"]))) {
@@ -173,6 +173,7 @@ try {
 
                                         <th scope="col">編號</th>
                                         <th scope="col">配料名稱</th>
+                                        <th scope="col">配料圖</th>
                                         <th scope="col">配料價格</th>
                                         <th scope="col">酸</th>
                                         <th scope="col">甜</th>
@@ -187,18 +188,23 @@ try {
                                     while ($iiRows = $ii->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
                                         <tr>
-                                            <form action="">
+                                            <form action="iiChange.php" method="POST">
+                                                <input class="d-none" name="ii_no" type="text" value="<?php echo $iiRows["ii_no"] ?>">
                                                 <th scope="row"><?php echo $iiRows["ii_no"] ?></th>
-                                                <td><input class="form-control" type="text" value="<?php echo $iiRows["ii_name"] ?>"></td>
-                                                <td><input class="col-auto form-control" type="text" value="<?php echo $iiRows["ii_price"] ?>">
+                                                <td><input class="form-control" type="text" name="ii_name" value="<?php echo $iiRows["ii_name"] ?>"></td>
+                                                <td>
+                                                    <input class="d-none" type="text" name="ii_pic" value="<?php echo $iiRows["ii_pic"] ?>">
+                                                    <img class="img-fluid" src="../<?php echo $iiRows["ii_pic"] ?>" alt="">
                                                 </td>
-                                                <td><input class="form-control" type="text" value="<?php echo $iiRows["ii_sour"] ?>">
+                                                <td><input class="col-auto form-control" type="text" name="ii_price" value="<?php echo $iiRows["ii_price"] ?>">
                                                 </td>
-                                                <td><input class="form-control" type="text" value="<?php echo $iiRows["ii_sweet"] ?>">
+                                                <td><input class="form-control" type="text" name="ii_sour" value="<?php echo $iiRows["ii_sour"] ?>">
                                                 </td>
-                                                <td><input class="form-control" type="text" value="<?php echo $iiRows["ii_bitter"] ?>">
+                                                <td><input class="form-control" type="text" name="ii_sweet" value="<?php echo $iiRows["ii_sweet"] ?>">
                                                 </td>
-                                                <td><select id="" class="form-control">
+                                                <td><input class="form-control" type="text" name="ii_bitter" value="<?php echo $iiRows["ii_bitter"] ?>">
+                                                </td>
+                                                <td><select name="ii_state" class="form-control">
                                                         <option value="0" <?php if (!(strcmp("0", $iiRows["ii_state"]))) {
                                                                                 echo "selected=\"selected\"";
                                                                             } ?>>下架</option>
@@ -207,7 +213,7 @@ try {
                                                                             } ?>>上架</option>
                                                     </select>
                                                 </td>
-                                                <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                                <td><input class="btn btn-info" type="submit" value="送出修改"></td>
                                             </form>
                                         </tr>
 
@@ -227,10 +233,10 @@ try {
         </div>
     </section>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script src="js/back-nav.js"></script>
+    <script src="../js/back-nav.js"></script>
 </body>
 
 </html>
