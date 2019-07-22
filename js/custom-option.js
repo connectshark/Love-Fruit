@@ -13,9 +13,9 @@ function sendFormData(){
 		url:'custom-complete.php',
 		data: $('#custom-choose').serialize(),
 		type: 'POST',
-	}).done(function(data) {
-		alert(`${data}`);
-	}).error(function(data){
-		alert(`${data}`);
+		success: function(data){
+			imgPath=data;
+			totalPrice();
+		},
 	});
 }

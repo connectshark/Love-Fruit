@@ -118,7 +118,7 @@ function stageName($stage)
 				<div class="letter-content">
 					<div class="letter-header">
 						<?php if ($row->mem_pic) {?>
-							<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="使用者頭像" srcset=""></div>
+							<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="使用者頭像"></div>
 						<?php }else{
 							echo "<i class='fas fa-user-circle'></i>";
 						} ?>						
@@ -153,7 +153,6 @@ function stageName($stage)
 		                    <label><input type="reset" value="清除" @click="clear"></label>
 		                    <label><input type="submit" value="送出" id="submit"></label>
 		                    <input type="hidden" name="ctoNo" value="<?php echo $row->cto_no; ?>">
-		                    <input type="hidden" name="memNo" value="2">
 		                </div>
 					</div>
 				</div>

@@ -26,7 +26,7 @@ if($to){
 	try {
 		require_once("connect-dd101g3.php");
 		$sql = "insert confessions set cto_no = :ctoNo , mem_no = :memNo , cfs_to = :cfsTo , cfs_content = :cfsContent, cfs_pic = :cfsPic , cfs_good = '0'";
-		$memNo = $_REQUEST['memNo'];//session抓
+		$memNo = $_SESSION['mem_no'];//session抓
 		$ctoNo = $_REQUEST['ctoNo'];
 		$cfsTo = $_REQUEST['cfsTo'];
 		$cfsContent = $_REQUEST['cfsContent'];
