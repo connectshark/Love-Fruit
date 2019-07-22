@@ -1,15 +1,16 @@
 <?php 
+session_start();
+$_SESSION["mem_no"]=1;
 try {
   require_once("mac-require.php");
   //抓開團留言
 	$sql = "SELECT m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content FROM course_msg cm JOIN member m ON cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
-  $memNo = 1;//之後改為session
+ 
   $courseMsg  = $pdo->prepare($sql);
-  $courseMsg -> bindValue(':memNo',$memNo);
+  $courseMsg -> bindValue(':mem_no',$_SESSION["mem_no"]);
   $courseMsg -> execute();
   //.............
   $sql2 = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 and cm.msg_no = :msg_no ORDER BY reply_date desc";      
-  //???   $memNo = 1;//之後改為session
   $replayMsg  = $pdo->prepare($sql2);
   
 } catch (PDOException $e) {
@@ -114,10 +115,11 @@ try {
     </div>
 
   <form action="course-msg.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" value="1" name="courseClassNo">
+      <input type="hidden" value="1" name="courseClassNo">
       <div class="group-message" >
         <div class="open-group">
           <div class="message-meb col-md-2">
+            <div class="mem-pic"><img src="" alt=""></div>
             <i class="fas fa-user-circle"></i>
             <p>會員名稱</p>
             <p class="time"><?php echo date("Y-m-d"); ?></p>
