@@ -256,7 +256,7 @@ body{
 }
 .progress-bar{
 	height: 100%;
-	width: 80%;
+	width: 0%;
 	background-color: #f596aa;
 }
 /*主要客製*/
@@ -744,8 +744,10 @@ body{
 }
 .custom-box{
 	position: absolute;
+	visibility: hidden;
 	z-index: -2;
 	opacity: 0;
+	top: 0;
 }
 .location-btn-group{
 	width: 100%;

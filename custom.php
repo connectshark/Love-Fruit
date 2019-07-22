@@ -321,7 +321,7 @@ try {
                     </a>
                 </div>
                 <div class="btn-item">
-                    <a class="reset-btn">
+                    <a class="reset-btn" href="custom.php">
                         <span class="reset-btn-in">重作一個</span>
                      </a>
                 </div>

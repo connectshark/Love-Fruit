@@ -7,13 +7,14 @@ $(document).ready(function() {
 		}
 	});
 });
+var imgPath;
 function sendFormData(){
 	$.ajax({
 		url:'../custom-complete.php',
 		data: $('#custom-choose').serialize(),
 		type: 'POST',
 		success: function(data){
-			// alert(`${data}`);
+			imgPath=data;
 			totalPrice();
 		},
 	});

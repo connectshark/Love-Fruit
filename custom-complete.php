@@ -38,6 +38,7 @@ try {
         $fruite -> bindValue(':fruite',$_REQUEST['fruite'][$i]);
         $fruite -> execute();
     }
+    echo $path;
 } catch (PDOException $e) {
     $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";
