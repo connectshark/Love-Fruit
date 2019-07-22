@@ -64,65 +64,72 @@ try {
                     </ul>
                     <div class="col-12 px-0 py-4 tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <form action="">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">編號</th>
-                                            <th scope="col">模具名稱</th>
-                                            <th scope="col">模具圖片</th>
-                                            <th scope="col">狀態</th>
-                                            <th scope="col">編輯</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        while ($moldRows = $mold->fetch(PDO::FETCH_ASSOC)) {
-                                            ?>
 
-                                            <tr>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">編號</th>
+                                        <th scope="col">模具名稱</th>
+                                        <th scope="col">模具圖片</th>
+                                        <th scope="col">狀態</th>
+                                        <th scope="col">編輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($moldRows = $mold->fetch(PDO::FETCH_ASSOC)) {
+                                        ?>
+
+                                        <tr>
+                                            <form action="">
                                                 <th scope="row"><?php echo $moldRows["mold_no"] ?></th>
                                                 <td><input class="form-control" type="text" value="<?php echo $moldRows["mold_name"] ?>"></td>
                                                 <td><input class="form-control" type="text" value="<?php echo $moldRows["mold_pic"] ?>">
                                                 </td>
                                                 <td><select class="form-control">
-                                                        <option value="0">下架</option>
-                                                        <option value="1" selected>上架</option>
+                                                        <option value="0" <?php if (!(strcmp("0", $moldRows["mold_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>下架</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $moldRows["mold_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>上架</option>
                                                     </select>
                                                 </td>
                                                 <td><input class="btn btn-info" type="button" value="送出修改"></td>
-                                            </tr>
+                                            </form>
+                                        </tr>
 
-                                        <?php
-                                        }
-                                        ?>
+                                    <?php
+                                    }
+                                    ?>
 
-                                    </tbody>
-                                </table>
-                            </form>
+                                </tbody>
+                            </table>
+
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <form action="">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
+
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">編號</th>
+                                        <th scope="col">基底名稱</th>
+                                        <th scope="col">基底價格</th>
+                                        <th scope="col">酸</th>
+                                        <th scope="col">甜</th>
+                                        <th scope="col">苦</th>
+                                        <th scope="col">狀態</th>
+                                        <th scope="col">編輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    while ($baseRows = $base->fetch(PDO::FETCH_ASSOC)) {
+                                        ?>
+
                                         <tr>
-                                            <th scope="col">編號</th>
-                                            <th scope="col">基底名稱</th>
-                                            <th scope="col">基底價格</th>
-                                            <th scope="col">酸</th>
-                                            <th scope="col">甜</th>
-                                            <th scope="col">苦</th>
-                                            <th scope="col">狀態</th>
-                                            <th scope="col">編輯</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <?php
-                                        while ($baseRows = $base->fetch(PDO::FETCH_ASSOC)) {
-                                            ?>
-
-                                            <tr>
+                                            <form action="">
                                                 <th scope="row"><?php echo $baseRows["fruit_no"] ?></th>
                                                 <td><input class="form-control" type="text" value="<?php echo $baseRows["fruit_name"] ?>"></td>
                                                 <td><input class="col-auto form-control" type="text" value="<?php echo $baseRows["fruit_price"] ?>">
@@ -134,41 +141,48 @@ try {
                                                 <td><input class="form-control" type="text" value="<?php echo $baseRows["fruit_bitter"] ?>">
                                                 </td>
                                                 <td><select id="" class="form-control">
-                                                        <option value="0">下架</option>
-                                                        <option value="1" selected>上架</option>
+                                                        <option value="0" <?php if (!(strcmp("0", $baseRows["fruit_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>下架</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $baseRows["fruit_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>上架</option>
                                                     </select>
                                                 </td>
                                                 <td><input class="btn btn-info" type="button" value="送出修改"></td>
-                                            </tr>
+                                            </form>
+                                        </tr>
 
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </form>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <form action="">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">編號</th>
-                                            <th scope="col">配料名稱</th>
-                                            <th scope="col">配料價格</th>
-                                            <th scope="col">酸</th>
-                                            <th scope="col">甜</th>
-                                            <th scope="col">苦</th>
-                                            <th scope="col">狀態</th>
-                                            <th scope="col">編輯</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
 
-                                        <?php
-                                        while ($iiRows = $ii->fetch(PDO::FETCH_ASSOC)) {
-                                            ?>
-                                            <tr>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+
+                                        <th scope="col">編號</th>
+                                        <th scope="col">配料名稱</th>
+                                        <th scope="col">配料價格</th>
+                                        <th scope="col">酸</th>
+                                        <th scope="col">甜</th>
+                                        <th scope="col">苦</th>
+                                        <th scope="col">狀態</th>
+                                        <th scope="col">編輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    while ($iiRows = $ii->fetch(PDO::FETCH_ASSOC)) {
+                                        ?>
+                                        <tr>
+                                            <form action="">
                                                 <th scope="row"><?php echo $iiRows["ii_no"] ?></th>
                                                 <td><input class="form-control" type="text" value="<?php echo $iiRows["ii_name"] ?>"></td>
                                                 <td><input class="col-auto form-control" type="text" value="<?php echo $iiRows["ii_price"] ?>">
@@ -180,22 +194,27 @@ try {
                                                 <td><input class="form-control" type="text" value="<?php echo $iiRows["ii_bitter"] ?>">
                                                 </td>
                                                 <td><select id="" class="form-control">
-                                                        <option value="0">下架</option>
-                                                        <option value="1" selected>上架</option>
+                                                        <option value="0" <?php if (!(strcmp("0", $iiRows["ii_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>下架</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $iiRows["ii_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>上架</option>
                                                     </select>
                                                 </td>
                                                 <td><input class="btn btn-info" type="button" value="送出修改"></td>
-                                            </tr>
+                                            </form>
+                                        </tr>
 
 
-                                        <?php
-                                        }
-                                        ?>
+                                    <?php
+                                    }
+                                    ?>
 
 
-                                    </tbody>
-                                </table>
-                            </form>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
@@ -204,9 +223,9 @@ try {
     </section>
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="js/back-nav.js"></script>
 </body>
 
 </html>

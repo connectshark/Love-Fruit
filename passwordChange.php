@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["mem_no"] = 1;
+// $_SESSION["mem_no"] = 1;
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");

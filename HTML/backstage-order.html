@@ -33,7 +33,7 @@
                         <a class="nav-link" href="backstage-prod.html">商品管理</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="backstage-order.html">訂單管理</a>
+                        <a class="nav-link active" href="backstage-order.html">訂單管理</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="backstage-news.html">最新消息</a>
@@ -42,7 +42,7 @@
                         <a class="nav-link" href="backstage-member.html">會員管理</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="backstage-robot.html">機器人</a>
+                        <a class="nav-link" href="backstage-robot.html">機器人</a>
                     </li>
                 </ul>
                 <div class="navbar-text">
@@ -55,7 +55,7 @@
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>機器人管理頁</h3>
+                <h3>訂單管理頁</h3>
             </div>
         </div>
     </section>
@@ -70,19 +70,49 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">編號</th>
-                                        <th scope="col">關鍵字</th>
-                                        <th scope="col">回答</th>
+                                        <th scope="col">收件人</th>
+                                        <th scope="col">手機</th>
+                                        <th scope="col">收件地址</th>
+                                        <th scope="col">下單時間</th>
+                                        <th scope="col">狀態</th>
                                         <th scope="col">編輯</th>
+                                        <th scope="col">備註</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td><input class="form-control" type="text" value="菓籽戀冰所"></td>
-                                        <td><textarea class="form-control" name="" id="" cols="30"
-                                            rows="2">嗨嗨!我們是菓籽戀冰所...</textarea></td>
-                                        <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                        <td>DD101</td>
+                                        <td>091234567</td>
+                                        <td>中壢區中央大學</td>
+                                        <td>2019-08-12 00:00:00</td>
+                                        <td><select id="" class="form-control">
+                                                <option value="0" selected>未處理</option>
+                                                <option value="1">已出貨</option>
+                                            </select>
+                                        </td>
+                                        <td><input class="btn btn-info" type="button" value="送出修改">
+                                        </td>
+                                        <td><input class="btn btn-info" type="button" value="訂單詳情">
+                                        </td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>DD101</td>
+                                        <td>091234567</td>
+                                        <td>中壢區中央大學</td>
+                                        <td>2019-08-12 00:00:00</td>
+                                        <td><select id="" class="form-control">
+                                                <option value="0" selected>未處理</option>
+                                                <option value="1">已出貨</option>
+                                            </select>
+                                        </td>
+                                        <td><input class="btn btn-info" type="button" value="送出修改">
+                                        </td>
+                                        <td><input class="btn btn-info" type="button" value="訂單詳情">
+                                        </td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </form>
@@ -94,7 +124,6 @@
     </section>
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>

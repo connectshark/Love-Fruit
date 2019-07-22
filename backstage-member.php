@@ -77,6 +77,7 @@ try {
                                     <tbody>
 
                                         <?php
+
                                         while ($memRows = $mem->fetch(PDO::FETCH_ASSOC)) {
                                             ?>
 
@@ -89,9 +90,9 @@ try {
                                                 <td><?php echo $memRows["address"]; ?></td>
                                                 <td><?php echo $memRows["phone"]; ?></td>
                                                 <td><?php echo $memRows["mem_pic"]; ?></td>
-                                                <td><select id="inputState" class="form-control">
-                                                        <option>0</option>
-                                                        <option selected>1</option>
+                                                <td><select id="select-mem" class="form-control">
+                                                        <option value="0" <?php if (!(strcmp("0", $memRows["mem_state"]))) {echo "selected=\"selected\"";} ?>>停權</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $memRows["mem_state"]))) {echo "selected=\"selected\"";} ?>>使用中</option>
                                                     </select>
                                                 </td>
                                                 <td><input class="btn btn-info" type="button" value="送出修改"></td>
@@ -135,13 +136,13 @@ try {
                                                 <td><?php echo $empRows["emp_psw"]; ?></td>
                                                 <td><?php echo $empRows["emp_name"]; ?></td>
                                                 <td><select id="" class="form-control">
-                                                        <option value="0">一般</option>
-                                                        <option value="1" selected>最高權限</option>
+                                                        <option value="0" <?php if (!(strcmp("0", $empRows["emp_permission"]))) {echo "selected=\"selected\"";} ?>>一般</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $empRows["emp_permission"]))) {echo "selected=\"selected\"";} ?>>最高權限</option>
                                                     </select>
                                                 </td>
                                                 <td><select id="" class="form-control">
-                                                        <option value="0">離職</option>
-                                                        <option value="1" selected>在職</option>
+                                                        <option value="0" <?php if (!(strcmp("0", $empRows["emp_state"]))) {echo "selected=\"selected\"";} ?>>離職</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $empRows["emp_state"]))) {echo "selected=\"selected\"";} ?>>在職</option>
                                                     </select>
                                                 </td>
                                                 <td><input class="btn btn-info" type="button" value="送出修改"></td>
@@ -164,9 +165,15 @@ try {
     </section>
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="js/back-nav.js"></script>
+
+    <script>
+    
+        var add = document.getElementById("cho");
+        console.log(add.value);
+    </script>
 </body>
 
 </html>

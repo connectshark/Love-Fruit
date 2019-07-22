@@ -1,9 +1,10 @@
 <?php
+
 $errmsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sqlnews = "select * from news";
-    $news = $pdo->query($sqlnews);
+    $sqlprod = "select * from product";
+    $prod = $pdo->query($sqlprod);
 } catch (PDOException $e) {
     echo  $errMsg .=  $e->getMessage() . "<br>";
     echo  $errMsg .=  $e->getLine() . "<br>";
@@ -28,15 +29,13 @@ try {
 <body class="page-backstage">
 
     <header>
-        <?php
-        require_once("backstage-nav.php");
-        ?>
+        <?php require_once("backstage-nav.php"); ?>
     </header>
 
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>最新消息管理頁</h3>
+                <h3>商品管理頁</h3>
             </div>
         </div>
     </section>
@@ -44,63 +43,77 @@ try {
     <section class="container-fluid px-4">
         <div class="row justify-content-center">
             <div class="col-10 bg-white rounded">
+
                 <div class="row p-4">
+                    <div class="col-12 px-0 text-right"><input class="btn btn-lovefruit btn-lg" type="button" value="新增商品"></div>
                     <div class="col-12 px-0 py-4">
-                        <div class="pb-4 text-right text-white"><a class="btn btn-lovefruit btn-lg" href="backstage-addnews.php">新增文章</a>
-                        </div>
                         <form action="">
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">編號</th>
-                                        <th scope="col">標題</th>
-                                        <th scope="col">文章分類</th>
-                                        <th scope="col">撰寫時間</th>
+                                        <th scope="col">商品名稱</th>
+                                        <th scope="col">商品圖</th>
+                                        <th scope="col">商品敘述</th>
+                                        <th scope="col">價格</th>
+                                        <th scope="col">戀愛階段</th>
+                                        <th scope="col">冰品類型</th>
+                                        <th scope="col">評價總分</th>
+                                        <th scope="col">評價次數</th>
                                         <th scope="col">狀態</th>
                                         <th scope="col">編輯</th>
-                                        <th scope="col">刪除</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <?php
-                                    while ($newsRows = $news->fetch(PDO::FETCH_ASSOC)) {
+                                    while ($prodRows = $prod->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
 
                                         <tr>
-                                            <th scope="row"><?php echo $newsRows["news_no"]; ?></th>
-                                            <td><?php echo $newsRows["news_title"]; ?></td>
+                                            <th scope="row"><?php echo $prodRows["prod_no"]; ?></th>
+                                            <td><?php echo $prodRows["prod_name"]; ?></td>
+                                            <td><?php echo $prodRows["prod_pic"]; ?></td>
+                                            <td><textarea class="form-control" name="" id="" cols="30" rows="2"><?php echo $prodRows["prod_desc"]; ?></textarea></td>
+                                            <td><input class="form-control" type="text" value="<?php echo $prodRows["prod_price"]; ?>"></td>
                                             <td><select id="" class="form-control">
-                                                    <option value="0" <?php if (!(strcmp("0", $newsRows["news_class"]))) {
+                                                    <option value="0" <?php if (!(strcmp("0", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>揪團新訊</option>
-                                                    <option value="1" <?php if (!(strcmp("1", $newsRows["news_class"]))) {
+                                                                        } ?>>單身</option>
+                                                    <option value="1" <?php if (!(strcmp("1", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>新品上市</option>
-                                                    <option value="2" <?php if (!(strcmp("2", $newsRows["news_class"]))) {
+                                                                        } ?>>初戀</option>
+                                                    <option value="2" <?php if (!(strcmp("2", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>園區公告</option>
-                                                    <option value="3" <?php if (!(strcmp("3", $newsRows["news_class"]))) {
+                                                                        } ?>>熱戀</option>
+                                                    <option value="3" <?php if (!(strcmp("3", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>季節限定</option>
+                                                                        } ?>>分手</option>
                                                 </select>
                                             </td>
-                                            <td><?php echo $newsRows["news_date"]; ?></td>
                                             <td><select id="" class="form-control">
-                                                    <option value="0" <?php if (!(strcmp("0", $newsRows["news_state"]))) {
+                                                    <option value="0">冰棒</option>
+                                                    <option value="1" <?php if (!(strcmp("0", $prodRows["type_no"]))) {
+                                                                            echo "selected=\"selected\"";
+                                                                        } ?>>冰淇淋</option>
+                                                    <option value="2" <?php if (!(strcmp("1", $prodRows["type_no"]))) {
+                                                                            echo "selected=\"selected\"";
+                                                                        } ?>>霜淇淋</option>
+                                                </select>
+                                            </td>
+                                            <td><?php echo $prodRows["prod_score_total"]; ?></td>
+                                            <td><?php echo $prodRows["prod_score_times"]; ?></td>
+                                            <td><select id="" class="form-control">
+                                                    <option value="0" <?php if (!(strcmp("0", $prodRows["prod_state"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>下架</option>
-                                                    <option value="1" <?php if (!(strcmp("1", $newsRows["news_state"]))) {
+                                                    <option value="1" <?php if (!(strcmp("1", $prodRows["prod_state"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>上架</option>
                                                 </select>
                                             </td>
-                                            <td><input class="btn btn-info" type="button" value="送出修改">
-                                                <a class="btn btn-info" href="backstage-editnews.php?news_no=<?php echo $newsRows["news_no"];?>">編輯內容</a>
-                                            </td>
-                                            <td><input class="btn btn-danger" type="button" value="刪除文章"></td>
+                                            <td><input class="btn btn-info" type="button" value="送出修改"></td>
                                         </tr>
-
                                     <?php
                                     }
                                     ?>

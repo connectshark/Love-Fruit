@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["mem_no"] = 1;
+// $_SESSION["mem_no"] = 1;
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");
@@ -77,7 +77,7 @@ try {
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/account.css" />
-    <!-- <link rel="stylesheet" href="css/temporary-cart.css"> -->
+    <link rel="stylesheet" href="css/temporary-cart.css">
     <script src="https://kit.fontawesome.com/035a3f7b04.js"></script>
 
 </head>
@@ -96,13 +96,12 @@ try {
             <div class="menu col-12 col-md-2">
                 <div class="profile-picture">
                     <div class="col-2 col-md-4">
-                        <div class="profile-img"><img src="database/img_mem/<?php echo $profileRow["mem_pic"] ?>" alt=""></div>
+                        <div class="profile-img"><img src="<?php echo $profileRow["mem_pic"] ?>" alt=""></div>
                     </div>
                     <div class="col-9 col-md-7">
                         <p class="profile-id"><?php echo $profileRow["mem_id"] ?></p>
                         <form action="fileUpload.php" method="post" enctype="multipart/form-data">
-                            <label class="btn-file" for="upFile">
-                                上傳頭貼
+                            <label class="btn-file" for="upFile">上傳頭貼
                                 <input type="file" name="upFile" id="upFile" accept=".jpg,.png">
                             </label>
                         </form>
@@ -437,7 +436,8 @@ try {
 
 
     <script src="js/nav.js"></script>
-    <script src="js/shop.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/shop.js"></script>    
     <script>
         function $id(id) {
             return document.getElementById(id);
