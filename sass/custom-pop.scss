@@ -57,6 +57,22 @@
                 text-align: center;
             }
         }
+        .cto-category{
+            width: 50%;
+            text-align: center;
+            p{
+                font-size: 20px;
+                span{
+                    display: inline-block;
+                    margin: 0 5px;
+                    font-size: 30px;
+                    line-height: 1.5;
+                }
+            }
+            @include rwd(mobile){
+                width: 80%;
+            }
+        }
         .btn-item{
             padding: 5px 0;
             a{

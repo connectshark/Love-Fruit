@@ -147,6 +147,35 @@
         }
     }
 
+    label{
+        display: block;
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    input{
+        border-radius: 5px;
+        font-size: 18px;
+        display: block;
+        padding: 5px;
+    }
+
+    input[type=submit]{
+        padding:10px 20px;
+        border:none;
+        cursor:pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #db4d6d;
+        color: #fff;
+        font-family: "GenJyuuGothic-R";
+        font-size: 18px;
+
+        &:hover{
+            background-color: #cb1b45;
+        }
+    }
+
     .content-profile{
         display: none;
         .profile-item{
@@ -163,35 +192,9 @@
                 padding-right: 10px;
             }
 
-            label{
-                display: block;
-                text-align: right;
-                padding-right: 20px;
-            }
-
-            input{
-                // height: 30px;
-                border-radius: 5px;
-                font-size: 18px;
-                display: block;
-                padding: 5px;
-            }
+            
         }
-        input[type=submit]{
-            padding:10px 20px;
-            border:none;
-            cursor:pointer;
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-            background-color: #db4d6d;
-            color: #fff;
-            font-family: "GenJyuuGothic-R";
-            font-size: 18px;
-
-            &:hover{
-                background-color: #cb1b45;
-            }
-        }
+       
     }
 
     .content-order{
@@ -214,7 +217,34 @@
                 }
                 p{
                     padding: 10px;
+                }                
+            }
+            .prod-item-pop{
+                display: none;
+                padding: 10px;
+                border-top: 1px solid #000;
+                p{
+                    padding-bottom:10px;
                 }
+                .item-list-group{                   
+                    padding: 5px;
+                    background-color: #ffbaba;
+                    .list-head{
+                        border-bottom: 1px solid #000;
+                    }
+
+                    .item-list{
+                        padding-top: 10px;
+                        display: flex;
+                        flex-flow: row wrap;
+                        .list-count{
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            .prod-item-pop.prod-item-show{
+                display: block;
             }
         }
 
@@ -360,6 +390,87 @@
             }
         
         
+    }
+
+    .psw-change-box{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+        background-color: rgba(0,0,0,.3);
+
+        .psw-bg{
+            padding: 20px;
+            background-color: #d1d631;
+            border-radius: 10px;
+            margin: auto;
+            display: flex;
+            position: relative;
+
+            #psw-box-close{
+                position: absolute;
+                top: -80px;
+                right: -10px;
+            }
+
+            .psw-content{
+                margin: auto;
+            }
+
+            .psw-box-title{
+                text-align: center;
+                color: #6a3e26;
+                font-size: 24px;
+                padding: 20px;
+            }
+
+            .psw-item{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                margin: auto;
+                padding: 10px;
+
+                label{
+                    padding-right: 0;
+                    padding-bottom: 10px;
+                    text-align: left;
+                }
+
+                #profile-save{
+                    margin: auto;
+                }
+
+                #new-psw-save{
+                    padding:10px 20px;
+                    border:none;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                    background-color: #db4d6d;
+                    color: #fff;
+                    font-family: "GenJyuuGothic-R";
+                    font-size: 18px;
+                    margin: auto;
+
+                    &:hover{
+                        background-color: #cb1b45;
+                    }
+                }
+
+                #psw-error{
+                    display: block;
+                    color: #cb1b45;
+                    font-size: 20px;
+                    padding-bottom: 10px;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+            
+        }
     }
 
 

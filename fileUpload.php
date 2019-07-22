@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["mem_no"] = 1;
 switch($_FILES["upFile"]["error"]){
 	case UPLOAD_ERR_OK:
 	    if( file_exists("database/img_mem") === false){  //若資料夾不存在
@@ -32,15 +34,8 @@ try {
     $sql = "update member set mem_pic=:mem_pic where mem_no = :mem_no";
     $profileChange = $pdo->prepare($sql);
     $profileChange->bindValue(":mem_pic", $_FILES['upFile']['name']);
-    $profileChange->bindValue(":mem_no", 1);
+    $profileChange->bindValue(":mem_no", $_SESSION["mem_no"]);
     $profileChange->execute();
-    // $profileChangeRow = $profileChange->fetch(PDO::FETCH_ASSOC);
-
-    // if($profileChangeRow.rowCount()==0){
-    //     echo "erro";
-    // }else{
-    //     echo json_encode($profileChangeRow);
-    // }
     header("location:account.php");
     
 } catch (PDOException $e) {

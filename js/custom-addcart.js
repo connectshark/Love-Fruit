@@ -1,17 +1,16 @@
 $(document).ready(function() {
-	$('#addcart').click(checkedSign);
-});
-function checkedSign() {
-	$.ajax({
-		url:'../checksign.php',
-		data: '',
-		type: 'GET',
-		success: function(data){
-			if (data === true) {
-				alert('有');
-			}else {
-				alert('沒有');
-			}
-		},
+	$('#addcart').click(function() {
+		console.log(total);
+		$.ajax({
+			url: `../cto-addcart.php?img=${imgPath}&price=${total}`,
+			type: 'GET',
+			data: '',
+		})
+		.done(function(data) {
+			alert(`加入成功`);
+		})
+		.fail(function(data) {
+			alert(`加入失敗`);
+		})
 	});
-}
+});

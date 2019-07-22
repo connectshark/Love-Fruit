@@ -10,11 +10,6 @@
   text-decoration: none;
 }
 
-.page-shop {
-  background: #F8C3CD url(../img/shop/backgroundpic.png);
-  font-family: "GenJyuuGothic-B";
-}
-
 .page-shop .roof {
   margin: auto;
 }
@@ -75,6 +70,11 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
+}
+
+.page-shop body {
+  background: #F8C3CD url(../img/shop/backgroundpic.png);
+  font-family: "GenJyuuGothic-B";
 }
 
 .page-shop .product-img {

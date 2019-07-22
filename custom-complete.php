@@ -1,6 +1,6 @@
 <?php 
-$errMsg="";
 session_start();
+$errMsg="";
 $path = 'database/img_cto/';
 $img = $_REQUEST['ctoPic'];
 $img = str_replace('data:image/png;base64,', '', $img);
@@ -12,7 +12,7 @@ $success = file_put_contents($file, $data);
 try {
     require_once("connect-dd101g3.php");
     // 接前一頁資料
-    $memNo = 3;//session撈
+    $memNo = $_SESSION['mem_no'];//session撈
     $moldNo = $_REQUEST['texture'];
     $iiNo = $_REQUEST['fruite-slice'];
     $ctoPrice = $_REQUEST['price'];
@@ -38,6 +38,7 @@ try {
         $fruite -> bindValue(':fruite',$_REQUEST['fruite'][$i]);
         $fruite -> execute();
     }
+    echo $path;
 } catch (PDOException $e) {
     $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";
