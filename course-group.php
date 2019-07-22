@@ -1,16 +1,17 @@
 <?php 
 session_start();
-$_SESSION["mem_no"]=1;
+// $_SESSION["mem_no"]=1;
 try {
   require_once("mac-require.php");
+
   //抓開團留言
-	$sql = "SELECT m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content FROM course_msg cm JOIN member m ON cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
+	$sql = "select m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no where course_class_no = 1 order by cm.msg_date desc";
  
   $courseMsg  = $pdo->prepare($sql);
   $courseMsg -> bindValue(':mem_no',$_SESSION["mem_no"]);
   $courseMsg -> execute();
   //.............
-  $sql2 = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 and cm.msg_no = :msg_no ORDER BY reply_date desc";      
+  $sql2 = "select cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content from msg_reply mr join member m on mr.mem_no = m.mem_no join course_msg cm on mr.msg_no = cm.msg_no where course_class_no = 1 and cm.msg_no = :msg_no order by reply_date desc";      
   $replayMsg  = $pdo->prepare($sql2);
   
 } catch (PDOException $e) {
@@ -119,9 +120,12 @@ try {
       <div class="group-message" >
         <div class="open-group">
           <div class="message-meb col-md-2">
-            <div class="mem-pic"><img src="" alt=""></div>
-            <i class="fas fa-user-circle"></i>
-            <p>會員名稱</p>
+          <?php if ($row ->mem_pic) { ?>
+            <div class="mem-pic"><img src="<?php echo $row ->mem_pic ?>" alt=""></div>
+          <?php }else{
+						echo "<i class='fas fa-user-circle'></i>";
+					} ?>
+            <p><?php echo $row ->mem_name ?></p>
             <p class="time"><?php echo date("Y-m-d"); ?></p>
           </div>
           <div class="write-area  col-md-10">
@@ -136,13 +140,11 @@ try {
   邀請的話～"></textarea>
           </div>
           <div class="message-btn col-md-12">
-          <a href="course-msg.php">
             <button type="submit" class="message-btn-out">
               <span class="message-btn-in">
                 我要留言
               </span>
             </button>
-          </a> 
           </div>
         </div>
   </form>
@@ -158,7 +160,7 @@ try {
         </a>
     </div>
 
-  <?php while ($row = $courseMsg -> fetchObject()) {?> 
+<?php while ($row = $courseMsg -> fetchObject()) {?>  
     <div class="team-name">
         <span>團名：<?php echo $row->msg_title;?> </span>
     </div>
