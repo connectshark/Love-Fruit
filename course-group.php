@@ -269,6 +269,7 @@ try {
   <script src="js/course.js"></script>
   <script src="js/course-group.js"></script>
   <script src="js/shop.js"></script>
+  <script src="js/login.js"></script>
 </body>
 
 </html>

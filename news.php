@@ -29,14 +29,14 @@ try {
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/common.css">
+  
+
 </head>
 
 <body>
-<?php
-    require_once("nav.php");
-    ?>
+<?php  require_once("nav.php"); ?>
 
-  <div class="news-wrap ">
+  <div class="news-wrap" id="app">
       <section class="banner bubble-box">
           <div class="title">
             <div class="img-bg">
@@ -56,16 +56,16 @@ try {
           <h3>篩選條件:</h3>
         
             <div class="filter-item filter-active">
-              <button type="button" class="all">全部消息</button>
+              <button type="button" class="all" >全部消息</button>
             </div>
             <div class="filter-item">
               <button type="button" class="newgroup">揪團新訊</button>
             </div>
             <div class="filter-item">
-              <button type="button" class="park">園區公告</button>
+              <button type="button" class="park" >園區公告</button>
             </div>
             <div class="filter-item">
-              <button type="button" class="newpds">新品上市</button>
+              <button type="button" class="newpds" >新品上市</button>
             </div>
             <div class="filter-item">
               <button type="button" class="limit">季節限定</button>
@@ -113,17 +113,20 @@ try {
       <?php } ?>   
     </div>
 
-      <div id="navigatediv">
-
-      <div class="bookmark">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-        </ul>
-      </div>
+     
+      <!-- <div class="bookmark">
+          <ul class="pagination">
+              <li v-if="nowPage!=1 && totalPage>1">
+                  <a @click.prevent="changePage(nowPage-1)"><</a>
+              </li>
+              <li v-for="page in pageNumber" :class="[page == nowPage ? 'active' : undefined]">
+                  <a @click.prevent="changePage(page)">{{ page }}</a>
+              </li>
+              <li v-if="nowPage!=totalPage && totalPage>1">
+                  <a @click.prevent="changePage(nowPage+1)">></a>
+              </li>
+          </ul>
+      </div> -->
     </section>
 
   </div>
@@ -133,6 +136,24 @@ try {
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/news.js" ></script>
+  <script src="js/login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  <script>
+   var app = new Vue({
+        el:'#app',
+        data: {
+          active: 'home';
+        },
+        methods:{
+          makeActive: function(item){
+          // 模型改变，视图会自动更新
+          this.active = item;
+          }
+        },
+       
+    });
+
+  </script>
   
 </body>
 

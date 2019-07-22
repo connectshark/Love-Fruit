@@ -96,7 +96,7 @@
   <script src="js/course.js"></script>
   <script src="js/calendar.js"></script>
   <script src="js/shop.js"></script>
-    
+  <script src="js/login.js"></script>
 
 
 </body>
