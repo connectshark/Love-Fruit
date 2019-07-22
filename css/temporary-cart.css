@@ -1,11 +1,11 @@
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
   font-family: "GenJyuuGothic-R";
 }
@@ -44,7 +44,7 @@
 }
 
 #mini-cart .gogo:hover {
-  background-color: #ea7187;
+  background-color: #EA7187;
 }
 
 #mini-cart .gogo a {
@@ -59,8 +59,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 2px solid black;
 }
 
@@ -71,8 +71,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #mini-cart .cart-icon h3 {
@@ -88,7 +88,7 @@
 }
 
 #mini-cart .cart-close:hover {
-  color: #db4d6d;
+  color: #DB4D6D;
 }
 
 #mini-cart .cart-close .fa-times {
@@ -106,10 +106,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 2px solid gray;
 }
 
@@ -157,8 +157,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-bottom: 2px solid black;
   }
   #mini-cart .cart-icon {
@@ -168,8 +168,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #mini-cart .cart-icon h3 {
     font-size: 24px;
@@ -182,7 +182,7 @@
     text-align: center;
   }
   #mini-cart .cart-close:hover {
-    color: #db4d6d;
+    color: #DB4D6D;
   }
   #mini-cart .cart-close .fa-times {
     font-size: 25px;
@@ -194,10 +194,10 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+        flex-wrap: nowrap;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-bottom: 2px solid gray;
   }
   #mini-cart .mini-item-wrap .mini-img {

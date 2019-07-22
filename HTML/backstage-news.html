@@ -30,13 +30,13 @@
                         <a class="nav-link" href="backstage-course.html">課程預約</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="backstage-prod.html">商品管理</a>
+                        <a class="nav-link" href="backstage-prod.html">商品管理</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="backstage-order.html">訂單管理</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="backstage-news.html">最新消息</a>
+                        <a class="nav-link active" href="backstage-news.html">最新消息</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="backstage-member.html">會員管理</a>
@@ -55,7 +55,7 @@
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>商品管理頁</h3>
+                <h3>最新消息管理頁</h3>
             </div>
         </div>
     </section>
@@ -63,87 +63,68 @@
     <section class="container-fluid px-4">
         <div class="row justify-content-center">
             <div class="col-10 bg-white rounded">
-
                 <div class="row p-4">
-                    <div class="col-12 px-0 text-right"><input class="btn btn-lovefruit btn-lg" type="button"
-                            value="新增商品"></div>
                     <div class="col-12 px-0 py-4">
+                        <div class="pb-4 text-right"><input class="btn btn-lovefruit btn-lg" type="button" value="新增文章">
+                        </div>
                         <form action="">
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">編號</th>
-                                        <th scope="col">商品名稱</th>
-                                        <th scope="col">商品圖</th>
-                                        <th scope="col">商品敘述</th>
-                                        <th scope="col">價格</th>
-                                        <th scope="col">戀愛階段</th>
-                                        <th scope="col">冰品類型</th>
-                                        <th scope="col">評價總分</th>
-                                        <th scope="col">評價次數</th>
+                                        <th scope="col">標題</th>
+                                        <th scope="col">文章分類</th>
+                                        <th scope="col">撰寫時間</th>
                                         <th scope="col">狀態</th>
                                         <th scope="col">編輯</th>
+                                        <th scope="col">刪除</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>酸梅冰</td>
-                                        <td>popsicle_1.png</td>
-                                        <td><textarea class="form-control" name="" id="" cols="30"
-                                                rows="2">冰品描述</textarea></td>
-                                        <td><input class="form-control" type="text" value="200"></td>
+                                        <td>3F創意遊戲室 暫停開放公告</td>
                                         <td><select id="" class="form-control">
-                                                <option value="0" selected>單身</option>
-                                                <option value="1">初戀</option>
-                                                <option value="2">熱戀</option>
-                                                <option value="3">分手</option>
+                                                <option value="0">揪團新訊</option>
+                                                <option value="1">新品上市</option>
+                                                <option value="2" selected>園區公告</option>
+                                                <option value="3">季節限定</option>
                                             </select>
                                         </td>
-                                        <td><select id="" class="form-control">
-                                                <option value="0">冰棒</option>
-                                                <option value="1" selected>冰淇淋</option>
-                                                <option value="2" selected>霜淇淋</option>
-                                            </select>
-                                        </td>
-                                        <td>10</td>
-                                        <td>2</td>
+                                        <td>2019-08-12</td>
                                         <td><select id="" class="form-control">
                                                 <option value="0">下架</option>
                                                 <option value="1" selected>上架</option>
                                             </select>
                                         </td>
-                                        <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                        <td><input class="btn btn-info" type="button" value="送出修改">
+                                            <input class="btn btn-info" type="button" value="編輯內容">
+                                        </td>
+                                        <td><input class="btn btn-danger" type="button" value="刪除文章"></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
-                                        <td>酸梅冰</td>
-                                        <td>popsicle_1.png</td>
-                                        <td><textarea class="form-control" name="" id="" cols="30"
-                                                rows="2">冰品描述</textarea></td>
-                                        <td><input class="form-control" type="text" value="200"></td>
+                                        <td>3F創意遊戲室 暫停開放公告</td>
                                         <td><select id="" class="form-control">
-                                                <option value="0" selected>單身</option>
-                                                <option value="1">初戀</option>
-                                                <option value="2">熱戀</option>
-                                                <option value="3">分手</option>
+                                                <option value="0">揪團新訊</option>
+                                                <option value="1">新品上市</option>
+                                                <option value="2" selected>園區公告</option>
+                                                <option value="3">季節限定</option>
                                             </select>
                                         </td>
-                                        <td><select id="" class="form-control">
-                                                <option value="0">冰棒</option>
-                                                <option value="1" selected>冰淇淋</option>
-                                                <option value="2" selected>霜淇淋</option>
-                                            </select>
-                                        </td>
-                                        <td>10</td>
-                                        <td>2</td>
+                                        <td>2019-08-12</td>
                                         <td><select id="" class="form-control">
                                                 <option value="0">下架</option>
                                                 <option value="1" selected>上架</option>
                                             </select>
                                         </td>
-                                        <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                        <td><input class="btn btn-info" type="button" value="送出修改">
+                                            <input class="btn btn-info" type="button" value="編輯內容">
+                                        </td>
+                                        <td><input class="btn btn-danger" type="button" value="刪除文章"></td>
                                     </tr>
+
+
                                 </tbody>
                             </table>
                         </form>
@@ -155,7 +136,6 @@
     </section>
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>

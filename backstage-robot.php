@@ -1,15 +1,14 @@
 <?php
-$errMsg = "";
+$errmsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sqlres = "select * from course_reservation";
-    $res = $pdo->query($sqlres);
+    $sqlrobot = "select * from robot";
+    $robot = $pdo->query($sqlrobot);
 } catch (PDOException $e) {
-    echo $errMsg .=  $e->getMessage() . "<br>";
-    echo $errMsg .=  $e->getLine() . "<br>";
+    echo  $errMsg .=  $e->getMessage() . "<br>";
+    echo  $errMsg .=  $e->getLine() . "<br>";
 }
 ?>
-
 <html lang="UTF-8">
 
 <head>
@@ -35,7 +34,7 @@ try {
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>課程預約管理頁</h3>
+                <h3>機器人管理頁</h3>
             </div>
         </div>
     </section>
@@ -50,41 +49,24 @@ try {
                                 <thead>
                                     <tr>
                                         <th scope="col">編號</th>
-                                        <th scope="col">預約會員</th>
-                                        <th scope="col">課程名稱</th>
-                                        <th scope="col">上課日期</th>
-                                        <th scope="col">時段</th>
-                                        <th scope="col">人數</th>
-                                        <th scope="col">預約時間</th>
-                                        <th scope="col">報到</th>
-                                        <th scope="col">狀態</th>
+                                        <th scope="col">關鍵字</th>
+                                        <th scope="col">回答</th>
                                         <th scope="col">編輯</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     <?php
-                                    while ($resRows = $res->fetch(PDO::FETCH_ASSOC)) {
+                                    while ($robotRows = $robot->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
+
                                         <tr>
-                                            <th scope="row"><?php echo $resRows["res_no"] ?></th>
-                                            <td><?php echo $resRows["mem_no"] ?></td>
-                                            <td><?php echo $resRows["course_name"] ?></td>
-                                            <td><?php echo $resRows["course_date"] ?></td>
-                                            <td><?php echo $resRows["course_slot"] ?></td>
-                                            <td><?php echo $resRows["res_ppl"] ?></td>
-                                            <td><?php echo $resRows["res_date"] ?></td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0" selected>未報到</option>
-                                                    <option value="1">已報到</option>
-                                                </select>
-                                            </td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0">取消</option>
-                                                    <option value="1" selected>預約</option>
-                                                </select>
-                                            </td>
-                                            <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                            <th scope="row"><?php echo $robotRows["qus_no"]; ?></th>
+                                            <td><input class="form-control" type="text" value="<?php echo $robotRows["keyword"]; ?>"></td>
+                                            <td><textarea class="form-control" name="" id="" cols="30" rows="2"><?php echo $robotRows["answer"]; ?></textarea></td>
+                                            <td><input class="robot-btn btn btn-info" type="button" value="送出修改"></td>
                                         </tr>
+
 
                                     <?php
                                     }

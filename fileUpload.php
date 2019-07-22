@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["mem_no"] = 1;
+// $_SESSION["mem_no"] = 1;
 switch($_FILES["upFile"]["error"]){
 	case UPLOAD_ERR_OK:
 	    if( file_exists("database/img_mem") === false){  //若資料夾不存在
@@ -33,7 +33,7 @@ try {
     require_once("connect-dd101g3.php");
     $sql = "update member set mem_pic=:mem_pic where mem_no = :mem_no";
     $profileChange = $pdo->prepare($sql);
-    $profileChange->bindValue(":mem_pic", $_FILES['upFile']['name']);
+    $profileChange->bindValue(":mem_pic", "database/img_mem/"."{$_FILES['upFile']['name']}");
     $profileChange->bindValue(":mem_no", $_SESSION["mem_no"]);
     $profileChange->execute();
     header("location:account.php");

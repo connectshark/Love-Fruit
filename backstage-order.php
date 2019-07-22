@@ -2,8 +2,8 @@
 $errmsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sqlnews = "select * from news";
-    $news = $pdo->query($sqlnews);
+    $sqlorder = "select * from prod_order";
+    $order = $pdo->query($sqlorder);
 } catch (PDOException $e) {
     echo  $errMsg .=  $e->getMessage() . "<br>";
     echo  $errMsg .=  $e->getLine() . "<br>";
@@ -31,12 +31,13 @@ try {
         <?php
         require_once("backstage-nav.php");
         ?>
+
     </header>
 
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>最新消息管理頁</h3>
+                <h3>訂單管理頁</h3>
             </div>
         </div>
     </section>
@@ -46,60 +47,46 @@ try {
             <div class="col-10 bg-white rounded">
                 <div class="row p-4">
                     <div class="col-12 px-0 py-4">
-                        <div class="pb-4 text-right text-white"><a class="btn btn-lovefruit btn-lg" href="backstage-addnews.php">新增文章</a>
-                        </div>
                         <form action="">
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">編號</th>
-                                        <th scope="col">標題</th>
-                                        <th scope="col">文章分類</th>
-                                        <th scope="col">撰寫時間</th>
+                                        <th scope="col">收件人</th>
+                                        <th scope="col">手機</th>
+                                        <th scope="col">收件地址</th>
+                                        <th scope="col">下單時間</th>
                                         <th scope="col">狀態</th>
                                         <th scope="col">編輯</th>
-                                        <th scope="col">刪除</th>
+                                        <th scope="col">備註</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     <?php
-                                    while ($newsRows = $news->fetch(PDO::FETCH_ASSOC)) {
+                                    while ($orderRows = $order->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
 
                                         <tr>
-                                            <th scope="row"><?php echo $newsRows["news_no"]; ?></th>
-                                            <td><?php echo $newsRows["news_title"]; ?></td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0" <?php if (!(strcmp("0", $newsRows["news_class"]))) {
+                                            <th scope="row"><?php echo $orderRows["order_no"]; ?></th>
+                                            <td><?php echo $orderRows["order_name"]; ?></td>
+                                            <td><?php echo $orderRows["order_phone"]; ?></td>
+                                            <td><?php echo $orderRows["order_add"]; ?></td>
+                                            <td><?php echo $orderRows["order_creat_date"]; ?></td>
+                                            <td><select class="form-control">
+                                                    <option value="0" <?php if (!(strcmp("0", $orderRows["order_state"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>揪團新訊</option>
-                                                    <option value="1" <?php if (!(strcmp("1", $newsRows["news_class"]))) {
+                                                                        } ?>>未處理</option>
+                                                    <option value="1" <?php if (!(strcmp("1", $orderRows["order_state"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>新品上市</option>
-                                                    <option value="2" <?php if (!(strcmp("2", $newsRows["news_class"]))) {
-                                                                            echo "selected=\"selected\"";
-                                                                        } ?>>園區公告</option>
-                                                    <option value="3" <?php if (!(strcmp("3", $newsRows["news_class"]))) {
-                                                                            echo "selected=\"selected\"";
-                                                                        } ?>>季節限定</option>
-                                                </select>
-                                            </td>
-                                            <td><?php echo $newsRows["news_date"]; ?></td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0" <?php if (!(strcmp("0", $newsRows["news_state"]))) {
-                                                                            echo "selected=\"selected\"";
-                                                                        } ?>>下架</option>
-                                                    <option value="1" <?php if (!(strcmp("1", $newsRows["news_state"]))) {
-                                                                            echo "selected=\"selected\"";
-                                                                        } ?>>上架</option>
+                                                                        } ?>>已出貨</option>
                                                 </select>
                                             </td>
                                             <td><input class="btn btn-info" type="button" value="送出修改">
-                                                <a class="btn btn-info" href="backstage-editnews.php?news_no=<?php echo $newsRows["news_no"];?>">編輯內容</a>
                                             </td>
-                                            <td><input class="btn btn-danger" type="button" value="刪除文章"></td>
+                                            <td><input class="btn btn-info" type="button" value="訂單詳情">
+                                            </td>
                                         </tr>
+
 
                                     <?php
                                     }
