@@ -151,8 +151,14 @@ body{
 }
 .price-s-table th,td{
 	padding: 10px 6px;
+	font-size: 20px;
 	text-align: center;
 	vertical-align: middle;
+}
+@media screen and (min-width: 768px) {
+	.price-s-table th,td{
+		font-size: 16px;
+	}
 }
 .price-s-table th{
 	width: 30%;
@@ -197,13 +203,10 @@ body{
 		flex-flow: row nowrap;
 	}
 }
-.face{
-	position: relative;
-	z-index: 1;
-}
 .progress{
 	height: 100px;
-	width: 90%;
+	margin-left: auto;
+	width: 100%;
 	background-color: #ffdee6;
 	border: 5px solid #6a3e26;
 	border-radius: 10px;
@@ -216,15 +219,9 @@ body{
 @media screen and (min-width: 768px) {
 	.progress{
 		padding: 10px 10px 10px 14%;
-		margin-left: -14%;
 		margin-top: 0;
+		width: 90%;
 	}
-}
-#mood{
-	vertical-align: middle;
-	border: 5px solid #6a3e26;
-	border-radius: 50%;
-	background-color: #fff;
 }
 .category{
 	height: 100%;
@@ -531,12 +528,16 @@ body{
 	padding: 20px;
 	box-sizing: border-box;
 }
+.flow{
+	padding: 10px 0;
+}
 @media screen and (min-width: 768px) {
 	.custom-aside{
 		width: 30%;
 	}
 	.flow{
-		min-height: 550px;
+		padding:0;
+		min-height: 500px;
 	}
 }
 .aside-title{
