@@ -10,10 +10,13 @@
 
 .show {
   width: 100vw;
-  background-image: url("../img/account/banner.png"), -webkit-gradient(linear, left top, left bottom, from(#fff8e4), to(#f7a1c1));
-  background-image: url("../img/account/banner.png"), linear-gradient(to bottom, #fff8e4 0%, #f7a1c1 100%);
-  background-size: cover;
-  background-position: center bottom;
+  background-image: url("../img/indexImg/heroImg.png"), url("../img/indexImg/hero-bgi-cloud-b.png"), url("../img//indexImg/hero-bgi-cloud-b.png"), -webkit-gradient(linear, left top, left bottom, from(#fff8e4), to(#f7a1c1));
+  background-image: url("../img/indexImg/heroImg.png"), url("../img/indexImg/hero-bgi-cloud-b.png"), url("../img//indexImg/hero-bgi-cloud-b.png"), linear-gradient(to bottom, #fff8e4 0%, #f7a1c1 100%);
+  background-size: 100%,cover,cover,100%;
+  background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
+  background-position: center bottom,20% 100%,80% 100%,center;
+  -webkit-animation: shake 20s infinite alternate linear;
+          animation: shake 20s infinite alternate linear;
 }
 
 @media all and (max-width: 768px) {
@@ -73,7 +76,7 @@
 }
 
 .show .aside .item .box a h1, .show .aside .item .box a h2 {
-  font: 40px "A-OTF-M";
+  font: 3.5vw "A-OTF-M";
   text-shadow: 1px 1px 3px #949494;
   line-height: 2;
   color: #fff;
@@ -84,6 +87,7 @@
 @media all and (max-width: 768px) {
   .show .aside .item .box a h1, .show .aside .item .box a h2 {
     color: #6a3e26;
+    font: 40px "A-OTF-M";
   }
 }
 
@@ -182,6 +186,24 @@
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    background-position: center bottom,20% 100%,80% 100%,center;
+  }
+  100% {
+    background-position: center bottom,40% 100%,60% 100%,center;
+  }
+}
+
+@keyframes shake {
+  0% {
+    background-position: center bottom,20% 100%,80% 100%,center;
+  }
+  100% {
+    background-position: center bottom,40% 100%,60% 100%,center;
   }
 }
 /*# sourceMappingURL=effect.css.map */
