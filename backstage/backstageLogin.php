@@ -11,7 +11,7 @@ try {
     $magLogin->execute();
     $magRow= $magLogin->fetch(PDO::FETCH_ASSOC);
   if($magLogin->rowCount() == 0){
-        echo "444";
+        echo "error";
     }else{
     	$_SESSION["emp_id"] = $magRow["emp_id"];
         $_SESSION["emp_psw"] = $magRow["emp_psw"];
@@ -23,4 +23,3 @@ try {
 }
 
 ?>
-

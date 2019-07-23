@@ -58,7 +58,8 @@
                 xhr.onload = function(){
                     if(xhr.readyState == 4){
                         if(xhr.status == 200){
-                                if ( xhr.responseText == 444 ){
+                            console.log("1"+xhr.responseText+"2");
+                                if ( xhr.responseText.indexOf("error") != -1 ){
                                     alert("查無此員工");
                                 }else{
                                     window.location.href="backstage-cto.php";
