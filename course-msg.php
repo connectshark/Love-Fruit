@@ -1,11 +1,12 @@
 <?php 
-$errMsg="";
 session_start();
+$errMsg="";
+
 try {
     require_once("mac-require.php");
         $sql = "insert course_msg set mem_no = :memNo , course_class_no = :courseClassNo, msg_date = :msgDate, msg_title = :msgTitle , msg_content = :msgContent";
-       
         $courseClassNo = $_REQUEST['courseClassNo'];
+        $memNo =  $_SESSION['mem_no'];
         $msgTitle  = $_REQUEST['msgTitle'];
         $msgContent = $_REQUEST['msgContent'];
         $courseMsg = $pdo->prepare($sql);

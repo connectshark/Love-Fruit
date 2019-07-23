@@ -1,11 +1,12 @@
 <?php 
-$errMsg="";
 session_start();
+$errMsg="";
+
 try {
     require_once("mac-require.php");
 	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
-    $courseMsgG = $pdo -> prepare($sql);
-	$courseMsgG -> execute();
+    $courseMsg = $pdo -> prepare($sql);
+	$courseMsg -> execute();
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";
@@ -172,7 +173,7 @@ try {
   
 
         <div class="mem-message-wrap">
-<?php while ($row = $courseMsgG -> fetchObject()) {?>
+<?php while ($row = $courseMsg -> fetchObject()) {?>
             <div class="mem-message-item">
            
                 <div class="message-mem col-md-2 col-2">

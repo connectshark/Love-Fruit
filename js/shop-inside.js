@@ -156,7 +156,7 @@ function showCart(){
 		html += `
 			<div class="mini-item-wrap">
 				<span style='display:none'>${prod_no}</span>
-				<div class="mini-img col-3 col-lg-2"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
+				<div class="mini-img col-3 col-lg-2"><img src="${cart[prod_no].prod_pic}" alt=""></div>
 				<span class="mini-name col-3 col-lg-3">
 					<a href="shop-inside.php?prod_no=${prod_no}">
 					${cart[prod_no].prod_name}

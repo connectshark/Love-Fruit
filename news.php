@@ -1,7 +1,6 @@
 <?php 
-$errMsg="";
-
 session_start();
+$errMsg="";
 
 try {
 	require_once("mac-require.php");
@@ -64,7 +63,7 @@ function newsName($newsClass)
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/common.css">
-  
+  <link rel="stylesheet" href="css/temporary-cart.css">
 
 </head>
 
