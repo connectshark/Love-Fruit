@@ -1,6 +1,8 @@
 <?php
-ob_start();
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+    $_SESSION["mem_id"] = null;
+}
 $errMsg = "";
 try {
 	require_once("connect-dd101g3.php");
@@ -251,17 +253,7 @@ require_once("nav.php");
 
 
 
-
-
-
-
-
-
-
-
-
-
-    <section class="custom">
+    <!-- <section class="custom">
         <div class="wrap">
             <div class="roof col-11">
                 <div class="title"><span>客製</span></div>
@@ -381,7 +373,7 @@ require_once("nav.php");
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <footer>
@@ -389,7 +381,8 @@ require_once("nav.php");
     </footer>
 
     <script src="js/nav.js"></script>
-    <script> src="js/login.js"</script>
+    <script src="js/login.js"></script>
+    <!-- <script src="custom-checksign.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/shop.js"></script>

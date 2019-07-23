@@ -176,7 +176,7 @@ session_start();
        
        
         <div class="confirm-row fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
-            <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>"></div></div>
+            <div class="row-pic col-lg-3 col-6 "><div class="row-pic-box m-a"><img src="<?php echo $_SESSION["cart"][$i]["prod_pic"]?>"></div></div>
             <div class="row-name col-lg-3 col-6  ">
               <p><?php echo $_SESSION["cart"][$i]["prod_name"] ?></p>
               <div>品名:

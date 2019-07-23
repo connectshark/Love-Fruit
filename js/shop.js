@@ -71,7 +71,7 @@ function showCart(){
 		html += `
 			<div class="mini-item-wrap">
 				<span style='display:none'>${prod_no}</span>
-				<div class="mini-img col-3 col-lg-2"><img src="img/shop/${cart[prod_no].prod_pic}" alt=""></div>
+				<div class="mini-img col-3 col-lg-2"><img src="${cart[prod_no].prod_pic}" alt=""></div>
 				<span class="mini-name col-3 col-lg-3">
 					<a href="shop-inside.php?prod_no=${prod_no}">
 					${cart[prod_no].prod_name}
@@ -138,10 +138,12 @@ function changeCart(e){
 	let xhr = new XMLHttpRequest();
 	
 	xhr.onload = function (e){
+		if(xhr.responseText == 444 ){
+			navLoginIcon()
+		};
 		cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
 		console.log(JSON.stringify(cart));
 	}
-
 	let url = "shop-update.php";
 	xhr.open("post",url,true);
 	console.log(this.parentNode);
@@ -179,8 +181,9 @@ var btn = document.getElementsByClassName("shop-buy-btn");
 for(i=0;i<btn.length;i++){
 	btn[i].addEventListener("click",changeCart);
 }
-document.getElementsByClassName("shop-buy-btn").onclick = function(){
-	changeCart(e);}
+// document.getElementsByClassName("shop-buy-btn").onclick = function(){
+
+// 	changeCart(e);}
 
  
 
