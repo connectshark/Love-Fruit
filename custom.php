@@ -271,7 +271,7 @@ try {
                         <input type="radio" name="fruite-slice" value="3" id="fruite-slice3">
                         <input type="radio" name="fruite-slice" value="4" id="fruite-slice4">
                         <input type="number" id="custom-price" name="price">
-                        <input type="text" name="stageNo" id="stage-no">
+                        <input type="text" name="stage-no" id="stage-no">
                     </form>
                 </div>
 				<div class="aside-button" id="last">

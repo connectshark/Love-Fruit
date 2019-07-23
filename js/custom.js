@@ -296,7 +296,7 @@ function putStickIn() {
 	});
 	// 按鈕收起來
 	$('#last').hide(0,function() {
-		$('#none-last').show(function(){
+		$('#none-last').show(0,function(){
 			$('#stage-no').val(stageNo(setStage(sliceIndex)));
 		});
 	});

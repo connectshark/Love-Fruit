@@ -17,10 +17,7 @@ try {
     $iiNo = $_REQUEST['fruite-slice'];
     $ctoPrice = $_REQUEST['price'];
     $ctoWords = $_REQUEST['parse'];
-    $stageNo = $_REQUEST['stageNo'];
-    $sql = "SELECT mem_no,cto_no FROM customize WHERE mem_no = $memNo";
-    $search = $pdo->query($sql);
-    $row = $search->fetchObject();
+    $stageNo =$_REQUEST['stage-no'];
 	$sql="INSERT INTO customize SET mem_no = :memNo ,mold_no = :moldNo ,ii_no = :iiNo ,stage_no = :stageNo ,cto_pic = :ctoPic, cto_words = :ctoWords ,cto_price = :ctoPrice";
     $custom = $pdo->prepare($sql);
     $custom ->bindValue(':memNo',$memNo);
@@ -38,7 +35,7 @@ try {
         $fruite -> bindValue(':fruite',$_REQUEST['fruite'][$i]);
         $fruite -> execute();
     }
-    echo $path;
+    echo $file;
 } catch (PDOException $e) {
     $errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";

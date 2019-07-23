@@ -1,5 +1,4 @@
 function draw(texture,color1,color2,src) {
-	console.log(texture,color1,color2,src);
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
 	switch (texture) {
@@ -211,10 +210,10 @@ function draw(texture,color1,color2,src) {
 	canvasPut();
 }
 function canvasPut() {
-	$('#pop-img').attr('src', bg);
-	$('#cto-pic').val(bg);
-	sendFormData();
 	$('#pop').fadeIn('fast', function() {
 		$('#pop-total-price').text($('#total-price').text());
 	});
+	$('#pop-img').attr('src', bg);
+	$('#cto-pic').val(bg);
+	sendFormData();
 }

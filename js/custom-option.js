@@ -10,12 +10,23 @@ $(document).ready(function() {
 var imgPath;
 function sendFormData(){
 	$.ajax({
-		url:'custom-complete.php',
-		data: $('#custom-choose').serialize(),
+		url: 'custom-complete.php',
 		type: 'POST',
-		success: function(data){
-			imgPath=data;
-			totalPrice();
-		},
+		data: $('#custom-choose').serialize(),
+	})
+	.done(function(data) {
+		console.log(data);
+		imgPath=data;
+		console.log(imgPath);
+	})
+	.fail(function(data) {
+		console.log("error");
+		console.log(data);
+		imgPath=data;
+	})
+	.always(function(data) {
+		console.log("complete");
+		console.log(data);
+		imgPath=data;
 	});
 }
