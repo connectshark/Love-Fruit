@@ -254,17 +254,20 @@ try {
     <img class="diy-ice-bgc" src="img/indexImg/diyIcebgc.png" alt="diyIcebgc" />
     <?php $customizeRow = $customize->fetch(PDO::FETCH_ASSOC) ?>
     <div class="c-p-single">
-      <img id="user-ice1" class="wow bounceInDown" src="<?php echo $customizeRow["cto_pic"][0] ?>" alt="userIce" />
+      <img id="user-ice1" class="wow bounceInDown" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img id="single" src="img/indexImg/single.png" alt="single" />
     </div>
+    <?php $customizeRow = $customize->fetch(PDO::FETCH_ASSOC) ?>
     <div class="c-p-firstLove">
       <img id="user-ice2" class="wow bounceInDown" data-wow-delay="0.5s" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img src="img/indexImg/firstLove.png" alt="firstLove" />
     </div>
+    <?php $customizeRow = $customize->fetch(PDO::FETCH_ASSOC) ?>
     <div class="c-p-love">
       <img id="user-ice3" class="wow bounceInDown" data-wow-delay="1s" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img src="img/indexImg/love.png" alt="love" />
     </div>
+    <?php $customizeRow = $customize->fetch(PDO::FETCH_ASSOC) ?>
     <div class="c-p-lostLove">
       <img id="user-ice4" class="wow bounceInDown" data-wow-delay="1.3s" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img src="img/indexImg/lostLove.png" alt="love" />
