@@ -118,7 +118,7 @@ session_start();
   <div class="cart-list-item fw-w container text-center p-10 cart-row flex ju-c ai-c rela">
       <input type="hidden" value="<?php echo $i ?>">
       <div class="col-lg-2 col-6 item-pic">
-        <div class="col-3 m-a"><img src="database/img_prod/<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
+        <div class="col-3 m-a"><img src="<?php echo $_SESSION["cart"][$i]["prod_pic"]?>" alt=""></div>
       </div>
       
       <div class="col-lg-2 col-6 mobile-price">

@@ -35,11 +35,6 @@ try{
 
 
 
-
-
-
-
-
 <!-- 抓會員已收藏 -->
 <?php
 try{
@@ -151,113 +146,60 @@ try{
             </div>
         </div>
     </section>
-
-<!-- 
-    <section class="review-message ">
-        <div class="message-input-box col-lg-7 col-10 m-a">
-            <h3 class="message-title">留言</h3>
-            <div class="message-input col-12 m-a">
-                <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="請輸入評論"></textarea>
-            </div>
-            <div class="sentout-btn-box">
-                <div class="sentout-btn">
-                    <span class="sentout-btn-in">送出
-                    </span></div>
-            </div>
-        </div>
-        <div class="other-review-message-box col-lg-7 col-10 p-10 m-a">
-            <div class="other-review-message">
-                <div class="total-review-people">總評論人數(15)</div>
-
-
-                <div class="other-review-wrap">
-                    <div class="total-review-number flex">
-                        <div class="number-pic col-2">
-                            <img src="img/navBar/memberIcon.png" alt="">
-                        </div>
-                        <div class="number-information col-6">
-                            <p class="number-name">david</p>
-                            <div class="number-star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(4.5)</span>
-                            </div>
-                        </div>
-                        <p class="col-3 date">2019/03/05</p>
-                    </div>
-                    <div class="review-text col-12">
-                        <p class="number-review-text">
-                            我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道知道我知道好我知道好我知道好我知道v好我知道好我知道好我知道好我知道好我知道好我知道好我知道好
-                        </p>
-                    </div>
-                    <div class="report-btn">
-                        <input type="submit" value="檢舉" class="report">
-                    </div>
-                </div>
-                <div class="other-review-wrap">
-                    <div class="total-review-number flex">
-                        <div class="number-pic col-2">
-                            <img src="img/navBar/memberIcon.png" alt="">
-                        </div>
-                        <div class="number-information col-6">
-                            <p class="number-name">david</p>
-                            <div class="number-star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(4.5)</span>
-                            </div>
-                        </div>
-                        <p class="col-3 date">2019/03/05</p>
-                    </div>
-                    <div class="review-text col-12">
-                        <p class="number-review-text">我知道好我知道好我知道好我知道好我知道好我知道好我知道好我知道好我知道好我知道好</p>
-                    </div>
-                    <div class="report-btn">
-                        <input type="submit" value="檢舉" class="report">
-                    </div>
-                </div>
-                <div class="other-review-wrap">
-                    <div class="total-review-number flex">
-                        <div class="number-pic col-2">
-                            <img src="img/navBar/memberIcon.png" alt="">
-                        </div>
-                        <div class="number-information col-6">
-                            <p class="number-name">david</p>
-                            <div class="number-star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(4.5)</span>
-                            </div>
-                        </div>
-                        <p class="col-3 date">2019/03/05</p>
-                    </div>
-                    <div class="review-text col-12">
-                        <p class="number-review-text">我知道好我知道好我知道好我知道好我知道好我知道好我知道好我知道好我知道好我知道好</p>
-                    </div>
-                    <div class="report-btn">
-                        <input type="submit" value="檢舉" class="report">
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section> -->
     <?php
     }
     ?>
 
+    <!-- <section class="review-message ">
+        <form action="shop-review.php">
+            <div class="message-input-box col-lg-7 col-10 m-a">
+                <h3 class="message-title">留言</h3>
+                <div class="message-input col-12 m-a">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="請輸入評論"></textarea>
+                </div>
+                <div class="sentout-btn-box">
+                    <div class="sentout-btn">
+                        <input type="submit" class="sentout-btn-in">送出
+                    </div>
+                </div>
+            </div>
+        </form>
+            <div class="other-review-message-box col-lg-7 col-10 p-10 m-a">
+                <div class="other-review-message">
+                    <div class="total-review-people">總評論人數(15)</div>
+
+                    <div class="other-review-wrap">
+                        <div class="total-review-number flex">
+                            <div class="number-pic col-2">
+                                <img src="img/navBar/memberIcon.png" alt="">
+                            </div>
+                            <div class="number-information col-6">
+                                <p class="number-name">david</p>
+                                <div class="number-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                            </div>
+                            <p class="col-3 date">2019/03/05</p>
+                        </div>
+                        <div class="review-text col-12">
+                            <p class="number-review-text">
+                                我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道我知道好我知道好我知道好我知道知道我知道好我知道好我知道好我知道v好我知道好我知道好我知道好我知道好我知道好我知道好我知道好
+                            </p>
+                        </div>
+                        <div class="report-btn">
+                            <input type="submit" value="檢舉" class="report">
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+    </section>
+    -->
 
 
 
@@ -270,10 +212,11 @@ try{
 
 
 
-    <!-- 
+
+    
     <footer>
         <span>LoveFruit.Ice Copyright © 2019 All right reserved, Ltd.</span>
-    </footer> -->
+    </footer>
     <script src="js/nav.js"></script>
     <script src="js/shop-inside.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
