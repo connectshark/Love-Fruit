@@ -1,22 +1,19 @@
 $(document).ready(function(){
-    $('.click-check').click(
-      
-    );
+    $('.click-check').click(checksign);
     
 });
 
-
 function checksign(){
-        $.ajax({
-            url:'checksign.php',
-            data: '',
-            type: 'GET',
-            success: function(data){
-                if (data == true) {
-                   
-                }else {
-                    $('#member-login').fadeIn('fast');
-                }
-            },
-        });
+    $.ajax({
+        url:'checksign.php',
+        data: '',
+        type: 'GET',
+        success: function(data){
+            if (data == true) {
+                location.href="index.php";
+            }else {
+                $('#member-login').fadeIn('fast');
+            }
+        },
+    });
 };
