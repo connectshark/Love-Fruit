@@ -23,15 +23,15 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>菓籽戀冰所</title>
-    <link rel="icon" href="img/navBar/logo.png" />
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/backstage.css">
+    <link rel="icon" href="../img/navBar/logo.png" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/backstage.css">
 </head>
 
 <body class="page-backstage">
     <header>
         <?php
-        require_once("backstage-nav.php");
+            require_once("backstage-nav.php");
         ?>
     </header>
 
@@ -79,7 +79,7 @@ try {
                                     <input class="d-none" type="file" name="newsFile" id="newsFile" accept=".jpg,.png">
                                 </div>
                                 <div class="col-6 p-2 text-secondary">圖片格式 jpg / png</div>
-                                <div class="col-6"><img class="img-fluid" id="img-preview" src="<?php echo $newsRows["news_pic"]?>" alt=""></div>
+                                <div class="col-6"><img class="img-fluid" id="img-preview" src="../<?php echo $newsRows["news_pic"]?>" alt=""></div>
                             </div>
 
                         </div>
@@ -103,10 +103,10 @@ try {
     </section>
 
 
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script src="js/back-nav.js"></script>
+    <script src="../js/back-nav.js"></script>
     <script>
         window.onload = function() {
             document.getElementById("newsFile").onchange = function(e) {
