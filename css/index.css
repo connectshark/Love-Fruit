@@ -1931,7 +1931,7 @@ html {
     position: absolute;
     z-index: 6;
     width: 10%;
-    top: 35%;
+    top: 25%;
     left: 21%;
   }
   .c-p-firstLove img {
@@ -1953,7 +1953,7 @@ html {
     position: absolute;
     z-index: 7;
     width: 10%;
-    top: 37%;
+    top: 27%;
     right: 12%;
   }
   .c-p-lostLove img {
@@ -2107,7 +2107,7 @@ html {
   }
   .store-item-img img {
     margin-top: 5%;
-    width: 50%;
+    width: 40%;
     height: 80%;
     margin-bottom: 5%;
   }
@@ -2550,12 +2550,16 @@ html {
   .message-header-icon {
     font-family: "GenJyuuGothic-B";
     color: #292929;
+    margin-right: 12px;
     width: 20%;
     display: inline-block;
     vertical-align: middle;
   }
   .message-header-icon img {
-    width: 100%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
   }
   .message-body {
     display: inline-block;
@@ -2582,7 +2586,8 @@ html {
   }
   .message-text p {
     width: 100%;
-    height: 28%;
+    word-wrap: break-word;
+    word-break: break-all;
     font-family: "GenJyuuGothic-R";
     line-height: 18px;
     font-size: 12px;
@@ -2605,6 +2610,7 @@ html {
     display: inline-block;
   }
   .custom-ice {
+    transform: rotate(-14deg);
     position: absolute;
     left: -10%;
     bottom: -2%;
@@ -2735,6 +2741,10 @@ html {
   }
   .message-header-icon img {
     width: 100%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
   }
   .message-body {
     display: inline-block;
@@ -2761,7 +2771,8 @@ html {
   }
   .message-text p {
     width: 100%;
-    height: 18%;
+    word-wrap: break-word;
+    word-break: break-all;
     font-family: "GenJyuuGothic-R";
     line-height: 1.5vw;
     font-size: 1vw;
@@ -2789,6 +2800,7 @@ html {
   }
   .custom-ice {
     position: absolute;
+    transform: rotate(-14deg);
     left: -10%;
     bottom: -2%;
     width: 34%;
@@ -3407,6 +3419,9 @@ html {
   }
   .index-news-conten-text-group p {
     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: #939393;
   }
 }
@@ -3558,6 +3573,9 @@ html {
   .index-news-conten-text-group p {
     font-size: 0.3vw;
     margin-bottom: 2%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: #939393;
   }
 
