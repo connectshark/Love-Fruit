@@ -1,7 +1,6 @@
 <?php 
-$errMsg="";
-
 session_start();
+$errMsg="";
 
 try {
 	require_once("mac-require.php");
