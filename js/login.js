@@ -14,6 +14,7 @@ function navLoginIcon() {
 function pswBack() {
   $id("login-interface").style.display = "none";
   $id("retrieve-password").style.display = "block";
+  $id("retrieve-password-erroMsg").innerText = "";
 }
 // 註冊會員－面板關掉
 function register() {
@@ -38,6 +39,8 @@ function registerAccountCoseButton() {
   //取回密碼-清空值
   $id("retrieve-mem-id").value = "";
   $id("email-address").value = "";
+  // 尋找密碼
+  $id("retrieve-password-erroMsg").innerText = "";
 }
 function registerClear() {
   //註冊會員-清空值
@@ -83,7 +86,7 @@ function RetrievePassword() {
   xhr.onload = function() {
     if (xhr.status == 200) {
       if (xhr.responseText == "error") {
-        $id("member-login-erroMsg").innerText = "查無此人";
+        $id("retrieve-password-erroMsg").innerText = "查無此人";
         $id("retrieve-mem-id").value = "";
         $id("email-address").value = "";
       } else pq = "您的密碼";
@@ -148,7 +151,7 @@ function showLoginForm() {
 } //showLoginForm 打開關掉面板
 
 // 登入
-var memIdValu = "";
+// var memIdValu = "";
 function sendForm() {
   //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上  送出檢查帳號密碼
   //..........................................................

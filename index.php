@@ -7,7 +7,7 @@ if (isset($_SESSION["mem_id"]) != true) {
 <?php
 $errMsg = "";
 try {
-  require_once("connect-dd101g3.php");
+  require_once("php/connect-LoveFruitIce.php");
   $sql = "SELECT m.mem_name, m.mem_pic, con.cfs_to, con.cfs_content, con.cfs_pic, con.cfs_good,cus.cto_pic, cus.cto_words, cus.stage_no,con.cfs_no from confessions con JOIN customize cus ON con.cto_no = cus.cto_no JOIN member m on m.mem_no = con.mem_no ORDER BY con.cfs_no DESC ";
   $confessions = $pdo->prepare($sql);
   $confessions->execute();
@@ -16,43 +16,47 @@ try {
   $errMsg .= "行數:" . $e->getLine() . "<br>";
   echo $errMsg;
 }
-
-function stageNo($stage)
-{
-  switch ($stage) {
-    case '1':
-      return 'single';
-      break;
-    case '2':
-      return 'true-love';
-      break;
-    case '3':
-      return 'hot-love';
-      break;
-    case '4':
-      return 'break-up';
-      break;
-  }
-}
-function stageName($stage)
-{
-  switch ($stage) {
-    case '1':
-      return '單身';
-      break;
-    case '2':
-      return '初戀';
-      break;
-    case '3':
-      return '熱戀';
-      break;
-    case '4':
-      return '分手';
-      break;
-  }
-}
 ?>
 
+<?php
+$errMsg = "";
+try {
+  require_once("php/connect-LoveFruitIce.php");
+  $sql = "SELECT*from product";
+  $product = $pdo->prepare($sql);
+  $product->execute();
+} catch (PDOException $e) {
+  $errMsg .= "錯誤訊息:" . $e->getMessage() . "<br>";
+  $errMsg .= "行數:" . $e->getLine() . "<br>";
+  echo $errMsg;
+}
+?>
+<?php
+$errMsg = "";
+try {
+  require_once("php/connect-LoveFruitIce.php");
+  $sql = "SELECT*from customize";
+  $customize = $pdo->prepare($sql);
+  $customize->execute();
+} catch (PDOException $e) {
+  $errMsg .= "錯誤訊息:" . $e->getMessage() . "<br>";
+  $errMsg .= "行數:" . $e->getLine() . "<br>";
+  echo $errMsg;
+}
+?>
+<?php
+$errMsg = "";
+try {
+  require_once("php/connect-LoveFruitIce.php");
+  $sql = "SELECT*from news";
+  $news = $pdo->prepare($sql);
+  $news->execute();
+} catch (PDOException $e) {
+  $errMsg .= "錯誤訊息:" . $e->getMessage() . "<br>";
+  $errMsg .= "行數:" . $e->getLine() . "<br>";
+  echo $errMsg;
+}
+?>
 
 <html lang="UTF-8">
 
@@ -248,20 +252,21 @@ function stageName($stage)
 
     <img class="diyIcebgc-top" src="img/indexImg/diyIcebgc-top.png" alt="diyIcebgc-top" />
     <img class="diy-ice-bgc" src="img/indexImg/diyIcebgc.png" alt="diyIcebgc" />
+    <?php $customizeRow = $customize->fetch(PDO::FETCH_ASSOC) ?>
     <div class="c-p-single">
-      <img id="user-ice1" class="wow bounceInDown" src="img/indexImg/userIce1.png" alt="userIce" />
+      <img id="user-ice1" class="wow bounceInDown" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img id="single" src="img/indexImg/single.png" alt="single" />
     </div>
     <div class="c-p-firstLove">
-      <img id="user-ice2" class="wow bounceInDown" data-wow-delay="0.5s" src="img/indexImg/userIce4.png" alt="userIce" />
+      <img id="user-ice2" class="wow bounceInDown" data-wow-delay="0.5s" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img src="img/indexImg/firstLove.png" alt="firstLove" />
     </div>
     <div class="c-p-love">
-      <img id="user-ice3" class="wow bounceInDown" data-wow-delay="1s" src="img/indexImg/userIce3.png" alt="userIce" />
+      <img id="user-ice3" class="wow bounceInDown" data-wow-delay="1s" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img src="img/indexImg/love.png" alt="love" />
     </div>
     <div class="c-p-lostLove">
-      <img id="user-ice4" class="wow bounceInDown" data-wow-delay="1.3s" src="img/indexImg/userIce2.png" alt="userIce" />
+      <img id="user-ice4" class="wow bounceInDown" data-wow-delay="1.3s" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
       <img src="img/indexImg/lostLove.png" alt="love" />
     </div>
   </section>
@@ -286,12 +291,13 @@ function stageName($stage)
         <span class="store-item-text">SINGLE</span>
         <div class="store-item-img">
           <div class="store-item-img-box">
-            <img src="img/indexImg/index-ice-first-love-single.png" alt="index-ice-first-love-single" />
+            <?php $productRow = $product->fetch(PDO::FETCH_ASSOC) ?>
+            <img src="<?php echo $productRow["prod_pic"] ?>" alt="index-ice-first-love-single" />
           </div>
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
+          <span><?php echo $productRow["prod_name"] ?></span>
+          <span>NT:<?php echo $productRow["prod_price"] ?></span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
+        <a class="store-button-custom" href="shop.php">
           <div class="store-button-style">
             <div class="store-button-style-botton">
               <div class="store-inner-style">
@@ -309,12 +315,13 @@ function stageName($stage)
         <span class="store-item-text">FIRST LOVE</span>
         <div class="store-item-img">
           <div class="store-item-img-box">
-            <img src="img/indexImg/index-ice-first-love-single.png" alt="index-ice-first-love-single" />
+            <?php $productRow = $product->fetch(PDO::FETCH_ASSOC) ?>
+            <img src="<?php echo $productRow["prod_pic"] ?>" alt="index-ice-first-love-single" />
           </div>
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
+          <span><?php echo $productRow["prod_name"] ?></span>
+          <span>NT:<?php echo $productRow["prod_price"] ?></span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
+        <a class="store-button-custom" href="shop.php">
           <div class="store-button-style">
             <div class="store-button-style-botton">
               <div class="store-inner-style">
@@ -332,12 +339,13 @@ function stageName($stage)
         <span class="store-item-text">FALL IN LOVE</span>
         <div class="store-item-img">
           <div class="store-item-img-box">
-            <img src="img/indexImg/index-ice-first-love-single.png" alt="index-ice-first-love-single" />
+            <?php $productRow = $product->fetch(PDO::FETCH_ASSOC) ?>
+            <img src="<?php echo $productRow["prod_pic"] ?>" alt="index-ice-first-love-single" />
           </div>
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
+          <span><?php echo $productRow["prod_name"] ?></span>
+          <span>NT:<?php echo $productRow["prod_price"] ?></span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
+        <a class="store-button-custom" href="shop.php">
           <div class="store-button-style">
             <div class="store-button-style-botton">
               <div class="store-inner-style">
@@ -355,12 +363,13 @@ function stageName($stage)
         <span class="store-item-text">BREAK UP</span>
         <div class="store-item-img">
           <div class="store-item-img-box">
-            <img src="img/indexImg/index-ice-first-love-single.png" alt="index-ice-first-love-single" />
+            <?php $productRow = $product->fetch(PDO::FETCH_ASSOC) ?>
+            <img src="<?php echo $productRow["prod_pic"] ?>" alt="index-ice-first-love-single" />
           </div>
-          <span>芋頭牛奶</span>
-          <span>NT250</span>
+          <span><?php echo $productRow["prod_name"] ?></span>
+          <span>NT:<?php echo $productRow["prod_price"] ?></span>
         </div>
-        <a class="store-button-custom" href="newshop.html">
+        <a class="store-button-custom" href="shop.php">
           <div class="store-button-style">
             <div class="store-button-style-botton">
               <div class="store-inner-style">
@@ -390,52 +399,54 @@ function stageName($stage)
       </div>
     </div>
     <div class="leavemessage-item-group">
+      <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
       <div class="message-item single wow flipInY">
         <div class="leavemessage-cloud">
           <img src="img/indexImg/store/store-single-item-icon.png" alt="" />
         </div>
         <div class="message-header">
           <div class="message-header-icon">
-            <img src="img/indexImg/store/user-icon.png" alt="user-icon" />
+            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
           </div>
-          <p>會員名稱</p>
+          <p><?php echo $row["mem_name"] ?></p>
         </div>
         <div class="message-body">
           <figure>
-            <img src="img/course/diyimg3.png" alt="上傳照片" />
+            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
           </figure>
           <div class="message-text">
-            <h3><span>To:</span>王先生</h3>
-            <p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-            <span class="s-text">#語重心長</span>
+            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+            <p><?php echo $row["cfs_content"] ?></p>
+            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
           </div>
         </div>
         <div class="custom-ice">
-          <img src="img/message/ice-blue.png" alt="客製冰棒" />
+          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
         </div>
       </div>
       <div class="message-item first-love wow flipInY" data-wow-delay="0.5s">
         <div class="leavemessage-cloud">
           <img src="img/indexImg/store/store-first-lovepng-item-icon.png" alt="" />
         </div>
+        <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
         <div class="message-header">
           <div class="message-header-icon">
-            <img src="img/indexImg/store/user-icon.png" alt="user-icon" />
+            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
           </div>
-          <p>會員名稱</p>
+          <p><?php echo $row["mem_name"] ?></p>
         </div>
         <div class="message-body">
           <figure>
-            <img src="img/course/diyimg3.png" alt="上傳照片" />
+            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
           </figure>
           <div class="message-text">
-            <h3><span>To:</span>王先生</h3>
-            <p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-            <span class="s-text">#語重心長</span>
+            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+            <p><?php echo $row["cfs_content"] ?></p>
+            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
           </div>
         </div>
         <div class="custom-ice">
-          <img src="img/message/ice-blue.png" alt="客製冰棒" />
+          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
         </div>
       </div>
       <div class="message-item fall-in-love wow flipInY " data-wow-delay="1s">
@@ -444,22 +455,23 @@ function stageName($stage)
         </div>
         <div class="message-header">
           <div class="message-header-icon">
-            <img src="img/indexImg/store/user-icon.png" alt="user-icon" />
+            <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
+            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
           </div>
-          <p>會員名稱</p>
+          <p><?php echo $row["mem_name"] ?></p>
         </div>
         <div class="message-body">
           <figure>
-            <img src="img/course/diyimg3.png" alt="上傳照片" />
+            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
           </figure>
           <div class="message-text">
-            <h3><span>To:</span>王先生</h3>
-            <p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-            <span class="s-text">#語重心長</span>
+            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+            <p><?php echo $row["cfs_content"] ?></p>
+            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
           </div>
         </div>
         <div class="custom-ice">
-          <img src="img/message/ice-blue.png" alt="客製冰棒" />
+          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
         </div>
       </div>
       <div class="message-item break-up wow flipInY" data-wow-delay="1.5s">
@@ -468,26 +480,26 @@ function stageName($stage)
         </div>
         <div class="message-header">
           <div class="message-header-icon">
-            <img src="img/indexImg/store/user-icon.png" alt="user-icon" />
+            <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
+            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
           </div>
-          <p>會員名稱</p>
+          <p><?php echo $row["mem_name"] ?></p>
         </div>
         <div class="message-body">
           <figure>
-            <img src="img/course/diyimg3.png" alt="上傳照片" />
+            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
           </figure>
           <div class="message-text">
-            <h3><span>To:</span>王先生</h3>
-            <p>看著微笑的你，突然發現，我真是世界上最幸福的人。</p>
-            <span class="s-text">#語重心長</span>
+            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+            <p><?php echo $row["cfs_content"] ?></p>
+            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
           </div>
         </div>
         <div class="custom-ice">
-          <img src="img/message/ice-blue.png" alt="客製冰棒" />
+          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
         </div>
       </div>
     </div>
-
     <!-- 背景 -->
     <img class="leavemessage-bgc" src="img/indexImg/store/leavemessage-bgc.png" alt="leavemessage-bgc" />
     <img class="leavemessage-Material" src="img/indexImg/store/leavemessage-Material-bgc.png" alt="leavemessage-Material" />
@@ -596,25 +608,34 @@ function stageName($stage)
             <img src="img/indexImg/news/news-img.png" alt="" />
           </div>
           <div class="index-news-content-item">
+            <?php $newsRow = $news->fetch(PDO::FETCH_ASSOC) ?>
             <div class="index-news-content-list">
               <div class="index-news-content-icon">最新消息</div>
               <div class="index-news-conten-text-group">
-                <h3>《2019》水果冰特展 系列講座</h3>
-                <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                <a href="news.php">
+                  <h3><?php echo $newsRow["news_title"] ?></h3>
+                  <p><?php echo $newsRow["news_content"] ?></p>
+                </a>
               </div>
             </div>
             <div class="index-news-content-list">
+              <?php $newsRow = $news->fetch(PDO::FETCH_ASSOC) ?>
               <div class="index-news-content-icon-g">最新消息</div>
               <div class="index-news-conten-text-group">
-                <h3>《2019》水果冰特展 系列講座</h3>
-                <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                <a href="news.php">
+                  <h3><?php echo $newsRow["news_title"] ?></h3>
+                  <p><?php echo $newsRow["news_content"] ?></p>
+                </a>
               </div>
             </div>
             <div class="index-news-content-list">
+              <?php $newsRow = $news->fetch(PDO::FETCH_ASSOC) ?>
               <div class="index-news-content-icon-y">最新消息</div>
               <div class="index-news-conten-text-group">
-                <h3>《2019》水果冰特展 系列講座</h3>
-                <p>(報名時間: 親子講座 7/11-、青少年講座 7/18)</p>
+                <a href="news.php">
+                  <h3><?php echo $newsRow["news_title"] ?></h3>
+                  <p><?php echo $newsRow["news_content"] ?></p>
+                </a>
               </div>
             </div>
           </div>
