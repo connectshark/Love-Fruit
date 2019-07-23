@@ -2567,6 +2567,8 @@ html {
   }
   .message-body figure {
     display: inline-block;
+    overflow: hidden;
+    object-fit: cover;
     width: 83%;
     height: 41%;
   }
@@ -2752,6 +2754,8 @@ html {
   }
   .message-body figure {
     display: inline-block;
+    overflow: hidden;
+    object-fit: cover;
     width: 83%;
     height: 51%;
   }
@@ -3419,6 +3423,7 @@ html {
   }
   .index-news-conten-text-group p {
     font-size: 12px;
+    height: 36px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -3572,6 +3577,7 @@ html {
   }
   .index-news-conten-text-group p {
     font-size: 0.3vw;
+    height: 48px;
     margin-bottom: 2%;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -35,7 +35,7 @@ try {
 $errMsg = "";
 try {
   require_once("php/connect-LoveFruitIce.php");
-  $sql = "SELECT*from customize";
+  $sql = "SELECT*from customize ORDER BY cto_no DESC";
   $customize = $pdo->prepare($sql);
   $customize->execute();
 } catch (PDOException $e) {
@@ -254,7 +254,7 @@ try {
     <img class="diy-ice-bgc" src="img/indexImg/diyIcebgc.png" alt="diyIcebgc" />
     <?php $customizeRow = $customize->fetch(PDO::FETCH_ASSOC) ?>
     <div class="c-p-single">
-      <img id="user-ice1" class="wow bounceInDown" src="<?php echo $customizeRow["cto_pic"] ?>" alt="userIce" />
+      <img id="user-ice1" class="wow bounceInDown" src="<?php echo $customizeRow["cto_pic"][0] ?>" alt="userIce" />
       <img id="single" src="img/indexImg/single.png" alt="single" />
     </div>
     <div class="c-p-firstLove">

@@ -195,7 +195,7 @@
         <span>信箱：</span>
         <input maxlength="30" type="email" name="register-account-emailaddress" id="register-account-email-address" placeholder=" 信箱：" />
       </div>
-      <input type="register-memberIcon" name="register-memberIcon" id="register-memberIcon" value="database/img_mem/memberIcon.png" />
+      <input type="register-memberIcon" name="register-memberIcon" id="register-memberIcon" value="database/img_mem/defult.jpg" />
     </div>
     <span id="register-erroMsg"></span>
     <div id="register-account-button-style" class="register-account-button-style">

@@ -45,8 +45,10 @@ function blueShipButton() {
   $id("course-pink-ship").classList.remove("course-blue-ship-show-out");
   $id("course-pink-ship").classList.add("course-blue-ship-show");
   // 按鈕
-  $id("blue-ship-button").style.display = "none";
-  $id("pink-ship-button").style.display = "inline-block";
+  if (id("course-blue-ship").opacity == 0) {
+    $id("blue-ship-button").style.display = "none";
+    $id("pink-ship-button").style.display = "inline-block";
+  }
   // $id("blue-ship-button").disabled = "true";
   // $id("blue-ship-button").style.pointerEvents = "none";
 
@@ -65,22 +67,10 @@ function pinkShipButton() {
   $id("course-blue-ship").classList.remove("course-blue-ship-show-out");
   $id("course-blue-ship").classList.add("course-blue-ship-show");
   // 按鈕
-  $id("pink-ship-button").style.display = "none";
-  $id("blue-ship-button").style.display = "inline-block";
-  // $id("pink-ship-button").disabled = "true";
-  // $id("pink-ship-button").style.pointerEvents = "none";
-  // if (
-  //   getStyle($id("pink-ship-button"), "transfrom") ==
-  //   "translateX(0%) translateY(-10%)"
-  // ) {
-  //   $id("pink-ship-button").style.pointerEvents = "auto";
-  // }
-
-  // if (
-  //   !$id("course-pink-ship").classList.contains("course-blue-ship-show-out")
-  // ) {
-  //   $id("pink-ship-button").style.pointerEvents = "auto";
-  // }
+  if (id("course-pink-ship").opacity == 0) {
+    $id("blue-ship-button").style.display = "none";
+    $id("pink-ship-button").style.display = "inline-block";
+  }
 }
 //
 function init() {

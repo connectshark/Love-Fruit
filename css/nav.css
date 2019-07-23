@@ -502,6 +502,7 @@
   }
   #user-name {
     letter-spacing: 0vw;
+    cursor: auto;
   }
   #member-centre-down-menu li {
     margin: 0 auto;
