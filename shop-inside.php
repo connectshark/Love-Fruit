@@ -96,7 +96,7 @@ try{
                 <div class="detaild-img-box col-lg-8 col-8 ">
                     <form action="">
                         <input type="hidden" name="prod_no" value="<?php echo $prodRow->prod_no?>">
-                        <img src="database/img_prod/<?php echo $prodRow->prod_pic?>" alt="" class="detailed-ice">
+                        <img src="<?php echo $prodRow->prod_pic?>" alt="" class="detailed-ice">
                         <img src="img/shop/collection-<?php if(in_array($prodRow->prod_no,$collection_arr)){
                                             echo "red.png";
                                         }else{

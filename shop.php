@@ -118,7 +118,7 @@ require_once("nav.php");
                     <form action="">
                         <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
                         <a href="shop-inside.php?prod_no=<?php echo $newproductsRow["prod_no"]?>">
-                            <img src="database/img_prod/<?php echo $newproductsRow["prod_pic"] ?>" alt="">
+                            <img src="<?php echo $newproductsRow["prod_pic"] ?>" alt="">
                         </a>
                         <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
                     </form>
@@ -202,7 +202,7 @@ require_once("nav.php");
                                     <form>
                                         <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
                                         <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
-                                            <img src="database/img_prod/<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
+                                            <img src="<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
                                         </a>    
                                         <img src="img/shop/collection-<?php if(in_array($prodRow["prod_no"],$collection_arr)){
                                             echo "red.png";

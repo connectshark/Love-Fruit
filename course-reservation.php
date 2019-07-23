@@ -1,13 +1,10 @@
 <?php 
+session_start();
 $errMsg="";
     try {
-        $dsn="mysql:host=127.0.0.1;port=3306;dbname=dd101g3;charset=utf8";
-        $user = "root";
-        $psw = "";
-        $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-        $pdo = new PDO( $dsn , $user , $psw, $options );
+        require_once("mac-require.php");
         $sql = "insert course_reservation set mem_no = :memNo , course_name = :courseName, course_date = :courseDate, course_slot = :courseSlot , res_ppl = :resPpl,res_date = :resDate";
-        $memNo = 1;//session抓
+        $memNo =  $_SESSION['mem_no'];
         $courseName = $_REQUEST['courseName'];
         $courseDate  = $_REQUEST['courseDate'];
         $courseSlot = $_REQUEST['courseSlot'];
