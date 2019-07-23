@@ -47,7 +47,7 @@ try {
                 <div class="row p-4">
                     <div class="col-12 px-0 text-right"><input class="btn btn-lovefruit btn-lg" type="button" value="新增商品"></div>
                     <div class="col-12 px-0 py-4">
-                        <form action="">
+                        
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -58,8 +58,6 @@ try {
                                         <th scope="col">價格</th>
                                         <th scope="col">戀愛階段</th>
                                         <th scope="col">冰品類型</th>
-                                        <th scope="col">評價總分</th>
-                                        <th scope="col">評價次數</th>
                                         <th scope="col">狀態</th>
                                         <th scope="col">編輯</th>
                                     </tr>
@@ -71,39 +69,44 @@ try {
                                         ?>
 
                                         <tr>
-                                            <th scope="row"><?php echo $prodRows["prod_no"]; ?></th>
-                                            <td><?php echo $prodRows["prod_name"]; ?></td>
-                                            <td><?php echo $prodRows["prod_pic"]; ?></td>
-                                            <td><textarea class="form-control" name="" id="" cols="30" rows="2"><?php echo $prodRows["prod_desc"]; ?></textarea></td>
-                                            <td><input class="form-control" type="text" value="<?php echo $prodRows["prod_price"]; ?>"></td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0" <?php if (!(strcmp("0", $prodRows["stage_no"]))) {
-                                                                            echo "selected=\"selected\"";
-                                                                        } ?>>單身</option>
+                                        <form action="prodChange.php" method="GET">
+                                            <input class="d-none" type="text" name="prod_no" value="<?php echo $prodRows["prod_no"]; ?>">
+                                            <td scope="row"><?php echo $prodRows["prod_no"]; ?></td>
+                                            <td><input class="form-control" type="text" name="prod_name" value="<?php echo $prodRows["prod_name"]; ?>"></td>
+                                            <td>
+                                                <input class="form-control d-none" type="text" name="prod_pic" value="<?php echo $prodRows["prod_pic"]; ?>">
+                                                <img width="50" src="../<?php echo $prodRows["prod_pic"]; ?>" alt="">
+                                            </td>
+                                            <td><textarea class="form-control" name="prod_desc" cols="30" rows="2"><?php echo $prodRows["prod_desc"]; ?></textarea></td>
+                                            <td><input class="form-control" name="prod_price" type="text" value="<?php echo $prodRows["prod_price"]; ?>"></td>
+                                            <td><select name="stage_no" class="form-control">
                                                     <option value="1" <?php if (!(strcmp("1", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>初戀</option>
+                                                                        } ?>>單身</option>
                                                     <option value="2" <?php if (!(strcmp("2", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
-                                                                        } ?>>熱戀</option>
+                                                                        } ?>>初戀</option>
                                                     <option value="3" <?php if (!(strcmp("3", $prodRows["stage_no"]))) {
+                                                                            echo "selected=\"selected\"";
+                                                                        } ?>>熱戀</option>
+                                                    <option value="4" <?php if (!(strcmp("4", $prodRows["stage_no"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>分手</option>
                                                 </select>
                                             </td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0">冰棒</option>
-                                                    <option value="1" <?php if (!(strcmp("0", $prodRows["type_no"]))) {
+                                            <td><select name="type_no" class="form-control">
+                                                    <option value="1" <?php if (!(strcmp("1", $prodRows["type_no"]))) {
+                                                                            echo "selected=\"selected\"";
+                                                                        } ?>>冰棒</option>
+                                                    <option value="2" <?php if (!(strcmp("2", $prodRows["type_no"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>冰淇淋</option>
-                                                    <option value="2" <?php if (!(strcmp("1", $prodRows["type_no"]))) {
+                                                    <option value="3" <?php if (!(strcmp("3", $prodRows["type_no"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>霜淇淋</option>
                                                 </select>
                                             </td>
-                                            <td><?php echo $prodRows["prod_score_total"]; ?></td>
-                                            <td><?php echo $prodRows["prod_score_times"]; ?></td>
-                                            <td><select id="" class="form-control">
+                                            <td><select name="prod_state" class="form-control">
                                                     <option value="0" <?php if (!(strcmp("0", $prodRows["prod_state"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>下架</option>
@@ -112,15 +115,17 @@ try {
                                                                         } ?>>上架</option>
                                                 </select>
                                             </td>
-                                            <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                            <td><input class="btn btn-info" type="submit" value="送出修改"></td>
+                                            </form>
                                         </tr>
+                                        
                                     <?php
                                     }
                                     ?>
 
                                 </tbody>
                             </table>
-                        </form>
+                       
 
                     </div>
                 </div>

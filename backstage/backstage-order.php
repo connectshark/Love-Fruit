@@ -47,7 +47,7 @@ try {
             <div class="col-10 bg-white rounded">
                 <div class="row p-4">
                     <div class="col-12 px-0 py-4">
-                        <form action="">
+                        
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -67,6 +67,7 @@ try {
                                         ?>
 
                                         <tr>
+                                        <form action="">
                                             <th scope="row"><?php echo $orderRows["order_no"]; ?></th>
                                             <td><?php echo $orderRows["order_name"]; ?></td>
                                             <td><?php echo $orderRows["order_phone"]; ?></td>
@@ -85,6 +86,7 @@ try {
                                             </td>
                                             <td><input class="btn btn-info" type="button" value="訂單詳情">
                                             </td>
+                                            </form>
                                         </tr>
 
 
@@ -94,7 +96,7 @@ try {
 
                                 </tbody>
                             </table>
-                        </form>
+                        
 
                     </div>
                 </div>

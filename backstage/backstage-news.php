@@ -48,29 +48,30 @@ try {
                     <div class="col-12 px-0 py-4">
                         <div class="pb-4 text-right text-white"><a class="btn btn-lovefruit btn-lg" href="backstage-addnews.php">新增文章</a>
                         </div>
-                        <form action="">
-                            <table class="table table-bordered table-hover">
-                                <thead>
+
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">編號</th>
+                                    <th scope="col">標題</th>
+                                    <th scope="col">文章分類</th>
+                                    <th scope="col">撰寫時間</th>
+                                    <th scope="col">狀態</th>
+                                    <th scope="col">編輯</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                while ($newsRows = $news->fetch(PDO::FETCH_ASSOC)) {
+                                    ?>
+
                                     <tr>
-                                        <th scope="col">編號</th>
-                                        <th scope="col">標題</th>
-                                        <th scope="col">文章分類</th>
-                                        <th scope="col">撰寫時間</th>
-                                        <th scope="col">狀態</th>
-                                        <th scope="col">編輯</th>
-                                        <th scope="col">刪除</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php
-                                    while ($newsRows = $news->fetch(PDO::FETCH_ASSOC)) {
-                                        ?>
-
-                                        <tr>
+                                        <form action="newsChange.php" method="POST">
+                                            <input class="d-none" type="text" name="news_no" value="<?php echo $newsRows["news_no"]; ?>">
                                             <th scope="row"><?php echo $newsRows["news_no"]; ?></th>
                                             <td><?php echo $newsRows["news_title"]; ?></td>
-                                            <td><select id="" class="form-control">
+                                            <td><select name="news_class" class="form-control">
                                                     <option value="0" <?php if (!(strcmp("0", $newsRows["news_class"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>揪團新訊</option>
@@ -86,7 +87,7 @@ try {
                                                 </select>
                                             </td>
                                             <td><?php echo $newsRows["news_date"]; ?></td>
-                                            <td><select id="" class="form-control">
+                                            <td><select name="news_state" class="form-control">
                                                     <option value="0" <?php if (!(strcmp("0", $newsRows["news_state"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>下架</option>
@@ -95,19 +96,20 @@ try {
                                                                         } ?>>上架</option>
                                                 </select>
                                             </td>
-                                            <td><input class="btn btn-info" type="button" value="送出修改">
-                                                <a class="btn btn-info" href="backstage-editnews.php?news_no=<?php echo $newsRows["news_no"];?>">編輯內容</a>
+                                            <td>
+                                                <input class="btn btn-info" type="submit" value="送出修改">
+                                                <a class="btn btn-info" href="backstage-editnews.php?news_no=<?php echo $newsRows["news_no"]; ?>">編輯內容</a>
                                             </td>
-                                            <td><input class="btn btn-danger" type="button" value="刪除文章"></td>
-                                        </tr>
+                                        </form>
+                                    </tr>
 
-                                    <?php
-                                    }
-                                    ?>
+                                <?php
+                                }
+                                ?>
 
-                                </tbody>
-                            </table>
-                        </form>
+                            </tbody>
+                        </table>
+
 
                     </div>
                 </div>

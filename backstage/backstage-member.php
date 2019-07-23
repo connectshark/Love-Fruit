@@ -58,7 +58,7 @@ try {
                     </ul>
                     <div class="col-12 px-0 py-4 tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="member" role="tabpanel" aria-labelledby="member-tab">
-                            <form action="">
+                            
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
@@ -82,6 +82,8 @@ try {
                                             ?>
 
                                             <tr>
+                                            <form action="memChange.php" method="POST">
+                                                <input class="d-none" type="text" name="mem_no" value="<?php echo $memRows["mem_no"]; ?>">
                                                 <th scope="row"><?php echo $memRows["mem_no"]; ?></th>
                                                 <td><?php echo $memRows["mem_name"]; ?></td>
                                                 <td><?php echo $memRows["mem_id"]; ?></td>
@@ -90,12 +92,17 @@ try {
                                                 <td><?php echo $memRows["address"]; ?></td>
                                                 <td><?php echo $memRows["phone"]; ?></td>
                                                 <td><?php echo $memRows["mem_pic"]; ?></td>
-                                                <td><select id="select-mem" class="form-control">
-                                                        <option value="0" <?php if (!(strcmp("0", $memRows["mem_state"]))) {echo "selected=\"selected\"";} ?>>停權</option>
-                                                        <option value="1" <?php if (!(strcmp("1", $memRows["mem_state"]))) {echo "selected=\"selected\"";} ?>>使用中</option>
+                                                <td><select name="mem_state" class="form-control">
+                                                        <option value="0" <?php if (!(strcmp("0", $memRows["mem_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>停權</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $memRows["mem_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>使用中</option>
                                                     </select>
                                                 </td>
-                                                <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                                <td><input class="btn btn-info" type="submit" value="送出修改"></td>
+                                                </form>
                                             </tr>
 
 
@@ -106,56 +113,67 @@ try {
 
                                     </tbody>
                                 </table>
-                            </form>
+                           
                         </div>
                         <div class="tab-pane fade" id="manager" role="tabpanel" aria-labelledby="manager-tab">
                             <div class="pb-4 text-right"><input class="btn btn-lovefruit btn-lg" type="button" value="新增管理員">
                             </div>
-                            <form action="">
-                                <table class="table table-bordered table-hover">
-                                    <thead>
+
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">編號</th>
+                                        <th scope="col">帳號</th>
+                                        <th scope="col">密碼</th>
+                                        <th scope="col">管理員名稱</th>
+                                        <th scope="col">權限</th>
+                                        <th scope="col">狀態</th>
+                                        <th scope="col">動作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    while ($empRows = $emp->fetch(PDO::FETCH_ASSOC)) {
+                                        ?>
+
                                         <tr>
-                                            <th scope="col">編號</th>
-                                            <th scope="col">帳號</th>
-                                            <th scope="col">密碼</th>
-                                            <th scope="col">管理員名稱</th>
-                                            <th scope="col">權限</th>
-                                            <th scope="col">狀態</th>
-                                            <th scope="col">動作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <?php
-                                        while ($empRows = $emp->fetch(PDO::FETCH_ASSOC)) {
-                                            ?>
-
-                                            <tr>
+                                            <form action="empChange.php" method="POST">
+                                                <input class="d-none" type="text" name="emp_no" value="<?php echo $empRows["emp_no"]; ?>">
                                                 <th scope="row"><?php echo $empRows["emp_no"]; ?></th>
                                                 <td><?php echo $empRows["emp_id"]; ?></td>
                                                 <td><?php echo $empRows["emp_psw"]; ?></td>
                                                 <td><?php echo $empRows["emp_name"]; ?></td>
-                                                <td><select id="" class="form-control">
-                                                        <option value="0" <?php if (!(strcmp("0", $empRows["emp_permission"]))) {echo "selected=\"selected\"";} ?>>一般</option>
-                                                        <option value="1" <?php if (!(strcmp("1", $empRows["emp_permission"]))) {echo "selected=\"selected\"";} ?>>最高權限</option>
+                                                <td><select name="emp_permission" class="form-control">
+                                                        <option value="0" <?php if (!(strcmp("0", $empRows["emp_permission"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>一般</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $empRows["emp_permission"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>最高權限</option>
                                                     </select>
                                                 </td>
-                                                <td><select id="" class="form-control">
-                                                        <option value="0" <?php if (!(strcmp("0", $empRows["emp_state"]))) {echo "selected=\"selected\"";} ?>>離職</option>
-                                                        <option value="1" <?php if (!(strcmp("1", $empRows["emp_state"]))) {echo "selected=\"selected\"";} ?>>在職</option>
+                                                <td><select name="emp_state" class="form-control">
+                                                        <option value="0" <?php if (!(strcmp("0", $empRows["emp_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>離職</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $empRows["emp_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>在職</option>
                                                     </select>
                                                 </td>
-                                                <td><input class="btn btn-info" type="button" value="送出修改"></td>
-                                            </tr>
+                                                <td><input class="btn btn-info" type="submit" value="送出修改"></td>
+                                            </form>
+                                        </tr>
 
 
-                                        <?php
-                                        }
-                                        ?>
-                                        
-                                    </tbody>
-                                </table>
-                            </form>
+                                    <?php
+                                    }
+                                    ?>
+
+                                </tbody>
+                            </table>
+
                         </div>
 
                     </div>

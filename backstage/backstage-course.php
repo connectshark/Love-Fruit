@@ -56,7 +56,6 @@ try {
                                         <th scope="col">時段</th>
                                         <th scope="col">人數</th>
                                         <th scope="col">預約時間</th>
-                                        <th scope="col">報到</th>
                                         <th scope="col">狀態</th>
                                         <th scope="col">編輯</th>
                                     </tr>
@@ -66,24 +65,28 @@ try {
                                     while ($resRows = $res->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
                                         <tr>
-                                            <th scope="row"><?php echo $resRows["res_no"] ?></th>
-                                            <td><?php echo $resRows["mem_no"] ?></td>
-                                            <td><?php echo $resRows["course_name"] ?></td>
-                                            <td><?php echo $resRows["course_date"] ?></td>
-                                            <td><?php echo $resRows["course_slot"] ?></td>
-                                            <td><?php echo $resRows["res_ppl"] ?></td>
-                                            <td><?php echo $resRows["res_date"] ?></td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0" selected>未報到</option>
-                                                    <option value="1">已報到</option>
-                                                </select>
-                                            </td>
-                                            <td><select id="" class="form-control">
-                                                    <option value="0">取消</option>
-                                                    <option value="1" selected>預約</option>
-                                                </select>
-                                            </td>
-                                            <td><input class="btn btn-info" type="button" value="送出修改"></td>
+                                            <form action="courseChange.php" method="POST">
+                                                <input class="d-none" type="text" name="res_no" value="<?php echo $resRows["res_no"] ?>">
+                                                <th scope="row"><?php echo $resRows["res_no"] ?></th>
+                                                <td><?php echo $resRows["mem_no"] ?></td>
+                                                <td><?php echo $resRows["course_name"] ?></td>
+                                                <td><?php echo $resRows["course_date"] ?></td>
+                                                <td><?php echo $resRows["course_slot"] ?></td>
+                                                <td><?php echo $resRows["res_ppl"] ?></td>
+                                                <td><?php echo $resRows["res_date"] ?></td>
+                                                <td><select name="res_state" class="form-control">
+                                                        <option value="0" <?php if (!(strcmp("0", $resRows["res_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>取消</option>
+                                                        <option value="1" <?php if (!(strcmp("1", $resRows["res_state"]))) {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>預約</option>
+                                                    </select>
+                                                </td>
+                                                <td><input class="btn btn-info" type="submit" value="送出修改"></td>
+
+                                            </form>
+
                                         </tr>
 
                                     <?php

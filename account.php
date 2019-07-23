@@ -1,4 +1,5 @@
 <?php
+session_start();
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");

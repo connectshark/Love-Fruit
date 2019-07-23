@@ -31,7 +31,7 @@ try {
 <body class="page-backstage">
     <header>
         <?php
-        require_once("backstage-nav.php");
+            require_once("backstage-nav.php");
         ?>
     </header>
 

@@ -44,37 +44,40 @@ try {
             <div class="col-10 bg-white rounded">
                 <div class="row p-4">
                     <div class="col-12 px-0 py-4">
-                        <form action="">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">編號</th>
-                                        <th scope="col">關鍵字</th>
-                                        <th scope="col">回答</th>
-                                        <th scope="col">編輯</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
 
-                                    <?php
-                                    while ($robotRows = $robot->fetch(PDO::FETCH_ASSOC)) {
-                                        ?>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">編號</th>
+                                    <th scope="col">關鍵字</th>
+                                    <th scope="col">回答</th>
+                                    <th scope="col">編輯</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                                        <tr>
-                                            <th scope="row"><?php echo $robotRows["qus_no"]; ?></th>
-                                            <td><input class="form-control" type="text" value="<?php echo $robotRows["keyword"]; ?>"></td>
-                                            <td><textarea class="form-control" name="" id="" cols="30" rows="2"><?php echo $robotRows["answer"]; ?></textarea></td>
-                                            <td><input class="robot-btn btn btn-info" type="button" value="送出修改"></td>
-                                        </tr>
-
-
-                                    <?php
-                                    }
+                                <?php
+                                while ($robotRows = $robot->fetch(PDO::FETCH_ASSOC)) {
                                     ?>
 
-                                </tbody>
-                            </table>
-                        </form>
+                                    <tr>
+                                        <form action="robotChange.php" method="POST">
+                                            <input class="d-none" type="text" name="qus_no" value="<?php echo $robotRows["qus_no"]; ?>">
+                                            <th scope="row"><?php echo $robotRows["qus_no"]; ?></th>
+                                            <td><input class="form-control" type="text" name="keyword" value="<?php echo $robotRows["keyword"]; ?>"></td>
+                                            <td><textarea class="form-control" name="answer" cols="30" rows="2"><?php echo $robotRows["answer"]; ?></textarea></td>
+                                            <td><input class="robot-btn btn btn-info" type="submit" value="送出修改"></td>
+                                        </form>
+                                    </tr>
+
+
+                                <?php
+                                }
+                                ?>
+
+                            </tbody>
+                        </table>
+
 
                     </div>
                 </div>

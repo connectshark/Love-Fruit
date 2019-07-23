@@ -32,8 +32,8 @@ switch($_FILES["newsFile"]["error"]){
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sql = "insert into news (news_no, emp_no, news_title,news_pic,news_content,news_date,news_class,news_state) 
-            values( 2 ,:emp_no, :news_title, :news_pic, :news_content, :news_date, :news_class, :news_state)";
+    $sql = "insert into news ( emp_no, news_title,news_pic,news_content,news_date,news_class,news_state) 
+            values(  :emp_no, :news_title, :news_pic, :news_content, :news_date, :news_class, :news_state)";
     $profileChange = $pdo->prepare($sql);
     $profileChange->bindValue(":emp_no", $_SESSION["emp_no"]);
     $profileChange->bindValue(":news_title", $_REQUEST["news_title"]);
