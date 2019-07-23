@@ -1,16 +1,15 @@
 <?php 
 session_start();
-$_SESSION["mem_no"]=1;
+// $_SESSION["mem_no"]=1;
 try {
   require_once("mac-require.php");
+
   //抓開團留言
-	$sql = "SELECT m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content FROM course_msg cm JOIN member m ON cm.mem_no = m.mem_no WHERE course_class_no = 1 ORDER BY cm.msg_date desc";
- 
+	$sql = "select m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no where course_class_no = 1 order by cm.msg_date desc";
   $courseMsg  = $pdo->prepare($sql);
-  $courseMsg -> bindValue(':mem_no',$_SESSION["mem_no"]);
   $courseMsg -> execute();
   //.............
-  $sql2 = "SELECT cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content FROM msg_reply mr JOIN member m ON mr.mem_no = m.mem_no JOIN course_msg cm ON mr.msg_no = cm.msg_no WHERE course_class_no = 1 and cm.msg_no = :msg_no ORDER BY reply_date desc";      
+  $sql2 = "select cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content from msg_reply mr join member m on mr.mem_no = m.mem_no join course_msg cm on mr.msg_no = cm.msg_no where course_class_no = 1 and cm.msg_no = :msg_no order by reply_date desc";      
   $replayMsg  = $pdo->prepare($sql2);
   
 } catch (PDOException $e) {
@@ -118,13 +117,18 @@ try {
       <input type="hidden" value="1" name="courseClassNo">
       <div class="group-message" >
         <div class="open-group">
-          <div class="message-meb col-md-2">
-            <div class="mem-pic"><img src="" alt=""></div>
-            <i class="fas fa-user-circle"></i>
-            <p>會員名稱</p>
-            <p class="time"><?php echo date("Y-m-d"); ?></p>
-          </div>
-          <div class="write-area  col-md-10">
+            <div class="message-mem col-md-2">
+                <?php if (isset ($_SESSION["mem_pic"])) { ?>
+                <div class="mem-pic"><img src="<?php echo $_SESSION["mem_pic"]?>" alt=""></div>
+                <?php }else{
+                            echo "<i class='fas fa-user-circle user-pic'></i>";
+                } ?>
+                <?php if (isset ($_SESSION["mem_name"])){ ?>
+                <p><?php echo  $_SESSION["mem_name"];}else{echo "訪客";} ?></p>
+                <p class="time"><?php echo date("Y-m-d"); ?></p>
+           </div>
+
+           <div class="write-area  col-md-10">
             <p>你的團名：</p>
             <input name="msgTitle" type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
             <p>開團資訊：</p>
@@ -135,16 +139,17 @@ try {
   e-mail：
   邀請的話～"></textarea>
           </div>
+
           <div class="message-btn col-md-12">
-          <a href="course-msg.php">
             <button type="submit" class="message-btn-out">
               <span class="message-btn-in">
                 我要留言
               </span>
             </button>
-          </a> 
           </div>
+
         </div>
+     
   </form>
 
   <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
@@ -158,13 +163,17 @@ try {
         </a>
     </div>
 
-  <?php while ($row = $courseMsg -> fetchObject()) {?> 
+<?php while ($row = $courseMsg -> fetchObject()) {?>  
     <div class="team-name">
         <span>團名：<?php echo $row->msg_title;?> </span>
     </div>
     <div class="main-group-message">
         <div class="message-meb col-md-2 col-2">
-          <i class="fas fa-user-circle"></i>
+        <?php if ($row->mem_pic) { ?>
+						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
+					<?php }else{
+						echo "<i class='fas fa-user-circle'></i>";
+					} ?>
           <p><?php echo $row->mem_name; ?></p>
           <p class="time"> <?php echo $row->msg_date;?> </p>
         </div>
@@ -194,7 +203,11 @@ try {
               <!-- 跳窗主揪留言 -->
                 <div class="pop-main-message col-md-7 col-10">
                   <div class="message-meb col-md-2 col-2">
-                    <i class="fas fa-user-circle"></i>
+                  <?php if ($row->mem_pic) { ?>
+						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
+					<?php }else{
+						echo "<i class='fas fa-user-circle'></i>";
+					} ?>
                     <p class="mem"><?php echo $row->mem_name; ?></p>
                     <p class="time"><?php echo $row->msg_date; ?></p>
                   </div>
@@ -220,7 +233,11 @@ try {
             ?> 
                   <div class="meb-add-message ">
                     <div class="meb col-md-2 ">
-                      <i class="fas fa-user-circle"></i>
+                    <?php if ( $replayMsgRow->mem_pic) { ?>
+						<div class="user-head"><img src="<?php echo $replayMsgRow->mem_pic ?>" alt="頭像"></div>
+					<?php }else{
+						echo "<i class='fas fa-user-circle'></i>";
+					} ?>
                       <p class="name"><?php echo $replayMsgRow->mem_name; ?></p>
                       <p class="time"><?php echo $replayMsgRow->reply_date; ?></p>
                     </div>
@@ -234,7 +251,7 @@ try {
          
               <div class="meb-add-message " id="content">
                 <div class="meb col-md-2 ">
-                  <i class="fas fa-user-circle"></i>
+                  <div class="user-head"></div>
                   <p class="name"></p>
                   <p class="time"></p>
                 </div>

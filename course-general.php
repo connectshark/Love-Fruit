@@ -1,14 +1,15 @@
 <?php 
 $errMsg="";
+session_start();
 try {
-	require_once("mac-require.php");
+    require_once("mac-require.php");
 	$sql = "select m.mem_no,m.mem_name,m.mem_pic, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no WHERE course_class_no = 0 ORDER BY cm.msg_date desc";
-    $courseMsg = $pdo->prepare($sql);
-	$courseMsg -> execute();
+    $courseMsgG = $pdo -> prepare($sql);
+	$courseMsgG -> execute();
 } catch (PDOException $e) {
 	$errMsg .= "錯誤訊息:". $e->getMessage() ."<br>";
     $errMsg .= "行數:". $e->getLine()."<br>";
-    echo $errMsg;
+    // echo $errMsg;
 }
 ?>
 <html lang="UTF-8">
@@ -121,7 +122,7 @@ try {
                                 </div>
                                 <div class="course-btn">
                                     <a class="course-ice-btn-out" href="course-general-form.php">
-                                        <span class="course-ice-btn-in">
+                                        <span class="course-ice-btn-in click-check">
                                             <img src="img/btn/ICE.png" alt="btn">
                                             我要預約
                                         </span>
@@ -142,35 +143,44 @@ try {
             <h3  class="message-title">課程留言板</h3>
             <span>寫下你對課程的想法！</span>
         </div>
-      
+
     <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
         <input type="hidden" value="0" name="courseClassNo">
         <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
-                <i class="fas fa-user-circle"></i>
-                <p>會員</p>
+                <?php if (isset ($_SESSION["mem_pic"])) { ?>
+                <div class="mem-pic"><img src="<?php echo $_SESSION["mem_pic"]?>" alt=""></div>
+                <?php }else{
+                            echo "<i class='fas fa-user-circle'></i>";
+                } ?>
+                <?php if (isset ($_SESSION["mem_name"])){ ?>
+                <p><?php echo  $_SESSION["mem_name"];}else{echo "訪客";} ?></p>
                 <p><?php echo date("Y-m-d"); ?></p>
             </div>
             <div class="balloons col-md-10">
            <label><textarea name="msgContent" id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......" wrap="hard" ></textarea></label> 
             </div>
             <div class="message-btn col-md-12">
-                <a href="course-msg.php">
+           
                 <button  type="submit" class="message-btn-out">
                     <span class="message-btn-in">
                         我要留言
                     </span>
-                </button></a>
+                </button>
             </div>
     </form>
-       
+  
 
         <div class="mem-message-wrap">
-        <?php while ($row = $courseMsg -> fetchObject()) {?>
+<?php while ($row = $courseMsgG -> fetchObject()) {?>
             <div class="mem-message-item">
            
                 <div class="message-mem col-md-2 col-2">
-                    <i class="fas fa-user-circle"></i> 
+                   <?php if ($row->mem_pic) { ?>
+						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
+					<?php }else{
+						echo "<i class='fas fa-user-circle'></i>";
+					} ?>
                 </div>
                 <div class="message-con col-md-10 col-9">
                     <div class="mem-ifo">

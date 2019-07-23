@@ -1,5 +1,8 @@
 <?php 
 $errMsg="";
+
+session_start();
+
 try {
 	require_once("mac-require.php");
 	$sql = "select n.news_no, n.news_title,n.news_pic,n.news_content,n.news_date,n.news_class,e.emp_name from news n join employee e on n.emp_no = e.emp_no WHERE emp_state = 1 ORDER BY n.news_date desc";
@@ -166,7 +169,8 @@ function newsName($newsClass)
   <script src="js/news.js"></script>
   <script src="js/login.js"></script>
   <script src="js/news-filter.js"></script>
- 
+  <script src="js/shop.js"></script>
+
   
   
 </body>

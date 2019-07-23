@@ -1,6 +1,9 @@
 <?php 
 $news_no = $_REQUEST["news_no"];
 $errMsg="";
+
+session_start();
+
     try {
       require_once("mac-require.php");
       $sql = "select * from news WHERE news_no = :news_no";
@@ -12,6 +15,25 @@ $errMsg="";
         $errMsg .= "行數:". $e->getLine()."<br>";
         echo $errMsg;
     }
+
+function newsName($newsClass)
+{
+	switch ($newsClass) {
+		case '0':
+			return '揪團新訊';
+			break;
+		case '1':
+			return '新品上市';
+			break;
+		case '2':
+			return '園區公告';
+			break;
+		case '3':
+			return '季節限定';
+			break;
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +90,7 @@ $errMsg="";
           <div class="img"><img src="img/btn/ICE.png" alt=""></div>
           <p class="text-box">
             <span class="text" id="time"><?php echo $newsRow->news_date; ?></span>
-            <span class="text" id="sort"><?php echo $newsRow->news_class; ?></span>
+            <span class="text" id="sort">【<?php echo newsName($newsRow->news_class); ?>】 </span>
           </p>
           <h3 id="title"><?php echo $newsRow->news_title; ?></h3>
           <div class="clear"></div>
@@ -103,7 +125,8 @@ $errMsg="";
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/news.js"></script>
-  
+  <script src="js/shop.js"></script>
+  <script src="js/login.js"></script>
  </body>
 
 

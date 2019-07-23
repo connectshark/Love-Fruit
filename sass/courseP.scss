@@ -481,6 +481,10 @@ $deep-pink:#db4d6d;
         .message-mem{ 
             text-align: center;
             width: 55px;
+            .user-head{
+                width: 50px;
+                height: 50px;
+            }
             i{
                 color: #aaa;
                 font-size:55px;
@@ -1082,27 +1086,42 @@ $deep-pink:#db4d6d;
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
-            p{
-                font-size: 20px;
-                color:$font-gray;
-                @include rwd(mobile){
-                    font-size: 16px;
-                }
-            }
-            .time{
-                font-size: 16px;
-                @include rwd(mobile){
-                    font-size: 13px;
-                }
-            }
-            .message-meb{
+           
+            .message-mem{
                 text-align: center;
-                line-height: 30px;
+                
                 i{
-                    color: #fff;
                     font-size: 50px;
+                    color: #fff;
                 }
+                p{
+                    font-size: 20px;
+                    color:$font-gray;
+                    @include rwd(mobile){
+                        font-size: 16px;
+                    }
+                }
+                .time{
+                    font-size: 16px;
+                    @include rwd(mobile){
+                        font-size: 13px;
+                    }
+                }
+                .mem-pic{
+                    width: 30px;
+                    height: 30px;
+                    margin: auto;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
             }
+           
+           
+
+            
             .write-area{
                 line-height: 2;
                 input{
