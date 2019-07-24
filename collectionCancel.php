@@ -9,7 +9,6 @@ try{
     $cancelCollect->bindValue(":mem_no",$_SESSION["mem_no"]);
     $cancelCollect->bindValue(":prod_no",$_POST["prod_no"]);
     $cancelCollect->execute();
-    echo "OK";
 }catch(PDOException $e){
     echo $errMsg .=  $e->getMessage() . "<br>";
     echo $errMsg .=  $e->getLine() . "<br>";
