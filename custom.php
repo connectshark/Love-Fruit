@@ -247,7 +247,7 @@ try {
                 <div class="aside-select message-pull">
                     <div class="select-item select-item-1">
                         <label for="text">
-                        <input type="text" min-length="1" maxlength="5" v-model="message" id="text"></label>
+                        <input type="text" @focus="cleartext" @blur="placeholder" min-length="1" maxlength="5" v-model="message" id="text"></label>
                     </div>
                 </div>
             </div>
@@ -350,6 +350,14 @@ try {
                 message:'輸入字',
             },
             methods:{
+                cleartext(){
+                    this.message="";
+                },
+                placeholder(){
+                    if (this.message="") {
+                        this.message="輸入字";
+                    };
+                },
             },
             computed:{
             },
