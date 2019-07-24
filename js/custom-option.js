@@ -15,9 +15,7 @@ function sendFormData(){
 		data: $('#custom-choose').serialize(),
 	})
 	.done(function(data) {
-		console.log(data);
 		imgPath=data;
-		console.log(imgPath);
 	})
 	.fail(function(data) {
 		console.log("error");
@@ -26,7 +24,6 @@ function sendFormData(){
 	})
 	.always(function(data) {
 		console.log("complete");
-		console.log(data);
 		imgPath=data;
 	});
 }

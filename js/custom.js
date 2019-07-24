@@ -289,6 +289,7 @@ function putStickIn() {
 		window.alert(check);
 		return;
 	}
+	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
 	// $('#ice-stick').addClass('ice-stice-put');
 	$('#text').attr('disabled',true);
 	$('#slice-main').draggable({
@@ -301,7 +302,6 @@ function putStickIn() {
 		});
 	});
 	$('#cto-category-stage').text(setStage(sliceIndex));
-	draw(textureImg,fruiteColor[fruiteItem[0]],fruiteColor[fruiteItem[1]],sliceSrc);
 }
 function checkList() {
 	if ($('#mold-price').text() == "") {

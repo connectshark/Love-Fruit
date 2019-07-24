@@ -37,7 +37,9 @@ function draw(texture,color1,color2,src) {
 
 		var texturePic = new Image();
 		texturePic.src = "img/custom/texture1.png";
-		ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+		texturePic.addEventListener('load',function () {
+			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+		});
 			break;
 		case 1:
 		// 第二個模型開始熊掌
@@ -84,7 +86,9 @@ function draw(texture,color1,color2,src) {
 
 		var texturePic = new Image();
 		texturePic.src = "img/custom/texture2.png";
+		texturePic.addEventListener('load',function () {
 			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+		});
 			break;
 		case 2:
 		ctx.beginPath();
@@ -131,7 +135,9 @@ function draw(texture,color1,color2,src) {
 
 		var texturePic = new Image();
 		texturePic.src = "img/custom/texture3.png";
+		texturePic.addEventListener('load',function () {
 			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+		});
 			break;
 		case 3:
 		ctx.beginPath();
@@ -172,7 +178,9 @@ function draw(texture,color1,color2,src) {
 
 		var texturePic = new Image();
 		texturePic.src = "img/custom/texture4.png";
+		texturePic.addEventListener('load',function () {
 			ctx.drawImage(texturePic,0,0,texturePic.width,texturePic.height);
+		});
 			break;
 	}
 	//放切片
@@ -194,7 +202,11 @@ function draw(texture,color1,color2,src) {
 
 
 	
-	ctx.drawImage(fruiteslice,fel,fet,few,feh);
+	fruiteslice.addEventListener('load',function () {
+		ctx.drawImage(fruiteslice,fel,fet,few,feh);
+		bg = canvas.toDataURL("image/png");
+		canvasPut();
+	});
 	
 	// ctx.save();
 	// ctx.fillStyle="#333";
@@ -206,8 +218,6 @@ function draw(texture,color1,color2,src) {
 
 
 	
-	bg = canvas.toDataURL("image/png");
-	canvasPut();
 }
 function canvasPut() {
 	$('#pop').fadeIn('fast', function() {
