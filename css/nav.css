@@ -19,7 +19,9 @@
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
 /*Css寫 -> font-family: "什麼字型";*/
-
+#header {
+  font-family: "A-OTF-M";
+}
 /*header*/
 /*清除*/
 @media screen and (max-width: 767px) {
@@ -35,6 +37,7 @@
   /* css結束 */
   #header {
     position: fixed;
+    font-family: "A-OTF-M";
     width: 100%;
     background-size: 100%;
     background-position: top;
@@ -428,6 +431,7 @@
     display: inline-block;
     padding: 10px 0px 10px 0px;
     text-decoration: none;
+    font-size: 14px;
     color: #ea7187;
     font-family: "GenJyuuGothic-R";
   }
@@ -922,7 +926,6 @@
   }
   #member-login-erroMsg {
     display: block;
-    /* padding: 10px 0px 10px 0px; */
     margin: 10px 0px 10px 0px;
     width: 100%;
     height: 20px;
@@ -1233,7 +1236,7 @@
   /* 帳號密碼 */
   #member-login-erroMsg {
     display: block;
-    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 100%;
     height: 20px;
     font-size: 12px;
@@ -1467,7 +1470,7 @@
   .retrieve-password-button-text {
     margin-left: 10%;
     font-size: 16px;
-    line-height: 1.9vw;
+    line-height: 29px;
     letter-spacing: 0.2vw;
     margin-top: 1.2%;
     color: #ffffff;
