@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -8,6 +9,7 @@ body {
   background-color: #fff;
   background-position: center;
   background-repeat: repeat;
+  font-family: "GenJyuuGothic-R";
 }
 
 .letter-title {
@@ -26,8 +28,6 @@ body {
 }
 
 .letter-title .title-img h1 {
-  font: 30px "GenJyuuGothic-R";
-  color: #fff;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -39,6 +39,25 @@ body {
   .letter-title .title-img h1 {
     font: 18px "GenJyuuGothic-R";
   }
+}
+
+.title-text {
+  color: #fff;
+  font-size: 35px;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.title-text:after {
+  z-index: -1;
+  content: "寫下妳/你的專屬留言";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-text-stroke: 4px #6a3e26;
 }
 
 .letter {
@@ -224,9 +243,16 @@ body {
           box-sizing: border-box;
   font-size: 18px;
   border-radius: 20px;
-  border: 3px solid #6a3e26;
   -webkit-transition: padding .5s;
   transition: padding .5s;
+}
+
+.letter .letter-content .letter-footer .write-title input:required, .letter .letter-content .letter-footer .write-content input:required {
+  border: 3px solid #6a3e26;
+}
+
+.letter .letter-content .letter-footer .write-title input:invalid, .letter .letter-content .letter-footer .write-content input:invalid {
+  border: 3px solid #ea7187;
 }
 
 .letter .letter-content .letter-footer .write-title p span, .letter .letter-content .letter-footer .write-content p span {
@@ -528,6 +554,7 @@ body {
   bottom: -8%;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
+  pointer-events: none;
 }
 
 .custom-ice img {

@@ -531,6 +531,9 @@ body{
 .flow{
 	padding: 10px 0;
 }
+.tip{
+	display: none;
+}
 @media screen and (min-width: 768px) {
 	.custom-aside{
 		width: 30%;
@@ -538,6 +541,65 @@ body{
 	.flow{
 		padding:0;
 		min-height: 500px;
+		position: relative;
+	}
+	.tip{
+		display: block;
+		position: absolute;
+		right: calc(100% + 20px);
+		top: 25%;
+		background-color: #fff;
+		width: 50%;
+		padding: 10px;
+		border-radius: 15px;
+		animation: upDown 2s alternate infinite linear;
+		animation-play-state:running;
+		color: #333;
+		z-index: 5;
+	}
+	.tip:hover{
+		animation-play-state:paused;
+	}
+	.tip:before{
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 20px solid #fff;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		left: 100%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.tip h3{
+		font-size: 20px;
+		line-height: 2;
+		text-align: center;
+		font-weight: 700;
+	}
+	.tip p{
+		font-size: 18px;
+		line-height: 1.5;
+	}
+	.tip-close{
+		padding: 5px 0 0;
+		cursor: pointer;
+		color: #949494;
+		display: block;
+		text-align: right;
+	}
+	.tip-close:hover{
+		color: #333;
+	}
+}
+@keyframes upDown{
+	0%{
+		transform: translateY(5%);
+	}
+	100%{
+		transform: translateY(-5%);
 	}
 }
 .aside-title{
@@ -727,6 +789,25 @@ body{
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 20px;
+	font-size: 20px;
+}
+#text:required{
+	border: 3px solid #6a3e26;
+}
+#text:invalid{
+	border:3px solid #ea7187;
+}
+.in-text{
+	position: relative;
+}
+.s-text{
+	color: #949494;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 5%;
+	margin: auto;
+	font-size: 16px;
 }
 .clearfix{
 	clear: both;

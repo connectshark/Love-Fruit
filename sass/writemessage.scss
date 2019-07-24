@@ -10,7 +10,6 @@ $cofe:#6a3e26;
     box-sizing: border-box;
     font-size: 18px;
     border-radius: 20px;
-    border: 3px solid #6a3e26;
     transition: padding .5s;
 }
 body{
@@ -18,6 +17,7 @@ body{
     background-color: #fff;
     background-position: center;
     background-repeat: repeat;
+    font-family: "GenJyuuGothic-R";
 }
 .letter-title{
     padding: 150px 0 0;
@@ -30,8 +30,6 @@ body{
             max-width: 583px;
         }
         h1{
-            font: 30px "GenJyuuGothic-R";
-            color: #fff;
             position: absolute;
             left: 50%;
             top: 50%;
@@ -42,6 +40,7 @@ body{
         }
     }
 }
+@include out-Line-Font(title-text,#fff,35px,4px,#6a3e26,寫下妳/你的專屬留言);
 .letter{
     padding:0 0 100px;
     .letter-area{
@@ -164,6 +163,12 @@ body{
             .write-title{
                 input{
                     @include inputsize;
+                    &:required{
+                        border: 3px solid #6a3e26;
+                    }
+                    &:invalid{
+                        border: 3px solid #ea7187;
+                    }
                 }
                 p{
                     span{
@@ -390,6 +395,7 @@ body{
     left: -20%;
     bottom: -8%;
     transform: rotate(-15deg);
+    pointer-events: none;
     img{
         width: 100%;
     }

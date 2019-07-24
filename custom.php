@@ -1,5 +1,8 @@
-<?php 
+<?php
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
 $errMsg="";
 try {
     require_once("connect-dd101g3.php");
@@ -164,6 +167,11 @@ try {
 		</section>
 		<section class="custom-aside back">
             <div class="flow">
+                <div class="tip">
+                    <h3>第一步</h3>
+                    <p>選擇1種模型</p>
+                    <span class="tip-close">關閉</span>
+                </div>
     			<div class="aside-title">
     				<h2>選擇製冰容器</h2>
     			</div>
@@ -185,6 +193,11 @@ try {
 
 
             <div class="flow">
+                <div class="tip">
+                    <h3>第二步</h3>
+                    <p>選擇2種水果基底</p>
+                    <span class="tip-close">關閉</span>
+                </div>
                 <div class="aside-title">
                     <h2>選擇基底水果</h2>
                 </div>
@@ -219,6 +232,12 @@ try {
 
 
             <div class="flow">
+                <div class="tip">
+                    <h3>第三步</h3>
+                    <p>選擇1種水果切片</p>
+                    <p>可以移動到喜歡的地方</p>
+                    <span class="tip-close">關閉</span>
+                </div>
                 <div class="aside-title">
                     <h2>選擇水果切片</h2>
                 </div>
@@ -241,13 +260,18 @@ try {
 
 
             <div class="flow">
+                <div class="tip">
+                    <h3>第四步</h3>
+                    <p>輸入冰棒小語</p>
+                    <span class="tip-close">關閉</span>
+                </div>
                 <div class="aside-title">
                     <h2>輸入冰棒小語</h2>
                 </div>
                 <div class="aside-select message-pull">
                     <div class="select-item select-item-1">
-                        <label for="text">
-                        <input type="text" @focus="cleartext" @blur="placeholder" min-length="1" maxlength="5" v-model="message" id="text"></label>
+                        <label for="text" class="in-text">
+                        <input type="text" minlength="1" placeholder="輸入小語" maxlength="5" v-model="message" required id="text"><span class="s-text">尚餘{{five}}個字</span></label>
                     </div>
                 </div>
             </div>
@@ -343,23 +367,19 @@ try {
     <script src="js/custom-option.js"></script>
     <script src="js/custom-addcart.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/custom-tip.js"></script>
     <script>
         new Vue({
             el:'#app',
             data:{
-                message:'輸入字',
+                message:'',
             },
             methods:{
-                cleartext(){
-                    this.message="";
-                },
-                placeholder(){
-                    if (this.message="") {
-                        this.message="輸入字";
-                    };
-                },
             },
             computed:{
+                five(){
+                    return 5 - this.message.length;
+                },
             },
         });
     </script>

@@ -5,8 +5,26 @@ $hot:#ea7187;
 $single:#fad689;
 $cofe:#6a3e26;
 body{
-	font-family: "A-OTF-M";
+	font-family: "GenJyuuGothic-R";
 }
+// @font-face {
+// 	font-family: "A-OTF-H";
+// 	src: url(../font/A-OTF/A-OTF-MaruFoPro-Heavy.otf);
+//   }
+//   @font-face {
+// 	font-family: "A-OTF-M";
+// 	src: url(../font/A-OTF/A-OTF-MaruFoPro-Medium.otf);
+//   }
+//   /*思源圓黑體*/
+  
+//   @font-face {
+// 	font-family: "GenJyuuGothic-B";
+// 	src: url(../font/genJyuuGothic/GenJyuuGothic-Bold.ttf);
+//   }
+//   @font-face {
+// 	font-family: "GenJyuuGothic-R";
+// 	src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
+//   }
 .banner{
 	background-color: #fad689;
 	background-image: url(../img/indexImg/diyIcebgc-top.png),url(../img/message/cloud-pink.png),url(../img/background.png);
@@ -66,7 +84,7 @@ body{
 		width: 100%;
 		max-width: 1200px;
 		text-align: center;
-		padding: 5% 0 0;
+		padding: 2% 0 0;
 		margin: auto;
 		@include rwd(mobile){
 			padding:20% 0 0;
@@ -78,16 +96,13 @@ body{
 				max-width: 538px;
 			}
 			h1{
-				@include out-Line-Font(high,#fff,40px,8px,$cofe,愛的留言);
 				line-height: 80px;
-				color: #fff;
-				font: 40px "A-OTF-M";
 				position: absolute;
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%,-75%);
 				@include rwd(mobile){
-					font: 24px "A-OTF-M";
+					font: 24px "GenJyuuGothic-R";
 				}
 			}
 		}
@@ -98,7 +113,7 @@ body{
 		flex-flow: row nowrap;
 		justify-content: space-around;
 		.icecream-group{
-			width: 40%;
+			width: 30%;
 			display: flex;
 			flex-flow: row nowrap;
 			align-items: center;
@@ -122,11 +137,11 @@ body{
 			}
 		}
 		.fly-item{
+			width: 12%;
 			@include rwd(mobile){
 				padding: 3% 0;
 				width: 40%;
 			}
-			width: 15%;
 			img{
 				width: 100%;
 				vertical-align: middle;
@@ -229,6 +244,7 @@ body{
 		}
     }
 }
+@include out-Line-Font(title-text,#fff,40px,5px,#6a3e26,愛的留言);
 @include ice-btn(leave-message,200px,leave-message-btn,24px,1.5,我要留言);
 @keyframes rotate{
 	0%{
@@ -332,7 +348,7 @@ body{
 					text-align: center;
 					font-family: "A-OTF-M";
 					color: #fff;
-					font-size: 16px;
+					font-size: 20px;
 					line-height: 60px;
 					position: absolute;
 					top: 50%;
@@ -399,7 +415,7 @@ body{
 					width: 70%;
 					font-size: 20px;
 					line-height: 40px;
-					font-family: "A-OTF-M";
+					font-family: "GenJyuuGothic-R";
 					margin-left: auto;
 					text-align: justify;
 					span{
@@ -408,7 +424,7 @@ body{
 				}
 				p{
 					width: 70%;
-					font-family: "A-OTF-M";
+					font-family: "GenJyuuGothic-R";
 					font-size: 16px;
 					line-height: 32px;
 					margin-left: auto;
@@ -451,8 +467,10 @@ body{
 			left: -20%;
 			bottom: -8%;
 			transform: rotate(-15deg);
+			pointer-events: none;
 			img{
 				width: 100%;
+				pointer-events: none;
 			}
 		}
 	}

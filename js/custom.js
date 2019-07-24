@@ -313,6 +313,9 @@ function checkList() {
 	if ($('#slice-price').text() == "") {
 		return "切片未選";
 	}
+	if ($('#text').val() == "") {
+		return "小語未填";
+	}
 	return true;
 }
 // 計算四階段

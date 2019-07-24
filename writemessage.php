@@ -1,5 +1,8 @@
-<?php 
+<?php
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
 if (isset($_SESSION['mem_no']) === false) {
 	header("location:leavemessage.php");
 }
@@ -72,7 +75,7 @@ function stageName($stage)
 	<div class="letter-title">
 		<div class="title-img">
 			<img src="img/ribbon.png" alt="標題背景">
-			<h1>寫下妳/你的專屬留言</h1>
+			<h1 class="title-text">寫下妳/你的專屬留言</h1>
 		</div>
 	</div>
 	<div id="app">
@@ -143,11 +146,11 @@ function stageName($stage)
 					<div class="letter-footer">
 		                <div class="write-title">
 		                    <p>寫給誰<span>{{whonum}} / 5</span></p>
-		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" id="userTitle" placeholder="寫給誰" name="cfsTo"></label>
+		                    <label><input type="text" maxlength="5" minlength="1" v-model="forWho" required id="userTitle" placeholder="寫給誰" name="cfsTo"></label>
 		                </div>
 		                <div class="write-content">
 		                    <p>留言內容<span>{{textnum}} / 30</span></p>
-		                    <label><input type="text" minlength="1" maxlength="30" v-model="text" id="userContent" placeholder="留言內容" name="cfsContent"></label>
+		                    <label><input type="text" minlength="1" maxlength="30" v-model="text" required id="userContent" placeholder="留言內容" name="cfsContent"></label>
 		                </div>
 		                <div class="write-buttons">
 		                    <label><input type="reset" value="清除" @click="clear"></label>

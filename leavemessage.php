@@ -1,5 +1,8 @@
-<?php 
+<?php
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
 $errMsg="";
 try {
     require_once("connect-dd101g3.php");
@@ -89,7 +92,7 @@ function stageName($stage)
 		<div class="title">
 			<div class="title-img">
 				<img src="img/ribbon.png" alt="標題背景">
-				<h1>愛的留言</h1>
+				<h1 class="title-text">愛的留言</h1>
 			</div>
 		</div>
 		<div class="banner-item-group">
