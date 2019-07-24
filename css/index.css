@@ -3042,7 +3042,7 @@ html {
     letter-spacing: 0.2vw;
     margin-top: 1.2%;
     color: #ffffff;
-    font-family: "GenJyuuGothic-R";
+    font-family: "GenJyuuGothic-B";
   }
   .course-button-custom:hover .qa-button-text-style {
     background-color: #ffabb1;
@@ -3267,7 +3267,7 @@ html {
     letter-spacing: 0.2vw;
     margin-top: 1.2%;
     color: #ffffff;
-    font-family: "A-OTF-M";
+    font-family: "GenJyuuGothic-B";
   }
   .course-button-custom:hover .qa-button-text-style {
     background-color: #ffabb1;
@@ -3422,6 +3422,7 @@ html {
     color: #707070;
   }
   .index-news-conten-text-group p {
+    font-family: "GenJyuuGothic-R";
     font-size: 12px;
     height: 36px;
     overflow: hidden;
@@ -3576,7 +3577,8 @@ html {
     color: #707070;
   }
   .index-news-conten-text-group p {
-    font-size: 0.3vw;
+    font-size: 16px;
+    font-family: "GenJyuuGothic-R";
     height: 48px;
     margin-bottom: 2%;
     overflow: hidden;

@@ -31,7 +31,6 @@
     體驗課程#course-item-show
     最新消息#new-item-show
     關於園區#about-item-show */
-
   /* css開始 */
   /* css結束 */
   #header {
@@ -1345,7 +1344,7 @@
   .member-login-button-text {
     margin-left: 18%;
     font-size: 16px;
-    line-height: 1.9vw;
+    line-height: 28px;
     letter-spacing: 1vw;
     margin-top: 1.2%;
     color: #ffffff;
