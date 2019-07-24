@@ -33,6 +33,8 @@
             width: 80%;
             margin: auto;
             padding-top: 25%;
+            opacity: 1;
+            animation: fadein 2s 0s;
             img{
                 width: 100%;
             }
@@ -53,13 +55,18 @@
             height: 40vh;
         }
         .item{
-            width: 40%;
+            width: 45%;
             position: relative;
+            border-radius: 50%;
+            @include rwd(mobile){
+                width: 60%;
+            }
             .box{
                 width: 100%;
                 border-radius: 50%;
                 z-index: 2;
                 text-align: center;
+                position: relative;
                 a{
                     display: block;
                     width: 100%;
@@ -67,8 +74,9 @@
                     h1{
                         font:4vw "A-OTF-M";
                         text-shadow: 1px 1px 3px #949494;
-                        line-height: 2;
+                        line-height: 4.5;
                         color: #fff;
+                        text-shadow: 2px 2px 3px #949494;
                         text-align: center;
                         @include rwd(mobile){
                             color: #6a3e26;
@@ -124,6 +132,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        overflow: hidden;
         @include rwd(mobile){
             display: none;
         }
@@ -136,30 +145,41 @@
         .ice-a{
             bottom: 10%;
             left: 20%;
+            animation: l-down 1s 0s ease-in backwards;
         }
         .ice-b{
             bottom: 15%;
             left: 5%;
+            animation: r-down 1s .2s ease-in backwards;
+            transform: rotate(-5deg);
         }
         .ice-c{
             bottom: 13%;
             right: 40%;
+            animation: liner-down 1s .4s ease-in backwards;
         }
         .ice-d{
             bottom: 20%;
             right: 5%;
+            animation: r-down 1.2s .6s ease-in backwards;
+            transform: rotate(5deg);
         }
         .ice-e{
             bottom: 18%;
             left: 35%;
+            animation:liner-down 1s 1s ease-in backwards;
         }
         .ice-f{
-            bottom: 23%;
+            bottom: 9%;
             left: 12%;
+            animation: l-down 1s .6s ease-in backwards;
+            transform: rotate(-5deg);
         }
         .ice-g{
             bottom: 16%;
             right: 13%;
+            animation: r-down 1.2s 1s ease-in backwards;
+            transform: rotate(5deg);
         }
     }
 }
@@ -185,5 +205,37 @@
     }
     100%{
         background-position: center bottom,40% 100%,60% 100%,center;
+    }
+}
+@keyframes l-down{
+    0%{
+        transform: translate(500px,-1000px) rotate(180deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
+@keyframes r-down{
+    0%{
+        transform: translate(-500px,-1000px) rotate(-180deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
+@keyframes liner-down{
+    0%{
+        transform: translate(250px,-1000px) rotate(-180deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

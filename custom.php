@@ -167,14 +167,15 @@ try {
 		</section>
 		<section class="custom-aside back">
             <div class="flow">
+    			<div class="aside-title">
+    				<h2>選擇製冰容器</h2>
+    			</div>
                 <div class="tip">
                     <h3>第一步</h3>
                     <p>選擇1種模型</p>
                     <span class="tip-close">關閉</span>
+                    <div class="clearfix"></div>
                 </div>
-    			<div class="aside-title">
-    				<h2>選擇製冰容器</h2>
-    			</div>
     			<div class="aside-select">
                     <?php while ($moldrow = $mold -> fetchObject()) { ?>
                     <div class="select-item select-item-4">
@@ -193,13 +194,14 @@ try {
 
 
             <div class="flow">
+                <div class="aside-title">
+                    <h2>選擇基底水果</h2>
+                </div>
                 <div class="tip">
                     <h3>第二步</h3>
                     <p>選擇2種水果基底</p>
                     <span class="tip-close">關閉</span>
-                </div>
-                <div class="aside-title">
-                    <h2>選擇基底水果</h2>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="aside-select">
                     <?php while ($fruiterow = $fruite -> fetchObject()) {?>
@@ -232,14 +234,14 @@ try {
 
 
             <div class="flow">
-                <div class="tip">
-                    <h3>第三步</h3>
-                    <p>選擇1種水果切片</p>
-                    <p>可以移動到喜歡的地方</p>
-                    <span class="tip-close">關閉</span>
-                </div>
                 <div class="aside-title">
                     <h2>選擇水果切片</h2>
+                </div>
+                <div class="tip">
+                    <h3>第三步</h3>
+                    <p>選擇1種水果切片可以移動到喜歡的地方</p>
+                    <span class="tip-close">關閉</span>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="aside-select aside-select-scale">
                     <?php while ($row = $ii -> fetchObject()) { ?>
@@ -260,13 +262,14 @@ try {
 
 
             <div class="flow">
+                <div class="aside-title">
+                    <h2>輸入冰棒小語</h2>
+                </div>
                 <div class="tip">
                     <h3>第四步</h3>
                     <p>輸入冰棒小語</p>
                     <span class="tip-close">關閉</span>
-                </div>
-                <div class="aside-title">
-                    <h2>輸入冰棒小語</h2>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="aside-select message-pull">
                     <div class="select-item select-item-1">

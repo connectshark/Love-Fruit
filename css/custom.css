@@ -531,7 +531,19 @@ body{
 .flow{
 	padding: 10px 0;
 }
-.tip{
+.tip h3,.tip p{
+	float: left;
+	color: #434343;
+}
+.tip h3{
+	font-size: 16px;
+	width: 20%;
+	text-align: center;
+}
+.tip p{
+	width: 80%;
+}
+.tip-close{
 	display: none;
 }
 @media screen and (min-width: 768px) {
@@ -544,7 +556,6 @@ body{
 		position: relative;
 	}
 	.tip{
-		display: block;
 		position: absolute;
 		right: calc(100% + 20px);
 		top: 25%;
@@ -574,12 +585,15 @@ body{
 		margin: auto;
 	}
 	.tip h3{
+		float: none;
+		width: 100%;
 		font-size: 20px;
 		line-height: 2;
-		text-align: center;
 		font-weight: 700;
 	}
 	.tip p{
+		float: none;
+		width: 100%;
 		font-size: 18px;
 		line-height: 1.5;
 	}
