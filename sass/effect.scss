@@ -34,11 +34,17 @@
             margin: auto;
             padding-top: 25%;
             opacity: 1;
-            animation: fadein 2s 0s;
+            animation-name: fadein, upDown;
+            animation-delay: 0s,2s;
+            animation-duration: 2s,3s;
+            animation-direction: normal, alternate;
+            animation-timing-function: linear, linear;
+            animation-iteration-count:1,infinite;
             img{
                 width: 100%;
             }
             @include rwd(mobile){
+                animation: none;
                 width: 50%;
                 padding: 0;
             }
@@ -91,6 +97,18 @@
                     h1{
                         color: #6a3e26;
                     }
+                }
+            }
+            .mobile{
+                display: block;
+                @include rwd(medium){
+                    display: none;
+                }
+            }
+            .desk{
+                display: none;
+                @include rwd(medium){
+                    display: block;
                 }
             }
             figure{
@@ -237,5 +255,19 @@
     }
     100%{
         opacity: 1;
+    }
+}
+@keyframes upDown{
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(5px);
+    }
+    75%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-5px);
     }
 }
