@@ -11,50 +11,65 @@
     background-position: center bottom,20% 100%,80% 100%,center;
     animation: shake 20s infinite alternate linear;
     @include rwd(mobile){
-        background-image: none;
-        background-color: #f7a1c1;
+        background-image:linear-gradient(to bottom,#fff8e4 0%,  #f7a1c1 100%);
     }
-    .aside{
-        width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include rwd(mobile){
+        flex-flow: column wrap;
+    }
+    .main{
+        width: 20%;
         height: 100vh;
-        float: left;
-        text-align: center;
-        font-size: 0;
         @include rwd(mobile){
             width: 100%;
-            height: 50vh;
+            height: 20vh;
+            order: -1;
         }
-        .item{
-            width: 30%;
-            padding-bottom: 30%;
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
+        .logo{
+            width: 80%;
+            margin: auto;
+            padding-top: 25%;
+            img{
+                width: 100%;
+            }
             @include rwd(mobile){
                 width: 50%;
-                padding-bottom: 50%;
+                padding: 0;
             }
+        }
+    }
+    .aside{
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        @include rwd(mobile){
+            width: 100%;
+            height: 40vh;
+        }
+        .item{
+            width: 40%;
+            position: relative;
             .box{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
                 width: 100%;
-                height: 100%;
                 border-radius: 50%;
                 z-index: 2;
+                text-align: center;
                 a{
                     display: block;
                     width: 100%;
-                    height: 100%;
                     text-decoration: none;
                     h1{
-                        font:3.5vw "A-OTF-M";
+                        font:4vw "A-OTF-M";
                         text-shadow: 1px 1px 3px #949494;
                         line-height: 2;
                         color: #fff;
-                        display: inline-block;
-                        vertical-align: middle;
+                        text-align: center;
                         @include rwd(mobile){
                             color: #6a3e26;
                             font: 40px "A-OTF-M";
@@ -62,13 +77,6 @@
                     }
                     h2{
                         @extend h1;
-                    }
-                    &::before{
-                        content: '';
-                        width: 0;
-                        height: 100%;
-                        display: inline-block;
-                        vertical-align: middle;
                     }
                 }
                 &:hover{
@@ -84,6 +92,7 @@
                 transform: translate(-50%,-50%);
                 width: 100%;
                 z-index: 0;
+                pointer-events: none;
                 @include rwd(mobile){
                     width: 80%;
                 }
@@ -98,16 +107,60 @@
                 }
             }
         }
-        &::before{
-            content: '';
-            width: 0;
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
+    }
+    .left{
+        justify-content: flex-end;
+        @include rwd(mobile){
+            justify-content: center;
         }
     }
-    .clearfix{
-        clear: both;
+    .right{
+        justify-content: flex-start;
+        @include rwd(mobile){
+            justify-content: center;
+        }
+    }
+    .ice-group{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include rwd(mobile){
+            display: none;
+        }
+        .ice{
+            position: absolute;
+            img{
+                width: 100%;
+            }
+        }
+        .ice-a{
+            bottom: 10%;
+            left: 20%;
+        }
+        .ice-b{
+            bottom: 15%;
+            left: 5%;
+        }
+        .ice-c{
+            bottom: 13%;
+            right: 40%;
+        }
+        .ice-d{
+            bottom: 20%;
+            right: 5%;
+        }
+        .ice-e{
+            bottom: 18%;
+            left: 35%;
+        }
+        .ice-f{
+            bottom: 23%;
+            left: 12%;
+        }
+        .ice-g{
+            bottom: 16%;
+            right: 13%;
+        }
     }
 }
 @keyframes rot{
