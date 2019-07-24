@@ -369,7 +369,7 @@ try {
                                     <p>預約日期</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p><?php echo $courseRows["course_date"]; ?></p>
+                                    <p><?php echo $courseRows["res_date"]; ?></p>
                                 </div>
                             </div>
                             <div class="class-desc col-12 col-md-2">
