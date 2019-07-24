@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["mem_no"]) != true) {
-    header("location:index.php");
+    header("location:index-home.php");
 }
 $errMsg = "";
 try {

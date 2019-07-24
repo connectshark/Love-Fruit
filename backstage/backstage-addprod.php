@@ -1,0 +1,123 @@
+<?php
+session_start();
+if (isset($_SESSION["emp_no"]) != true) {
+    header("location:backstage-login.php");
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="菓籽戀冰所" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>菓籽戀冰所</title>
+    <link rel="icon" href="../img/navBar/logo.png" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/backstage.css">
+</head>
+
+<body class="page-backstage">
+    <header>
+        <?php
+        require_once("backstage-nav.php");
+        ?>
+    </header>
+
+    <section class="container-fluid p-4">
+        <div class="row justify-content-center">
+            <div class="col-10 px-0">
+                <h3>新增-商品</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid px-4">
+        <div class="row justify-content-center">
+            <div class="col-10 bg-white rounded p-4">
+                <form action="add-prod.php" method="POST" enctype="multipart/form-data">
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">商品名稱</div>
+                        <div class="col-5"><input class="form-control" type="text" name="prod_name" maxlength="5" placeholder="請輸入商品名稱"></div>
+                        <div class="col-6 p-1 text-secondary">最多5字</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-2">圖片</div>
+                        <div class="col-11">
+                            <div class="row">
+                                <div class="col-1 p-1">
+                                    <label class="news-file mb-0 ml-3 btn btn-info" for="newsFile">選擇圖片</label>
+                                    <input class="d-none" type="file" name="newsFile" id="newsFile" accept=".jpg,.png">
+                                </div>
+                                <div class="col-6 p-2 text-secondary">圖片格式 jpg / png</div>
+                                <div class="col-6"><img class="img-fluid" id="img-preview" src="" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-2">商品描述</div>
+                        <div class="col-7 p-1">
+                            <textarea class="form-control ml-3" name="news_content" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">價格</div>
+                        <div class="col-2"><input class="form-control" type="text" name="prod_price" maxlength="5" placeholder="請輸入商品價格"></div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">戀愛階段</div>
+                        <div class="col-2">
+                            <select class="form-control" name="love_stage">
+                                <option>戀愛階段</option>
+                                <option value="1">單身</option>
+                                <option value="2">初戀</option>
+                                <option value="3">熱戀</option>
+                                <option value="4">分手</option>
+                            </select></div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">冰棒類型</div>
+                        <div class="col-2">
+                            <select class="form-control" name="ice_type">
+                                <option>冰棒類型</option>
+                                <option value="1">冰棒</option>
+                                <option value="2">冰淇淋</option>
+                                <option value="3">霜淇淋</option>
+                            </select></div>
+                    </div>
+                    <div class="row p-2">
+                        <input class="btn btn-info" type="submit" value="確認送出">
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="../js/back-nav.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("newsFile").onchange = function(e) {
+                //------------------顯示檔案
+                let file = e.target.files[0];
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("img-preview").src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            };
+        }
+    </script>
+
+
+</body>
+
+</html>
