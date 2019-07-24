@@ -245,6 +245,10 @@
   padding-right: 10px;
 }
 
+.page-account .content-profile .profile-item #pro-password {
+  display: none;
+}
+
 .page-account .content-order {
   display: none;
 }
@@ -482,6 +486,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.page-account .content-course .class-item .res-no {
+  display: none;
 }
 
 .page-account .content-course .class-item .class-desc {

@@ -53,12 +53,12 @@
         window.onload = function() {
             var logBtn = document.getElementById("login-btn");
             logBtn.onclick = function() {
-                var xhr = new XMLHttpRequest();
+                let xhr = new XMLHttpRequest();
 
                 xhr.onload = function(){
+                    var empName = document.getElementById("emp-name");
                     if(xhr.readyState == 4){
                         if(xhr.status == 200){
-                            console.log("1"+xhr.responseText+"2");
                                 if ( xhr.responseText.indexOf("error") != -1 ){
                                     alert("查無此員工");
                                 }else{
@@ -72,26 +72,10 @@
 
                 }
 
-                    // if (xhr.status == 200) {
-                    //     console.log(xhr.responseText);
-                    //     console.log(xhr.responseText == "error");
-                    //     if ( xhr.responseText == "error") {
-                    //         alert("查無此員工");
-                    //     } else {
-                    //     }
-
-                    // } else {
-                    //     alert(xhr.status);
-                    // }
-                    // }
-
                 xhr.open("post", "backstageLogin.php", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                 let login_info = `emp_psw=${document.getElementById("password").value}&emp_id=${document.getElementById("empid").value}`;
-                xhr.send(login_info);
-
-                
-     
+                xhr.send(login_info);     
             }
         }
     </script>

@@ -28,7 +28,7 @@
             </li>
         </ul>
         <div class="navbar-text">
-            <a id="log-btn" href="javascript:;">登出</a>
+            <span class="text-dark pr-2" id="emp-name"><?php echo $_SESSION["emp_name"]?></span><a id="log-btn" href="javascript:;">登出</a>
         </div>
     </div>
 </nav>

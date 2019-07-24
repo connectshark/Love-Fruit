@@ -1,8 +1,14 @@
 <?php
+
+session_start();
+if (isset($_SESSION["emp_no"]) != true) {
+    header("location:backstage-login.php");
+}
+
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sqlres = "select * from course_reservation";
+    $sqlres = "select c.res_no, c.mem_no, c.course_name, c.course_date, c.course_slot , c.res_ppl, c.res_date, c.res_state, m.mem_name  from course_reservation c join member m on c.mem_no = m.mem_no order by res_no DESC";
     $res = $pdo->query($sqlres);
 } catch (PDOException $e) {
     echo $errMsg .=  $e->getMessage() . "<br>";
@@ -68,7 +74,7 @@ try {
                                             <form action="courseChange.php" method="POST">
                                                 <input class="d-none" type="text" name="res_no" value="<?php echo $resRows["res_no"] ?>">
                                                 <th scope="row"><?php echo $resRows["res_no"] ?></th>
-                                                <td><?php echo $resRows["mem_no"] ?></td>
+                                                <td><?php echo $resRows["mem_name"] ?></td>
                                                 <td><?php echo $resRows["course_name"] ?></td>
                                                 <td><?php echo $resRows["course_date"] ?></td>
                                                 <td><?php echo $resRows["course_slot"] ?></td>

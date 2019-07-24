@@ -190,6 +190,9 @@
                 display: inline-block;
                 padding-right: 10px;
             }
+            #pro-password{
+                display: none;
+            }
 
             
         }
@@ -357,7 +360,11 @@
                 background-color: #ffdee6;
                 display: flex;
                 flex-flow: row wrap;
-                align-items: center;                
+                align-items: center;  
+                
+                .res-no{
+                    display: none;
+                }
     
                 .class-desc{
                     display: flex;

@@ -1,6 +1,9 @@
-<?php 
+<?php
 session_start();
- ?>
+if (isset($_SESSION["mem_id"]) != true) {
+	$_SESSION["mem_id"] = null;
+}
+?>
 <html lang="UTF-8">
 
 <head>
@@ -19,9 +22,9 @@ session_start();
 </head>
 
 <body class="page-qa">
-    <?php 
-        require_once("nav.php");
-    ?>
+	<?php
+	require_once("nav.php");
+	?>
 
 	<section class="qa">
 		<img class="cloud" src="img/qa/styleCloud.png" alt="雲" />
@@ -189,11 +192,17 @@ session_start();
 				<div class="element-area">
 					<p class="subhead">推薦材料</p>
 					<div class="element-group">
-						<div class="element"><div class="img-fruit"><img src="img/qa/saltedplum.png" alt="酸梅"></div><span class="fruit-desc">酸梅</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/grape.png" alt="葡萄"></div><span class="fruit-desc">葡萄</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/orange.png" alt="橘子"></div><span class="fruit-desc">橘子</span></div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/saltedplum.png" alt="酸梅"></div><span class="fruit-desc">酸梅</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/grape.png" alt="葡萄"></div><span class="fruit-desc">葡萄</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/orange.png" alt="橘子"></div><span class="fruit-desc">橘子</span>
+						</div>
 					</div>
-					<a class="ice-btn-out" href="custom.html">
+					<a class="ice-btn-out" href="custom.php">
 						<span class="btn-costum">
 							<img src="img/btn/ICE.png" alt="冰棒icon">去客製
 						</span>
@@ -238,11 +247,17 @@ session_start();
 				<div>
 					<p class="subhead">推薦材料</p>
 					<div class="element-group">
-						<div class="element"><div class="img-fruit"><img src="img/qa/greenapple.png" alt="青蘋果"></div><span class="fruit-desc">青蘋果</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/banana.png" alt="香蕉"></div><span class="fruit-desc">香蕉</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/blueberry.png" alt="藍莓"></div><span class="fruit-desc">藍莓</span></div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/greenapple.png" alt="青蘋果"></div><span class="fruit-desc">青蘋果</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/banana.png" alt="香蕉"></div><span class="fruit-desc">香蕉</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/blueberry.png" alt="藍莓"></div><span class="fruit-desc">藍莓</span>
+						</div>
 					</div>
-					<a class="ice-btn-out" href="custom.html">
+					<a class="ice-btn-out" href="custom.php">
 						<span class="btn-costum">
 							<img src="img/btn/ICE.png" alt="冰棒icon">去客製
 						</span>
@@ -287,11 +302,17 @@ session_start();
 				<div>
 					<p class="subhead">推薦材料</p>
 					<div class="element-group">
-						<div class="element"><div class="img-fruit"><img src="img/qa/cherry.png" alt="櫻桃"></div><span class="fruit-desc">櫻桃</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/chocolate.png" alt="巧克力"></div><span class="fruit-desc">巧克力</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/streberry.png" alt="草莓"></div><span class="fruit-desc">草莓</span></div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/cherry.png" alt="櫻桃"></div><span class="fruit-desc">櫻桃</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/chocolate.png" alt="巧克力"></div><span class="fruit-desc">巧克力</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/streberry.png" alt="草莓"></div><span class="fruit-desc">草莓</span>
+						</div>
 					</div>
-					<a class="ice-btn-out" href="custom.html">
+					<a class="ice-btn-out" href="custom.php">
 						<span class="btn-costum">
 							<img src="img/btn/ICE.png" alt="冰棒icon">去客製
 						</span>
@@ -336,11 +357,17 @@ session_start();
 				<div>
 					<p class="subhead">推薦材料</p>
 					<div class="element-group">
-						<div class="element"><div class="img-fruit"><img src="img/qa/lemon.png" alt="檸檬"></div><span class="fruit-desc">檸檬</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/bittergourd.png" alt="苦瓜"></div><span class="fruit-desc">苦瓜</span></div>
-						<div class="element"><div class="img-fruit"><img src="img/qa/roselle.png" alt="洛神花"></div><span class="fruit-desc">洛神花</span></div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/lemon.png" alt="檸檬"></div><span class="fruit-desc">檸檬</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/bittergourd.png" alt="苦瓜"></div><span class="fruit-desc">苦瓜</span>
+						</div>
+						<div class="element">
+							<div class="img-fruit"><img src="img/qa/roselle.png" alt="洛神花"></div><span class="fruit-desc">洛神花</span>
+						</div>
 					</div>
-					<a class="ice-btn-out" href="custom.html">
+					<a class="ice-btn-out" href="custom.php">
 						<span class="btn-costum">
 							<img src="img/btn/ICE.png" alt="冰棒icon">去客製
 						</span>

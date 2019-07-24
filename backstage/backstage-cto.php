@@ -1,19 +1,26 @@
 <?php
-$errMsg = "";
-try {
-    require_once("connect-dd101g3.php");
-    $sqlmold = "select * from mold";
-    $mold = $pdo->query($sqlmold);
 
-    $sqlbase = "select * from fruit_base";
-    $base = $pdo->query($sqlbase);
-
-    $sqlii = "select * from ingredients";
-    $ii = $pdo->query($sqlii);
-} catch (PDOException $e) {
-    echo $errMsg .=  $e->getMessage() . "<br>";
-    echo $errMsg .=  $e->getLine() . "<br>";
+session_start();
+if (isset($_SESSION["emp_no"]) != true) {
+    header("location:backstage-login.php");
 }
+
+    $errMsg = "";
+    try {
+        require_once("connect-dd101g3.php");
+        $sqlmold = "select * from mold";
+        $mold = $pdo->query($sqlmold);
+
+        $sqlbase = "select * from fruit_base";
+        $base = $pdo->query($sqlbase);
+
+        $sqlii = "select * from ingredients";
+        $ii = $pdo->query($sqlii);
+    } catch (PDOException $e) {
+        echo $errMsg .=  $e->getMessage() . "<br>";
+        echo $errMsg .=  $e->getLine() . "<br>";
+    }
+
 ?>
 
 <html lang="UTF-8">

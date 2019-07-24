@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if (isset($_SESSION["mem_no"]) != true) {
+    header("location:index.php");
+}
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");
@@ -10,12 +14,12 @@ try {
     $profileRow = $profile->fetch(PDO::FETCH_ASSOC);
 
 
-    $sqlOrder = "select * from prod_order where mem_no = :mem_no";
+    $sqlOrder = "select * from prod_order where mem_no = :mem_no order by order_no DESC";
     $order = $pdo->prepare($sqlOrder);
     $order->bindValue(":mem_no", $_SESSION["mem_no"]);
     $order->execute();
 
-    $sqlCollect = "select * from collection c join product p where (c.prod_no=p.prod_no) & (c.mem_no=:mem_no);";
+    $sqlCollect = "select * from collection c join product p where (c.prod_no=p.prod_no) & (c.mem_no=:mem_no)";
     $collection = $pdo->prepare($sqlCollect);
     $collection->bindValue(":mem_no", $_SESSION["mem_no"]);
     $collection->execute();
@@ -53,7 +57,7 @@ try {
     $custom->bindValue(":mem_no", $_SESSION["mem_no"]);
     $custom->execute();
 
-    $sqlCourse = "select * from course_reservation where mem_no = :mem_no";
+    $sqlCourse = "select * from course_reservation where mem_no = :mem_no order by res_no DESC";
     $course = $pdo->prepare($sqlCourse);
     $course->bindValue(":mem_no", $_SESSION["mem_no"]);
     $course->execute();
@@ -134,8 +138,9 @@ try {
                         <div class="profile-item col-12">
                             <label class="col-3 col-md-1" for="">密碼</label>
                             <div class="col-8">
+                                <input id="pro-password" type="password" maxlength="8" value="<?php echo $profileRow["mem_psw"]; ?>">
                                 <p class="passwaord">
-                                    <input id="password" type="password" maxlength="8" value="<?php echo $profileRow["mem_psw"]; ?>" readonly="readonly" placeholder="請輸入密碼(最多8碼)">
+                                    *****
                                 </p>
                                 <a id="psw-btn" href="javascript:;">變更</a>
                             </div>
@@ -262,7 +267,7 @@ try {
                     while ($collections = $collection->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <div id="prod-<?php echo $collections["prod_no"]; ?>" class="collection-item col-12">
-                            <div class="prod-img col-2 col-md-1"><img src="database/img_prod/<?php echo $collections["prod_pic"]; ?>">
+                            <div class="prod-img col-2 col-md-1"><img src="<?php echo $collections["prod_pic"]; ?>">
                             </div>
                             <div class="collection-desc col-10 col-md-11">
                                 <div class="col-5 col-md-3"><?php echo $collections["prod_name"]; ?></div>
@@ -291,7 +296,7 @@ try {
                                     <p>圖片</p>
                                 </div>
                                 <div class="col-7 col-md-12">
-                                    <p class="cto-img"><img src="database/img_cto/<?php echo $customRows["cto_pic"] ?>" alt="客製圖"></p>
+                                    <p class="cto-img"><img src="<?php echo $customRows["cto_pic"] ?>" alt="客製圖"></p>
                                 </div>
                             </div>
                             <div class="custom-desc col-12 col-md-2">
@@ -350,7 +355,8 @@ try {
                     while ($courseRows = $course->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <div class="class-item col-12">
-                            <div class="class-desc col-12 col-md-3">
+                            <p id="<?php echo $courseRows["res_no"]; ?>"></p>
+                            <div class="class-desc col-12 col-md-5">
                                 <div class="thead col-5 col-md-12">
                                     <p>課程名稱</p>
                                 </div>
@@ -383,19 +389,17 @@ try {
                                 </div>
                             </div>
                             <div class="class-desc col-12 col-md-2">
-                                <div class="qrcode thead col-5 col-md-12">
-                                    <p>報到條碼</p>
-                                </div>
-                                <div class="qrcode col-7 col-md-12">
-                                    <p><a href="javascrip:;">QRcode</a></p>
-                                </div>
-                            </div>
-                            <div class="class-desc col-12 col-md-2">
                                 <div class="cancel thead col-5 col-md-12">
                                     <p>取消預約</p>
                                 </div>
                                 <div class="cancel col-7 col-md-12">
-                                    <p><a href="javascrip:;">我要取消</a></p>
+                                    <p class="cancel-text">
+                                        <?php if ($courseRows["res_state"] == "0") {
+                                            echo "已取消";
+                                        } else {
+                                            echo "<a class='course-cancel' href='javascrip:;'>我要取消</a>";
+                                        } ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -414,6 +418,10 @@ try {
             <a id="psw-box-close" href="javascript:;"><img src="img/pop-close.png" alt="關閉按鈕"></a>
             <div class="psw-content col-12 col-md-10">
                 <p class="psw-box-title">變更密碼</p>
+                <div class="psw-item col-12 col-md-10">
+                    <label class="col-12" for="profile-old-psw">原始密碼：</label>
+                    <input class="col-12" id="profile-old-psw" name="profile-old-psw" type="password" placeholder="請輸入原始密碼" maxlength="8">
+                </div>
                 <div class="psw-item col-12 col-md-10">
                     <label class="col-12" for="profile-new-psw">輸入密碼：</label>
                     <input class="col-12" id="profile-new-psw" name="profile-new-psw" type="password" placeholder="最多8碼" maxlength="8">
@@ -436,7 +444,7 @@ try {
 
     <script src="js/nav.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/shop.js"></script>    
+    <script src="js/shop.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);
@@ -466,6 +474,33 @@ try {
                 }, false);
             }
 
+            var courseCancel = document.getElementsByClassName("course-cancel");
+            for (let i = 0; i < courseCancel.length; i++) {
+                courseCancel[i].onclick = function() {
+                    let cancelObject = this;
+                    let resNo = this.parentNode.parentNode.parentNode.parentNode.firstElementChild.getAttribute("id");
+                    let xhr = new XMLHttpRequest();
+                    xhr.onload = function() {
+                        if (xhr.status == 200) {
+                            if (xhr.responseText == "error") {
+                                alert("系統發生錯誤");
+                            } else {
+                                let parentNode = cancelObject.parentNode;
+                                parentNode.innerHTML = "已取消";
+                            }
+                        } else {
+                            alert(xhr.status);
+                        }
+                    }
+
+                    xhr.open("post", "courseCancel.php", true);
+                    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                    let course_info = `res_no=${resNo}`;
+                    xhr.send(course_info);
+                };
+            }
+
+
             var pswBtn = $id("psw-btn");
             pswBtn.addEventListener("click", function() {
                 var pswChangeBox = $id("psw-change-box");
@@ -481,19 +516,29 @@ try {
 
             newPswSave.addEventListener("click", function() {
                 var pswChangeBox = $id("psw-change-box");
+                var profilePsw = $id("pro-password");
+                var profileOldPsw = $id("profile-old-psw");
                 var profileNewPsw = $id("profile-new-psw");
                 var profileNewPswCheck = $id("profile-new-psw-check");
 
+                if (profileOldPsw.value != profilePsw.value) {
+                    profileOldPsw.value = "";
+                    profileNewPsw.value = "";
+                    profileNewPswCheck.value = "";
+                    $id("psw-error").innerText = "密碼輸入錯誤，請重新輸入！"
+                    return;
+                }
+
                 if (profileNewPsw.value == profileNewPswCheck.value) {
-                    var password = $id("password");
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function() {
                         if (xhr.status == 200) {
                             if (xhr.responseText == "error") {
                                 alert("系統發生錯誤");
                             } else {
-                                password.value = profileNewPsw.value;
+                                profilePsw.value = profileNewPsw.value;
                                 $id("psw-error").innerText = "";
+                                profileOldPsw.value = "";
                                 profileNewPsw.value = "";
                                 profileNewPswCheck.value = "";
                                 pswChangeBox.style.display = "none";
@@ -505,12 +550,12 @@ try {
                     xhr.open("post", "passwordChange.php", true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     let psw_info = `mem_psw=${profileNewPsw.value}`;
-                    console.log(psw_info);
                     xhr.send(psw_info);
                 } else {
+                    profileOldPsw.value = "";
                     profileNewPsw.value = "";
                     profileNewPswCheck.value = "";
-                    $id("psw-error").innerText = "密碼輸入錯誤，請重新輸入！"
+                    $id("psw-error").innerText = "新密碼比對錯誤，請重新輸入！"
                 }
 
             }, false);
@@ -523,12 +568,7 @@ try {
                         if (xhr.responseText == "error") {
                             alert("系統發生錯誤");
                         } else {
-                            let memRow = JSON.parse(xhr.response);
-                            $id("name").value = memRow.mem_name;
-                            $id("password").value = memRow.mem_psw;
-                            $id("email").value = memRow.email;
-                            $id("address").value = memRow.address;
-                            $id("phone").value = memRow.phone;
+                            reload();
                         }
 
                     } else {

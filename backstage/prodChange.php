@@ -15,7 +15,7 @@ try {
     $prod->bindValue(":prod_state", $_REQUEST["prod_state"]);
     $prod->execute();
 
-    // header("location:backstage-prod.php");
+    header("location:backstage-prod.php");
 
 } catch (PDOException $e) {
     echo $errMsg .=  $e->getMessage() . "<br>";

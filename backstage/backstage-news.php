@@ -1,8 +1,14 @@
 <?php
+
+session_start();
+if (isset($_SESSION["emp_no"]) != true) {
+    header("location:backstage-login.php");
+}
+
 $errmsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sqlnews = "select * from news";
+    $sqlnews = "select * from news order by news_no DESC";
     $news = $pdo->query($sqlnews);
 } catch (PDOException $e) {
     echo  $errMsg .=  $e->getMessage() . "<br>";

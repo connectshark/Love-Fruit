@@ -1,8 +1,13 @@
 <?php
+
+session_start();
+if (isset($_SESSION["emp_no"]) != true) {
+    header("location:backstage-login.php");
+}
 $errmsg = "";
 try {
     require_once("connect-dd101g3.php");
-    $sqlorder = "select * from prod_order";
+    $sqlorder = "select * from prod_order order by order_no DESC";
     $order = $pdo->query($sqlorder);
 } catch (PDOException $e) {
     echo  $errMsg .=  $e->getMessage() . "<br>";
@@ -67,13 +72,14 @@ try {
                                         ?>
 
                                         <tr>
-                                        <form action="">
+                                        <form action="orderChange.php">
+                                            <input class="d-none" name="order_no" type="text" value="<?php echo $orderRows["order_no"]; ?>">
                                             <th scope="row"><?php echo $orderRows["order_no"]; ?></th>
                                             <td><?php echo $orderRows["order_name"]; ?></td>
                                             <td><?php echo $orderRows["order_phone"]; ?></td>
                                             <td><?php echo $orderRows["order_add"]; ?></td>
                                             <td><?php echo $orderRows["order_creat_date"]; ?></td>
-                                            <td><select class="form-control">
+                                            <td><select name="order_state" class="form-control">
                                                     <option value="0" <?php if (!(strcmp("0", $orderRows["order_state"]))) {
                                                                             echo "selected=\"selected\"";
                                                                         } ?>>未處理</option>
@@ -82,9 +88,10 @@ try {
                                                                         } ?>>已出貨</option>
                                                 </select>
                                             </td>
-                                            <td><input class="btn btn-info" type="button" value="送出修改">
+                                            <td><input class="btn btn-info" type="submit" value="送出修改">
                                             </td>
-                                            <td><input class="btn btn-info" type="button" value="訂單詳情">
+                                            <td>
+                                                <a class="btn btn-info" href="backstage-orderDesc.php?order_no=<?php echo $orderRows["order_no"]; ?>">訂單詳情</a>
                                             </td>
                                             </form>
                                         </tr>

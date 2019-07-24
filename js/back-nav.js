@@ -11,6 +11,26 @@ window.onload = function () {
             backNavs[i].classList.add("active");
         }
     }
-    
-    
+
+    var logoutBtn = document.getElementById("log-btn");
+    logoutBtn.addEventListener("click", function () {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                if (xhr.responseText.indexOf("error") != -1) {
+                    alert("系統錯誤");
+                } else {
+                    window.location.href = "backstage-login.php";
+                }
+            } else {
+                alert(xhr.status);
+            }
+        }
+
+        xhr.open("post", "backstageLogout.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        let logout_info = "";
+        xhr.send(logout_info);
+    }, false);
+
 };
