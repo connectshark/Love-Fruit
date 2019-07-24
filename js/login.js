@@ -182,6 +182,7 @@ function sendForm() {
         $id("nav-login-icon-p").style.display = "none";
         $id("icon-login-box-mp-img").style.display = "inline-block";
       }
+      s;
     } else {
       alert(xhr.status);
     }
@@ -326,10 +327,7 @@ function registeredMember() {
     $id("register-account-mem-name").value
   }&mem_id=${$id("register-account-mem-id").value}&mem_psw=${
     $id("register-account-mem-psw").value
-  }&email=${$id("register-account-email-address").value}&mem_pic=${
-    $id("register-memberIcon").value
-  }`;
-
+  }&email=${$id("register-account-email-address").value}`;
   xhr.send(registeredMember);
   //..........................................................
 }

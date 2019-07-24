@@ -247,8 +247,8 @@ try {
                                                 <p class="list-count col-4 col-md-5">小計：<?php echo $pordItemRows["item_qty"] * $pordItemRows["prod_price"] ?></p>
                                             </div>
                                         <?php
-                                        }
-                                        ?>
+                                    }
+                                    ?>
                                     </div>
 
                                 </div>
@@ -256,8 +256,8 @@ try {
                         </div>
 
                     <?php
-                    }
-                    ?>
+                }
+                ?>
 
                 </div>
 
@@ -278,8 +278,8 @@ try {
                         </div>
 
                     <?php
-                    }
-                    ?>
+                }
+                ?>
 
                 </div>
 
@@ -325,8 +325,8 @@ try {
                                     </div>
                                 </div>
                             <?php
-                            }
-                            ?>
+                        }
+                        ?>
                             <div class="custom-desc col-12 col-md-2">
                                 <div class="thead col-5 col-md-12">
                                     <p>配料</p>
@@ -345,8 +345,8 @@ try {
                             </div>
                         </div>
                     <?php
-                    }
-                    ?>
+                }
+                ?>
                 </div>
 
                 <div id="course" class="content content-course">
@@ -405,8 +405,8 @@ try {
                         </div>
 
                     <?php
-                    }
-                    ?>
+                }
+                ?>
 
                 </div>
             </div>

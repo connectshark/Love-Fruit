@@ -19,7 +19,9 @@
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
 /*Css寫 -> font-family: "什麼字型";*/
-
+#header {
+  font-family: "A-OTF-M";
+}
 /*header*/
 /*清除*/
 @media screen and (max-width: 767px) {
@@ -31,17 +33,11 @@
     體驗課程#course-item-show
     最新消息#new-item-show
     關於園區#about-item-show */
-
   /* css開始 */
-  /* #new-item-show span::before {
-    transform: scale(1);
-  }
-  #new-item-show img {
-    opacity: 1;
-  } */
   /* css結束 */
   #header {
     position: fixed;
+    font-family: "A-OTF-M";
     width: 100%;
     background-size: 100%;
     background-position: top;
@@ -103,6 +99,7 @@
     display: none;
   }
   #icon-login-box-mp-user-img {
+    cursor: pointer;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -111,13 +108,15 @@
   }
   .member-centre-panel-p {
     position: absolute;
-    transform: translateY(0%);
+    /* display: none; */
+    transform: translateY(0px);
     opacity: 0;
-    bottom: 150px;
+    bottom: 200px;
     margin-top: 20px;
     width: 100px;
     border-radius: 10px;
     height: 115px;
+    transition: 1s;
     background-color: #ffdee6;
   }
   .member-centre-panel-p span {
@@ -432,6 +431,7 @@
     display: inline-block;
     padding: 10px 0px 10px 0px;
     text-decoration: none;
+    font-size: 14px;
     color: #ea7187;
     font-family: "GenJyuuGothic-R";
   }
@@ -452,7 +452,11 @@
     width: 100%;
     transform: scale(0);
   }
+  .nav-list-mp {
+    width: 40%;
+  }
   .nav-list-login {
+    width: 36%;
     transform: translateX(-2.3vw);
   }
   .nav-list li:hover span::before {
@@ -489,7 +493,7 @@
   #member-centre-down-menu {
     position: absolute;
     z-index: -2;
-    transform: translateY(0%);
+    transform: translateY(0px);
     bottom: 220%;
     min-width: 100px;
     margin: auto;
@@ -536,6 +540,7 @@
     position: relative;
   }
   #membe-centre-img-circle {
+    cursor: pointer;
     display: none;
   }
   .membe-centre-img {
@@ -892,11 +897,11 @@
     font-family: "A-OTF-M";
     border: none;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.146);
-    width: 50%;
+    width: 58%;
     height: 35px;
     border-radius: 10px;
     font-size: 12px;
-    color: #6a6a6a;
+    color: #989898;
   }
   .login-interface-group {
     width: 50%;
@@ -905,7 +910,7 @@
   }
   #register {
     float: left;
-    display: inline-block;
+    display: block;
     cursor: pointer;
     font-family: "GenJyuuGothic-R";
     color: #9a3d1e;
@@ -913,7 +918,7 @@
   }
   #psw-back {
     float: right;
-    display: inline-block;
+    display: block;
     cursor: pointer;
     font-family: "GenJyuuGothic-R";
     color: #9a3d1e;
@@ -921,7 +926,7 @@
   }
   #member-login-erroMsg {
     display: block;
-    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 100%;
     height: 20px;
     font-size: 16px;
@@ -1231,7 +1236,7 @@
   /* 帳號密碼 */
   #member-login-erroMsg {
     display: block;
-    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 100%;
     height: 20px;
     font-size: 12px;
@@ -1259,11 +1264,11 @@
     font-family: "A-OTF-M";
     border: none;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.146);
-    width: 50%;
+    width: 58%;
     height: 35px;
     border-radius: 10px;
     font-size: 12px;
-    color: #6a6a6a;
+    color: #989898;
   }
   .login-interface-group {
     width: 50%;
@@ -1342,7 +1347,7 @@
   .member-login-button-text {
     margin-left: 18%;
     font-size: 16px;
-    line-height: 1.9vw;
+    line-height: 28px;
     letter-spacing: 1vw;
     margin-top: 1.2%;
     color: #ffffff;
@@ -1465,7 +1470,7 @@
   .retrieve-password-button-text {
     margin-left: 10%;
     font-size: 16px;
-    line-height: 1.9vw;
+    line-height: 29px;
     letter-spacing: 0.2vw;
     margin-top: 1.2%;
     color: #ffffff;

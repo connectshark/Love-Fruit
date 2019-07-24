@@ -39,7 +39,6 @@ function getStyle(oDiv, name) {
 }
 // 飛船
 function blueShipButton() {
-  // if ($id("course-pink-ship").style.transform == "translateX(0)") {
   $id("course-blue-ship").classList.remove("course-blue-ship-show");
   $id("course-blue-ship").classList.add("course-blue-ship-show-out");
   $id("course-pink-ship").classList.remove("course-blue-ship-show-out");
@@ -47,40 +46,16 @@ function blueShipButton() {
   // 按鈕
   $id("blue-ship-button").style.display = "none";
   $id("pink-ship-button").style.display = "inline-block";
-  // $id("blue-ship-button").disabled = "true";
-  // $id("blue-ship-button").style.pointerEvents = "none";
-
-  // if (
-  //   getStyle($id("blue-ship-button"), "transfrom") ==
-  //   "translateX(0%) translateY(-10%)"
-  // ) {
-  //   $id("blue-ship-button").style.pointerEvents = "auto";
-  // }
 }
+
 function pinkShipButton() {
-  // console.log($id("course-pink-ship").style.transform);
-  // if ($id("course-pink-ship").style.transform == "translateX(0)") {
   $id("course-pink-ship").classList.remove("course-blue-ship-show");
   $id("course-pink-ship").classList.add("course-blue-ship-show-out");
   $id("course-blue-ship").classList.remove("course-blue-ship-show-out");
   $id("course-blue-ship").classList.add("course-blue-ship-show");
   // 按鈕
-  $id("pink-ship-button").style.display = "none";
   $id("blue-ship-button").style.display = "inline-block";
-  // $id("pink-ship-button").disabled = "true";
-  // $id("pink-ship-button").style.pointerEvents = "none";
-  // if (
-  //   getStyle($id("pink-ship-button"), "transfrom") ==
-  //   "translateX(0%) translateY(-10%)"
-  // ) {
-  //   $id("pink-ship-button").style.pointerEvents = "auto";
-  // }
-
-  // if (
-  //   !$id("course-pink-ship").classList.contains("course-blue-ship-show-out")
-  // ) {
-  //   $id("pink-ship-button").style.pointerEvents = "auto";
-  // }
+  $id("pink-ship-button").style.display = "none";
 }
 //
 function init() {
@@ -139,7 +114,6 @@ window.addEventListener("scroll", function() {
 // 飛船
 window.onload = function() {
   ibox();
-  // 問答字
   abox();
 };
 function ibox() {
