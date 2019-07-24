@@ -61,7 +61,7 @@ body {
 
 @media all and (min-width: 769px) {
   .news-wrap .banner .title, .news-inner-wrap .banner .title {
-    padding: 10% 0;
+    padding: 10% 0 0;
   }
 }
 
@@ -102,6 +102,7 @@ body {
 }
 
 .news-wrap .air-ball, .news-inner-wrap .air-ball {
+  z-index: 1;
   display: none;
   max-width: 1200px;
   height: 270px;
@@ -109,12 +110,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 3% 5%;
+  padding: 0 5%;
 }
 
 @media all and (min-width: 769px) {
   .news-wrap .air-ball, .news-inner-wrap .air-ball {
-    padding-bottom: 5%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -135,8 +135,8 @@ body {
 
 @media all and (min-width: 769px) {
   .news-wrap .air-ball img:first-child, .news-inner-wrap .air-ball img:first-child {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 
@@ -147,8 +147,8 @@ body {
 
 @media all and (min-width: 769px) {
   .news-wrap .air-ball img:last-child, .news-inner-wrap .air-ball img:last-child {
-    -webkit-transform: scale(1) rotate(25deg);
-            transform: scale(1) rotate(25deg);
+    -webkit-transform: scale(0.8) rotate(25deg);
+            transform: scale(0.8) rotate(25deg);
   }
 }
 
@@ -160,14 +160,14 @@ body {
 }
 
 .news-wrap .air-ball .apple-ball:first-child, .news-inner-wrap .air-ball .apple-ball:first-child {
-  -webkit-transform: scale(0.8) rotate(-25deg);
-          transform: scale(0.8) rotate(-25deg);
+  -webkit-transform: scale(0.7) rotate(-25deg);
+          transform: scale(0.7) rotate(-25deg);
 }
 
 @media all and (min-width: 769px) {
   .news-wrap .air-ball .apple-ball:first-child, .news-inner-wrap .air-ball .apple-ball:first-child {
-    -webkit-transform: scale(1.5) rotate(-25deg);
-            transform: scale(1.5) rotate(-25deg);
+    -webkit-transform: scale(1.2) rotate(-25deg);
+            transform: scale(1.2) rotate(-25deg);
   }
 }
 
@@ -178,8 +178,8 @@ body {
 
 @media all and (min-width: 769px) {
   .news-wrap .air-ball .apple-ball:last-child, .news-inner-wrap .air-ball .apple-ball:last-child {
-    -webkit-transform: scale(1) rotate(13deg);
-            transform: scale(1) rotate(13deg);
+    -webkit-transform: scale(0.8) rotate(13deg);
+            transform: scale(0.8) rotate(13deg);
   }
 }
 
@@ -238,15 +238,23 @@ body {
   text-align: center;
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) {
   .news-wrap .select .select-group .select-filter-group {
-    width: 80%;
+    width: 70%;
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
   }
 }
 
 .news-wrap .select .select-group .select-filter-group h3 {
-  font: 24px "A-OTF-M";
+  font: 18px "A-OTF-M";
   text-align: center;
+}
+
+@media all and (min-width: 769px) {
+  .news-wrap .select .select-group .select-filter-group h3 {
+    font: 20px "A-OTF-M";
+  }
 }
 
 .news-wrap .select .select-group .select-filter-group .filter-item {
@@ -264,7 +272,7 @@ body {
   cursor: pointer;
   background-color: #a3a3a3;
   border: none;
-  padding: 5px 25px;
+  padding: 5px 15px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 3px 0px #555;
           box-shadow: 0px 3px 0px #555;
@@ -282,7 +290,7 @@ body {
   transition: .3s;
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) {
   .news-wrap .select .select-group .select-filter-group .filter-item button {
     font: 18px "A-OTF-M";
   }
@@ -326,7 +334,6 @@ body {
   max-width: 1200px;
   margin: auto;
   border-radius: 10px;
-  padding: 10% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,7 +522,9 @@ body {
 
 @media all and (min-width: 769px) {
   .news-inner-wrap .inner-wrapper .title-box {
-    width: 70%;
+    width: 50%;
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
   }
 }
 
@@ -596,9 +605,10 @@ body {
 }
 
 .news-inner-wrap .inner-wrapper .article-text {
-  width: 60%;
+  width: 50%;
   margin: auto;
   line-height: 40px;
+  padding-bottom: 10%;
 }
 
 @media all and (max-width: 768px) {

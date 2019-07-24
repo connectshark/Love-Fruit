@@ -82,12 +82,12 @@ try {
                                         </ul>
                                     </div>
                                     <div class="course-btn">
-                                        <a class="course-ice-btn-out" href="course-general-form.php">
-                                            <span class="course-ice-btn-in">
+                                        <div class="course-ice-btn-out" >
+                                            <span class="course-ice-btn-in general-click-check">
                                                 <img src="img/btn/ICE.png" alt="btn">
                                                 我要預約
                                             </span>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -122,12 +122,12 @@ try {
                                     </ul>
                                 </div>
                                 <div class="course-btn">
-                                    <a class="course-ice-btn-out" href="course-general-form.php">
-                                        <span class="course-ice-btn-in click-check">
+                                    <div class="course-ice-btn-out " >
+                                        <span class="course-ice-btn-in general-click-check">
                                             <img src="img/btn/ICE.png" alt="btn">
                                             我要預約
                                         </span>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -219,5 +219,6 @@ try {
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/shop.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/course-check.js"></script>
   </body>
 </html>

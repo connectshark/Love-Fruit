@@ -5,6 +5,7 @@
 }
 
 * {
+  outline: #f00 solid 1px;
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -129,10 +130,6 @@ body {
   }
 }
 
-.welcome-wrap {
-  background-color: #c9fcfb;
-}
-
 @media all and (max-width: 768px) {
   .welcome-wrap .spaceship {
     display: none;
@@ -144,53 +141,69 @@ body {
     position: absolute;
     -webkit-transform: scale(0.4);
             transform: scale(0.4);
-    -webkit-animation: airBall 10s linear;
-            animation: airBall 10s linear;
+    -webkit-animation-name: spaceship;
+            animation-name: spaceship;
+    -webkit-animation-duration: 6s;
+            animation-duration: 6s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
-  @-webkit-keyframes airBall {
+  @-webkit-keyframes spaceship {
     0% {
-      left: -50%;
+      left: -20%;
       top: 15%;
+    }
+    10% {
+      top: 5%;
     }
     20% {
-      top: 5%;
+      top: 15%;
     }
     40% {
-      top: 15%;
+      top: 5%;
     }
     50% {
-      top: 5%;
-    }
-    70% {
       top: 15%;
     }
-    100% {
+    90% {
       left: 100%;
       top: 5%;
+    }
+    100% {
+      display: none;
     }
   }
-  @keyframes airBall {
+  @keyframes spaceship {
     0% {
-      left: -50%;
+      left: -20%;
       top: 15%;
+    }
+    10% {
+      top: 5%;
     }
     20% {
-      top: 5%;
+      top: 15%;
     }
     40% {
-      top: 15%;
+      top: 5%;
     }
     50% {
-      top: 5%;
-    }
-    70% {
       top: 15%;
     }
-    100% {
+    90% {
       left: 100%;
       top: 5%;
+    }
+    100% {
+      display: none;
     }
   }
 }
@@ -200,16 +213,16 @@ body {
     background: #c9fcfb url(../img/indexImg/diyIcebgc-top.png) no-repeat bottom center;
     width: 100%;
     height: 100%;
+    background-color: #c9fcfb;
+  }
+  .welcome-wrap .wrapper {
+    padding: 10% 0;
+    max-width: 1200px;
+    margin: auto;
   }
 }
 
-.welcome-wrap .wrapper {
-  padding: 10% 0;
-  max-width: 1200px;
-  margin: auto;
-}
-
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) and (min-width: 992px) {
   .welcome-wrap .wrapper {
     padding-top: 250px;
     display: -webkit-box;
@@ -224,34 +237,36 @@ body {
   }
 }
 
-.welcome-wrap .kanban {
-  width: 100%;
-  margin: auto;
+@media all and (min-width: 769px) {
+  .welcome-wrap .kanban {
+    width: 100%;
+    margin: auto;
+  }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 769px) and (max-width: 768px) {
   .welcome-wrap .kanban {
     padding: 50px 0;
   }
 }
 
-@media all and (min-width: 769px) {
+@media all and (min-width: 769px) and (min-width: 769px) {
   .welcome-wrap .kanban {
     opacity: 0;
     position: relative;
   }
 }
 
-@media all and (min-width: 769px) {
+@media all and (min-width: 769px) and (min-width: 769px) {
   .welcome-wrap .kanban-y {
-    -webkit-animation: throw-gift-y 0.8s  ease-in 4s 1;
-            animation: throw-gift-y 0.8s  ease-in 4s 1;
+    -webkit-animation: throw-gift-y 0.5s  ease-in 1s 1;
+            animation: throw-gift-y 0.5s  ease-in 1s 1;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
   .welcome-wrap .kanban-p {
-    -webkit-animation: throw-gift-p 0.8s  ease-in 7s 1;
-            animation: throw-gift-p 0.8s  ease-in 7s 1;
+    -webkit-animation: throw-gift-p 0.5s  ease-in 2s 1;
+            animation: throw-gift-p 0.5s  ease-in 2s 1;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
@@ -305,43 +320,46 @@ body {
   }
 }
 
-.welcome-wrap .gift {
-  text-align: center;
-  position: relative;
-  width: 100%;
-  margin: auto;
+@media all and (min-width: 769px) {
+  .welcome-wrap .gift {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin: auto;
+  }
+  .welcome-wrap .gift span {
+    display: inline-block;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 40%);
+            transform: translate(-50%, 40%);
+    font-size: 20px;
+  }
 }
 
-.welcome-wrap .gift span {
-  display: inline-block;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 40%);
-          transform: translate(-50%, 40%);
-  font-size: 20px;
-}
-
-@media all and (min-width: 992px) {
+@media all and (min-width: 769px) and (min-width: 992px) {
   .welcome-wrap .gift span {
     font-size: 24px;
   }
 }
 
-.welcome-wrap .title-box {
-  background-color: #fff;
-  height: 300px;
-  width: 350px;
-  border-radius: 20px;
-  margin: auto;
-  vertical-align: middle;
-  text-align: center;
-  padding: 5%;
-  line-height: 240px;
+@media all and (min-width: 769px) {
+  .welcome-wrap .title-box {
+    background-color: #fff;
+    height: 300px;
+    width: 350px;
+    border-radius: 20px;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5%;
+    line-height: 240px;
+  }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 769px) and (max-width: 768px) {
   .welcome-wrap .title-box {
     height: 250px;
     width: 300px;
@@ -349,77 +367,73 @@ body {
   }
 }
 
-.welcome-wrap .title-box .group-title {
-  background-color: #f6c555;
+@media all and (min-width: 769px) {
+  .welcome-wrap .title-box .group-title {
+    background-color: #f6c555;
+  }
+  .welcome-wrap .title-box .general-title {
+    background-color: #ffd9d9;
+  }
+  .welcome-wrap .title-box h2 {
+    font-family: "GenJyuuGothic-B";
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .welcome-wrap .title-box .group-title {
+    color: #fff;
+    font-size: 40px;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+  }
+  .welcome-wrap .title-box .group-title:after {
+    z-index: -1;
+    content: "揪團課程";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
+  .welcome-wrap .title-box .general-title {
+    color: #fff;
+    font-size: 40px;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+  }
+  .welcome-wrap .title-box .general-title:after {
+    z-index: -1;
+    content: "一般課程";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-text-stroke: 5px #6a3e26;
+  }
 }
 
-.welcome-wrap .title-box .general-title {
+.welcome-wrap .general-wrap {
   background-color: #ffd9d9;
 }
 
-.welcome-wrap .title-box h2 {
-  font-family: "GenJyuuGothic-B";
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
-}
-
-.welcome-wrap .title-box .group-title {
-  color: #fff;
-  font-size: 40px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
-}
-
-.welcome-wrap .title-box .group-title:after {
-  z-index: -1;
-  content: "揪團課程";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 5px #6a3e26;
-}
-
-.welcome-wrap .title-box .general-title {
-  color: #fff;
-  font-size: 40px;
-  position: relative;
-  z-index: 0;
-  text-align: center;
-}
-
-.welcome-wrap .title-box .general-title:after {
-  z-index: -1;
-  content: "一般課程";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-text-stroke: 5px #6a3e26;
-}
-
-.general-wrap {
-  background-color: #ffd9d9;
-}
-
-.general-wrap .wrapper {
+.welcome-wrap .general-wrap .wrapper {
   padding-top: 30%;
   max-width: 1200px;
   margin: auto;
 }
 
 @media all and (min-width: 769px) {
-  .general-wrap .wrapper {
+  .welcome-wrap .general-wrap .wrapper {
     padding-top: 200px;
   }
 }
 
-.general-wrap .general-ribbon {
+.welcome-wrap .general-wrap .general-ribbon {
   margin: auto;
   background: url(../img/ribbon.png) center center no-repeat;
   background-size: contain;
@@ -430,28 +444,28 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-wrap .general-ribbon {
+  .welcome-wrap .general-wrap .general-ribbon {
     width: 500px;
     height: 150px;
     padding: 30px 0;
   }
 }
 
-.general-wrap .general-ribbon .subtitle {
+.welcome-wrap .general-wrap .general-ribbon .subtitle {
   font-size: 13px;
   color: #434343;
   line-height: 26px;
 }
 
 @media all and (min-width: 769px) {
-  .general-wrap .general-ribbon .subtitle {
+  .welcome-wrap .general-wrap .general-ribbon .subtitle {
     font-size: 18px;
     color: #434343;
     line-height: 32px;
   }
 }
 
-.general-wrap .general-ribbon .title {
+.welcome-wrap .general-wrap .general-ribbon .title {
   color: #fff;
   font-size: 24px;
   position: relative;
@@ -459,7 +473,7 @@ body {
   text-align: center;
 }
 
-.general-wrap .general-ribbon .title:after {
+.welcome-wrap .general-wrap .general-ribbon .title:after {
   z-index: -1;
   content: "一般課程";
   position: absolute;
@@ -471,14 +485,14 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-wrap .general-ribbon .title {
+  .welcome-wrap .general-wrap .general-ribbon .title {
     color: #fff;
     font-size: 40px;
     position: relative;
     z-index: 0;
     text-align: center;
   }
-  .general-wrap .general-ribbon .title:after {
+  .welcome-wrap .general-wrap .general-ribbon .title:after {
     z-index: -1;
     content: "一般課程";
     position: absolute;
@@ -491,35 +505,35 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-wrap .kanban-group {
+  .welcome-wrap .general-wrap .kanban-group {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 
-.general-wrap .kanban-group .kanban {
+.welcome-wrap .general-wrap .kanban-group .kanban {
   width: 80%;
   margin: auto;
 }
 
 @media all and (min-width: 769px) {
-  .general-wrap .kanban-group .kanban {
+  .welcome-wrap .general-wrap .kanban-group .kanban {
     padding: 30px;
   }
 }
 
-.general-wrap .kanban-group .gift {
+.welcome-wrap .general-wrap .kanban-group .gift {
   top: 2px;
   text-align: center;
   position: relative;
 }
 
-.general-wrap .kanban-group .gift img {
+.welcome-wrap .general-wrap .kanban-group .gift img {
   width: 100%;
 }
 
-.general-wrap .kanban-group .gift span {
+.welcome-wrap .general-wrap .kanban-group .gift span {
   width: 100%;
   display: inline-block;
   color: #fff;
@@ -531,73 +545,73 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .general-wrap .kanban-group .gift span {
+  .welcome-wrap .general-wrap .kanban-group .gift span {
     font-size: 24px;
     -webkit-transform: translate(-50%, 70%);
             transform: translate(-50%, 70%);
   }
 }
 
-.general-wrap .kanban-group .content-box {
+.welcome-wrap .general-wrap .kanban-group .content-box {
   padding-top: 30px;
   border: #db4d6d solid 5px;
   border-radius: 10px;
   background-color: #fff;
 }
 
-.general-wrap .kanban-group .content-box .diy-img {
+.welcome-wrap .general-wrap .kanban-group .content-box .diy-img {
   width: 60%;
   margin: auto;
 }
 
-.general-wrap .kanban-group .content-box .diy-img img {
+.welcome-wrap .general-wrap .kanban-group .content-box .diy-img img {
   width: 100%;
 }
 
-.general-wrap .kanban-group .content-box .info-title {
+.welcome-wrap .general-wrap .kanban-group .content-box .info-title {
   width: 80%;
   margin: auto;
   text-align: center;
   border-bottom: #db4d6d solid 2px;
 }
 
-.general-wrap .kanban-group .content-box .info-title h4 {
+.welcome-wrap .general-wrap .kanban-group .content-box .info-title h4 {
   font: 20px "A-OTF-M";
 }
 
-.general-wrap .kanban-group .content-box .info-dec {
+.welcome-wrap .general-wrap .kanban-group .content-box .info-dec {
   width: 75%;
   margin: auto;
 }
 
-.general-wrap .kanban-group .content-box .info-dec li {
+.welcome-wrap .general-wrap .kanban-group .content-box .info-dec li {
   font-size: 18px;
   font-family: "GenJyuuGothic-B";
   padding: 10px 0 5px;
 }
 
-.general-wrap .kanban-group .content-box .info-dec p {
+.welcome-wrap .general-wrap .kanban-group .content-box .info-dec p {
   font-size: 13px;
   letter-spacing: 1px;
   line-height: 15px;
 }
 
 @media all and (min-width: 992px) {
-  .general-wrap .kanban-group .content-box .info-dec p {
+  .welcome-wrap .general-wrap .kanban-group .content-box .info-dec p {
     font-size: 16px;
     line-height: 20px;
   }
 }
 
-.general-wrap .kanban-group .content-box .course-btn {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-btn {
   padding: 20px;
 }
 
-.general-wrap .kanban-group .content-box .course-btn .course-ice-btn-out {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-btn .course-ice-btn-out {
   margin: auto;
 }
 
-.general-wrap .kanban-group .content-box .course-ice-btn-out {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-ice-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -619,14 +633,14 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.general-wrap .kanban-group .content-box .course-ice-btn-out:active {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-ice-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -645,13 +659,13 @@ body {
   cursor: pointer;
 }
 
-.general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in:hover {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in:hover {
   background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in > img {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in > img {
   display: block;
   position: absolute;
   top: -7px;
@@ -660,7 +674,7 @@ body {
   height: 44.955px;
 }
 
-.general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in:after {
+.welcome-wrap .general-wrap .kanban-group .content-box .course-ice-btn-out .course-ice-btn-in:after {
   z-index: -1;
   content: "我要預約";
   position: absolute;
@@ -669,31 +683,31 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.message-cloud {
+.welcome-wrap .message-cloud {
   height: 200px;
   background: #ffd9d9 url(../img/course/cloud-message.png) bottom center no-repeat;
   background-size: 100%;
 }
 
 @media all and (min-width: 769px) {
-  .message-cloud {
+  .welcome-wrap .message-cloud {
     height: 400px;
   }
 }
 
-.general-message-wrap {
+.welcome-wrap .general-message-wrap {
   background-color: #fff8e4;
   padding-bottom: 50px;
 }
 
-.general-message-wrap .title-box {
+.welcome-wrap .general-message-wrap .title-box {
   -webkit-transform: translateY(-1%);
           transform: translateY(-1%);
   background-color: #fff8e4;
   text-align: center;
 }
 
-.general-message-wrap .title-box .message-title {
+.welcome-wrap .general-message-wrap .title-box .message-title {
   color: #fff;
   font-size: 40px;
   position: relative;
@@ -701,7 +715,7 @@ body {
   text-align: center;
 }
 
-.general-message-wrap .title-box .message-title:after {
+.welcome-wrap .general-message-wrap .title-box .message-title:after {
   z-index: -1;
   content: "課程留言板";
   position: absolute;
@@ -712,17 +726,17 @@ body {
   -webkit-text-stroke: 8px #db4d6d;
 }
 
-.general-message-wrap .title-box .message-title {
+.welcome-wrap .general-message-wrap .title-box .message-title {
   font-family: A-OTF-M;
 }
 
 @media all and (max-width: 768px) {
-  .general-message-wrap .title-box .message-title {
+  .welcome-wrap .general-message-wrap .title-box .message-title {
     font-size: 24px;
   }
 }
 
-.general-message-wrap .title-box span {
+.welcome-wrap .general-message-wrap .title-box span {
   text-align: center;
   font-size: 18px;
   color: #434343;
@@ -731,12 +745,12 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .general-message-wrap .title-box span {
+  .welcome-wrap .general-message-wrap .title-box span {
     font-size: 13px;
   }
 }
 
-.general-message-wrap .leave-message-wrap {
+.welcome-wrap .general-message-wrap .leave-message-wrap {
   width: 90%;
   margin: 30px auto;
   padding: 20px 30px;
@@ -758,33 +772,33 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-message-wrap .leave-message-wrap {
+  .welcome-wrap .general-message-wrap .leave-message-wrap {
     width: 70%;
   }
 }
 
-.general-message-wrap .leave-message-wrap .message-mem {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-mem {
   text-align: center;
   line-height: 1.5;
 }
 
-.general-message-wrap .leave-message-wrap .message-mem i {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-mem i {
   color: #fff;
   font-size: 50px;
 }
 
-.general-message-wrap .leave-message-wrap .message-mem p {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-mem p {
   font-size: 13px;
   color: #fff;
 }
 
 @media all and (min-width: 769px) {
-  .general-message-wrap .leave-message-wrap .message-mem p {
+  .welcome-wrap .general-message-wrap .leave-message-wrap .message-mem p {
     font-size: 16px;
   }
 }
 
-.general-message-wrap .leave-message-wrap .balloons #general-msg {
+.welcome-wrap .general-message-wrap .leave-message-wrap .balloons #general-msg {
   width: 100%;
   font-size: 16px;
   border-radius: 20px;
@@ -795,16 +809,16 @@ body {
   resize: none;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn {
   padding-top: 20px;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn .message-btn-out {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn .message-btn-out {
   width: 100%;
   margin: auto;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn .message-btn-out {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn .message-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -820,7 +834,7 @@ body {
   cursor: pointer;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -838,19 +852,19 @@ body {
   cursor: pointer;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:hover {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:active {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:after {
+.welcome-wrap .general-message-wrap .leave-message-wrap .message-btn .message-btn-out .message-btn-in:after {
   z-index: -1;
   content: "我要留言";
   position: absolute;
@@ -859,7 +873,7 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.general-message-wrap .mem-message-wrap {
+.welcome-wrap .general-message-wrap .mem-message-wrap {
   width: 90%;
   padding: 10px 20px;
   margin: 30px auto 0;
@@ -869,14 +883,14 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-message-wrap .mem-message-wrap {
+  .welcome-wrap .general-message-wrap .mem-message-wrap {
     width: 70%;
     padding: 20px 30px;
     font-size: 18px;
   }
 }
 
-.general-message-wrap .mem-message-wrap .mem-message-item {
+.welcome-wrap .general-message-wrap .mem-message-wrap .mem-message-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -890,22 +904,22 @@ body {
   padding: 10px 0;
 }
 
-.general-message-wrap .mem-message-wrap .message-mem {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-mem {
   text-align: center;
   width: 55px;
 }
 
-.general-message-wrap .mem-message-wrap .message-mem .user-head {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-mem .user-head {
   width: 50px;
   height: 50px;
 }
 
-.general-message-wrap .mem-message-wrap .message-mem i {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-mem i {
   color: #aaa;
   font-size: 55px;
 }
 
-.general-message-wrap .mem-message-wrap .message-con {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-con {
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
@@ -914,18 +928,18 @@ body {
   position: relative;
 }
 
-.general-message-wrap .mem-message-wrap .message-con p {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-con p {
   font-size: 13px;
   color: #434343;
 }
 
 @media all and (min-width: 769px) {
-  .general-message-wrap .mem-message-wrap .message-con p {
+  .welcome-wrap .general-message-wrap .mem-message-wrap .message-con p {
     font-size: 16px;
   }
 }
 
-.general-message-wrap .mem-message-wrap .message-con::before {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-con::before {
   content: "";
   border-style: solid solid solid solid;
   border-color: transparent   #fff transparent transparent;
@@ -938,14 +952,14 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .general-message-wrap .mem-message-wrap .message-con::before {
+  .welcome-wrap .general-message-wrap .mem-message-wrap .message-con::before {
     border-width: 10px  15px 10px 10px;
     left: -25px;
     top: 20px;
   }
 }
 
-.general-message-wrap .mem-message-wrap .message-con .mem-ifo {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-con .mem-ifo {
   width: 95%;
   margin: auto;
   display: -webkit-box;
@@ -958,22 +972,22 @@ body {
   border-bottom: #db4d6d solid 1px;
 }
 
-.general-message-wrap .mem-message-wrap .message-con .mem-con {
+.welcome-wrap .general-message-wrap .mem-message-wrap .message-con .mem-con {
   width: 95%;
   margin: auto;
   line-height: 36px;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn {
   padding-top: 20px;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn .more-btn-out {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn .more-btn-out {
   width: 100%;
   margin: auto;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn .more-btn-out {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn .more-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -989,7 +1003,7 @@ body {
   cursor: pointer;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -1007,19 +1021,19 @@ body {
   cursor: pointer;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:hover {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:active {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:after {
+.welcome-wrap .general-message-wrap .mem-message-wrap .more-btn .more-btn-out .more-btn-in:after {
   z-index: -1;
   content: "查看更多";
   position: absolute;
@@ -1028,12 +1042,12 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.general-form-wrap {
+.welcome-wrap .general-form-wrap {
   background-color: #ffd9d9;
   background-image: url(../img/background.png);
 }
 
-.general-form-wrap .wrapper {
+.welcome-wrap .general-form-wrap .wrapper {
   width: 95%;
   max-width: 1200px;
   padding: 30% 0 10%;
@@ -1041,19 +1055,19 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .general-form-wrap .wrapper {
+  .welcome-wrap .general-form-wrap .wrapper {
     padding-top: 150px;
   }
 }
 
-.general-form-wrap .wrapper .title {
+.welcome-wrap .general-form-wrap .wrapper .title {
   padding: 5% 0;
   position: relative;
   text-align: center;
   margin: auto;
 }
 
-.general-form-wrap .wrapper .title .general-form-title {
+.welcome-wrap .general-form-wrap .wrapper .title .general-form-title {
   color: #fff;
   font-size: 34px;
   position: relative;
@@ -1061,7 +1075,7 @@ body {
   text-align: center;
 }
 
-.general-form-wrap .wrapper .title .general-form-title:after {
+.welcome-wrap .general-form-wrap .wrapper .title .general-form-title:after {
   z-index: -1;
   content: "一般課程預約";
   position: absolute;
@@ -1073,22 +1087,22 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .general-form-wrap .wrapper .title {
+  .welcome-wrap .general-form-wrap .wrapper .title {
     width: 70%;
   }
 }
 
-.general-form-wrap .wrapper .title img {
+.welcome-wrap .general-form-wrap .wrapper .title img {
   width: 70%;
 }
 
 @media all and (min-width: 992px) {
-  .general-form-wrap .wrapper .title img {
+  .welcome-wrap .general-form-wrap .wrapper .title img {
     width: 60%;
   }
 }
 
-.general-form-wrap .wrapper .title .general-form-title {
+.welcome-wrap .general-form-wrap .wrapper .title .general-form-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1097,12 +1111,12 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .general-form-wrap .wrapper .title .general-form-title {
+  .welcome-wrap .general-form-wrap .wrapper .title .general-form-title {
     font-size: 20px;
   }
 }
 
-.general-form-wrap .wrapper form {
+.welcome-wrap .general-form-wrap .wrapper form {
   width: 90%;
   padding: 3%;
   background-color: #fff;
@@ -1113,42 +1127,42 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-form-wrap .wrapper form {
+  .welcome-wrap .general-form-wrap .wrapper form {
     width: 80%;
   }
 }
 
-.general-form-wrap .wrapper form img {
+.welcome-wrap .general-form-wrap .wrapper form img {
   width: 20px;
   margin-right: 5px;
 }
 
-.general-form-wrap .wrapper form p {
+.welcome-wrap .general-form-wrap .wrapper form p {
   font-size: 18px;
   display: inline-block;
   color: #434343;
 }
 
 @media all and (min-width: 992px) {
-  .general-form-wrap .wrapper form p {
+  .welcome-wrap .general-form-wrap .wrapper form p {
     font-size: 24px;
   }
 }
 
-.general-form-wrap .wrapper form .form-info {
+.welcome-wrap .general-form-wrap .wrapper form .form-info {
   padding: 0 15px;
 }
 
-.general-form-wrap .wrapper form .check {
+.welcome-wrap .general-form-wrap .wrapper form .check {
   position: relative;
   padding-bottom: 20px;
 }
 
-.general-form-wrap .wrapper form .check #course1, .general-form-wrap .wrapper form .check #course2, .general-form-wrap .wrapper form .check #time1, .general-form-wrap .wrapper form .check #time2, .general-form-wrap .wrapper form .check #time3, .general-form-wrap .wrapper form .check span {
+.welcome-wrap .general-form-wrap .wrapper form .check #course1, .welcome-wrap .general-form-wrap .wrapper form .check #course2, .welcome-wrap .general-form-wrap .wrapper form .check #time1, .welcome-wrap .general-form-wrap .wrapper form .check #time2, .welcome-wrap .general-form-wrap .wrapper form .check #time3, .welcome-wrap .general-form-wrap .wrapper form .check span {
   visibility: hidden;
 }
 
-.general-form-wrap .wrapper form .check label {
+.welcome-wrap .general-form-wrap .wrapper form .check label {
   border: 3px solid #6a3e26;
   font-size: 18px;
   background-color: #fff;
@@ -1160,7 +1174,7 @@ body {
   cursor: pointer;
 }
 
-.general-form-wrap .wrapper form .check input {
+.welcome-wrap .general-form-wrap .wrapper form .check input {
   padding: 10px;
   height: 6%;
   border-radius: 10px;
@@ -1168,49 +1182,49 @@ body {
   font-size: 16px;
 }
 
-.general-form-wrap .wrapper form .check input:checked + label {
+.welcome-wrap .general-form-wrap .wrapper form .check input:checked + label {
   border: #ffb11b solid 5px;
 }
 
-.general-form-wrap .wrapper form .check input:checked + label + span {
+.welcome-wrap .general-form-wrap .wrapper form .check input:checked + label + span {
   visibility: visible;
 }
 
-.general-form-wrap .wrapper form .check span {
+.welcome-wrap .general-form-wrap .wrapper form .check span {
   display: inline-block;
 }
 
 @media all and (max-width: 768px) {
-  .general-form-wrap .wrapper form .check span {
+  .welcome-wrap .general-form-wrap .wrapper form .check span {
     display: block;
   }
 }
 
-.general-form-wrap .wrapper form .check .check-pic {
+.welcome-wrap .general-form-wrap .wrapper form .check .check-pic {
   position: relative;
   top: -40px;
   right: -20px;
 }
 
 @media all and (min-width: 769px) {
-  .general-form-wrap .wrapper form .check .check-pic {
+  .welcome-wrap .general-form-wrap .wrapper form .check .check-pic {
     top: -20px;
     right: 15px;
   }
 }
 
-.general-form-wrap .wrapper form .calender-box {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box {
   margin: 15px 0;
 }
 
 @media all and (min-width: 769px) {
-  .general-form-wrap .wrapper form .calender-box {
+  .welcome-wrap .general-form-wrap .wrapper form .calender-box {
     padding: 10px;
     margin: 15px;
   }
 }
 
-.general-form-wrap .wrapper form .calender-box .calendar-top {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box .calendar-top {
   padding: 20px 0;
   background-color: #ea7187;
   border-radius: 10px 10px 0 0;
@@ -1220,7 +1234,7 @@ body {
           box-shadow: 2px 2px 2px #888888;
 }
 
-.general-form-wrap .wrapper form .calender-box .mm, .general-form-wrap .wrapper form .calender-box .yy {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box .mm, .welcome-wrap .general-form-wrap .wrapper form .calender-box .yy {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1231,7 +1245,7 @@ body {
           align-items: center;
 }
 
-.general-form-wrap .wrapper form .calender-box table {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box table {
   vertical-align: middle;
   background-color: #fff;
   width: 100%;
@@ -1242,24 +1256,24 @@ body {
           box-shadow: 2px 2px 2px #888888;
 }
 
-.general-form-wrap .wrapper form .calender-box table th {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box table th {
   padding: 60px 0 20px;
   color: #ea7187;
   font-weight: bold;
 }
 
-.general-form-wrap .wrapper form .calender-box table tr {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box table tr {
   width: 100%;
   height: 30px;
 }
 
 @media all and (min-width: 769px) {
-  .general-form-wrap .wrapper form .calender-box table tr {
+  .welcome-wrap .general-form-wrap .wrapper form .calender-box table tr {
     height: 60px;
   }
 }
 
-.general-form-wrap .wrapper form .calender-box table .tdclass {
+.welcome-wrap .general-form-wrap .wrapper form .calender-box table .tdclass {
   margin: auto;
   vertical-align: middle;
   border-radius: 50%;
@@ -1270,14 +1284,14 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .general-form-wrap .wrapper form .calender-box table .tdclass {
+  .welcome-wrap .general-form-wrap .wrapper form .calender-box table .tdclass {
     height: 60px;
     line-height: 60px;
     width: 60px;
   }
 }
 
-.general-form-wrap .wrapper form select {
+.welcome-wrap .general-form-wrap .wrapper form select {
   border: 3px solid #6a3e26;
   display: block;
   margin: 20px 30px;
@@ -1287,21 +1301,21 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .general-form-wrap .wrapper form select {
+  .welcome-wrap .general-form-wrap .wrapper form select {
     width: 15%;
   }
 }
 
-.general-form-wrap .wrapper .form-btn {
+.welcome-wrap .general-form-wrap .wrapper .form-btn {
   padding: 5% 0;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out {
   width: 100%;
   margin: auto;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -1323,14 +1337,14 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out:active {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 18px;
@@ -1349,13 +1363,13 @@ body {
   cursor: pointer;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:hover {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:hover {
   background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in > img {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in > img {
   display: block;
   position: absolute;
   top: -7px;
@@ -1364,7 +1378,7 @@ body {
   height: 44.955px;
 }
 
-.general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
+.welcome-wrap .general-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
   z-index: -1;
   content: "確認預約";
   position: absolute;
@@ -1373,12 +1387,12 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-form-wrap {
+.welcome-wrap .group-form-wrap {
   background-color: #fad689;
   background-image: url(../img/background.png);
 }
 
-.group-form-wrap .wrapper {
+.welcome-wrap .group-form-wrap .wrapper {
   width: 95%;
   max-width: 1200px;
   padding-top: 30%;
@@ -1387,19 +1401,19 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .group-form-wrap .wrapper {
+  .welcome-wrap .group-form-wrap .wrapper {
     padding-top: 150px;
   }
 }
 
-.group-form-wrap .wrapper .title {
+.welcome-wrap .group-form-wrap .wrapper .title {
   padding: 5% 0;
   position: relative;
   text-align: center;
   margin: auto;
 }
 
-.group-form-wrap .wrapper .title .group-form-title {
+.welcome-wrap .group-form-wrap .wrapper .title .group-form-title {
   color: #fff;
   font-size: 34px;
   position: relative;
@@ -1407,7 +1421,7 @@ body {
   text-align: center;
 }
 
-.group-form-wrap .wrapper .title .group-form-title:after {
+.welcome-wrap .group-form-wrap .wrapper .title .group-form-title:after {
   z-index: -1;
   content: "揪團課程預約";
   position: absolute;
@@ -1419,22 +1433,22 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .group-form-wrap .wrapper .title {
+  .welcome-wrap .group-form-wrap .wrapper .title {
     width: 70%;
   }
 }
 
-.group-form-wrap .wrapper .title img {
+.welcome-wrap .group-form-wrap .wrapper .title img {
   width: 70%;
 }
 
 @media all and (min-width: 769px) {
-  .group-form-wrap .wrapper .title img {
+  .welcome-wrap .group-form-wrap .wrapper .title img {
     width: 60%;
   }
 }
 
-.group-form-wrap .wrapper .title .group-form-title {
+.welcome-wrap .group-form-wrap .wrapper .title .group-form-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1443,12 +1457,12 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-form-wrap .wrapper .title .group-form-title {
+  .welcome-wrap .group-form-wrap .wrapper .title .group-form-title {
     font-size: 20px;
   }
 }
 
-.group-form-wrap .wrapper form {
+.welcome-wrap .group-form-wrap .wrapper form {
   width: 90%;
   padding: 3%;
   background-color: #fff;
@@ -1459,12 +1473,12 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-form-wrap .wrapper form {
+  .welcome-wrap .group-form-wrap .wrapper form {
     width: 80%;
   }
 }
 
-.group-form-wrap .wrapper form > span {
+.welcome-wrap .group-form-wrap .wrapper form > span {
   font-size: 18px;
   display: block;
   padding: 15px;
@@ -1472,17 +1486,17 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .group-form-wrap .wrapper form > span {
+  .welcome-wrap .group-form-wrap .wrapper form > span {
     font-size: 24px;
   }
 }
 
-.group-form-wrap .wrapper form > span img {
+.welcome-wrap .group-form-wrap .wrapper form > span img {
   width: 20px;
   margin-right: 5px;
 }
 
-.group-form-wrap .wrapper form input {
+.welcome-wrap .group-form-wrap .wrapper form input {
   padding: 20px;
   width: 100%;
   height: 6%;
@@ -1492,18 +1506,18 @@ body {
   margin: 10px 0;
 }
 
-.group-form-wrap .wrapper form .calendar-box {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box {
   margin: 15px 0;
 }
 
 @media all and (min-width: 769px) {
-  .group-form-wrap .wrapper form .calendar-box {
+  .welcome-wrap .group-form-wrap .wrapper form .calendar-box {
     padding: 10px;
     margin: 15px;
   }
 }
 
-.group-form-wrap .wrapper form .calendar-box .calendar-top {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box .calendar-top {
   padding: 20px 0;
   background-color: #f6c555;
   border-radius: 10px 10px 0 0;
@@ -1513,7 +1527,7 @@ body {
           box-shadow: 2px 2px 2px #888888;
 }
 
-.group-form-wrap .wrapper form .calendar-box .mm, .group-form-wrap .wrapper form .calendar-box .yy {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box .mm, .welcome-wrap .group-form-wrap .wrapper form .calendar-box .yy {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1524,7 +1538,7 @@ body {
           align-items: center;
 }
 
-.group-form-wrap .wrapper form .calendar-box table {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box table {
   vertical-align: middle;
   background-color: #fff;
   width: 100%;
@@ -1535,24 +1549,24 @@ body {
           box-shadow: 2px 2px 2px #888888;
 }
 
-.group-form-wrap .wrapper form .calendar-box table th {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box table th {
   padding: 60px 0 20px;
   color: #f6c555;
   font-weight: bold;
 }
 
-.group-form-wrap .wrapper form .calendar-box table tr {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box table tr {
   width: 100%;
   height: 30px;
 }
 
 @media all and (min-width: 769px) {
-  .group-form-wrap .wrapper form .calendar-box table tr {
+  .welcome-wrap .group-form-wrap .wrapper form .calendar-box table tr {
     height: 60px;
   }
 }
 
-.group-form-wrap .wrapper form .calendar-box table .tdclass {
+.welcome-wrap .group-form-wrap .wrapper form .calendar-box table .tdclass {
   margin: auto;
   vertical-align: middle;
   border-radius: 50%;
@@ -1563,14 +1577,14 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-form-wrap .wrapper form .calendar-box table .tdclass {
+  .welcome-wrap .group-form-wrap .wrapper form .calendar-box table .tdclass {
     height: 60px;
     line-height: 60px;
     width: 60px;
   }
 }
 
-.group-form-wrap .wrapper form select {
+.welcome-wrap .group-form-wrap .wrapper form select {
   border: 3px solid #6a3e26;
   display: block;
   margin: 20px 0;
@@ -1580,21 +1594,21 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .group-form-wrap .wrapper form select {
+  .welcome-wrap .group-form-wrap .wrapper form select {
     width: 15%;
   }
 }
 
-.group-form-wrap .wrapper .form-btn {
+.welcome-wrap .group-form-wrap .wrapper .form-btn {
   padding: 5% 0;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out {
   width: 90%;
   margin: auto;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -1616,14 +1630,14 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out:active {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 18px;
@@ -1642,13 +1656,13 @@ body {
   cursor: pointer;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:hover {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:hover {
   background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in > img {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in > img {
   display: block;
   position: absolute;
   top: -7px;
@@ -1657,7 +1671,7 @@ body {
   height: 44.955px;
 }
 
-.group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
+.welcome-wrap .group-form-wrap .wrapper .form-btn .form-ice-btn-out .form-ice-btn-in:after {
   z-index: -1;
   content: "確認預約";
   position: absolute;
@@ -1666,23 +1680,23 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-wrap {
+.welcome-wrap .group-wrap {
   background-color: #9dc5f6;
 }
 
-.group-wrap .wrapper {
+.welcome-wrap .group-wrap .wrapper {
   padding-top: 30%;
   max-width: 1200px;
   margin: auto;
 }
 
 @media all and (min-width: 992px) {
-  .group-wrap .wrapper {
+  .welcome-wrap .group-wrap .wrapper {
     padding-top: 200px;
   }
 }
 
-.group-wrap .wrapper .group-ribbon {
+.welcome-wrap .group-wrap .wrapper .group-ribbon {
   z-index: 1;
   margin: auto;
   background: url(../img/ribbon.png) center center no-repeat;
@@ -1694,28 +1708,28 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-wrap .wrapper .group-ribbon {
+  .welcome-wrap .group-wrap .wrapper .group-ribbon {
     width: 500px;
     height: 150px;
     padding: 30px 0;
   }
 }
 
-.group-wrap .wrapper .group-ribbon .subtitle {
+.welcome-wrap .group-wrap .wrapper .group-ribbon .subtitle {
   font-size: 13px;
   color: #434343;
   line-height: 26px;
 }
 
 @media all and (min-width: 769px) {
-  .group-wrap .wrapper .group-ribbon .subtitle {
+  .welcome-wrap .group-wrap .wrapper .group-ribbon .subtitle {
     font-size: 18px;
     color: #434343;
     line-height: 32px;
   }
 }
 
-.group-wrap .wrapper .group-ribbon .title {
+.welcome-wrap .group-wrap .wrapper .group-ribbon .title {
   color: #fff;
   font-size: 24px;
   position: relative;
@@ -1723,7 +1737,7 @@ body {
   text-align: center;
 }
 
-.group-wrap .wrapper .group-ribbon .title:after {
+.welcome-wrap .group-wrap .wrapper .group-ribbon .title:after {
   z-index: -1;
   content: "揪團課程";
   position: absolute;
@@ -1735,14 +1749,14 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-wrap .wrapper .group-ribbon .title {
+  .welcome-wrap .group-wrap .wrapper .group-ribbon .title {
     color: #fff;
     font-size: 40px;
     position: relative;
     z-index: 0;
     text-align: center;
   }
-  .group-wrap .wrapper .group-ribbon .title:after {
+  .welcome-wrap .group-wrap .wrapper .group-ribbon .title:after {
     z-index: -1;
     content: "揪團課程";
     position: absolute;
@@ -1754,31 +1768,31 @@ body {
   }
 }
 
-.group-wrap .wrapper .kanban {
+.welcome-wrap .group-wrap .wrapper .kanban {
   z-index: 3;
   width: 90%;
   margin: auto;
 }
 
 @media all and (min-width: 769px) {
-  .group-wrap .wrapper .kanban {
+  .welcome-wrap .group-wrap .wrapper .kanban {
     width: 70%;
     padding: 30px;
     margin: auto;
   }
 }
 
-.group-wrap .wrapper .kanban .gift {
+.welcome-wrap .group-wrap .wrapper .kanban .gift {
   top: 2px;
   text-align: center;
   position: relative;
 }
 
-.group-wrap .wrapper .kanban .gift img {
+.welcome-wrap .group-wrap .wrapper .kanban .gift img {
   width: 100%;
 }
 
-.group-wrap .wrapper .kanban .gift span {
+.welcome-wrap .group-wrap .wrapper .kanban .gift span {
   width: 100%;
   font-size: 18px;
   display: inline-block;
@@ -1791,14 +1805,14 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-wrap .wrapper .kanban .gift span {
+  .welcome-wrap .group-wrap .wrapper .kanban .gift span {
     font-size: 32px;
     -webkit-transform: translate(-50%, 110%);
             transform: translate(-50%, 110%);
   }
 }
 
-.group-wrap .wrapper .kanban .content-box {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box {
   padding-top: 30px;
   border: #fad689 solid 5px;
   border-radius: 10px;
@@ -1806,7 +1820,7 @@ body {
 }
 
 @media all and (min-width: 992px) {
-  .group-wrap .wrapper .kanban .content-box {
+  .welcome-wrap .group-wrap .wrapper .kanban .content-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1817,61 +1831,61 @@ body {
   }
 }
 
-.group-wrap .wrapper .kanban .content-box .diy-img {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .diy-img {
   text-align: center;
 }
 
 @media all and (max-width: 768px) {
-  .group-wrap .wrapper .kanban .content-box .diy-img img {
+  .welcome-wrap .group-wrap .wrapper .kanban .content-box .diy-img img {
     width: 80%;
     margin: auto;
   }
 }
 
-.group-wrap .wrapper .kanban .content-box .info-title {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .info-title {
   width: 80%;
   margin: auto;
   text-align: center;
   border-bottom: #fad689 solid 2px;
 }
 
-.group-wrap .wrapper .kanban .content-box .info-title h4 {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .info-title h4 {
   font: 20px "A-OTF-M";
 }
 
-.group-wrap .wrapper .kanban .content-box .info-dec {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .info-dec {
   width: 75%;
   margin: auto;
 }
 
-.group-wrap .wrapper .kanban .content-box .info-dec li {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .info-dec li {
   font-size: 18px;
   font-family: "GenJyuuGothic-B";
   padding: 10px 0 5px;
 }
 
-.group-wrap .wrapper .kanban .content-box .info-dec p {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .info-dec p {
   font-size: 13px;
   letter-spacing: 1px;
   line-height: 15px;
 }
 
 @media all and (min-width: 992px) {
-  .group-wrap .wrapper .kanban .content-box .info-dec p {
+  .welcome-wrap .group-wrap .wrapper .kanban .content-box .info-dec p {
     font-size: 16px;
     line-height: 20px;
   }
 }
 
-.group-wrap .wrapper .kanban .content-box .course-btn {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-btn {
   padding: 20px;
 }
 
-.group-wrap .wrapper .kanban .content-box .course-btn .course-ice-btn-out {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-btn .course-ice-btn-out {
   margin: auto;
 }
 
-.group-wrap .wrapper .kanban .content-box .course-ice-btn-out {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-ice-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -1893,14 +1907,14 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.group-wrap .wrapper .kanban .content-box .course-ice-btn-out:active {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-ice-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -1919,13 +1933,13 @@ body {
   cursor: pointer;
 }
 
-.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in:hover {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in:hover {
   background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in > img {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in > img {
   display: block;
   position: absolute;
   top: -7px;
@@ -1934,7 +1948,7 @@ body {
   height: 44.955px;
 }
 
-.group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in:after {
+.welcome-wrap .group-wrap .wrapper .kanban .content-box .course-ice-btn-out .course-ice-btn-in:after {
   z-index: -1;
   content: "我要開團";
   position: absolute;
@@ -1943,32 +1957,32 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-message-cloud {
+.welcome-wrap .group-message-cloud {
   height: 200px;
   background: #9dc5f6 url(../img/course/course-Wcloud.png) center bottom no-repeat;
   background-size: 100%;
 }
 
 @media all and (min-width: 769px) {
-  .group-message-cloud {
+  .welcome-wrap .group-message-cloud {
     height: 400px;
   }
 }
 
-.group-message-wrap {
+.welcome-wrap .group-message-wrap {
   background-color: #fff8e4;
   position: relative;
   padding-bottom: 5%;
 }
 
-.group-message-wrap .title-box {
+.welcome-wrap .group-message-wrap .title-box {
   -webkit-transform: translateY(-1%);
           transform: translateY(-1%);
   background-color: #fff8e4;
   text-align: center;
 }
 
-.group-message-wrap .title-box .message-title {
+.welcome-wrap .group-message-wrap .title-box .message-title {
   color: #fff;
   font-size: 40px;
   position: relative;
@@ -1976,7 +1990,7 @@ body {
   text-align: center;
 }
 
-.group-message-wrap .title-box .message-title:after {
+.welcome-wrap .group-message-wrap .title-box .message-title:after {
   z-index: -1;
   content: "開團留言板";
   position: absolute;
@@ -1987,17 +2001,17 @@ body {
   -webkit-text-stroke: 8px #db4d6d;
 }
 
-.group-message-wrap .title-box .message-title {
+.welcome-wrap .group-message-wrap .title-box .message-title {
   font-family: A-OTF-M;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .title-box .message-title {
+  .welcome-wrap .group-message-wrap .title-box .message-title {
     font-size: 24px;
   }
 }
 
-.group-message-wrap .title-box span {
+.welcome-wrap .group-message-wrap .title-box span {
   text-align: center;
   font-size: 18px;
   color: #434343;
@@ -2006,17 +2020,17 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .title-box span {
+  .welcome-wrap .group-message-wrap .title-box span {
     font-size: 13px;
   }
 }
 
-.group-message-wrap .group-message {
+.welcome-wrap .group-message-wrap .group-message {
   max-width: 1200px;
   margin: auto;
 }
 
-.group-message-wrap .group-message .open-group {
+.welcome-wrap .group-message-wrap .group-message .open-group {
   margin: 30px;
   padding: 20px 30px;
   background-color: #f6c555;
@@ -2035,52 +2049,52 @@ body {
           justify-content: center;
 }
 
-.group-message-wrap .group-message .open-group .message-mem {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-mem {
   text-align: center;
 }
 
-.group-message-wrap .group-message .open-group .message-mem i {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-mem i {
   font-size: 50px;
   color: #fff;
 }
 
-.group-message-wrap .group-message .open-group .message-mem p {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-mem p {
   font-size: 20px;
   color: #434343;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .open-group .message-mem p {
+  .welcome-wrap .group-message-wrap .group-message .open-group .message-mem p {
     font-size: 16px;
   }
 }
 
-.group-message-wrap .group-message .open-group .message-mem .time {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-mem .time {
   font-size: 16px;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .open-group .message-mem .time {
+  .welcome-wrap .group-message-wrap .group-message .open-group .message-mem .time {
     font-size: 13px;
   }
 }
 
-.group-message-wrap .group-message .open-group .message-mem .mem-pic {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-mem .mem-pic {
   width: 30px;
   height: 30px;
   margin: auto;
 }
 
-.group-message-wrap .group-message .open-group .message-mem .mem-pic img {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-mem .mem-pic img {
   width: 100%;
   height: 100%;
 }
 
-.group-message-wrap .group-message .open-group .write-area {
+.welcome-wrap .group-message-wrap .group-message .open-group .write-area {
   line-height: 2;
 }
 
-.group-message-wrap .group-message .open-group .write-area input {
+.welcome-wrap .group-message-wrap .group-message .open-group .write-area input {
   width: 90%;
   font-size: 16px;
   border-radius: 20px;
@@ -2088,7 +2102,7 @@ body {
   padding: 10px;
 }
 
-.group-message-wrap .group-message .open-group .write-area textarea {
+.welcome-wrap .group-message-wrap .group-message .open-group .write-area textarea {
   width: 90%;
   font-size: 16px;
   border-radius: 20px;
@@ -2099,16 +2113,16 @@ body {
   resize: none;
 }
 
-.group-message-wrap .group-message .open-group .message-btn {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn {
   padding-top: 20px;
 }
 
-.group-message-wrap .group-message .open-group .message-btn .message-btn-out {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn .message-btn-out {
   width: 100%;
   margin: auto;
 }
 
-.group-message-wrap .group-message .open-group .message-btn .message-btn-out {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn .message-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -2124,7 +2138,7 @@ body {
   cursor: pointer;
 }
 
-.group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -2142,19 +2156,19 @@ body {
   cursor: pointer;
 }
 
-.group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:hover {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:active {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:after {
+.welcome-wrap .group-message-wrap .group-message .open-group .message-btn .message-btn-out .message-btn-in:after {
   z-index: -1;
   content: "我要留言";
   position: absolute;
@@ -2163,31 +2177,31 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-message-wrap .group-message .love-line {
+.welcome-wrap .group-message-wrap .group-message .love-line {
   width: 100%;
   padding: 50px 0;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .love-line {
+  .welcome-wrap .group-message-wrap .group-message .love-line {
     width: 90%;
     padding: 20px 0;
     margin: auto;
   }
-  .group-message-wrap .group-message .love-line img {
+  .welcome-wrap .group-message-wrap .group-message .love-line img {
     width: 100%;
   }
 }
 
-.group-message-wrap .group-message .array-btn {
+.welcome-wrap .group-message-wrap .group-message .array-btn {
   padding: 50px;
 }
 
-.group-message-wrap .group-message .array-btn .array-ice-btn-out {
+.welcome-wrap .group-message-wrap .group-message .array-btn .array-ice-btn-out {
   margin: auto;
 }
 
-.group-message-wrap .group-message .array-ice-btn-out {
+.welcome-wrap .group-message-wrap .group-message .array-ice-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -2209,14 +2223,14 @@ body {
           box-shadow: 0px 3px #715124;
 }
 
-.group-message-wrap .group-message .array-ice-btn-out:active {
+.welcome-wrap .group-message-wrap .group-message .array-ice-btn-out:active {
   -webkit-box-shadow: 0 1px black;
           box-shadow: 0 1px black;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in {
+.welcome-wrap .group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -2235,13 +2249,13 @@ body {
   cursor: pointer;
 }
 
-.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in:hover {
+.welcome-wrap .group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in:hover {
   background-color: #FAD689;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in > img {
+.welcome-wrap .group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in > img {
   display: block;
   position: absolute;
   top: -7px;
@@ -2250,7 +2264,7 @@ body {
   height: 44.955px;
 }
 
-.group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in:after {
+.welcome-wrap .group-message-wrap .group-message .array-ice-btn-out .array-ice-btn-in:after {
   z-index: -1;
   content: "主揪報團";
   position: absolute;
@@ -2259,7 +2273,7 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-message-wrap .group-message .team-name {
+.welcome-wrap .group-message-wrap .group-message .team-name {
   background-color: #f6c555;
   margin: 100px 0;
   text-align: center;
@@ -2276,7 +2290,7 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .group-message .team-name {
+  .welcome-wrap .group-message-wrap .group-message .team-name {
     font: 24px 'A-OTF-M';
     width: 40%;
     height: 50px;
@@ -2284,7 +2298,7 @@ body {
   }
 }
 
-.group-message-wrap .group-message .main-group-message {
+.welcome-wrap .group-message-wrap .group-message .main-group-message {
   padding-top: 50px;
   margin-bottom: 50px;
   background-color: #fad689;
@@ -2304,50 +2318,50 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .main-group-message {
+  .welcome-wrap .group-message-wrap .group-message .main-group-message {
     width: 95%;
     margin: auto;
   }
 }
 
-.group-message-wrap .group-message .main-group-message p {
+.welcome-wrap .group-message-wrap .group-message .main-group-message p {
   font-size: 16px;
   color: #434343;
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .group-message .main-group-message p {
+  .welcome-wrap .group-message-wrap .group-message .main-group-message p {
     font-size: 18px;
   }
 }
 
-.group-message-wrap .group-message .main-group-message .time {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .time {
   font-size: 16px;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .main-group-message .time {
+  .welcome-wrap .group-message-wrap .group-message .main-group-message .time {
     font-size: 13px;
   }
 }
 
-.group-message-wrap .group-message .main-group-message .message-meb {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-meb {
   text-align: center;
   line-height: 30px;
 }
 
-.group-message-wrap .group-message .main-group-message .message-meb i {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-meb i {
   color: #aaa;
   font-size: 50px;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .main-group-message .message-meb {
+  .welcome-wrap .group-message-wrap .group-message .main-group-message .message-meb {
     margin: 0  20px 0 0;
   }
 }
 
-.group-message-wrap .group-message .main-group-message .message-con {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-con {
   font-size: 16px;
   background-color: #fff;
   border-radius: 10px;
@@ -2358,7 +2372,7 @@ body {
   position: relative;
 }
 
-.group-message-wrap .group-message .main-group-message .message-con::before {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-con::before {
   content: "";
   border-style: solid solid solid solid;
   border-color: transparent   #fff transparent transparent;
@@ -2371,7 +2385,7 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .group-message .main-group-message .message-con::before {
+  .welcome-wrap .group-message-wrap .group-message .main-group-message .message-con::before {
     border-width: 10px  15px 10px 10px;
     left: -25px;
     top: 20px;
@@ -2379,23 +2393,23 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .group-message .main-group-message .message-con {
+  .welcome-wrap .group-message-wrap .group-message .main-group-message .message-con {
     height: 180px;
     font-size: 18px;
     padding: 10px  20px;
   }
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn {
   padding: 20px 0;
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out {
   width: 100%;
   margin: auto;
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out {
   display: block;
   width: 135px;
   padding: 2px;
@@ -2411,7 +2425,7 @@ body {
   cursor: pointer;
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in {
   display: block;
   color: whitesmoke;
   font-size: 20px;
@@ -2429,19 +2443,19 @@ body {
   cursor: pointer;
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:hover {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:hover {
   background-color: #ffabb1;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:active {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:active {
   background-color: #db4d6d;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-.group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:after {
+.welcome-wrap .group-message-wrap .group-message .main-group-message .message-btn .message-btn-out .message-btn-in:after {
   z-index: -1;
   content: "我要參加";
   position: absolute;
@@ -2450,7 +2464,7 @@ body {
   -webkit-text-stroke: 2px black;
 }
 
-.group-message-wrap .pop-box {
+.welcome-wrap .group-message-wrap .pop-box {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -2469,18 +2483,18 @@ body {
           align-items: center;
 }
 
-.group-message-wrap .pop-box .pop-up {
+.welcome-wrap .group-message-wrap .pop-box .pop-up {
   margin: auto;
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-up {
+  .welcome-wrap .group-message-wrap .pop-box .pop-up {
     width: 80%;
     height: 70%;
   }
 }
 
-.group-message-wrap .pop-box .pop-up .closeBtn {
+.welcome-wrap .group-message-wrap .pop-box .pop-up .closeBtn {
   position: absolute;
   top: 5%;
   right: 10%;
@@ -2488,17 +2502,17 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-up .closeBtn {
+  .welcome-wrap .group-message-wrap .pop-box .pop-up .closeBtn {
     top: 15%;
   }
 }
 
-.group-message-wrap .pop-box .pop-up .closeBtn img {
+.welcome-wrap .group-message-wrap .pop-box .pop-up .closeBtn img {
   width: 50px;
   height: 50px;
 }
 
-.group-message-wrap .pop-box .pop-up .pop-team-name {
+.welcome-wrap .group-message-wrap .pop-box .pop-up .pop-team-name {
   -webkit-box-shadow: #FFF8E4 2px 2px 3px;
           box-shadow: #FFF8E4 2px 2px 3px;
   background-color: #434343;
@@ -2513,7 +2527,7 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-up .pop-team-name {
+  .welcome-wrap .group-message-wrap .pop-box .pop-up .pop-team-name {
     width: 30%;
     top: 20%;
     height: 45px;
@@ -2521,18 +2535,18 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-up .pop-team-name p {
+.welcome-wrap .group-message-wrap .pop-box .pop-up .pop-team-name p {
   color: #fff;
   font-size: 16px;
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-up .pop-team-name p {
+  .welcome-wrap .group-message-wrap .pop-box .pop-up .pop-team-name p {
     font-size: 20px;
   }
 }
 
-.group-message-wrap .pop-box .pop-content {
+.welcome-wrap .group-message-wrap .pop-box .pop-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2547,7 +2561,7 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-content {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content {
     background: url(../img/course/pop-bg.png) center center no-repeat;
     background-size: contain;
     height: 100%;
@@ -2556,7 +2570,7 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-content {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content {
     background-color: #BEC23F;
     border-radius: 10px;
     width: 90%;
@@ -2565,17 +2579,17 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-content p {
+.welcome-wrap .group-message-wrap .pop-box .pop-content p {
   font-size: 16px;
   color: #434343;
   line-height: 1.5;
 }
 
-.group-message-wrap .pop-box .pop-content .time {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .time {
   font-size: 13px;
 }
 
-.group-message-wrap .pop-box .pop-content .pop-main-message {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .pop-main-message {
   -webkit-box-shadow: #ccc 1px 1px 3px;
           box-shadow: #ccc 1px 1px 3px;
   padding: 10px 20px;
@@ -2594,54 +2608,54 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-content .pop-main-message {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-main-message {
     background-color: #fad689;
     height: 60%;
   }
-  .group-message-wrap .pop-box .pop-content .pop-main-message p {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-main-message p {
     font-size: 13px;
   }
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-content .pop-main-message {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-main-message {
     width: 50%;
     height: 33%;
     background-color: #C9D34A;
   }
 }
 
-.group-message-wrap .pop-box .pop-content .pop-main-message .message-con {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .pop-main-message .message-con {
   padding: 0 15px;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-content .pop-main-message .message-con {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-main-message .message-con {
     padding: 0 50px;
   }
 }
 
-.group-message-wrap .pop-box .pop-content .msgno {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .msgno {
   display: none;
 }
 
-.group-message-wrap .pop-box .pop-content .message-meb {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .message-meb {
   text-align: center;
   line-height: 30px;
 }
 
-.group-message-wrap .pop-box .pop-content .message-meb i {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .message-meb i {
   color: #434343;
   font-size: 50px;
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-content .message-meb i {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .message-meb i {
     font-size: 30px;
   }
 }
 
-.group-message-wrap .pop-box .pop-content .all-message {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .all-message {
   display: none;
   padding: 10px 20px;
   background-color: #bec23f;
@@ -2651,12 +2665,12 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-content .all-message {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .all-message {
     display: block;
   }
 }
 
-.group-message-wrap .pop-box .pop-content .all-message .meb-add-message {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .all-message .meb-add-message {
   background-color: #FFF0F4;
   border-radius: 5px;
   margin: 3px 0;
@@ -2669,20 +2683,20 @@ body {
   padding: 5px;
 }
 
-.group-message-wrap .pop-box .pop-content .all-message .meb-add-message .meb {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .all-message .meb-add-message .meb {
   text-align: center;
 }
 
-.group-message-wrap .pop-box .pop-content .all-message .meb-add-message .meb i {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .all-message .meb-add-message .meb i {
   color: #434343;
   font-size: 30px;
 }
 
-.group-message-wrap .pop-box .pop-content .all-message .meb-add-message .meb .name {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .all-message .meb-add-message .meb .name {
   font-size: 13px;
 }
 
-.group-message-wrap .pop-box .pop-content .pop-leave-message {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message {
   vertical-align: middle;
   text-align: center;
   width: 100%;
@@ -2690,7 +2704,7 @@ body {
 }
 
 @media all and (min-width: 769px) {
-  .group-message-wrap .pop-box .pop-content .pop-leave-message {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message {
     width: 50%;
     height: 15%;
     display: -webkit-box;
@@ -2705,12 +2719,12 @@ body {
   }
 }
 
-.group-message-wrap .pop-box .pop-content .pop-leave-message .leave-message {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message .leave-message {
   width: 90%;
   margin: auto;
 }
 
-.group-message-wrap .pop-box .pop-content .pop-leave-message .leave-message-box {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message .leave-message-box {
   font-size: 16px;
   padding: 0 20px;
   width: 90%;
@@ -2721,7 +2735,7 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-content .pop-leave-message .leave-message-box {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message .leave-message-box {
     font-size: 13px;
     padding: 10px;
     height: 40px;
@@ -2732,13 +2746,13 @@ body {
 }
 
 @media all and (max-width: 768px) {
-  .group-message-wrap .pop-box .pop-content .pop-leave-message .message-btn {
+  .welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message .message-btn {
     width: 90%;
     margin: auto;
   }
 }
 
-.group-message-wrap .pop-box .pop-content .pop-leave-message .message-btn .btn-add {
+.welcome-wrap .group-message-wrap .pop-box .pop-content .pop-leave-message .message-btn .btn-add {
   width: 100px;
   color: whitesmoke;
   font-size: 18px;
