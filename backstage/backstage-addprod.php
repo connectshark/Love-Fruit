@@ -29,7 +29,7 @@ if (isset($_SESSION["emp_no"]) != true) {
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>新增-最新消息頁面</h3>
+                <h3>新增-商品</h3>
             </div>
         </div>
     </section>
@@ -37,28 +37,11 @@ if (isset($_SESSION["emp_no"]) != true) {
     <section class="container-fluid px-4">
         <div class="row justify-content-center">
             <div class="col-10 bg-white rounded p-4">
-                <form action="add-news.php" method="POST" enctype="multipart/form-data">
+                <form action="add-prod.php" method="POST" enctype="multipart/form-data">
                     <div class="row p-2">
-                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">標題</div>
-                        <div class="col-5"><input class="form-control" type="text" name="news_title" maxlength="20" placeholder="請輸入文章標題"></div>
-                        <div class="col-6 p-1 text-secondary">標題最多20字</div>
-                    </div>
-                    <div class="row p-2">
-                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">日期</div>
-                        <div class="col-5"><input class="form-control" type="text" name="news_date" maxlength="10" placeholder="請輸入日期">
-                        </div>
-                        <div class="col-6 p-1 text-secondary">格式：2012-05-04</div>
-                    </div>
-                    <div class="row p-2">
-                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">文章分類</div>
-                        <div class="col-2">
-                            <select class="form-control" name="news_class">
-                                <option>文章分類</option>
-                                <option value="0">揪團新訊</option>
-                                <option value="1">新品上市</option>
-                                <option value="2">園區公告</option>
-                                <option value="3">季節限定</option>
-                            </select></div>
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">商品名稱</div>
+                        <div class="col-5"><input class="form-control" type="text" name="prod_name" maxlength="5" placeholder="請輸入商品名稱"></div>
+                        <div class="col-6 p-1 text-secondary">最多5字</div>
                     </div>
                     <div class="row p-2">
                         <div class="col-1 bg-lovefruit rounded text-white text-center p-2">圖片</div>
@@ -71,15 +54,38 @@ if (isset($_SESSION["emp_no"]) != true) {
                                 <div class="col-6 p-2 text-secondary">圖片格式 jpg / png</div>
                                 <div class="col-6"><img class="img-fluid" id="img-preview" src="" alt=""></div>
                             </div>
-
                         </div>
-
                     </div>
                     <div class="row p-2">
-                        <div class="col-1 bg-lovefruit rounded text-white text-center p-2">內容</div>
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-2">商品描述</div>
                         <div class="col-7 p-1">
                             <textarea class="form-control ml-3" name="news_content" rows="10"></textarea>
                         </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">價格</div>
+                        <div class="col-2"><input class="form-control" type="text" name="prod_price" maxlength="5" placeholder="請輸入商品價格"></div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">戀愛階段</div>
+                        <div class="col-2">
+                            <select class="form-control" name="love_stage">
+                                <option>戀愛階段</option>
+                                <option value="1">單身</option>
+                                <option value="2">初戀</option>
+                                <option value="3">熱戀</option>
+                                <option value="4">分手</option>
+                            </select></div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-1 bg-lovefruit rounded text-white text-center p-1">冰棒類型</div>
+                        <div class="col-2">
+                            <select class="form-control" name="ice_type">
+                                <option>冰棒類型</option>
+                                <option value="1">冰棒</option>
+                                <option value="2">冰淇淋</option>
+                                <option value="3">霜淇淋</option>
+                            </select></div>
                     </div>
                     <div class="row p-2">
                         <input class="btn btn-info" type="submit" value="確認送出">

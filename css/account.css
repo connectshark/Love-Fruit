@@ -121,13 +121,15 @@
 .page-account .menu .profile-picture .profile-img {
   width: 50px;
   height: 50px;
-  overflow: hidden;
-  border-radius: 50%;
 }
 
 .page-account .menu .profile-picture .profile-img img {
   width: 100%;
+  height: 100%;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 .page-account .menu .profile-picture p {
@@ -243,6 +245,10 @@
 .page-account .content-profile .profile-item .passwaord, .page-account .content-profile .profile-item .address {
   display: inline-block;
   padding-right: 10px;
+}
+
+.page-account .content-profile .profile-item #pro-password {
+  display: none;
 }
 
 .page-account .content-order {
@@ -482,6 +488,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.page-account .content-course .class-item .res-no {
+  display: none;
 }
 
 .page-account .content-course .class-item .class-desc {

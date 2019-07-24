@@ -330,7 +330,8 @@
 }
 
 .page-qa .stage .content .element-group {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  font-size: 0;
 }
 
 .page-qa .stage .content .element-group .element {
@@ -732,6 +733,9 @@
   .page-qa .stage .content .ice-btn-out {
     margin: 0;
     margin-left: auto;
+  }
+  .page-qa .stage .content .element-group {
+    margin-bottom: 30px;
   }
   .page-qa .stage .content .element-group .element {
     width: 80px;

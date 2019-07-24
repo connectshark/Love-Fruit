@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["emp_no"] = 1;
+
 echo $_FILES["newsFile"]["tmp_name"];
 switch($_FILES["newsFile"]["error"]){
 	case UPLOAD_ERR_OK:

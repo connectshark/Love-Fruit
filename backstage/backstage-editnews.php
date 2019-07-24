@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if (isset($_SESSION["emp_no"]) != true) {
+    header("location:backstage-login.php");
+}
+
 $errMsg = "";
 try {
     require_once("connect-dd101g3.php");
