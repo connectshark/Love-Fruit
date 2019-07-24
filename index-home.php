@@ -404,103 +404,111 @@ try {
     <div class="leavemessage-item-group">
       <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
       <div class="message-item single wow flipInY">
-        <div class="leavemessage-cloud">
-          <img src="img/indexImg/store/store-single-item-icon.png" alt="" />
-        </div>
-        <div class="message-header">
-          <div class="message-header-icon">
-            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+        <a href="leavemessage.php">
+          <div class="leavemessage-cloud">
+            <img src="img/indexImg/store/store-single-item-icon.png" alt="" />
           </div>
-          <p><?php echo $row["mem_name"] ?></p>
-        </div>
-        <div class="message-body">
-          <figure>
-            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
-          </figure>
-          <div class="message-text">
-            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
-            <p><?php echo $row["cfs_content"] ?></p>
-            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+          <div class="message-header">
+            <div class="message-header-icon">
+              <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+            </div>
+            <p><?php echo $row["mem_name"] ?></p>
           </div>
-        </div>
-        <div class="custom-ice">
-          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
-        </div>
+          <div class="message-body">
+            <figure>
+              <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
+            </figure>
+            <div class="message-text">
+              <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+              <p><?php echo $row["cfs_content"] ?></p>
+              <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+            </div>
+          </div>
+          <div class="custom-ice">
+            <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
+          </div>
+        </a>
       </div>
       <div class="message-item first-love wow flipInY" data-wow-delay="0.5s">
-        <div class="leavemessage-cloud">
-          <img src="img/indexImg/store/store-first-lovepng-item-icon.png" alt="" />
-        </div>
-        <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
-        <div class="message-header">
-          <div class="message-header-icon">
-            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+        <a href="leavemessage.php">
+          <div class="leavemessage-cloud">
+            <img src="img/indexImg/store/store-first-lovepng-item-icon.png" alt="" />
           </div>
-          <p><?php echo $row["mem_name"] ?></p>
-        </div>
-        <div class="message-body">
-          <figure>
-            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
-          </figure>
-          <div class="message-text">
-            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
-            <p><?php echo $row["cfs_content"] ?></p>
-            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+          <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
+          <div class="message-header">
+            <div class="message-header-icon">
+              <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+            </div>
+            <p><?php echo $row["mem_name"] ?></p>
           </div>
-        </div>
-        <div class="custom-ice">
-          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
-        </div>
+          <div class="message-body">
+            <figure>
+              <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
+            </figure>
+            <div class="message-text">
+              <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+              <p><?php echo $row["cfs_content"] ?></p>
+              <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+            </div>
+          </div>
+          <div class="custom-ice">
+            <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
+          </div>
+        </a>
       </div>
       <div class="message-item fall-in-love wow flipInY " data-wow-delay="1s">
-        <div class="leavemessage-cloud">
-          <img src="img/indexImg/store/store-love-item-icon.png" alt="" />
-        </div>
-        <div class="message-header">
-          <div class="message-header-icon">
-            <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
-            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+        <a href="leavemessage.php">
+          <div class="leavemessage-cloud">
+            <img src="img/indexImg/store/store-love-item-icon.png" alt="" />
           </div>
-          <p><?php echo $row["mem_name"] ?></p>
-        </div>
-        <div class="message-body">
-          <figure>
-            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
-          </figure>
-          <div class="message-text">
-            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
-            <p><?php echo $row["cfs_content"] ?></p>
-            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+          <div class="message-header">
+            <div class="message-header-icon">
+              <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
+              <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+            </div>
+            <p><?php echo $row["mem_name"] ?></p>
           </div>
-        </div>
-        <div class="custom-ice">
-          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
-        </div>
+          <div class="message-body">
+            <figure>
+              <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
+            </figure>
+            <div class="message-text">
+              <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+              <p><?php echo $row["cfs_content"] ?></p>
+              <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+            </div>
+          </div>
+          <div class="custom-ice">
+            <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
+          </div>
+        </a>
       </div>
       <div class="message-item break-up wow flipInY" data-wow-delay="1.5s">
-        <div class="leavemessage-cloud">
-          <img src="img/indexImg/store/store-lost-love-item-icon.png" alt="" />
-        </div>
-        <div class="message-header">
-          <div class="message-header-icon">
-            <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
-            <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+        <a href="leavemessage.php">
+          <div class="leavemessage-cloud">
+            <img src="img/indexImg/store/store-lost-love-item-icon.png" alt="" />
           </div>
-          <p><?php echo $row["mem_name"] ?></p>
-        </div>
-        <div class="message-body">
-          <figure>
-            <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
-          </figure>
-          <div class="message-text">
-            <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
-            <p><?php echo $row["cfs_content"] ?></p>
-            <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+          <div class="message-header">
+            <div class="message-header-icon">
+              <?php $row = $confessions->fetch(PDO::FETCH_ASSOC) ?>
+              <img src="<?php echo $row["mem_pic"] ?>" alt="user-icon" />
+            </div>
+            <p><?php echo $row["mem_name"] ?></p>
           </div>
-        </div>
-        <div class="custom-ice">
-          <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
-        </div>
+          <div class="message-body">
+            <figure>
+              <img src="<?php echo $row["cfs_pic"] ?>" alt="上傳照片" />
+            </figure>
+            <div class="message-text">
+              <h3><span>To:</span><?php echo $row["cfs_to"] ?></h3>
+              <p><?php echo $row["cfs_content"] ?></p>
+              <span class="s-text">#<?php echo $row["cto_words"] ?></span>
+            </div>
+          </div>
+          <div class="custom-ice">
+            <img src="<?php echo $row["cto_pic"] ?>" alt="客製冰棒" />
+          </div>
+        </a>
       </div>
     </div>
     <!-- 背景 -->
@@ -535,7 +543,7 @@ try {
             2.入館後至1F客服中心請揪團主使用QR Code報到
           </p>
         </div>
-        <a class="course-button-custom" href="courseGroup.html">
+        <a class="course-button-custom" href="course-group.php">
           <div class="course-button-style">
             <div class="course-button-style-botton">
               <div class="course-inner-style">
@@ -570,7 +578,7 @@ try {
             2.入館後至1F客服中心使用QR Code報到劃位
           </p>
         </div>
-        <a class="course-button-custom" href="courseGroup.html">
+        <a class="course-button-custom" href="course-general.php">
           <div class="course-button-style">
             <div class="course-button-style-botton">
               <div class="course-inner-style">
@@ -615,7 +623,7 @@ try {
             <div class="index-news-content-list">
               <div class="index-news-content-icon">最新消息</div>
               <div class="index-news-conten-text-group">
-                <a href="news.php">
+                <a href="http://140.115.236.71/demo-projects/DD101/DD101G3/newsinner.php?news_no=<?php echo $newsRow["news_no"] ?>">
                   <h3><?php echo $newsRow["news_title"] ?></h3>
                   <p><?php echo $newsRow["news_content"] ?></p>
                 </a>
@@ -625,7 +633,7 @@ try {
               <?php $newsRow = $news->fetch(PDO::FETCH_ASSOC) ?>
               <div class="index-news-content-icon-g">最新消息</div>
               <div class="index-news-conten-text-group">
-                <a href="news.php">
+                <a href="http://140.115.236.71/demo-projects/DD101/DD101G3/newsinner.php?news_no=<?php echo $newsRow["news_no"] ?>">
                   <h3><?php echo $newsRow["news_title"] ?></h3>
                   <p><?php echo $newsRow["news_content"] ?></p>
                 </a>
@@ -635,7 +643,7 @@ try {
               <?php $newsRow = $news->fetch(PDO::FETCH_ASSOC) ?>
               <div class="index-news-content-icon-y">最新消息</div>
               <div class="index-news-conten-text-group">
-                <a href="news.php">
+                <a href="http://140.115.236.71/demo-projects/DD101/DD101G3/newsinner.php?news_no=<?php echo $newsRow["news_no"] ?>">
                   <h3><?php echo $newsRow["news_title"] ?></h3>
                   <p><?php echo $newsRow["news_content"] ?></p>
                 </a>
