@@ -18,9 +18,9 @@
   font-family: "GenJyuuGothic-R";
   src: url(../font/genJyuuGothic/GenJyuuGothicX-P-Regular.ttf);
 }
-* {
-  /* outline: 1px solid #f00; */
-}
+/* * { */
+/* outline: 1px solid #f00; */
+/* } */
 
 html {
   position: relative;
@@ -1644,7 +1644,7 @@ html {
     position: absolute;
     width: 10%;
     left: 38%;
-    top: 51%;
+    top: 40%;
     z-index: 6;
     /* animation: iceShadow 2s ease 0s infinite alternate;
   }
@@ -1666,7 +1666,7 @@ html {
     position: absolute;
     width: 45%;
     left: 27.5%;
-    top: 15%;
+    top: 4%;
     z-index: 5;
   }
   .diy-ice-bgc {
@@ -1681,7 +1681,7 @@ html {
     z-index: 7;
     width: 12%;
     height: 32%;
-    top: 26%;
+    top: 15%;
     left: 55.8%;
     border-radius: 5%;
     text-align: center;
@@ -1748,7 +1748,7 @@ html {
     visibility: visible;
     position: absolute;
     z-index: 6;
-    top: 26%;
+    top: 15%;
     width: 13%;
     left: 37%;
     /* animation: modelgeneral 5s ease 0s infinite alternate;
@@ -1770,7 +1770,7 @@ html {
     visibility: hidden;
     position: absolute;
     z-index: 6;
-    top: 24%;
+    top: 15%;
     width: 13%;
     left: 37%;
     /* animation: modelbear 5s ease 0s infinite alternate;
@@ -1791,7 +1791,7 @@ html {
     visibility: hidden;
     position: absolute;
     z-index: 6;
-    top: 24%;
+    top: 15%;
     width: 13%;
     left: 37%;
     /* animation: modelrabbit 5s ease 0s infinite alternate;
@@ -1812,7 +1812,7 @@ html {
     visibility: hidden;
     position: absolute;
     z-index: 6;
-    top: 24%;
+    top: 15%;
     width: 13%;
     left: 37%;
     /* animation: modelrocket 5s ease 0s infinite alternate;
@@ -2117,7 +2117,7 @@ html {
     text-align: center;
     font-family: "GenJyuuGothic-R";
     color: #7a4741;
-    font-size: 18px;
+    font-size: 13px;
   }
 
   .store-item-text {

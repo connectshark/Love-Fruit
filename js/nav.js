@@ -34,10 +34,10 @@ function memberCentreDownMenuOut() {
   if (window.innerWidth > 767) {
     if ($id("member-centre-down-menu").style.opacity == "0") {
       $id("member-centre-down-menu").style.opacity = "1";
-      $id("member-centre-down-menu").style.transform = "translateY(190%)";
+      $id("member-centre-down-menu").style.transform = "translateY(190px)";
     } else {
       $id("member-centre-down-menu").style.opacity = "0";
-      $id("member-centre-down-menu").style.transform = "translateY(0%)";
+      $id("member-centre-down-menu").style.transform = "translateY(0px)";
     }
   }
 }
@@ -46,10 +46,10 @@ function memberCentreDownMenuOutP() {
   if (window.innerWidth < 767) {
     if ($id("member-centre-panel-p").style.opacity == "0") {
       $id("member-centre-panel-p").style.opacity = "1";
-      $id("member-centre-panel-p").style.transform = "translateY(240%)";
+      $id("member-centre-panel-p").style.transform = "translateY(325px)";
     } else {
       $id("member-centre-panel-p").style.opacity = "0";
-      $id("member-centre-panel-p").style.transform = "translateY(0%)";
+      $id("member-centre-panel-p").style.transform = "translateY(0px)";
     }
   }
 }
