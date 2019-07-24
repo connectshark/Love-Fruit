@@ -8,7 +8,7 @@ $font-gray:#434343;
 *{
     box-sizing: border-box;
     text-decoration: none;  
-    // outline: 1px solid #f00;
+//     outline: 1px solid #f00;
 }
 body{
     font-family: "GenJyuuGothic-R";
@@ -37,7 +37,7 @@ body{
             padding-bottom: 25%;
             margin: auto;
             @include rwd(medium){
-                padding: 10% 0;  
+                padding: 10% 0 0 ;  
             }
             .img-bg{
                 position: relative;  
@@ -67,31 +67,33 @@ body{
         }
     }
     .air-ball{
+        z-index: 1;
         display: none;
         max-width: 1200px;
         height: 270px;
         margin: auto;
         justify-content: space-between;
-        padding:0 3% 5%;
+        padding:0 5%;
         @include rwd (medium){
-            padding-bottom: 5%;
+            // padding-bottom: 5%;
             display: flex;
            }
         
         img{
+            // width: 80%;
          height:80%;
             position: relative;
             animation: air-ball-active 2.5s infinite alternate;
            &:first-child{
             transform: scale(.8); 
                 @include rwd (medium){
-                transform: scale(1.5); 
+                transform: scale(1.2); 
                }
            }
            &:last-child{
             transform: scale(.4) rotate(25deg); 
                 @include rwd (medium){
-                    transform: scale(1)rotate(25deg); 
+                    transform: scale(.8)rotate(25deg); 
                 }
            }
         }
@@ -100,15 +102,15 @@ body{
             position: relative;
             animation: air-ball-active 2.5s infinite alternate;
            &:first-child{
-            transform: scale(.8) rotate(-25deg); 
+            transform: scale(.7) rotate(-25deg); 
                 @include rwd (medium){
-                transform: scale(1.5)rotate(-25deg); 
+                transform: scale(1.2)rotate(-25deg); 
                }
            }
            &:last-child{
             transform: scale(.5) rotate(13deg); 
                 @include rwd (medium){
-                    transform: scale(1)rotate(13deg); 
+                    transform: scale(.8)rotate(13deg); 
                 }
             }
 
@@ -147,12 +149,16 @@ body{
                     justify-content: space-around;
                     align-items: center;
                     text-align: center;
-                    @include rwd(desktop){
-                        width: 80%;
+                    @include rwd(medium){
+                        width: 70%;
+                        transform: translateY(-80px);
                      }
             
                 h3{
-                    font: 24px "A-OTF-M";
+                    font: 18px "A-OTF-M";
+                    @include rwd(medium){
+                        font: 20px "A-OTF-M";
+                     }
                     text-align: center;
                 }
                .filter-item{
@@ -165,7 +171,7 @@ body{
                         cursor: pointer;
                         background-color: #a3a3a3;
                         border: none;
-                        padding: 5px 25px;
+                        padding: 5px 15px;
                         border-radius: 10px;
                         box-shadow: 0px 3px 0px #555;
                         color: #fff;
@@ -176,7 +182,7 @@ body{
                             box-shadow: 0px 1px 0px #555;
                             transition: .3s;
                         }
-                        @include rwd(desktop){
+                        @include rwd(medium){
                             font:18px "A-OTF-M";
                         }
                         @include rwd(mobile){
@@ -215,15 +221,19 @@ body{
         padding-bottom: 10%;
         width: 100%;
         background-color:$light-yellow;
+      
         .items-group{
             width: 100%;
             max-width: 1200px;
             margin: auto;
             border-radius: 10px;
-            padding: 10% 0;
+            // padding: 10% 0;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
+            // @include rwd(medium){
+            //     transform: translateY(-80px);
+            //  }
             .item{
                 display: inline-block;
                 position: relative;
@@ -363,8 +373,10 @@ body{
             align-items: center;
             margin: auto;
             @include rwd(medium){
-                width: 70%;
+                width: 50%;
+                transform: translateY(-80px);
             }
+        
             &::before{
                 content: '';
                 flex-grow: .5;
@@ -426,9 +438,10 @@ body{
         }
         .article-text{
        
-            width: 60%;
+            width: 50%;
             margin: auto;
             line-height: 40px;
+            padding-bottom: 10%;
             @include rwd(mobile){
                 width: 80%;
                 font-size: 16px;

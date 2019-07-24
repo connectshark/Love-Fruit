@@ -3,6 +3,7 @@ window.addEventListener("load",function(){
 	  let replyContent = e.target.form.getElementsByTagName("input")[0].value;
 	  let msgno=$('.msgno').eq($(this).index('.btn-add')).text();
 	  let allMessage=$(this).index('.btn-add');
+	  
 	 
 	  //產生XMLHttpRequest物件
 	  var xhr = new XMLHttpRequest();
@@ -14,7 +15,10 @@ window.addEventListener("load",function(){
 	  //註冊callback function
 	  xhr.onload = function (){
 		// let allMessage = $id("all-message");
-		let today = new Date();
+		let TimeNow= new Date();
+		let yyyy = TimeNow.getFullYear(); //年
+	 	let  MM = (TimeNow.getMonth()+1<10 ? '0' : '')+(TimeNow.getMonth()+1);   //月
+	    let  dd = (TimeNow.getDate()<10 ? '0' : '')+TimeNow.getDate();       //日
 		// myForm.insertBefore(newSpot, btnSend)
 	      if( xhr.status == 200 ){ //正常的處理完畢
 	        //複製一包, 將登入者的姓名,日期,conten 
@@ -25,7 +29,7 @@ window.addEventListener("load",function(){
 			newSpot = spot.cloneNode(true);
 			newSpot.style.display = "";
 			// newSpot.querySelector(".name").innerText = member.name;
-			newSpot.querySelector(".time").innerText = today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate() ;
+			newSpot.querySelector(".time").innerText = yyyy+"-"+MM+"-"+dd ;
 			newSpot.querySelector(".text").innerText = replyContent;
 			document.getElementsByClassName('all-message')[allMessage].appendChild(newSpot);
 		

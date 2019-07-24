@@ -104,7 +104,7 @@ function newsName($newsClass)
        <?php echo $newsRow->news_content; ?>
       </p>
 
-      <div class="change-page">
+      <!-- <div class="change-page">
         <div class="page-btn pre ">
           <span>上一篇</span>
           <p>一起GO PARTY！</p>
@@ -113,7 +113,7 @@ function newsName($newsClass)
           <span>下一篇</span>
           <p>暑假檔期</p>
         </div>
-      </div>
+      </div> -->
 
     </section>
 

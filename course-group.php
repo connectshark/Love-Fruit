@@ -8,7 +8,7 @@ try {
 	$sql = "select m.mem_no,m.mem_name,m.mem_pic,cm.msg_no, cm.msg_title, cm.msg_date, cm.course_class_no,cm.msg_content from course_msg cm join member m on cm.mem_no = m.mem_no where course_class_no = 1 order by cm.msg_date desc";
   $courseMsg  = $pdo->prepare($sql);
   $courseMsg -> execute();
-  //.............
+  //抓回覆留言
   $sql2 = "select cm.msg_no,m.mem_no,m.mem_name,m.mem_pic, cm.course_class_no,mr.reply_date,mr.reply_content from msg_reply mr join member m on mr.mem_no = m.mem_no join course_msg cm on mr.msg_no = cm.msg_no where course_class_no = 1 and cm.msg_no = :msg_no order by reply_date desc";      
   $replayMsg  = $pdo->prepare($sql2);
   
@@ -149,18 +149,18 @@ try {
           </div>
 
         </div>
-     
+
   </form>
 
   <div class="love-line"><img src="img/course/love-line.png" alt="love-line"></div>
 
     <div class="array-btn">
-        <a class="array-ice-btn-out" href="course-group-form.php">
-          <span class="array-ice-btn-in">
+        <div class="array-ice-btn-out group-click-check">
+          <span class="array-ice-btn-in group-click-check">
             <img src="img/btn/ICE.png" alt="btn">
             主揪報團
           </span>
-        </a>
+        </div>
     </div>
 
 <?php while ($row = $courseMsg -> fetchObject()) {?>  
@@ -234,7 +234,7 @@ try {
                   <div class="meb-add-message ">
                     <div class="meb col-md-2 ">
                     <?php if ( $replayMsgRow->mem_pic) { ?>
-						<div class="user-head"><img src="<?php echo $replayMsgRow->mem_pic ?>" alt="頭像"></div>
+					<div class="user-head"><img src="<?php echo $replayMsgRow->mem_pic ?>" alt="頭像"></div>
 					<?php }else{
 						echo "<i class='fas fa-user-circle'></i>";
 					} ?>
@@ -287,6 +287,7 @@ try {
   <script src="js/course-group.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/course-check.js"></script>
 </body>
 
 </html>
