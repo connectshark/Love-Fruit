@@ -1,6 +1,10 @@
-<?php 
+<?php
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
 ?>
+
 <html lang="UTF-8">
 <head>
   <meta charset="UTF-8" />

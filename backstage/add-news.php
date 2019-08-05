@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-echo $_FILES["newsFile"]["tmp_name"];
 switch($_FILES["newsFile"]["error"]){
 	case UPLOAD_ERR_OK:
 	    if( file_exists("../database/img_news") === false){  //若資料夾不存在
 	    	mkdir("../database/img_news"); //make directory
 	    }
 	    $from = $_FILES["newsFile"]["tmp_name"];
-	    $to = "../database/img_news/".$_FILES['newsFile']['name'];
+	    $to = "../database/img_news/{$_FILES['newsFile']['name']}";
 	    if(copy($from, $to)){
 	    	echo "上傳成功~<br>檔案名稱為:"."{$_FILES['newsFile']['name']}";
 	    }else{

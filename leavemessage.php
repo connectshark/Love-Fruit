@@ -168,10 +168,6 @@ function stageName($stage)
 						<i class="fas fa-thumbs-up"></i>
 						<span><?php echo $row->cfs_good; ?></span>
 					</button>
-					<button type="button">
-						<i class="fas fa-share-alt"></i>
-						<span>分享</span>
-					</button>
 				</div>
 				<div class="custom-ice">
 					<img src="<?php echo $row->cto_pic; ?>" alt="客製冰棒">

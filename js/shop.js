@@ -1,63 +1,74 @@
 let cart = {};
-console.log(JSON.stringify(cart));
+// console.log(JSON.stringify(cart));
 
+function checklog(){
+	var xhr = new XMLHttpRequest();
+  	xhr.onload = function() {
+    // alert(xhr.responseText);
+    if (xhr.responseText != "notLogin") {
+		navLoginIcon();
+    }
+    // 已登入;
+  };
+  xhr.open("get", "php/UserProfile.php", true);
+  xhr.send(null);
+}
 //點擊愛心
 var click_love = document.getElementsByClassName("latest-collection-love");
 for(var i=0 ;i<click_love.length; i++){
+
+
 	click_love[i].addEventListener("click",function(e){
+		let heart = this;
+	var imgSrc = this.getAttribute( "src" );
+	console.log(imgSrc)	;
+	var xhr = new XMLHttpRequest();
+	xhr.onload = function(e) {
+	  // alert(xhr.responseText);
+		if (xhr.responseText == "notLogin"){
+			console.log("not login");
+			navLoginIcon();
 
-		var imgSrc = this.getAttribute( "src" ); 
-		// console.log(imgSrc);
-			// 加入購物車
-		if(imgSrc === "img/shop/collection-gray.png"){
-			this.setAttribute( "src" ,"img/shop/collection-red.png" )
+		}else{ // 已登入;
+			console.log("already login ")
 			let xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function(){
+			xhr.onreadystatechange = function(e){
 				if(xhr.readyState ==4 ){
-				  if(xhr.status ==200){
-					//   alert(xhr.responseText);
-				  }else{
+					if(xhr.status ==200){
+				}else{
 					// alert(xhr.status);
-				  }
+					}
 				}
-			  }
-			let url = "add-favorite.php";
-			xhr.open("post" , url ,false);
-			console.log(this);
-			console.log(this.parentNode);
-			let myForm = new FormData(this.parentNode);
+			};
+
+			let url;
+			if(imgSrc.indexOf("collection-gray.png")!=-1){ //grey -->red
+				// 加入收藏
+				console.log("要準備收藏囉");
+				heart.src ="img/shop/collection-red.png";
+				// click_love[i].indexOf( "img/shop/collection-red.png");
+				console.log(imgSrc);
+				url = "add-favorite.php";
+			}else{
+				// 刪除收藏
+				heart.src = "img/shop/collection-gray.png" ;
+				console.log(imgSrc);
+				// click_love[i].indexOf( "img/shop/collection-gray.png");
+				console.log("要準備刪除囉");
+				url = "delete-favorite.php";
+			};
+			xhr.open("post" , url , true);
+			let myForm = new FormData(heart.parentNode);
+			console.log(heart);
 			xhr.send(myForm);
-			
-		}else{
-			// 從購物車刪除
-			this.setAttribute( "src" ,"img/shop/collection-gray.png" )
-			let xhr = new XMLHttpRequest();
-
-
-
-			xhr.onreadystatechange = function(){
-				if(xhr.readyState ==4 ){
-				  if(xhr.status ==200){
-					//   alert(xhr.responseText);
-				  }else{
-					// alert(xhr.status);
-				  }
-				}
-			  }
-
-
-			let url = "delete-favorite.php";
-			xhr.open("post" , url ,false);
-			let myForm = new FormData(this.parentNode);
-			xhr.send(myForm);
-	}	
-
-
+		}
+	};
+	xhr.open("get", "php/UserProfile.php", true);
+	xhr.send(null);
 
 	})
-
-	};
-
+	
+};
 //..............................顯示購物車	
 function showCart(){
 	getCart();
@@ -95,24 +106,35 @@ function showCart(){
 		let prod_no = item.firstElementChild.innerText;
 		let xhr = new XMLHttpRequest();
 		
+		// xhr.onload = function (){
+		// 	miniItem.removeChild(item);// 消除視覺介面
+		// 	console.log(xhr.responseText);
+		// 	cart = JSON.parse(xhr.responseText);
+		// 	console.log(cart);
+		// 	console.log(Object.keys(cart).length);
+		// 	if(Object.keys(cart).length == 2 ){
+		// 		html = "";
+		// 		html += '<div class="no-item">尚無購物資料</div>';
+		// 		document.getElementById("mini-item").innerHTML = html;
+		// 	}
+		// 	// delete cart[prod_no]; 消除記憶體
+		// }
+		//..............
 		xhr.onload = function (){
-
 			miniItem.removeChild(item);// 消除視覺介面
 			console.log(xhr.responseText);
-			
 			cart = JSON.parse(xhr.responseText);
-			// cart.typeof();
-			// console.log(cart.typeof());
-			// console.log(cart);
-			cart = JSON.stringify(cart);
-			console.log(Object.keys(cart).length);
-			if(Object.keys(cart).length == 2 ){
+			console.log("....",cart);
+			// console.log(Object.keys(cart).length);
+			if( isCartEmpty() ){
+			console.log('.........')
 				html = "";
 				html += '<div class="no-item">尚無購物資料</div>';
 				document.getElementById("mini-item").innerHTML = html;
 			}
 			// delete cart[prod_no]; 消除記憶體
 		}
+		//..............
 		let url = "trash.php?prod_no=" + prod_no;
 		xhr.open("get",url,true);
 		console.log(this.parentNode);
@@ -127,9 +149,11 @@ function showCart(){
 }	
 
 function isCartEmpty(){
-	if( JSON.stringify(cart) =="{}"){
+	if(JSON.stringify(cart) =="{}"){
+		console.log("empty.......")
 		return true;
 	}
+		console.log("not not empty.......")
 		return false;
 }
 
@@ -138,7 +162,7 @@ function changeCart(e){
 	let xhr = new XMLHttpRequest();
 	
 	xhr.onload = function (e){
-		if(xhr.responseText == 444 ){
+		if(xhr.responseText == "false" ){
 			navLoginIcon()
 		};
 		cart = JSON.parse(xhr.responseText); //取回cart的最新狀況
@@ -155,21 +179,19 @@ function changeCart(e){
 //.............取得購物車資料
 function getCart(){
   let xhr = new XMLHttpRequest();
-  
   xhr.onload = function(){
-  	if( xhr.status == 200){
-			// console.log(xhr.responseText);
-		  cart = JSON.parse(xhr.responseText);
-		//   console.log(cart);
-		
-  	}else{
-  		alert(xhr.status);
-  	}
+	if(xhr.readyState ==4 ){
+		if(xhr.status ==200){
+			cart = JSON.parse(xhr.responseText);
+		    // alert(xhr.responseText);
+		}else{
+		//   alert(xhr.status);
+		}
+	  }
   }
   let url = "get-cart.php";
   xhr.open("get", url, true);
   xhr.send(null);
-
 }
 
 
@@ -236,7 +258,7 @@ function minnum(){
 	})
 
 	// 右上角購物車滾輪
-	$().on()
+	// $().on()
 
 
 
@@ -245,147 +267,147 @@ function minnum(){
 });	
 
 //按鈕壞顏色
-$(document).ready(function() {
-	$('#all').click(function(){
-		$('.general-item').css('display','block');
-		$(this).css('backgroundColor','#fc7389');
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('全部');
-	});
-	$('#single').click(function(){
-		$('.general-item').css('display','none');
-		$('.single').css('display','block');
-		$(this).css('backgroundColor','#f6c555');
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('單身');
-	});
-	$('#first-love').click(function(){
-		$('.general-item').css('display','none');
-		$('.first-love').css('display','block');
-		$(this).css('backgroundColor','#0abbb5');
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('初戀');
-	});
-	$('#fall-in-love').click(function(){
-		$('.general-item').css('display','none');
-		$('.fall-in-love').css('display','block');
-		$(this).css('backgroundColor','#db4d6d')
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('熱戀');
-	});
-	$('#break-up').click(function(){
-		$('.general-item').css('display','none');
-		$('.break-up').css('display','block');
-		$(this).css('backgroundColor','#79a6cc')
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('分手');
-	});
-	$('#id-popscial').click(function(){
-		$('.general-item').css('display','none');
-		$('.popscial').css('display','block');
-		$(this).css('backgroundColor','#79a6cc')
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('冰棒');
-	});
-	$('#id-ice-cream').click(function(){
-		$('.general-item').css('display','none');
-		$('.ball').css('display','block');
-		$(this).css('backgroundColor','#79a6cc')
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('冰淇淋');
-	});
-	$('#id-icecream-ball').click(function(){
-		$('.general-item').css('display','none');
-		$('.icecream').css('display','block');
-		$(this).css('backgroundColor','#79a6cc')
-		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
-		$('#filter-pull').val('霜淇淋');
-	});
+// $(document).ready(function() {
+// 	$('#all').click(function(){
+// 		$('.general-item').css('display','block');
+// 		$(this).css('backgroundColor','#fc7389');
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('全部');
+// 	});
+// 	$('#single').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.single').css('display','block');
+// 		$(this).css('backgroundColor','#f6c555');
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('單身');
+// 	});
+// 	$('#first-love').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.first-love').css('display','block');
+// 		$(this).css('backgroundColor','#0abbb5');
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('初戀');
+// 	});
+// 	$('#fall-in-love').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.fall-in-love').css('display','block');
+// 		$(this).css('backgroundColor','#db4d6d')
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('熱戀');
+// 	});
+// 	$('#break-up').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.break-up').css('display','block');
+// 		$(this).css('backgroundColor','#79a6cc')
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('分手');
+// 	});
+// 	$('#id-popscial').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.popscial').css('display','block');
+// 		$(this).css('backgroundColor','#79a6cc')
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('冰棒');
+// 	});
+// 	$('#id-ice-cream').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.ball').css('display','block');
+// 		$(this).css('backgroundColor','#79a6cc')
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('冰淇淋');
+// 	});
+// 	$('#id-icecream-ball').click(function(){
+// 		$('.general-item').css('display','none');
+// 		$('.icecream').css('display','block');
+// 		$(this).css('backgroundColor','#79a6cc')
+// 		$('.filter').not(this).css('backgroundColor', '#a3a3a3');
+// 		$('#filter-pull').val('霜淇淋');
+// 	});
 
 
-	$('#select-pull').change(function(){
-		map = $('#select-pull').val();
-		switch (map) {
-			case '全部':
-				$('.general-item').css('display','block');
-				$('.filter').css('backgroundColor', '#a3a3a3');
-				$('.filter').eq(0).css('backgroundColor', '#fc7389');
-				break;
-			case '單身':
-				$('.general-item').css('display','none');
-				$('.single').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(1).css('backgroundColor', '#fc7389');
-				break;
-			case '初戀':
-				$('.general-item').css('display','none');
-				$('.first-love').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
-				break;
-			case '熱戀':
-				$('.general-item').css('display','none');
-				$('.fall-in-love').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
-				break;
-			case '分手':
-				$('.general-item').css('display','none');
-				$('.break-up').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
-				break;
+// 	$('#select-pull').change(function(){
+// 		map = $('#select-pull').val();
+// 		switch (map) {
+// 			case '全部':
+// 				$('.general-item').css('display','block');
+// 				$('.filter').css('backgroundColor', '#a3a3a3');
+// 				$('.filter').eq(0).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '單身':
+// 				$('.general-item').css('display','none');
+// 				$('.single').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(1).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '初戀':
+// 				$('.general-item').css('display','none');
+// 				$('.first-love').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '熱戀':
+// 				$('.general-item').css('display','none');
+// 				$('.fall-in-love').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '分手':
+// 				$('.general-item').css('display','none');
+// 				$('.break-up').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+// 				break;
 
-			case '冰棒':
-				$('.general-item').css('display','none');
-				$('.popscial').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
-				break;
-			case '霜淇淋':
-				$('.general-item').css('display','none');
-				$('.icecream').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
-				break;
-			case '冰淇淋':
-				$('.general-item').css('display','none');
-				$('.ball').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
-				break;	
-		}
-	});
+// 			case '冰棒':
+// 				$('.general-item').css('display','none');
+// 				$('.popscial').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '霜淇淋':
+// 				$('.general-item').css('display','none');
+// 				$('.icecream').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '冰淇淋':
+// 				$('.general-item').css('display','none');
+// 				$('.ball').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+// 				break;	
+// 		}
+// 	});
 
 
 	
-	$('#a-select-pull').change(function(){
-		amap = $('#a-select-pull').val();
-		switch (amap) {
-			case '冰棒':
-				$('.general-item').css('display','none');
-				$('.popscial').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
-				break;
-			case '霜淇淋':
-				$('.general-item').css('display','none');
-				$('.icecream').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
-				break;
-			case '冰淇淋':
-				$('.general-item').css('display','none');
-				$('.ball').css('display','block');
-				// $('.filter').css('backgroundColor', '#a3a3a3');
-				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
-				break;	
-		}
-	});
+// 	$('#a-select-pull').change(function(){
+// 		amap = $('#a-select-pull').val();
+// 		switch (amap) {
+// 			case '冰棒':
+// 				$('.general-item').css('display','none');
+// 				$('.popscial').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(2).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '霜淇淋':
+// 				$('.general-item').css('display','none');
+// 				$('.icecream').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(3).css('backgroundColor', '#fc7389');
+// 				break;
+// 			case '冰淇淋':
+// 				$('.general-item').css('display','none');
+// 				$('.ball').css('display','block');
+// 				// $('.filter').css('backgroundColor', '#a3a3a3');
+// 				// $('.filter').eq(4).css('backgroundColor', '#fc7389');
+// 				break;	
+// 		}
+// 	});
 
 
 
 
-});
+// });
 
 

@@ -202,7 +202,7 @@ try {
                                 <div class="col-7 col-md-12">
                                     <p><?php if ($orderRows["order_pay"] == 0) {
                                             echo "貨到付款";
-                                        } elseif ($orderRows["order_ship"] == 1) {
+                                        } elseif ($orderRows["order_pay"] == 1) {
                                             echo "信用卡";
                                         }; ?></p>
                                 </div>
@@ -247,8 +247,8 @@ try {
                                                 <p class="list-count col-4 col-md-5">小計：<?php echo $pordItemRows["item_qty"] * $pordItemRows["prod_price"] ?></p>
                                             </div>
                                         <?php
-                                    }
-                                    ?>
+                                        }
+                                        ?>
                                     </div>
 
                                 </div>
@@ -256,8 +256,8 @@ try {
                         </div>
 
                     <?php
-                }
-                ?>
+                    }
+                    ?>
 
                 </div>
 
@@ -271,15 +271,15 @@ try {
                             </div>
                             <div class="collection-desc col-10 col-md-11">
                                 <div class="col-5 col-md-3"><?php echo $collections["prod_name"]; ?></div>
-                                <div class="col-3 col-md-3"><?php echo $collections["prod_price"]; ?></div>
-                                <div class="col-3 col-md-3"><a href="shop-inside.php?prod_no=<?php echo $collections["prod_no"]; ?>">詳情</a></div>
+                                <div class="col-6 col-md-6"><?php echo $collections["prod_price"]; ?>元</div>
+                                <!-- <div class="col-3 col-md-3"><a href="shop-inside.php?prod_no=<?php echo $collections["prod_no"]; ?>">詳情</a></div> -->
                                 <div class="heart col-1 col-md-3"><a class="heart-btn" href="javascript:;"><i class="fas fa-heart"></i></a></div>
                             </div>
                         </div>
 
                     <?php
-                }
-                ?>
+                    }
+                    ?>
 
                 </div>
 
@@ -325,8 +325,8 @@ try {
                                     </div>
                                 </div>
                             <?php
-                        }
-                        ?>
+                            }
+                            ?>
                             <div class="custom-desc col-12 col-md-2">
                                 <div class="thead col-5 col-md-12">
                                     <p>配料</p>
@@ -345,8 +345,8 @@ try {
                             </div>
                         </div>
                     <?php
-                }
-                ?>
+                    }
+                    ?>
                 </div>
 
                 <div id="course" class="content content-course">
@@ -405,8 +405,8 @@ try {
                         </div>
 
                     <?php
-                }
-                ?>
+                    }
+                    ?>
 
                 </div>
             </div>

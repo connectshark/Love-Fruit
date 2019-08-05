@@ -287,7 +287,7 @@ try {
     </div>
 
     <div class="store-group">
-      <a href="shop.html"> <img src="img/indexImg/store.png" alt="store" /></a>
+      <a href="shop.php"> <img src="img/indexImg/store.png" alt="store" /></a>
     </div>
     <div class="store-group-item-group">
       <div class="store-item-single wow bounceInRight">
@@ -668,8 +668,6 @@ try {
   <script src="js/login.js"></script>
   <script src="js/index.js"></script>
   <script src="js/shop.js"></script>
-
-
 </body>
 
 </html>

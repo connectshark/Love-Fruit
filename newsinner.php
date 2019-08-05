@@ -1,8 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
+?>
+
 <?php 
 $news_no = $_REQUEST["news_no"];
 $errMsg="";
 
-session_start();
+
 
     try {
       require_once("mac-require.php");

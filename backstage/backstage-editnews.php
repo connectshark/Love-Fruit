@@ -44,7 +44,7 @@ try {
     <section class="container-fluid p-4">
         <div class="row justify-content-center">
             <div class="col-10 px-0">
-                <h3>新增-最新消息頁面</h3>
+                <h3>編輯-最新消息頁面</h3>
             </div>
         </div>
     </section>
@@ -80,9 +80,9 @@ try {
                         <div class="col-1 bg-lovefruit rounded text-white text-center p-2">圖片</div>
                         <div class="col-11">
                             <div class="row">
-                                <div class="col-1 p-1">
+                                <div class="col-2 p-1">
                                     <label class="news-file mb-0 ml-3 btn btn-info" for="newsFile">選擇圖片</label>
-                                    <input class="d-none" type="file" name="newsFile" id="newsFile" accept=".jpg,.png">
+                                    <input class="d-none" type="file" name="newsFile" id="newsFile" accept=".jpg,.png" value="<?php echo $newsRows["news_pic"]?>">
                                 </div>
                                 <div class="col-6 p-2 text-secondary">圖片格式 jpg / png</div>
                                 <div class="col-6"><img class="img-fluid" id="img-preview" src="../<?php echo $newsRows["news_pic"]?>" alt=""></div>

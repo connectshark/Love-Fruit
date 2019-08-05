@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 if (isset($_SESSION["mem_id"]) != true) {
@@ -28,24 +30,32 @@ try {
 ?> 
 <!-- 抓會員已收藏 -->
 <?php
-try{
-    $sql = "select * from collection where mem_no = 1 " ;
-    $collection = $pdo->query($sql);
-    $collection_row =  $collection->fetchALL(PDO::FETCH_ASSOC);
-    $collection_arr = array();
-    // echo `$collection_row[0]["prod_no"]`;
-    for($i = 0; $i<count($collection_row); $i++){
-        array_push($collection_arr, $collection_row[$i]["prod_no"]);
 
-    }
-    // print_r($collection_arr);
-}catch(PDOException $e) {
-	echo "錯誤 : ", $e -> getMessage(), "<br>";
-	echo "行號 : ", $e -> getLine(), "<br>";
-};
+// isset($_SESSION["mem_no"]) != false
+if(isset($_SESSION["mem_no"]) != false){
+    try{
+                require_once("connect-dd101g3.php");    
+                $sql = "select * from collection where mem_no = :mem_no";
+                $collection = $pdo->prepare($sql);
+                $collection->bindValue(":mem_no",$_SESSION["mem_no"]);
+                $collection->execute();
+                $collection_row =  $collection->fetchALL(PDO::FETCH_ASSOC);
+                $collection_arr = array();
+                // echo `$collection_row[0]["prod_no"]`;
+                for($i = 0; $i<count($collection_row); $i++){
+                    array_push($collection_arr, $collection_row[$i]["prod_no"]);
+                    }
+                    // print_r($collection_arr);
+                }catch(PDOException $e) {
+                    echo "錯誤 : ", $e -> getMessage(), "<br>";
+                    echo "行號 : ", $e -> getLine(), "<br>";
+                };
+}
+        
+?> 
 
-function stageNo($stage)
-{
+<?php
+function stageNo($stage){
 	switch ($stage) {
 		case '1':
 			return "single";
@@ -61,8 +71,7 @@ function stageNo($stage)
 			break;
 	}
 }
-function typeno($typeno)
-{
+function typeno($typeno){
 	switch($typeno) {
 		case '1':
 			return 'popscial';
@@ -116,10 +125,10 @@ require_once("nav.php");
             <div class="item latest-item col-6 col-lg-10">
                 <div class="latest-pic">
                     <form action="">
-                        <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
-                        <a href="shop-inside.php?prod_no=<?php echo $newproductsRow["prod_no"]?>">
+                        <input type="hidden" name="prod_no" value="<?php echo $newproductsRow["prod_no"]?>">
+                        <div class="newspic-box">
                             <img src="<?php echo $newproductsRow["prod_pic"] ?>" alt="">
-                        </a>
+                        </div>
                         <img src="img/shop/collection-gray.png " alt="" class="latest-collection-love">
                     </form>
                 </div>
@@ -201,14 +210,18 @@ require_once("nav.php");
                                 <div class="item-img col-12">
                                     <form>
                                         <input type="hidden" name="prod_no" value="<?php echo $prodRow["prod_no"]?>">
-                                        <a href="shop-inside.php?prod_no=<?php echo $prodRow["prod_no"]?>">
-                                            <img src="<?php echo $prodRow["prod_pic"] ?>" alt="" class="product-img">
-                                        </a>    
-                                        <img src="img/shop/collection-<?php if(in_array($prodRow["prod_no"],$collection_arr)){
-                                            echo "red.png";
+                                        <div class="gener-product">
+                                            <img src="<?php echo $prodRow["prod_pic"]?>" alt="" class="product-img">
+                                        </div>    
+                                        <img src="img/shop/collection-<?php 
+                                        if(isset($_SESSION["mem_no"]) != false){
+                                             if(in_array($prodRow["prod_no"],$collection_arr)){
+                                                    echo "red.png";
+                                                }else{
+                                                    echo "gray.png";
+                                                }
                                         }else{
-                                            echo "gray.png";
-                                        }?>" alt="" class="latest-collection-love">
+                                            echo "gray.png";}?>" alt="" class="latest-collection-love">
                                     </form>
                                 </div>
                                 
@@ -382,10 +395,12 @@ require_once("nav.php");
 
     <script src="js/nav.js"></script>
     <script src="js/login.js"></script>
+    
     <!-- <script src="custom-checksign.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/shop.js"></script>
+    <script src="js/shopstage-filter.js"></script>
     <!-- <script src="js/temporary.js"></script> -->
     <script>
         $('.owl-carousel').owlCarousel({

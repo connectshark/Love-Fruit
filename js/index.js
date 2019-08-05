@@ -55,8 +55,6 @@ function pinkShipButton() {
   $id("course-blue-ship").classList.add("course-blue-ship-show");
   // 按鈕
   $id("blue-ship-button").style.display = "inline-block";
-  $id("blue-ship-button").style.display = "inline-block";
-  $id("blue-ship-button").style.display = "inline-block";
   $id("pink-ship-button").style.display = "none";
 }
 //

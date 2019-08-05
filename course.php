@@ -1,5 +1,8 @@
-<?php 
+<?php
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
 ?>
 <html lang="UTF-8">
   <head>
@@ -18,7 +21,7 @@ session_start();
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/temporary-cart.css">
   </head>   
-  <body>
+  <body class="welcome">
     <?php
     require_once("nav.php");
     ?>
@@ -28,21 +31,25 @@ session_start();
             <div class="wrapper">
               
                 <div class="kanban kanban-y col-md-6 ">
-                    <a href="course-group.php">
+                    
                         <div class="group-item item">
+                          <a href="course-group.php">
                             <div class="gift gift-y"> <img src="img/course/gift-yellow.png" alt="禮物黃帶"> <span class="group-subtitle subtitle">不定時開課</span></div>
                             <div class="title-box"><h2 class="group-title title">揪團課程</h2></div>
+                          </a>
                         </div>
-                   </a>
+          
                 </div>
 
                 <div class="kanban kanban-p col-md-6 ">
-                    <a href="course-general.php">
+                    
                         <div class="general-item item">
+                          <a href="course-general.php">
                             <div class="gift gift-p"> <img src="img/course/gift-pink.png" alt="禮物粉帶"> <span class="general-subtitle subtitle">每日固定開課</span></div>
                             <div class="title-box"> <h2  class="general-title title"> 一般課程</h2></div>
-                        </div>
-                    </a>
+                         </a>
+                      </div>
+                    
                 </div>
             </div>
     </section>

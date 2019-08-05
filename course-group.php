@@ -1,6 +1,12 @@
-<?php 
+<?php
 session_start();
-// $_SESSION["mem_no"]=1;
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
+?>
+
+<?php 
+
 try {
   require_once("mac-require.php");
 
@@ -44,13 +50,20 @@ try {
 
   <section class="group-wrap">
     <div class="wrapper">
-  
+    <!-- <div class="cloud-group">
         <img class="cloud " src="img/cloud.png" alt="雲" />
         <img class="cloud " src="img/course/styleCloud.png" alt="雲" />
         <img class="cloud " src="img/cloud.png" alt="雲" />
         <img class="cloud " src="img/course/styleCloud.png" alt="雲" />
         <img class="cloud " src="img/cloud.png" alt="雲" />
-
+        </div> -->
+<div class="cloud-group">
+   <img class="style-cloud-a" src="img/indexImg/styleCloud.png" alt="styleCloud" />
+    <img class="style-cloud-b" src="img/indexImg/styleCloud.png" alt="styleCloud" />
+    <img class="style-cloud-c" src="img/indexImg/styleCloud.png" alt="styleCloud" />
+    <img class="style-cloud-d" src="img/indexImg/styleCloud.png" alt="styleCloud" />
+    <img class="style-cloud-e" src="img/indexImg/styleCloud.png" alt="styleCloud" />
+</div>
       <div class="group-ribbon">
         <h2 class="title"> 揪團課程</h2>
         <span class="subtitle">不定時開課</span>
@@ -81,8 +94,8 @@ try {
                   <p> 每份$1,000元(雙人課程，歡迎使用門票上之抵用券)</p>
 
                   <li>報名方式：</li>
-                  <p> 1.線上揪團：由揪團主發起課程，並於三天前報名課程<br>2.入館後至1F客服中心使用QR
-                    Code報到劃位</p>
+                  <p> 1.線上揪團：由揪團主發起課程，並於三天前報名課程<br>2.入館後至1F客服中心報到
+                </p>
                 </ul>
               </div>
             </div>
@@ -113,16 +126,18 @@ try {
           <span>快來開團玩課程！</span>
     </div>
 
-  <form action="course-msg.php" method="post" enctype="multipart/form-data">
+  <form name="groupform" action="course-msg.php" method="post" enctype="multipart/form-data"  onsubmit="return groupMsg()">
       <input type="hidden" value="1" name="courseClassNo">
       <div class="group-message" >
         <div class="open-group">
             <div class="message-mem col-md-2">
+            <div class="mem-pic-group">
                 <?php if (isset ($_SESSION["mem_pic"])) { ?>
                 <div class="mem-pic"><img src="<?php echo $_SESSION["mem_pic"]?>" alt=""></div>
                 <?php }else{
-                            echo "<i class='fas fa-user-circle user-pic'></i>";
+                            echo "<i class='fas fa-user-circle'></i>";
                 } ?>
+            </div>
                 <?php if (isset ($_SESSION["mem_name"])){ ?>
                 <p><?php echo  $_SESSION["mem_name"];}else{echo "訪客";} ?></p>
                 <p class="time"><?php echo date("Y-m-d"); ?></p>
@@ -130,9 +145,9 @@ try {
 
            <div class="write-area  col-md-10">
             <p>你的團名：</p>
-            <input name="msgTitle" type="text" minlength="1" maxlength="10" placeholder="寫下最吸引人的團名！">
+            <input name="msgTitle" type="text" minlength="1" maxlength="10" required placeholder="寫下最吸引人的團名！">
             <p>開團資訊：</p>
-            <textarea name="msgContent" maxlength="100" minlength="1" id="" cols="90" rows="8" wrap="hard" 
+            <textarea name="msgContent" maxlength="100" minlength="1"  required cols="90" rows="8" wrap="hard" 
   placeholder="
   揪團課程時間：
   聯絡電話：
@@ -141,7 +156,7 @@ try {
           </div>
 
           <div class="message-btn col-md-12">
-            <button type="submit" class="message-btn-out">
+            <button type="submit" class="message-btn-out groupMsg-check">
               <span class="message-btn-in">
                 我要留言
               </span>
@@ -169,11 +184,8 @@ try {
     </div>
     <div class="main-group-message">
         <div class="message-meb col-md-2 col-2">
-        <?php if ($row->mem_pic) { ?>
-						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
-					<?php }else{
-						echo "<i class='fas fa-user-circle'></i>";
-					} ?>
+            <div class="mem-pic"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
+            <!-- <div class="mem-pic"><img src="img/course/diyImg2.png" alt="頭像"></div> -->
           <p><?php echo $row->mem_name; ?></p>
           <p class="time"> <?php echo $row->msg_date;?> </p>
         </div>
@@ -198,16 +210,14 @@ try {
             <div class="pop-up">
               <span  class="closeBtn" ><img src="img/pop-close.png" alt="關閉"></span> 
               <div class="pop-team-name"><p>團名：<?php echo $row->msg_title; ?></p></div>
-
               <div class="pop-content">
               <!-- 跳窗主揪留言 -->
                 <div class="pop-main-message col-md-7 col-10">
                   <div class="message-meb col-md-2 col-2">
-                  <?php if ($row->mem_pic) { ?>
-						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
-					<?php }else{
-						echo "<i class='fas fa-user-circle'></i>";
-					} ?>
+            
+              <div class="mem-pic"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
+            <!-- <div class="mem-pic"><img src="img/course/diyImg2.png" alt="頭像"></div> -->
+        
                     <p class="mem"><?php echo $row->mem_name; ?></p>
                     <p class="time"><?php echo $row->msg_date; ?></p>
                   </div>
@@ -219,6 +229,18 @@ try {
   
                 <!-- 跳窗回覆留言 -->
               <div  class="all-message col-md-7 col-10">
+                <div class="spotPack" style="display:none">
+                      <div class="meb-add-message " id="content">
+                        <div class="meb col-md-2 ">
+                          <div class="mem-pic-group">
+                          <div class="mem-pic"><img src="<?php echo $_SESSION["mem_pic"]?>" alt=""></div>
+                            </div>
+                          <p class="name"> <?php  echo $_SESSION["mem_name"] ?></p>
+                          <p class="time"></p>
+                        </div>
+                        <p class="text col-md-10"></p>
+                      </div>
+                </div>
                 <?php 
         
         //..............抓回覆留言
@@ -233,11 +255,9 @@ try {
             ?> 
                   <div class="meb-add-message ">
                     <div class="meb col-md-2 ">
-                    <?php if ( $replayMsgRow->mem_pic) { ?>
-					<div class="user-head"><img src="<?php echo $replayMsgRow->mem_pic ?>" alt="頭像"></div>
-					<?php }else{
-						echo "<i class='fas fa-user-circle'></i>";
-					} ?>
+        
+                    <div class="mem-pic"><img src="<?php echo $replayMsgRow->mem_pic ?>" alt="頭像"></div>
+                    <!-- <div class="mem-pic"><img src="img/course/diyImg2.png" alt="頭像"></div> -->
                       <p class="name"><?php echo $replayMsgRow->mem_name; ?></p>
                       <p class="time"><?php echo $replayMsgRow->reply_date; ?></p>
                     </div>
@@ -247,24 +267,13 @@ try {
                 </div>
     
 
-      <div id="spotPack" style="display:none">
-         
-              <div class="meb-add-message " id="content">
-                <div class="meb col-md-2 ">
-                  <div class="user-head"></div>
-                  <p class="name"></p>
-                  <p class="time"></p>
-                </div>
-                <p class="text col-md-10"></p>
-              </div>
-         
-      </div>
+     
             <!-- 跳窗留言 -->
-            <span class="msgno"><?php echo  $row->msg_no ?> </span>
-            <form class="pop-leave-message col-md-8 col-10" action="course-msg.php" method="post" enctype="multipart/form-data">
-              <div class="leave-message col-md-9 col-12"> <input type="text" name="reply_content"  class="leave-message-box"></div>
-                <div class="message-btn col-md-2 ">
-                  <input type="button" class="message-btn-out btn-add" name="btnReply" value="留言參加">
+            <span class="msgno"><?php echo  $row->msg_no ?></span>
+            <form class=" pop-leave-message col-md-8 col-10"   name="msgReplyform" onclick="return false">
+              <div class="leave-message col-md-9 col-12"> <input type="text" name="reply_content"  class="leave-message-box reply-box"></div>
+                <div class="message-btn col-md-2 groupMsgReply-check">
+                  <input type="button" class="groupMsgReply-check message-btn-out btn-add" name="btnReply" value="留言參加">
                 </div>
               </div>
             </form>

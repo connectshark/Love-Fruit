@@ -15,6 +15,8 @@ try {
 
     if($profileChangeRow.rowCount()==0){
         echo "erro";
+    }else{
+        // echo json_encode($profileChangeRow);
     }
     
 } catch (PDOException $e) {

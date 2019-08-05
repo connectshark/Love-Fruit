@@ -1,5 +1,11 @@
-<?php 
+<?php
 session_start();
+if (isset($_SESSION["mem_id"]) != true) {
+  $_SESSION["mem_id"] = null;
+}
+?>
+<?php 
+
 $errMsg="";
 
 try {
@@ -77,8 +83,7 @@ try {
                                             <p> 每份$500元(歡迎使用門票上之抵用券)</p>
             
                                             <li>報名方式：</li>
-                                            <p> 1.線上預約(須提前30分鐘至1F客服中心報到，逾時將留給現場後位)<br>2.入館後至1F客服中心使用QR
-                                                Code報到劃位</p>
+                                            <p> 1.線上預約(須提前30分鐘至1F客服中心報到，逾時將留給現場後位)<br>2.入館後至1F客服中心報到</p>
                                         </ul>
                                     </div>
                                     <div class="course-btn">
@@ -117,8 +122,7 @@ try {
                                         <p> 每份$350元(歡迎使用門票上之抵用券)</p>
         
                                         <li>報名方式：</li>
-                                        <p> 1.線上預約(須提前30分鐘至1F客服中心報到，逾時將留給現場後位)<br>2.入館後至1F客服中心使用QR
-                                            Code報到劃位</p>
+                                        <p> 1.線上預約(須提前30分鐘至1F客服中心報到，逾時將留給現場後位)<br>2.入館後至1F客服中心報到</p>
                                     </ul>
                                 </div>
                                 <div class="course-btn">
@@ -145,25 +149,27 @@ try {
             <span>寫下你對課程的想法！</span>
         </div>
 
-    <form class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data">
+    <form name="generalform" class="leave-message-wrap" action="course-msg.php" method="post" enctype="multipart/form-data" onclick="return false">
         <input type="hidden" value="0" name="courseClassNo">
         <input type="hidden"   name="msgTitle">
             <div class="message-mem col-md-2">
+            <div class="mem-pic-group">
                 <?php if (isset ($_SESSION["mem_pic"])) { ?>
                 <div class="mem-pic"><img src="<?php echo $_SESSION["mem_pic"]?>" alt=""></div>
                 <?php }else{
                             echo "<i class='fas fa-user-circle'></i>";
                 } ?>
+            </div>
                 <?php if (isset ($_SESSION["mem_name"])){ ?>
                 <p><?php echo  $_SESSION["mem_name"];}else{echo "訪客";} ?></p>
                 <p><?php echo date("Y-m-d"); ?></p>
             </div>
             <div class="balloons col-md-10">
-           <label><textarea name="msgContent" id="general-msg" maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......" wrap="hard" ></textarea></label> 
+           <label><textarea name="msgContent" id="general-msg" required maxlength="100" minlength="1" cols="90" rows="8" placeholder="寫下你對課程的想法......" wrap="hard" ></textarea></label> 
             </div>
             <div class="message-btn col-md-12">
            
-                <button  type="submit" class="message-btn-out">
+                <button  type="submit" class="message-btn-out generalMsg-check">
                     <span class="message-btn-in">
                         我要留言
                     </span>
@@ -177,11 +183,10 @@ try {
             <div class="mem-message-item">
            
                 <div class="message-mem col-md-2 col-2">
-                   <?php if ($row->mem_pic) { ?>
-						<div class="user-head"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
-					<?php }else{
-						echo "<i class='fas fa-user-circle'></i>";
-					} ?>
+   
+					<div class="mem-pic"><img src="<?php echo $row->mem_pic ?>" alt="頭像"></div>
+                    <!-- <div class="mem-pic"><img src="img/course/diyImg2.png" alt="頭像"></div> -->
+					
                 </div>
                 <div class="message-con col-md-10 col-9">
                     <div class="mem-ifo">

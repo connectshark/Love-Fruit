@@ -79,12 +79,12 @@
             .profile-img{
                 width: 50px;
                 height: 50px;
+                overflow: hidden;
+                border-radius: 50%;
                 img{
                     width: 100%;
-                    height: 100%;
                     display: block;
-                    object-fit: cover;
-                    border-radius: 50%;
+                   
                 }
             }
 
@@ -189,9 +189,6 @@
             .passwaord, .address{
                 display: inline-block;
                 padding-right: 10px;
-            }
-            #pro-password{
-                display: none;
             }
 
             
@@ -360,11 +357,7 @@
                 background-color: #ffdee6;
                 display: flex;
                 flex-flow: row wrap;
-                align-items: center;  
-                
-                .res-no{
-                    display: none;
-                }
+                align-items: center;                
     
                 .class-desc{
                     display: flex;

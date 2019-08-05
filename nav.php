@@ -30,7 +30,7 @@ try {
     <div class="nav-item">
       <ul class="nav-list nav-list-mp">
         <li>
-          <a id="qa-item-show" class="nav-text" href="qa.php" title="戀愛冰品"><img src="img/navBar/navIcon.png" alt="iceIcon" /><span>戀愛冰品</span></a>
+          <a id="qa-item-show" class="nav-text" href="qa.php" title="戀冰測驗"><img src="img/navBar/navIcon.png" alt="iceIcon" /><span>戀冰測驗</span></a>
         </li>
         <li>
           <a id="custom-item-show" class="nav-text" href="custom.php" title="冰棒客製"><img src="img/navBar/navIcon.png" alt="iceIcon" /><span>冰棒客製</span></a>
@@ -42,7 +42,7 @@ try {
       <div class="nav-box"></div>
       <ul class="nav-list nav-list-login">
         <li>
-          <a id="newshop-item-show" class="nav-text" href="shop.php" title="冰品商城"><img src="img/navBar/navIcon.png" alt="iceIcon" /><span>冰品商城</span></a>
+          <a id="newshop-item-show" class="nav-text" href="shop.php" title="戀菓商店"><img src="img/navBar/navIcon.png" alt="iceIcon" /><span>戀菓商店</span></a>
         </li>
         <li id="nav-drop-down-menu-hover" class="nav-drop-down-menu-hover">
           <a id="course-item-show" class="nav-text" href="course.php" title="體驗課程"><img src="img/navBar/navIcon.png" alt="iceIcon" /><span>體驗課程</span></a>
@@ -65,7 +65,7 @@ try {
               </div>
               <ul id="member-centre-down-menu" style="opacity: 0; transform: translateY(0%);">
                 <div class="member-centre-triangle"></div>
-                <li><span id="user-name"><?php echo $_SESSION["mem_name"] ?></span></li>
+                <li><span id="user-name"><?php echo $personalRow["mem_name"] ?></span></li>
                 <li><a href="account.php">會員中心</a></li>
                 <li><span id="login-out">登出</span></li>
               </ul>
@@ -86,7 +86,7 @@ try {
       <span id="nav-login-icon-p">登入</span>
       <div id="member-centre-panel-p" class="member-centre-panel-p" style="opacity: 0; transform: translateY(0%);">
         <div class="member-centre-panel-p-triangle"></div>
-        <span id="user-nam-p"><?php echo $_SESSION["mem_name"] ?></span>
+        <span id="user-nam-p"><?php echo $personalRow["mem_name"] ?></span>
         <a href="account.php"><span>會員中心</span></a>
         <span id="login-out-p">登出</span>
       </div>

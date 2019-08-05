@@ -16,7 +16,7 @@ $errMsg="";
         $courseR->bindValue(':courseDate',$courseDate);
         $courseR->bindValue(':courseSlot',$courseSlot);
         $courseR->bindValue(':resPpl',$resPpl);
-        $courseR->bindValue(':resDate',date('Y-m-d h:i:s'));
+        $courseR->bindValue(':resDate',date('Y-m-d'));
         $courseR->execute();
 
         echo "sucess";

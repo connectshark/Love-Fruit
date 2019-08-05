@@ -518,7 +518,7 @@ body {
 
 .message-bgi {
   background-color: #fff8e4;
-  padding-top: 50px;
+  padding: 50px 0 10%;
 }
 
 .message-bgi .message {
@@ -744,6 +744,7 @@ body {
 
 .message-bgi .message .message-item .message-body .s-text {
   text-align: right;
+  margin-top: auto;
 }
 
 .message-bgi .message .message-item .message-footer {
@@ -759,9 +760,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .message-bgi .message .message-item .message-footer button {
@@ -774,10 +775,9 @@ body {
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 18px;
 }
 
-.message-bgi .message .message-item .message-footer .great-btn span {
+.message-bgi .message .message-item .message-footer button span {
   font-size: 16px;
 }
 

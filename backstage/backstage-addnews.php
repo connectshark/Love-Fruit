@@ -34,7 +34,7 @@ if (isset($_SESSION["emp_no"]) != true) {
         </div>
     </section>
 
-    <section class="container-fluid px-4">
+    <section class="container-fluid px-4 mb-4">
         <div class="row justify-content-center">
             <div class="col-10 bg-white rounded p-4">
                 <form action="add-news.php" method="POST" enctype="multipart/form-data">
@@ -64,7 +64,7 @@ if (isset($_SESSION["emp_no"]) != true) {
                         <div class="col-1 bg-lovefruit rounded text-white text-center p-2">圖片</div>
                         <div class="col-11">
                             <div class="row">
-                                <div class="col-1 p-1">
+                                <div class="col-2 p-1">
                                     <label class="news-file mb-0 ml-3 btn btn-info" for="newsFile">選擇圖片</label>
                                     <input class="d-none" type="file" name="newsFile" id="newsFile" accept=".jpg,.png">
                                 </div>

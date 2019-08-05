@@ -23,7 +23,7 @@ function changeCart(e){
         // console.log(JSON.parse(xhr.responseText));
 	}
 
-	let url = "order-insert.php";
+	let url = "cart-show-update.php";
 	xhr.open("post",url,true);
 
   let myForm = new FormData(e.target.form);
@@ -40,7 +40,7 @@ function getCart(){
 		  cart = JSON.parse(xhr.responseText);
 		//   console.log(cart);
   	}else{
-  		alert(xhr.status);
+  		// alert(xhr.status);
   	}
   }
   let url = "get-cart.php";

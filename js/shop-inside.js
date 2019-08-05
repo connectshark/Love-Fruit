@@ -1,6 +1,64 @@
 
 let cart = {};
+let review_box = {};
+// //點擊愛心
+// var click_love = document.getElementsByClassName("collection")[0];
+// for(var i=0 ;i<click_love.length; i++){
+// 	click_love[i].addEventListener("click",function(e){
+// 		var imgSrc = this.getAttribute("src"); 
+// 		// console.log(imgSrc);
+// 			// 加入購物車
+// 			if(imgSrc == "img/shop/collection-gray.png"){
+// 			this.setAttribute( "src" ,"img/shop/collection-red.png" )
+// 			let xhr = new XMLHttpRequest();
+// 			xhr.onreadystatechange = function(){
+// 				if(xhr.responseText == "false" ){
+// 					navLoginIcon();
+// 				};
+// 				if(xhr.readyState ==4 ){
+// 				  if(xhr.status ==200){
+// 					//   alert(xhr.responseText);
+// 				  }else{
+// 					// alert(xhr.status);
+// 				  }
+// 				}
+// 			  }
+// 			let url = "add-favorite.php";
+// 			xhr.open("post" , url ,false);
+// 			console.log(this);
+// 			console.log(this.parentNode);
+// 			let myForm = new FormData(this.parentNode);
+// 			xhr.send(myForm);
+			
+// 		}else{
+// 			// 從購物車刪除
+// 			this.setAttribute( "src" ,"img/shop/collection-gray.png" )
+// 			let xhr = new XMLHttpRequest();
+// 			xhr.onreadystatechange = function(){
+// 				if(xhr.responseText == "false" ){
+// 					navLoginIcon()
+// 				};
+// 				if(xhr.readyState ==4 ){
+// 				  if(xhr.status ==200){
+// 					//   alert(xhr.responseText);
+// 				  }else{
+// 					// alert(xhr.status);
+// 				  }
+// 				}
+// 			  }
 
+
+// 			let url = "delete-favorite.php";
+// 			xhr.open("post" , url ,false);
+// 			let myForm = new FormData(this.parentNode);
+// 			xhr.send(myForm);
+// 	}	
+
+
+
+// 	})
+
+// };
 
 //.............取得購物車資料
 function getCart(){
@@ -13,7 +71,7 @@ function getCart(){
           //   console.log(cart);
           
         }else{
-            alert(xhr.status);
+            // alert(xhr.status);
         }
     }
     let url = "get-cart.php";
@@ -23,62 +81,82 @@ function getCart(){
   }
   
 window.addEventListener("load", function(){
-    getCart();
-    var click_love = document.getElementsByClassName("collection");
-for(var i=0 ;i<click_love.length; i++){
-	click_love[i].addEventListener("click",function(e){
-
-		var imgSrc = this.getAttribute( "src" ); 
-		// console.log(imgSrc);
-			// 加入收藏
-		if(imgSrc === "img/shop/collection-gray.png"){
-			this.setAttribute( "src" ,"img/shop/collection-red.png" )
-			let xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function(){
-				if(xhr.readyState ==4 ){
-				  if(xhr.status ==200){
-					//   alert(xhr.responseText);
-				  }else{
-					// alert(xhr.status);
-				  }
-				}
-			  }
-			let url = "add-favorite.php";
-			xhr.open("post" , url ,false);
-			console.log(this);
-			console.log(this.parentNode);
-			let myForm = new FormData(this.parentNode);
-			xhr.send(myForm);
+	var review_submit = document.getElementById("review-btn");
+		review_submit.addEventListener("click",function(){
 			
-		}else{
-			// 從收藏刪除
-			this.setAttribute( "src" ,"img/shop/collection-gray.png" )
 			let xhr = new XMLHttpRequest();
+			xhr.onload = function (e){
+		
+				review_box = JSON.parse(xhr.responseText);//取回cart的最新狀況
 
-
-
-			xhr.onreadystatechange = function(){
-				if(xhr.readyState ==4 ){
-				  if(xhr.status ==200){
-					//   alert(xhr.responseText);
-				  }else{
-					// alert(xhr.status);
-				  }
-				}
-			  }
-
-
-			let url = "delete-favorite.php";
-			xhr.open("post" , url ,false);
+			}
+			let url = "shop-review.php";
+			xhr.open("post",url,true);
+			// console.log(this.parentNode);
 			let myForm = new FormData(this.parentNode);
 			xhr.send(myForm);
-	}	
+
+
+		});
+	});
+
+
+	
+//     var click_love = document.getElementsByClassName("collection");
+// for(var i=0 ;i<click_love.length; i++){
+// 	click_love[i].addEventListener("click",function(e){
+
+// 		var imgSrc = this.getAttribute( "src" ); 
+// 		// console.log(imgSrc);
+// 			// 加入收藏
+// 		if(imgSrc === "img/shop/collection-gray.png"){
+// 			this.setAttribute( "src" ,"img/shop/collection-red.png" )
+// 			let xhr = new XMLHttpRequest();
+// 			xhr.onreadystatechange = function(){
+// 				if(xhr.readyState ==4 ){
+// 				  if(xhr.status ==200){
+// 					//   alert(xhr.responseText);
+// 				  }else{
+// 					// alert(xhr.status);
+// 				  }
+// 				}
+// 			  }
+// 			let url = "add-favorite.php";
+// 			xhr.open("post" , url ,false);
+// 			console.log(this);
+// 			console.log(this.parentNode);
+// 			let myForm = new FormData(this.parentNode);
+// 			xhr.send(myForm);
+			
+// 		}else{
+// 			// 從收藏刪除
+// 			this.setAttribute( "src" ,"img/shop/collection-gray.png" )
+// 			let xhr = new XMLHttpRequest();
 
 
 
-	})
+// 			xhr.onreadystatechange = function(){
+// 				if(xhr.readyState ==4 ){
+// 				  if(xhr.status ==200){
+// 					//   alert(xhr.responseText);
+// 				  }else{
+// 					// alert(xhr.status);
+// 				  }
+// 				}
+// 			  }
 
-	};
+
+// 			let url = "delete-favorite.php";
+// 			xhr.open("post" , url ,false);
+// 			let myForm = new FormData(this.parentNode);
+// 			xhr.send(myForm);
+// 	}	
+
+
+
+// 	})
+
+// 	};
 
 
     // 註冊加減

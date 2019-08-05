@@ -1,9 +1,5 @@
 @import "mixin/mixin";
 /*跳窗*/
-@mixin smallfont {
-    font-size: 20px;
-    line-height: 2;
-}
 .pop{
 	position: fixed;
 	z-index: 100;
@@ -54,10 +50,10 @@
                 color: #fff;
                 margin: auto;
                 color: #6a3e26;
-                line-height: 1.5;
             }
             p{
-                @include smallfont;
+                font-size: 20px;
+                line-height: 1.5;
                 text-align: center;
             }
         }
@@ -66,12 +62,11 @@
             text-align: center;
             p{
                 font-size: 20px;
-                line-height: 1.5;
                 span{
                     display: inline-block;
                     margin: 0 5px;
                     font-size: 30px;
-                    line-height: 1;
+                    line-height: 1.5;
                 }
             }
             @include rwd(mobile){
